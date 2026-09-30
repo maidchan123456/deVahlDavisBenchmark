@@ -5,9 +5,9 @@
 | 項目 | 内容 |
 |---|---|
 | 文書ID | DVD-OF13-SPEC |
-| 版 | 1.2 |
-| 対象 | de Vahl Davis の Verification 用 Route B、および OpenFOAM Foundation v13 の比較用 Route A |
-| 状態 | Route A/B の監査と最小実装は完了。full matrix、Gate H、transient は未実行 |
+| 版 | 1.1 |
+| 対象 | de Vahl Davis の Verification 用 Route B 候補、および OpenFOAM Foundation v13 の比較用 Route A |
+| 状態 | 実装前仕様。今回の更新ではケース、スクリプト、ソルバ改変コードを作成しない |
 | 対応する判定基準 | `docs/acceptance_criteria.md` |
 | 更新日 | 2026-09-30 |
 
@@ -17,7 +17,6 @@
 |---|---|---|
 | 1.0 | 2026-09-28 | Foundation v13 Route A を第一候補とする初版 |
 | 1.1 | 2026-09-30 | Route B を主 Verification、Route A をモデル比較・特性評価に分離。Foundation v6 solver を Route B の未監査候補とし、初期圧力整合、感度試験の解釈、両 route の計算順序を更新 |
-| 1.2 | 2026-09-30 | Foundation v6 Route B の監査・最小実装を反映して採用を確定。Gate G の離散保存指標、Route A 初期圧力確認、進捗を記録 |
 
 本書中の **MUST** は必須、**SHOULD** は合理的理由がない限り採用、**MAY** は任意を意味する。
 
@@ -25,7 +24,7 @@
 
 本研究の主 **verification** は、原論文の古典的 Boussinesq 方程式にできるだけ忠実な **Route B と de Vahl Davis 基準解**の比較である。支配方程式、境界条件、離散化、格子、数値解法、後処理の再現性を検証する。**Route A** は Foundation v13 標準流体モデルの特性評価とし、Route B および原論文との差を定量化して将来のティーカップ・茶葉・粒子・物体連成研究に向けて評価する。Route A と原論文の差をそのまま数値誤差と呼ばず、数値誤差・実装誤差・支配方程式差を分ける。
 
-次の3比較は別の研究目的を持つ。**de Vahl Davis 対 Route B = verification**、**Route A 対 Route B = model/formulation difference**、**Route A 対 de Vahl Davis = practical benchmark comparison**。両 route を実装・評価し、Route B は完了済みソース監査に基づく Foundation v6 実装を用いる。
+次の3比較は別の研究目的を持つ。**de Vahl Davis 対 Route B = verification**、**Route A 対 Route B = model/formulation difference**、**Route A 対 de Vahl Davis = practical benchmark comparison**。両 route を実装・評価する研究方針を採るが、Route B の実装手段はソース監査後に決定する。
 
 本研究全体では、茶抽出時の自然対流、物体・茶葉の運動、さらに OpenFOAM と粒子・剛体・変形体計算の連成へ進む前の、単相熱流動部分の段階的な検証問題に位置づける。
 
@@ -44,7 +43,7 @@
 |---|---|
 | **[PAPER]** | de Vahl Davis 原論文が規定した問題、定義または基準値 |
 | **[OF13]** | OpenFOAM Foundation v13 の公式資料・公式ソースから確認した実装上の事実 |
-| **[OF6]** | Foundation v6 のローカル公式ソースで監査済みの実装上の事実 |
+| **[OF6-CANDIDATE]** | Foundation v6 の採用候補。v6 ソース未監査のため、実装上の事実を認定するラベルではない |
 | **[PROJECT]** | 原論文にはなく、本研究で再現可能な計算にするために定める条件 |
 | **[GATE]** | 実装前または計算前に確認し、満たさなければ先へ進まない条件 |
 | **[OPEN]** | 現時点で未確定であり、監査結果または計算結果を基に決める事項 |
@@ -164,7 +163,7 @@ $$
 
 ## 4. 本研究で定める物理量への写像
 
-この節は全て **[PROJECT]** であり、原論文が指定した有次元物性値ではない。同じ $Ra$ と $Pr$ を両 route で比較可能にする数値的実現である。Route B の v6 入力と物性は監査済みで、`nu=nu0` と `alpha=nu/Pr=alpha0` は定数として使用する。Route A 固有の $c_v$、分子量、生成エンタルピーを Route B が同じ形で読むとは仮定しない。
+この節は全て **[PROJECT]** であり、原論文が指定した有次元物性値ではない。同じ $Ra$ と $Pr$ を両 route で比較可能にするための数値的な実現である。Route B 候補に必要な入力形式と実際に使用する物性は v6 ソース監査で確認する。Route A 固有の $c_v$、分子量、生成エンタルピーを Route B が同じ形で読むと仮定しない。
 
 ### 4.1 座標、形状、物性
 
@@ -185,7 +184,7 @@ $$
 | 分子量 | 28.9 kg/kmol | Foundation の `specie` 入力に必要な形式値。Boussinesq route で解に影響しないことを監査 |
 | 生成エンタルピー | 0 J/kg | 化学反応を扱わない定数熱量モデルの基準値 |
 
-この設定では Route A の高温壁と低温壁の密度はそれぞれ約 $0.9995\rho_0$、$1.0005\rho_0$ であり、全温度差に対する密度差は0.1%である。熱拡散速度尺度は $\alpha_0/L=1.408450704225\times10^{-4}$ m/s、熱拡散時間尺度は $L^2/\alpha_0=710$ s である。v13 では局所 $\nu,\alpha$ の密度依存性が監査済みであり、v6 Route B では $\nu_0,\alpha_0$ を定数として使用する。感度試験だけで両 route の一致を主張しない。
+この設定では Route A の高温壁と低温壁の密度はそれぞれ約 $0.9995\rho_0$、$1.0005\rho_0$ であり、全温度差に対する密度差は0.1%である。熱拡散速度尺度は $\alpha_0/L=1.408450704225\times10^{-4}$ m/s、熱拡散時間尺度は $L^2/\alpha_0=710$ s である。v13 ソース監査では Route A の局所 $\nu$ と $\alpha$ に密度依存性が確認された。Route B は参照値 $\nu_0,\alpha_0$ を定数として使えるか、候補ソースで検証する。感度試験だけで両 route の一致を主張しない。
 
 ### 4.2 Rayleigh 数の設定
 
@@ -203,15 +202,15 @@ $$
 | $10^5$ | 14.08450704 |
 | $10^6$ | 140.8450704 |
 
-上表は表示値であり、Gate A の $Ra$ 精度判定には丸め値をそのまま入力せず上式から十分な桁数で算出する。Route B は監査済みの定数 $\nu_0,\alpha_0$ と入力 $g,\beta$ を用いる。
+上表は表示値であり、Gate A の $Ra$ 精度判定には丸め値をそのまま入力せず上式から十分な桁数で算出する。Route B の候補が入力した $g,\beta,\nu_0,\alpha_0$ をどう使うかは別途監査する。
 
 これは空気を地球重力下で再現する物性設定ではなく、相似則に基づく無次元問題の実現である。物理的な空気物性との一致を主張してはならない。
 
-## 5. Route A / Route B の役割と監査済み実装
+## 5. Route A / Route B の役割と実装前監査
 
 ### 5.1 Route A: Foundation v13 標準モデル **[OF13]/[PROJECT]**
 
-- 実行系は Foundation v13 の `foamRun` + `fluid` solver module + `equationOfState Boussinesq` とする。監査済みの定物性・内部エネルギー thermo tuple を採用する。
+- 実行系は Foundation v13 の `foamRun` + `fluid` solver module + `equationOfState Boussinesq` とする。熱力学モデルは監査済みの定物性・内部エネルギー系を候補とする。
 - v13 の Boussinesq 状態方程式は $\rho=\rho_0[1-\beta(T-T_0)]$ を実装する。ただしこの密度は浮力だけに限定されず、質量保存、運動量、輸送係数、エネルギーにも現れる。
 - `docs/openfoam_design.md` のソース監査により、density-weighted continuity/momentum、局所密度依存の $\nu,\alpha$、運動エネルギー、圧力仕事、重力仕事等が原論文式と異なることを確認した。全差分が $O(\beta\Delta T)$ で消えるとは仮定しない。
 - 乱流モデルは使用せず、laminar とする。
@@ -222,7 +221,7 @@ $$
 
 Route A は Foundation v13 標準モデルが原論文値をどの程度再現するか、Route B とどれだけ異なるか、将来の標準流体 route としてどの特性を持つかを調べる。古典的 Boussinesq 方程式そのものの Verification route と呼ばない。
 
-Route A 境界条件は次を基本とする。Route B の kinematic $p_{rgh}$ 定義・単位・境界処理は5.2節で別に固定しており、両 route の辞書を混在させない。
+実装時の Route A 境界条件は次を基本とする。Route B 候補での $p_{rgh}$ の定義・単位・境界処理は v6 監査まで確定しない。
 
 | 境界 | 速度 $\boldsymbol u$ | 温度 $T$ | $p_{rgh}$ |
 |---|---|---|---|
@@ -233,25 +232,25 @@ Route A 境界条件は次を基本とする。Route B の kinematic $p_{rgh}$ �
 
 閉領域の圧力の任意定数を固定するため、キャビティ中心に最も近い cell を基準 cell、基準値を0とする。格子ごとの実 cell ID と座標を manifest に保存する。`fixedFluxPressure` と浮力項の整合、`pRefCell/pRefValue` が $p_{rgh}$ 補正式へ渡る処理は `openfoam_design.md` 7節に記録済み。
 
-**[PROJECT]/[GATE] OQ-02 は解決済み:** internal field は $\boldsymbol u=0$、$T=T_0$、$\rho=\rho_0$、$p_{rgh}=0$ とする。fixed-T wall patch は $T=T_h/T_c$、$\rho=\rho(T_{wall})$、$p=\rho(T_{wall})gh+p_{Ref}$ とし、他の wall patch は internal field と各BCに整合させる。internal は $p=\rho_0gh+p_{Ref}$ とし、$p_{rgh}=p-\rho gh-p_{Ref}$ を cell と4壁で確認した。$p_{Ref}$ は一様圧力、`pRefValue` は別の圧力参照値である。詳細は13.2節に示す。
+**[PROJECT]/[GATE] OQ-02 の解決方針:** Route A の初期場は全領域 $\boldsymbol u=0$、$T=T_0$、$\rho=\rho_0$、$p_{rgh}=0$ とする。v13 の $p_{rgh}=p-\rho gh-p_{Ref}$ に対し、初期 $p=\rho_0gh+p_{Ref}$ の静水圧場を与える。ここで $gh=\boldsymbol g\cdot\boldsymbol x-gh_{ref}$、$p_{Ref}$ は一様圧力であり、圧力基準の `pRefValue` と区別する。$p=0$ と $p_{rgh}=0$ を同時に設定して整合したとみなさない。実装時に必須の `0/p` と `0/p_rgh`、v13 の初期化処理後の関係、基準 cell/value を再確認し、manifest に保存する。
 
-### 5.2 Route B: 原論文方程式の Verification 実装 **[PROJECT]/[OF6]/[GATE]**
+### 5.2 Route B: 原論文方程式の Verification 候補 **[PROJECT]/[OF6-CANDIDATE]/[GATE]**
 
 Route B は原論文の $\nabla\cdot\boldsymbol u=0$、一定密度の慣性・移流・粘性、温度依存密度は浮力だけ、定数物性の温度対流拡散をできるだけ忠実に再現する。Foundation v13 の新規 solver/module 作成を最初から必須としない。
 
-**採用実装は OpenFOAM Foundation v6 `buoyantBoussinesqSimpleFoam`** である。Foundation v6 ローカルソース監査と最小実装で、以下の式・処理・入力・境界条件の対応を確認した。
+**第一実装候補は OpenFOAM Foundation v6 `buoyantBoussinesqSimpleFoam`**。これは未監査の候補であり、**「Route B = v6」と確定しない**。採用前に実際の Foundation v6 ソースで以下を追跡し、式・処理・入力・境界条件の対応表を作成する。
 
-1. 体積流束と連続式は $\nabla\cdot\boldsymbol u=0$ に対応する。
-2. 運動量の慣性・移流・粘性に温度依存密度は入らず、密度変化は浮力だけに現れる。
-3. $T$ を直接解き、$\alpha_0$ 一定の温度対流拡散式に対応する。放射・体積発熱・乱流 hook は零である。
-4. laminar momentum transport、kinematic $p_{rgh}$ と $gh$、浮力符号、pressure reference、steady SIMPLE を用いる。
-5. transport properties は定数 $\nu_0,\alpha_0,Pr$ を使い、境界とNu符号・単位は B1/B2で固定する。
+1. 体積流束と連続式が $\nabla\cdot\boldsymbol u=0$ に対応するか。
+2. 運動量の慣性・移流・粘性に温度依存密度を使わず、密度変化は浮力だけに現れるか。
+3. $T$ を直接解き、$\alpha_0$ 一定の温度対流拡散式と対応するか。放射・体積発熱・乱流の hook が零にできるか。
+4. laminar momentum transport、$p_{rgh}$ と $gh$、浮力の符号、圧力基準、SIMPLE の処理。
+5. 実際の transport properties と $\nu_0,\alpha_0,Pr,Ra$、境界条件、熱流束の符号・単位。
 
-Route B の OpenFOAM 版・入力・後処理を Route A と混在させない。根拠と最小実装は `docs/routeB_design.md` および `docs/routeB_implementation.md` に記録する。
+差異または必要な未解決事項があれば記録し、候補の採否を決める。採用できない場合は原論文式に必要な最小限の別実装を設計し、無断で solver を作らない。Route B の OpenFOAM 版・入力・後処理を Route A と混在させない。
 
 ### 5.3 Route 間比較と既存 v13 監査 **[PROJECT]/[GATE]**
 
-`docs/openfoam_design.md` は v13 Route A の監査、`docs/routeB_design.md` は v6 Route B の完了済み監査である。Route A の equation/transport/heat-flux 差分を保持した上で両 route を比較する。Route A の $\epsilon=\beta\Delta T\to0$ と Route B の厳密一致を仮定しない。Route A 固有の energy equation 差の全てが $\epsilon$ とともに消失するとは限らない。
+`docs/openfoam_design.md` は v13 Route A の既存ソース監査であり、v6 候補の監査結果ではない。Route A の equation/transport/heat-flux 差分を保持した上で Route B の別監査を実施する。Route A の $\epsilon=\beta\Delta T\to0$ と Route B の厳密一致を Route B の採用条件にしない。Route A 固有の energy equation 差の全てが $\epsilon$ とともに消失するとは限らない。
 
 両 route を同じ $Ra,Pr,L,\Delta T$、対応する格子・抽出手順で評価する。少なくとも平均 Nu、$U_{max}$ と位置、$V_{max}$ と位置、局所 Nu、保存量、対称性を比較し、(a) B 対原論文、(b) A 対 B、(c) A 対原論文を別表・別解釈で報告する。原論文に掲載のない保存量・対称性の数値は創作せず、支配方程式からの理論的条件と両 route の診断値を示す。非零の比較量 $Q$ について
 
@@ -261,14 +260,14 @@ $$
 
 を診断量の候補とする。位置は絶対差を用い、$Q_B\simeq0$ なら規格化を計算前に決める。**A–B 差には新たな Hard 閾値を設けない**。各 route の格子・反復誤差と後処理差を評価してから、差をモデル差として解釈する。
 
-実装可否は route ごとに判定する。Route B の採用根拠と最小実装の記録は `docs/routeB_design.md` および `docs/routeB_implementation.md` に残す。Route A の既存設計書は v1.0 時点の意思決定を含むため、本 v1.2 の研究上の役割・判定規則を優先する。
+実装可否は route ごとに判定する。Route B の v6 候補が原論文式に一致するかは未確認であり、ソース監査合格前に Verification ケースを作成しない。Route A の既存設計書は v1.0 時点の意思決定を含むため、本 v1.1 の研究上の役割・判定規則を優先する。Route A の初期圧力条件など実行時にしか確定しない事項は、別途実装ゲートで確認する。
 
 ## 6. 数値計算仕様 **[PROJECT]**
 
 ### 6.1 主計算
 
 - 主判定は定常計算とする。
-- initial internal field は $\boldsymbol u=0$、$T=T_0$ とする。fixed-T patch は $T_h/T_c$ を維持する。Route A の圧力・密度は5.1の OQ-02、Route B の kinematic `p_rgh`・solver生成`p`・pressure referenceは5.2節に従う。
+- 初期推定値は全領域 $\boldsymbol u=0$、$T=T_0$ とする。Route A の圧力・密度は5.1の OQ-02 に従う。Route B 候補では初期圧力と基準処理を v6 監査後に固定する。
 - 空間離散は、原論文との比較に適した二次精度中心差分相当を基本とする。
 - 対流項は `Gauss linear` 相当、勾配は linear、拡散項は uniform orthogonal mesh 上で linear/orthogonal を基本とする。
 - 一次精度 upwind を主結果に使ってはならない。安定化のため limiter 等を使う場合は、その影響を別ケースで定量化する。
@@ -289,21 +288,21 @@ $$
 
 ### 6.3 段階的な監査・計算行列 **[PROJECT]/[GATE]**
 
-現在の段階と後続順序は次のとおりとし、この表を phase/status の正本とする。先行する Route A 計算は Route B 検証の代用にしない。
+この版では計算を実行しない。後続段階の順序は次のとおりとし、先行する Route A 計算は Route B 検証の代用にしない。
 
 | Phase | 条件 | 目的・次段階への条件 |
 |---:|---|---|
-| 0 | 完了：v13 Route A ソース監査 | `docs/openfoam_design.md` |
-| 1 | 完了：Foundation v6 Route B read-only ソース監査 | `docs/routeB_design.md` |
-| 2 | 完了：Route A、$Ra=0$、medium 80²以上 | Gate C |
-| 3 | 完了：Route A、$Ra=10^4$、40² | coarse smoke。benchmark 合格とは判定しない |
-| 4 | 完了：Route B、$Ra=0$、medium 80²以上、および $Ra=10^4$、40² | Gate C、coarse smoke、minimal A/B diagnostic |
-| 5 | 次・未実行：Route B、4 Ra × 3格子 = 12ケース | 原論文 Verification、格子収束、保存則、対称性 |
-| 6 | 未実行：Route A、4 Ra × 3格子 = 12ケース | A 対 B、A 対原論文の別々の比較 |
-| 7 | 未実行：Route A、$Ra=10^6$、fine、$\beta\Delta T$ 感度 | Gate H |
-| 8 | 未実行：非定常、可変物性、茶葉等 | 下流研究 |
+| 0 | 既存 v13 Route A ソース監査を確認 | `docs/openfoam_design.md` の実装事実を使用し、OQ-02 は実装時確認事項として保持 |
+| 1 | Foundation v6 Route B 候補の read-only ソース監査 | 5.2の全項目を確認して採否を判断。未合格なら B の実装に進まない |
+| 2 | Route A、$Ra=0$、medium 80²以上 | 温度境界、熱流束符号、後処理、初期静水圧整合を確認 |
+| 3 | Route A、$Ra=10^4$、40² | 初期実装の smoke test。benchmark 合格とは判定しない |
+| 4 | Route B、$Ra=0$、medium 80²以上、および $Ra=10^4$、40² | B 固有の入力・境界・Nu と実行健全性を確認 |
+| 5 | Route B、4 Ra × 3格子 = 12ケース | 原論文値との主 Verification、格子収束、保存則、対称性 |
+| 6 | Route A、4 Ra × 3格子 = 12ケース | A 対 B、A 対原論文の別々の比較と A の数値誤差評価 |
+| 7 | Route A、$Ra=10^6$、fine、$\beta\Delta T$ 感度 | A の観測量感度を評価。A–B 同一性の証明とはしない |
+| 8 | 必要な場合の非定常、可変物性、茶葉等 | 主 Verification とは別の下流研究 |
 
-Route A の Phase 2–3 完了は、Route B の主判定を代替しない。full matrix、Gate E/F/G/K、Gate H、transient、`BENCHMARK_CORE_PASS` は未評価である。
+Route B が Phase 1 で不適合なら、その理由と最小代替案を示し、採用手段の再決定後に B の Phase 4 へ進む。Route A は Phase 2–3 まで先行できるが、B の主判定を飛ばして A の基準値一致を Verification と呼ばない。
 
 ### 6.4 Boussinesq 小パラメータ感度 **[PROJECT]/[GATE]**
 
@@ -327,7 +326,10 @@ Route A について、$Ra=10^6$ の fine 格子で $\beta\Delta T=10^{-3}$ と 
 
 主値は有限体積法の壁面 face 値から面積重み付きで積分する。等間隔節点データを仮定する Simpson 則を、cell-face データへ機械的に適用しない。
 
-Route A は A1（温度法線勾配）と A2（監査済み wall heat-flux/face-flux 積分）を使う。Route B は B1（actual mesh/field の fixedValue patch `snGrad(T)=(Twall-Towner)*deltaCoeffs`）と、B2（壁内向き座標での独立 `Tw,T1,T2` の二次多項式補間から得る壁面一次導関数）を使う。B1 は v6 の公式 saved `wallHeatFlux` ではなく、B2 はそれと独立な温度再構成である。
+独立した2経路を用いる。
+
+1. 温度の壁面法線勾配から、3.5の座標符号に変換して $Nu$ を計算する。
+2. 該当 route・版で監査済みの wall heat-flux 機能または独立な face flux 積分で得た熱流束を $k\Delta T/L$ で無次元化する。v13 の機能を v6 候補へ無条件に転用しない。
 
 $Ra=0$ の純熱伝導解で両経路の符号と規格化を校正する。高温壁・低温壁とも、キャビティ内を高温側から低温側へ流れる熱量を正として報告する。
 
@@ -362,16 +364,16 @@ $$
 
 - 高温壁から流入する熱量と低温壁から流出する熱量を比較する。
 - 複数の鉛直断面で $Nu_x$ を比較する。
-- Gate G は13.3節の native mass/volume flux、solver-consistent volume flux、reconstructed cell-U divergence Diagnostic の三層定義を用いる。B の native $\phi_v$ は constant $\rho_0$ の下で主 Hard 指標となる。旧 Route B manifest の `epsilon_m` は reconstructed `epsilon_v` の legacy compatibility label であり native mass conservation ではない。旧 manifest は変更しない。
-- 問題は中心 $(0.5,0.5)$ まわりの180°回転に対して、$\theta(X,Y)=1-\theta(1-X,1-Y)$、$\boldsymbol U(X,Y)=-\boldsymbol U(1-X,1-Y)$ の対称性を持つ。対応場の volume-weighted L2 relative defect は、温度を $\max(L2(\theta),10^{-12})$、速度を $\max(L2(U),10^{-12})$ で正規化する。
+- 質量保存について、両 route の $\nabla\cdot(\rho\boldsymbol u)$ と、原論文が要求する $\nabla\cdot\boldsymbol u$ の両方を評価する。Route B の $\rho$ の扱いは候補ソースで確定し、定数 $\rho_0$ なら両者が比例することを記録する。
+- 問題は中心 $(0.5,0.5)$ まわりの180°回転に対して、$\theta(X,Y)=1-\theta(1-X,1-Y)$、$\boldsymbol U(X,Y)=-\boldsymbol U(1-X,1-Y)$ の対称性を持つ。離散解の対称誤差を定量化する。
 
 保存則・対称性に失敗した結果は、原論文の表と偶然一致しても合格にしない。
 
 ## 9. 実装時に Codex が作成すべき成果物
 
-既存の最小実装成果物は `docs/routeA_implementation.md`、`docs/routeB_implementation.md`、`results/routeA/`、`results/routeB/` にある。full matrix の次段階では、少なくとも以下を整備する。
+本段階では作成しない。次の実装段階で、少なくとも以下を作成する。
 
-1. `docs/openfoam_design.md`: v13 Route A の既存監査。後続の実装設計では Route B の別監査記録も追跡可能にする。**本 v1.2 更新では変更しない**。
+1. `docs/openfoam_design.md`: v13 Route A の既存監査。後続の実装設計では Route B の別監査記録も追跡可能にする。**本 v1.1 更新では変更しない**。
 2. `cases/`: route・版を分離した共通テンプレートと、Ra・格子別の再現可能なケース。
 3. `Scripts/`: ケース生成、実行、監視、後処理、表・図生成。大文字小文字を含む現行ディレクトリ名を維持する。
 4. `results/run_manifest.json`: OpenFOAM版、Git情報、日時、ホスト、辞書ハッシュ、格子、物性、無次元数。
@@ -396,29 +398,21 @@ $$
 - benchmark 合格を、実際の茶抽出現象の validation と表現しない。
 - Route A の原論文値との差を、モデル差の検討なしに純粋な数値誤差と断定しない。
 
-## 11. 解決済み事項と未確定事項 **[PROJECT]/[OPEN]**
-
-### 解決済み
-
-| 項目 | 根拠 |
-|---|---|
-| OQ-01 work root | v13 canonical root と v6 execution root を分離して manifest に記録 |
-| Route B の採用・provenance | Foundation v6 audit と最小実装、5.2節・13.1節 |
-| OQ-02 Route A 初期圧力 | cell+4壁での $p_{rgh}=p-\rho gh-p_{Ref}$ 確認、13.2節 |
-| Route B pressure/transport/postprocessing | kinematic `p_rgh`、constant transport、B1/B2、5.2節・7.1節 |
-| Gate G 演算子 | 13.3節の三層定義 |
-
-### 未確定事項 **[OPEN]**
+## 11. 現時点の未確定事項 **[OPEN]**
 
 | 項目 | 決定方法 |
 |---|---|
+| OQ-01 作業領域名 | 既存設計書は依頼時の `deVahlDavis` と実測 `deVahlDavisBenchmark` の差を記録。実装前に使用領域を確定し、既存ファイルを無断で移動しない |
+| Route B の v6 候補採否 | Foundation v6 ローカルソースで5.2の項を監査し、原論文式との対応を判定 |
+| Route A の OQ-02 初期圧力実装整合 | Phase 2 の開始前に $p$, $p_{rgh}$, $\rho$, $gh$, 参照値と v13 初期化処理を確認 |
 | Route A の OQ-03 方程式差の定量化 | A–B の同条件比較、各 route の格子・保存診断、Gate H の観測量感度を組み合わせて評価。実装停止条件ではない |
 | Route A の下流研究への適用範囲 | A 特性評価と Gate H、必要なら非定常試験の結果から別途判断 |
-| full matrix と格子収束 | 4 Ra × 3格子を実行し Gate D/E/F/G/K を評価 |
-| normalized L2 symmetry calculation | Phase 5 で13.3節の定義を実データに適用 |
-| Gate H characterization | Ra=1e6 fine の2感度点で実施 |
-| 局所 $Nu$ endpoint/extrema | face値、角部、補間と格子依存を Diagnostic として評価 |
-| 非定常の最終終了時刻と閉領域質量 | transient を実施する場合に無次元時間履歴とEOS/pressure補正を確認 |
+| 線形ソルバ、前処理、緩和係数 | 方程式監査後、解の不変性と計算効率を確認して設計書に記載 |
+| 反復上限 | 比較量・保存量の収束に十分な値を smoke test 後に固定 |
+| 非定常の最終終了時刻 | 無次元時間履歴から定常判定できる値を予備計算で決定 |
+| 局所 $Nu$ 角部極値の補間方法 | face 値の定義と原論文比較の整合性を確認して固定 |
+| 320²格子の追加 | 3格子で単調・漸近収束が確認できない量に限り追加 |
+| OQ-07 Route A 非定常の閉領域質量 | 下流 Phase 8 へ進む場合、EOS 密度更新・全質量履歴・圧力補正の整合を別途確認 |
 | 過去研究の v5/custom 実装との差 | v5 の正確な版と改変内容を確認できた場合にのみ同一性を議論 |
 
 ## 12. 根拠資料
@@ -432,7 +426,7 @@ $$
 5. OpenFOAM Foundation, [Numerical schemes, v13](https://doc.cfd.direct/openfoam/user-guide-v13/fvschemes)
 6. OpenFOAM Foundation, [Boundary conditions, v13](https://doc.cfd.direct/openfoam/user-guide-v13/boundary-conditions)
 7. OpenFOAM Foundation, [Official v13 `hotRoomBoussinesq` tutorial](https://github.com/OpenFOAM/OpenFOAM-13/tree/master/tutorials/fluid/hotRoomBoussinesq)
-8. 本プロジェクト、[`docs/openfoam_design.md`](openfoam_design.md)（Foundation v13 Route A のローカルソース監査、2026-09-29、v1.0 仕様に対する記録。本 v1.2 では参照専用）
+8. 本プロジェクト、[`docs/openfoam_design.md`](openfoam_design.md)（Foundation v13 Route A のローカルソース監査、2026-09-29、v1.0 仕様に対する記録。本 v1.1 では参照専用）
 8. OpenFOAM Foundation, [Official v13 `fluid` module source](https://github.com/OpenFOAM/OpenFOAM-13/tree/master/applications/modules/fluid)
 9. OpenFOAM Foundation, [Official v13 `isothermalFluid` module source](https://github.com/OpenFOAM/OpenFOAM-13/tree/master/applications/modules/isothermalFluid)
 10. OpenFOAM Foundation, [Official v13 `wallHeatFlux` source](https://cpp.openfoam.org/v13/wallHeatFlux_8C_source.html)
@@ -445,49 +439,3 @@ $$
 4. プロジェクト内の議論「deVahlDavisの自然体流のベンチ」「deVahlDavisの自然体流のベンチ（計算格子関係の質問）」「deVahlDavisの自然体流のベンチ（Nu関連の質問）」「自然対流の検証」。段階的検証、格子系列、Nu の定義、定常・非定常の分離を反映した。
 
 原論文の数表は原論文を基準とし、公開環境での転記誤りを避けるため、学術機関・公的研究機関による再掲表とも照合した。実装後の報告では、原論文値と計算値をこの表の表示桁で比較する。
-
-## 13. v1.2 実装確定事項、保存則、および進捗 **[OF6]/[OF13]/[PROJECT]**
-
-### 13.1 Route B の採用
-
-Route B は監査済みの OpenFOAM Foundation v6 `buoyantBoussinesqSimpleFoam` を採用する。実行 provenance は Foundation v6 build `6-af7d7f427be7`、Git HEAD `af7d7f427be78e9b9beb6aceca8fe7d5d4636876`、binary `/home/mirai/OpenFOAM/OpenFOAM-6/platforms/linux64GccDPInt32Opt/bin/buoyantBoussinesqSimpleFoam` である。
-
-Route B は volume flux による連続式、constant `nu`、`alpha=nu/Pr`、laminar/Stokes、`alphat=0`、steady SIMPLE、中心差分相当の scheme を用いる。radiation、MRF、fvOptions、particle coupling は使わない。kinematic `p_rgh` を入力し、`0/p` は置かず、solver が `p` を生成する。圧力参照を manifest に記録する。
-
-v6 標準 `wallHeatFlux` は使用しない。Nu の B1 は fixedValue patch の actual field/mesh 勾配 `snGrad(T)=(Twall-Towner)*deltaCoeffs` を壁内向き符号へ変換する。B2 は壁内向き座標で `Tw,T1,T2` の二次多項式補間から得る壁面一次導関数 `(-8*Tw/3 + 3*T1 - T2/3)/h` を独立に評価する。両経路の符号・規格化は Gate C で確認する。
-
-### 13.2 Route A の初期圧力（OQ-02、解決）
-
-Route A は Foundation v13 build `13-441953dfbb42` を使用する。内部の `T=T0` では `p=rho0*gh+pRef`、fixed-T 壁では `p=rho(Twall)*gh+pRef` とする。constructor relation `p_rgh=p-rho*gh-pRef` は cell と4つの physical wall で検証済みである。`pRefValue` は一様な `pRef` と別の圧力参照値である。
-
-### 13.3 Gate G の凍結定義
-
-Phase 5 の前に、実際に保存された boundary flux を使う離散指標を凍結する。empty face の寄与はゼロとし、cell i について
-
-$$
-D_h(\phi)_i=\frac{1}{V_i}\sum_{f\in i}\phi_f^{out},\qquad
-\langle|D_h|\rangle_V=\frac{\sum_iV_i|D_h(\phi)_i|}{\sum_iV_i},\qquad
-U_p=\max|\boldsymbol u|
-$$
-
-と定義する。
-
-1. solver-native Hard 指標は、Route A では mass flux `phi_m` に対して `epsilon_native,m=L<|D_h(phi_m)|>/(rho0*Up)<=1e-6`、Route B では native volume flux `phi_v` に対して `epsilon_native,v=L<|D_h(phi_v)|>/Up<=1e-6` とする。B は `rho0` が定数であるため、既存 mass-conservation tolerance をこの native 指標に適用する。
-2. solver-consistent volume Hard 指標は、Route A では native stored mass flux `phi_m` から、v13 `correctBuoyantPressure` が用いる同じ face-density definition `rhof=fvc::interpolate(rho)` により派生する diagnostic `phi_v=phi_m/rhof` に対して `epsilon_sc,v=L<|D_h(phi_v)|>/Up<=2e-3` とする。Route B では `phi_v` は native field と同一であり、この指標は(1)と同じで、より厳しい native threshold に従う。
-3. reconstructed cell-U divergence `epsilon_Urec` は Diagnostic のみで、新たな Hard threshold を設けない。
-
-連続体の `rho0 div(u)` の等価性は、異なる離散演算子間の数値的一致を意味しない。旧 Route B manifest の `epsilon_m` は reconstructed `epsilon_v` を複写した legacy compatibility label であり、native mass conservation の証拠ではない。旧 manifest は不変とする。
-
-180-degree symmetry は、`theta(X,Y)+theta(1-X,1-Y)-1` と `U(X,Y)+U(1-X,1-Y)` の volume-weighted L2 relative defect を、それぞれ `max(L2(theta),1e-12)` と `max(L2(U),1e-12)` で正規化する。Ra=0 の零速度には Gate C と absolute velocity defect を使う。
-
-### 13.4 Gate H と進捗
-
-Gate H は Route A の Ra=1e6 fine で `beta*DeltaT=1e-3` と `1e-4` を比較する。QoI の 0.2% threshold は変更しない。native mass conservation は両点で Gate-G compliant を維持し、solver-consistent `epsilon_sc,v` の decrease/non-worsening trend を確認する。`epsilon_Urec` は別の Diagnostic として報告し、代用しない。Gate H は `BENCHMARK_CORE_PASS` の外、`ROUTE_A_CHARACTERIZED` の実施・報告要件、`DOWNSTREAM_TRANSIENT_READY` の Hard PASS 要件である。
-
-実行進捗の正本は6.3節の表である。Route A/B の Gate C と coarse smoke は PASS、一方で両 full matrices、Gate E/F/G/K、Gate H、transient、`BENCHMARK_CORE_PASS` は NOT EVALUATED である。B-SMOKE の B1/B2 差 0.1013155% は coarse diagnostic であり、Gate C の 0.1% threshold を変更しない。
-
-### 13.5 現在の成果物と未解決事項
-
-監査・最小実装の証拠は `docs/openfoam_design.md`、`docs/routeB_design.md`、`docs/routeA_implementation.md`、`docs/routeB_implementation.md`、`results/routeA/`、`results/routeB/` にある。Gate K は v1.1 archive hash とこれらの最小成果物へリンクし、既存 run manifest は生成時の v1.1 hashes を保持する。
-
-解決済みは Route B 採用、OQ-01 work root、OQ-02、Gate G operator definition、最小 solver settings、Nu method versions である。未解決または未実行は OQ-03（Route A 方程式差）、full grid convergence、local Nu endpoint/extrema、Gate H、nonsteady closed-volume mass、transient、historical v5/custom implementation である。
