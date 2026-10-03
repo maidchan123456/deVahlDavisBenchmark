@@ -1,0 +1,496 @@
+{
+  "schema": "routeB-gateG-epsilon-phi-threshold-review-v1",
+  "review_date": "2026-10-04",
+  "timezone": "Asia/Tokyo",
+  "solver_distribution": "OpenFOAM Foundation",
+  "solver_version": "6",
+  "solver": "buoyantBoussinesqSimpleFoam",
+  "current_formal_gate_G": "FAIL",
+  "criteria_modified": false,
+  "solver_executed": false,
+  "spec_change_executed": false,
+  "existing_results_used_for_threshold": false,
+  "post_hoc_consistency_check_performed": false,
+  "epsilon_phi_definition": "q_i=sum_f(s_if*phi_f); d_i=q_i/V_i; M_phi=sum_i(V_i*abs(d_i))/V_total=sum_i(abs(q_i))/V_total; epsilon_phi=(L/Up)*M_phi; Up=max_cell(abs(U)).",
+  "units": {
+    "phi": "m3/s",
+    "cell_flux_imbalance": "m3/s",
+    "cell_volume": "m3",
+    "divergence": "1/s",
+    "L_over_Up": "s",
+    "epsilon_phi": "dimensionless"
+  },
+  "normalization": "L/Up is an advective time scale. Uniform-cell arithmetic mean equals volume mean. Cross-Ra dimensionless comparability does not prove a common numerical floor or acceptable threshold.",
+  "boundary_handling": {
+    "internal": "owner plus phi; neighbour minus phi",
+    "physical_walls": "add stored boundary phi, without forcing it to zero",
+    "empty_front_back": "exclude solution-direction flux",
+    "limitations": "hard-coded single-block patch order and uniform volume; not a general nonuniform polyMesh implementation"
+  },
+  "Ra_zero_handling": "Up=0 returns None; proposed undefined/NOT_APPLICABLE epsilon_phi, Gate C absolute velocity/conduction checks, no arbitrary Up floor.",
+  "pressure_residual_definition": "PCG: R_initial=||b_s-A_s*p0||_1/Np; R_final=||r_recursive||_1/Np. Np=sum_i(abs((A_s*p0)_i-a_bar_i)+abs(b_s_i-a_bar_i))+1e-20; a_bar=(A_s*1)*arithmetic_global_mean(p0). Np fixed within one solve.",
+  "pressure_stopping_condition": "R_final<tolerance OR (relTol>1e-20 AND R_final<relTol*R_initial). Convergence/maxIter/singularity must be distinguished.",
+  "direct_residual_to_epsilon_phi_mapping_available": false,
+  "direct_mapping_field_interpretation": "No unconditional usable mapping from reported normalized residual or configured tolerance alone. Conditional symbolic relations were derived separately below.",
+  "conditional_symbolic_mapping_available": true,
+  "conditional_mapping": {
+    "physical_identity": "q=b0-A0*p_star, for volume-integrated physical pressure matrix and matching boundary/explicit correction flux, before pressure relaxation.",
+    "ideal_relation": "epsilon_phi=Kp*R_final with Kp=L*Np/(Up*V_total), only with true=recursive residual and no reference/operator/output mismatch.",
+    "general_bound": "epsilon_phi <= L/(Up*V_total)*(Np*R_final + E_recursive + ||delta_ref||_1 + ||delta_operator||_1 + ||delta_output||_1).",
+    "closed_single_reference_bound": "epsilon_phi <= L/(Up*V_total)*(2*Np*R_final + 2*E_recursive + abs(B_net_boundary) + E_other), provided nonreference rows and flux are consistent, with remaining defects included in E_other.",
+    "absolute_tolerance_use": "Substitute tolerance only after confirmed absolute convergence (relTol=0 suffices to disable relative stopping). Active relative stopping uses max(tolerance,relTol*R_initial). No configured-tolerance bound for failed solves.",
+    "numerical_bound_available_now": false,
+    "saved_pressure_caveat": "Corrected phi uses unrelaxed p_star; saved p_rgh is relaxed and may be gauge-shifted. Saved p_rgh alone cannot generally reproduce the pressure solve residual."
+  },
+  "native_continuity": {
+    "sum_local": "deltaT*volume_mean(abs(div(phi)))",
+    "global": "deltaT*volume_mean(div(phi))",
+    "cumulative": "sum over iterations of signed global",
+    "mapping": "epsilon_phi=(L/Up)/deltaT*sum_local only for matching state, field and numerical precision",
+    "recommended_role": "diagnostic cross-check, not an unqualified replacement Hard metric",
+    "steady_deltaT_caveat": "iteration management scale; not a physical time-integration error proof"
+  },
+  "fixed_threshold_supported": false,
+  "fixed_scheme_possible_in_future": true,
+  "recommended_threshold_scheme": "SCHEME_3_WITH_CONDITIONAL_SCHEME_2_AND_SCHEME_4_VERIFICATION",
+  "decision_tree_case": "C",
+  "decision_tree": {
+    "A": "Not supported: no independent transferable numerical tau.",
+    "B": "Not sufficient: operator-only verification does not determine solver mapping or physical budget.",
+    "C": "Primary: quantitatively verify tolerance-to-flux mapping including reference, true residual drift and serialization.",
+    "D": "Possible if local and absolute budgets should become Hard; not formally adopted."
+  },
+  "schemes": [
+    {
+      "scheme": 1,
+      "name": "Fixed dimensionless threshold",
+      "status": "NUMERIC_UNRESOLVED",
+      "advantage": "common relative conservation budget",
+      "limitation": "needs independent budget and local guard; varying Ra/grid/output floors"
+    },
+    {
+      "scheme": 2,
+      "name": "Solver-tolerance-linked",
+      "status": "CONDITIONAL_SYMBOLIC_ONLY",
+      "naive_direct_mapping": "REJECT",
+      "advantage": "ties to solved FV equation",
+      "limitation": "requires Kp, reference/BC consistency, true residual drift and output bounds; must not loosen physical budget when solver tolerance is loosened"
+    },
+    {
+      "scheme": 3,
+      "name": "Absolute plus relative/error budget",
+      "status": "RECOMMENDED_DESIGN_UNRESOLVED_VALUES",
+      "advantage": "separate mean/local and absolute/relative limits",
+      "example": "epsilon_phi<=eta_mean; abs(q_i)<=V_i*(a_local+eta_local*Up/L). All constants unresolved; Ra=0 remains Gate C.",
+      "limitation": "requires independent physical budget and scope; no constants chosen"
+    },
+    {
+      "scheme": 4,
+      "name": "Empirically verified operator floor",
+      "status": "SUPPORTING_VERIFICATION_ONLY",
+      "advantage": "verifies implementation and measurement feasibility",
+      "limitation": "floor is not a physical acceptance budget and a single manufactured field is not a universal floor"
+    }
+  ],
+  "tau_phi": null,
+  "tau_phi_status": "UNRESOLVED",
+  "threshold_status": "UNRESOLVED",
+  "numerical_threshold_proposed": false,
+  "safety_factor": null,
+  "threshold_basis": [
+    "volume-integrated finite-volume continuity and pressure-corrected phi",
+    "v6 PCG residual norm/normalization and stopping rule",
+    "reference-cell and boundary assembly source",
+    "conditional L1 bounds, output-error propagation and floating-point accumulation",
+    "independent physical conservation error budget still required",
+    "operator verification supports implementation only",
+    "inspected primary documents contain no transferable numerical threshold"
+  ],
+  "assumptions": [
+    "uniform single-block mesh and known patch ordering for current analyzer",
+    "constant reference density, incompressible Boussinesq volume continuity",
+    "positive Up for Ra>0 normalization",
+    "same pre-relaxation pressure solve and final correction flux for algebraic identity",
+    "closed domain and one reference cell for special factor-two bound",
+    "same scalar precision and state required when comparing native and saved metrics"
+  ],
+  "limitations": [
+    "no numeric Np/Kp or true/recursive residual drift available from this review",
+    "no quantitative full solver/conditioning/serialization floor established",
+    "reference row is not a physical continuity equation",
+    "synthetic equivalent Cartesian operator only; actual parser/function not invoked",
+    "mean cannot guarantee local maximum",
+    "Up varies with Ra/grid and becomes singular at zero",
+    "DP bashrc checked, all executable build precision not independently re-audited",
+    "original SIMPLE papers, AIAA original standard and peer-reviewed literature not comprehensively reviewed",
+    "no benchmark epsilon values used for threshold derivation"
+  ],
+  "local_metric_review": {
+    "mean_absolute": "primary Candidate B Hard candidate; tau unresolved",
+    "maximum_absolute": "required future diagnostic with location; potential Hard guard after independent local budget",
+    "percentile": "volume-weighted P95/P99 diagnostic; predefine weighting/interpolation; does not replace maximum",
+    "global_signed": "diagnostic telescoping/boundary check; cancellation prevents local acceptance inference",
+    "recommended_future_metrics": [
+      "mean_abs_div_phi",
+      "epsilon_phi",
+      "max_abs_div_phi",
+      "normalized_max_abs_div_phi",
+      "max_cell_id_and_coordinate",
+      "volume_weighted_P95_and_P99_abs_div_phi",
+      "max_abs_cell_flux_imbalance_m3_s_and_cell_volume",
+      "signed_net_boundary_flux_m3_s",
+      "signed_volume_mean_div_phi",
+      "absolute_total_boundary_flux_m3_s",
+      "native_local_global_cumulative",
+      "true_vs_recursive_pressure_residual_difference"
+    ]
+  },
+  "literature_sources": [
+    {
+      "id": "W01",
+      "title": "OpenFOAM 6 PCG.C Source File",
+      "provider_or_authors": "OpenFOAM Foundation",
+      "url": "https://cpp.openfoam.org/v6/PCG_8C_source.html",
+      "doi": null,
+      "accessed_date": "2026-10-04",
+      "support_and_comparability": "Normalized L1 residual and recursive residual update; no transferable epsilon_phi threshold.",
+      "numerical_tau_supported": false
+    },
+    {
+      "id": "W02",
+      "title": "OpenFOAM 6 lduMatrixSolver.C Source File",
+      "provider_or_authors": "OpenFOAM Foundation",
+      "url": "https://cpp.openfoam.org/v6/lduMatrixSolver_8C_source.html",
+      "doi": null,
+      "accessed_date": "2026-10-04",
+      "support_and_comparability": "Per-solve normalization factor depends on assembled matrix, source and entry pressure.",
+      "numerical_tau_supported": false
+    },
+    {
+      "id": "W03",
+      "title": "OpenFOAM 6 SolverPerformance.C Source File",
+      "provider_or_authors": "OpenFOAM Foundation",
+      "url": "https://cpp.openfoam.org/v6/SolverPerformance_8C_source.html",
+      "doi": null,
+      "accessed_date": "2026-10-04",
+      "support_and_comparability": "Absolute or active relative tolerance convergence; no physical conservation threshold.",
+      "numerical_tau_supported": false
+    },
+    {
+      "id": "W04",
+      "title": "Notes on Computational Fluid Dynamics: General Principles, 5.4 Residual",
+      "provider_or_authors": "Chris Greenshields and Henry Weller, CFD Direct",
+      "url": "https://doc.cfd.direct/notes/cfd-general-principles/residual",
+      "doi": null,
+      "accessed_date": "2026-10-04",
+      "support_and_comparability": "Explains residual normalization and stopping criteria; v6 source takes precedence for version-specific details.",
+      "numerical_tau_supported": false
+    },
+    {
+      "id": "W05",
+      "title": "Verification Assessment",
+      "provider_or_authors": "NASA Glenn / NPARC Alliance; John W. Slater",
+      "url": "https://www.grc.nasa.gov/www/wind/valid/tutorial/verassess.html",
+      "doi": null,
+      "accessed_date": "2026-10-04",
+      "support_and_comparability": "Conservation consistency checks and code/calculation verification; no compatible numerical threshold.",
+      "numerical_tau_supported": false
+    },
+    {
+      "id": "W06",
+      "title": "Examining Iterative Convergence",
+      "provider_or_authors": "NASA Glenn / NPARC Alliance; John W. Slater",
+      "url": "https://www.grc.nasa.gov/WWW/wind/valid/tutorial/iterconv.html",
+      "doi": null,
+      "accessed_date": "2026-10-04",
+      "support_and_comparability": "Monitor normalized residuals and engineering quantities; residual reduction orders cannot be imported as tau_phi.",
+      "numerical_tau_supported": false
+    }
+  ],
+  "local_source_references": [
+    {
+      "id": "S01",
+      "path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeB/analyze_case.py",
+      "line_ranges": [
+        [
+          89,
+          116
+        ],
+        [
+          258,
+          261
+        ],
+        [
+          357,
+          357
+        ]
+      ]
+    },
+    {
+      "id": "S02",
+      "path": "/home/mirai/OpenFOAM/OpenFOAM-6/applications/solvers/heatTransfer/buoyantBoussinesqSimpleFoam/pEqn.H",
+      "line_ranges": [
+        [
+          29,
+          46
+        ],
+        [
+          52,
+          52
+        ]
+      ]
+    },
+    {
+      "id": "S03",
+      "path": "/home/mirai/OpenFOAM/OpenFOAM-6/src/OpenFOAM/matrices/lduMatrix/solvers/PCG/PCG.C",
+      "line_ranges": [
+        [
+          93,
+          117
+        ],
+        [
+          172,
+          188
+        ]
+      ]
+    },
+    {
+      "id": "S04",
+      "path": "/home/mirai/OpenFOAM/OpenFOAM-6/src/OpenFOAM/matrices/lduMatrix/lduMatrix/lduMatrixSolver.C",
+      "line_ranges": [
+        [
+          158,
+          164
+        ],
+        [
+          174,
+          196
+        ]
+      ]
+    },
+    {
+      "id": "S05",
+      "path": "/home/mirai/OpenFOAM/OpenFOAM-6/src/OpenFOAM/matrices/LduMatrix/LduMatrix/SolverPerformance.C",
+      "line_ranges": [
+        [
+          70,
+          94
+        ]
+      ]
+    },
+    {
+      "id": "S06",
+      "path": "/home/mirai/OpenFOAM/OpenFOAM-6/src/OpenFOAM/matrices/LduMatrix/LduMatrix/SolverPerformance.H",
+      "line_ranges": [
+        [
+          288,
+          288
+        ]
+      ]
+    },
+    {
+      "id": "S07",
+      "path": "/home/mirai/OpenFOAM/OpenFOAM-6/src/finiteVolume/fvMatrices/fvScalarMatrix/fvScalarMatrix.C",
+      "line_ranges": [
+        [
+          154,
+          169
+        ]
+      ]
+    },
+    {
+      "id": "S08",
+      "path": "/home/mirai/OpenFOAM/OpenFOAM-6/src/finiteVolume/fvMatrices/fvMatrix/fvMatrix.C",
+      "line_ranges": [
+        [
+          507,
+          518
+        ],
+        [
+          948,
+          953
+        ],
+        [
+          1458,
+          1466
+        ]
+      ]
+    },
+    {
+      "id": "S09",
+      "path": "/home/mirai/OpenFOAM/OpenFOAM-6/src/finiteVolume/cfdTools/incompressible/continuityErrs.H",
+      "line_ranges": [
+        [
+          33,
+          40
+        ]
+      ]
+    },
+    {
+      "id": "S10",
+      "path": "/home/mirai/OpenFOAM/OpenFOAM-6/src/finiteVolume/finiteVolume/fvc/fvcDiv.C",
+      "line_ranges": [
+        [
+          45,
+          56
+        ]
+      ]
+    },
+    {
+      "id": "S11",
+      "path": "/home/mirai/OpenFOAM/OpenFOAM-6/src/finiteVolume/finiteVolume/fvc/fvcSurfaceIntegrate.C",
+      "line_ranges": [
+        [
+          51,
+          75
+        ]
+      ]
+    },
+    {
+      "id": "S12",
+      "path": "/home/mirai/OpenFOAM/OpenFOAM-6/etc/bashrc",
+      "line_ranges": [
+        [
+          75,
+          76
+        ]
+      ]
+    },
+    {
+      "id": "S13",
+      "path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/docs/acceptance_criteria.md",
+      "line_ranges": [
+        [
+          281,
+          330
+        ]
+      ]
+    },
+    {
+      "id": "S14",
+      "path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/docs/routeB_design.md",
+      "line_ranges": [
+        [
+          76,
+          85
+        ],
+        [
+          172,
+          172
+        ]
+      ]
+    }
+  ],
+  "floating_point_review": {
+    "float64_machine_epsilon": 2.220446049250313e-16,
+    "unit_roundoff": 1.1102230246251565e-16,
+    "unique_floor_derivable_now": false,
+    "summation_model": "abs(delta_q_i) approximately bounded by gamma_m*sum_f(abs(phi_f)), gamma_m=m*u/(1-m*u), for standard summation model only",
+    "output_flux_L1_bound": "||delta_q_io||_1 <= 2*sum_internal(abs(delta_phi)) + sum_boundary(abs(delta_phi))",
+    "factors": [
+      "cell and face counts",
+      "cancellation and summation order",
+      "matrix conditioning",
+      "linear convergence and recursive residual drift",
+      "parallel reduction",
+      "write precision",
+      "restart",
+      "ASCII/Binary scalar format",
+      "parser precision",
+      "Up output/mesh error"
+    ]
+  },
+  "synthetic_operator_verification": {
+    "float64_machine_epsilon": 2.220446049250313e-16,
+    "solver_executed": false,
+    "test_type": "equivalent Cartesian FV operator only, no OpenFOAM solver or actual parser invocation",
+    "geometry": "L=1 m, depth=1 m, L/Uref=1 s (Uref=1 m/s is prescribed synthetic reference, not benchmark Up)",
+    "psi": "sin(pi*x)^2*sin(2*pi*y)^2; wall vertex psi forced zero",
+    "rows": [
+      {
+        "n": 40,
+        "cell_count": 1600,
+        "exact_streamfunction_face_flux_mean_abs_div": 4.3788215241258305e-16,
+        "exact_streamfunction_face_flux_max_abs_div": 1.6653345369377345e-14,
+        "reconstructed_cell_U_mean_abs_div": 0.13292338370241616,
+        "reconstructed_cell_U_max_abs_div": 0.733435511248679,
+        "injected_flux_m3_s": 1e-08,
+        "injected_mean_abs_div": 1.9999999999999994e-08,
+        "injected_max_abs_div": 1.5999999999999996e-05,
+        "injected_global_signed_sum_m3_s": 0.0,
+        "injected_max_to_mean_ratio": 800.0
+      },
+      {
+        "n": 80,
+        "cell_count": 6400,
+        "exact_streamfunction_face_flux_mean_abs_div": 2.568339421346599e-16,
+        "exact_streamfunction_face_flux_max_abs_div": 2.2204460492503128e-14,
+        "reconstructed_cell_U_mean_abs_div": 0.03375098850299484,
+        "reconstructed_cell_U_max_abs_div": 0.38231500785873007,
+        "injected_flux_m3_s": 1e-08,
+        "injected_mean_abs_div": 1.9999999999999994e-08,
+        "injected_max_abs_div": 6.399999999999998e-05,
+        "injected_global_signed_sum_m3_s": 0.0,
+        "injected_max_to_mean_ratio": 3200.0
+      },
+      {
+        "n": 160,
+        "cell_count": 25600,
+        "exact_streamfunction_face_flux_mean_abs_div": 1.2812760343672422e-16,
+        "exact_streamfunction_face_flux_max_abs_div": 2.2204460492503128e-14,
+        "reconstructed_cell_U_mean_abs_div": 0.008470676991409243,
+        "reconstructed_cell_U_max_abs_div": 0.19312978105217302,
+        "injected_flux_m3_s": 1e-08,
+        "injected_mean_abs_div": 1.9999999999999994e-08,
+        "injected_max_abs_div": 0.00025599999999999993,
+        "injected_global_signed_sum_m3_s": 0.0,
+        "injected_max_to_mean_ratio": 12800.0
+      }
+    ],
+    "assertions": "known single internal-face perturbation: L1=2*delta_phi, max=delta_phi/V, signed sum=0"
+  },
+  "additional_verification_required": [
+    "pre-register independent mean/local physical error budget without benchmark values",
+    "end-to-end actual analyzer/parser FV incidence tests with known divergence and boundary flux",
+    "quantify Np/Kp, A0/b0 and As/bs, unrelaxed p_star, true and recursive residuals and matrix flux on independent manufactured problem",
+    "verify single-reference bound and boundary/explicit correction consistency",
+    "quantify scale/grid/precision/output/restart/parallel floor and uncertainty using independent test suite",
+    "specify max/percentile/global recording and possible local Hard guard",
+    "pre-register final threshold, safety factor and version before post-hoc benchmark consistency checks"
+  ],
+  "candidate_B_status": "PROVISIONAL",
+  "new_spec_Ra1e3_gate_G": "NOT_EVALUATED",
+  "provisional_specification": {
+    "hard": "epsilon_phi<=tau_phi; not evaluable until tau formally justified/adopted",
+    "diagnostics": [
+      "epsilon_v",
+      "epsilon_m_reconstructed_legacy"
+    ],
+    "legacy_policy": "preserve historical epsilon_m semantics and old-version result; no silent key substitution",
+    "local_guard": "not implemented, budget unresolved",
+    "unchanged_Gate_G_conditions": {
+      "heat_imbalance_max": 0.002,
+      "section_deviation_max": 0.005,
+      "temperature_symmetry_max": 0.002,
+      "velocity_symmetry_max": 0.002
+    }
+  },
+  "solver_rerun_required": false,
+  "solver_rerun_scope": "No CFD rerun for this review or metric adoption itself. Further threshold research may require separately scoped independent solver instrumentation/verification, not executed here.",
+  "postprocessing_change_required_if_adopted": true,
+  "spec_version_change_required_if_adopted": true,
+  "user_decision_required": true,
+  "required_user_decision": [
+    "proceed with Case C quantitative independent verification and budget design",
+    "decide whether local guard should become Hard alongside Candidate B mean; formal adoption only after threshold justification"
+  ],
+  "repository_outputs": [
+    "results/routeB/gateG_epsilon_phi_threshold_review.md",
+    "results/routeB/gateG_epsilon_phi_threshold_review.json"
+  ],
+  "git_status_at_start": [
+    "?? cases/routeA/Ra0_medium/",
+    "?? cases/routeA/Ra1e4_coarse/"
+  ],
+  "preexisting_untracked_directories_touched": false
+}
