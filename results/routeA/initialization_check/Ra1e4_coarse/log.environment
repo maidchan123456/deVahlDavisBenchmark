@@ -1,0 +1,9 @@
+OpenFOAM-13
+/opt/openfoam13/platforms/linux64GccDPInt32Opt/bin/foamRun
+WM_PROJECT=OpenFOAM
+WM_PROJECT_VERSION=13
+WM_PROJECT_DIR=/opt/openfoam13
+FOAM_RUN=/home/mirai/OpenFOAM/mirai-13/run
+WM_OPTIONS=linux64GccDPInt32Opt
+mirai-Precision-5860-Tower
+2026-09-30T04:25:31+09:00

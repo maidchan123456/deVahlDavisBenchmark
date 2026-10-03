@@ -1,0 +1,3 @@
+case_id,heat_imbalance,mean_abs_mass_divergence_kg_m3_s,mean_abs_volume_divergence_1_s,epsilon_m,epsilon_v,note
+A-COND,1.1571714427628507e-08,0.0,,,,Ra=0 uses Gate C absolute velocity criterion
+A-SMOKE,2.197039218332305e-08,7.858739553475069e-13,0.00012107961076529232,2.833183637313924e-11,0.004365086407283662,coarse smoke diagnostic; formal Gate G applies to fine cases

@@ -1,0 +1,8 @@
+{
+  "failure_id": "F-ANALYZE-001",
+  "case_id": "B-COND",
+  "stage": "analysis",
+  "outcome": "Initial labelList parser required a closing parenthesis at end-of-file and did not allow the standard OpenFOAM footer comment.",
+  "solver_run_valid": true,
+  "response": "Adjusted only the Python ASCII labelList parser to stop at the list closing parenthesis; no CFD data or settings changed."
+}

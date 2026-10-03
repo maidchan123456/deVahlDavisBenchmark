@@ -1,0 +1,8 @@
+{
+  "failure_id": "F-ENV-001",
+  "case_id": "B-SMOKE",
+  "stage": "pre-generation environment activation",
+  "outcome": "The wrapper enabled set -e before sourcing the OpenFOAM-6 bashrc; an internal nonzero shell cleanup status stopped the wrapper before generation (pop_var_context diagnostic).",
+  "case_created": false,
+  "response": "Retried with the required activation command before enabling set -e, matching the validated run_case.sh ordering."
+}

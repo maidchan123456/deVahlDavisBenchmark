@@ -1,0 +1,48 @@
+
+postProcess has been superseded and replaced by the more general foamPostProcess
+utility which will be executed instead:
+
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  13
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 13-441953dfbb42
+Exec   : foamPostProcess -case cases/routeA/Ra0_medium -func div(U) -latestTime
+Date   : Sep 30 2026
+Time   : 04:18:39
+Host   : "mirai-Precision-5860-Tower"
+PID    : 74032
+I/O    : uncollated
+Case   : cases/routeA/Ra0_medium
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 3000
+
+Time = 3000s
+
+Reading fields:
+    volVectorFields: U
+
+
+
+Executing functionObjects
+--> FOAM Warning : 
+--> FOAM FATAL IO ERROR: 
+Cannot find scheme for div(U) in dictionary "cases/routeA/Ra0_medium/system/fvSchemes/divSchemes"
+
+file: cases/routeA/Ra0_medium/system/fvSchemes/divSchemes from line 18 to 23.
+
+    From function Foam::ITstream& Foam::fvSchemes::lookupScheme(const Foam::word&, const Foam::dictionary&, const Foam::ITstream&) const
+    in file finiteVolume/fvSchemes/fvSchemes.C at line 285.
+
+End
+

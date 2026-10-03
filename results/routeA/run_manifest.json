@@ -1,0 +1,616 @@
+{
+  "schema": "routeA-minimal-v1",
+  "generated_at": "2026-09-30T04:29:28.368720+09:00",
+  "workspace": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark",
+  "host": "mirai-Precision-5860-Tower",
+  "environment": {
+    "activation": "source /opt/openfoam13/etc/bashrc",
+    "foamVersion": "OpenFOAM-13",
+    "build": "13-441953dfbb42",
+    "foamRun": "/opt/openfoam13/platforms/linux64GccDPInt32Opt/bin/foamRun",
+    "WM_PROJECT": "OpenFOAM",
+    "WM_PROJECT_VERSION": "13",
+    "WM_PROJECT_DIR": "/opt/openfoam13",
+    "FOAM_RUN": "/home/mirai/OpenFOAM/mirai-13/run",
+    "WM_OPTIONS": "linux64GccDPInt32Opt",
+    "distribution": "OpenFOAM Foundation (not OpenCFD/ESI)"
+  },
+  "immutable_document_sha256": {
+    "benchmark_spec.md": "2be4e290ac56da6f1ba112d8defe908024757bdaf2df7e40d5504ee9da4ca159",
+    "acceptance_criteria.md": "ab1f7938e8a9d42e8fe0395c0fef8b4b2f46786e9ddbe3e74db555b9aebe1fa2",
+    "openfoam_design.md": "3b2a661dd092d9e89f635bcca6059d2e7db5da8d7e8bea45f59712200c97f142",
+    "routeB_design.md": "abb6c0fb81beb2783f2d195a0bb75f94c41cd98e3aa4572e994b76f95f6bf83d"
+  },
+  "model_summary": "foamRun + solver fluid; Boussinesq heRhoThermo; laminar Stokes; laminar Fourier; no turbulence/radiation/MRF/particles/fvModels/fvConstraints",
+  "boundary_summary": {
+    "U": "noSlip on four physical walls; empty front/back",
+    "T": "hot fixedValue 300.5 K; cold fixedValue 299.5 K; top/bottom zeroGradient; empty front/back",
+    "p_rgh": "fixedFluxPressure on four physical walls; empty front/back",
+    "p": "calculated on four physical walls; empty front/back"
+  },
+  "schemes": "steadyState; Gauss linear gradients and convection; Gauss linear orthogonal Laplacian; linear interpolation; orthogonal snGrad",
+  "adjustments": [
+    {
+      "case": "A-COND",
+      "type": "v13 dictionary compatibility",
+      "previous": "sampled-set type uniform",
+      "new": "sampled-set type lineUniform",
+      "reason": "Foundation v13 fatal message states the type was renamed; attempt-1 log preserved",
+      "physical_or_solver_change": false
+    },
+    {
+      "case": "A-SMOKE template before generation",
+      "type": "post-processing scheme coverage",
+      "previous": "no div(U) entry",
+      "new": "div(U) Gauss linear",
+      "reason": "explicit volume-divergence diagnostic; not used by fluid solver equations",
+      "physical_or_solver_change": false
+    },
+    {
+      "case": "A-SMOKE attempt 1 (archived and invalidated before acceptance)",
+      "type": "OQ-02 physical-patch initialization correction",
+      "previous": "p=rho0*gh on hot/cold patch values, which produced |p_rgh| up to 6.954225352118204e-05 Pa after the constructor because fixed wall T gives rho_patch != rho0",
+      "new": "internal p=rho0*gh; physical-wall p=rho(T_patch)*gh, yielding constructor p_rgh approximately zero in cells and on all physical patches",
+      "reason": "extend the hard OQ-02 verification from internal cells to physical patches and satisfy p_rgh=p-rho*gh-pRef everywhere represented by a field value",
+      "physical_or_solver_change": false,
+      "preserved_evidence": "results/routeA/failed_runs/A-SMOKE-attempt1-boundary-init"
+    }
+  ],
+  "solver_or_relaxation_changes": [],
+  "cases": {
+    "A-COND": {
+      "generated_manifest": {
+        "case_id": "A-COND",
+        "route": "A",
+        "case_path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra0_medium",
+        "grid": [
+          80,
+          80,
+          1
+        ],
+        "geometry_m": {
+          "L": 0.1,
+          "W": 0.001
+        },
+        "properties": {
+          "T0_K": 300.0,
+          "Th_K": 300.5,
+          "Tc_K": 299.5,
+          "DeltaT_K": 1.0,
+          "rho0_kg_m3": 1.0,
+          "beta_1_K": 0.001,
+          "mu_Pa_s": 1e-05,
+          "Pr_input": 0.71,
+          "Cv_J_kgK": 1000.0,
+          "nu0_m2_s": 1e-05,
+          "alpha0_m2_s": 1.4084507042253522e-05,
+          "k_W_mK": 0.014084507042253521
+        },
+        "gravity_m_s2": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gmag_m_s2": 0.0,
+        "Ra_target": 0.0,
+        "Ra_actual": 0.0,
+        "Pr_actual": 0.71,
+        "beta_DeltaT": 0.001,
+        "pRefCell": 3159,
+        "pRefCellCentre_m": [
+          0.049375,
+          0.049375,
+          0.0005
+        ],
+        "pRefValue_Pa": 0.0,
+        "pRef_Pa": 0.0,
+        "hRef_m": 0.0,
+        "endTime_iterations": 3000,
+        "model": "foamRun+fluid; heRhoThermo/pureMixture/const/eConst/Boussinesq/specie/sensibleInternalEnergy; laminar/Fourier",
+        "initial_pressure_relation": "p=rho0*gh+pRef; p_rgh=0; hRef=pRef=0",
+        "input_sha256": {
+          "0/T": "2aa0b82fdbef9ea1d970d3135fdfeebb4253a2d69a3b0c5f69601e802af17a6a",
+          "0/U": "2d73c61cd16ca22f804a03a09a7cb9381881d1e5a2e679cbc8b589511bda42c6",
+          "0/p": "9eebe9b84e3481683de6aeb5a31daae9c5f3643ae2af59413d20fd61322a6d5c",
+          "0/p_rgh": "7a474b49f9e53d8a275c7a8b37e18d9069e44f9fb0640bcbef816b5364efe1b1",
+          "constant/g": "f7f3f4657f00db57f6f94a876d2516232f22bd722af3443768d826991154e518",
+          "constant/hRef": "b3cfc4ab0c5b5266283096fd98687c65930df337dedbeb34b67a5288c9946976",
+          "constant/momentumTransport": "3bfe7027873405f63753c0cec85e91c6069dafe94228154189d5b6616233200e",
+          "constant/pRef": "13e8b23d9a316804a134ea8abb6d385f120d64f3dc89ea40b3dcbf09956e8df1",
+          "constant/physicalProperties": "baea2c76140ca1481c1d0dc064e4fba44076f666de79f6162dfd5cfff4b440b4",
+          "constant/thermophysicalTransport": "9c550714c97c8fd84bbd68d80558826ba76a028d521e6cafbe15c1b20cd0d08e",
+          "system/blockMeshDict": "34a4c6b65b61e9d6291c14e768092a8434024bb742532654eab3bf37772f7233",
+          "system/controlDict": "2e3957d10142d2915d2a308780d5be9f193d6c7c27685f434fe3f1aa573afd45",
+          "system/fvSchemes": "36b7cfc0936d4bcc43cf3aa360058eecf4f4a336c7bb97e2a34e2ad0f42301a4",
+          "system/fvSolution": "5d1a4c4895b75a7c74c270323d65fbdf5e8be8bc61f62602ffdba4a03854d8e2"
+        }
+      },
+      "executed_input_sha256": {
+        "0/T": "2aa0b82fdbef9ea1d970d3135fdfeebb4253a2d69a3b0c5f69601e802af17a6a",
+        "0/U": "2d73c61cd16ca22f804a03a09a7cb9381881d1e5a2e679cbc8b589511bda42c6",
+        "0/p": "9eebe9b84e3481683de6aeb5a31daae9c5f3643ae2af59413d20fd61322a6d5c",
+        "0/p_rgh": "7a474b49f9e53d8a275c7a8b37e18d9069e44f9fb0640bcbef816b5364efe1b1",
+        "constant/g": "f7f3f4657f00db57f6f94a876d2516232f22bd722af3443768d826991154e518",
+        "constant/hRef": "b3cfc4ab0c5b5266283096fd98687c65930df337dedbeb34b67a5288c9946976",
+        "constant/momentumTransport": "3bfe7027873405f63753c0cec85e91c6069dafe94228154189d5b6616233200e",
+        "constant/pRef": "13e8b23d9a316804a134ea8abb6d385f120d64f3dc89ea40b3dcbf09956e8df1",
+        "constant/physicalProperties": "baea2c76140ca1481c1d0dc064e4fba44076f666de79f6162dfd5cfff4b440b4",
+        "constant/thermophysicalTransport": "9c550714c97c8fd84bbd68d80558826ba76a028d521e6cafbe15c1b20cd0d08e",
+        "system/blockMeshDict": "34a4c6b65b61e9d6291c14e768092a8434024bb742532654eab3bf37772f7233",
+        "system/controlDict": "c52927780325527833971f84ab73559afc5584391039c1911f2ba90adbce0c75",
+        "system/fvSchemes": "36b7cfc0936d4bcc43cf3aa360058eecf4f4a336c7bb97e2a34e2ad0f42301a4",
+        "system/fvSolution": "5d1a4c4895b75a7c74c270323d65fbdf5e8be8bc61f62602ffdba4a03854d8e2"
+      },
+      "mesh_sha256": {
+        "boundary": "fa00dd972c671f11af9ca440931b3676db217e4ea25ca5ba95128e4d48f934d6",
+        "faces": "78eb21dbf0fcb746af9ac980acfdf7aae6ae69118b3a616853f9dc2726157dbb",
+        "neighbour": "2b93917c4b4fa8dca826aadc57adf2c779e24d2eea403efe67694896022d3ed8",
+        "owner": "b304b116502f7f17108baa9b95fc52dbceb8483ecd87c0499a08ac479eb3242b",
+        "points": "729462ffbd514f5bbdf1dc5cb1be30dadfb3fa159c0054776157f643e5fe4ffe"
+      },
+      "mesh": {
+        "cell_count": 6400,
+        "patch_faces": {
+          "hotWall": 80,
+          "coldWall": 80,
+          "bottomWall": 80,
+          "topWall": 80,
+          "front": 6400,
+          "back": 6400
+        },
+        "checkMesh": "Mesh OK",
+        "geometric_and_solution_directions": [
+          1,
+          1,
+          0
+        ],
+        "max_non_orthogonality_deg": 0.0
+      },
+      "initialization_check": {
+        "case_id": "A-COND",
+        "method": "foamRun constructor followed by writeObjects executeAtStart in an isolated one-iteration clone; only clone time 0 is inspected",
+        "source_case": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra0_medium",
+        "initialization_clone": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/initialization_check/Ra0_medium",
+        "n_cells": 6400,
+        "max_abs_constructor_relation_residual_Pa": 0.0,
+        "max_abs_constructor_p_rgh_Pa": 0.0,
+        "max_abs_input_p_rgh_Pa": 0.0,
+        "max_abs_constructor_minus_input_p_Pa": 0.0,
+        "max_abs_constructor_rho_minus_rho0_kg_m3": 0.0,
+        "constructor_gh_range_m2_s2": [
+          0.0,
+          0.0
+        ],
+        "physical_patches": {
+          "hotWall": {
+            "max_abs_relation_residual_Pa": 0.0,
+            "max_abs_constructor_p_rgh_Pa": 0.0,
+            "max_abs_input_p_rgh_Pa": 0.0,
+            "max_abs_constructor_minus_input_p_Pa": 0.0,
+            "rho_range_kg_m3": [
+              0.9995,
+              0.9995
+            ],
+            "gh_range_m2_s2": [
+              0.0,
+              0.0
+            ]
+          },
+          "coldWall": {
+            "max_abs_relation_residual_Pa": 0.0,
+            "max_abs_constructor_p_rgh_Pa": 0.0,
+            "max_abs_input_p_rgh_Pa": 0.0,
+            "max_abs_constructor_minus_input_p_Pa": 0.0,
+            "rho_range_kg_m3": [
+              1.0005,
+              1.0005
+            ],
+            "gh_range_m2_s2": [
+              0.0,
+              0.0
+            ]
+          },
+          "bottomWall": {
+            "max_abs_relation_residual_Pa": 0.0,
+            "max_abs_constructor_p_rgh_Pa": 0.0,
+            "max_abs_input_p_rgh_Pa": 0.0,
+            "max_abs_constructor_minus_input_p_Pa": 0.0,
+            "rho_range_kg_m3": [
+              1.0,
+              1.0
+            ],
+            "gh_range_m2_s2": [
+              0.0,
+              0.0
+            ]
+          },
+          "topWall": {
+            "max_abs_relation_residual_Pa": 0.0,
+            "max_abs_constructor_p_rgh_Pa": 0.0,
+            "max_abs_input_p_rgh_Pa": 0.0,
+            "max_abs_constructor_minus_input_p_Pa": 0.0,
+            "rho_range_kg_m3": [
+              1.0,
+              1.0
+            ],
+            "gh_range_m2_s2": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "max_abs_patch_relation_residual_Pa": 0.0,
+        "max_abs_patch_constructor_p_rgh_Pa": 0.0,
+        "max_abs_patch_constructor_minus_input_p_Pa": 0.0,
+        "tolerance_Pa": 1e-12,
+        "pass": true
+      },
+      "metrics": {
+        "case_id": "A-COND",
+        "final_iteration": 3000,
+        "Nu_hot_path1": 1.0000393924781292,
+        "Nu_cold_path1": 1.0000394040508809,
+        "Nu_hot_path2": 1.0000393924785846,
+        "Nu_cold_path2": 1.000039404050755,
+        "Nu_path_relative_difference": 4.553955455420675e-13,
+        "wallHeatFlux_Q_W": {
+          "hotWall": 1.4085061865895558e-05,
+          "coldWall": -1.4085062028883872e-05
+        },
+        "wall_area_m2": 0.0001,
+        "wallHeatFlux_sign": "wallHeatFlux=-q; hot Q positive, cold Q negative; cold Nu uses -Q",
+        "radiation_contribution": "absent (no radiation field/model selected)",
+        "heat_imbalance": 1.1571714427628507e-08,
+        "Umax": 0.0,
+        "Umax_Y": 0.0,
+        "Vmax": 0.0,
+        "Vmax_X": 0.0,
+        "Umin": 0.0,
+        "Umin_Y": 0.0,
+        "Vmin": 0.0,
+        "Vmin_X": 0.0,
+        "centreline_method": "linear interpolation to exact centreline from the two bracketing cell-centre lines, then 4097 uniform points including no-slip endpoints",
+        "max_dimensionless_velocity": 0.0,
+        "max_theta_analytic_error": 6.328335507510552e-06,
+        "temperature_range_K": [
+          299.5062502403504,
+          300.4937497592624
+        ],
+        "density_range_kg_m3": [
+          0.9995062502407377,
+          1.00049374975965
+        ],
+        "final_initial_residuals": {
+          "Ux": 0.0,
+          "Uy": 0.0,
+          "e": 2.707670649296052e-08,
+          "p_rgh": 0.0
+        },
+        "Rwin": {
+          "window_start_iteration": 2801,
+          "window_end_iteration": 3000,
+          "Nu": 4.14565193671143e-05,
+          "Umax": 0.0,
+          "Vmax": 0.0,
+          "Nu_samples": 200,
+          "velocity_samples": 20,
+          "scales": {
+            "Nu": 1.0,
+            "Umax": 1.0,
+            "Vmax": 1.0
+          },
+          "heat_imbalance_start": 1.988084450418956e-08,
+          "heat_imbalance_end": 1.1571714401568024e-08
+        },
+        "divergence": {
+          "mean_abs_mass_divergence_kg_m3_s": 0.0,
+          "mean_abs_volume_divergence_1_s": null,
+          "epsilon_m": null,
+          "epsilon_v": null,
+          "definitions": "mass: volume mean |fvc::div(phi)| using solver mass flux; volume: volume mean |fvc::div(U)| using Gauss linear; normalized per acceptance_criteria 9.2"
+        },
+        "normal_exit": true,
+        "fatal_or_nan": false
+      },
+      "logs": {
+        "cases/routeA/Ra0_medium/log.blockMesh": "50982b375ebbe36be8b0eaa5a41286dcf4d5356434a09382b2144a4a3446651a",
+        "cases/routeA/Ra0_medium/log.checkMesh": "f6d080b0fc7a4fde954c7bed74c831c7e02e963f0a759921edc8899d2e2d5fbd",
+        "cases/routeA/Ra0_medium/log.environment": "eb5ac81ff1502517b4c67791e9ed7de8891c973b88250826774515dd59493249",
+        "cases/routeA/Ra0_medium/log.foamRun": "336b63990fb7fb50758fec3e5989a113f60150562b2f0980c49a5085bbce66af",
+        "cases/routeA/Ra0_medium/log.foamRun.attempt1_sampleTypeError": "52048e45b3fec87f882f22d0a7f90e7880cd4848d57d86a609b8f47916837b86",
+        "cases/routeA/Ra0_medium/log.postProcess.cellCentres": "31dfcfddb81d137d3fc2af0d5a5384f07aa0a2a239392f0dfcc1ae1e06340b12",
+        "cases/routeA/Ra0_medium/log.postProcess.divPhi": "cd7e945f81207cfd9659aeac9b1a63f382175ba691055c8dc02ed7c61c8350dc"
+      }
+    },
+    "A-SMOKE": {
+      "generated_manifest": {
+        "case_id": "A-SMOKE",
+        "route": "A",
+        "case_path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra1e4_coarse",
+        "grid": [
+          40,
+          40,
+          1
+        ],
+        "geometry_m": {
+          "L": 0.1,
+          "W": 0.001
+        },
+        "properties": {
+          "T0_K": 300.0,
+          "Th_K": 300.5,
+          "Tc_K": 299.5,
+          "DeltaT_K": 1.0,
+          "rho0_kg_m3": 1.0,
+          "beta_1_K": 0.001,
+          "mu_Pa_s": 1e-05,
+          "Pr_input": 0.71,
+          "Cv_J_kgK": 1000.0,
+          "nu0_m2_s": 1e-05,
+          "alpha0_m2_s": 1.4084507042253522e-05,
+          "k_W_mK": 0.014084507042253521
+        },
+        "gravity_m_s2": [
+          0.0,
+          -1.408450704225352,
+          0.0
+        ],
+        "gmag_m_s2": 1.408450704225352,
+        "Ra_target": 10000.0,
+        "Ra_actual": 10000.0,
+        "Pr_actual": 0.71,
+        "beta_DeltaT": 0.001,
+        "pRefCell": 779,
+        "pRefCellCentre_m": [
+          0.04875,
+          0.04875,
+          0.0005
+        ],
+        "pRefValue_Pa": 0.0,
+        "pRef_Pa": 0.0,
+        "hRef_m": 0.0,
+        "endTime_iterations": 3000,
+        "model": "foamRun+fluid; heRhoThermo/pureMixture/const/eConst/Boussinesq/specie/sensibleInternalEnergy; laminar/Fourier",
+        "initial_pressure_relation": "internal p=rho0*gh+pRef at T0; physical-wall p=rho(T_patch)*gh+pRef so constructor p_rgh=0 on cells and patches; hRef=pRef=0",
+        "input_sha256": {
+          "0/T": "2aa0b82fdbef9ea1d970d3135fdfeebb4253a2d69a3b0c5f69601e802af17a6a",
+          "0/U": "2d73c61cd16ca22f804a03a09a7cb9381881d1e5a2e679cbc8b589511bda42c6",
+          "0/p": "6861b329f8faa7f7592b9ffe56a405d181faf4617cd65f93d56d9d054eeaf2df",
+          "0/p_rgh": "7a474b49f9e53d8a275c7a8b37e18d9069e44f9fb0640bcbef816b5364efe1b1",
+          "constant/g": "eae51b92c06223e3e9f6be7df3a57da2b12556fae0047d5ecdf0ecf297c64604",
+          "constant/hRef": "b3cfc4ab0c5b5266283096fd98687c65930df337dedbeb34b67a5288c9946976",
+          "constant/momentumTransport": "3bfe7027873405f63753c0cec85e91c6069dafe94228154189d5b6616233200e",
+          "constant/pRef": "13e8b23d9a316804a134ea8abb6d385f120d64f3dc89ea40b3dcbf09956e8df1",
+          "constant/physicalProperties": "baea2c76140ca1481c1d0dc064e4fba44076f666de79f6162dfd5cfff4b440b4",
+          "constant/thermophysicalTransport": "9c550714c97c8fd84bbd68d80558826ba76a028d521e6cafbe15c1b20cd0d08e",
+          "system/blockMeshDict": "1c0e4a3490ae9174109bf13adc340cdd49546ffe30661e99a85d0e1b9f238a24",
+          "system/controlDict": "c52927780325527833971f84ab73559afc5584391039c1911f2ba90adbce0c75",
+          "system/fvSchemes": "1a5031f97e7a7f2cb086f9119f6ca19b8e79ce128a454bfdb4af57f08944ed56",
+          "system/fvSolution": "2b577ea3dd1ceefd0dfee70af1996559b02a3a9ba46d83ff765bc8d49acc2846"
+        }
+      },
+      "executed_input_sha256": {
+        "0/T": "2aa0b82fdbef9ea1d970d3135fdfeebb4253a2d69a3b0c5f69601e802af17a6a",
+        "0/U": "2d73c61cd16ca22f804a03a09a7cb9381881d1e5a2e679cbc8b589511bda42c6",
+        "0/p": "6861b329f8faa7f7592b9ffe56a405d181faf4617cd65f93d56d9d054eeaf2df",
+        "0/p_rgh": "7a474b49f9e53d8a275c7a8b37e18d9069e44f9fb0640bcbef816b5364efe1b1",
+        "constant/g": "eae51b92c06223e3e9f6be7df3a57da2b12556fae0047d5ecdf0ecf297c64604",
+        "constant/hRef": "b3cfc4ab0c5b5266283096fd98687c65930df337dedbeb34b67a5288c9946976",
+        "constant/momentumTransport": "3bfe7027873405f63753c0cec85e91c6069dafe94228154189d5b6616233200e",
+        "constant/pRef": "13e8b23d9a316804a134ea8abb6d385f120d64f3dc89ea40b3dcbf09956e8df1",
+        "constant/physicalProperties": "baea2c76140ca1481c1d0dc064e4fba44076f666de79f6162dfd5cfff4b440b4",
+        "constant/thermophysicalTransport": "9c550714c97c8fd84bbd68d80558826ba76a028d521e6cafbe15c1b20cd0d08e",
+        "system/blockMeshDict": "1c0e4a3490ae9174109bf13adc340cdd49546ffe30661e99a85d0e1b9f238a24",
+        "system/controlDict": "c52927780325527833971f84ab73559afc5584391039c1911f2ba90adbce0c75",
+        "system/fvSchemes": "1a5031f97e7a7f2cb086f9119f6ca19b8e79ce128a454bfdb4af57f08944ed56",
+        "system/fvSolution": "2b577ea3dd1ceefd0dfee70af1996559b02a3a9ba46d83ff765bc8d49acc2846"
+      },
+      "mesh_sha256": {
+        "boundary": "a4c9b55db3dfe0a793ee5418fd2f0061b1f13cf01967533aa539d5d8124872db",
+        "faces": "02755d4d3332dee0f0b35dc3d25a8c3ddf75ba22d56d0ae3412420a838b8fec5",
+        "neighbour": "3aab481becfcf967cb1978ab60ecaa06fb869a9ba3c15588e33d9e9479b1bb99",
+        "owner": "5a7769f8ce38aa6b8606281e79332486fb1642ddc996dbdbee47ccb7c2167699",
+        "points": "4c00994d7420ef3b16b793d3ce0411cb5ac89389ea250e406b2721b58f530d48"
+      },
+      "mesh": {
+        "cell_count": 1600,
+        "patch_faces": {
+          "hotWall": 40,
+          "coldWall": 40,
+          "bottomWall": 40,
+          "topWall": 40,
+          "front": 1600,
+          "back": 1600
+        },
+        "checkMesh": "Mesh OK",
+        "geometric_and_solution_directions": [
+          1,
+          1,
+          0
+        ],
+        "max_non_orthogonality_deg": 0.0
+      },
+      "initialization_check": {
+        "case_id": "A-SMOKE",
+        "method": "foamRun constructor followed by writeObjects executeAtStart in an isolated one-iteration clone; only clone time 0 is inspected",
+        "source_case": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra1e4_coarse",
+        "initialization_clone": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/initialization_check/Ra1e4_coarse",
+        "n_cells": 1600,
+        "max_abs_constructor_relation_residual_Pa": 8.326672684688674e-17,
+        "max_abs_constructor_p_rgh_Pa": 5.551115123125783e-17,
+        "max_abs_input_p_rgh_Pa": 0.0,
+        "max_abs_constructor_minus_input_p_Pa": 5.551115123125783e-17,
+        "max_abs_constructor_rho_minus_rho0_kg_m3": 0.0,
+        "constructor_gh_range_m2_s2": [
+          -0.1390845070422535,
+          -0.001760563380281687
+        ],
+        "physical_patches": {
+          "hotWall": {
+            "max_abs_relation_residual_Pa": 4.163336342344337e-17,
+            "max_abs_constructor_p_rgh_Pa": 5.551115123125783e-17,
+            "max_abs_input_p_rgh_Pa": 0.0,
+            "max_abs_constructor_minus_input_p_Pa": 1.3877787807814457e-17,
+            "rho_range_kg_m3": [
+              0.9995,
+              0.9995
+            ],
+            "gh_range_m2_s2": [
+              -0.1390845070422535,
+              -0.00176056338028169
+            ]
+          },
+          "coldWall": {
+            "max_abs_relation_residual_Pa": 6.938893903907228e-17,
+            "max_abs_constructor_p_rgh_Pa": 2.775557561562891e-17,
+            "max_abs_input_p_rgh_Pa": 0.0,
+            "max_abs_constructor_minus_input_p_Pa": 5.551115123125783e-17,
+            "rho_range_kg_m3": [
+              1.0005,
+              1.0005
+            ],
+            "gh_range_m2_s2": [
+              -0.1390845070422535,
+              -0.00176056338028169
+            ]
+          },
+          "bottomWall": {
+            "max_abs_relation_residual_Pa": 0.0,
+            "max_abs_constructor_p_rgh_Pa": 0.0,
+            "max_abs_input_p_rgh_Pa": 0.0,
+            "max_abs_constructor_minus_input_p_Pa": 0.0,
+            "rho_range_kg_m3": [
+              1.0,
+              1.0
+            ],
+            "gh_range_m2_s2": [
+              0.0,
+              0.0
+            ]
+          },
+          "topWall": {
+            "max_abs_relation_residual_Pa": 5.551115123125783e-17,
+            "max_abs_constructor_p_rgh_Pa": 5.551115123125783e-17,
+            "max_abs_input_p_rgh_Pa": 0.0,
+            "max_abs_constructor_minus_input_p_Pa": 2.7755575615628914e-17,
+            "rho_range_kg_m3": [
+              1.0,
+              1.0
+            ],
+            "gh_range_m2_s2": [
+              -0.1408450704225352,
+              -0.1408450704225352
+            ]
+          }
+        },
+        "max_abs_patch_relation_residual_Pa": 6.938893903907228e-17,
+        "max_abs_patch_constructor_p_rgh_Pa": 5.551115123125783e-17,
+        "max_abs_patch_constructor_minus_input_p_Pa": 5.551115123125783e-17,
+        "tolerance_Pa": 1e-12,
+        "pass": true
+      },
+      "metrics": {
+        "case_id": "A-SMOKE",
+        "final_iteration": 3000,
+        "Nu_hot_path1": 2.257421422257835,
+        "Nu_cold_path1": 2.2574214718534904,
+        "Nu_hot_path2": 2.2574214222572673,
+        "Nu_cold_path2": 2.257421471853702,
+        "Nu_path_relative_difference": 2.514134067270441e-13,
+        "wallHeatFlux_Q_W": {
+          "hotWall": 3.179466791911644e-05,
+          "coldWall": -3.1794668617657775e-05
+        },
+        "wall_area_m2": 0.0001,
+        "wallHeatFlux_sign": "wallHeatFlux=-q; hot Q positive, cold Q negative; cold Nu uses -Q",
+        "radiation_contribution": "absent (no radiation field/model selected)",
+        "heat_imbalance": 2.197039218332305e-08,
+        "Umax": 16.121335096250803,
+        "Umax_Y": 0.8125,
+        "Vmax": 19.597333463027827,
+        "Vmax_X": 0.112548828125,
+        "Umin": -16.115539096269067,
+        "Umin_Y": 0.18750000000000003,
+        "Vmin": -19.593111422500847,
+        "Vmin_X": 0.887451171875,
+        "centreline_method": "linear interpolation to exact centreline from the two bracketing cell-centre lines, then 4097 uniform points including no-slip endpoints",
+        "max_dimensionless_velocity": 19.694117280224336,
+        "max_theta_analytic_error": 0.39641844118317526,
+        "temperature_range_K": [
+          299.5072882586348,
+          300.4927101579527
+        ],
+        "density_range_kg_m3": [
+          0.9995072898420473,
+          1.000492711741365
+        ],
+        "final_initial_residuals": {
+          "Ux": 4.732429668539095e-12,
+          "Uy": 4.29159538576274e-12,
+          "e": 9.655208094965825e-11,
+          "p_rgh": 1.171047483620124e-10
+        },
+        "Rwin": {
+          "window_start_iteration": 2801,
+          "window_end_iteration": 3000,
+          "Nu": 0.0,
+          "Umax": 2.7851673754236594e-11,
+          "Vmax": 1.9418004072581606e-11,
+          "Nu_samples": 200,
+          "velocity_samples": 20,
+          "scales": {
+            "Nu": 1.0,
+            "Umax": 1.0,
+            "Vmax": 1.0
+          },
+          "heat_imbalance_start": 2.197039233427614e-08,
+          "heat_imbalance_end": 2.197039233427614e-08
+        },
+        "divergence": {
+          "mean_abs_mass_divergence_kg_m3_s": 7.858739553475069e-13,
+          "mean_abs_volume_divergence_1_s": 0.00012107961076529232,
+          "epsilon_m": 2.833183637313924e-11,
+          "epsilon_v": 0.004365086407283662,
+          "definitions": "mass: volume mean |fvc::div(phi)| using solver mass flux; volume: volume mean |fvc::div(U)| using Gauss linear; normalized per acceptance_criteria 9.2"
+        },
+        "normal_exit": true,
+        "fatal_or_nan": false
+      },
+      "logs": {
+        "cases/routeA/Ra1e4_coarse/log.blockMesh": "cbc3399c644808a221683b3bd4706a2b5be782bbef74088c11751755e0fb5300",
+        "cases/routeA/Ra1e4_coarse/log.checkMesh": "e8e8a41c9c7a8bda22259c9395fd7d88f3164508688ecd19cf19790800fc89ed",
+        "cases/routeA/Ra1e4_coarse/log.environment": "868adae005fa335f3fff38c96a40ca57f787805ce999091ae77bfe9d7b3997c7",
+        "cases/routeA/Ra1e4_coarse/log.foamRun": "a338be8567aefa800c5f90857988aa999f387143dabe906f523c6f8dc6c4d61c",
+        "cases/routeA/Ra1e4_coarse/log.postProcess.cellCentres": "d2304c125a91e8278df09bca49b79cd026f92ae286faa51d4da935afe22d5b39",
+        "cases/routeA/Ra1e4_coarse/log.postProcess.divPhi": "72d7e997a8f406bb37d9f957216bfa473f6f80d733c2d04b66db368a5a250c28",
+        "cases/routeA/Ra1e4_coarse/log.postProcess.divU": "e0fbcdb66bca6871ba54ba9260461f8e0ebf378f3604ac328d725d4f4c352c0a"
+      }
+    }
+  },
+  "preserved_invalidated_runs": [
+    {
+      "id": "A-SMOKE-attempt1-boundary-init",
+      "status": "INVALIDATED_OQ02_PATCH_CHECK",
+      "path": "results/routeA/failed_runs/A-SMOKE-attempt1-boundary-init",
+      "accepted_as_result": false
+    },
+    {
+      "id": "A-COND-postprocess-divU-attempt1-missingScheme",
+      "status": "INVALIDATED_POSTPROCESS_DIAGNOSTIC",
+      "path": "results/routeA/failed_runs/A-COND-postprocess-divU-attempt1-missingScheme.log",
+      "accepted_as_result": false
+    }
+  ],
+  "statuses": {
+    "ROUTE A GATE C": "PASS",
+    "ROUTE A SMOKE TEST": "PASS",
+    "ROUTE A MINIMAL IMPLEMENTATION": "PASS"
+  },
+  "scope_exclusions": [
+    "full 12-case matrix",
+    "beta*DeltaT sensitivity",
+    "transient",
+    "Route B",
+    "custom solver"
+  ]
+}

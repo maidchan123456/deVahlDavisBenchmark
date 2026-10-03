@@ -1,0 +1,570 @@
+{
+  "schema": "routeB-minimal-v1",
+  "generated_at": "2026-09-30T08:12:58.869983+09:00",
+  "v6_execution_root": "/home/mirai/OpenFOAM/mirai-6/run/deVahlDavisBenchmark",
+  "v13_research_root": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark",
+  "host": "mirai-Precision-5860-Tower",
+  "environment": {
+    "activation": "source /home/mirai/OpenFOAM/OpenFOAM-6/etc/bashrc",
+    "foamVersion": "OpenFOAM-6",
+    "build": "6-af7d7f427be7",
+    "source_git_head": "af7d7f427be78e9b9beb6aceca8fe7d5d4636876",
+    "binary": "/home/mirai/OpenFOAM/OpenFOAM-6/platforms/linux64GccDPInt32Opt/bin/buoyantBoussinesqSimpleFoam",
+    "WM_PROJECT": "OpenFOAM",
+    "WM_PROJECT_VERSION": "6",
+    "WM_PROJECT_DIR": "/home/mirai/OpenFOAM/OpenFOAM-6",
+    "FOAM_RUN": "/home/mirai/OpenFOAM/mirai-6/run",
+    "WM_OPTIONS": "linux64GccDPInt32Opt",
+    "distribution": "OpenFOAM Foundation (not OpenCFD/ESI)"
+  },
+  "immutable_document_sha256": {
+    "benchmark_spec.md": "2be4e290ac56da6f1ba112d8defe908024757bdaf2df7e40d5504ee9da4ca159",
+    "acceptance_criteria.md": "ab1f7938e8a9d42e8fe0395c0fef8b4b2f46786e9ddbe3e74db555b9aebe1fa2",
+    "openfoam_design.md": "3b2a661dd092d9e89f635bcca6059d2e7db5da8d7e8bea45f59712200c97f142",
+    "routeB_design.md": "abb6c0fb81beb2783f2d195a0bb75f94c41cd98e3aa4572e994b76f95f6bf83d",
+    "routeA_implementation.md": "de8c7ff8e3b87240f9bd802a9cee2e550d1c6487550cf29b64d2488b1328657e"
+  },
+  "script_sha256": {
+    "Scripts/routeB/analyze_case.py": "8fd5dc79e0d6d911c0916b072d04828cc9942b1b97520798d770f5bf1780f11a",
+    "Scripts/routeB/finalize_results.py": "373b6fad8ecf737675fe48cb40299167ae7e6e1c15981b4f923b30e48001ce26",
+    "Scripts/routeB/foam_fields.py": "c56cfd03f8fcc277636d5506609268730e261d636ba9af6bcfeb8151d89b8fc4",
+    "Scripts/routeB/generate_case.py": "55fabaca15c1862690904230f31653b5a56236ce8d175e36bd6ce4c7762359e5",
+    "Scripts/routeB/run_case.sh": "bc07fe355e52030aae517ed3a805b9a8efb0b7daf81c084483fb8ea892f9f368"
+  },
+  "model_summary": "native Foundation v6 buoyantBoussinesqSimpleFoam; Newtonian nu; Boussinesq rhok only in buoyancy; laminar Stokes; alphat=0; no radiation/MRF/fvOptions",
+  "boundary_summary": {
+    "U": "noSlip on four physical walls; empty front/back",
+    "T": "hot 300.5 K, cold 299.5 K, top/bottom zeroGradient, front/back empty",
+    "p_rgh": "fixedFluxPressure on four physical walls; empty front/back",
+    "alphat": "zero on internal field and four physical walls; empty front/back"
+  },
+  "scheme_summary": "steadyState; Gauss linear gradient/convection/viscous divergence; Gauss linear orthogonal Laplacian; linear interpolation; orthogonal snGrad; no upwind or limiter",
+  "simple_summary": "momentumPredictor yes; nNonOrthogonalCorrectors 0; pRefValue 0; p_rgh relaxation 0.3, U 0.5, T 0.7; all relTol 0; absolute linear-solver tolerance 1e-10; no residualControl",
+  "post_processing": {
+    "B1": "v6 fixedValue patch snGrad=(Twall-Towner)*deltaCoeffs from actual fields/mesh; face-area average",
+    "B2": "independent second-order Tw,T1,T2 reconstruction",
+    "centreline": "linear interpolation to exact centreline, then 4097 points",
+    "continuity": "FV sum of actual v6 volume-flux phi; independent central face-interpolated U divergence"
+  },
+  "solver_or_relaxation_changes": [],
+  "physics_or_scheme_changes": [],
+  "adjustments": [
+    {
+      "id": "F-B1-POST-001",
+      "change": "Replaced failing command-line grad(T) function object with direct audited fixedValue patch snGrad evaluation",
+      "physical_or_solver_change": false
+    },
+    {
+      "id": "F-ANALYZE-001",
+      "change": "Corrected Python labelList footer parsing",
+      "physical_or_solver_change": false
+    },
+    {
+      "id": "F-ANALYZE-002",
+      "change": "Handled empty-patch phi serialization nonuniform 0()",
+      "physical_or_solver_change": false
+    },
+    {
+      "id": "F-ANALYZE-003",
+      "change": "Corrected B2 hot-wall inward-coordinate sign conversion",
+      "physical_or_solver_change": false
+    },
+    {
+      "id": "F-ENV-001",
+      "change": "Activated v6 before set -e in one generation wrapper; no case had been created",
+      "physical_or_solver_change": false
+    }
+  ],
+  "failed_attempts": [
+    {
+      "failure_id": "F-ANALYZE-001",
+      "case_id": "B-COND",
+      "stage": "analysis",
+      "outcome": "Initial labelList parser required a closing parenthesis at end-of-file and did not allow the standard OpenFOAM footer comment.",
+      "solver_run_valid": true,
+      "response": "Adjusted only the Python ASCII labelList parser to stop at the list closing parenthesis; no CFD data or settings changed."
+    },
+    {
+      "failure_id": "F-ANALYZE-002",
+      "case_id": "B-COND",
+      "stage": "analysis",
+      "outcome": "Initial phi reader treated empty front/back patches as face-sized nonuniform lists; v6 serializes them as nonuniform 0().",
+      "solver_run_valid": true,
+      "response": "Adjusted only the Python flux summation to assign zero flux to empty patches and retain their face offset; no CFD data or settings changed."
+    },
+    {
+      "failure_id": "F-ANALYZE-003",
+      "case_id": "B-COND",
+      "stage": "analysis-validation",
+      "outcome": "First completed B2 report used +L*dT/ds at the hot wall even though its inward-coordinate derivative is negative, producing Nu_hot_B2=-1.00003944.",
+      "solver_run_valid": true,
+      "response": "Corrected only the documented sign conversion to Nu_hot=-L*dT/ds/DeltaT. The quadratic derivative, fields, and CFD settings are unchanged."
+    },
+    {
+      "failure_id": "F-B1-POST-001",
+      "case_id": "B-COND",
+      "stage": "post-processing",
+      "command": "postProcess -func grad(T) -time 10:3000",
+      "outcome": "FOAM FATAL IO ERROR in OSHA1stream.sinkFile_ while digesting the function-object dictionary",
+      "solver_run_valid": true,
+      "response": "Preserved failure; replaced command-line function object with direct evaluation of the audited v6 fixedValue patch snGrad formula on the actual field and mesh. No physics, scheme, or solver setting changed."
+    },
+    {
+      "failure_id": "F-ENV-001",
+      "case_id": "B-SMOKE",
+      "stage": "pre-generation environment activation",
+      "outcome": "The wrapper enabled set -e before sourcing the OpenFOAM-6 bashrc; an internal nonzero shell cleanup status stopped the wrapper before generation (pop_var_context diagnostic).",
+      "case_created": false,
+      "response": "Retried with the required activation command before enabling set -e, matching the validated run_case.sh ordering."
+    }
+  ],
+  "cases": {
+    "B-COND": {
+      "generated_manifest": {
+        "case_id": "B-COND",
+        "route": "B",
+        "generated_at": "2026-09-30T08:02:33.135581+09:00",
+        "case_path": "/home/mirai/OpenFOAM/mirai-6/run/deVahlDavisBenchmark/cases/routeB/Ra0_medium",
+        "grid": [
+          80,
+          80,
+          1
+        ],
+        "geometry_m": {
+          "L": 0.1,
+          "W": 0.001
+        },
+        "properties": {
+          "TRef_K": 300.0,
+          "Th_K": 300.5,
+          "Tc_K": 299.5,
+          "DeltaT_K": 1.0,
+          "rho0_reference_kg_m3": 1.0,
+          "mu_reference_Pa_s": 1e-05,
+          "nu_m2_s": 1e-05,
+          "beta_1_K": 0.001,
+          "Pr_input": 0.71,
+          "Prt": 0.85,
+          "alpha0_m2_s": 1.4084507042253522e-05
+        },
+        "gravity_m_s2": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gmag_m_s2": 0.0,
+        "Ra_target": 0.0,
+        "Ra_actual": 0.0,
+        "Pr_actual": 0.71,
+        "beta_DeltaT": 0.001,
+        "pRefCell": 3159,
+        "pRefCellCentre_m": [
+          0.049375,
+          0.049375,
+          0.0005
+        ],
+        "pRefValue_m2_s2": 0.0,
+        "hRef_m": 0.0,
+        "endTime_iterations": 3000,
+        "model": "Foundation v6 buoyantBoussinesqSimpleFoam; Newtonian; laminar/Stokes; no radiation/MRF/fvOptions",
+        "pressure": "kinematic p and p_rgh; input p_rgh=0; p generated internally as p_rgh+rhok*gh; no 0/p",
+        "input_sha256": {
+          "0/T": "707cdd899fb6decc39beaadcb59b8ad4ca8247a6b768b179625fa19dcf0e66b3",
+          "0/U": "ad122c8aa24172a9c82002b6d6fb0ea6ea7fe85f3b55a12f993a86e74a71c16d",
+          "0/alphat": "67990c5ef8837c1c5c8be88c71c617ff363f57ba5f365ae985c4d47955e86955",
+          "0/p_rgh": "fb7b65387f86b04e0608b9997f5f08f295cef41bf32ce0dff3d2f5ecfd886c87",
+          "constant/g": "d0e89d6e33b4d97a8daa10e4a4eaaa74ac464aa31e0514eb2c2194f69e58a38a",
+          "constant/hRef": "de584c87bcdd3bc4958c5ac9f701d9ae0ab3ff2462e478180b1e58604b3deb30",
+          "constant/transportProperties": "8aa8ea4ad47f60b2e054c9b505cef27508155eb5b8f84c6008e08dd473f15b64",
+          "constant/turbulenceProperties": "4f816c5a682c5c842f930b88d5e0b06d4f831ba8eed4efc72b6a9b067fe8cf39",
+          "system/blockMeshDict": "281d83f0aa82df80f5e99e27c77b20a84137de5fb9b24cbc3acf9aba111619a0",
+          "system/controlDict": "433d12eeb7e7143628830598a51854506e90ed1dc1261ab5847424cc11cfabf5",
+          "system/fvSchemes": "3bedc2642ace9a13843ad341ca92ad1b8320ab5ad46c8f2f32ad5759c191d1eb",
+          "system/fvSolution": "ddb6e153c2b4fee0da51abec70469ade19d8daa388aeba856e45e78687c6bf5d"
+        }
+      },
+      "executed_input_sha256": {
+        "0/T": "707cdd899fb6decc39beaadcb59b8ad4ca8247a6b768b179625fa19dcf0e66b3",
+        "0/U": "ad122c8aa24172a9c82002b6d6fb0ea6ea7fe85f3b55a12f993a86e74a71c16d",
+        "0/alphat": "67990c5ef8837c1c5c8be88c71c617ff363f57ba5f365ae985c4d47955e86955",
+        "0/p_rgh": "fb7b65387f86b04e0608b9997f5f08f295cef41bf32ce0dff3d2f5ecfd886c87",
+        "constant/g": "d0e89d6e33b4d97a8daa10e4a4eaaa74ac464aa31e0514eb2c2194f69e58a38a",
+        "constant/hRef": "de584c87bcdd3bc4958c5ac9f701d9ae0ab3ff2462e478180b1e58604b3deb30",
+        "constant/transportProperties": "8aa8ea4ad47f60b2e054c9b505cef27508155eb5b8f84c6008e08dd473f15b64",
+        "constant/turbulenceProperties": "4f816c5a682c5c842f930b88d5e0b06d4f831ba8eed4efc72b6a9b067fe8cf39",
+        "system/blockMeshDict": "281d83f0aa82df80f5e99e27c77b20a84137de5fb9b24cbc3acf9aba111619a0",
+        "system/controlDict": "433d12eeb7e7143628830598a51854506e90ed1dc1261ab5847424cc11cfabf5",
+        "system/fvSchemes": "3bedc2642ace9a13843ad341ca92ad1b8320ab5ad46c8f2f32ad5759c191d1eb",
+        "system/fvSolution": "ddb6e153c2b4fee0da51abec70469ade19d8daa388aeba856e45e78687c6bf5d"
+      },
+      "mesh_sha256": {
+        "constant/polyMesh/boundary": "68c5e8ba4c1443ecc36e819382e3e98ecde6c2e2d27282ca3e2fa120e24bb345",
+        "constant/polyMesh/faces": "222f0f628d837dd323241b71c390ca0aefc76b1d7b7385c44cf5306a3db62f71",
+        "constant/polyMesh/neighbour": "bc86f1fcb3fccf51dec58e0ef685f31be4c8f847b3afc603d1ce8bfc51675307",
+        "constant/polyMesh/owner": "5fb5f126983674baa67ff2cb813d3a13493f1e8ae59b4a03da4200e6f423a987",
+        "constant/polyMesh/points": "e36c10eb472aa593a4e07573c03bb9cf55c132e8389dad196948b84dc837f9e0"
+      },
+      "log_sha256": {
+        "log.blockMesh": "edcf89e9c536301f57c4d670b9156fe303457ce11b7723c8daeb8859a1106482",
+        "log.buoyantBoussinesqSimpleFoam": "55338343d71b886d6590687d8d826f303814bf8bcd0fb183957a2fcd4392bc24",
+        "log.checkMesh": "137add051504986e230700ccac184aff9eb026ebe4549bbfcd2403a7d6f08f0b",
+        "log.environment": "6cd47f6752b8616fd238bd609f9a26c01f10c96f285217ab9fe46e1be31d8f76",
+        "log.postProcess.gradT": "9ac86262fcbb7d499a4263a429e187367d00d0a8c0f20a444c9fb29cf8d337e4"
+      },
+      "mesh": {
+        "cell_count": 6400,
+        "patch_faces": {
+          "hotWall": 80,
+          "coldWall": 80,
+          "bottomWall": 80,
+          "topWall": 80,
+          "front": 6400,
+          "back": 6400
+        },
+        "geometric_and_solution_directions": [
+          1,
+          1,
+          0
+        ],
+        "max_non_orthogonality_deg": 0.0,
+        "checkMesh": "Mesh OK"
+      },
+      "metrics": {
+        "case_id": "B-COND",
+        "final_iteration": 3000,
+        "Nu_hot_B1": 1.000039392488361,
+        "Nu_hot_B2": 1.000039442369399,
+        "Nu_cold_B1": 1.000039404026552,
+        "Nu_cold_B2": 1.0000394565015114,
+        "Nu_path_relative_difference": 5.247289046886508e-08,
+        "heat_imbalance": 1.1537736280500088e-08,
+        "B1_method": "OpenFOAM v6 fixedValue patch snGrad formula (Twall-Towner)*deltaCoeffs, evaluated from actual patch and owner-cell T; orthogonal mesh deltaCoeffs=2/h; uniform face-area average. Used after postProcess grad(T) failed in the installed v6 OSHA1 dictionary-digest path.",
+        "B2_method": "independent quadratic through Tw,T1,T2 at inward coordinates 0,h/2,3h/2; derivative (-8Tw/3+3T1-T2/3)/h; Nu_hot=-L*dT/ds/DeltaT and Nu_cold=+L*dT/ds/DeltaT; face-centre rows only",
+        "Umax": 0.0,
+        "Umax_Y": 0.0,
+        "Vmax": 0.0,
+        "Vmax_X": 0.0,
+        "Umin": 0.0,
+        "Umin_Y": 0.0,
+        "Vmin": 0.0,
+        "Vmin_X": 0.0,
+        "centreline_method": "linear interpolation from two bracketing cell-centre lines to exact centreline, then 4097 uniform points including no-slip endpoints",
+        "max_dimensionless_velocity": 0.0,
+        "max_theta_analytic_error": 6.32833221070328e-06,
+        "temperature_range_K": [
+          299.5062502403503,
+          300.4937497592624
+        ],
+        "rhok_range": [
+          0.9995062502407376,
+          1.0004937497596498
+        ],
+        "alphat_max_abs_internal_m2_s": 0.0,
+        "alphat_max_abs_physical_patches_m2_s": 0.0,
+        "pressure": {
+          "p_dimension": "m2/s2",
+          "p_rgh_dimension": "m2/s2",
+          "p_min": 0.0,
+          "p_max": 0.0,
+          "p_rgh_min": 0.0,
+          "p_rgh_max": 0.0,
+          "p_at_ref_cell": 0.0,
+          "pRefCell": 3159,
+          "actual_pRefCellCentre_m": [
+            0.049375,
+            0.049375,
+            0.0005
+          ],
+          "pRefCellCentre_error_m": 0.0,
+          "pRefValue_m2_s2": 0.0
+        },
+        "continuity": {
+          "mean_abs_div_phi_1_s": 0.0,
+          "mean_abs_div_U_1_s": 0.0,
+          "epsilon_phi": null,
+          "epsilon_v": null,
+          "epsilon_m": null,
+          "mass_relation": "rho0 is constant, so normalized mass- and volume-divergence metrics are identical; solver phi is volume flux"
+        },
+        "final_initial_residuals": {
+          "Ux": 0.0,
+          "Uy": 0.0,
+          "T": 2.707670566317449e-08,
+          "p_rgh": 0.0
+        },
+        "final_log_continuity": {
+          "sum_local": 0.0,
+          "global": 0.0,
+          "cumulative": 0.0
+        },
+        "Rwin": {
+          "window_start_iteration": 2800,
+          "window_end_iteration": 3000,
+          "sample_times": [
+            2800,
+            2810,
+            2820,
+            2830,
+            2840,
+            2850,
+            2860,
+            2870,
+            2880,
+            2890,
+            2900,
+            2910,
+            2920,
+            2930,
+            2940,
+            2950,
+            2960,
+            2970,
+            2980,
+            2990,
+            3000
+          ],
+          "samples": 21,
+          "Nu": 4.1749188216938776e-05,
+          "Umax": 0.0,
+          "Vmax": 0.0,
+          "scales": {
+            "Nu": 1.0,
+            "Umax": 1.0,
+            "Vmax": 1.0
+          },
+          "heat_imbalance_start": 1.9698625133855273e-08,
+          "heat_imbalance_end": 1.1537736280500088e-08,
+          "heat_imbalance_linear_slope_per_iteration": -4.6745850982484414e-11
+        },
+        "normal_exit": true,
+        "fatal_or_nan": false
+      }
+    },
+    "B-SMOKE": {
+      "generated_manifest": {
+        "case_id": "B-SMOKE",
+        "route": "B",
+        "generated_at": "2026-09-30T08:07:55.024632+09:00",
+        "case_path": "/home/mirai/OpenFOAM/mirai-6/run/deVahlDavisBenchmark/cases/routeB/Ra1e4_coarse",
+        "grid": [
+          40,
+          40,
+          1
+        ],
+        "geometry_m": {
+          "L": 0.1,
+          "W": 0.001
+        },
+        "properties": {
+          "TRef_K": 300.0,
+          "Th_K": 300.5,
+          "Tc_K": 299.5,
+          "DeltaT_K": 1.0,
+          "rho0_reference_kg_m3": 1.0,
+          "mu_reference_Pa_s": 1e-05,
+          "nu_m2_s": 1e-05,
+          "beta_1_K": 0.001,
+          "Pr_input": 0.71,
+          "Prt": 0.85,
+          "alpha0_m2_s": 1.4084507042253522e-05
+        },
+        "gravity_m_s2": [
+          0.0,
+          -1.408450704225352,
+          0.0
+        ],
+        "gmag_m_s2": 1.408450704225352,
+        "Ra_target": 10000.0,
+        "Ra_actual": 10000.0,
+        "Pr_actual": 0.71,
+        "beta_DeltaT": 0.001,
+        "pRefCell": 779,
+        "pRefCellCentre_m": [
+          0.04875,
+          0.04875,
+          0.0005
+        ],
+        "pRefValue_m2_s2": 0.0,
+        "hRef_m": 0.0,
+        "endTime_iterations": 3000,
+        "model": "Foundation v6 buoyantBoussinesqSimpleFoam; Newtonian; laminar/Stokes; no radiation/MRF/fvOptions",
+        "pressure": "kinematic p and p_rgh; input p_rgh=0; p generated internally as p_rgh+rhok*gh; no 0/p",
+        "input_sha256": {
+          "0/T": "707cdd899fb6decc39beaadcb59b8ad4ca8247a6b768b179625fa19dcf0e66b3",
+          "0/U": "ad122c8aa24172a9c82002b6d6fb0ea6ea7fe85f3b55a12f993a86e74a71c16d",
+          "0/alphat": "67990c5ef8837c1c5c8be88c71c617ff363f57ba5f365ae985c4d47955e86955",
+          "0/p_rgh": "fb7b65387f86b04e0608b9997f5f08f295cef41bf32ce0dff3d2f5ecfd886c87",
+          "constant/g": "f8490ec83348452ede89e59d5e2598a17f52950a1187540b11212acefa97936b",
+          "constant/hRef": "de584c87bcdd3bc4958c5ac9f701d9ae0ab3ff2462e478180b1e58604b3deb30",
+          "constant/transportProperties": "8aa8ea4ad47f60b2e054c9b505cef27508155eb5b8f84c6008e08dd473f15b64",
+          "constant/turbulenceProperties": "4f816c5a682c5c842f930b88d5e0b06d4f831ba8eed4efc72b6a9b067fe8cf39",
+          "system/blockMeshDict": "06eca661844863116a426eb21d1688ed7a9ec8973d98ec96f9744d15368128e1",
+          "system/controlDict": "433d12eeb7e7143628830598a51854506e90ed1dc1261ab5847424cc11cfabf5",
+          "system/fvSchemes": "3bedc2642ace9a13843ad341ca92ad1b8320ab5ad46c8f2f32ad5759c191d1eb",
+          "system/fvSolution": "947eaa9ebec112969269073376ff8f9cc857a9928f1793e505f58e3cdb7c9758"
+        }
+      },
+      "executed_input_sha256": {
+        "0/T": "707cdd899fb6decc39beaadcb59b8ad4ca8247a6b768b179625fa19dcf0e66b3",
+        "0/U": "ad122c8aa24172a9c82002b6d6fb0ea6ea7fe85f3b55a12f993a86e74a71c16d",
+        "0/alphat": "67990c5ef8837c1c5c8be88c71c617ff363f57ba5f365ae985c4d47955e86955",
+        "0/p_rgh": "fb7b65387f86b04e0608b9997f5f08f295cef41bf32ce0dff3d2f5ecfd886c87",
+        "constant/g": "f8490ec83348452ede89e59d5e2598a17f52950a1187540b11212acefa97936b",
+        "constant/hRef": "de584c87bcdd3bc4958c5ac9f701d9ae0ab3ff2462e478180b1e58604b3deb30",
+        "constant/transportProperties": "8aa8ea4ad47f60b2e054c9b505cef27508155eb5b8f84c6008e08dd473f15b64",
+        "constant/turbulenceProperties": "4f816c5a682c5c842f930b88d5e0b06d4f831ba8eed4efc72b6a9b067fe8cf39",
+        "system/blockMeshDict": "06eca661844863116a426eb21d1688ed7a9ec8973d98ec96f9744d15368128e1",
+        "system/controlDict": "433d12eeb7e7143628830598a51854506e90ed1dc1261ab5847424cc11cfabf5",
+        "system/fvSchemes": "3bedc2642ace9a13843ad341ca92ad1b8320ab5ad46c8f2f32ad5759c191d1eb",
+        "system/fvSolution": "947eaa9ebec112969269073376ff8f9cc857a9928f1793e505f58e3cdb7c9758"
+      },
+      "mesh_sha256": {
+        "constant/polyMesh/boundary": "05b5bac4e06222719db7405b4e37ddfc52738afe54896b7e525fe7175b7f3bfd",
+        "constant/polyMesh/faces": "14ebb88083f45f9b20e1a654410e477aad3d9b334bcc28fc151e1417a97b2fe2",
+        "constant/polyMesh/neighbour": "d2e5e7ec4cbfbb9e6969b8a8af580d55fe70a9f21e784e882ca6fa1d32f9165c",
+        "constant/polyMesh/owner": "8beef1f197482b84bffa5490200b2299fd94b74ce7bc3d62ec0e1fac8057cbd2",
+        "constant/polyMesh/points": "608ba95f30ca4ad10cdef9dd8e233b138759a8bf922220c85771d2c806c001b9"
+      },
+      "log_sha256": {
+        "log.blockMesh": "f6db6d81baf4c84a9f10bc1ec1e66c473041c3dd03aba1808a5bdc94614e5e4d",
+        "log.buoyantBoussinesqSimpleFoam": "41cf3869119aecd4dc52a13a9fa112d37e3cb293a5ea7cadfa1c790c1cee4963",
+        "log.checkMesh": "5a5a264c77e913a98040c3379d4b2ffccca769e477464aacf6ccdff90b4505d5",
+        "log.environment": "3facdc4bae985d2945e79881f95df05fa6c6be5241da3f541d3866b8085f355c"
+      },
+      "mesh": {
+        "cell_count": 1600,
+        "patch_faces": {
+          "hotWall": 40,
+          "coldWall": 40,
+          "bottomWall": 40,
+          "topWall": 40,
+          "front": 1600,
+          "back": 1600
+        },
+        "geometric_and_solution_directions": [
+          1,
+          1,
+          0
+        ],
+        "max_non_orthogonality_deg": 0.0,
+        "checkMesh": "Mesh OK"
+      },
+      "metrics": {
+        "case_id": "B-SMOKE",
+        "final_iteration": 3000,
+        "Nu_hot_B1": 2.257421662232673,
+        "Nu_hot_B2": 2.2597099404931242,
+        "Nu_cold_B1": 2.257421662888987,
+        "Nu_cold_B2": 2.2597099408331616,
+        "Nu_path_relative_difference": 0.0010131554542579034,
+        "heat_imbalance": 2.907361637623179e-10,
+        "B1_method": "OpenFOAM v6 fixedValue patch snGrad formula (Twall-Towner)*deltaCoeffs, evaluated from actual patch and owner-cell T; orthogonal mesh deltaCoeffs=2/h; uniform face-area average. Used after postProcess grad(T) failed in the installed v6 OSHA1 dictionary-digest path.",
+        "B2_method": "independent quadratic through Tw,T1,T2 at inward coordinates 0,h/2,3h/2; derivative (-8Tw/3+3T1-T2/3)/h; Nu_hot=-L*dT/ds/DeltaT and Nu_cold=+L*dT/ds/DeltaT; face-centre rows only",
+        "Umax": 16.118437458362845,
+        "Umax_Y": 0.8125,
+        "Vmax": 19.5952224755579,
+        "Vmax_X": 0.112548828125,
+        "Umin": -16.11843746102633,
+        "Umin_Y": 0.18750000000000003,
+        "Vmin": -19.595222469567993,
+        "Vmin_X": 0.887451171875,
+        "centreline_method": "linear interpolation from two bracketing cell-centre lines to exact centreline, then 4097 uniform points including no-slip endpoints",
+        "max_dimensionless_velocity": 19.691982100642875,
+        "max_theta_analytic_error": 0.39639089880988654,
+        "temperature_range_K": [
+          299.5072890593067,
+          300.4927109407395
+        ],
+        "rhok_range": [
+          0.9995072890592605,
+          1.0004927109406934
+        ],
+        "alphat_max_abs_internal_m2_s": 0.0,
+        "alphat_max_abs_physical_patches_m2_s": 0.0,
+        "pressure": {
+          "p_dimension": "m2/s2",
+          "p_rgh_dimension": "m2/s2",
+          "p_min": -0.07041942934193399,
+          "p_max": 0.06692559056368551,
+          "p_rgh_min": 0.06861739858305013,
+          "p_rgh_max": 0.0687286615514501,
+          "p_at_ref_cell": 0.0,
+          "pRefCell": 779,
+          "actual_pRefCellCentre_m": [
+            0.04875,
+            0.04875,
+            0.0005
+          ],
+          "pRefCellCentre_error_m": 0.0,
+          "pRefValue_m2_s2": 0.0
+        },
+        "continuity": {
+          "mean_abs_div_phi_1_s": 1.1921742555899163e-12,
+          "mean_abs_div_U_1_s": 0.00011941168786427201,
+          "epsilon_phi": 4.298418092921215e-11,
+          "epsilon_v": 0.004305422275437945,
+          "epsilon_m": 0.004305422275437945,
+          "mass_relation": "rho0 is constant, so normalized mass- and volume-divergence metrics are identical; solver phi is volume flux"
+        },
+        "final_initial_residuals": {
+          "Ux": 3.442453310066074e-11,
+          "Uy": 3.654714394616003e-11,
+          "T": 2.521729148686537e-10,
+          "p_rgh": 1.227881200125584e-08
+        },
+        "final_log_continuity": {
+          "sum_local": 1.192175619690696e-12,
+          "global": 1.056008335229726e-18,
+          "cumulative": 7.834096870168114e-18
+        },
+        "Rwin": {
+          "window_start_iteration": 2800,
+          "window_end_iteration": 3000,
+          "sample_times": [
+            2800,
+            2810,
+            2820,
+            2830,
+            2840,
+            2850,
+            2860,
+            2870,
+            2880,
+            2890,
+            2900,
+            2910,
+            2920,
+            2930,
+            2940,
+            2950,
+            2960,
+            2970,
+            2980,
+            2990,
+            3000
+          ],
+          "samples": 21,
+          "Nu": 1.4132406434224976e-09,
+          "Umax": 3.4426289499454736e-10,
+          "Vmax": 1.8890576752169293e-10,
+          "scales": {
+            "Nu": 1.0,
+            "Umax": 1.0,
+            "Vmax": 1.0
+          },
+          "heat_imbalance_start": 2.022512444741564e-10,
+          "heat_imbalance_end": 2.907361637623179e-10,
+          "heat_imbalance_linear_slope_per_iteration": -1.7288337398417584e-12
+        },
+        "normal_exit": true,
+        "fatal_or_nan": false
+      }
+    }
+  },
+  "statuses": {
+    "route_B_gate_C": "PASS",
+    "route_B_smoke_test": "PASS",
+    "route_B_minimal_implementation": "PASS",
+    "benchmark_core_pass": "NOT_EVALUATED"
+  }
+}

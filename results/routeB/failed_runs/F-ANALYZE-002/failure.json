@@ -1,0 +1,8 @@
+{
+  "failure_id": "F-ANALYZE-002",
+  "case_id": "B-COND",
+  "stage": "analysis",
+  "outcome": "Initial phi reader treated empty front/back patches as face-sized nonuniform lists; v6 serializes them as nonuniform 0().",
+  "solver_run_valid": true,
+  "response": "Adjusted only the Python flux summation to assign zero flux to empty patches and retain their face offset; no CFD data or settings changed."
+}

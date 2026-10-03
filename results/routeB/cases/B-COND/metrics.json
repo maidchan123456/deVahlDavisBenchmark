@@ -1,0 +1,110 @@
+{
+  "case_id": "B-COND",
+  "final_iteration": 3000,
+  "Nu_hot_B1": 1.000039392488361,
+  "Nu_hot_B2": 1.000039442369399,
+  "Nu_cold_B1": 1.000039404026552,
+  "Nu_cold_B2": 1.0000394565015114,
+  "Nu_path_relative_difference": 5.247289046886508e-08,
+  "heat_imbalance": 1.1537736280500088e-08,
+  "B1_method": "OpenFOAM v6 fixedValue patch snGrad formula (Twall-Towner)*deltaCoeffs, evaluated from actual patch and owner-cell T; orthogonal mesh deltaCoeffs=2/h; uniform face-area average. Used after postProcess grad(T) failed in the installed v6 OSHA1 dictionary-digest path.",
+  "B2_method": "independent quadratic through Tw,T1,T2 at inward coordinates 0,h/2,3h/2; derivative (-8Tw/3+3T1-T2/3)/h; Nu_hot=-L*dT/ds/DeltaT and Nu_cold=+L*dT/ds/DeltaT; face-centre rows only",
+  "Umax": 0.0,
+  "Umax_Y": 0.0,
+  "Vmax": 0.0,
+  "Vmax_X": 0.0,
+  "Umin": 0.0,
+  "Umin_Y": 0.0,
+  "Vmin": 0.0,
+  "Vmin_X": 0.0,
+  "centreline_method": "linear interpolation from two bracketing cell-centre lines to exact centreline, then 4097 uniform points including no-slip endpoints",
+  "max_dimensionless_velocity": 0.0,
+  "max_theta_analytic_error": 6.32833221070328e-06,
+  "temperature_range_K": [
+    299.5062502403503,
+    300.4937497592624
+  ],
+  "rhok_range": [
+    0.9995062502407376,
+    1.0004937497596498
+  ],
+  "alphat_max_abs_internal_m2_s": 0.0,
+  "alphat_max_abs_physical_patches_m2_s": 0.0,
+  "pressure": {
+    "p_dimension": "m2/s2",
+    "p_rgh_dimension": "m2/s2",
+    "p_min": 0.0,
+    "p_max": 0.0,
+    "p_rgh_min": 0.0,
+    "p_rgh_max": 0.0,
+    "p_at_ref_cell": 0.0,
+    "pRefCell": 3159,
+    "actual_pRefCellCentre_m": [
+      0.049375,
+      0.049375,
+      0.0005
+    ],
+    "pRefCellCentre_error_m": 0.0,
+    "pRefValue_m2_s2": 0.0
+  },
+  "continuity": {
+    "mean_abs_div_phi_1_s": 0.0,
+    "mean_abs_div_U_1_s": 0.0,
+    "epsilon_phi": null,
+    "epsilon_v": null,
+    "epsilon_m": null,
+    "mass_relation": "rho0 is constant, so normalized mass- and volume-divergence metrics are identical; solver phi is volume flux"
+  },
+  "final_initial_residuals": {
+    "Ux": 0.0,
+    "Uy": 0.0,
+    "T": 2.707670566317449e-08,
+    "p_rgh": 0.0
+  },
+  "final_log_continuity": {
+    "sum_local": 0.0,
+    "global": 0.0,
+    "cumulative": 0.0
+  },
+  "Rwin": {
+    "window_start_iteration": 2800,
+    "window_end_iteration": 3000,
+    "sample_times": [
+      2800,
+      2810,
+      2820,
+      2830,
+      2840,
+      2850,
+      2860,
+      2870,
+      2880,
+      2890,
+      2900,
+      2910,
+      2920,
+      2930,
+      2940,
+      2950,
+      2960,
+      2970,
+      2980,
+      2990,
+      3000
+    ],
+    "samples": 21,
+    "Nu": 4.1749188216938776e-05,
+    "Umax": 0.0,
+    "Vmax": 0.0,
+    "scales": {
+      "Nu": 1.0,
+      "Umax": 1.0,
+      "Vmax": 1.0
+    },
+    "heat_imbalance_start": 1.9698625133855273e-08,
+    "heat_imbalance_end": 1.1537736280500088e-08,
+    "heat_imbalance_linear_slope_per_iteration": -4.6745850982484414e-11
+  },
+  "normal_exit": true,
+  "fatal_or_nan": false
+}

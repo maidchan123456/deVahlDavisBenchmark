@@ -1,0 +1,67 @@
+{
+  "case_id": "A-COND",
+  "final_iteration": 3000,
+  "Nu_hot_path1": 1.0000393924781292,
+  "Nu_cold_path1": 1.0000394040508809,
+  "Nu_hot_path2": 1.0000393924785846,
+  "Nu_cold_path2": 1.000039404050755,
+  "Nu_path_relative_difference": 4.553955455420675e-13,
+  "wallHeatFlux_Q_W": {
+    "hotWall": 1.4085061865895558e-05,
+    "coldWall": -1.4085062028883872e-05
+  },
+  "wall_area_m2": 0.0001,
+  "wallHeatFlux_sign": "wallHeatFlux=-q; hot Q positive, cold Q negative; cold Nu uses -Q",
+  "radiation_contribution": "absent (no radiation field/model selected)",
+  "heat_imbalance": 1.1571714427628507e-08,
+  "Umax": 0.0,
+  "Umax_Y": 0.0,
+  "Vmax": 0.0,
+  "Vmax_X": 0.0,
+  "Umin": 0.0,
+  "Umin_Y": 0.0,
+  "Vmin": 0.0,
+  "Vmin_X": 0.0,
+  "centreline_method": "linear interpolation to exact centreline from the two bracketing cell-centre lines, then 4097 uniform points including no-slip endpoints",
+  "max_dimensionless_velocity": 0.0,
+  "max_theta_analytic_error": 6.328335507510552e-06,
+  "temperature_range_K": [
+    299.5062502403504,
+    300.4937497592624
+  ],
+  "density_range_kg_m3": [
+    0.9995062502407377,
+    1.00049374975965
+  ],
+  "final_initial_residuals": {
+    "Ux": 0.0,
+    "Uy": 0.0,
+    "e": 2.707670649296052e-08,
+    "p_rgh": 0.0
+  },
+  "Rwin": {
+    "window_start_iteration": 2801,
+    "window_end_iteration": 3000,
+    "Nu": 4.14565193671143e-05,
+    "Umax": 0.0,
+    "Vmax": 0.0,
+    "Nu_samples": 200,
+    "velocity_samples": 20,
+    "scales": {
+      "Nu": 1.0,
+      "Umax": 1.0,
+      "Vmax": 1.0
+    },
+    "heat_imbalance_start": 1.988084450418956e-08,
+    "heat_imbalance_end": 1.1571714401568024e-08
+  },
+  "divergence": {
+    "mean_abs_mass_divergence_kg_m3_s": 0.0,
+    "mean_abs_volume_divergence_1_s": null,
+    "epsilon_m": null,
+    "epsilon_v": null,
+    "definitions": "mass: volume mean |fvc::div(phi)| using solver mass flux; volume: volume mean |fvc::div(U)| using Gauss linear; normalized per acceptance_criteria 9.2"
+  },
+  "normal_exit": true,
+  "fatal_or_nan": false
+}

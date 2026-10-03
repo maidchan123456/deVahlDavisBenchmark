@@ -1,0 +1,63 @@
+{
+  "case_id": "A-SMOKE",
+  "final_iteration": 3000,
+  "Nu_hot_path1": 2.257421422257835,
+  "Nu_cold_path1": 2.2574214718534904,
+  "Nu_hot_path2": 2.2574214222572673,
+  "Nu_cold_path2": 2.257421471853702,
+  "Nu_path_relative_difference": 2.514134067270441e-13,
+  "wallHeatFlux_Q_W": {
+    "hotWall": 3.179466791911644e-05,
+    "coldWall": -3.1794668617657775e-05
+  },
+  "wall_area_m2": 0.0001,
+  "wallHeatFlux_sign": "wallHeatFlux=-q; hot Q positive, cold Q negative; cold Nu uses -Q",
+  "radiation_contribution": "absent (no radiation field/model selected)",
+  "heat_imbalance": 2.197039218332305e-08,
+  "Umax": 16.121335096250803,
+  "Umax_Y": 0.8125,
+  "Vmax": 19.597333463027827,
+  "Vmax_X": 0.112548828125,
+  "centreline_method": "linear interpolation to exact centreline from the two bracketing cell-centre lines, then 4097 uniform points including no-slip endpoints",
+  "max_dimensionless_velocity": 19.694117280224336,
+  "max_theta_analytic_error": 0.39641844118317526,
+  "temperature_range_K": [
+    299.5072882586348,
+    300.4927101579527
+  ],
+  "density_range_kg_m3": [
+    0.9995072898420473,
+    1.000492711741365
+  ],
+  "final_initial_residuals": {
+    "Ux": 4.732429668539095e-12,
+    "Uy": 4.29159538576274e-12,
+    "e": 9.655208094965825e-11,
+    "p_rgh": 1.171047483620124e-10
+  },
+  "Rwin": {
+    "window_start_iteration": 2801,
+    "window_end_iteration": 3000,
+    "Nu": 0.0,
+    "Umax": 2.7851673754236594e-11,
+    "Vmax": 1.9418004072581606e-11,
+    "Nu_samples": 200,
+    "velocity_samples": 20,
+    "scales": {
+      "Nu": 1.0,
+      "Umax": 1.0,
+      "Vmax": 1.0
+    },
+    "heat_imbalance_start": 2.197039233427614e-08,
+    "heat_imbalance_end": 2.197039233427614e-08
+  },
+  "divergence": {
+    "mean_abs_mass_divergence_kg_m3_s": 7.858739553475069e-13,
+    "mean_abs_volume_divergence_1_s": 0.00012107961076529232,
+    "epsilon_m": 2.833183637313924e-11,
+    "epsilon_v": 0.004365086407283662,
+    "definitions": "mass: volume mean |fvc::div(phi)| using solver mass flux; volume: volume mean |fvc::div(U)| using Gauss linear; normalized per acceptance_criteria 9.2"
+  },
+  "normal_exit": true,
+  "fatal_or_nan": false
+}

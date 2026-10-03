@@ -1,0 +1,110 @@
+{
+  "case_id": "B-SMOKE",
+  "final_iteration": 3000,
+  "Nu_hot_B1": 2.257421662232673,
+  "Nu_hot_B2": 2.2597099404931242,
+  "Nu_cold_B1": 2.257421662888987,
+  "Nu_cold_B2": 2.2597099408331616,
+  "Nu_path_relative_difference": 0.0010131554542579034,
+  "heat_imbalance": 2.907361637623179e-10,
+  "B1_method": "OpenFOAM v6 fixedValue patch snGrad formula (Twall-Towner)*deltaCoeffs, evaluated from actual patch and owner-cell T; orthogonal mesh deltaCoeffs=2/h; uniform face-area average. Used after postProcess grad(T) failed in the installed v6 OSHA1 dictionary-digest path.",
+  "B2_method": "independent quadratic through Tw,T1,T2 at inward coordinates 0,h/2,3h/2; derivative (-8Tw/3+3T1-T2/3)/h; Nu_hot=-L*dT/ds/DeltaT and Nu_cold=+L*dT/ds/DeltaT; face-centre rows only",
+  "Umax": 16.118437458362845,
+  "Umax_Y": 0.8125,
+  "Vmax": 19.5952224755579,
+  "Vmax_X": 0.112548828125,
+  "Umin": -16.11843746102633,
+  "Umin_Y": 0.18750000000000003,
+  "Vmin": -19.595222469567993,
+  "Vmin_X": 0.887451171875,
+  "centreline_method": "linear interpolation from two bracketing cell-centre lines to exact centreline, then 4097 uniform points including no-slip endpoints",
+  "max_dimensionless_velocity": 19.691982100642875,
+  "max_theta_analytic_error": 0.39639089880988654,
+  "temperature_range_K": [
+    299.5072890593067,
+    300.4927109407395
+  ],
+  "rhok_range": [
+    0.9995072890592605,
+    1.0004927109406934
+  ],
+  "alphat_max_abs_internal_m2_s": 0.0,
+  "alphat_max_abs_physical_patches_m2_s": 0.0,
+  "pressure": {
+    "p_dimension": "m2/s2",
+    "p_rgh_dimension": "m2/s2",
+    "p_min": -0.07041942934193399,
+    "p_max": 0.06692559056368551,
+    "p_rgh_min": 0.06861739858305013,
+    "p_rgh_max": 0.0687286615514501,
+    "p_at_ref_cell": 0.0,
+    "pRefCell": 779,
+    "actual_pRefCellCentre_m": [
+      0.04875,
+      0.04875,
+      0.0005
+    ],
+    "pRefCellCentre_error_m": 0.0,
+    "pRefValue_m2_s2": 0.0
+  },
+  "continuity": {
+    "mean_abs_div_phi_1_s": 1.1921742555899163e-12,
+    "mean_abs_div_U_1_s": 0.00011941168786427201,
+    "epsilon_phi": 4.298418092921215e-11,
+    "epsilon_v": 0.004305422275437945,
+    "epsilon_m": 0.004305422275437945,
+    "mass_relation": "rho0 is constant, so normalized mass- and volume-divergence metrics are identical; solver phi is volume flux"
+  },
+  "final_initial_residuals": {
+    "Ux": 3.442453310066074e-11,
+    "Uy": 3.654714394616003e-11,
+    "T": 2.521729148686537e-10,
+    "p_rgh": 1.227881200125584e-08
+  },
+  "final_log_continuity": {
+    "sum_local": 1.192175619690696e-12,
+    "global": 1.056008335229726e-18,
+    "cumulative": 7.834096870168114e-18
+  },
+  "Rwin": {
+    "window_start_iteration": 2800,
+    "window_end_iteration": 3000,
+    "sample_times": [
+      2800,
+      2810,
+      2820,
+      2830,
+      2840,
+      2850,
+      2860,
+      2870,
+      2880,
+      2890,
+      2900,
+      2910,
+      2920,
+      2930,
+      2940,
+      2950,
+      2960,
+      2970,
+      2980,
+      2990,
+      3000
+    ],
+    "samples": 21,
+    "Nu": 1.4132406434224976e-09,
+    "Umax": 3.4426289499454736e-10,
+    "Vmax": 1.8890576752169293e-10,
+    "scales": {
+      "Nu": 1.0,
+      "Umax": 1.0,
+      "Vmax": 1.0
+    },
+    "heat_imbalance_start": 2.022512444741564e-10,
+    "heat_imbalance_end": 2.907361637623179e-10,
+    "heat_imbalance_linear_slope_per_iteration": -1.7288337398417584e-12
+  },
+  "normal_exit": true,
+  "fatal_or_nan": false
+}

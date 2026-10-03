@@ -1,0 +1,9 @@
+{
+  "failure_id": "F-B1-POST-001",
+  "case_id": "B-COND",
+  "stage": "post-processing",
+  "command": "postProcess -func grad(T) -time 10:3000",
+  "outcome": "FOAM FATAL IO ERROR in OSHA1stream.sinkFile_ while digesting the function-object dictionary",
+  "solver_run_valid": true,
+  "response": "Preserved failure; replaced command-line function object with direct evaluation of the audited v6 fixedValue patch snGrad formula on the actual field and mesh. No physics, scheme, or solver setting changed."
+}

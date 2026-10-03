@@ -1,0 +1,37 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  6
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 6-af7d7f427be7
+Exec   : postProcess -case /home/mirai/OpenFOAM/mirai-6/run/deVahlDavisBenchmark/cases/routeB/Ra0_medium -func grad(T) -time 10:3000
+Date   : Sep 30 2026
+Time   : 08:03:45
+Host   : "mirai-Precision-5860-Tower"
+PID    : 85149
+I/O    : uncollated
+Case   : /home/mirai/OpenFOAM/mirai-6/run/deVahlDavisBenchmark/cases/routeB/Ra0_medium
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 10
+
+
+
+--> FOAM FATAL IO ERROR: 
+error in IOstream "OSHA1stream.sinkFile_" for operation Ostream& operator<<(Ostream&, const word&)
+
+file: OSHA1stream.sinkFile_ at line 0.
+
+    From function virtual bool Foam::IOstream::check(const char*) const
+    in file db/IOstreams/IOstreams/IOstream.C at line 96.
+
+FOAM exiting
+

@@ -1,0 +1,8 @@
+{
+  "failure_id": "F-ANALYZE-003",
+  "case_id": "B-COND",
+  "stage": "analysis-validation",
+  "outcome": "First completed B2 report used +L*dT/ds at the hot wall even though its inward-coordinate derivative is negative, producing Nu_hot_B2=-1.00003944.",
+  "solver_run_valid": true,
+  "response": "Corrected only the documented sign conversion to Nu_hot=-L*dT/ds/DeltaT. The quadratic derivative, fields, and CFD settings are unchanged."
+}
