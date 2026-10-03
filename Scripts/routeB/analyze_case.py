@@ -228,18 +228,20 @@ def main() -> None:
     z_faces = (np.arange(ny)+0.5)/ny
     nu_maximum = local_quartic_extremum(z_faces, nu["hot_b1_local"], "max")
     nu_minimum = local_quartic_extremum(z_faces, nu["hot_b1_local"], "min")
+    centre = centreline(U, nx, ny, L, alpha)
     reference = read_paper_reference(PAPER_REFERENCE).get(int(round(manifest["Ra_target"])))
     paper_comparison = None
     if reference:
         calculated = {"Nu_bar_0":paper_nu["Nu_bar_0"],"Nu_bar_half":paper_nu["Nu_bar_half"],
                       "Nu_bar_cavity":paper_nu["Nu_bar_cavity"],
                       "Nu_hot_local_max":nu_maximum["value"],"Nu_hot_local_max_Z":nu_maximum["Z"],
-                      "Nu_hot_local_min":nu_minimum["value"],"Nu_hot_local_min_Z":nu_minimum["Z"]}
-        paper_comparison = {key:paper_difference(calculated[key],value,key.endswith("_Z"))
+                      "Nu_hot_local_min":nu_minimum["value"],"Nu_hot_local_min_Z":nu_minimum["Z"],
+                      "Umax":centre["Umax"],"Umax_Z":centre["Umax_Y"],
+                      "Wmax":centre["Vmax"],"Wmax_X":centre["Vmax_X"]}
+        paper_comparison = {key:paper_difference(calculated[key],value,key.endswith(("_Z","_X")))
                             for key,value in reference.items()}
         paper_comparison["Nu_bar_1"]={"calculated":paper_nu["Nu_bar_1"],"reference":None,"error":None,
                                       "note":"Table V contains no independent cold-wall mean reference"}
-    centre = centreline(U, nx, ny, L, alpha)
     speed = np.linalg.norm(U, axis=2)
     x = (np.arange(nx)+0.5)*L/nx
     y = (np.arange(ny)+0.5)*L/ny
@@ -278,11 +280,18 @@ def main() -> None:
                          "Umax":ci["Umax"], "Vmax":ci["Vmax"],
                          "heat_imbalance":abs(nui["hot_b1"]-nui["cold_b1"])/((nui["hot_b1"]+nui["cold_b1"])/2)}
     window_times = [t for t in sample_times if end-200 <= t <= end]
-    nus = np.array([0.5*(monitor[t]["hot_b1"]+monitor[t]["cold_b1"]) for t in window_times])
+    nus = np.array([monitor[t]["Nu_bar_0"] for t in window_times])
+    wall_pair_nus = np.array([0.5*(monitor[t]["hot_b1"]+monitor[t]["cold_b1"]) for t in window_times])
     half_nus = np.array([monitor[t]["Nu_bar_half"] for t in window_times])
     us = np.array([monitor[t]["Umax"] for t in window_times])
     vs = np.array([monitor[t]["Vmax"] for t in window_times])
     heat = np.array([monitor[t]["heat_imbalance"] for t in window_times])
+    reflected_theta = theta[::-1, ::-1]
+    reflected_u = U[::-1, ::-1, :2]
+    theta_symmetry_l2 = float(np.sqrt(np.mean((theta+reflected_theta-1)**2))/
+                              max(float(np.sqrt(np.mean(theta**2))), 1e-30))
+    velocity_symmetry_l2 = float(np.sqrt(np.mean(np.sum((U[:, :, :2]+reflected_u)**2, axis=2)))/
+                                 max(float(np.sqrt(np.mean(np.sum(U[:, :, :2]**2, axis=2)))), 1e-30))
     final_res = residuals[end]
     final_initial_residuals = {name: final_res.get(f"{name}_initial", math.nan) for name in ("Ux","Uy","T","p_rgh")}
     log_text = (case/"log.buoyantBoussinesqSimpleFoam").read_text()
@@ -346,9 +355,10 @@ def main() -> None:
         "alphat_max_abs_internal_m2_s":float(np.max(np.abs(alphat))),"alphat_max_abs_physical_patches_m2_s":alphat_patch_max,
         "pressure":{"p_dimension":"m2/s2","p_rgh_dimension":"m2/s2","p_min":float(p.min()),"p_max":float(p.max()),"p_rgh_min":float(prgh.min()),"p_rgh_max":float(prgh.max()),"p_at_ref_cell":float(p[pref_cell]),"pRefCell":pref_cell,"actual_pRefCellCentre_m":cell_centres[pref_cell].tolist(),"pRefCellCentre_error_m":pref_centre_error,"pRefValue_m2_s2":manifest["pRefValue_m2_s2"]},
         "continuity":{"mean_abs_div_phi_1_s":mean_div_phi,"mean_abs_div_U_1_s":mean_div_u,"epsilon_phi":epsilon_phi,"epsilon_v":epsilon_v,"epsilon_m":epsilon_v,"mass_relation":"rho0 is constant, so normalized mass- and volume-divergence metrics are identical; solver phi is volume flux"},
+        "symmetry":{"theta_L2_relative":theta_symmetry_l2,"velocity_L2_relative":velocity_symmetry_l2,"method":"paired cell centres under 180-degree rotation; RMS defect divided by RMS original theta or in-plane velocity magnitude"},
         "final_initial_residuals":final_initial_residuals,
         "final_log_continuity":continuity.get(end),
-        "Rwin":{"window_start_iteration":end-200,"window_end_iteration":end,"sample_times":window_times,"samples":len(window_times),"Nu":rwin(nus),"Nu_legacy_wall_pair_monitor":rwin(nus),"Nu_bar_half":rwin(half_nus),"primary_mean_Nu_candidate":"Nu_bar_half; legacy Gate D remains unchanged","Umax":rwin(us),"Vmax":rwin(vs),"scales":{"Nu":1.0,"Umax":1.0,"Vmax":1.0},"heat_imbalance_start":float(heat[0]),"heat_imbalance_end":float(heat[-1]),"heat_imbalance_linear_slope_per_iteration":float(np.polyfit(window_times,heat,1)[0])},
+        "Rwin":{"window_start_iteration":end-200,"window_end_iteration":end,"sample_times":window_times,"samples":len(window_times),"Nu":rwin(nus),"Nu_bar_0":rwin(nus),"Nu_legacy_wall_pair_monitor":rwin(wall_pair_nus),"Nu_bar_half":rwin(half_nus),"primary_mean_Nu_candidate":"Nu_bar_half; legacy Gate D remains unchanged","Umax":rwin(us),"Vmax":rwin(vs),"scales":{"Nu":1.0,"Umax":1.0,"Vmax":1.0},"heat_imbalance_start":float(heat[0]),"heat_imbalance_end":float(heat[-1]),"heat_imbalance_linear_slope_per_iteration":float(np.polyfit(window_times,heat,1)[0])},
         "normal_exit":"End" in log_text,
         "fatal_or_nan":bool(re.search(r"FOAM FATAL (?:ERROR|IO ERROR)|Floating point exception \(core dumped\)|\bnan\b|\binf\b",log_text,re.I)),
     }
@@ -360,8 +370,8 @@ def main() -> None:
         plt.xlabel("X"); plt.ylabel(r"$\theta$"); plt.legend(); plt.grid(True,alpha=.3); plt.tight_layout(); plt.savefig(fig_dir/"B-COND_theta_analytic.png",dpi=180); plt.close()
         plt.figure(figsize=(6.2,4.2)); plt.plot(window_times,nus); plt.xlabel("steady iteration"); plt.ylabel("mean Nu (B1)"); plt.grid(True,alpha=.3); plt.tight_layout(); plt.savefig(fig_dir/"B-COND_Nu_final_window.png",dpi=180); plt.close()
     else:
-        plt.contourf(X/L,Y/L,theta,levels=30,cmap="coolwarm"); plt.colorbar(label=r"$\theta$"); plt.xlabel("X"); plt.ylabel("Z"); plt.axis("equal"); plt.tight_layout(); plt.savefig(fig_dir/"B-SMOKE_theta.png",dpi=180); plt.close()
-        plt.figure(figsize=(6.2,5.2)); plt.streamplot(x/L,y/L,U[:,:,0],U[:,:,1],density=1.3,color=speed,cmap="viridis"); plt.colorbar(label="|U| [m/s]"); plt.xlabel("X"); plt.ylabel("Z"); plt.axis("equal"); plt.tight_layout(); plt.savefig(fig_dir/"B-SMOKE_velocity_streamlines.png",dpi=180); plt.close()
+        plt.contourf(X/L,Y/L,theta,levels=30,cmap="coolwarm"); plt.colorbar(label=r"$\theta$"); plt.xlabel("X"); plt.ylabel("Z"); plt.axis("equal"); plt.tight_layout(); plt.savefig(fig_dir/f"{case_id}_theta.png",dpi=180); plt.close()
+        plt.figure(figsize=(6.2,5.2)); plt.streamplot(x/L,y/L,U[:,:,0],U[:,:,1],density=1.3,color=speed,cmap="viridis"); plt.colorbar(label="|U| [m/s]"); plt.xlabel("X"); plt.ylabel("Z"); plt.axis("equal"); plt.tight_layout(); plt.savefig(fig_dir/f"{case_id}_velocity_streamlines.png",dpi=180); plt.close()
     plt.figure(figsize=(6.2,4.2)); plt.plot(centre["coordinate"],centre["U"],label=r"$U(X=0.5,Z)$"); plt.plot(centre["coordinate"],centre["V"],label=r"$W(X,Z=0.5)$"); plt.xlabel("dimensionless centreline coordinate"); plt.ylabel("dimensionless velocity"); plt.legend(); plt.grid(True,alpha=.3); plt.tight_layout(); plt.savefig(fig_dir/f"{case_id}_centrelines.png",dpi=180); plt.close()
     plt.figure(figsize=(6.2,4.2)); plt.plot(paper_nu["X"],paper_nu["sections"],label=r"$\overline{Nu}_X$"); plt.axhline(paper_nu["Nu_bar_cavity"],color="k",ls="--",label=r"$\overline{Nu}$ (cell volume)"); plt.xlabel("X"); plt.ylabel("paper-definition mean Nu"); plt.legend(); plt.grid(True,alpha=.3); plt.tight_layout(); plt.savefig(fig_dir/f"{case_id}_section_Nu.png",dpi=180); plt.close()
     plt.figure(figsize=(6.2,4.2)); plt.plot(y/L,nu["hot_b1_local"],label="hot B1"); plt.plot(y/L,nu["hot_b2_local"],"--",label="hot B2"); plt.plot(y/L,nu["cold_b1_local"],label="cold B1"); plt.plot(y/L,nu["cold_b2_local"],"--",label="cold B2"); plt.xlabel("Z"); plt.ylabel("local Nu"); plt.legend(); plt.grid(True,alpha=.3); plt.tight_layout(); plt.savefig(fig_dir/f"{case_id}_local_Nu.png",dpi=180); plt.close()

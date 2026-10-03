@@ -1,0 +1,13 @@
+Ra_target,quantity,coarse,medium,fine,fine_medium_difference,convergence_type,p_obs,GCI,Gate_F,needs_320,reason
+1000,Nu_bar_cavity,1.1187958706851366,1.117163438429391,,,INSUFFICIENT_GRIDS,,,NOT_EVALUATED,,Stopped at Gate D failure; three accepted grids unavailable.
+1000,Umax,3.6477752919664113,3.6580735671675964,,,INSUFFICIENT_GRIDS,,,NOT_EVALUATED,,Stopped at Gate D failure; three accepted grids unavailable.
+1000,Wmax,3.6889568613677906,3.705779354309688,,,INSUFFICIENT_GRIDS,,,NOT_EVALUATED,,Stopped at Gate D failure; three accepted grids unavailable.
+10000,Nu_bar_cavity,2.259326039868519,,,,INSUFFICIENT_GRIDS,,,NOT_EVALUATED,,Stopped at Gate D failure; three accepted grids unavailable.
+10000,Umax,16.118437458362845,,,,INSUFFICIENT_GRIDS,,,NOT_EVALUATED,,Stopped at Gate D failure; three accepted grids unavailable.
+10000,Wmax,19.5952224755579,,,,INSUFFICIENT_GRIDS,,,NOT_EVALUATED,,Stopped at Gate D failure; three accepted grids unavailable.
+100000,Nu_bar_cavity,,,,,INSUFFICIENT_GRIDS,,,NOT_EVALUATED,,Stopped at Gate D failure; three accepted grids unavailable.
+100000,Umax,,,,,INSUFFICIENT_GRIDS,,,NOT_EVALUATED,,Stopped at Gate D failure; three accepted grids unavailable.
+100000,Wmax,,,,,INSUFFICIENT_GRIDS,,,NOT_EVALUATED,,Stopped at Gate D failure; three accepted grids unavailable.
+1000000,Nu_bar_cavity,,,,,INSUFFICIENT_GRIDS,,,NOT_EVALUATED,,Stopped at Gate D failure; three accepted grids unavailable.
+1000000,Umax,,,,,INSUFFICIENT_GRIDS,,,NOT_EVALUATED,,Stopped at Gate D failure; three accepted grids unavailable.
+1000000,Wmax,,,,,INSUFFICIENT_GRIDS,,,NOT_EVALUATED,,Stopped at Gate D failure; three accepted grids unavailable.

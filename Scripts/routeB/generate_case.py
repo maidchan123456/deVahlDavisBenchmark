@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate one of the two authorized Foundation v6 Route B cases."""
+"""Generate a Foundation v6 Route B minimal or full-matrix case."""
 
 from __future__ import annotations
 
@@ -30,14 +30,19 @@ def sha256(path: Path) -> str:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--case-id", choices=("B-COND", "B-SMOKE"), required=True)
+    parser.add_argument("--case-id", required=True)
     parser.add_argument("--name", required=True)
     parser.add_argument("--nx", type=int, required=True)
     parser.add_argument("--ny", type=int, required=True)
     parser.add_argument("--ra", type=Decimal, required=True)
     parser.add_argument("--end-time", type=int, default=3000)
+    parser.add_argument("--output-dir", type=Path)
     args = parser.parse_args()
-    target = ROOT / "cases/routeB" / args.name
+    matrix_ids = {f"B-Ra{ra}-{level}" for ra in ("1e3", "1e4", "1e5", "1e6")
+                  for level in ("coarse", "medium", "fine")}
+    if args.case_id not in {"B-COND", "B-SMOKE"} | matrix_ids:
+        parser.error("case-id is not an authorized Route B case")
+    target = args.output_dir.resolve() if args.output_dir else ROOT / "cases/routeB" / args.name
     if target.exists():
         raise SystemExit(f"Refusing to overwrite existing case: {target}")
     shutil.copytree(TEMPLATE, target)
@@ -61,6 +66,8 @@ def main() -> None:
             text = path.read_text()
             for key, value in replacements.items():
                 text = text.replace(key, value)
+            if any(key in text for key in replacements):
+                raise RuntimeError(f"Unreplaced placeholder in {path}")
             path.write_text(text)
     ra_actual = gmag * BETA * DT * L**3 / (NU * ALPHA) if gmag else Decimal(0)
     manifest = {
