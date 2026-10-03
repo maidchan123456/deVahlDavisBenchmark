@@ -1,0 +1,4 @@
+{
+  "reason": "STOP: maximum iteration without steady solution: baseline_n20",
+  "further_solver_execution_stopped": true
+}

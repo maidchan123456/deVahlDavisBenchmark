@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "basis": "Complete U/T/p_rgh/phi file SHA256 comparison; 20 grid, cold-start ten iterations",
+  "fields": {
+    "U": {
+      "stock": "bb786f14f83ca7a5cd903fcffa56541e366537c1e1a94f8eeb4e737e05aad3c8",
+      "source": "bb786f14f83ca7a5cd903fcffa56541e366537c1e1a94f8eeb4e737e05aad3c8"
+    },
+    "T": {
+      "stock": "b66c5c39077b8f5f100fe6b99ea911ab8d116bc07b4acb1ace44a59e82b4c3a9",
+      "source": "b66c5c39077b8f5f100fe6b99ea911ab8d116bc07b4acb1ace44a59e82b4c3a9"
+    },
+    "p_rgh": {
+      "stock": "646aa3ad2c13af3a3c0cffae5de79b13f596cc3666c9fe6867f432440493d9ba",
+      "source": "646aa3ad2c13af3a3c0cffae5de79b13f596cc3666c9fe6867f432440493d9ba"
+    },
+    "phi": {
+      "stock": "692c7e998774e54451bbe4e8d688952002dea2955bd6a91ad52d10269729be75",
+      "source": "692c7e998774e54451bbe4e8d688952002dea2955bd6a91ad52d10269729be75"
+    }
+  }
+}

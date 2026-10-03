@@ -1,0 +1,46 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  6
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 6-af7d7f427be7
+Exec   : /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/verification/routeB_continuity/sensitivity/auditSolver/bin/buoyantBoussinesqSimpleFoamContinuitySourceAudit -case /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/verification/routeB_continuity/sensitivity/runs/baseline_n20
+Date   : Oct 04 2026
+Time   : 03:06:45
+Host   : "mirai-Precision-5860-Tower"
+PID    : 333493
+I/O    : uncollated
+Case   : /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/verification/routeB_continuity/sensitivity/runs/baseline_n20
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+[intermediate iterations omitted]
+DICPCG:  Solving for p_rgh, Initial residual = 8.231898189052305e-08, Final residual = 3.841101055197391e-11, No Iterations 21
+time step continuity errors : sum local = 8.599636215939345e-11, global = 1.301355436350507e-17, cumulative = -1.77707131578383e-15
+ExecutionTime = 7.73 s  ClockTime = 8 s
+
+Time = 11999
+
+smoothSolver:  Solving for Ux, Initial residual = 1.458200738108272e-08, Final residual = 7.281968891898381e-13, No Iterations 6
+smoothSolver:  Solving for Uy, Initial residual = 1.536029287390045e-08, Final residual = 7.850053060753029e-13, No Iterations 6
+smoothSolver:  Solving for T, Initial residual = 5.566450653039395e-09, Final residual = 4.530925960309512e-13, No Iterations 6
+DICPCG:  Solving for p_rgh, Initial residual = 5.988899926811167e-08, Final residual = 6.129801446542111e-11, No Iterations 20
+time step continuity errors : sum local = 1.367649182328199e-10, global = 2.805467058004538e-17, cumulative = -1.749016645203785e-15
+ExecutionTime = 7.73 s  ClockTime = 8 s
+
+Time = 12000
+
+smoothSolver:  Solving for Ux, Initial residual = 1.048399618457453e-08, Final residual = 6.057831045048665e-13, No Iterations 6
+smoothSolver:  Solving for Uy, Initial residual = 1.474874070585851e-08, Final residual = 3.065261917510911e-13, No Iterations 7
+smoothSolver:  Solving for T, Initial residual = 9.331149190904106e-09, Final residual = 9.11777707323566e-13, No Iterations 6
+DICPCG:  Solving for p_rgh, Initial residual = 1.054574693091111e-07, Final residual = 5.152673301487168e-11, No Iterations 20
+time step continuity errors : sum local = 1.166657454131387e-10, global = 1.40071404509694e-17, cumulative = -1.735009504752815e-15
+ExecutionTime = 7.73 s  ClockTime = 8 s
+
+SENSITIVITY_STATUS NOT_CONVERGED
+End
+

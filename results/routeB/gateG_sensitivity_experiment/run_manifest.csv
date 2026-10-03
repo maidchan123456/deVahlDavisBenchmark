@@ -1,0 +1,4 @@
+id,n,tolerance,role,phase,status,iterations
+equivalence_stock20,20,1e-08,equivalence,verification,FIXED_ITERATION_DIAGNOSTIC,
+equivalence_source20,20,1e-08,equivalence,verification,FIXED_ITERATION_DIAGNOSTIC,10
+baseline_n20,20,1e-10,arm1,exploration,NOT_CONVERGED,12000

@@ -1,0 +1,179 @@
+{
+  "schema": "routeB-gateG-independent-qoi-sensitivity-v1",
+  "formal_benchmark_results_used": false,
+  "solver_executed": true,
+  "formal_benchmark_solver_executed": false,
+  "preregistration": {
+    "file": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/verification/routeB_continuity/sensitivity/experiment_preregistration_v1.json",
+    "sha256": "567af0e99595d20cb6aeecc99788c4d4b7d36e2f5f33bec05dc4093bde07d0e3",
+    "markdown_sha256": "764d8662b7d2d8e80bdc68737fcb3f8dba057fcf9aa19ba81ad5d9530cbf9915",
+    "immutable": true
+  },
+  "microcase": {
+    "Ra_test": 30000,
+    "Pr": 0.71,
+    "grids": [
+      20,
+      40,
+      80
+    ],
+    "beta": 0.004307188697936856,
+    "serial": true,
+    "precision": "DP",
+    "serialization": "ASCII16"
+  },
+  "experiment_status": "PARTIAL",
+  "STOP_reason": "STOP: maximum iteration without steady solution: baseline_n20",
+  "exploration": {
+    "grids": [
+      20,
+      40
+    ],
+    "status": "PARTIAL",
+    "arm1": {
+      "executed": 1,
+      "steady": 0
+    },
+    "arm2": {
+      "executed": 0,
+      "steady": 0
+    },
+    "hypotheses": {
+      "H1": "INCONCLUSIVE",
+      "H2": "INCONCLUSIVE",
+      "H3": "INCONCLUSIVE",
+      "H4": "INCONCLUSIVE"
+    }
+  },
+  "confirmation": {
+    "grid": 80,
+    "manifest_sha256": null,
+    "status": "NOT_RUN",
+    "exploration_model_modified_after_confirmation": false
+  },
+  "zero_source_equivalence": {
+    "status": "PASS",
+    "basis": "Complete U/T/p_rgh/phi file SHA256 comparison; 20 grid, cold-start ten iterations",
+    "fields": {
+      "U": {
+        "stock": "bb786f14f83ca7a5cd903fcffa56541e366537c1e1a94f8eeb4e737e05aad3c8",
+        "source": "bb786f14f83ca7a5cd903fcffa56541e366537c1e1a94f8eeb4e737e05aad3c8"
+      },
+      "T": {
+        "stock": "b66c5c39077b8f5f100fe6b99ea911ab8d116bc07b4acb1ace44a59e82b4c3a9",
+        "source": "b66c5c39077b8f5f100fe6b99ea911ab8d116bc07b4acb1ace44a59e82b4c3a9"
+      },
+      "p_rgh": {
+        "stock": "646aa3ad2c13af3a3c0cffae5de79b13f596cc3666c9fe6867f432440493d9ba",
+        "source": "646aa3ad2c13af3a3c0cffae5de79b13f596cc3666c9fe6867f432440493d9ba"
+      },
+      "phi": {
+        "stock": "692c7e998774e54451bbe4e8d688952002dea2955bd6a91ad52d10269729be75",
+        "source": "692c7e998774e54451bbe4e8d688952002dea2955bd6a91ad52d10269729be75"
+      }
+    }
+  },
+  "source_realization": {
+    "status": "NO",
+    "source_sign": "NOT_RUN",
+    "error_range": {
+      "relative_L1_min": null,
+      "relative_L1_max": null
+    },
+    "scope": "Steady valid source runs; invalid pilot levels retained separately"
+  },
+  "temperature_offset": {
+    "performed": false
+  },
+  "qoi_response": {
+    "Nu_bar_cavity": {
+      "resolved_runs": [],
+      "unresolved_runs": []
+    },
+    "Nu_bar_0": {
+      "resolved_runs": [],
+      "unresolved_runs": []
+    },
+    "Nu_bar_half": {
+      "resolved_runs": [],
+      "unresolved_runs": []
+    },
+    "Umax": {
+      "resolved_runs": [],
+      "unresolved_runs": []
+    },
+    "Wmax": {
+      "resolved_runs": [],
+      "unresolved_runs": []
+    },
+    "Umax_Z": {
+      "resolved_runs": [],
+      "unresolved_runs": []
+    },
+    "Wmax_X": {
+      "resolved_runs": [],
+      "unresolved_runs": []
+    }
+  },
+  "arm1_response_relation": "INCONCLUSIVE",
+  "same_mean_pattern_dependence": "INCONCLUSIVE",
+  "local_max_added_information": "INCONCLUSIVE",
+  "arm1_arm2_equivalence": "INCONCLUSIVE",
+  "conditional_mapping_available": false,
+  "qoi_impact_quota_value": null,
+  "qoi_impact_quota_status": "UNRESOLVED",
+  "tau_mean": null,
+  "tau_mean_status": "UNRESOLVED",
+  "candidate_B_status": "PROVISIONAL",
+  "current_formal_Ra1e3_gate_G": "FAIL",
+  "new_spec_Ra1e3_gate_G": "NOT_EVALUATED",
+  "criteria_modified": false,
+  "spec_change_executed": false,
+  "user_decision_required": true,
+  "pilot_selection": null,
+  "run_counts": {
+    "all_solver_invocations": 3,
+    "arm1_executed": 1,
+    "arm1_steady": 0,
+    "arm2_executed": 0,
+    "arm2_steady": 0
+  },
+  "figures": [
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/gateG_sensitivity_experiment/figures/epsilon_mean_value.png",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/gateG_sensitivity_experiment/figures/epsilon_mean_position.png",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/gateG_sensitivity_experiment/figures/epsilon_max_response.png",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/gateG_sensitivity_experiment/figures/max_mean_response.png",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/gateG_sensitivity_experiment/figures/arm1_vs_arm2.png",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/gateG_sensitivity_experiment/figures/pattern_comparison.png",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/gateG_sensitivity_experiment/figures/exploration_vs_confirmation.png",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/gateG_sensitivity_experiment/figures/resolved_log_log.png"
+  ],
+  "limitations": [
+    "No externally justified scientific b_Q",
+    "No tau_mean adoption",
+    "Finite tested patterns and only Ra30000",
+    "Artificial absolute-T source system is not original source-free PDE",
+    "Extrema sampling uncertainty can obscure small shifts",
+    "Conservative numerical envelope is empirical, not a certified error bound",
+    "No formal or Route A results read or executed"
+  ],
+  "accepted_baseline_count": 0,
+  "baseline_candidates": [
+    {
+      "id": "baseline_n20",
+      "n": 20,
+      "status": "NOT_CONVERGED",
+      "accepted": false
+    }
+  ],
+  "unexecuted_due_to_STOP": [
+    "source_sign_test",
+    "Arm1_remaining_conditions",
+    "Arm2_pilot_and_exploration",
+    "temperature_offset_diagnostic",
+    "confirmation_registration",
+    "80_holdout"
+  ],
+  "confirmation_manifest_created": false,
+  "convergence_diagnostics_file": "convergence_diagnostics.json"
+}

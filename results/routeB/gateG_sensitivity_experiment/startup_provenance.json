@@ -1,0 +1,14 @@
+{
+  "HEAD": "415376a5dca99638059b497e5ca46c44f1e36220",
+  "initial_git_status_before_new_work": "?? cases/routeA/Ra0_medium/\n?? cases/routeA/Ra1e4_coarse/\n?? verification/\n",
+  "preparation_git_status": "?? cases/routeA/Ra0_medium/\n?? cases/routeA/Ra1e4_coarse/\n?? verification/\n",
+  "protected_hashes": {
+    "docs/acceptance_criteria.md": "2fe82dba1644621a7e57ddc11c4ea5ba5007db50122fbd0c0179f5af5ac38db4",
+    "docs/benchmark_spec.md": "f4436fd4fa8184052b05555b70d9382f7c82b9647aa46e13b126d6796e6d9496",
+    "Scripts/routeB/foam_fields.py": "c56cfd03f8fcc277636d5506609268730e261d636ba9af6bcfeb8151d89b8fc4",
+    "Scripts/routeB/analyze_case.py": "5b8a503e559f9243109527b5aefe7ed6a86485ac6c21948a35da05871e90414f",
+    "results/routeB/gateG_conservation_error_budget_review.md": "970c9f51367c005bbabb005b4058c0b0c8281a4273eaa69c016f433a203d4909",
+    "results/routeB/gateG_qoi_impact_quota_review.md": "dd7bd476d740440b751e25ff4f2e7c361d3014023bade5c22d6f91c4f72b4c7a",
+    "results/routeB/caseC_continuity_verification/verification_report.md": "6a57e22cc827982de82ff47c7b894efc63e182445142237cac12689d429022d7"
+  }
+}

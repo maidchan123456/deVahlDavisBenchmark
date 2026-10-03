@@ -1,0 +1,14 @@
+{
+  "git_status_short": "?? cases/routeA/Ra0_medium/\n?? cases/routeA/Ra1e4_coarse/\n?? results/routeB/gateG_sensitivity_experiment/\n?? verification/\n",
+  "git_diff_stat": "",
+  "protected_hashes_unchanged": {
+    "docs/acceptance_criteria.md": true,
+    "docs/benchmark_spec.md": true,
+    "Scripts/routeB/foam_fields.py": true,
+    "Scripts/routeB/analyze_case.py": true,
+    "results/routeB/gateG_conservation_error_budget_review.md": true,
+    "results/routeB/gateG_qoi_impact_quota_review.md": true,
+    "results/routeB/caseC_continuity_verification/verification_report.md": true
+  },
+  "tracked_changes": []
+}

@@ -1,0 +1,40 @@
+{
+  "grids": [
+    20,
+    40
+  ],
+  "status": "PARTIAL",
+  "hypotheses": {
+    "H1": "INCONCLUSIVE",
+    "H2": "INCONCLUSIVE",
+    "H3": "INCONCLUSIVE",
+    "H4": "INCONCLUSIVE"
+  },
+  "arm1_response_relation": "INCONCLUSIVE",
+  "order_comparisons": {
+    "arm1": {
+      "supported": [],
+      "violations": []
+    },
+    "arm2": {
+      "supported": [],
+      "violations": []
+    }
+  },
+  "same_mean_pairs": [],
+  "local_max_added_information_basis": [],
+  "sign_pairs": [],
+  "natural_controlled_actual_mean_pairs": [],
+  "resolved_QoIs": {
+    "Nu_bar_cavity": [],
+    "Nu_bar_0": [],
+    "Nu_bar_half": [],
+    "Umax": [],
+    "Wmax": [],
+    "Umax_Z": [],
+    "Wmax_X": []
+  },
+  "response_envelope_v1": {},
+  "envelope_scope": "Observed required exploratory patterns, signs, two grids at tested nominal levels; not a continuous or universal bound",
+  "quota_pass_fail_performed": false
+}

@@ -1,0 +1,91 @@
+{
+  "id": "baseline_n20",
+  "status": "NOT_CONVERGED",
+  "normal_exit": true,
+  "iteration": 12000,
+  "registered_maximum_iteration": 12000,
+  "last_window_iterations": [
+    11800,
+    12000
+  ],
+  "criteria": {
+    "maximum_normalized_QoI_window_range": {
+      "observed": 8.727933461830326e-08,
+      "limit": 1e-08,
+      "ratio": 8.727933461830325,
+      "satisfied": false
+    },
+    "maximum_U_change_over_20_iterations_over_Up": {
+      "observed": 2.2789435944019007e-07,
+      "limit": 1e-08,
+      "ratio": 22.789435944019008,
+      "satisfied": false
+    },
+    "maximum_T_change_over_20_iterations_over_DeltaT": {
+      "observed": 1.6270951164187863e-07,
+      "limit": 1e-08,
+      "ratio": 16.270951164187863,
+      "satisfied": false
+    },
+    "heat_imbalance_window_range": {
+      "observed": 2.439801880387474e-08,
+      "limit": 1e-08,
+      "ratio": 2.4398018803874737,
+      "satisfied": false
+    },
+    "position_window_range": {
+      "observed": 0.0,
+      "limit": 0.000244140625,
+      "ratio": 0.0,
+      "satisfied": true
+    }
+  },
+  "QoI_Rwin": {
+    "Nu_bar_cavity": 2.9142534270084425e-08,
+    "Nu_bar_0": 3.369641568566801e-08,
+    "Nu_bar_half": 8.727933426750851e-08,
+    "Umax": 8.31025546576879e-08,
+    "Wmax": 2.523346625752844e-08,
+    "Umax_Z": 0.0,
+    "Wmax_X": 0.0
+  },
+  "qualified_samples_in_full_history": 0,
+  "accepted_as_baseline": false,
+  "source_sign_test_executed": false,
+  "interpretation": "The measured late variations exceed the preregistered numerical stopping criteria. A persistent fluctuation band is observed, but its cause and a certified numerical floor have not been established. No quota or stopping rule was fitted retrospectively. No solver was rerun after STOP.",
+  "final_equation_residuals": {
+    "Ux": {
+      "initial": 1.048399618457453e-08,
+      "final": 6.057831045048665e-13
+    },
+    "Uy": {
+      "initial": 1.474874070585851e-08,
+      "final": 3.065261917510911e-13
+    },
+    "T": {
+      "initial": 9.331149190904106e-09,
+      "final": 9.11777707323566e-13
+    },
+    "p_rgh": {
+      "initial": 1.054574693091111e-07,
+      "final": 5.152673301487168e-11
+    }
+  },
+  "final_epsilon_phi_mean": 2.2744929839307276e-10,
+  "final_epsilon_phi_max": 1.2369876142769225e-09,
+  "final_heat_imbalance": 8.872969088968783e-09,
+  "final_qoi": {
+    "Nu_bar_cavity": 3.2919556065743634,
+    "Nu_bar_0": 3.275430026631284,
+    "Nu_bar_half": 3.27543003208845,
+    "Umax": 24.452103857067595,
+    "Wmax": 36.24984771961258,
+    "Umax_Z": 0.8251953125,
+    "Wmax_X": 0.074951171875
+  },
+  "future_review_options_not_executed": [
+    "Assess U/T linear tolerance and absolute-temperature conditioning at fixed pressure baseline setting",
+    "Independently select numerical measurement-resolution criteria; distinguish from scientific quota",
+    "Preregister an amendment/new execution phase and authorize a new task before any further solver call"
+  ]
+}

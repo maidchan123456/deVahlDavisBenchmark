@@ -1,0 +1,8 @@
+{
+  "available": false,
+  "quota_values_selected": false,
+  "tau_mean_selected": false,
+  "rule": "Given an externally justified vector b_Q, select only tested required levels with all same-QoI upper_impact<=b_Q, complete pattern/sign/grid coverage and contiguous lower-level evidence; no interpolation or untested-pattern guarantee. Data are finite scoped candidates only.",
+  "rows": [],
+  "scope": "Ra30000 specified grids/operators/profile and observed patterns only"
+}
