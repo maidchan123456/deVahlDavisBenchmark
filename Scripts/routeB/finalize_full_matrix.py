@@ -36,16 +36,39 @@ def finalize_ra1e3(state):
     metrics_path = OUT / 'cases' / cid / 'metrics.json'
     metrics = json.loads(metrics_path.read_text())
     r = metrics['Rwin']
-    inputs_ok = all(sha(case / p) == h for p, h in generated['input_sha256'].items())
+    previous_record = manifest['cases'].get(cid, {})
+    continuation = previous_record.get('continuation')
+    expected_inputs = dict(generated['input_sha256'])
+    if continuation:
+        expected_inputs['system/controlDict'] = continuation['continuation_controlDict_sha256']
+    inputs_ok = all(sha(case / p) == h for p, h in expected_inputs.items())
+    mesh_ok = all(sha(case / p) == h for p, h in entry['mesh_sha256'].items())
+    preserved_start_fields = True
+    if continuation:
+        preserved_start_fields = all(sha(case / str(continuation['continuation_started_from']) / p) == h
+                                    for p, h in continuation['iteration_3000_field_sha256'].items())
+        continuation_log = case / 'log.buoyantBoussinesqSimpleFoam.continuation3000-6000'
+        with continuation_log.open() as stream:
+            logged_iterations = [int(match.group(1)) for line in stream
+                                 if (match := re.match(r'Time = (\d+)', line))]
+        if logged_iterations != list(range(3001, 6001)):
+            raise SystemExit('Continuation log is not the authorized 3001 through 6000 sequence')
+        continuation.update(first_logged_iteration=logged_iterations[0], last_logged_iteration=logged_iterations[-1],
+                            continuation_ended_at=metrics['final_iteration'], completed_at=datetime.now().astimezone().isoformat(),
+                            continuation_log_sha256=sha(continuation_log), preserved_iteration_3000_fields=preserved_start_fields,
+                            unchanged_other_inputs=inputs_ok, unchanged_mesh=mesh_ok)
+
     with (case / 'log.buoyantBoussinesqSimpleFoam').open() as stream:
         divergence = any(re.search(r'\bdivergence warning\b|\bsolution diverging\b|FOAM FATAL|Floating point exception \(core dumped\)', line, re.I) for line in stream)
-    passed = (metrics['normal_exit'] and not metrics['fatal_or_nan'] and not divergence and inputs_ok
+    passed = (metrics['normal_exit'] and not metrics['fatal_or_nan'] and not divergence and inputs_ok and mesh_ok and preserved_start_fields
               and r['window_end_iteration'] - r['window_start_iteration'] >= 200 and r['samples'] >= 21
               and all(math.isfinite(x) and x <= 5e-4 for x in [r['Nu_bar_0'], r['Umax'], r['Vmax']])
               and all(math.isfinite(x) and x <= 1e-7 for x in metrics['final_initial_residuals'].values())
               and r['heat_imbalance_linear_slope_per_iteration'] <= 0)
     stage = 'GATE_D_PASS' if passed else ('NUMERICAL_FAILURE' if divergence or metrics['fatal_or_nan'] or not metrics['normal_exit'] else 'CONVERGENCE_NOT_REACHED')
-    entry.update(stage=stage, Gate_D='PASS' if passed else 'FAIL')
+    entry.update(stage=stage, Gate_D='PASS' if passed else 'FAIL', final_iteration=metrics['final_iteration'],
+                 Rwin=r, final_initial_residuals=metrics['final_initial_residuals'], normal_exit=metrics['normal_exit'],
+                 fatal_or_nan=metrics['fatal_or_nan'])
     formal = {'E': 'NOT_EVALUATED', 'F': 'NOT_EVALUATED', 'G': 'NOT_EVALUATED'}
     evaluations = {}
     with (OUT / 'benchmark_summary.csv').open() as stream:
@@ -140,8 +163,26 @@ def finalize_ra1e3(state):
         'end_to_start_ratio':value/residual_window[first][key] if residual_window[first][key] else None}
         for key,value in metrics['final_initial_residuals'].items()}
     record['failure_classification'] = None if passed else ('numerical failure' if stage == 'NUMERICAL_FAILURE' else 'iteration convergence not reached; no input changes or automatic extension')
-    record['iteration_history'] = [{'iteration':metrics['final_iteration'], 'stage':stage, 'Gate_D':entry['Gate_D'],
-                                   'Rwin':r, 'final_initial_residuals':metrics['final_initial_residuals']}]
+    history = [item for item in previous_record.get('iteration_history', [])
+               if item['iteration'] != metrics['final_iteration']]
+    result = {'iteration':metrics['final_iteration'], 'stage':stage, 'Gate_D':entry['Gate_D'],
+              'Rwin':r, 'final_initial_residuals':metrics['final_initial_residuals'],
+              'heat_imbalance':metrics['heat_imbalance'], 'residual_trend':record['final_window_residual_trend']}
+    record['iteration_history'] = history + [result]
+    entry['iteration_history'] = record['iteration_history']
+    if continuation:
+        record['continuation'] = continuation
+        record['executed_continuation_input_sha256'] = expected_inputs
+        entry['continuation'] = continuation
+        before = next(item['metrics'] for item in history if item['iteration'] == 3000)
+        record['improvement_since_3000'] = {
+            'Rwin':{key:{'before':before['Rwin'][key], 'after':r[key],
+                         'reduction_factor':before['Rwin'][key]/r[key] if r[key] else None}
+                    for key in ['Nu_bar_0','Umax','Vmax']},
+            'final_initial_residuals':{key:{'before':before['final_initial_residuals'][key], 'after':value,
+                                          'reduction_factor':before['final_initial_residuals'][key]/value if value else None}
+                                      for key,value in metrics['final_initial_residuals'].items()}}
+
     manifest['cases'][cid] = record
     with (OUT / 'conservation.csv').open() as stream:
         conservation = list(csv.DictReader(stream))
@@ -158,7 +199,7 @@ def finalize_ra1e3(state):
                  FULL_MATRIX_RESUME='YES' if passed else 'NO', B_RA1E3_FINE_GATE_D=entry['Gate_D'],
                  needs_320=needs, needs_320_reason='See Ra=1000 grid_convergence rows.' if passed else 'Fine Gate D failed; formal grid evaluation not performed.',
                  new_solver_runs_this_invocation=1,
-                 required_user_decision='Authorize remaining cases; this invocation executed only B-Ra1e3-fine.' if passed else 'Decide whether to authorize additional steady iterations for B-Ra1e3-fine; no automatic extension.',
+                 required_user_decision='Authorize remaining cases; this invocation executed only B-Ra1e3-fine.' if passed else 'Decide whether to authorize further steady iterations for B-Ra1e3-fine; no extension beyond the authorized limit.',
                  BENCHMARK_CORE_PASS='NOT_EVALUATED')
     manifest.update(schema='routeB-full-matrix-v1',generated_at=datetime.now().astimezone().isoformat(),
                     status=state['status'], FULL_MATRIX_RESUME=state['FULL_MATRIX_RESUME'], formal_Ra_gates=state['formal_Ra_gates'],

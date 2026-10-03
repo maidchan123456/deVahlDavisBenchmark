@@ -1,7 +1,7 @@
 Ra_target,quantity,coarse,medium,fine,fine_medium_difference,convergence_type,p_obs,GCI,Gate_F,needs_320,reason
-1000,Nu_bar_cavity,1.1187958706851366,1.1180442973567672,1.022063239820668,,INSUFFICIENT_GRIDS,,,NOT_EVALUATED,,Fine Gate D failed; values are unaccepted diagnostics; formal three-grid evaluation not performed.
-1000,Umax,3.6477752919664113,3.646999248885325,2.349387066456284,,INSUFFICIENT_GRIDS,,,NOT_EVALUATED,,Fine Gate D failed; values are unaccepted diagnostics; formal three-grid evaluation not performed.
-1000,Wmax,3.6889568613677906,3.6963023532816552,2.461262757975117,,INSUFFICIENT_GRIDS,,,NOT_EVALUATED,,Fine Gate D failed; values are unaccepted diagnostics; formal three-grid evaluation not performed.
+1000,Nu_bar_cavity,1.1187958706851366,1.1180442973567672,1.0835789456890395,,INSUFFICIENT_GRIDS,,,NOT_EVALUATED,,Fine Gate D failed; values are unaccepted diagnostics; formal three-grid evaluation not performed.
+1000,Umax,3.6477752919664113,3.646999248885325,3.464284447534484,,INSUFFICIENT_GRIDS,,,NOT_EVALUATED,,Fine Gate D failed; values are unaccepted diagnostics; formal three-grid evaluation not performed.
+1000,Wmax,3.6889568613677906,3.6963023532816552,3.4937766933150214,,INSUFFICIENT_GRIDS,,,NOT_EVALUATED,,Fine Gate D failed; values are unaccepted diagnostics; formal three-grid evaluation not performed.
 10000,Nu_bar_cavity,2.259326039868519,,,,INSUFFICIENT_GRIDS,,,NOT_EVALUATED,,Stopped at Gate D failure; three accepted grids unavailable.
 10000,Umax,16.118437458362845,,,,INSUFFICIENT_GRIDS,,,NOT_EVALUATED,,Stopped at Gate D failure; three accepted grids unavailable.
 10000,Wmax,19.5952224755579,,,,INSUFFICIENT_GRIDS,,,NOT_EVALUATED,,Stopped at Gate D failure; three accepted grids unavailable.
