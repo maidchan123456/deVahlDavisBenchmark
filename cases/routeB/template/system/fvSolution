@@ -1,0 +1,44 @@
+FoamFile
+{
+    version 2.0;
+    format ascii;
+    class dictionary;
+    location "system";
+    object fvSolution;
+}
+solvers
+{
+    p_rgh
+    {
+        solver PCG;
+        preconditioner DIC;
+        tolerance 1e-10;
+        relTol 0;
+    }
+    "(U|T)"
+    {
+        solver PBiCGStab;
+        preconditioner DILU;
+        tolerance 1e-10;
+        relTol 0;
+    }
+}
+SIMPLE
+{
+    momentumPredictor yes;
+    nNonOrthogonalCorrectors 0;
+    pRefCell __PREFCELL__;
+    pRefValue 0;
+}
+relaxationFactors
+{
+    fields
+    {
+        p_rgh 0.3;
+    }
+    equations
+    {
+        U 0.5;
+        T 0.7;
+    }
+}
