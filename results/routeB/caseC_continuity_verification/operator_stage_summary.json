@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "grids": [
+    20,
+    40,
+    80,
+    160
+  ],
+  "test_rows": 20,
+  "actual_production_parser_used": true,
+  "actual_production_continuity_function_used": true,
+  "percentile_definition": "numpy linear empirical percentile; equal-volume mesh",
+  "known_value_pass_budget": "per-cell 32-operation unit-roundoff model plus measured ASCII rounding propagated through incidence; not acceptance tolerance",
+  "exact_zero_flux_test": "PASS",
+  "single_face_test": "PASS",
+  "boundary_leak_test": "PASS",
+  "up_definition": "Up=max|U|=1 m/s from prescribed uniform cell U=(1,0,0), L=1 m; U is normalization input, not a solver solution",
+  "harness_rounding_correction": "Initial exact-equality assertion used 1/n^2 instead of production (1/n)*(1/n); at n=20 volume differed by 4.34e-19. Corrected harness order, no production change or failed analytic test."
+}

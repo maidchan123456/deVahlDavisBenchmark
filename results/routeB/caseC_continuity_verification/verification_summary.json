@@ -1,0 +1,414 @@
+{
+  "schema": "routeB-caseC-continuity-verification-v1",
+  "review_date": "2026-10-04",
+  "benchmark_results_used_for_threshold_derivation": false,
+  "benchmark_post_hoc_comparison_performed": false,
+  "operator_verification": {
+    "status": "PASS",
+    "grids": [
+      20,
+      40,
+      80,
+      160
+    ],
+    "test_rows": 20,
+    "actual_production_parser_used": true,
+    "actual_production_continuity_function_used": true,
+    "percentile_definition": "numpy linear empirical percentile; equal-volume mesh",
+    "known_value_pass_budget": "per-cell 32-operation unit-roundoff model plus measured ASCII rounding propagated through incidence; not acceptance tolerance",
+    "exact_zero_flux_test": "PASS",
+    "single_face_test": "PASS",
+    "boundary_leak_test": "PASS",
+    "up_definition": "Up=max|U|=1 m/s from prescribed uniform cell U=(1,0,0), L=1 m; U is normalization input, not a solver solution",
+    "harness_rounding_correction": "Initial exact-equality assertion used 1/n^2 instead of production (1/n)*(1/n); at n=20 volume differed by 4.34e-19. Corrected harness order, no production change or failed analytic test."
+  },
+  "serialization": {
+    "write_precision_16_effect": "Measured actual ASCII write/read perturbation; bounded by significant-digit IO budget in this suite.",
+    "parser_effect": "Exactly matches Python conversion of serialized significant digits; actual production parser/function used.",
+    "restart_effect": "10 continuous vs 5+restart+5, ASCII16; finite differences quantified, includes restart initialization/history/BC effects, not isolated pure IO floor.",
+    "synthetic_ASCII16_exact_flux_mean_range": {
+      "min": 7.960646031257566e-15,
+      "max": 5.600931354215292e-14
+    },
+    "synthetic_ASCII16_exact_flux_max_range": {
+      "min": 4.996003610813203e-14,
+      "max": 3.7747582837255317e-13
+    },
+    "synthetic_ASCII6_exact_flux_mean_range": {
+      "min": 3.8560000000805755e-05,
+      "max": 0.000545935040005486
+    },
+    "microcase_mean_metric_error_absolute_max": 7.537125481284359e-17,
+    "microcase_max_metric_error_absolute_max": 2.998529720608123e-15,
+    "microcase_epsilon_mean_error_absolute_max": 1.8497436349840201e-16,
+    "restart_comparison": [
+      {
+        "quantity": "U",
+        "max_absolute_difference": 9.262947288542211e-12,
+        "relative_max_difference": 2.2769260466226384e-09,
+        "continuous_file_sha256": "bb786f14f83ca7a5cd903fcffa56541e366537c1e1a94f8eeb4e737e05aad3c8",
+        "restart_file_sha256": "486851dec8d2d1d5d9eb24ca33d67a329b9f7bc7a6109b5520dce40cde9f9b66"
+      },
+      {
+        "quantity": "T",
+        "max_absolute_difference": 4.750972948386334e-10,
+        "relative_max_difference": 1.5786173240201121e-12,
+        "continuous_file_sha256": "b66c5c39077b8f5f100fe6b99ea911ab8d116bc07b4acb1ace44a59e82b4c3a9",
+        "restart_file_sha256": "55b3e20f4c4375525e7851b9245b10b6ea10b9f9b2873e60bf4845495d5a95cc"
+      },
+      {
+        "quantity": "p_rgh",
+        "max_absolute_difference": 3.216593658095235e-13,
+        "relative_max_difference": 6.226568889287446e-12,
+        "continuous_file_sha256": "646aa3ad2c13af3a3c0cffae5de79b13f596cc3666c9fe6867f432440493d9ba",
+        "restart_file_sha256": "763d9e67912173ffa545e4a1d8a90732e8211b93838957c1d23ccc135baec5cb"
+      },
+      {
+        "quantity": "phi",
+        "max_absolute_difference": 1.2017800804462353e-18,
+        "relative_max_difference": 5.905139924893372e-10,
+        "continuous_file_sha256": "692c7e998774e54451bbe4e8d688952002dea2955bd6a91ad52d10269729be75",
+        "restart_file_sha256": "33890f17a96bb0913f017e12023465fd92d6b2732dfab93385443e4bddb59219"
+      },
+      {
+        "quantity": "epsilon_phi_mean",
+        "continuous_value": 2.8544356505319708e-08,
+        "restart_value": 2.854599956737844e-08,
+        "max_absolute_difference": 1.6430620587334202e-12,
+        "relative_max_difference": 5.756171306321825e-05
+      },
+      {
+        "quantity": "epsilon_phi_max",
+        "continuous_value": 2.1674105677286257e-07,
+        "restart_value": 2.1676620911399434e-07,
+        "max_absolute_difference": 2.5152341131770168e-11,
+        "relative_max_difference": 0.00011604788454145532
+      },
+      {
+        "quantity": "P99_abs_div_phi",
+        "continuous_value": 4.909044135472117e-08,
+        "restart_value": 4.9076902012824064e-08,
+        "max_absolute_difference": 1.353934189710471e-11,
+        "relative_max_difference": 0.000275804036864757
+      },
+      {
+        "quantity": "R_recursive",
+        "continuous_value": 7.3299458466394566e-09,
+        "restart_value": 7.329945874975642e-09,
+        "max_absolute_difference": 2.833618526810846e-17,
+        "relative_max_difference": 3.865810997921585e-09
+      },
+      {
+        "quantity": "R_true",
+        "continuous_value": 7.329851363192387e-09,
+        "restart_value": 7.330243635272485e-09,
+        "max_absolute_difference": 3.9227208009848794e-13,
+        "relative_max_difference": 5.351705794040015e-05
+      },
+      {
+        "quantity": "Np",
+        "continuous_value": 1.598948427389898e-07,
+        "restart_value": 1.598948428682342e-07,
+        "max_absolute_difference": 1.29244416377679e-16,
+        "relative_max_difference": 8.083088495146518e-10
+      },
+      {
+        "quantity": "Up",
+        "continuous_value": 0.004074686523620656,
+        "restart_value": 0.004074686522570899,
+        "max_absolute_difference": 1.049756635784771e-12,
+        "relative_max_difference": 2.5762880891558394e-10
+      }
+    ]
+  },
+  "solver_mapping": {
+    "audit_solver_used": true,
+    "audit_solver_equivalent_to_stock": true,
+    "stock_equivalence_basis": "Full final ASCII16 field-file SHA256 equality for U,T,p_rgh,phi, including all patches; 20^2 tolerance=1e-8 serial 10 iterations.",
+    "true_residual_available": true,
+    "norm_factor_available": true,
+    "Kp_available": true,
+    "recursive_residual_vector_available": false,
+    "recursive_norm_available": true,
+    "norm_factor_method": "Installed v6 PCG::normFactor on copied boundary/reference-assembled fvMatrix, no diagnostic solve.",
+    "direct_mapping_validated": false,
+    "reference_aware_physical_mapping_validated": true,
+    "overall_validation": "PARTIAL",
+    "mapping_scope": "v6, serial double, closed orthogonal uniform 20/40/80^2, Ra_test=30000, pressure relTol=0, first 10 SIMPLE iterations. q=b0-A0*p_star validated to observed arithmetic discrepancy; reported R alone is insufficient.",
+    "pressure_solve_rows": 110,
+    "sweep_pressure_solve_rows": 90,
+    "Kp_range": {
+      "min": 3.132142318040764,
+      "max": 24.679891873249662
+    },
+    "ratio_recursive_range": {
+      "min": 0.9923828206379793,
+      "max": 1.1107634108920843
+    },
+    "ratio_true_range": {
+      "min": 0.9923956126776894,
+      "max": 1.008519577480572
+    },
+    "mapping_defect_L1_m3_s_range": {
+      "min": 2.34498967765737e-23,
+      "max": 2.957607803566332e-19
+    },
+    "abs_L1_norm_drift_m3_s_range": {
+      "min": 4.111337934176556e-25,
+      "max": 3.5230233937621695e-19
+    },
+    "maximum_relative_L1_norm_drift": 0.10021477553572884,
+    "reference_corrected_epsilon_error_absolute_max": 3.355101078553321e-12,
+    "reference_bound_verified_all_rows": true,
+    "drift_caveat": "Only difference of L1 norms is measured, not ||r_true-r_recursive||_1. Recomputed true residual also has cancellation/rounding; no vector drift upper bound claimed."
+  },
+  "grid_dependence": {
+    "20": {
+      "final_sweep": [
+        {
+          "tolerance": 1e-08,
+          "epsilon_phi_mean": 2.8544356505319708e-08,
+          "epsilon_phi_max": 2.1674105677286257e-07,
+          "P99_abs_div_phi": 4.909044135472117e-08,
+          "Kp": 3.9241016900831567,
+          "ratio_recursive": 0.9923828206379793,
+          "ratio_true": 0.9923956126776894
+        },
+        {
+          "tolerance": 1e-06,
+          "epsilon_phi_mean": 3.778310586304149e-06,
+          "epsilon_phi_max": 1.6269582240461017e-05,
+          "P99_abs_div_phi": 5.714673985590188e-06,
+          "Kp": 3.9238157035327967,
+          "ratio_recursive": 1.0005673513895514,
+          "ratio_true": 1.000567661427477
+        },
+        {
+          "tolerance": 1e-10,
+          "epsilon_phi_mean": 3.290553353810699e-10,
+          "epsilon_phi_max": 1.5980173969567227e-09,
+          "P99_abs_div_phi": 4.6015729912802514e-10,
+          "Kp": 3.924110463329956,
+          "ratio_recursive": 1.0047867486433895,
+          "ratio_true": 1.0054380603027493
+        }
+      ],
+      "all_tolerances_all_iterations_Kp_range": {
+        "min": 3.344815454097021,
+        "max": 15.015179556166704
+      },
+      "max_mean_write_read_difference": 7.537125481284359e-17
+    },
+    "40": {
+      "final_sweep": [
+        {
+          "tolerance": 1e-06,
+          "epsilon_phi_mean": 3.538967355888546e-06,
+          "epsilon_phi_max": 2.8341459480717727e-05,
+          "P99_abs_div_phi": 1.7698601707533286e-06,
+          "Kp": 6.471591959531479,
+          "ratio_recursive": 1.0006073647751992,
+          "ratio_true": 1.000607488561882
+        },
+        {
+          "tolerance": 1e-08,
+          "epsilon_phi_mean": 6.05620688377718e-08,
+          "epsilon_phi_max": 3.8539242274420546e-07,
+          "P99_abs_div_phi": 3.07586637372039e-08,
+          "Kp": 6.471442092806398,
+          "ratio_recursive": 1.0000674714857472,
+          "ratio_true": 1.0000633556656717
+        },
+        {
+          "tolerance": 1e-10,
+          "epsilon_phi_mean": 5.988563081849355e-10,
+          "epsilon_phi_max": 5.920598119494462e-09,
+          "P99_abs_div_phi": 2.664319493780947e-10,
+          "Kp": 6.4714447071207415,
+          "ratio_recursive": 1.0130438720703827,
+          "ratio_true": 1.0059402233989658
+        }
+      ],
+      "all_tolerances_all_iterations_Kp_range": {
+        "min": 3.204127685949816,
+        "max": 20.63265662768903
+      },
+      "max_mean_write_read_difference": 1.415411245452147e-17
+    },
+    "80": {
+      "final_sweep": [
+        {
+          "tolerance": 1e-06,
+          "epsilon_phi_mean": 1.176597830327675e-05,
+          "epsilon_phi_max": 0.0004936414389755849,
+          "P99_abs_div_phi": 1.6817024861267763e-06,
+          "Kp": 11.891020790803564,
+          "ratio_recursive": 1.0063882627098781,
+          "ratio_true": 1.0063887190684022
+        },
+        {
+          "tolerance": 1e-08,
+          "epsilon_phi_mean": 1.104346898682699e-07,
+          "epsilon_phi_max": 1.0768765307289415e-06,
+          "P99_abs_div_phi": 1.746568367269342e-08,
+          "Kp": 11.89023537731011,
+          "ratio_recursive": 1.000273117386023,
+          "ratio_true": 1.0002810994513405
+        },
+        {
+          "tolerance": 1e-10,
+          "epsilon_phi_mean": 1.0543620394321929e-09,
+          "epsilon_phi_max": 8.910925726476801e-09,
+          "P99_abs_div_phi": 1.4499899027712142e-10,
+          "Kp": 11.890234306817531,
+          "ratio_recursive": 1.1107634108920843,
+          "ratio_true": 0.9994485049962335
+        }
+      ],
+      "all_tolerances_all_iterations_Kp_range": {
+        "min": 3.132142318040764,
+        "max": 24.679891873249662
+      },
+      "max_mean_write_read_difference": 2.3658461274834283e-18
+    }
+  },
+  "tolerance_dependence": {
+    "1e-06": {
+      "mean_range": {
+        "min": 2.551642594202415e-06,
+        "max": 2.320449535321013e-05
+      },
+      "relative_norm_drift_range": {
+        "min": 1.6087321886177338e-11,
+        "max": 9.655817963156828e-07
+      },
+      "plateau_established": false
+    },
+    "1e-08": {
+      "mean_range": {
+        "min": 1.4408108571783755e-08,
+        "max": 2.399911334054982e-07
+      },
+      "relative_norm_drift_range": {
+        "min": 5.002875043013346e-10,
+        "max": 0.00015654916636663043
+      },
+      "plateau_established": false
+    },
+    "1e-10": {
+      "mean_range": {
+        "min": 1.8266741775854644e-10,
+        "max": 2.410422984164337e-09
+      },
+      "relative_norm_drift_range": {
+        "min": 7.426171262572279e-07,
+        "max": 0.10021477553572884
+      },
+      "plateau_established": false
+    }
+  },
+  "numerical_floor": {
+    "mean": null,
+    "max": null,
+    "quantification_status": "PARTIAL",
+    "basis": "Synthetic rounding levels and real write/read/evaluation discrepancies measured; tightest solver tolerance 1e-10 does not establish a plateau or universal floor.",
+    "scope": "serial DP ASCII16, stated geometry/scales and grids; no binary/parallel, no full steady solution",
+    "synthetic_ASCII16_scoped_mean_range": {
+      "min": 7.960646031257566e-15,
+      "max": 5.600931354215292e-14
+    },
+    "synthetic_ASCII16_scoped_max_range": {
+      "min": 4.996003610813203e-14,
+      "max": 3.7747582837255317e-13
+    },
+    "physical_mapping_epsilon_rounding_proxy_range": {
+      "min": 1.2448234806891786e-15,
+      "max": 1.2480634788245763e-10
+    }
+  },
+  "local_metrics": {
+    "mean": "Primary Candidate B Hard candidate, threshold unresolved.",
+    "max": "Necessary diagnostic for isolated defects; potential guard research, no Hard adoption.",
+    "p95": "Uniform-volume linear percentile diagnostic.",
+    "p99": "Can equal zero with two defective cells out of 400 or more; not a maximum guard.",
+    "global_signed": "Internal perturbations cancel globally; boundary leakage is detected; does not prove local conservation.",
+    "A4_max_to_mean_ratios": {
+      "20": 200.0,
+      "40": 800.0,
+      "80": 3200.0,
+      "160": 12800.0
+    },
+    "local_guard_hard_adopted": false
+  },
+  "tau_phi": null,
+  "tau_phi_status": "UNRESOLVED",
+  "explicit_acceptance_budget_available": false,
+  "recommended_threshold_strategy": "SCHEME_3_ERROR_BUDGET_WITH_VERIFIED_REFERENCE_AWARE_MAPPING_AND_OPERATOR_IO_AUDIT",
+  "recommended_local_guard": "UNRESOLVED",
+  "local_guard_research_preference": "MEAN_PLUS_MAX",
+  "candidate_B_status": "PROVISIONAL",
+  "current_formal_gate_G": "FAIL",
+  "new_spec_Ra1e3_gate_G": "NOT_EVALUATED",
+  "solver_rerun_for_existing_benchmark_required": false,
+  "spec_change_executed": false,
+  "criteria_modified": false,
+  "user_decision_required": true,
+  "required_user_decision": [
+    "Define independent mean/local physical acceptance budget and applicability scope.",
+    "Decide whether to research a maximum local guard; no threshold or guard adoption in this task.",
+    "If a certified solver floor is required, separately scope tighter tolerance/frozen-state/parallel/binary tests."
+  ],
+  "limitations": [
+    "10 SIMPLE iterations only; no claim of steady convergence.",
+    "Different pressure tolerance changes later nonlinear states; across-run trends are not a frozen-matrix experiment.",
+    "No recursive residual vector; norm differences are not vector drift bounds.",
+    "Roundoff/evaluation discrepancies measured, not rigorous universal floor.",
+    "Restart test combines serialization and reinitialization effects.",
+    "Equivalence tested for one representative serial condition.",
+    "Uniform Cartesian single-block patch family only.",
+    "No peer-reference comparison, parallel run, binary parser or existing benchmark field access.",
+    "Physical research acceptance budget still absent."
+  ],
+  "stock_equivalence_field_hashes": {
+    "U": {
+      "file_sha256_equal": true,
+      "stock_sha256": "bb786f14f83ca7a5cd903fcffa56541e366537c1e1a94f8eeb4e737e05aad3c8",
+      "audit_sha256": "bb786f14f83ca7a5cd903fcffa56541e366537c1e1a94f8eeb4e737e05aad3c8",
+      "internal_max_absolute_difference": 0.0,
+      "internal_relative_max_difference": 0.0
+    },
+    "T": {
+      "file_sha256_equal": true,
+      "stock_sha256": "b66c5c39077b8f5f100fe6b99ea911ab8d116bc07b4acb1ace44a59e82b4c3a9",
+      "audit_sha256": "b66c5c39077b8f5f100fe6b99ea911ab8d116bc07b4acb1ace44a59e82b4c3a9",
+      "internal_max_absolute_difference": 0.0,
+      "internal_relative_max_difference": 0.0
+    },
+    "p_rgh": {
+      "file_sha256_equal": true,
+      "stock_sha256": "646aa3ad2c13af3a3c0cffae5de79b13f596cc3666c9fe6867f432440493d9ba",
+      "audit_sha256": "646aa3ad2c13af3a3c0cffae5de79b13f596cc3666c9fe6867f432440493d9ba",
+      "internal_max_absolute_difference": 0.0,
+      "internal_relative_max_difference": 0.0
+    },
+    "phi": {
+      "file_sha256_equal": true,
+      "stock_sha256": "692c7e998774e54451bbe4e8d688952002dea2955bd6a91ad52d10269729be75",
+      "audit_sha256": "692c7e998774e54451bbe4e8d688952002dea2955bd6a91ad52d10269729be75",
+      "internal_max_absolute_difference": 0.0,
+      "internal_relative_max_difference": 0.0
+    }
+  },
+  "microcase": {
+    "Ra_test": 30000.0,
+    "Pr": 0.71,
+    "L_m": 0.01,
+    "width_m": 0.001,
+    "serial": true,
+    "iterations": 10,
+    "write_precision": 16,
+    "write_format": "ascii",
+    "relTol": 0
+  },
+  "git_policy": "Large microcase fields, binaries, objects and raw logs retained only in ignored verification/work and auditSolver build directories; compact hashes and summaries tracked."
+}

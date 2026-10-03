@@ -1,0 +1,161 @@
+{
+  "scope": "local Foundation v6 and read-only production operator/parser/settings",
+  "sources": [
+    {
+      "purpose": "pressure equation",
+      "path": "/home/mirai/OpenFOAM/OpenFOAM-6/applications/solvers/heatTransfer/buoyantBoussinesqSimpleFoam/pEqn.H",
+      "line_ranges": [
+        [
+          29,
+          46
+        ]
+      ],
+      "sha256": "9ba4feb13369ac01da0da42411dee7375c4c7c1aa4e7f7d4ac6c2dbb5668c21b"
+    },
+    {
+      "purpose": "PCG residuals",
+      "path": "/home/mirai/OpenFOAM/OpenFOAM-6/src/OpenFOAM/matrices/lduMatrix/solvers/PCG/PCG.C",
+      "line_ranges": [
+        [
+          93,
+          110
+        ],
+        [
+          172,
+          180
+        ]
+      ],
+      "sha256": "93eb42c30d332c15ec177b65dd08c0a01080ae2f7c9b3bbef00a9bc5249d0dfd"
+    },
+    {
+      "purpose": "norm factor",
+      "path": "/home/mirai/OpenFOAM/OpenFOAM-6/src/OpenFOAM/matrices/lduMatrix/lduMatrix/lduMatrixSolver.C",
+      "line_ranges": [
+        [
+          174,
+          196
+        ]
+      ],
+      "sha256": "95eda050d2718403b71ad92df5ed17440bff88928c8e2996a44b3da4a1824e03"
+    },
+    {
+      "purpose": "linear stopping",
+      "path": "/home/mirai/OpenFOAM/OpenFOAM-6/src/OpenFOAM/matrices/LduMatrix/LduMatrix/SolverPerformance.C",
+      "line_ranges": [
+        [
+          70,
+          94
+        ]
+      ],
+      "sha256": "a0fba77459beb9db12472eb96a00287662176077e70b18f9bd763ec051a0e3bc"
+    },
+    {
+      "purpose": "boundary assembly",
+      "path": "/home/mirai/OpenFOAM/OpenFOAM-6/src/finiteVolume/fvMatrices/fvScalarMatrix/fvScalarMatrix.C",
+      "line_ranges": [
+        [
+          154,
+          169
+        ],
+        [
+          187,
+          204
+        ]
+      ],
+      "sha256": "97b671ab8a3d32250149c056111ab9f9da09a3842f59e1b5f2e446d825043de7"
+    },
+    {
+      "purpose": "reference and integrated source",
+      "path": "/home/mirai/OpenFOAM/OpenFOAM-6/src/finiteVolume/fvMatrices/fvMatrix/fvMatrix.C",
+      "line_ranges": [
+        [
+          507,
+          518
+        ],
+        [
+          1458,
+          1466
+        ]
+      ],
+      "sha256": "471bfbf7f98804b41f75e0d8825bf66f38ce2cdc562472206a6332b93119fa9d"
+    },
+    {
+      "purpose": "native continuity",
+      "path": "/home/mirai/OpenFOAM/OpenFOAM-6/src/finiteVolume/cfdTools/incompressible/continuityErrs.H",
+      "line_ranges": [
+        [
+          33,
+          40
+        ]
+      ],
+      "sha256": "21fda511b3579df620c445e5000ef06363deeea9ea3aa1171e5190da9eec8c10"
+    },
+    {
+      "purpose": "FV incidence",
+      "path": "/home/mirai/OpenFOAM/OpenFOAM-6/src/finiteVolume/finiteVolume/fvc/fvcSurfaceIntegrate.C",
+      "line_ranges": [
+        [
+          51,
+          75
+        ]
+      ],
+      "sha256": "5663c2408c7dee1c4ad189ffc77adcb7aee086aa86f6095cbdc1fde3416d7c56"
+    },
+    {
+      "purpose": "production operator",
+      "path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeB/analyze_case.py",
+      "line_ranges": [
+        [
+          89,
+          116
+        ],
+        [
+          258,
+          261
+        ]
+      ],
+      "sha256": "5b8a503e559f9243109527b5aefe7ed6a86485ac6c21948a35da05871e90414f"
+    },
+    {
+      "purpose": "production parser",
+      "path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeB/foam_fields.py",
+      "line_ranges": [
+        [
+          20,
+          35
+        ],
+        [
+          53,
+          66
+        ],
+        [
+          96,
+          105
+        ]
+      ],
+      "sha256": "c56cfd03f8fcc277636d5506609268730e261d636ba9af6bcfeb8151d89b8fc4"
+    },
+    {
+      "purpose": "production output precision only",
+      "path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeB/template/system/controlDict",
+      "line_ranges": [
+        [
+          18,
+          19
+        ]
+      ],
+      "sha256": "8d6c7ea6db3f97c5236dba0ed6ca359426a42773e1d3b24bacb671401b62ac97"
+    }
+  ],
+  "stock_binary": {
+    "path": "/home/mirai/OpenFOAM/OpenFOAM-6/platforms/linux64GccDPInt32Opt/bin/buoyantBoussinesqSimpleFoam",
+    "sha256": "c7e99636695e645411d1e188f2cd6d13a9785e629598b6a67866f2164cbed421"
+  },
+  "audit_binary": {
+    "path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/verification/routeB_continuity/auditSolver/bin/buoyantBoussinesqSimpleFoamContinuityAudit",
+    "sha256": "7e610346cc1093177b159249e41f15ee091a9717562b49812d7ef025a38814a8"
+  },
+  "diagnostic_diff_path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/verification/routeB_continuity/auditSolver/diagnostic_diff.patch",
+  "diagnostic_diff_sha256": "fdba6f15ef1f58496e63b6d2419063d4e244b2d8de647277597371b6d8c27e0d",
+  "production_code_modified": false
+}
