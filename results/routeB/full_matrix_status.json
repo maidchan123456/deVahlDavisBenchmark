@@ -402,11 +402,126 @@
       "reused_existing_solver_result": true,
       "Gate_A": "PASS",
       "Gate_D": "PASS"
+    },
+    "B-Ra1e3-fine": {
+      "stage": "CONVERGENCE_NOT_REACHED",
+      "updated_at": "2026-10-03T23:14:29.331390+09:00",
+      "case_path": "/home/mirai/OpenFOAM/mirai-6/run/deVahlDavisBenchmark/cases/routeB/Ra1e3_fine",
+      "Ra_target": 1000.0,
+      "Ra_actual": 1000.0,
+      "Pr_actual": 0.71,
+      "beta_DeltaT": 0.001,
+      "gravity_m_s2": [
+        0.0,
+        -0.14084507042253522,
+        0.0
+      ],
+      "grid": [
+        160,
+        160,
+        1
+      ],
+      "pRefCell": 12719,
+      "pRefCellCentre_m": [
+        0.0496875,
+        0.0496875,
+        0.0005
+      ],
+      "input_sha256": {
+        "0/T": "707cdd899fb6decc39beaadcb59b8ad4ca8247a6b768b179625fa19dcf0e66b3",
+        "0/U": "ad122c8aa24172a9c82002b6d6fb0ea6ea7fe85f3b55a12f993a86e74a71c16d",
+        "0/alphat": "67990c5ef8837c1c5c8be88c71c617ff363f57ba5f365ae985c4d47955e86955",
+        "0/p_rgh": "fb7b65387f86b04e0608b9997f5f08f295cef41bf32ce0dff3d2f5ecfd886c87",
+        "constant/g": "57a10e286ac7e4989cefc1ec3dc8be7dad12f919100da1eca4cde74e4488e2bc",
+        "constant/hRef": "de584c87bcdd3bc4958c5ac9f701d9ae0ab3ff2462e478180b1e58604b3deb30",
+        "constant/transportProperties": "8aa8ea4ad47f60b2e054c9b505cef27508155eb5b8f84c6008e08dd473f15b64",
+        "constant/turbulenceProperties": "4f816c5a682c5c842f930b88d5e0b06d4f831ba8eed4efc72b6a9b067fe8cf39",
+        "system/blockMeshDict": "8d257dd572ede0f09709f0902e5f471de16334929497d8113cee0a0c14e2a2f6",
+        "system/controlDict": "433d12eeb7e7143628830598a51854506e90ed1dc1261ab5847424cc11cfabf5",
+        "system/fvSchemes": "3bedc2642ace9a13843ad341ca92ad1b8320ab5ad46c8f2f32ad5759c191d1eb",
+        "system/fvSolution": "a6fafe4fa039d0d6b814aa802d96280acd099df73c77e34df02abd47916dc701"
+      },
+      "OpenFOAM_version": "OpenFOAM-6",
+      "OpenFOAM_build": "6-af7d7f427be7",
+      "mesh_check": "Mesh OK",
+      "source_case_id": "B-Ra1e3-fine",
+      "reused_existing_solver_result": false,
+      "Gate_A": "PASS",
+      "geometry_m": {
+        "L": 0.1,
+        "W": 0.001
+      },
+      "front_back_empty": true,
+      "max_non_orthogonality_deg": 0,
+      "accepted_fixed_input_hashes_match": true,
+      "fvSolution_sha256": "a6fafe4fa039d0d6b814aa802d96280acd099df73c77e34df02abd47916dc701",
+      "mesh_sha256": {
+        "constant/polyMesh/faces": "cc83d432b2f6e5bc59786b4d29703220ab4615cccc64e45478d7d160ba1a86a4",
+        "constant/polyMesh/points": "0dc6d8f2bb286d4a5c71d1e7613f971b6ea84bc6aef6c9c7193b50ffde6da78d",
+        "constant/polyMesh/boundary": "8edf8a0cd7b922cc9fec8dda9d14f937a961d02478cf50a79d324025a4f471c7",
+        "constant/polyMesh/neighbour": "1efe776acf18f1efd60f48fe4d473a755c42f8730e362e7510476b5413231db1",
+        "constant/polyMesh/owner": "2591161faec40a988ae34c6c8204439fa37c63f64d51ce0bcc702b58a9f054b8"
+      },
+      "final_iteration": 3000,
+      "Rwin": {
+        "window_start_iteration": 2800,
+        "window_end_iteration": 3000,
+        "sample_times": [
+          2800,
+          2810,
+          2820,
+          2830,
+          2840,
+          2850,
+          2860,
+          2870,
+          2880,
+          2890,
+          2900,
+          2910,
+          2920,
+          2930,
+          2940,
+          2950,
+          2960,
+          2970,
+          2980,
+          2990,
+          3000
+        ],
+        "samples": 21,
+        "Nu": 0.021328812687099827,
+        "Nu_bar_0": 0.021328812687099827,
+        "Nu_legacy_wall_pair_monitor": 0.02132880495952138,
+        "Nu_bar_half": 0.03232813770356768,
+        "primary_mean_Nu_candidate": "Nu_bar_half; legacy Gate D remains unchanged",
+        "Umax": 0.06174063648866751,
+        "Vmax": 0.04950082765211266,
+        "scales": {
+          "Nu": 1.0,
+          "Umax": 1.0,
+          "Vmax": 1.0
+        },
+        "heat_imbalance_start": 4.119938149344736e-08,
+        "heat_imbalance_end": 5.665143436339847e-08,
+        "heat_imbalance_linear_slope_per_iteration": 7.720814655663448e-11
+      },
+      "final_initial_residuals": {
+        "Ux": 0.0001304117747327533,
+        "Uy": 0.0001445365505697651,
+        "T": 2.917098378812021e-05,
+        "p_rgh": 0.0003920027421681874
+      },
+      "normal_exit": true,
+      "fatal_or_nan": false,
+      "Gate_D": "FAIL"
     }
   },
-  "status": "READY_TO_RESUME_AWAITING_USER",
-  "stop_cases": [],
-  "solver_finished_matrix_points": 3,
+  "status": "STOPPED_CONVERGENCE_NOT_REACHED",
+  "stop_cases": [
+    "B-Ra1e3-fine"
+  ],
+  "solver_finished_matrix_points": 4,
   "accepted_matrix_points": 3,
   "matrix_points_total": 12,
   "preexisting_formal_solver_runs": 2,
@@ -415,8 +530,8 @@
   "ROUTE_B_FULL_MATRIX_COMPLETE": "NO",
   "BENCHMARK_CORE_PASS": "NOT_EVALUATED",
   "needs_320": null,
-  "needs_320_reason": "Insufficient accepted grids; no 320 grid authorized or run.",
-  "required_user_decision": "Authorize remaining matrix cases; none executed in this invocation.",
+  "needs_320_reason": "Fine Gate D failed; formal grid evaluation not performed.",
+  "required_user_decision": "Decide whether to authorize additional steady iterations for B-Ra1e3-fine; no automatic extension.",
   "formal_Ra_gates": {
     "1000": {
       "E": "NOT_EVALUATED",
@@ -439,7 +554,8 @@
       "G": "NOT_EVALUATED"
     }
   },
-  "FULL_MATRIX_RESUME": "YES",
+  "FULL_MATRIX_RESUME": "NO",
   "B_RA1E3_MEDIUM_GATE_D": "PASS",
-  "continuation_solver_runs": 1
+  "continuation_solver_runs": 1,
+  "B_RA1E3_FINE_GATE_D": "FAIL"
 }

@@ -108,13 +108,32 @@ def main() -> None:
     if not mesh_ok:
         save_status(case_id, "GATE_A_FAIL", {"case_path": str(case), "reason": "mesh audit failed"})
         raise SystemExit("Gate A mesh audit failed")
+    accepted = json.loads((OUT / "full_matrix_manifest.json").read_text())
+    baseline = accepted["cases"]["B-Ra1e3-coarse"]["generated_manifest"]
+    fixed_inputs = ("0/U", "0/T", "0/p_rgh", "0/alphat", "constant/hRef",
+                    "constant/transportProperties", "constant/turbulenceProperties",
+                    "system/fvSchemes")
+    if any(manifest["input_sha256"][p] != baseline["input_sha256"][p] for p in fixed_inputs):
+        save_status(case_id, "GATE_A_FAIL", {"case_path": str(case), "reason": "accepted physics/BC/scheme inputs differ"})
+        raise SystemExit("Gate A: accepted baseline input mismatch")
+    boundary = (case / "constant/polyMesh/boundary").read_text()
+    empty_ok = all(re.search(rf"\b{patch}\s*\{{[^}}]*\btype\s+empty;", boundary) for patch in ("front", "back"))
+    build_ok = original["environment"]["build"] in (case / "log.blockMesh").read_text()[:3000]
+    if not empty_ok or not build_ok:
+        save_status(case_id, "GATE_A_FAIL", {"case_path": str(case), "reason": "empty patch/build mismatch"})
+        raise SystemExit("Gate A: empty patch/build mismatch")
     preflight = {"case_path": str(case), "Ra_target": target, "Ra_actual": actual,
                  "Pr_actual": manifest["Pr_actual"], "beta_DeltaT": manifest["beta_DeltaT"],
                  "gravity_m_s2": manifest["gravity_m_s2"], "grid": manifest["grid"],
                  "pRefCell": manifest["pRefCell"], "pRefCellCentre_m": manifest["pRefCellCentre_m"],
                  "input_sha256": manifest["input_sha256"], "OpenFOAM_version": "OpenFOAM-6",
                  "OpenFOAM_build": original["environment"]["build"], "mesh_check": "Mesh OK",
-                 "source_case_id": case_id, "reused_existing_solver_result": False}
+                 "source_case_id": case_id, "reused_existing_solver_result": False,
+                 "Gate_A": "PASS", "geometry_m": manifest["geometry_m"],
+                 "front_back_empty": empty_ok, "max_non_orthogonality_deg": 0,
+                 "accepted_fixed_input_hashes_match": True,
+                 "fvSolution_sha256": sha(case / "system/fvSolution"),
+                 "mesh_sha256": {str(p.relative_to(case)): sha(p) for p in (case / "constant/polyMesh").iterdir() if p.is_file()}}
     save_status(case_id, "GATE_A_PASS", preflight)
     if run_logged([str(SCRIPTS / "run_case.sh"), str(case)], case / "log.full_matrix_runner"):
         save_status(case_id, "SOLVER_FAILED", preflight)
