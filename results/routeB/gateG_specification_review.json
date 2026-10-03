@@ -1,0 +1,210 @@
+{
+  "schema": "routeB-gateG-specification-review-v1",
+  "reviewed_at": "2026-10-04T00:36:10.720176+09:00",
+  "status": "PROPOSAL_ONLY",
+  "current_formal_gate_G": "FAIL",
+  "current_criteria_modified": false,
+  "solver_executed": false,
+  "current_results_modified": false,
+  "solver_continuity_quantity": "D_h(phi)=sum oriented corrected face volume flux / cell volume",
+  "continuum_equation": "div(u)=0; div(rho0*u)=rho0*div(u)=0",
+  "phi_dimensions": "[0 3 -1 0 0 0 0]; m^3/s",
+  "epsilon_phi_role": "Direct corrected-face solver continuity metric; currently Diagnostic; proposed Hard",
+  "epsilon_v_role": "Divergence of centrally reconstructed cell-U flux; proposed Diagnostic",
+  "epsilon_m_role_routeB": "Constant-density reconstructed mass-divergence legacy alias of epsilon_v, not solver mass-flux residual",
+  "current_thresholds": {
+    "epsilon_m": 1e-06,
+    "epsilon_v": 0.002,
+    "effective_reconstructed_threshold_routeB": 1e-06
+  },
+  "current_result_example": {
+    "iteration": 21000,
+    "continuity": {
+      "mean_abs_div_phi_1_s": 1.4751798531145742e-13,
+      "mean_abs_div_U_1_s": 1.1471800501973435e-06,
+      "epsilon_phi": 2.8283979308217443e-11,
+      "epsilon_v": 0.00021995159935295997,
+      "epsilon_m": 0.00021995159935295997,
+      "mass_relation": "rho0 is constant, so normalized mass- and volume-divergence metrics are identical; solver phi is volume flux"
+    },
+    "epsilon_v_to_epsilon_phi_ratio": 7776543.638223376,
+    "new_criteria_status": "NOT_EVALUATED"
+  },
+  "candidate_A": {
+    "hard": [
+      "epsilon_m<=1e-6",
+      "epsilon_v<=2e-3"
+    ],
+    "effective_constraint": "epsilon_v<=1e-6",
+    "advantage": "Preserves historical rule and strict reconstructed-field condition",
+    "limitation": "Duplicates the same reconstructed operator; solver flux not directly Hard-tested"
+  },
+  "candidate_B": {
+    "hard": [
+      "epsilon_phi<=tau_phi"
+    ],
+    "diagnostic": [
+      "epsilon_v",
+      "epsilon_m_reconstructed_legacy"
+    ],
+    "threshold_phi": null,
+    "threshold_status": "UNRESOLVED",
+    "advantage": "Directly measures the discrete continuity equation solved",
+    "limitation": "Does not independently certify reconstructed velocity-field quality"
+  },
+  "candidate_C": {
+    "hard": [
+      "epsilon_phi<=tau_phi",
+      "epsilon_v<=tau_rec"
+    ],
+    "threshold_phi": null,
+    "threshold_rec": null,
+    "advantage": "Separates solver conservation and field quality as two requirements",
+    "limitation": "Needs independent field-quality error budget and validated threshold"
+  },
+  "recommended_candidate": "B",
+  "recommended_hard_metrics": [
+    "epsilon_phi (threshold unresolved)",
+    "existing wall/section heat conservation",
+    "existing temperature/velocity symmetry"
+  ],
+  "recommended_diagnostics": [
+    "epsilon_v",
+    "epsilon_m_reconstructed_legacy"
+  ],
+  "legacy_key_policy": "Keep epsilon_m with its old meaning and criteria version; never silently replace by epsilon_phi",
+  "thresholds_fully_justified": false,
+  "threshold_evidence_required": [
+    "Pressure matrix residual-to-FV divergence scaling including reference and BC",
+    "Independent conservation error budget and L/Up scaling",
+    "Machine precision, conditioning, output and summation effects",
+    "Operator validation with analytic or manufactured solenoidal fields and grid refinement",
+    "Verify literature thresholds use compatible operators and normalization"
+  ],
+  "solver_rerun_required_if_adopted": false,
+  "postprocessing_rerun_required_if_adopted": true,
+  "numeric_field_postprocessing_rerun_required_if_adopted": "Not required if existing validated metrics and unchanged operators suffice; required only for additional/redefined metrics",
+  "postprocessing_scope": "Regenerate Gate decisions, aliases/schema/provenance under an approved new version; preserve old FAIL",
+  "spec_version_change_recommended": true,
+  "user_decision_required": true,
+  "route_A_policy": "No automatic changes; variable density mass/volume metrics need separate semantics",
+  "other_failures_unchanged": [
+    "Ra1e3 Gate F FAIL and needs_320",
+    "Incomplete 12-point matrix"
+  ],
+  "source_files_checked": {
+    "pEqn.H": {
+      "path": "/home/mirai/OpenFOAM/OpenFOAM-6/applications/solvers/heatTransfer/buoyantBoussinesqSimpleFoam/pEqn.H",
+      "lines": [
+        2,
+        8,
+        13,
+        18,
+        23,
+        29,
+        39,
+        42,
+        46,
+        52
+      ],
+      "sha256": "9ba4feb13369ac01da0da42411dee7375c4c7c1aa4e7f7d4ac6c2dbb5668c21b"
+    },
+    "createFields.H": {
+      "path": "/home/mirai/OpenFOAM/OpenFOAM-6/applications/solvers/heatTransfer/buoyantBoussinesqSimpleFoam/createFields.H",
+      "lines": [
+        32,
+        45,
+        55,
+        64
+      ],
+      "sha256": "123e261cecbd8ff187b40e529f07b92b2594252d13e8405464f05e50474f3418"
+    },
+    "main_solver": {
+      "path": "/home/mirai/OpenFOAM/OpenFOAM-6/applications/solvers/heatTransfer/buoyantBoussinesqSimpleFoam/buoyantBoussinesqSimpleFoam.C",
+      "lines": [
+        74,
+        80,
+        81,
+        82
+      ],
+      "sha256": "abd34036fbe81e415f333a9d6ca0854f15b70f77fd837d5dc048861ebd65f909"
+    },
+    "createPhi.H": {
+      "path": "/home/mirai/OpenFOAM/OpenFOAM-6/src/finiteVolume/cfdTools/incompressible/createPhi.H",
+      "lines": [
+        36,
+        43,
+        46
+      ],
+      "sha256": "66374ad7e625a2082614f1aaa8149e5c9ad20127dd407b4238a66efd3907d6b6"
+    },
+    "continuityErrs.H": {
+      "path": "/home/mirai/OpenFOAM/OpenFOAM-6/src/finiteVolume/cfdTools/incompressible/continuityErrs.H",
+      "lines": [
+        33,
+        36,
+        39
+      ],
+      "sha256": "21fda511b3579df620c445e5000ef06363deeea9ea3aa1171e5190da9eec8c10"
+    },
+    "fvcFlux.C": {
+      "path": "/home/mirai/OpenFOAM/OpenFOAM-6/src/finiteVolume/finiteVolume/fvc/fvcFlux.C",
+      "lines": [
+        31,
+        40
+      ],
+      "sha256": "f38c7a8c1f0b720b62193d1f465e5fdbcb01f5ccd85504f9270dab1a16a07cd0"
+    },
+    "fvcDiv.C": {
+      "path": "/home/mirai/OpenFOAM/OpenFOAM-6/src/finiteVolume/finiteVolume/fvc/fvcDiv.C",
+      "lines": [
+        56
+      ],
+      "sha256": "2cb000bd3c5a15a5536c4d9e56a20230e7ec16e88734f8f234d99e5c99642ccc"
+    },
+    "fvcReconstruct.C": {
+      "path": "/home/mirai/OpenFOAM/OpenFOAM-6/src/finiteVolume/finiteVolume/fvc/fvcReconstruct.C",
+      "lines": [
+        87
+      ],
+      "sha256": "798ecc79700f0835d03f7c6de62b82c917ba9057ac51ec01893a5ce3b255406f"
+    },
+    "constrainPressure.C": {
+      "path": "/home/mirai/OpenFOAM/OpenFOAM-6/src/finiteVolume/cfdTools/general/constrainPressure/constrainPressure.C",
+      "lines": [
+        61,
+        66,
+        73,
+        104
+      ],
+      "sha256": "f834ee1d752987ea963cc5d3008d3fcf5d3a3f7dc96aebc0ed89ea774ba47584"
+    },
+    "adjustPhi.C": {
+      "path": "/home/mirai/OpenFOAM/OpenFOAM-6/src/finiteVolume/cfdTools/general/adjustPhi/adjustPhi.C",
+      "lines": [
+        87,
+        94,
+        105,
+        135
+      ],
+      "sha256": "9e34a8444b6cf5bfc4a1d213cf4332a5f9e2b1284483c38c69e6703549a0c279"
+    }
+  },
+  "protected_file_sha256": {
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/docs/acceptance_criteria.md": "2fe82dba1644621a7e57ddc11c4ea5ba5007db50122fbd0c0179f5af5ac38db4",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/docs/benchmark_spec.md": "f4436fd4fa8184052b05555b70d9382f7c82b9647aa46e13b126d6796e6d9496",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/docs/routeB_design.md": "d87ab88109c1080e3b32867719f217df7118c43b4d3caa0da30bc814938eabf6",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/docs/routeB_implementation.md": "a98777f56718ee9f4e7d763e384409e241f118e91d6857648e361677bc757ca5",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeB/analyze_case.py": "5b8a503e559f9243109527b5aefe7ed6a86485ac6c21948a35da05871e90414f",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeB/finalize_full_matrix.py": "0bc60b6a9d73e4a359d5247fb1c42d90d1cfd58c3f28d7fb83839dce762031e2",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/benchmark_summary.csv": "ef98bfc446b71d9f912d0009a86772330bb7d23246e99461125e71803d226370",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/grid_convergence.csv": "0ab1f10a55dc8e4d451326424414f2e76f782ad9f8da5fa61f6b88f2ec24af31",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/conservation.csv": "a22bd90f75cb3f76d7f0a74252ce86f5a2d7ac0c6f10a8aef63eaa570a8ea30c",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/full_matrix_status.json": "13f09465392be2c704a0b77ddea188a0ca3eb7fc86a73e609619ae496efd0340",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/full_matrix_manifest.json": "da602e35d7bd30bf85bc13822734da5c5eb34bab55e97f509d0e3d3e4bdc6e1d",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/gateG_conservation_audit.json": "cd46ebcef75509a4d881cf40d0a828a5e7d2227c72f8bb0c63037d50c576972d",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/cases/B-Ra1e3-fine/metrics.json": "3e1fa0c2506555cdc36b00ccc84730e91a5d0f64d9430ae370408089b5dd8199",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/reference/de_vahl_davis_table_v.csv": "96952fa9ca283b4fa75645b7cbcf3abf400765e56888667d1dfa9ef46a6b5466"
+  },
+  "review_document": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/gateG_specification_review.md"
+}
