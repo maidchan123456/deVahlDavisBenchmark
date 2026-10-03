@@ -73,6 +73,8 @@ def main() -> None:
         and cond["normal_exit"] and not cond["fatal_or_nan"]
         and records["A-COND"]["initialization_check"]["pass"]
     )
+    cond_paper_nu_unit = all(abs(cond[name] - 1) <= 0.001 for name in
+                             ("Nu_bar_0", "Nu_bar_half", "Nu_bar_cavity", "Nu_bar_1"))
     smoke_converged = (
         smoke["normal_exit"] and not smoke["fatal_or_nan"]
         and records["A-SMOKE"]["initialization_check"]["pass"]
@@ -85,6 +87,7 @@ def main() -> None:
     )
     statuses = {
         "ROUTE A GATE C": "PASS" if cond_gate else "FAIL",
+        "ROUTE A PAPER-DEFINITION NU UNIT TEST": "PASS" if cond_paper_nu_unit else "FAIL",
         "ROUTE A SMOKE TEST": "PASS" if cond_gate and smoke_converged else "FAIL",
         "ROUTE A MINIMAL IMPLEMENTATION": "PASS" if cond_gate and smoke_converged else "FAIL",
     }
@@ -92,6 +95,12 @@ def main() -> None:
     docs = ["benchmark_spec.md", "acceptance_criteria.md", "openfoam_design.md", "routeB_design.md"]
     run_manifest = {
         "schema": "routeA-minimal-v1",
+        "postprocessing_revision": {
+            "date": "2026-10-03", "solver_rerun": False,
+            "reason": "Correct de Vahl Davis paper-definition Nusselt mapping and add section/cavity/local-extrema outputs from saved fields",
+            "invalidated_comparison": "Nu_hot_path1=2.257421422... versus Table V Nu_bar_cavity=2.243 mixed Nu_bar_0 with Nu_bar_cavity",
+            "hard_gate_definition_changed": False,
+        },
         "generated_at": datetime.now().astimezone().isoformat(),
         "workspace": str(ROOT),
         "host": platform.node(),
@@ -166,13 +175,17 @@ def main() -> None:
 
     summary_fields = [
         "case_id", "route", "Ra_target", "Ra_actual", "Pr_actual", "grid",
+        "Nu_bar_0", "Nu_bar_half", "Nu_bar_cavity", "Nu_bar_1",
+        "Nu_bar_0_path1", "Nu_bar_0_path2", "Nu_bar_1_path1", "Nu_bar_1_path2",
+        "Nu_hot_local_max", "Nu_hot_local_max_Z", "Nu_hot_local_min", "Nu_hot_local_min_Z",
+        "Nu_hot_local_raw_max", "Nu_hot_local_raw_max_Z", "Nu_hot_local_raw_min", "Nu_hot_local_raw_min_Z",
         "Nu_hot_path1", "Nu_hot_path2", "Nu_cold_path1", "Nu_cold_path2",
-        "Umax", "Umax_location", "Vmax", "Vmax_location", "heat_imbalance",
+        "Umax", "Umax_location_Z", "Wmax", "Wmax_location_X", "Vmax", "Vmax_location", "heat_imbalance",
         "max_dimensionless_velocity_for_Ra0", "max_theta_analytic_error_for_Ra0",
         "convergence_status", "gate_C_status", "smoke_status",
     ]
     with (RESULTS / "minimal_test_summary.csv").open("w", newline="") as stream:
-        writer = csv.DictWriter(stream, fieldnames=summary_fields)
+        writer = csv.DictWriter(stream, fieldnames=summary_fields, lineterminator="\n")
         writer.writeheader()
         for case_id in ("A-COND", "A-SMOKE"):
             rec = records[case_id]
@@ -182,9 +195,18 @@ def main() -> None:
                 "case_id": case_id, "route": "A", "Ra_target": gen["Ra_target"],
                 "Ra_actual": gen["Ra_actual"], "Pr_actual": gen["Pr_actual"],
                 "grid": "x".join(map(str, gen["grid"])),
+                "Nu_bar_0": met["Nu_bar_0"], "Nu_bar_half": met["Nu_bar_half"],
+                "Nu_bar_cavity": met["Nu_bar_cavity"], "Nu_bar_1": met["Nu_bar_1"],
+                "Nu_bar_0_path1": met["Nu_bar_0_path1"], "Nu_bar_0_path2": met["Nu_bar_0_path2"],
+                "Nu_bar_1_path1": met["Nu_bar_1_path1"], "Nu_bar_1_path2": met["Nu_bar_1_path2"],
+                "Nu_hot_local_max": met["Nu_hot_local_max"], "Nu_hot_local_max_Z": met["Nu_hot_local_max_Z"],
+                "Nu_hot_local_min": met["Nu_hot_local_min"], "Nu_hot_local_min_Z": met["Nu_hot_local_min_Z"],
+                "Nu_hot_local_raw_max": met["Nu_hot_local_raw_max"], "Nu_hot_local_raw_max_Z": met["Nu_hot_local_raw_max_Z"],
+                "Nu_hot_local_raw_min": met["Nu_hot_local_raw_min"], "Nu_hot_local_raw_min_Z": met["Nu_hot_local_raw_min_Z"],
                 "Nu_hot_path1": met["Nu_hot_path1"], "Nu_hot_path2": met["Nu_hot_path2"],
                 "Nu_cold_path1": met["Nu_cold_path1"], "Nu_cold_path2": met["Nu_cold_path2"],
-                "Umax": met["Umax"], "Umax_location": met["Umax_Y"],
+                "Umax": met["Umax"], "Umax_location_Z": met["Umax_Z"],
+                "Wmax": met["Wmax"], "Wmax_location_X": met["Wmax_X"],
                 "Vmax": met["Vmax"], "Vmax_location": met["Vmax_X"],
                 "heat_imbalance": met["heat_imbalance"],
                 "max_dimensionless_velocity_for_Ra0": met["max_dimensionless_velocity"] if case_id == "A-COND" else "N/A",
@@ -200,20 +222,24 @@ def main() -> None:
             with (RESULTS / "cases" / case_id / "convergence.csv").open() as source:
                 reader = csv.DictReader(source)
                 if writer is None:
-                    writer = csv.DictWriter(output, fieldnames=reader.fieldnames)
+                    writer = csv.DictWriter(output, fieldnames=reader.fieldnames, lineterminator="\n")
                     writer.writeheader()
                 writer.writerows(reader)
 
     with (RESULTS / "conservation.csv").open("w", newline="") as stream:
-        fields = ["case_id", "heat_imbalance", "mean_abs_mass_divergence_kg_m3_s",
+        fields = ["case_id", "Nu_bar_0", "Nu_bar_half", "Nu_bar_cavity", "Nu_bar_1",
+                  "section_Nu_max_relative_deviation_from_half", "heat_imbalance", "mean_abs_mass_divergence_kg_m3_s",
                   "mean_abs_volume_divergence_1_s", "epsilon_m", "epsilon_v", "note"]
-        writer = csv.DictWriter(stream, fieldnames=fields)
+        writer = csv.DictWriter(stream, fieldnames=fields, lineterminator="\n")
         writer.writeheader()
         for case_id in ("A-COND", "A-SMOKE"):
             met = records[case_id]["metrics"]
             div = met["divergence"]
             writer.writerow({
-                "case_id": case_id, "heat_imbalance": met["heat_imbalance"],
+                "case_id": case_id, "Nu_bar_0": met["Nu_bar_0"], "Nu_bar_half": met["Nu_bar_half"],
+                "Nu_bar_cavity": met["Nu_bar_cavity"], "Nu_bar_1": met["Nu_bar_1"],
+                "section_Nu_max_relative_deviation_from_half": met["section_Nu_max_relative_deviation_from_half"],
+                "heat_imbalance": met["heat_imbalance"],
                 "mean_abs_mass_divergence_kg_m3_s": div["mean_abs_mass_divergence_kg_m3_s"],
                 "mean_abs_volume_divergence_1_s": div["mean_abs_volume_divergence_1_s"],
                 "epsilon_m": div["epsilon_m"], "epsilon_v": div["epsilon_v"],

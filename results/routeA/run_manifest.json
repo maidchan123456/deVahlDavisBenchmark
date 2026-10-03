@@ -1,6 +1,13 @@
 {
   "schema": "routeA-minimal-v1",
-  "generated_at": "2026-09-30T04:29:28.368720+09:00",
+  "postprocessing_revision": {
+    "date": "2026-10-03",
+    "solver_rerun": false,
+    "reason": "Correct de Vahl Davis paper-definition Nusselt mapping and add section/cavity/local-extrema outputs from saved fields",
+    "invalidated_comparison": "Nu_hot_path1=2.257421422... versus Table V Nu_bar_cavity=2.243 mixed Nu_bar_0 with Nu_bar_cavity",
+    "hard_gate_definition_changed": false
+  },
+  "generated_at": "2026-10-03T19:03:18.629263+09:00",
   "workspace": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark",
   "host": "mirai-Precision-5860-Tower",
   "environment": {
@@ -16,10 +23,10 @@
     "distribution": "OpenFOAM Foundation (not OpenCFD/ESI)"
   },
   "immutable_document_sha256": {
-    "benchmark_spec.md": "2be4e290ac56da6f1ba112d8defe908024757bdaf2df7e40d5504ee9da4ca159",
-    "acceptance_criteria.md": "ab1f7938e8a9d42e8fe0395c0fef8b4b2f46786e9ddbe3e74db555b9aebe1fa2",
-    "openfoam_design.md": "3b2a661dd092d9e89f635bcca6059d2e7db5da8d7e8bea45f59712200c97f142",
-    "routeB_design.md": "abb6c0fb81beb2783f2d195a0bb75f94c41cd98e3aa4572e994b76f95f6bf83d"
+    "benchmark_spec.md": "9de2b869ae7b2a3bfdc3c0a03292f40e3ee28a41a78ed3bd981c052ae2487420",
+    "acceptance_criteria.md": "c252fabbf108be14a0e2c21a09859bc495f2cc854dd426f442117379a7451d45",
+    "openfoam_design.md": "eef1e94311e5221e3402d4ba9d1969706e0da04e304cf0b89ce5d3dfd3070b10",
+    "routeB_design.md": "d87ab88109c1080e3b32867719f217df7118c43b4d3caa0da30bc814938eabf6"
   },
   "model_summary": "foamRun + solver fluid; Boussinesq heRhoThermo; laminar Stokes; laminar Fourier; no turbulence/radiation/MRF/particles/fvModels/fvConstraints",
   "boundary_summary": {
@@ -248,6 +255,16 @@
       "metrics": {
         "case_id": "A-COND",
         "final_iteration": 3000,
+        "Nu_bar_0": 1.0000393924781292,
+        "Nu_bar_half": 0.9999606321545684,
+        "Nu_bar_cavity": 1.0,
+        "Nu_bar_1": 1.0000394040508809,
+        "Nu_bar_cavity_from_section_trapezoid": 1.0,
+        "Nu_bar_cavity_discrete_method_difference": 0.0,
+        "Nu_bar_0_path1": 1.0000393924781292,
+        "Nu_bar_1_path1": 1.0000394040508809,
+        "Nu_bar_0_path2": 1.0000393924785846,
+        "Nu_bar_1_path2": 1.000039404050755,
         "Nu_hot_path1": 1.0000393924781292,
         "Nu_cold_path1": 1.0000394040508809,
         "Nu_hot_path2": 1.0000393924785846,
@@ -261,12 +278,34 @@
         "wallHeatFlux_sign": "wallHeatFlux=-q; hot Q positive, cold Q negative; cold Nu uses -Q",
         "radiation_contribution": "absent (no radiation field/model selected)",
         "heat_imbalance": 1.1571714427628507e-08,
+        "section_Nu_max_relative_deviation_from_half": 7.877499751437221e-05,
+        "paper_Nu_definition": "Q=U*theta-dtheta/dX; Route A diagnostic only because its governing equations differ from the paper",
+        "paper_Nu_discretization": "walls: orthogonal patch face gradient; internal vertical faces: linear U/theta interpolation plus two-cell orthogonal temperature gradient and face-area integration; cavity: cell-volume U*theta quadrature plus exact imposed-wall conductive integral 1",
+        "Nu_hot_local_max": 1.0000398068985774,
+        "Nu_hot_local_max_Z": 0.49291259017083655,
+        "Nu_hot_local_min": 1.0000384911902682,
+        "Nu_hot_local_min_Z": 1.0,
+        "Nu_max": 1.0000398068985774,
+        "Z_at_Nu_max": 0.49291259017083655,
+        "Nu_min": 1.0000384911902682,
+        "Z_at_Nu_min": 1.0,
+        "Nu_hot_local_raw_max": 1.0000398068950744,
+        "Nu_hot_local_raw_max_Z": 0.49375,
+        "Nu_hot_local_raw_min": 1.0000385180137528,
+        "Nu_hot_local_raw_min_Z": 0.99375,
+        "Nu_hot_local_extrema_method": "fixed local quartic through five adjacent face-centre values; derivative root inside the local interval; endpoint evaluated by the same quartic only when the five-point window touches it",
+        "paper_comparison_like_for_like": null,
         "Umax": 0.0,
+        "Umax_Z": 0.0,
+        "Wmax": 0.0,
+        "Wmax_X": 0.0,
         "Umax_Y": 0.0,
         "Vmax": 0.0,
         "Vmax_X": 0.0,
         "Umin": 0.0,
         "Umin_Y": 0.0,
+        "Wmin": 0.0,
+        "Wmin_X": 0.0,
         "Vmin": 0.0,
         "Vmin_X": 0.0,
         "centreline_method": "linear interpolation to exact centreline from the two bracketing cell-centre lines, then 4097 uniform points including no-slip endpoints",
@@ -290,6 +329,12 @@
           "window_start_iteration": 2801,
           "window_end_iteration": 3000,
           "Nu": 4.14565193671143e-05,
+          "Nu_legacy_wall_pair_monitor": 4.14565193671143e-05,
+          "Nu_bar_half": 1.7131680351667455e-05,
+          "Nu_bar_half_sample_times": [
+            2900,
+            3000
+          ],
           "Umax": 0.0,
           "Vmax": 0.0,
           "Nu_samples": 200,
@@ -299,6 +344,7 @@
             "Umax": 1.0,
             "Vmax": 1.0
           },
+          "primary_mean_Nu_candidate": "Nu_bar_half; legacy Gate D remains unchanged",
           "heat_imbalance_start": 1.988084450418956e-08,
           "heat_imbalance_end": 1.1571714401568024e-08
         },
@@ -512,6 +558,16 @@
       "metrics": {
         "case_id": "A-SMOKE",
         "final_iteration": 3000,
+        "Nu_bar_0": 2.257421422257835,
+        "Nu_bar_half": 2.258514696997335,
+        "Nu_bar_cavity": 2.2599546294035275,
+        "Nu_bar_1": 2.2574214718534904,
+        "Nu_bar_cavity_from_section_trapezoid": 2.258060407675404,
+        "Nu_bar_cavity_discrete_method_difference": 0.0018942217281234797,
+        "Nu_bar_0_path1": 2.257421422257835,
+        "Nu_bar_1_path1": 2.2574214718534904,
+        "Nu_bar_0_path2": 2.2574214222572673,
+        "Nu_bar_1_path2": 2.257421471853702,
         "Nu_hot_path1": 2.257421422257835,
         "Nu_cold_path1": 2.2574214718534904,
         "Nu_hot_path2": 2.2574214222572673,
@@ -525,12 +581,83 @@
         "wallHeatFlux_sign": "wallHeatFlux=-q; hot Q positive, cold Q negative; cold Nu uses -Q",
         "radiation_contribution": "absent (no radiation field/model selected)",
         "heat_imbalance": 2.197039218332305e-08,
+        "section_Nu_max_relative_deviation_from_half": 0.000567414679344954,
+        "paper_Nu_definition": "Q=U*theta-dtheta/dX; Route A diagnostic only because its governing equations differ from the paper",
+        "paper_Nu_discretization": "walls: orthogonal patch face gradient; internal vertical faces: linear U/theta interpolation plus two-cell orthogonal temperature gradient and face-area integration; cavity: cell-volume U*theta quadrature plus exact imposed-wall conductive integral 1",
+        "Nu_hot_local_max": 3.5771345173177806,
+        "Nu_hot_local_max_Z": 0.13966097452034604,
+        "Nu_hot_local_min": 0.5821556110530395,
+        "Nu_hot_local_min_Z": 1.0,
+        "Nu_max": 3.5771345173177806,
+        "Z_at_Nu_max": 0.13966097452034604,
+        "Nu_min": 0.5821556110530395,
+        "Z_at_Nu_min": 1.0,
+        "Nu_hot_local_raw_max": 3.577073848910004,
+        "Nu_hot_local_raw_max_Z": 0.13749999999999998,
+        "Nu_hot_local_raw_min": 0.5831873637862373,
+        "Nu_hot_local_raw_min_Z": 0.9875,
+        "Nu_hot_local_extrema_method": "fixed local quartic through five adjacent face-centre values; derivative root inside the local interval; endpoint evaluated by the same quartic only when the five-point window touches it",
+        "paper_comparison_like_for_like": {
+          "Nu_bar_cavity": {
+            "calculated": 2.2599546294035275,
+            "reference": 2.243,
+            "error": 0.0075589074469583845,
+            "error_type": "relative"
+          },
+          "Nu_bar_half": {
+            "calculated": 2.258514696997335,
+            "reference": 2.243,
+            "error": 0.006916940257394109,
+            "error_type": "relative"
+          },
+          "Nu_bar_0": {
+            "calculated": 2.257421422257835,
+            "reference": 2.238,
+            "error": 0.008678026031204124,
+            "error_type": "relative"
+          },
+          "Nu_hot_local_max": {
+            "calculated": 3.5771345173177806,
+            "reference": 3.528,
+            "error": 0.013927017380323306,
+            "error_type": "relative"
+          },
+          "Nu_hot_local_max_Z": {
+            "calculated": 0.13966097452034604,
+            "reference": 0.143,
+            "error": -0.003339025479653951,
+            "error_type": "absolute"
+          },
+          "Nu_hot_local_min": {
+            "calculated": 0.5821556110530395,
+            "reference": 0.586,
+            "error": -0.0065603906944718205,
+            "error_type": "relative"
+          },
+          "Nu_hot_local_min_Z": {
+            "calculated": 1.0,
+            "reference": 1.0,
+            "error": 0.0,
+            "error_type": "absolute"
+          },
+          "Nu_bar_1": {
+            "calculated": 2.2574214718534904,
+            "reference": null,
+            "error": null,
+            "note": "Table V contains no independent cold-wall mean reference"
+          }
+        },
         "Umax": 16.121335096250803,
+        "Umax_Z": 0.8125,
+        "Wmax": 19.597333463027827,
+        "Wmax_X": 0.112548828125,
         "Umax_Y": 0.8125,
         "Vmax": 19.597333463027827,
         "Vmax_X": 0.112548828125,
         "Umin": -16.115539096269067,
         "Umin_Y": 0.18750000000000003,
+        "Wmin": -19.593111422500847,
+        "Wmin_X": 0.887451171875,
         "Vmin": -19.593111422500847,
         "Vmin_X": 0.887451171875,
         "centreline_method": "linear interpolation to exact centreline from the two bracketing cell-centre lines, then 4097 uniform points including no-slip endpoints",
@@ -554,6 +681,12 @@
           "window_start_iteration": 2801,
           "window_end_iteration": 3000,
           "Nu": 0.0,
+          "Nu_legacy_wall_pair_monitor": 0.0,
+          "Nu_bar_half": 4.1544339140871447e-11,
+          "Nu_bar_half_sample_times": [
+            2900,
+            3000
+          ],
           "Umax": 2.7851673754236594e-11,
           "Vmax": 1.9418004072581606e-11,
           "Nu_samples": 200,
@@ -563,6 +696,7 @@
             "Umax": 1.0,
             "Vmax": 1.0
           },
+          "primary_mean_Nu_candidate": "Nu_bar_half; legacy Gate D remains unchanged",
           "heat_imbalance_start": 2.197039233427614e-08,
           "heat_imbalance_end": 2.197039233427614e-08
         },
@@ -603,6 +737,7 @@
   ],
   "statuses": {
     "ROUTE A GATE C": "PASS",
+    "ROUTE A PAPER-DEFINITION NU UNIT TEST": "PASS",
     "ROUTE A SMOKE TEST": "PASS",
     "ROUTE A MINIMAL IMPLEMENTATION": "PASS"
   },

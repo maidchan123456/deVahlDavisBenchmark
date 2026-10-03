@@ -1,6 +1,6 @@
 # Route A — Foundation v13 minimal implementation record
 
-記録改訂: 1.1（2026-10-03）。実施日: 2026-09-30（Asia/Tokyo）。実行時の対象仕様: `benchmark_spec.md` v1.1、判定基準: `acceptance_criteria.md` v1.1。現行の交差参照は両文書とも v1.2であり、閾値は実行時から変更していない。Route A は Foundation v13 標準 formulation の特性評価用であり、古典 Boussinesq 方程式の Verification route ではない。
+記録改訂: 1.2（2026-10-03）。実施日: 2026-09-30（Asia/Tokyo）。実行時の対象仕様: `benchmark_spec.md` v1.1、判定基準: `acceptance_criteria.md` v1.1。現行の交差参照は両文書とも v1.3であり、閾値は実行時から変更していない。Route A は Foundation v13 標準 formulation の特性評価用であり、古典 Boussinesq 方程式の Verification route ではない。
 
 ### 現在の status summary
 
@@ -13,7 +13,13 @@
 | full Gate D/F/G/K、Gate H、Gate J | **未実施** |
 | `ROUTE_A_CHARACTERIZED` / `DOWNSTREAM_TRANSIENT_READY` | **未付与** |
 
-本文の数値、失敗試行、diagnostic concern は実施記録として変更しない。
+CFD field、数値条件、失敗試行、diagnostic concern は変更していない。2026-10-03 に保存済み field だけを再後処理し、旧 Nu 比較の定義誤りを下記のとおり訂正した。solver は再実行していない。
+
+### Nu 定義訂正と再後処理
+
+旧記録は高温壁平均 `2.257421422...` を Table V の全領域平均 `2.243` と比較していた。この比較は異なる定義の混同であり無効である。原論文どおり $Q=U\theta-\partial\theta/\partial X$ とし、全鉛直 face plane、中央断面、cell-volume 全領域、高温・低温壁を別々に保存した。Route A のこれらは **de Vahl Davis paper-definition diagnostic** であり、v13 `wallHeatFlux` による物理的壁熱流束 A2 と区別する。
+
+内部 face は線形補間した $U_f,\theta_f$ と直交2-cell 温度勾配を face 面積積分する。全領域平均は cell-volume $U\theta$ 積分と固定壁による伝導積分1を使う。Simpson 則は使わない。高温壁局所極値は raw face-centre 値に加え、固定5点局所4次多項式の内部微分根／端点外挿を benchmark 値として保存した。
 
 ## 1. Pre-implementation plan
 
@@ -26,8 +32,8 @@
 - coupling: v13 `PIMPLE` の steady SIMPLE mode（`nOuterCorrectors=1`）。初期 solver/relaxation は再現可能に固定し、変更時は本書へ履歴を残す。residualControl で早期終了させず、十分な反復と最終200反復窓を保存する。
 - Nu path A1: 壁 patch の有限体積法線温度勾配を face 面積で積分し、hot/cold の座標符号を明示して無次元化する。
 - Nu path A2: v13 `wallHeatFlux` の `-q`、面積積分 Q [W]、patch area を使い、`k*DeltaT*W` で規格化する。放射 field がないことを確認する。A1 と同じ wallHeatFlux field の再変換を独立経路とは数えない。
-- 速度極値: exact centreline 上の固定4097点へ線形 cell-point 補間し、正の Umax/Vmax と位置を抽出する。最近傍 cell 最大値は主値にしない。
-- 監視: solver residuals、両 Nu、Umax/Vmax、熱収支を反復ごとまたは保存時刻ごとに保持し、最終200反復の相対レンジを評価する。Ra=0 では解析 T と無次元速度も判定する。
+- 速度極値: exact centreline 上の固定4097点へ線形 cell-point 補間し、正の Umax/Wmax と位置を抽出する。最近傍 cell 最大値は主値にしない。
+- 監視: solver residuals、両 Nu、Umax/Wmax、熱収支を反復ごとまたは保存時刻ごとに保持し、最終200反復の相対レンジを評価する。Ra=0 では解析 T と無次元速度も判定する。
 - 現時点の不確定事項: v13 の function-object 出力形式、初期化専用起動で constructor 後 field が書き出せるか、中央差分による smoke case の非線形収束性、圧力基準 cell の格子依存 ID。実装中にローカル v13 の実挙動で解消し、仕様との矛盾があれば該当段階を停止する。
 
 このタスクでは full 4 Ra × 3 grid matrix、Route A 感度試験、非定常、Route B、custom solver を実施しない。
@@ -97,33 +103,38 @@ solver constructor の後かつ最初の方程式 solve の前を検査するた
 | cell中心 `max|theta-(1-X)|` | `6.3283e-6` | `<=1e-4` | PASS |
 | hot/cold 熱不釣合い | `1.1572e-8` | 符号・balance確認 | PASS |
 
+paper-definition 自己検証は $\overline{Nu}_0=1.000039392478$、$\overline{Nu}_{1/2}=0.999960632155$、$\overline{Nu}=1.000000000000$、$\overline{Nu}_1=1.000039404051$ で、全て1から0.001以内だった。`section_nusselt.csv` の全断面最大偏差は中央断面比 `7.8775e-5`。よって自然対流結果を正式に再出力した。
+
 最終 energy initial residual は `2.708e-8`、U/p_rgh は0。最終200反復の `Rwin(Nu)=4.146e-5`、無流動なので速度 Rwin は0、熱不釣合いは `1.99e-8` から `1.16e-8` へ低下した。正常 `End`、NaN/Inf/FATALなし。解析温度直線、Nu履歴、速度 magnitude の図も保存した。
 
 **ROUTE A GATE C: PASS**
 
 ## 5. A-SMOKE results
 
-Gate C 合格後に accepted attempt を実行した。40×40×1、`Ra_actual=10000.0`、3000反復。A1/A2 の face/sign/規格化は A-COND と同一である。速度極値の主値は、偶数格子の centreline を挟む2 cell 列/行から exact `X=0.5` / `Y=0.5` へ線形補間し、no-slip 端点を含む固定4097点上で正の最大を求めた。
+Gate C 合格後に accepted attempt を実行した。40×40×1、`Ra_actual=10000.0`、3000反復。A1/A2 の face/sign/規格化は A-COND と同一である。速度極値の主値は、偶数格子の centreline を挟む2 cell 列/行から exact `X=0.5` / `Z=0.5` へ線形補間し、no-slip 端点を含む固定4097点上で正の最大を求めた。
 
 | 量 | Route A coarse | de Vahl Davis diagnostic | 差 |
 |---|---:|---:|---:|
-| mean `Nu_h` A1 | 2.257421422258 | 2.243 | +0.643% |
-| mean `Nu_h` A2 | 2.257421422257 | 2.243 | +0.643% |
-| mean `Nu_c` A2 | 2.257421471854 | 2.243 | +0.643% |
+| $\overline{Nu}_0$ | 2.257421422258 | 2.238 | +0.868% |
+| $\overline{Nu}_{1/2}$ | 2.258514696997 | 2.243 | +0.692% |
+| $\overline{Nu}$ | 2.259954629404 | 2.243 | +0.756% |
+| $\overline{Nu}_1$ | 2.257421471853 | Table V に独立値なし | paper error を計算しない |
+| $Nu_{max}$ at $Z$（4次補間） | 3.577134517318 at 0.139660975 | 3.528 at 0.143 | +1.393%, $\Delta Z=-0.00334$ |
+| $Nu_{min}$ at $Z$（端点外挿） | 0.582155611053 at 1.000 | 0.586 at 1.000 | -0.656%, $\Delta Z=0$ |
 | `Umax` | 16.12133510 | 16.178 | -0.350% |
-| `Y(Umax)` | 0.8125000 | 0.823 | -0.0105 absolute |
-| `Vmax` | 19.59733346 | 19.617 | -0.100% |
-| `X(Vmax)` | 0.11254883 | 0.119 | -0.00645 absolute |
+| `Z(Umax)` | 0.8125000 | 0.823 | -0.0105 absolute |
+| `Wmax` | 19.59733346 | 19.617 | -0.100% |
+| `X(Wmax)` | 0.11254883 | 0.119 | -0.00645 absolute |
 
-hot wall 上向き、cold wall 下向きの循環であり、対応する centreline の負側 extrema は `Umin=-16.11554` at `Y=0.1875`、`Vmin=-19.59311` at `X=0.88745` だった。`T` range `299.507288–300.492710 K`、density range `0.999507290–1.000492712 kg/m3` で、場の向きと範囲に異常はない。熱不釣合いは `2.1970e-8`。これは coarse smoke の diagnostic comparison であり Gate E、格子収束、古典 Boussinesq 方程式との同一性を主張しない。
+raw 局所値は max `3.577073848910 at Z=0.1375`、min `0.583187363786 at Z=0.9875` である。hot wall 上向き、cold wall 下向きの循環であり、対応する centreline の負側 extrema は `Umin=-16.11554 at Z=0.1875`、`Wmin=-19.59311 at X=0.88745` だった。`T` range `299.507288–300.492710 K`、density range `0.999507290–1.000492712 kg/m3` で、場の向きと範囲に異常はない。熱不釣合いは `2.1970e-8`。全 face plane の中央断面比最大偏差は `5.6741e-4`。これは coarse smoke の diagnostic comparison であり Gate E、格子収束、古典 Boussinesq 方程式との同一性を主張しない。
 
 **ROUTE A SMOKE TEST: PASS**
 
 ## 6. Convergence and conservation evidence
 
-runtime の official wallHeatFlux は毎反復、solver residual は毎反復、centreline monitor は257点を10反復ごとに記録した。最終報告値だけは固定4097点法を使う。`Rwin=(max-min)/max(|mean|,phi_scale)` とし、事前固定 scale は Nu/Umax/Vmax とも1である。
+runtime の official wallHeatFlux は毎反復、solver residual は毎反復、centreline monitor は257点を10反復ごとに記録した。最終報告値だけは固定4097点法を使う。`Rwin=(max-min)/max(|mean|,phi_scale)` とし、事前固定 scale は Nu/Umax/Wmax とも1である。JSON の `Vmax` は互換用 legacy alias である。新しい $\overline{Nu}_{1/2}$ monitor は保存 field のある2900/3000反復でも確認したが、既存 Gate D の Hard 対象は変更していない。
 
-| case | final window | `Rwin(Nu)` | `Rwin(Umax)` | `Rwin(Vmax)` | final initial residual max |
+| case | final window | `Rwin(Nu_bar_0 legacy monitor)` | `Rwin(Umax)` | `Rwin(Wmax)` | final initial residual max |
 |---|---|---:|---:|---:|---:|
 | A-COND | 2801–3000 | `4.146e-5` | 0 | 0 | `2.708e-8` |
 | A-SMOKE | 2801–3000 | 0（出力精度内一定） | `2.785e-11` | `1.942e-11` | `1.171e-10` |
@@ -147,6 +158,7 @@ OpenFOAM FV 診断では A-SMOKE の `mean|div(phi)|=7.859e-13 kg/(m3 s)`、`eps
 - 仕様の「全領域 `T=T0,rho=rho0,p=rho0 gh`」は OpenFOAM field の内部初期場として実現できるが、fixedValue hot/cold patch は開始時から `Th/Tc` であり patch density は `rho0` ではない。accepted 実装は全 cell で仕様式を保ち、patch では完全な pressure relation と `p_rgh=0` を優先した。この internal/patch 区別は後続実装でも保持する。
 - coarse smoke の `epsilon_v=4.365e-3` は formal fine-grid Gate G 閾値を超える。Route A の formulation 差、格子依存性、post-processing definition を full matrix 前に追跡する必要がある。
 - A1 と A2 は独立のコード経路（T/geometry parser 対 official wallHeatFlux）だが、同じ Fourier law と orthogonal boundary gradient を物理的に共有する。Gate C の解析解との一致を併用して校正した。
+- $\overline{Nu}$ の primary は定義どおり cell-volume quadrature とした。A-SMOKE で全 face-plane profile を台形積分した補助値は `2.258060407675`、primary `2.259954629404` との差は `0.00189422`（約0.084%）であり、coarse-grid の離散積分差として両方を `metrics.json` に保存した。
 
 ## 8. Final decisions
 

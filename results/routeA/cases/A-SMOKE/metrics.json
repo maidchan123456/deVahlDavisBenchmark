@@ -1,6 +1,16 @@
 {
   "case_id": "A-SMOKE",
   "final_iteration": 3000,
+  "Nu_bar_0": 2.257421422257835,
+  "Nu_bar_half": 2.258514696997335,
+  "Nu_bar_cavity": 2.2599546294035275,
+  "Nu_bar_1": 2.2574214718534904,
+  "Nu_bar_cavity_from_section_trapezoid": 2.258060407675404,
+  "Nu_bar_cavity_discrete_method_difference": 0.0018942217281234797,
+  "Nu_bar_0_path1": 2.257421422257835,
+  "Nu_bar_1_path1": 2.2574214718534904,
+  "Nu_bar_0_path2": 2.2574214222572673,
+  "Nu_bar_1_path2": 2.257421471853702,
   "Nu_hot_path1": 2.257421422257835,
   "Nu_cold_path1": 2.2574214718534904,
   "Nu_hot_path2": 2.2574214222572673,
@@ -14,12 +24,83 @@
   "wallHeatFlux_sign": "wallHeatFlux=-q; hot Q positive, cold Q negative; cold Nu uses -Q",
   "radiation_contribution": "absent (no radiation field/model selected)",
   "heat_imbalance": 2.197039218332305e-08,
+  "section_Nu_max_relative_deviation_from_half": 0.000567414679344954,
+  "paper_Nu_definition": "Q=U*theta-dtheta/dX; Route A diagnostic only because its governing equations differ from the paper",
+  "paper_Nu_discretization": "walls: orthogonal patch face gradient; internal vertical faces: linear U/theta interpolation plus two-cell orthogonal temperature gradient and face-area integration; cavity: cell-volume U*theta quadrature plus exact imposed-wall conductive integral 1",
+  "Nu_hot_local_max": 3.5771345173177806,
+  "Nu_hot_local_max_Z": 0.13966097452034604,
+  "Nu_hot_local_min": 0.5821556110530395,
+  "Nu_hot_local_min_Z": 1.0,
+  "Nu_max": 3.5771345173177806,
+  "Z_at_Nu_max": 0.13966097452034604,
+  "Nu_min": 0.5821556110530395,
+  "Z_at_Nu_min": 1.0,
+  "Nu_hot_local_raw_max": 3.577073848910004,
+  "Nu_hot_local_raw_max_Z": 0.13749999999999998,
+  "Nu_hot_local_raw_min": 0.5831873637862373,
+  "Nu_hot_local_raw_min_Z": 0.9875,
+  "Nu_hot_local_extrema_method": "fixed local quartic through five adjacent face-centre values; derivative root inside the local interval; endpoint evaluated by the same quartic only when the five-point window touches it",
+  "paper_comparison_like_for_like": {
+    "Nu_bar_cavity": {
+      "calculated": 2.2599546294035275,
+      "reference": 2.243,
+      "error": 0.0075589074469583845,
+      "error_type": "relative"
+    },
+    "Nu_bar_half": {
+      "calculated": 2.258514696997335,
+      "reference": 2.243,
+      "error": 0.006916940257394109,
+      "error_type": "relative"
+    },
+    "Nu_bar_0": {
+      "calculated": 2.257421422257835,
+      "reference": 2.238,
+      "error": 0.008678026031204124,
+      "error_type": "relative"
+    },
+    "Nu_hot_local_max": {
+      "calculated": 3.5771345173177806,
+      "reference": 3.528,
+      "error": 0.013927017380323306,
+      "error_type": "relative"
+    },
+    "Nu_hot_local_max_Z": {
+      "calculated": 0.13966097452034604,
+      "reference": 0.143,
+      "error": -0.003339025479653951,
+      "error_type": "absolute"
+    },
+    "Nu_hot_local_min": {
+      "calculated": 0.5821556110530395,
+      "reference": 0.586,
+      "error": -0.0065603906944718205,
+      "error_type": "relative"
+    },
+    "Nu_hot_local_min_Z": {
+      "calculated": 1.0,
+      "reference": 1.0,
+      "error": 0.0,
+      "error_type": "absolute"
+    },
+    "Nu_bar_1": {
+      "calculated": 2.2574214718534904,
+      "reference": null,
+      "error": null,
+      "note": "Table V contains no independent cold-wall mean reference"
+    }
+  },
   "Umax": 16.121335096250803,
+  "Umax_Z": 0.8125,
+  "Wmax": 19.597333463027827,
+  "Wmax_X": 0.112548828125,
   "Umax_Y": 0.8125,
   "Vmax": 19.597333463027827,
   "Vmax_X": 0.112548828125,
   "Umin": -16.115539096269067,
   "Umin_Y": 0.18750000000000003,
+  "Wmin": -19.593111422500847,
+  "Wmin_X": 0.887451171875,
   "Vmin": -19.593111422500847,
   "Vmin_X": 0.887451171875,
   "centreline_method": "linear interpolation to exact centreline from the two bracketing cell-centre lines, then 4097 uniform points including no-slip endpoints",
@@ -43,6 +124,12 @@
     "window_start_iteration": 2801,
     "window_end_iteration": 3000,
     "Nu": 0.0,
+    "Nu_legacy_wall_pair_monitor": 0.0,
+    "Nu_bar_half": 4.1544339140871447e-11,
+    "Nu_bar_half_sample_times": [
+      2900,
+      3000
+    ],
     "Umax": 2.7851673754236594e-11,
     "Vmax": 1.9418004072581606e-11,
     "Nu_samples": 200,
@@ -52,6 +139,7 @@
       "Umax": 1.0,
       "Vmax": 1.0
     },
+    "primary_mean_Nu_candidate": "Nu_bar_half; legacy Gate D remains unchanged",
     "heat_imbalance_start": 2.197039233427614e-08,
     "heat_imbalance_end": 2.197039233427614e-08
   },

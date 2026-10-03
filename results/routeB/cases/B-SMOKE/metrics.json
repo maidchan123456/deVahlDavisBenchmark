@@ -1,19 +1,101 @@
 {
   "case_id": "B-SMOKE",
   "final_iteration": 3000,
+  "Nu_bar_0": 2.257421662232673,
+  "Nu_bar_half": 2.2574216652554955,
+  "Nu_bar_cavity": 2.259326039868519,
+  "Nu_bar_1": 2.257421662888987,
+  "Nu_bar_cavity_from_section_trapezoid": 2.257421661124183,
+  "Nu_bar_cavity_discrete_method_difference": 0.0019043787443360216,
+  "Nu_bar_0_path1": 2.257421662232673,
+  "Nu_bar_0_path2": 2.2597099404931242,
+  "Nu_bar_1_path1": 2.257421662888987,
+  "Nu_bar_1_path2": 2.2597099408331616,
   "Nu_hot_B1": 2.257421662232673,
   "Nu_hot_B2": 2.2597099404931242,
   "Nu_cold_B1": 2.257421662888987,
   "Nu_cold_B2": 2.2597099408331616,
   "Nu_path_relative_difference": 0.0010131554542579034,
   "heat_imbalance": 2.907361637623179e-10,
+  "section_Nu_max_relative_deviation_from_half": 3.814009232758507e-09,
+  "paper_Nu_definition": "Q=U*theta-dtheta/dX",
+  "paper_Nu_discretization": "walls: B1 orthogonal patch snGrad; internal vertical faces: saved volume flux phi times linearly interpolated theta plus two-cell orthogonal conductive flux integrated with face area; cavity: cell-volume U*theta quadrature plus exact imposed-wall conductive integral 1",
+  "Nu_hot_local_max": 3.5771496613726255,
+  "Nu_hot_local_max_Z": 0.13967295456384218,
+  "Nu_hot_local_min": 0.5820929168721065,
+  "Nu_hot_local_min_Z": 1.0,
+  "Nu_max": 3.5771496613726255,
+  "Z_at_Nu_max": 0.13967295456384218,
+  "Nu_min": 0.5820929168721065,
+  "Z_at_Nu_min": 1.0,
+  "Nu_hot_local_raw_max": 3.5770883141594823,
+  "Nu_hot_local_raw_max_Z": 0.1375,
+  "Nu_hot_local_raw_min": 0.583124740837775,
+  "Nu_hot_local_raw_min_Z": 0.9875,
+  "Nu_hot_local_extrema_method": "fixed local quartic through five adjacent face-centre values; derivative root inside the local interval; endpoint evaluated by the same quartic only when the five-point window touches it",
+  "paper_comparison_like_for_like": {
+    "Nu_bar_cavity": {
+      "calculated": 2.259326039868519,
+      "reference": 2.243,
+      "error": 0.007278662446954523,
+      "error_type": "relative"
+    },
+    "Nu_bar_half": {
+      "calculated": 2.2574216652554955,
+      "reference": 2.243,
+      "error": 0.006429632302940525,
+      "error_type": "relative"
+    },
+    "Nu_bar_0": {
+      "calculated": 2.257421662232673,
+      "reference": 2.238,
+      "error": 0.008678133258567047,
+      "error_type": "relative"
+    },
+    "Nu_hot_local_max": {
+      "calculated": 3.5771496613726255,
+      "reference": 3.528,
+      "error": 0.013931309912875693,
+      "error_type": "relative"
+    },
+    "Nu_hot_local_max_Z": {
+      "calculated": 0.13967295456384218,
+      "reference": 0.143,
+      "error": -0.003327045436157805,
+      "error_type": "absolute"
+    },
+    "Nu_hot_local_min": {
+      "calculated": 0.5820929168721065,
+      "reference": 0.586,
+      "error": -0.006667377351354013,
+      "error_type": "relative"
+    },
+    "Nu_hot_local_min_Z": {
+      "calculated": 1.0,
+      "reference": 1.0,
+      "error": 0.0,
+      "error_type": "absolute"
+    },
+    "Nu_bar_1": {
+      "calculated": 2.257421662888987,
+      "reference": null,
+      "error": null,
+      "note": "Table V contains no independent cold-wall mean reference"
+    }
+  },
   "B1_method": "OpenFOAM v6 fixedValue patch snGrad formula (Twall-Towner)*deltaCoeffs, evaluated from actual patch and owner-cell T; orthogonal mesh deltaCoeffs=2/h; uniform face-area average. Used after postProcess grad(T) failed in the installed v6 OSHA1 dictionary-digest path.",
   "B2_method": "independent quadratic through Tw,T1,T2 at inward coordinates 0,h/2,3h/2; derivative (-8Tw/3+3T1-T2/3)/h; Nu_hot=-L*dT/ds/DeltaT and Nu_cold=+L*dT/ds/DeltaT; face-centre rows only",
   "Umax": 16.118437458362845,
+  "Umax_Z": 0.8125,
+  "Wmax": 19.5952224755579,
+  "Wmax_X": 0.112548828125,
+  "Umin": -16.11843746102633,
+  "Umin_Z": 0.18750000000000003,
+  "Wmin": -19.595222469567993,
+  "Wmin_X": 0.887451171875,
   "Umax_Y": 0.8125,
   "Vmax": 19.5952224755579,
   "Vmax_X": 0.112548828125,
-  "Umin": -16.11843746102633,
   "Umin_Y": 0.18750000000000003,
   "Vmin": -19.595222469567993,
   "Vmin_X": 0.887451171875,
@@ -94,6 +176,9 @@
     ],
     "samples": 21,
     "Nu": 1.4132406434224976e-09,
+    "Nu_legacy_wall_pair_monitor": 1.4132406434224976e-09,
+    "Nu_bar_half": 1.3192322622118676e-08,
+    "primary_mean_Nu_candidate": "Nu_bar_half; legacy Gate D remains unchanged",
     "Umax": 3.4426289499454736e-10,
     "Vmax": 1.8890576752169293e-10,
     "scales": {

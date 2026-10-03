@@ -5,8 +5,8 @@
 | 項目 | 内容 |
 |---|---|
 | 文書ID | DVD-OF13-AC |
-| 版 | 1.2 |
-| 対象仕様 | `docs/benchmark_spec.md` 版1.2 |
+| 版 | 1.3 |
+| 対象仕様 | `docs/benchmark_spec.md` 版1.3 |
 | 対象 | Route B（原論文 Verification）および Foundation v13 Route A（特性評価） |
 | 状態 | 受入条件は v1.1 から不変。現在の証拠・付与状況を更新 |
 | 更新日 | 2026-10-03 |
@@ -18,6 +18,7 @@
 | 1.0 | 2026-09-28 | Foundation v13 標準 route を主判定とする初版 |
 | 1.1 | 2026-09-30 | Route B の原論文 Verification と Route A の特性評価を分離。v6 候補の別監査、初期圧力整合、A–B 比較および Gate H の役割を定義 |
 | 1.2 | 2026-10-03 | 閾値・Hard/Diagnostic 区分・総合判定論理を変更せず、両 route の監査、Gate C、smoke/minimal implementation の実績と現在の上位ステータスを反映 |
+| 1.3 | 2026-10-03 | Nu の定義対応を修正し、Table V の全領域平均・中央断面平均・高温壁平均を分離。座標を X/Z、速度を U/W に統一。Hard/Diagnostic 区分と数値閾値は変更しない |
 
 本書は、計算を「動いた／動かなかった」ではなく、方程式、入力、数値誤差、保存則および基準解との一致で判定するための規範である。**Hard** 条件は一つでも不合格なら該当ステータスを付与しない。**Diagnostic** 条件は原因分析を必須とするが、それ単独ではコア不合格にしない。同じ Gate の共通閾値は route ごとに独立判定する。$G_B$ は「Gate G の Route B 判定」、$G_A$ は「Gate G の Route A 判定」を表す。
 
@@ -73,7 +74,7 @@ $$
 E_{pos}=|s-s_{ref}|
 $$
 
-を用いる。$s$ は $X$ または $Y$ で、範囲は0から1である。
+を用いる。$s$ は $X$ または $Z$ で、範囲は0から1である。
 
 ### 2.2 格子間差
 
@@ -93,11 +94,11 @@ $$
 R_{win}(\phi)=\frac{\max(\phi)-\min(\phi)}{\max(|\overline\phi|,\phi_{scale})}
 $$
 
-とする。$\phi_{scale}$ はゼロ除算防止のため、監査時に量ごとに定めて記録する。単に残差が下がったことではなく、$\overline{Nu}$、$U_{max}$、$V_{max}$、壁面熱収支が定常であることを確認する。
+とする。$\phi_{scale}$ はゼロ除算防止のため、監査時に量ごとに定めて記録する。単に残差が下がったことではなく、平均 Nu、$U_{max}$、$W_{max}$、壁面熱収支が定常であることを確認する。既存 Gate D の Hard 監視量は高温壁平均 $\overline{Nu}_0$ であり、閾値も変更しない。原論文が代表値として扱う $\overline{Nu}_{1/2}$ を追加の primary-candidate monitor として保存するが、今回これへ Hard 対象を切り替えない。
 
 ### 2.4 Route 間差（Diagnostic）
 
-同条件の非零の B の量 $Q_B$ に対し $D_{AB}(Q)=|Q_A-Q_B|/|Q_B|$ とする。位置は絶対差を用いる。$Q_B\simeq0$ の規格化は計算前に固定する。平均 Nu、$U_{max}$・位置、$V_{max}$・位置、局所 Nu、保存量、対称性を比較する。**A–B 差に Hard な一致閾値を設けない**。両 route の格子・反復・後処理誤差を併記し、差をモデル・定式化差と解釈できる範囲を限定する。
+同条件の非零の B の量 $Q_B$ に対し $D_{AB}(Q)=|Q_A-Q_B|/|Q_B|$ とする。位置は絶対差を用いる。$Q_B\simeq0$ の規格化は計算前に固定する。$\overline{Nu}_0,\overline{Nu}_{1/2},\overline{Nu},\overline{Nu}_1$、$U_{max}$・位置、$W_{max}$・位置、局所 Nu、保存量、対称性を同一定義同士で比較する。**A–B 差に Hard な一致閾値を設けない**。両 route の格子・反復・後処理誤差を併記し、差をモデル・定式化差と解釈できる範囲を限定する。
 
 ## 3. Gate A — 出所、版、入力の再現性（Hard）
 
@@ -154,6 +155,8 @@ $$
 | $\max|\boldsymbol U|L/\alpha$ | ≤ $10^{-6}$ |
 | 全 cell 中心での $\max|\theta-(1-X)|$ | ≤ $10^{-4}$ |
 
+再後処理の自己検証ではさらに $\overline{Nu}_0,\overline{Nu}_{1/2},\overline{Nu},\overline{Nu}_1$ と $Nu_0(Z)$ が全て1を同じ精度で再現することを確認する。これは Nu 定義実装の出力可否チェックであり、既存 Gate C の Hard 項目・閾値を変更または追加するものではない。
+
 壁面熱流束の符号を絶対値で処理してこの試験を通してはならない。高温側から低温側へ向かう熱輸送が正になる変換を明文化する。
 
 **現在の判定:** A-COND と B-COND は、それぞれ上表の全 Hard 条件に合格した。実測値は各 implementation record と `results/route*/minimal_test_summary.csv` に保存する。
@@ -164,7 +167,7 @@ Route B の12主計算、Route A の12主計算、および A の Gate H 感度�
 
 - [ ] 実行が正常終了し、NaN、Inf、floating-point exception、発散警告、未処理の fatal error がない。
 - [ ] 初期条件、境界条件、物性、重力、格子が manifest と一致する。
-- [ ] 最終200反復以上で $\overline{Nu}_h,U_{max},V_{max}$ の $R_{win}\le5\times10^{-4}$。
+- [ ] 最終200反復以上で既存 Hard 監視量 $\overline{Nu}_0,U_{max},W_{max}$ の $R_{win}\le5\times10^{-4}$。$\overline{Nu}_{1/2}$ も追加保存するが、Hard 対象変更は別の仕様変更案としてのみ扱う。
 - [ ] 同じ窓で熱収支不釣合いが増加傾向にない。
 - [ ] 最終の正規化残差は、速度・温度／エネルギー・圧力の全てで $10^{-7}$ 以下を目標とする。アルゴリズム上この定義を直接適用できない場合、同等以上の収束証拠を route 別の設計記録に定義し、計算前に固定する。
 - [ ] 反復上限到達だけを正常収束として扱っていない。
@@ -176,15 +179,15 @@ Route B の12主計算、Route A の12主計算、および A の Gate H 感度�
 
 ## 7. Gate E — 原論文基準値との一致（Hard）
 
-`benchmark_spec.md` 3.6の基準値を使用する。**Route B の主 Verification の Hard 条件**として、各 $Ra$ の **fine 160²** 解について、全ての主比較量が次を満たすこと。Route A でも同じ基準値と誤差を報告するが、A の結果は practical benchmark comparison であり、B のコア合格条件を代替せず、A の特性評価ステータスにこの閾値への合格を要求しない。
+`benchmark_spec.md` 3.6の基準値を使用する。原論文 Table V の同名量だけを比較し、計算 $\overline{Nu}_0\leftrightarrow$ 論文 $\overline{Nu}_0$、計算 $\overline{Nu}_{1/2}\leftrightarrow$ 論文 $\overline{Nu}_{1/2}$、計算 $\overline{Nu}\leftrightarrow$ 論文 $\overline{Nu}$ とする。$\overline{Nu}_1$ には独立 reference error を作らない。**Route B の主 Verification の既存 Hard 条件**として、各 $Ra$ の **fine 160²** 解について、全ての主比較量が次を満たすこと。Route A でも同じ基準値と誤差を報告するが、A の結果は practical benchmark comparison であり、B のコア合格条件を代替せず、A の特性評価ステータスにこの閾値への合格を要求しない。
 
 | 判定量 | 許容値 |
 |---|---:|
-| $E_{ref}(\overline{Nu})$ | ≤ 1.0% |
+| $E_{ref}(\overline{Nu})$（全領域平均） | ≤ 1.0% |
 | $E_{ref}(U_{max})$ | ≤ 1.0% |
-| $E_{ref}(V_{max})$ | ≤ 1.0% |
-| $U_{max}$ の位置誤差 $|Y-Y_{ref}|$ | ≤ 0.01 |
-| $V_{max}$ の位置誤差 $|X-X_{ref}|$ | ≤ 0.01 |
+| $E_{ref}(W_{max})$ | ≤ 1.0% |
+| $U_{max}$ の位置誤差 $|Z-Z_{ref}|$ | ≤ 0.01 |
+| $W_{max}$ の位置誤差 $|X-X_{ref}|$ | ≤ 0.01 |
 
 判定規則:
 
@@ -193,11 +196,13 @@ Route B の12主計算、Route A の12主計算、および A の Gate H 感度�
 3. 基準値の表示桁より細かい差に物理的意味を付与しない。
 4. 原論文自身の不確かさがあるため、1%以内の一致を「厳密解に対する1%精度」と言い換えない。
 
+$\overline{Nu}_0$ と $\overline{Nu}_{1/2}$ の like-for-like 誤差も必ず報告する。ただしこれらを新しい Hard 条件へ追加することは研究判断を要するため、今回の修正では提案に留め、既存 Hard 論理を変更しない。
+
 ## 8. Gate F — 格子収束と離散化誤差（Hard）
 
 ### 8.1 fine–medium 差
 
-各 route の4つの $Ra$ の $\overline{Nu},U_{max},V_{max}$ 全てについて
+各 route の4つの $Ra$ の $\overline{Nu},U_{max},W_{max}$ 全てについて
 
 $$
 E_{fm}\le1.0\%
@@ -227,7 +232,7 @@ $$
 |---|---:|
 | $GCI_{fine}(\overline{Nu})$ | ≤ 1.5% |
 | $GCI_{fine}(U_{max})$ | ≤ 2.0% |
-| $GCI_{fine}(V_{max})$ | ≤ 2.0% |
+| $GCI_{fine}(W_{max})$ | ≤ 2.0% |
 
 追加規則:
 
@@ -251,7 +256,7 @@ $$
 \le0.2\%.
 $$
 
-内部断面 Nu を算出した場合、全評価断面の最大偏差は壁面平均値に対して0.5%以下とする。
+全鉛直 face plane の $\overline{Nu}_X(X)$ を算出し、最大偏差は中央断面 $\overline{Nu}_{1/2}$ に対して0.5%以下とする。Route B では保存済み volume flux `phi` を対流項に用いる。Route A は paper-definition diagnostic と物理的 `wallHeatFlux` を分離する。
 
 ### 9.2 質量・体積保存
 
@@ -276,11 +281,11 @@ $$
 180°回転対応点で
 
 $$
-e_\theta=\theta(X,Y)+\theta(1-X,1-Y)-1,
+e_\theta=\theta(X,Z)+\theta(1-X,1-Z)-1,
 $$
 
 $$
-\boldsymbol e_U=\boldsymbol U(X,Y)+\boldsymbol U(1-X,1-Y)
+\boldsymbol e_U=(U,W)(X,Z)+(U,W)(1-X,1-Z)
 $$
 
 を作る。補間・体積重み付き L2 相対誤差は、温度と速度の双方で0.2%以下とする。ゼロ割を避ける規格化は設計書で固定する。
@@ -298,7 +303,7 @@ Foundation v13 Route A に必須の実施・報告項目である。**既存の 
 
 - $\overline{Nu}$
 - $U_{max}$
-- $V_{max}$
+- $W_{max}$
 
 加えて、$\epsilon_v$ が $\beta\Delta T$ の低下に伴い減少するか、少なくとも悪化しないことを確認する。
 
@@ -313,6 +318,8 @@ Foundation v13 Route A に必須の実施・報告項目である。**既存の 
 | $Nu_{max}$ の基準値相対誤差 | ≤ 3% |
 | $Nu_{min}$ の基準値相対誤差 | ≤ 3% |
 | 各極値位置の絶対誤差 | ≤ 0.02 |
+
+値と位置 $Z$ を必ず同時に記録する。raw face-centre extrema と、事前固定した5点局所4次補間（端点は明示的外挿）による benchmark extrema を区別し、原論文比較には後者を用いる。
 
 目安を超えた場合は、少なくとも以下を切り分ける。
 
@@ -331,7 +338,7 @@ Foundation v13 Route A に必須の実施・報告項目である。**既存の 
 - [ ] $Ra=10^6$、fine 格子、静止・一様 $T_0$ 初期条件から開始している。
 - [ ] 二次精度 backward 時間離散を使用している。
 - [ ] 最大 Courant 数目標 0.5 と0.25の2系列を実施している。
-- [ ] 2系列の最終 $\overline{Nu},U_{max},V_{max}$ の相対差が全て0.5%以下である。
+- [ ] 2系列の最終 $\overline{Nu},U_{max},W_{max}$ の相対差が全て0.5%以下である。
 - [ ] 0.5%を超えた場合、最大 Courant 数0.125を追加し、最も細かい2系列で再判定している。
 - [ ] 最終値が Gate E と同じ原論文値との1%基準および Gate G の Route A 保存基準を満たす。ここでの原論文比較は A 非定常計算の実用比較であり、B の Verification 判定ではない。
 - [ ] 定常到達判定を無次元時間履歴で示している。

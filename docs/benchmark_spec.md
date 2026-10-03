@@ -5,7 +5,7 @@
 | 項目 | 内容 |
 |---|---|
 | 文書ID | DVD-OF13-SPEC |
-| 版 | 1.2 |
+| 版 | 1.3 |
 | 対象 | de Vahl Davis の Verification 用 Route B（Foundation v6）、および OpenFOAM Foundation v13 の比較・特性評価用 Route A |
 | 状態 | 両 route のソース監査と minimal implementation が完了。full 4 Ra × 3 grids と上位 Gate は未実施 |
 | 対応する判定基準 | `docs/acceptance_criteria.md` |
@@ -18,6 +18,7 @@
 | 1.0 | 2026-09-28 | Foundation v13 Route A を第一候補とする初版 |
 | 1.1 | 2026-09-30 | Route B を主 Verification、Route A をモデル比較・特性評価に分離。Foundation v6 solver を Route B の未監査候補とし、初期圧力整合、感度試験の解釈、両 route の計算順序を更新 |
 | 1.2 | 2026-10-03 | Foundation v6 Route B のソース監査・採用と、A-COND/A-SMOKE/B-COND/B-SMOKE の minimal implementation 結果を反映。実施済み、未実施、diagnostic concern を分離 |
+| 1.3 | 2026-10-03 | 原論文の heat-flux 定義と Table V の量を再監査し、全領域・中央断面・高温壁・低温壁の平均 Nu を分離。座標を X/Z、速度を U/W に統一し、既存4ケースを保存 field から再後処理 |
 
 本書中の **MUST** は必須、**SHOULD** は合理的理由がない限り採用、**MAY** は任意を意味する。
 
@@ -70,13 +71,13 @@
 代表長さをキャビティ一辺 $L$、温度差を $\Delta T=T_h-T_c$、温度拡散率を $\alpha=k/(\rho_0 c_p)$ とする。
 
 $$
-X=\frac{x}{L},\quad Y=\frac{y}{L},\quad
+X=\frac{x}{L},\quad Z=\frac{z}{L},\quad
 \theta=\frac{T-T_c}{\Delta T},\quad
-\boldsymbol U=\frac{L}{\alpha}\boldsymbol u,\quad
+(U,W)=\frac{L}{\alpha}(u_x,u_z),\quad
 \tau=\frac{\alpha t}{L^2}.
 $$
 
-ここで、$x$ は高温壁から低温壁へ向かう水平座標、$y$ は鉛直上向き座標、$\boldsymbol u=(u_x,u_y)$ は有次元速度である。速度尺度が $\alpha/L$ であるため、原論文の $U_{max}$、$V_{max}$ を m/s の速度と直接比較してはならない。
+ここで、$x$ は高温壁から低温壁へ向かう水平座標、$z$ は鉛直上向き座標、$(u_x,u_z)$ は有次元速度である。速度尺度が $\alpha/L$ であるため、原論文の $U_{max}$、$W_{max}$ を m/s の速度と直接比較してはならない。既存 JSON/CSV の `Y`/`V` キーは互換用 legacy alias としてのみ残す。
 
 無次元数は
 
@@ -89,7 +90,7 @@ $$
 
 ### 3.3 支配方程式 **[PAPER]**
 
-鉛直上向きを $+Y$ とすると、熱拡散時間と熱拡散速度による無次元方程式は次の形に整理できる。
+鉛直上向きを $+Z$ とすると、熱拡散時間と熱拡散速度による無次元方程式は次の形に整理できる。
 
 $$
 \nabla\cdot\boldsymbol U=0,
@@ -99,7 +100,7 @@ $$
 \frac{\partial\boldsymbol U}{\partial\tau}
 +(\boldsymbol U\cdot\nabla)\boldsymbol U
 =-\nabla P+Pr\,\nabla^2\boldsymbol U
-+Ra\,Pr\,\theta\,\boldsymbol e_Y,
++Ra\,Pr\,\theta\,\boldsymbol e_Z,
 $$
 
 $$
@@ -118,32 +119,55 @@ $$
 |---|---|---|
 | 左壁 $X=0$ | $\boldsymbol U=0$ | $\theta=1$ |
 | 右壁 $X=1$ | $\boldsymbol U=0$ | $\theta=0$ |
-| 下壁 $Y=0$ | $\boldsymbol U=0$ | $\partial\theta/\partial Y=0$ |
-| 上壁 $Y=1$ | $\boldsymbol U=0$ | $\partial\theta/\partial Y=0$ |
+| 下壁 $Z=0$ | $(U,W)=0$ | $\partial\theta/\partial Z=0$ |
+| 上壁 $Z=1$ | $(U,W)=0$ | $\partial\theta/\partial Z=0$ |
 
 原論文は定常基準解を与えるため、非定常計算に必要な初期条件は原論文の比較条件そのものではなく、本研究側で決める。
 
 ### 3.5 比較量の定義 **[PAPER]**
 
+原論文 p.250 の水平熱流束を
+
+$$
+Q(X,Z)=U\theta-\frac{\partial\theta}{\partial X}
+$$
+
+とし、任意の鉛直断面の平均を
+
+$$
+\overline{Nu}_X(X)=\int_0^1 Q(X,Z)\,dZ
+$$
+
+とする。比較量は次の4量を混同せず保存する。
+
+$$
+\overline{Nu}_0=\overline{Nu}_X(0),\qquad
+\overline{Nu}_{1/2}=\overline{Nu}_X(0.5),\qquad
+\overline{Nu}=\int_0^1\overline{Nu}_X(X)\,dX,\qquad
+\overline{Nu}_1=\overline{Nu}_X(1).
+$$
+
+中央断面では $U\theta$ を必ず含める。全て高温側から低温側への熱輸送を正とする。Table V は $\overline{Nu}$、$\overline{Nu}_{1/2}$、$\overline{Nu}_0$ を別々に掲載するが、$\overline{Nu}_1$ の独立基準値は掲載しない。
+
 高温壁の局所 Nusselt 数を、座標方向の符号を明示して
 
 $$
-Nu_h(Y)=-\left.\frac{\partial\theta}{\partial X}\right|_{X=0}
+Nu_0(Z)=-\left.\frac{\partial\theta}{\partial X}\right|_{X=0}
 =-\frac{L}{\Delta T}\left.\frac{\partial T}{\partial x}\right|_{x=0}
 $$
 
 とする。平均値は
 
 $$
-\overline{Nu}_h=\int_0^1 Nu_h(Y)\,dY
+\overline{Nu}_0=\int_0^1 Nu_0(Z)\,dZ
 $$
 
 である。積分区間長が1なので、これは壁面上の平均値にも一致する。
 
 速度比較量は次のように抽出する。
 
-- $U_{max}$: 鉛直中心線 $X=0.5$ 上の正の水平速度最大値と、その位置 $Y$
-- $V_{max}$: 水平中心線 $Y=0.5$ 上の正の鉛直速度最大値と、その位置 $X$
+- $U_{max}$: 鉛直中心線 $X=0.5$ 上の正の水平速度最大値と、その位置 $Z$
+- $W_{max}$: 水平中心線 $Z=0.5$ 上の正の鉛直速度最大値と、その位置 $X$
 
 対称な負の極値も別途確認するが、表の基準値は正の極値である。
 
@@ -151,12 +175,14 @@ $$
 
 以下を基準値とする。表示桁を超える精度を暗黙に仮定しない。
 
-| $Ra$ | $U_{max}$ | 位置 $Y$ | $V_{max}$ | 位置 $X$ | $\overline{Nu}$ | $Nu_{max}$ | 位置 $Y$ | $Nu_{min}$ | 位置 $Y$ |
-|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| $10^3$ | 3.649 | 0.813 | 3.697 | 0.178 | 1.118 | 1.505 | 0.092 | 0.692 | 1.000 |
-| $10^4$ | 16.178 | 0.823 | 19.617 | 0.119 | 2.243 | 3.528 | 0.143 | 0.586 | 1.000 |
-| $10^5$ | 34.73 | 0.855 | 68.59 | 0.066 | 4.519 | 7.717 | 0.081 | 0.729 | 1.000 |
-| $10^6$ | 64.63 | 0.850 | 219.36 | 0.038 | 8.800 | 17.925 | 0.038 | 0.989 | 1.000 |
+| $Ra$ | $U_{max}$ | 位置 $Z$ | $W_{max}$ | 位置 $X$ | $\overline{Nu}$ | $\overline{Nu}_{1/2}$ | $\overline{Nu}_0$ | $Nu_{max}$ | 位置 $Z$ | $Nu_{min}$ | 位置 $Z$ |
+|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| $10^3$ | 3.649 | 0.813 | 3.697 | 0.178 | 1.118 | 1.118 | 1.117 | 1.505 | 0.092 | 0.692 | 1.000 |
+| $10^4$ | 16.178 | 0.823 | 19.617 | 0.119 | 2.243 | 2.243 | 2.238 | 3.528 | 0.143 | 0.586 | 1.000 |
+| $10^5$ | 34.73 | 0.855 | 68.59 | 0.066 | 4.519 | 4.519 | 4.509 | 7.717 | 0.081 | 0.729 | 1.000 |
+| $10^6$ | 64.63 | 0.850 | 219.36 | 0.0379 | 8.800 | 8.799 | 8.817 | 17.925 | 0.0378 | 0.989 | 1.000 |
+
+$\overline{Nu}_1$ は熱収支・断面保存性の診断専用であり、Table V reference error を計算しない。
 
 任意診断値として、中心流れ関数の大きさ $|\psi_c|$ は順に 1.174、5.071、9.111、16.32 である。ただし、流れ関数を主判定量にするには、離散速度からの再構成法と符号規約を先に固定する必要がある。
 
@@ -255,7 +281,7 @@ Route B は原論文の $\nabla\cdot\boldsymbol u=0$、一定密度の慣性・�
 
 `docs/openfoam_design.md` は v13 Route A の既存ソース監査であり、v6 候補の監査結果ではない。Route A の equation/transport/heat-flux 差分を保持した上で Route B の別監査を実施する。Route A の $\epsilon=\beta\Delta T\to0$ と Route B の厳密一致を Route B の採用条件にしない。Route A 固有の energy equation 差の全てが $\epsilon$ とともに消失するとは限らない。
 
-両 route を同じ $Ra,Pr,L,\Delta T$、対応する格子・抽出手順で評価する。少なくとも平均 Nu、$U_{max}$ と位置、$V_{max}$ と位置、局所 Nu、保存量、対称性を比較し、(a) B 対原論文、(b) A 対 B、(c) A 対原論文を別表・別解釈で報告する。原論文に掲載のない保存量・対称性の数値は創作せず、支配方程式からの理論的条件と両 route の診断値を示す。非零の比較量 $Q$ について
+両 route を同じ $Ra,Pr,L,\Delta T$、対応する格子・抽出手順で評価する。少なくとも4種類の平均 Nu、$U_{max}$ と位置、$W_{max}$ と位置、局所 Nu、保存量、対称性を比較し、(a) B 対原論文、(b) A 対 B、(c) A 対原論文を別表・別解釈で報告する。原論文に掲載のない保存量・対称性の数値は創作せず、支配方程式からの理論的条件と両 route の診断値を示す。非零の比較量 $Q$ について
 
 $$
 D_{AB}(Q)=\frac{|Q_A-Q_B|}{|Q_B|}
@@ -327,7 +353,7 @@ Route A について、$Ra=10^6$ の fine 格子で $\beta\Delta T=10^{-3}$ と 
 
 ### 7.1 Nusselt 数
 
-主値は有限体積法の壁面 face 値から面積重み付きで積分する。等間隔節点データを仮定する Simpson 則を、cell-face データへ機械的に適用しない。
+主値は有限体積 face 面積または cell 体積で積分する。原論文が node データに用いた Simpson 則を、cell/face データへ機械的に適用しない。
 
 独立した2経路を用いる。
 
@@ -336,17 +362,19 @@ Route A について、$Ra=10^6$ の fine 格子で $\beta\Delta T=10^{-3}$ と 
 
 $Ra=0$ の純熱伝導解で両経路の符号と規格化を校正する。高温壁・低温壁とも、キャビティ内を高温側から低温側へ流れる熱量を正として報告する。
 
-内部断面の保存診断として
+全鉛直 face plane について
 
 $$
-Nu_x(X)=\int_0^1\left(U\theta-\frac{\partial\theta}{\partial X}\right)dY
+\overline{Nu}_X(X)=\int_0^1\left(U\theta-\frac{\partial\theta}{\partial X}\right)dZ
 $$
 
-を計算 MAY とする。定常かつ保存が成立すれば、断面位置によらず壁面平均値と一致する。
+を必ず計算し `section_nusselt.csv` に保存する。Route B の内部面対流項は保存済み volume flux `phi` と線形補間した $\theta_f$、伝導項は直交 face 勾配と face 面積を用いる。$\overline{Nu}$ は cell-volume quadrature で $U\theta$ を積分し、固定壁による伝導体積積分 $\theta(0)-\theta(1)=1$ を加える。Route A の同じ量は **de Vahl Davis paper-definition diagnostic** であり、公式 `wallHeatFlux` の物理的壁熱流束と区別する。定常かつ厳密 Boussinesq の保存解では断面位置によらず一定になる。
+
+高温壁局所 Nu は raw face-centre extrema と benchmark 用補間 extrema を両方保存する。後者は raw 極値を囲む連続5 face の4次多項式を固定ルールとし、内部はその微分根、端の5点窓に限り $Z=0,1$ を同じ多項式で明示的に外挿評価する。
 
 ### 7.2 速度極値
 
-- 格子解を中心線 $X=0.5$、$Y=0.5$ へ補間する。
+- 格子解を中心線 $X=0.5$、$Z=0.5$ へ補間する。
 - 抽出点列、補間方式、端点の扱いを固定し、全格子で同じ無次元手順を用いる。
 - 任意の最近傍 cell 中心だけから極値を採らない。
 - 値と位置を同時に報告する。
@@ -359,16 +387,16 @@ $$
 - 無次元温度の等高線
 - 速度ベクトルまたは流線
 - 高温壁と低温壁の局所 $Nu$
-- 中心線上の $U(Y)$ と $V(X)$
+- 中心線上の $U(Z)$ と $W(X)$
 
 見た目の一致は定量判定の代わりにしない。
 
 ## 8. 保存則と対称性の診断
 
 - 高温壁から流入する熱量と低温壁から流出する熱量を比較する。
-- 複数の鉛直断面で $Nu_x$ を比較する。
+- 全鉛直 face plane で $\overline{Nu}_X$ を比較する。
 - 質量保存について、両 route の $\nabla\cdot(\rho\boldsymbol u)$ と、原論文が要求する $\nabla\cdot\boldsymbol u$ の両方を評価する。Route B は監査により定数 $\rho_0$ を用い、両者の規格化誤差が対応する。補正後 `phi` と再構成 U からの divergence は離散的に異なり得るため別報告する。
-- 問題は中心 $(0.5,0.5)$ まわりの180°回転に対して、$\theta(X,Y)=1-\theta(1-X,1-Y)$、$\boldsymbol U(X,Y)=-\boldsymbol U(1-X,1-Y)$ の対称性を持つ。離散解の対称誤差を定量化する。
+- 問題は中心 $(0.5,0.5)$ まわりの180°回転に対して、$\theta(X,Z)=1-\theta(1-X,1-Z)$、$(U,W)(X,Z)=-(U,W)(1-X,1-Z)$ の対称性を持つ。離散解の対称誤差を定量化する。
 
 保存則・対称性に失敗した結果は、原論文の表と偶然一致しても合格にしない。
 
@@ -379,8 +407,9 @@ minimal implementation の成果物は route 別に作成済みである。full 
 1. **作成済み:** `docs/openfoam_design.md`、`docs/routeB_design.md`、両 implementation record。
 2. **作成済み:** `cases/routeA/`、v6 実行 root の `cases/routeB/`、`Scripts/routeA/`、`Scripts/routeB/`。現時点は conduction/smoke のみ。
 3. **作成済み:** `results/routeA/run_manifest.json`、`results/routeB/run_manifest.json`、route 別 `minimal_test_summary.csv`、`convergence.csv`、`conservation.csv`、`figures/`、実行 log、`failed_runs/`。
-4. **補助比較のみ作成済み:** `results/routeB/minimal_route_comparison.csv`。coarse A/B の近さをモデル同一性の証明に使わない。
-5. **full matrix 後に必要:** route 別の4 Ra × 3 grid を含む `benchmark_summary.csv`、`route_comparison.csv`、`grid_convergence.csv`、完全な `conservation.csv`、対応図。現時点では未作成または未完であり、Gate K 合格としない。
+4. **Nu 再後処理で作成済み:** 各ケースの `section_nusselt.csv`、raw/補間局所極値を含む `metrics.json`、および `results/de_vahl_davis_table_v.csv`。
+5. **補助比較のみ作成済み:** `results/routeB/minimal_route_comparison.csv`。coarse A/B の近さをモデル同一性の証明に使わない。
+6. **full matrix 後に必要:** route 別の4 Ra × 3 grid を含む `benchmark_summary.csv`、`route_comparison.csv`、`grid_convergence.csv`、完全な `conservation.csv`、対応図。現時点では未作成または未完であり、Gate K 合格としない。
 
 各数値は、どのケース、時刻／反復、抽出方法、単位または無次元化で得たか追跡可能でなければならない。
 
@@ -390,7 +419,7 @@ minimal implementation の成果物は route 別に作成済みである。full 
 - Foundation v6 と v13 の辞書・ソルバ・後処理を、版ごとの監査なしに同一視しない。
 - 公式 tutorial の乱流モデル、upwind、物性値を、benchmark に適切か確認せずコピーしない。
 - 原論文の有効桁を超えて基準値を補間・創作しない。
-- $U_{max},V_{max}$ を有次元速度のまま比較しない。
+- $U_{max},W_{max}$ を有次元速度のまま比較しない。
 - 壁面熱流束の法線符号を確認せず、絶対値だけで不整合を隠さない。
 - 単一格子の原論文一致だけで格子独立と判断しない。
 - 定常残差だけで収束を判断せず、比較量と保存量の定常化を確認する。

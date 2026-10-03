@@ -18,6 +18,20 @@ import numpy as np
 from foam_fields import latest_time, read_scalar, read_vector
 
 ROOT = Path(__file__).resolve().parents[2]
+PAPER_TABLE_V = {
+    1_000: {"Nu_bar_cavity": 1.118, "Nu_bar_half": 1.118, "Nu_bar_0": 1.117,
+            "Nu_hot_local_max": 1.505, "Nu_hot_local_max_Z": 0.092,
+            "Nu_hot_local_min": 0.692, "Nu_hot_local_min_Z": 1.000},
+    10_000: {"Nu_bar_cavity": 2.243, "Nu_bar_half": 2.243, "Nu_bar_0": 2.238,
+             "Nu_hot_local_max": 3.528, "Nu_hot_local_max_Z": 0.143,
+             "Nu_hot_local_min": 0.586, "Nu_hot_local_min_Z": 1.000},
+    100_000: {"Nu_bar_cavity": 4.519, "Nu_bar_half": 4.519, "Nu_bar_0": 4.509,
+              "Nu_hot_local_max": 7.717, "Nu_hot_local_max_Z": 0.081,
+              "Nu_hot_local_min": 0.729, "Nu_hot_local_min_Z": 1.000},
+    1_000_000: {"Nu_bar_cavity": 8.800, "Nu_bar_half": 8.799, "Nu_bar_0": 8.817,
+                "Nu_hot_local_max": 17.925, "Nu_hot_local_max_Z": 0.0378,
+                "Nu_hot_local_min": 0.989, "Nu_hot_local_min_Z": 1.000},
+}
 
 
 def read_wall_heat(path: Path) -> dict[float, dict[str, dict[str, float]]]:
@@ -71,6 +85,70 @@ def relative_range(values: np.ndarray, scale: float) -> float:
     return float((values.max() - values.min()) / max(abs(values.mean()), scale))
 
 
+def local_quartic_extremum(z: np.ndarray, values: np.ndarray, kind: str) -> dict[str, float | str]:
+    """Return raw and benchmark extrema using one fixed local quartic rule.
+
+    Five consecutive face-centre values around the raw extremum define the
+    quartic.  Interior stationary points are accepted only inside that local
+    five-point interval.  If the interval touches Z=0 or Z=1, the corresponding
+    endpoint is also evaluated by the same polynomial (explicit extrapolation).
+    """
+    raw_index = int(np.argmax(values) if kind == "max" else np.argmin(values))
+    start = min(max(raw_index - 2, 0), len(z) - 5)
+    zs = z[start:start + 5]
+    vs = values[start:start + 5]
+    polynomial = np.polyfit(zs, vs, 4)
+    candidates: list[tuple[float, float, str]] = [
+        (float(z[raw_index]), float(values[raw_index]), "raw_face_centre")
+    ]
+    for root in np.roots(np.polyder(polynomial)):
+        if abs(root.imag) < 1e-10 and zs[0] <= root.real <= zs[-1]:
+            candidates.append((float(root.real), float(np.polyval(polynomial, root.real)),
+                               "local_quartic_stationary_point"))
+    if start == 0:
+        candidates.append((0.0, float(np.polyval(polynomial, 0.0)),
+                           "local_quartic_endpoint_extrapolation"))
+    if start + 5 == len(z):
+        candidates.append((1.0, float(np.polyval(polynomial, 1.0)),
+                           "local_quartic_endpoint_extrapolation"))
+    selected = (max if kind == "max" else min)(candidates, key=lambda item: item[1])
+    return {
+        "raw_value": float(values[raw_index]), "raw_Z": float(z[raw_index]),
+        "value": selected[1], "Z": selected[0], "method": selected[2],
+    }
+
+
+def paper_nusselt(T: np.ndarray, U: np.ndarray, nx: int, ny: int, L: float,
+                   alpha0: float, dT: float, th: float, tc: float) -> dict[str, object]:
+    """de Vahl Davis diagnostic Q=U*theta-dtheta/dX on the FV mesh.
+
+    Internal vertical faces use the active linear interpolation and orthogonal
+    two-cell gradient.  The cavity integral uses cell-volume quadrature; its
+    conductive contribution is exactly theta(X=0)-theta(X=1)=1.
+    """
+    dx = L / nx
+    theta = (T - tc) / dT
+    sections = np.empty(nx + 1)
+    hot_local = L * (th - T[:, 0]) / (0.5 * dx) / dT
+    cold_local = L * (T[:, -1] - tc) / (0.5 * dx) / dT
+    sections[0], sections[-1] = hot_local.mean(), cold_local.mean()
+    for plane in range(1, nx):
+        theta_face = 0.5 * (theta[:, plane - 1] + theta[:, plane])
+        ux_face = 0.5 * (U[:, plane - 1, 0] + U[:, plane, 0])
+        convective = (L / alpha0) * ux_face * theta_face
+        conductive = -L * (T[:, plane] - T[:, plane - 1]) / dx / dT
+        sections[plane] = np.mean(convective + conductive)
+    cavity = 1.0 + float(np.mean((L / alpha0) * U[:, :, 0] * theta))
+    cavity_from_sections = float(np.trapz(sections, np.linspace(0.0, 1.0, nx + 1)))
+    return {
+        "X": np.linspace(0.0, 1.0, nx + 1), "sections": sections,
+        "Nu_bar_0": float(sections[0]), "Nu_bar_half": float(sections[nx // 2]),
+        "Nu_bar_cavity": cavity, "Nu_bar_1": float(sections[-1]),
+        "Nu_bar_cavity_from_section_trapezoid": cavity_from_sections,
+        "hot_local": hot_local, "cold_local": cold_local,
+    }
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("case")
@@ -98,9 +176,10 @@ def main() -> None:
     y = (np.arange(ny) + 0.5) * dy
     X, Y = np.meshgrid(x, y)
 
-    # Path A1: direct orthogonal boundary face gradient from T and geometry.
-    nu_hot_local = L * (th - T[:, 0]) / (0.5 * dx) / dT
-    nu_cold_local = L * (T[:, -1] - tc) / (0.5 * dx) / dT
+    # Path A1 and the separate de Vahl Davis paper-definition diagnostic.
+    paper_nu = paper_nusselt(T, U, nx, ny, L, alpha0, dT, th, tc)
+    nu_hot_local = paper_nu["hot_local"]
+    nu_cold_local = paper_nu["cold_local"]
     nu_hot_a1 = float(nu_hot_local.mean())
     nu_cold_a1 = float(nu_cold_local.mean())
 
@@ -116,6 +195,28 @@ def main() -> None:
         abs(nu_hot_a1 - nu_hot_a2) / ((abs(nu_hot_a1) + abs(nu_hot_a2)) / 2),
         abs(nu_cold_a1 - nu_cold_a2) / ((abs(nu_cold_a1) + abs(nu_cold_a2)) / 2),
     )
+    z_faces = y / L
+    nu_maximum = local_quartic_extremum(z_faces, nu_hot_local, "max")
+    nu_minimum = local_quartic_extremum(z_faces, nu_hot_local, "min")
+    reference = PAPER_TABLE_V.get(int(round(manifest["Ra_target"])))
+    paper_comparison = None
+    if reference:
+        calculated = {
+            "Nu_bar_0": paper_nu["Nu_bar_0"], "Nu_bar_half": paper_nu["Nu_bar_half"],
+            "Nu_bar_cavity": paper_nu["Nu_bar_cavity"],
+            "Nu_hot_local_max": nu_maximum["value"], "Nu_hot_local_max_Z": nu_maximum["Z"],
+            "Nu_hot_local_min": nu_minimum["value"], "Nu_hot_local_min_Z": nu_minimum["Z"],
+        }
+        paper_comparison = {
+            key: {"calculated": calculated[key], "reference": value,
+                  "error": (calculated[key]-value)/value if not key.endswith("_Z") else calculated[key]-value,
+                  "error_type": "relative" if not key.endswith("_Z") else "absolute"}
+            for key, value in reference.items()
+        }
+        paper_comparison["Nu_bar_1"] = {
+            "calculated": paper_nu["Nu_bar_1"], "reference": None, "error": None,
+            "note": "Table V contains no independent cold-wall mean reference",
+        }
 
     # Exact x=L/2 and y=L/2 centreline interpolation, then fixed 4097 points.
     line_n = 4097
@@ -155,6 +256,19 @@ def main() -> None:
         0.5 * (wall[t]["hotWall"]["Q"] - wall[t]["coldWall"]["Q"]) / (k * dT * W)
         for t in wall_times
     ])
+    paper_window: dict[int, dict[str, object]] = {}
+    paper_times = sorted(
+        int(round(float(folder.name))) for folder in case.iterdir()
+        if folder.is_dir() and folder.name.replace(".", "", 1).isdigit()
+        and start_window <= float(folder.name) <= end_iter
+        and (folder / "T").exists() and (folder / "U").exists()
+    )
+    for t in paper_times:
+        folder = case / str(t)
+        Ti = read_scalar(folder / "T", n).reshape((ny, nx))
+        Ui = read_vector(folder / "U", n).reshape((ny, nx, 3))
+        paper_window[t] = paper_nusselt(Ti, Ui, nx, ny, L, alpha0, dT, th, tc)
+    half_series = np.array([paper_window[t]["Nu_bar_half"] for t in paper_times])
     heat_series = np.array([
         abs(wall[t]["hotWall"]["Q"] + wall[t]["coldWall"]["Q"])
         / max(0.5 * abs(wall[t]["hotWall"]["Q"] - wall[t]["coldWall"]["Q"]), 1e-300)
@@ -171,11 +285,15 @@ def main() -> None:
         "window_start_iteration": start_window,
         "window_end_iteration": end_iter,
         "Nu": relative_range(nu_series, 1.0),
+        "Nu_legacy_wall_pair_monitor": relative_range(nu_series, 1.0),
+        "Nu_bar_half": relative_range(half_series, 1.0),
+        "Nu_bar_half_sample_times": paper_times,
         "Umax": relative_range(us, 1.0),
         "Vmax": relative_range(vs, 1.0),
         "Nu_samples": int(nu_series.size),
         "velocity_samples": int(us.size),
         "scales": {"Nu": 1.0, "Umax": 1.0, "Vmax": 1.0},
+        "primary_mean_Nu_candidate": "Nu_bar_half; legacy Gate D remains unchanged",
         "heat_imbalance_start": float(heat_series[0]),
         "heat_imbalance_end": float(heat_series[-1]),
     }
@@ -200,19 +318,25 @@ def main() -> None:
     result_dir.mkdir(parents=True, exist_ok=True)
     figure_dir.mkdir(parents=True, exist_ok=True)
     with (result_dir / "local_nusselt.csv").open("w", newline="") as stream:
-        writer = csv.writer(stream)
-        writer.writerow(["Y", "Nu_hot_path1", "Nu_cold_path1"])
-        writer.writerows(zip(y / L, nu_hot_local, nu_cold_local))
+        writer = csv.writer(stream, lineterminator="\n")
+        writer.writerow(["Z", "Nu_hot_path1", "Nu_cold_path1", "Y_legacy_alias"])
+        writer.writerows(zip(y / L, nu_hot_local, nu_cold_local, y / L))
+    with (result_dir / "section_nusselt.csv").open("w", newline="") as stream:
+        writer = csv.writer(stream, lineterminator="\n")
+        writer.writerow(["X", "Nu_bar_X", "definition"])
+        writer.writerows(zip(paper_nu["X"], paper_nu["sections"],
+                             ["U*theta-dtheta/dX"] * (nx + 1)))
     with (result_dir / "centreline_4097.csv").open("w", newline="") as stream:
-        writer = csv.writer(stream)
-        writer.writerow(["index", "coordinate", "U_at_X0.5", "V_at_Y0.5"])
-        writer.writerows(zip(range(line_n), yq / L, uq, vq))
+        writer = csv.writer(stream, lineterminator="\n")
+        writer.writerow(["index", "coordinate", "U_at_X0.5", "W_at_Z0.5", "V_at_Y0.5_legacy_alias"])
+        writer.writerows(zip(range(line_n), yq / L, uq, vq, vq))
 
     conv_path = result_dir / "convergence.csv"
     with conv_path.open("w", newline="") as stream:
         fields = ["case_id", "iteration", "Ux_initial", "Uy_initial", "e_initial", "p_rgh_initial",
-                  "Nu_hot_path2", "Nu_cold_path2", "heat_imbalance", "Umax_monitor", "Vmax_monitor"]
-        writer = csv.DictWriter(stream, fieldnames=fields)
+                  "Nu_bar_0", "Nu_bar_half", "Nu_bar_cavity", "Nu_bar_1",
+                  "Nu_hot_path2", "Nu_cold_path2", "heat_imbalance", "Umax_monitor", "Wmax_monitor", "Vmax_monitor_legacy_alias"]
+        writer = csv.DictWriter(stream, fieldnames=fields, lineterminator="\n")
         writer.writeheader()
         sample_map = {int(round(t)): sample_extrema(case, t, alpha0, L) for t in sample_times}
         for iteration in sorted(residuals):
@@ -224,12 +348,23 @@ def main() -> None:
                 nc = -h["coldWall"]["Q"] / (k * dT * W)
                 row.update(Nu_hot_path2=nh, Nu_cold_path2=nc,
                            heat_imbalance=abs(nh-nc)/((nh+nc)/2))
+            if iteration in paper_window:
+                pn = paper_window[iteration]
+                row.update(Nu_bar_0=pn["Nu_bar_0"], Nu_bar_half=pn["Nu_bar_half"],
+                           Nu_bar_cavity=pn["Nu_bar_cavity"], Nu_bar_1=pn["Nu_bar_1"])
             if iteration in sample_map:
-                row["Umax_monitor"], row["Vmax_monitor"] = sample_map[iteration]
+                row["Umax_monitor"], row["Wmax_monitor"] = sample_map[iteration]
+                row["Vmax_monitor_legacy_alias"] = row["Wmax_monitor"]
             writer.writerow(row)
 
     result = {
         "case_id": case_id, "final_iteration": end_iter,
+        "Nu_bar_0": paper_nu["Nu_bar_0"], "Nu_bar_half": paper_nu["Nu_bar_half"],
+        "Nu_bar_cavity": paper_nu["Nu_bar_cavity"], "Nu_bar_1": paper_nu["Nu_bar_1"],
+        "Nu_bar_cavity_from_section_trapezoid": paper_nu["Nu_bar_cavity_from_section_trapezoid"],
+        "Nu_bar_cavity_discrete_method_difference": paper_nu["Nu_bar_cavity"] - paper_nu["Nu_bar_cavity_from_section_trapezoid"],
+        "Nu_bar_0_path1": paper_nu["Nu_bar_0"], "Nu_bar_1_path1": paper_nu["Nu_bar_1"],
+        "Nu_bar_0_path2": nu_hot_a2, "Nu_bar_1_path2": nu_cold_a2,
         "Nu_hot_path1": nu_hot_a1, "Nu_cold_path1": nu_cold_a1,
         "Nu_hot_path2": nu_hot_a2, "Nu_cold_path2": nu_cold_a2,
         "Nu_path_relative_difference": path_relative_difference,
@@ -238,8 +373,24 @@ def main() -> None:
         "wallHeatFlux_sign": "wallHeatFlux=-q; hot Q positive, cold Q negative; cold Nu uses -Q",
         "radiation_contribution": "absent (no radiation field/model selected)",
         "heat_imbalance": heat_imbalance,
-        "Umax": umax, "Umax_Y": umax_loc, "Vmax": vmax, "Vmax_X": vmax_loc,
+        "section_Nu_max_relative_deviation_from_half": float(
+            np.max(np.abs(paper_nu["sections"] - paper_nu["Nu_bar_half"]))
+            / abs(paper_nu["Nu_bar_half"])
+        ),
+        "paper_Nu_definition": "Q=U*theta-dtheta/dX; Route A diagnostic only because its governing equations differ from the paper",
+        "paper_Nu_discretization": "walls: orthogonal patch face gradient; internal vertical faces: linear U/theta interpolation plus two-cell orthogonal temperature gradient and face-area integration; cavity: cell-volume U*theta quadrature plus exact imposed-wall conductive integral 1",
+        "Nu_hot_local_max": nu_maximum["value"], "Nu_hot_local_max_Z": nu_maximum["Z"],
+        "Nu_hot_local_min": nu_minimum["value"], "Nu_hot_local_min_Z": nu_minimum["Z"],
+        "Nu_max": nu_maximum["value"], "Z_at_Nu_max": nu_maximum["Z"],
+        "Nu_min": nu_minimum["value"], "Z_at_Nu_min": nu_minimum["Z"],
+        "Nu_hot_local_raw_max": nu_maximum["raw_value"], "Nu_hot_local_raw_max_Z": nu_maximum["raw_Z"],
+        "Nu_hot_local_raw_min": nu_minimum["raw_value"], "Nu_hot_local_raw_min_Z": nu_minimum["raw_Z"],
+        "Nu_hot_local_extrema_method": "fixed local quartic through five adjacent face-centre values; derivative root inside the local interval; endpoint evaluated by the same quartic only when the five-point window touches it",
+        "paper_comparison_like_for_like": paper_comparison,
+        "Umax": umax, "Umax_Z": umax_loc, "Wmax": vmax, "Wmax_X": vmax_loc,
+        "Umax_Y": umax_loc, "Vmax": vmax, "Vmax_X": vmax_loc,
         "Umin": float(uq[uimin]), "Umin_Y": float(yq[uimin] / L),
+        "Wmin": float(vq[vimin]), "Wmin_X": float(xq[vimin] / L),
         "Vmin": float(vq[vimin]), "Vmin_X": float(xq[vimin] / L),
         "centreline_method": "linear interpolation to exact centreline from the two bracketing cell-centre lines, then 4097 uniform points including no-slip endpoints",
         "max_dimensionless_velocity": max_dim_speed,
@@ -271,26 +422,31 @@ def main() -> None:
         plt.tight_layout(); plt.savefig(figure_dir / "A-COND_Nu_final_window.png", dpi=180); plt.close()
     else:
         plt.contourf(X / L, Y / L, theta, levels=30, cmap="coolwarm")
-        plt.colorbar(label=r"$\theta$"); plt.xlabel("X"); plt.ylabel("Y"); plt.axis("equal")
+        plt.colorbar(label=r"$\theta$"); plt.xlabel("X"); plt.ylabel("Z"); plt.axis("equal")
         plt.tight_layout(); plt.savefig(figure_dir / "A-SMOKE_theta.png", dpi=180); plt.close()
         plt.figure(figsize=(6.2, 5.2))
         plt.streamplot(x / L, y / L, U[:, :, 0], U[:, :, 1], density=1.3, color=speed, cmap="viridis")
-        plt.colorbar(label="|U| [m/s]"); plt.xlabel("X"); plt.ylabel("Y"); plt.axis("equal")
+        plt.colorbar(label="|U| [m/s]"); plt.xlabel("X"); plt.ylabel("Z"); plt.axis("equal")
         plt.tight_layout(); plt.savefig(figure_dir / "A-SMOKE_velocity_streamlines.png", dpi=180); plt.close()
     plt.figure(figsize=(6.2, 4.2))
-    plt.plot(yq / L, uq, label=r"$U(X=0.5,Y)$")
-    plt.plot(xq / L, vq, label=r"$V(X,Y=0.5)$")
+    plt.plot(yq / L, uq, label=r"$U(X=0.5,Z)$")
+    plt.plot(xq / L, vq, label=r"$W(X,Z=0.5)$")
     plt.xlabel("dimensionless centreline coordinate"); plt.ylabel("dimensionless velocity")
     plt.legend(); plt.grid(True, alpha=.3); plt.tight_layout()
     plt.savefig(figure_dir / f"{case_id}_centrelines.png", dpi=180); plt.close()
     plt.figure(figsize=(6.2, 4.2))
+    plt.plot(paper_nu["X"], paper_nu["sections"], label=r"$\overline{Nu}_X$")
+    plt.axhline(paper_nu["Nu_bar_cavity"], color="k", ls="--", label=r"$\overline{Nu}$ (cell volume)")
+    plt.xlabel("X"); plt.ylabel("paper-definition mean Nu"); plt.legend(); plt.grid(True, alpha=.3)
+    plt.tight_layout(); plt.savefig(figure_dir / f"{case_id}_section_Nu.png", dpi=180); plt.close()
+    plt.figure(figsize=(6.2, 4.2))
     plt.plot(y / L, nu_hot_local, label="hot wall")
     plt.plot(y / L, nu_cold_local, label="cold wall")
-    plt.xlabel("Y"); plt.ylabel("local Nu, path A1"); plt.legend(); plt.grid(True, alpha=.3)
+    plt.xlabel("Z"); plt.ylabel("local Nu, path A1"); plt.legend(); plt.grid(True, alpha=.3)
     plt.tight_layout(); plt.savefig(figure_dir / f"{case_id}_local_Nu.png", dpi=180); plt.close()
     plt.figure(figsize=(6.2, 4.2))
     plt.imshow(speed * L / alpha0, origin="lower", extent=(0, 1, 0, 1), aspect="equal", cmap="magma")
-    plt.colorbar(label="dimensionless |U|"); plt.xlabel("X"); plt.ylabel("Y")
+    plt.colorbar(label="dimensionless |U|"); plt.xlabel("X"); plt.ylabel("Z")
     plt.tight_layout(); plt.savefig(figure_dir / f"{case_id}_velocity_magnitude.png", dpi=180); plt.close()
     print(json.dumps(result, indent=2))
 
