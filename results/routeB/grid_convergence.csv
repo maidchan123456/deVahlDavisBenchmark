@@ -1,7 +1,7 @@
 Ra_target,quantity,coarse,medium,fine,fine_medium_difference,convergence_type,p_obs,GCI,Gate_F,needs_320,reason
-1000,Nu_bar_cavity,1.1187958706851366,1.1180442973567672,1.116954967375215,,INSUFFICIENT_GRIDS,,,NOT_EVALUATED,,Fine Gate D failed; values are unaccepted diagnostics; formal three-grid evaluation not performed.
-1000,Umax,3.6477752919664113,3.646999248885325,3.660165013586995,,INSUFFICIENT_GRIDS,,,NOT_EVALUATED,,Fine Gate D failed; values are unaccepted diagnostics; formal three-grid evaluation not performed.
-1000,Wmax,3.6889568613677906,3.6963023532816552,3.706803550272306,,INSUFFICIENT_GRIDS,,,NOT_EVALUATED,,Fine Gate D failed; values are unaccepted diagnostics; formal three-grid evaluation not performed.
+1000,Nu_bar_cavity,1.1187958706851366,1.1180442973567672,1.117864112488682,0.00016118673644886138,monotonic,2.0604360109020394,0.0001524886107940077,PASS,False,Monotonic convergence; existing fine-medium and GCI thresholds applied.
+1000,Umax,3.6477752919664113,3.646999248885325,3.6490796229717413,0.000570109260790027,oscillatory,,,FAIL,True,Nonmonotonic or undefined/nonpositive observed order; no 320 run performed.
+1000,Wmax,3.6889568613677906,3.6963023532816552,3.6974359325334687,0.00030658523163016124,monotonic,2.6959738510076905,0.00016784137659154344,PASS,False,Monotonic convergence; existing fine-medium and GCI thresholds applied.
 10000,Nu_bar_cavity,2.259326039868519,,,,INSUFFICIENT_GRIDS,,,NOT_EVALUATED,,Stopped at Gate D failure; three accepted grids unavailable.
 10000,Umax,16.118437458362845,,,,INSUFFICIENT_GRIDS,,,NOT_EVALUATED,,Stopped at Gate D failure; three accepted grids unavailable.
 10000,Wmax,19.5952224755579,,,,INSUFFICIENT_GRIDS,,,NOT_EVALUATED,,Stopped at Gate D failure; three accepted grids unavailable.

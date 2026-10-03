@@ -1,0 +1,46 @@
+{
+  "schema": "routeB-heat-imbalance-trend-audit-v1",
+  "criteria_modified": false,
+  "checkpoints": {
+    "9000": {
+      "heat_imbalance": 2.1923834285559612e-07,
+      "slope_per_iteration": -2.9034549628196973e-11,
+      "slope_sign": "negative",
+      "Gate_D": "FAIL"
+    },
+    "12000": {
+      "heat_imbalance": 4.3818269788330646e-07,
+      "slope_per_iteration": 2.6060960822368706e-11,
+      "slope_sign": "positive",
+      "Gate_D": "FAIL"
+    },
+    "18000": {
+      "heat_imbalance": 4.350893403527829e-07,
+      "slope_per_iteration": -7.15314559545028e-11,
+      "slope_sign": "negative",
+      "Gate_D": "FAIL"
+    },
+    "21000": {
+      "heat_imbalance": 2.1795141890090027e-07,
+      "slope_per_iteration": -5.861835473447037e-11,
+      "slope_sign": "negative",
+      "Gate_D": "PASS"
+    }
+  },
+  "final_iteration": 21000,
+  "final_window": {
+    "samples": 21,
+    "start_iteration": 20800,
+    "end_iteration": 21000,
+    "mean": 2.2377244967997535e-07,
+    "minimum": 2.1795141890090027e-07,
+    "maximum": 2.2968046153295078e-07,
+    "endpoint_change": -1.1729042632050511e-08,
+    "slope_per_iteration": -5.861835473446804e-11,
+    "trend_R_squared": 0.9999609959444069,
+    "detrended_RMS": 2.216831547128781e-11
+  },
+  "interpretation": "The absolute imbalance is small. Opposite slope signs between checkpoints do not by themselves prove numerical noise: examine final-window line-fit R-squared and detrended RMS. Floating-point cancellation, output quantization and iterative error can all affect very small differences. No exemption from the current nonincreasing-trend criterion has been applied.",
+  "future_specification_proposal": "Consider a preregistered statistical/materiality rule for tiny heat-imbalance trends in future research. No new tolerance or Gate change applied here.",
+  "noise_assessment": "At 21000 the final-window fit has R^2=0.999961 and detrended RMS=2.22e-11 against endpoint change -1.17e-8: this is a smooth trend, not evidence of dominant uncorrelated roundoff noise. Checkpoint sign changes alone cannot justify removing the current Gate D trend condition. Iterative effects and cancellation/quantization remain possible contributors at this small imbalance scale."
+}

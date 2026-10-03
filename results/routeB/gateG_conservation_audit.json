@@ -1,0 +1,101 @@
+{
+  "schema": "routeB-gateG-conservation-audit-v1",
+  "solver_continuity_equation": "Constant-reference-density incompressible Boussinesq continuity: div(U)=0 in the continuum; discrete pressure equation enforces D(phi)=0 for corrected face volume flux. rhok=1-beta*(T-TRef) is a buoyancy factor, not a transported continuity density.",
+  "phi_meaning": "Signed oriented face volume flux, m^3/s; initially fvc::flux(U), then independently corrected by phi=phiHbyA-p_rghEqn.flux(). Constant rho0*phi is the corresponding discrete mass flux.",
+  "pressure_velocity_relation": "U=HbyA+rAU*fvc::reconstruct((phig-p_rghEqn.flux())/rAUf), after pressure relaxation. Reinterpolating the updated collocated cell U does not reproduce the corrected face phi exactly.",
+  "epsilon_phi_definition": "L/Up times volume mean of abs(sum oriented saved face phi/cell volume). Internal owner adds phi, neighbour subtracts phi; physical boundary fluxes included; empty faces contribute zero. Uniform cells make arithmetic and volume means identical.",
+  "epsilon_v_definition": "L/Up times mean abs(div(I_central(U))). Interior face normal velocities are arithmetic cell averages; four no-slip boundary face values are zero; Cartesian differences divide by hx,hy. Up=max cell |U| in m/s.",
+  "epsilon_m_definition": "epsilon_m=epsilon_v for this reconstructed-U operator, since div(rho0 U)=rho0 div(U) for constant rho0. This equality is not a measurement of the independently corrected solver mass flux rho0*phi.",
+  "source_files_checked": {
+    "pressure_correction": {
+      "path": "/home/mirai/OpenFOAM/OpenFOAM-6/applications/solvers/heatTransfer/buoyantBoussinesqSimpleFoam/pEqn.H",
+      "sha256": "9ba4feb13369ac01da0da42411dee7375c4c7c1aa4e7f7d4ac6c2dbb5668c21b"
+    },
+    "field_creation": {
+      "path": "/home/mirai/OpenFOAM/OpenFOAM-6/applications/solvers/heatTransfer/buoyantBoussinesqSimpleFoam/createFields.H",
+      "sha256": "123e261cecbd8ff187b40e529f07b92b2594252d13e8405464f05e50474f3418"
+    },
+    "create_phi": {
+      "path": "/home/mirai/OpenFOAM/OpenFOAM-6/src/finiteVolume/cfdTools/incompressible/createPhi.H",
+      "sha256": "66374ad7e625a2082614f1aaa8149e5c9ad20127dd407b4238a66efd3907d6b6"
+    },
+    "continuity_errors": {
+      "path": "/home/mirai/OpenFOAM/OpenFOAM-6/src/finiteVolume/cfdTools/incompressible/continuityErrs.H",
+      "sha256": "21fda511b3579df620c445e5000ef06363deeea9ea3aa1171e5190da9eec8c10"
+    },
+    "analysis": {
+      "path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeB/analyze_case.py",
+      "sha256": "5b8a503e559f9243109527b5aefe7ed6a86485ac6c21948a35da05871e90414f"
+    }
+  },
+  "source_lines": {
+    "pressure_correction": [
+      25,
+      39,
+      43,
+      46,
+      52
+    ],
+    "create_phi": [
+      36,
+      46
+    ],
+    "continuity_errors": [
+      33,
+      36
+    ],
+    "analysis": [
+      89,
+      108,
+      110,
+      115,
+      258,
+      261,
+      357
+    ]
+  },
+  "current_formal_criterion": {
+    "epsilon_m_max": 1e-06,
+    "epsilon_v_max": 0.002,
+    "heat_imbalance_max": 0.002,
+    "section_deviation_max": 0.005,
+    "theta_symmetry_max": 0.002,
+    "velocity_symmetry_max": 0.002,
+    "epsilon_phi_role": "separate solver-flux diagnostic; not substituted for epsilon_m"
+  },
+  "baseline_12000_result": {
+    "mean_abs_div_phi_1_s": 1.7267318719625178e-13,
+    "mean_abs_div_U_1_s": 1.1492515551039067e-06,
+    "epsilon_phi": 3.3024811976728894e-11,
+    "epsilon_v": 0.00021980144768008118,
+    "epsilon_m": 0.00021980144768008118,
+    "mass_relation": "rho0 is constant, so normalized mass- and volume-divergence metrics are identical; solver phi is volume flux"
+  },
+  "current_result": {
+    "iteration": 21000,
+    "formal_gate_G": "FAIL",
+    "continuity": {
+      "mean_abs_div_phi_1_s": 1.4751798531145742e-13,
+      "mean_abs_div_U_1_s": 1.1471800501973435e-06,
+      "epsilon_phi": 2.8283979308217443e-11,
+      "epsilon_v": 0.00021995159935295997,
+      "epsilon_m": 0.00021995159935295997,
+      "mass_relation": "rho0 is constant, so normalized mass- and volume-divergence metrics are identical; solver phi is volume flux"
+    },
+    "reconstructed_mass_metric_within_current_threshold": false,
+    "reconstructed_volume_metric_within_current_threshold": true,
+    "epsilon_v_to_epsilon_phi_ratio": 7776543.638223376
+  },
+  "interpretation": "The large gap primarily reflects different discrete operators: pressure-corrected saved face flux versus central reconstruction of cell U. A tiny epsilon_phi is evidence of discrete solver continuity; the nonzero reconstructed divergence does not by itself establish a violation of that solver conservation law. Remaining iteration error can also affect U.",
+  "recommendation": "Research review should consider whether corrected-flux epsilon_phi should be the Hard solver continuity metric, with reconstructed-U divergence retained as a separate accuracy diagnostic. This is a future proposal only; existing epsilon_m and epsilon_v thresholds remain in force.",
+  "criteria_modified": false,
+  "analysis_formula_modified": false,
+  "criteria_sha256_before": "2fe82dba1644621a7e57ddc11c4ea5ba5007db50122fbd0c0179f5af5ac38db4",
+  "analysis_sha256_before": "5b8a503e559f9243109527b5aefe7ed6a86485ac6c21948a35da05871e90414f",
+  "generated_at": "2026-10-04T00:16:57.500863+09:00",
+  "formal_gates": {
+    "E": "PASS",
+    "F": "FAIL",
+    "G": "FAIL"
+  }
+}

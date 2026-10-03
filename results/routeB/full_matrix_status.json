@@ -404,7 +404,7 @@
       "Gate_D": "PASS"
     },
     "B-Ra1e3-fine": {
-      "stage": "CONVERGENCE_NOT_REACHED",
+      "stage": "GATE_D_PASS",
       "updated_at": "2026-10-03T23:14:29.331390+09:00",
       "case_path": "/home/mirai/OpenFOAM/mirai-6/run/deVahlDavisBenchmark/cases/routeB/Ra1e3_fine",
       "Ra_target": 1000.0,
@@ -462,59 +462,59 @@
         "constant/polyMesh/neighbour": "1efe776acf18f1efd60f48fe4d473a755c42f8730e362e7510476b5413231db1",
         "constant/polyMesh/owner": "2591161faec40a988ae34c6c8204439fa37c63f64d51ce0bcc702b58a9f054b8"
       },
-      "final_iteration": 12000,
+      "final_iteration": 21000,
       "Rwin": {
-        "window_start_iteration": 11800,
-        "window_end_iteration": 12000,
+        "window_start_iteration": 20800,
+        "window_end_iteration": 21000,
         "sample_times": [
-          11800,
-          11810,
-          11820,
-          11830,
-          11840,
-          11850,
-          11860,
-          11870,
-          11880,
-          11890,
-          11900,
-          11910,
-          11920,
-          11930,
-          11940,
-          11950,
-          11960,
-          11970,
-          11980,
-          11990,
-          12000
+          20800,
+          20810,
+          20820,
+          20830,
+          20840,
+          20850,
+          20860,
+          20870,
+          20880,
+          20890,
+          20900,
+          20910,
+          20920,
+          20930,
+          20940,
+          20950,
+          20960,
+          20970,
+          20980,
+          20990,
+          21000
         ],
         "samples": 21,
-        "Nu": 0.0003543385166790232,
-        "Nu_bar_0": 0.0003543385166790232,
-        "Nu_legacy_wall_pair_monitor": 0.0003543411214048923,
-        "Nu_bar_half": 8.293596378434483e-05,
+        "Nu": 7.980414159323069e-07,
+        "Nu_bar_0": 7.980414159323069e-07,
+        "Nu_legacy_wall_pair_monitor": 8.039059379080947e-07,
+        "Nu_bar_half": 9.479773878922131e-07,
         "primary_mean_Nu_candidate": "Nu_bar_half; legacy Gate D remains unchanged",
-        "Umax": 0.00015369373424017096,
-        "Vmax": 9.660016077456969e-05,
+        "Umax": 5.446580411110002e-06,
+        "Vmax": 5.374969571434606e-06,
         "scales": {
           "Nu": 1.0,
           "Umax": 1.0,
           "Vmax": 1.0
         },
-        "heat_imbalance_start": 4.329731400137037e-07,
-        "heat_imbalance_end": 4.3818269788330646e-07,
-        "heat_imbalance_linear_slope_per_iteration": 2.6060960822368706e-11
+        "heat_imbalance_start": 2.2968046153295078e-07,
+        "heat_imbalance_end": 2.1795141890090027e-07,
+        "heat_imbalance_linear_slope_per_iteration": -5.861835473447037e-11
       },
       "final_initial_residuals": {
-        "Ux": 3.560276069385285e-07,
-        "Uy": 4.507125890428417e-07,
-        "T": 8.578778747498405e-07,
-        "p_rgh": 6.858169197782188e-06
+        "Ux": 1.261527185588058e-08,
+        "Uy": 1.255873914009128e-08,
+        "T": 2.198930766981429e-09,
+        "p_rgh": 2.450444044852739e-08
       },
       "normal_exit": true,
       "fatal_or_nan": false,
-      "Gate_D": "FAIL",
+      "Gate_D": "PASS",
       "iteration_history": [
         {
           "iteration": 3000,
@@ -1245,23 +1245,191 @@
               "end_to_start_ratio": 0.8961061474728442
             }
           }
+        },
+        {
+          "iteration": 18000,
+          "stage": "CONVERGENCE_NOT_REACHED",
+          "Gate_D": "FAIL",
+          "Rwin": {
+            "window_start_iteration": 17800,
+            "window_end_iteration": 18000,
+            "sample_times": [
+              17800,
+              17810,
+              17820,
+              17830,
+              17840,
+              17850,
+              17860,
+              17870,
+              17880,
+              17890,
+              17900,
+              17910,
+              17920,
+              17930,
+              17940,
+              17950,
+              17960,
+              17970,
+              17980,
+              17990,
+              18000
+            ],
+            "samples": 21,
+            "Nu": 4.666853188645466e-06,
+            "Nu_bar_0": 4.666853188645466e-06,
+            "Nu_legacy_wall_pair_monitor": 4.659699988322984e-06,
+            "Nu_bar_half": 6.450093553112383e-06,
+            "primary_mean_Nu_candidate": "Nu_bar_half; legacy Gate D remains unchanged",
+            "Umax": 2.6901682683114495e-05,
+            "Vmax": 2.5277963641387005e-05,
+            "scales": {
+              "Nu": 1.0,
+              "Umax": 1.0,
+              "Vmax": 1.0
+            },
+            "heat_imbalance_start": 4.4939573869114705e-07,
+            "heat_imbalance_end": 4.350893403527829e-07,
+            "heat_imbalance_linear_slope_per_iteration": -7.15314559545028e-11
+          },
+          "final_initial_residuals": {
+            "Ux": 6.01808721457412e-08,
+            "Uy": 6.298489089978559e-08,
+            "T": 9.083648386918331e-09,
+            "p_rgh": 1.272465821366632e-07
+          },
+          "heat_imbalance": 4.350893403527829e-07,
+          "heat_imbalance_slope": -7.15314559545028e-11,
+          "normal_exit": true,
+          "fatal_or_nan": false,
+          "residual_trend": {
+            "Ux": {
+              "window_start_iteration": 17800,
+              "start": 6.606374942953523e-08,
+              "end": 6.01808721457412e-08,
+              "end_to_start_ratio": 0.9109515076786732
+            },
+            "Uy": {
+              "window_start_iteration": 17800,
+              "start": 6.938242339322965e-08,
+              "end": 6.298489089978559e-08,
+              "end_to_start_ratio": 0.9077931818958586
+            },
+            "T": {
+              "window_start_iteration": 17800,
+              "start": 1.15392715622289e-08,
+              "end": 9.083648386918331e-09,
+              "end_to_start_ratio": 0.7871942642074153
+            },
+            "p_rgh": {
+              "window_start_iteration": 17800,
+              "start": 1.496611104030467e-07,
+              "end": 1.272465821366632e-07,
+              "end_to_start_ratio": 0.8502314448555153
+            }
+          }
+        },
+        {
+          "iteration": 21000,
+          "stage": "GATE_D_PASS",
+          "Gate_D": "PASS",
+          "Rwin": {
+            "window_start_iteration": 20800,
+            "window_end_iteration": 21000,
+            "sample_times": [
+              20800,
+              20810,
+              20820,
+              20830,
+              20840,
+              20850,
+              20860,
+              20870,
+              20880,
+              20890,
+              20900,
+              20910,
+              20920,
+              20930,
+              20940,
+              20950,
+              20960,
+              20970,
+              20980,
+              20990,
+              21000
+            ],
+            "samples": 21,
+            "Nu": 7.980414159323069e-07,
+            "Nu_bar_0": 7.980414159323069e-07,
+            "Nu_legacy_wall_pair_monitor": 8.039059379080947e-07,
+            "Nu_bar_half": 9.479773878922131e-07,
+            "primary_mean_Nu_candidate": "Nu_bar_half; legacy Gate D remains unchanged",
+            "Umax": 5.446580411110002e-06,
+            "Vmax": 5.374969571434606e-06,
+            "scales": {
+              "Nu": 1.0,
+              "Umax": 1.0,
+              "Vmax": 1.0
+            },
+            "heat_imbalance_start": 2.2968046153295078e-07,
+            "heat_imbalance_end": 2.1795141890090027e-07,
+            "heat_imbalance_linear_slope_per_iteration": -5.861835473447037e-11
+          },
+          "final_initial_residuals": {
+            "Ux": 1.261527185588058e-08,
+            "Uy": 1.255873914009128e-08,
+            "T": 2.198930766981429e-09,
+            "p_rgh": 2.450444044852739e-08
+          },
+          "heat_imbalance": 2.1795141890090027e-07,
+          "heat_imbalance_slope": -5.861835473447037e-11,
+          "normal_exit": true,
+          "fatal_or_nan": false,
+          "residual_trend": {
+            "Ux": {
+              "window_start_iteration": 20800,
+              "start": 1.413173799635456e-08,
+              "end": 1.261527185588058e-08,
+              "end_to_start_ratio": 0.8926907546074538
+            },
+            "Uy": {
+              "window_start_iteration": 20800,
+              "start": 1.411791255187373e-08,
+              "end": 1.255873914009128e-08,
+              "end_to_start_ratio": 0.8895606268948367
+            },
+            "T": {
+              "window_start_iteration": 20800,
+              "start": 2.153539684098009e-09,
+              "end": 2.198930766981429e-09,
+              "end_to_start_ratio": 1.0210774304363153
+            },
+            "p_rgh": {
+              "window_start_iteration": 20800,
+              "start": 2.583596509923336e-08,
+              "end": 2.450444044852739e-08,
+              "end_to_start_ratio": 0.9484623606824163
+            }
+          }
         }
       ],
       "continuation": {
         "kind": "additional steady iterations only",
-        "continuation_started_from": 9000,
-        "previous_endTime": 9000,
-        "new_endTime": 12000,
+        "continuation_started_from": 18000,
+        "previous_endTime": 18000,
+        "new_endTime": 21000,
         "startFrom": "latestTime",
-        "original_controlDict_sha256": "0fb6182709f800a151586286c18cfe0e38a1572c7ad25a6fbcbed92b68d31bfa",
-        "continuation_controlDict_sha256": "65fd9820ed61b7df813d8090fc3b8727be37cd95677589dab52a5c938614ff00",
+        "original_controlDict_sha256": "304c150c884efcc9f19a7dd2be6157432f376aeafa939209ab27373b65783fe3",
+        "continuation_controlDict_sha256": "77fddff0e3c49b8d1989305f2f2c907b2f501f5129b0ce807ba0842e37019060",
         "start_field_sha256": {
-          "U": "4e0cfdbf31763b77b7a984101528038e3610d1cbfed6775c083811b979b66816",
-          "alphat": "387e06d32a0ae4745980f7c3f0164aeda32ded32bf123507f4556860c99787bf",
-          "phi": "6815ccca0552b8fa2860dae695cc3223058e41fa3ce4fffc78dc94925514f018",
-          "T": "3290281c852085351290f19a5f6e44fbba08a1692560f20d34daca5014d8ef59",
-          "p": "564cdb46fc5ce9662aa03bd0b42c9888d6923ed3a0fa866c6c073910696109fd",
-          "p_rgh": "c2c29a82b6f32dfe58f30c69df0b2632a5b996c2826d5c5951a0d6435886fab7"
+          "U": "c5b90c6fefff6a18701d30b5d91e0f336129419ee17b56d574a805ba0c89ea25",
+          "alphat": "5574b3dd53f900511dbe06cb2be43dd3ceab3fb68c5d8326af67839ccd124a7b",
+          "phi": "faddc32f994f63c28aa6e23a993196f8ca99522a59c638e5f34190cb16cc6967",
+          "T": "6fe2794c3ab5da0961547a9de6d219577cb2ca2ad18c86cc3ed7cfb3ebf2d24f",
+          "p": "5a028686da30124596492bc0857784ffa30d96bee3c40b2d1254ec872846b74f",
+          "p_rgh": "1141f89690918a5052611ed4ba2fed226c0b5d908897e4afc03f44700c45ef20"
         },
         "mesh_sha256": {
           "constant/polyMesh/faces": "cc83d432b2f6e5bc59786b4d29703220ab4615cccc64e45478d7d160ba1a86a4",
@@ -1270,46 +1438,44 @@
           "constant/polyMesh/neighbour": "1efe776acf18f1efd60f48fe4d473a755c42f8730e362e7510476b5413231db1",
           "constant/polyMesh/owner": "2591161faec40a988ae34c6c8204439fa37c63f64d51ce0bcc702b58a9f054b8"
         },
-        "original_solver_log_sha256": "b28ba07f7762b1b007988e83761aa7cadb73a9398b323eb7eac27e61aaef859b",
-        "solver_log_path": "/home/mirai/OpenFOAM/mirai-6/run/deVahlDavisBenchmark/cases/routeB/Ra1e3_fine/log.buoyantBoussinesqSimpleFoam.continuation9000-12000",
-        "original_log_backup": "/home/mirai/OpenFOAM/mirai-6/run/deVahlDavisBenchmark/cases/routeB/Ra1e3_fine/log.buoyantBoussinesqSimpleFoam.through9000",
-        "original_controlDict_backup": "/home/mirai/OpenFOAM/mirai-6/run/deVahlDavisBenchmark/cases/routeB/Ra1e3_fine/system/controlDict.before9000-to-12000",
+        "original_solver_log_sha256": "5a7ac1d2ba740ad4d7106870d97fb939c1a06a2dde520c0b20f0a41441ad3982",
+        "solver_log_path": "/home/mirai/OpenFOAM/mirai-6/run/deVahlDavisBenchmark/cases/routeB/Ra1e3_fine/log.buoyantBoussinesqSimpleFoam.continuation18000-21000",
+        "original_log_backup": "/home/mirai/OpenFOAM/mirai-6/run/deVahlDavisBenchmark/cases/routeB/Ra1e3_fine/log.buoyantBoussinesqSimpleFoam.through18000",
+        "original_controlDict_backup": "/home/mirai/OpenFOAM/mirai-6/run/deVahlDavisBenchmark/cases/routeB/Ra1e3_fine/system/controlDict.before18000-to-21000",
         "physics_unchanged": true,
         "schemes_unchanged": true,
         "relaxation_unchanged": true,
         "tolerance_unchanged": true,
-        "started_at": "2026-10-03T23:43:14.004290+09:00",
-        "first_logged_iteration": 9001,
-        "last_logged_iteration": 12000,
-        "continuation_ended_at": 12000,
-        "completed_at": "2026-10-03T23:49:22.542781+09:00",
-        "continuation_log_sha256": "b3719efc041c6f5f2067c88f91a31c448f235ec80e29a57143d3b7e0b1c73e38",
+        "started_at": "2026-10-04T00:09:36.003823+09:00",
+        "first_logged_iteration": 18001,
+        "last_logged_iteration": 21000,
+        "continuation_ended_at": 21000,
+        "completed_at": "2026-10-04T00:16:42.391187+09:00",
+        "continuation_log_sha256": "a431102196a67dc853757eb6c924d9fad298dc0810652c921f25e48cbbb8bd25",
         "preserved_iteration_3000_fields": true,
         "unchanged_other_inputs": true,
         "unchanged_mesh": true
       }
     }
   },
-  "status": "STOPPED_CONVERGENCE_NOT_REACHED",
-  "stop_cases": [
-    "B-Ra1e3-fine"
-  ],
+  "status": "READY_TO_RESUME_AWAITING_USER",
+  "stop_cases": [],
   "solver_finished_matrix_points": 4,
-  "accepted_matrix_points": 3,
+  "accepted_matrix_points": 4,
   "matrix_points_total": 12,
   "preexisting_formal_solver_runs": 2,
   "new_solver_runs_this_invocation": 2,
   "reused_existing_solver_results": 1,
   "ROUTE_B_FULL_MATRIX_COMPLETE": "NO",
   "BENCHMARK_CORE_PASS": "NOT_EVALUATED",
-  "needs_320": null,
-  "needs_320_reason": "Fine Gate D failed; formal grid evaluation not performed.",
-  "required_user_decision": "Decide how to handle B-Ra1e3-fine remaining Gate D failure; no extension beyond 12000 authorized.",
+  "needs_320": true,
+  "needs_320_reason": "See Ra=1000 grid_convergence rows.",
+  "required_user_decision": "Review formal Ra=1e3 gates and separate conservation audit before authorizing other cases or a research specification change.",
   "formal_Ra_gates": {
     "1000": {
-      "E": "NOT_EVALUATED",
-      "F": "NOT_EVALUATED",
-      "G": "NOT_EVALUATED"
+      "E": "PASS",
+      "F": "FAIL",
+      "G": "FAIL"
     },
     "10000": {
       "E": "NOT_EVALUATED",
@@ -1327,9 +1493,9 @@
       "G": "NOT_EVALUATED"
     }
   },
-  "FULL_MATRIX_RESUME": "NO",
+  "FULL_MATRIX_RESUME": "YES",
   "B_RA1E3_MEDIUM_GATE_D": "PASS",
   "continuation_solver_runs": 1,
-  "B_RA1E3_FINE_GATE_D": "FAIL",
-  "ACCEPTED_FINE_ITERATION": "NONE"
+  "B_RA1E3_FINE_GATE_D": "PASS",
+  "ACCEPTED_FINE_ITERATION": 21000
 }

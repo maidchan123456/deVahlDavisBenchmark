@@ -1,6 +1,6 @@
 {
   "schema": "routeB-full-matrix-v1",
-  "generated_at": "2026-10-03T23:49:22.893594+09:00",
+  "generated_at": "2026-10-04T00:16:43.008402+09:00",
   "preflight": {
     "TEMPLATE_PREFLIGHT": "PASS",
     "template_changed": false,
@@ -1089,61 +1089,61 @@
           "system/fvSolution": "a6fafe4fa039d0d6b814aa802d96280acd099df73c77e34df02abd47916dc701"
         }
       },
-      "final_iteration": 12000,
-      "Gate_D": "FAIL",
+      "final_iteration": 21000,
+      "Gate_D": "PASS",
       "Rwin": {
-        "window_start_iteration": 11800,
-        "window_end_iteration": 12000,
+        "window_start_iteration": 20800,
+        "window_end_iteration": 21000,
         "sample_times": [
-          11800,
-          11810,
-          11820,
-          11830,
-          11840,
-          11850,
-          11860,
-          11870,
-          11880,
-          11890,
-          11900,
-          11910,
-          11920,
-          11930,
-          11940,
-          11950,
-          11960,
-          11970,
-          11980,
-          11990,
-          12000
+          20800,
+          20810,
+          20820,
+          20830,
+          20840,
+          20850,
+          20860,
+          20870,
+          20880,
+          20890,
+          20900,
+          20910,
+          20920,
+          20930,
+          20940,
+          20950,
+          20960,
+          20970,
+          20980,
+          20990,
+          21000
         ],
         "samples": 21,
-        "Nu": 0.0003543385166790232,
-        "Nu_bar_0": 0.0003543385166790232,
-        "Nu_legacy_wall_pair_monitor": 0.0003543411214048923,
-        "Nu_bar_half": 8.293596378434483e-05,
+        "Nu": 7.980414159323069e-07,
+        "Nu_bar_0": 7.980414159323069e-07,
+        "Nu_legacy_wall_pair_monitor": 8.039059379080947e-07,
+        "Nu_bar_half": 9.479773878922131e-07,
         "primary_mean_Nu_candidate": "Nu_bar_half; legacy Gate D remains unchanged",
-        "Umax": 0.00015369373424017096,
-        "Vmax": 9.660016077456969e-05,
+        "Umax": 5.446580411110002e-06,
+        "Vmax": 5.374969571434606e-06,
         "scales": {
           "Nu": 1.0,
           "Umax": 1.0,
           "Vmax": 1.0
         },
-        "heat_imbalance_start": 4.329731400137037e-07,
-        "heat_imbalance_end": 4.3818269788330646e-07,
-        "heat_imbalance_linear_slope_per_iteration": 2.6060960822368706e-11
+        "heat_imbalance_start": 2.2968046153295078e-07,
+        "heat_imbalance_end": 2.1795141890090027e-07,
+        "heat_imbalance_linear_slope_per_iteration": -5.861835473447037e-11
       },
       "metrics_path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/cases/B-Ra1e3-fine/metrics.json",
-      "metrics_sha256": "4a905bb10f3999f6702c5cccc3bf512bb2bcf0f4e7598ba779cd55b6e1514f0a",
+      "metrics_sha256": "3e1fa0c2506555cdc36b00ccc84730e91a5d0f64d9430ae370408089b5dd8199",
       "input_hashes_verified": true,
       "final_field_sha256": {
-        "cases/routeB/Ra1e3_fine/12000/U": "336a08b7e3b2f65e52d5c69d86adf6938db28e9e61b9163bbed7d7a0ac7dc747",
-        "cases/routeB/Ra1e3_fine/12000/alphat": "e29fe1c6dddb9eb38423349801b4d71a8ae5f21aa25d800bc26798fbd46f12db",
-        "cases/routeB/Ra1e3_fine/12000/phi": "504daef365223df8cb8d33c987e0489270bb0b570ba78879e5cc81cf05d19f5e",
-        "cases/routeB/Ra1e3_fine/12000/T": "d86827d8a763981636337ddbe7a01091af0fbaef4c17286d608708f57b8cb284",
-        "cases/routeB/Ra1e3_fine/12000/p": "c2a191c0810caac7a0aa6728503d41e9925fb7fb19b81af715c8739e5c57c326",
-        "cases/routeB/Ra1e3_fine/12000/p_rgh": "157556c96e021ebc7c34f2b77d2a9d95444edf5b00ac7138a7493dbf2b33e9cd"
+        "cases/routeB/Ra1e3_fine/21000/U": "0548eaae73c0622c8d0d5d96bcc7285ba05abc0ec4265fdf7fdfdbf2ff4f3994",
+        "cases/routeB/Ra1e3_fine/21000/alphat": "f9d8e041d6d0f20327ed93cc9947f3f42825f57ec4e915923d27ad63e02bd369",
+        "cases/routeB/Ra1e3_fine/21000/phi": "30fca68ba7d14fa0fc0fb22f04d2ee409a47b30f429086bf565997aad53d4dab",
+        "cases/routeB/Ra1e3_fine/21000/T": "08d5f29ddb23c9df68c32c853f9aeeffb66fc198fef69a8ea822c6b7906e30c0",
+        "cases/routeB/Ra1e3_fine/21000/p": "61b76a619c78a31b6e61249ea1264b20ce3df3ae21c190a5f074879c6811b649",
+        "cases/routeB/Ra1e3_fine/21000/p_rgh": "83068ea47bd72590da9ced0292562218256cdcaec40eb97168ab5e1aa574e356"
       },
       "mesh_sha256": {
         "constant/polyMesh/faces": "cc83d432b2f6e5bc59786b4d29703220ab4615cccc64e45478d7d160ba1a86a4",
@@ -1153,51 +1153,64 @@
         "constant/polyMesh/owner": "2591161faec40a988ae34c6c8204439fa37c63f64d51ce0bcc702b58a9f054b8"
       },
       "log_sha256": {
-        "log.buoyantBoussinesqSimpleFoam": "8a39df29544d6c7e5857d451808e73b0bdd782ae174f027c7337aec9a46a5c5b",
+        "log.buoyantBoussinesqSimpleFoam": "7a9c09df08f546acb6f2aa98eb551d9bc9f24d8b78832ffe8470850d024ab2c6",
         "log.blockMesh": "a6312956f928178ad46ee71e92a09df647573b8b2063ac3e4b1360783709401a",
         "log.buoyantBoussinesqSimpleFoam.continuation6000-9000": "2c4c9fc018f5f347905eafe8f6e2f30717a137e54ee034e8ca59cb32f412923a",
         "log.checkMesh": "7e9ff6dbf6d0134a892b355230196a273b594446a42d99883d6d1d44d2e8ad37",
+        "log.analyze_case.checkpoint18000": "ac301281dfbd10b80f59c8f2a9d4a3921b2b936ecaa5b163a2cab0692d218d5e",
         "log.full_matrix_runner": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "log.analyze_case.checkpoint21000": "3e1fa0c2506555cdc36b00ccc84730e91a5d0f64d9430ae370408089b5dd8199",
         "log.buoyantBoussinesqSimpleFoam.iterations0-3000": "8123ffac0daea1a330f838d0c4a7eb70a402a976a641ce19bc752b791351a733",
         "log.buoyantBoussinesqSimpleFoam.continuation9000-12000": "b3719efc041c6f5f2067c88f91a31c448f235ec80e29a57143d3b7e0b1c73e38",
+        "log.buoyantBoussinesqSimpleFoam.through18000": "5a7ac1d2ba740ad4d7106870d97fb939c1a06a2dde520c0b20f0a41441ad3982",
         "log.analyze_case.checkpoint9000": "7abb816fe5165b6aa187a457e083775ccfb7125527cbed0a2e9561a25251164c",
         "log.buoyantBoussinesqSimpleFoam.through9000": "b28ba07f7762b1b007988e83761aa7cadb73a9398b323eb7eac27e61aaef859b",
         "log.analyze_case": "b4d108d00d987b98a91e85c3b37c37cbc2fa29c3a92c3a5c5b17e33432d6938f",
+        "log.buoyantBoussinesqSimpleFoam.continuation18000-21000": "a431102196a67dc853757eb6c924d9fad298dc0810652c921f25e48cbbb8bd25",
         "log.analyze_case.continuation3000-6000": "d2e895bcea2ba42299d2fd2d2821eea26a7d35b0ba39f76f1bb52c8cf3853934",
         "log.analyze_case.checkpoint12000": "4a905bb10f3999f6702c5cccc3bf512bb2bcf0f4e7598ba779cd55b6e1514f0a",
+        "log.buoyantBoussinesqSimpleFoam.through12000": "8a39df29544d6c7e5857d451808e73b0bdd782ae174f027c7337aec9a46a5c5b",
         "log.environment": "7a6c2947ae408aac60267e0f64dad009cb5f68d25436cdf96a5a381c709bb850",
         "log.buoyantBoussinesqSimpleFoam.continuation3000-6000": "115d015225a0ecfebc03078fee6a7afde036aeab529bad8600106c42cbc358d3",
+        "log.buoyantBoussinesqSimpleFoam.continuation12000-18000": "ba7eaaa8f8348b2d2578685e40d19fece3a88c356b62e07843b2f6ba56983f8e",
         "log.buoyantBoussinesqSimpleFoam.through6000": "52ee79f6e41d24f811f29726a2a789315474bccf8015ab48b77b1da3b5f32b63"
       },
       "environment_log": "OpenFOAM-6\n/home/mirai/OpenFOAM/OpenFOAM-6/platforms/linux64GccDPInt32Opt/bin/buoyantBoussinesqSimpleFoam\nWM_PROJECT=OpenFOAM\nWM_PROJECT_VERSION=6\nWM_PROJECT_DIR=/home/mirai/OpenFOAM/OpenFOAM-6\nFOAM_RUN=/home/mirai/OpenFOAM/mirai-6/run\nWM_OPTIONS=linux64GccDPInt32Opt\nmirai-Precision-5860-Tower\n2026-10-03T23:09:53+09:00\n",
-      "unaccepted_reason": "Gate D not reached; final fields retained for diagnostics and possible authorized continuation.",
+      "accepted_final_field_sha256": {
+        "cases/routeB/Ra1e3_fine/21000/U": "0548eaae73c0622c8d0d5d96bcc7285ba05abc0ec4265fdf7fdfdbf2ff4f3994",
+        "cases/routeB/Ra1e3_fine/21000/alphat": "f9d8e041d6d0f20327ed93cc9947f3f42825f57ec4e915923d27ad63e02bd369",
+        "cases/routeB/Ra1e3_fine/21000/phi": "30fca68ba7d14fa0fc0fb22f04d2ee409a47b30f429086bf565997aad53d4dab",
+        "cases/routeB/Ra1e3_fine/21000/T": "08d5f29ddb23c9df68c32c853f9aeeffb66fc198fef69a8ea822c6b7906e30c0",
+        "cases/routeB/Ra1e3_fine/21000/p": "61b76a619c78a31b6e61249ea1264b20ce3df3ae21c190a5f074879c6811b649",
+        "cases/routeB/Ra1e3_fine/21000/p_rgh": "83068ea47bd72590da9ced0292562218256cdcaec40eb97168ab5e1aa574e356"
+      },
       "final_window_residual_trend": {
         "Ux": {
-          "window_start_iteration": 11800,
-          "start": 3.559207859333707e-07,
-          "end": 3.560276069385285e-07,
-          "end_to_start_ratio": 1.0003001257846675
+          "window_start_iteration": 20800,
+          "start": 1.413173799635456e-08,
+          "end": 1.261527185588058e-08,
+          "end_to_start_ratio": 0.8926907546074538
         },
         "Uy": {
-          "window_start_iteration": 11800,
-          "start": 4.532545569770546e-07,
-          "end": 4.507125890428417e-07,
-          "end_to_start_ratio": 0.9943917432376933
+          "window_start_iteration": 20800,
+          "start": 1.411791255187373e-08,
+          "end": 1.255873914009128e-08,
+          "end_to_start_ratio": 0.8895606268948367
         },
         "T": {
-          "window_start_iteration": 11800,
-          "start": 9.605720608950039e-07,
-          "end": 8.578778747498405e-07,
-          "end_to_start_ratio": 0.8930905963999421
+          "window_start_iteration": 20800,
+          "start": 2.153539684098009e-09,
+          "end": 2.198930766981429e-09,
+          "end_to_start_ratio": 1.0210774304363153
         },
         "p_rgh": {
-          "window_start_iteration": 11800,
-          "start": 7.653300021569174e-06,
-          "end": 6.858169197782188e-06,
-          "end_to_start_ratio": 0.8961061474728442
+          "window_start_iteration": 20800,
+          "start": 2.583596509923336e-08,
+          "end": 2.450444044852739e-08,
+          "end_to_start_ratio": 0.9484623606824163
         }
       },
-      "failure_classification": "iteration convergence not reached; no input changes or automatic extension",
+      "failure_classification": null,
       "iteration_history": [
         {
           "iteration": 3000,
@@ -1928,23 +1941,191 @@
               "end_to_start_ratio": 0.8961061474728442
             }
           }
+        },
+        {
+          "iteration": 18000,
+          "stage": "CONVERGENCE_NOT_REACHED",
+          "Gate_D": "FAIL",
+          "Rwin": {
+            "window_start_iteration": 17800,
+            "window_end_iteration": 18000,
+            "sample_times": [
+              17800,
+              17810,
+              17820,
+              17830,
+              17840,
+              17850,
+              17860,
+              17870,
+              17880,
+              17890,
+              17900,
+              17910,
+              17920,
+              17930,
+              17940,
+              17950,
+              17960,
+              17970,
+              17980,
+              17990,
+              18000
+            ],
+            "samples": 21,
+            "Nu": 4.666853188645466e-06,
+            "Nu_bar_0": 4.666853188645466e-06,
+            "Nu_legacy_wall_pair_monitor": 4.659699988322984e-06,
+            "Nu_bar_half": 6.450093553112383e-06,
+            "primary_mean_Nu_candidate": "Nu_bar_half; legacy Gate D remains unchanged",
+            "Umax": 2.6901682683114495e-05,
+            "Vmax": 2.5277963641387005e-05,
+            "scales": {
+              "Nu": 1.0,
+              "Umax": 1.0,
+              "Vmax": 1.0
+            },
+            "heat_imbalance_start": 4.4939573869114705e-07,
+            "heat_imbalance_end": 4.350893403527829e-07,
+            "heat_imbalance_linear_slope_per_iteration": -7.15314559545028e-11
+          },
+          "final_initial_residuals": {
+            "Ux": 6.01808721457412e-08,
+            "Uy": 6.298489089978559e-08,
+            "T": 9.083648386918331e-09,
+            "p_rgh": 1.272465821366632e-07
+          },
+          "heat_imbalance": 4.350893403527829e-07,
+          "heat_imbalance_slope": -7.15314559545028e-11,
+          "normal_exit": true,
+          "fatal_or_nan": false,
+          "residual_trend": {
+            "Ux": {
+              "window_start_iteration": 17800,
+              "start": 6.606374942953523e-08,
+              "end": 6.01808721457412e-08,
+              "end_to_start_ratio": 0.9109515076786732
+            },
+            "Uy": {
+              "window_start_iteration": 17800,
+              "start": 6.938242339322965e-08,
+              "end": 6.298489089978559e-08,
+              "end_to_start_ratio": 0.9077931818958586
+            },
+            "T": {
+              "window_start_iteration": 17800,
+              "start": 1.15392715622289e-08,
+              "end": 9.083648386918331e-09,
+              "end_to_start_ratio": 0.7871942642074153
+            },
+            "p_rgh": {
+              "window_start_iteration": 17800,
+              "start": 1.496611104030467e-07,
+              "end": 1.272465821366632e-07,
+              "end_to_start_ratio": 0.8502314448555153
+            }
+          }
+        },
+        {
+          "iteration": 21000,
+          "stage": "GATE_D_PASS",
+          "Gate_D": "PASS",
+          "Rwin": {
+            "window_start_iteration": 20800,
+            "window_end_iteration": 21000,
+            "sample_times": [
+              20800,
+              20810,
+              20820,
+              20830,
+              20840,
+              20850,
+              20860,
+              20870,
+              20880,
+              20890,
+              20900,
+              20910,
+              20920,
+              20930,
+              20940,
+              20950,
+              20960,
+              20970,
+              20980,
+              20990,
+              21000
+            ],
+            "samples": 21,
+            "Nu": 7.980414159323069e-07,
+            "Nu_bar_0": 7.980414159323069e-07,
+            "Nu_legacy_wall_pair_monitor": 8.039059379080947e-07,
+            "Nu_bar_half": 9.479773878922131e-07,
+            "primary_mean_Nu_candidate": "Nu_bar_half; legacy Gate D remains unchanged",
+            "Umax": 5.446580411110002e-06,
+            "Vmax": 5.374969571434606e-06,
+            "scales": {
+              "Nu": 1.0,
+              "Umax": 1.0,
+              "Vmax": 1.0
+            },
+            "heat_imbalance_start": 2.2968046153295078e-07,
+            "heat_imbalance_end": 2.1795141890090027e-07,
+            "heat_imbalance_linear_slope_per_iteration": -5.861835473447037e-11
+          },
+          "final_initial_residuals": {
+            "Ux": 1.261527185588058e-08,
+            "Uy": 1.255873914009128e-08,
+            "T": 2.198930766981429e-09,
+            "p_rgh": 2.450444044852739e-08
+          },
+          "heat_imbalance": 2.1795141890090027e-07,
+          "heat_imbalance_slope": -5.861835473447037e-11,
+          "normal_exit": true,
+          "fatal_or_nan": false,
+          "residual_trend": {
+            "Ux": {
+              "window_start_iteration": 20800,
+              "start": 1.413173799635456e-08,
+              "end": 1.261527185588058e-08,
+              "end_to_start_ratio": 0.8926907546074538
+            },
+            "Uy": {
+              "window_start_iteration": 20800,
+              "start": 1.411791255187373e-08,
+              "end": 1.255873914009128e-08,
+              "end_to_start_ratio": 0.8895606268948367
+            },
+            "T": {
+              "window_start_iteration": 20800,
+              "start": 2.153539684098009e-09,
+              "end": 2.198930766981429e-09,
+              "end_to_start_ratio": 1.0210774304363153
+            },
+            "p_rgh": {
+              "window_start_iteration": 20800,
+              "start": 2.583596509923336e-08,
+              "end": 2.450444044852739e-08,
+              "end_to_start_ratio": 0.9484623606824163
+            }
+          }
         }
       ],
       "continuation": {
         "kind": "additional steady iterations only",
-        "continuation_started_from": 9000,
-        "previous_endTime": 9000,
-        "new_endTime": 12000,
+        "continuation_started_from": 18000,
+        "previous_endTime": 18000,
+        "new_endTime": 21000,
         "startFrom": "latestTime",
-        "original_controlDict_sha256": "0fb6182709f800a151586286c18cfe0e38a1572c7ad25a6fbcbed92b68d31bfa",
-        "continuation_controlDict_sha256": "65fd9820ed61b7df813d8090fc3b8727be37cd95677589dab52a5c938614ff00",
+        "original_controlDict_sha256": "304c150c884efcc9f19a7dd2be6157432f376aeafa939209ab27373b65783fe3",
+        "continuation_controlDict_sha256": "77fddff0e3c49b8d1989305f2f2c907b2f501f5129b0ce807ba0842e37019060",
         "start_field_sha256": {
-          "U": "4e0cfdbf31763b77b7a984101528038e3610d1cbfed6775c083811b979b66816",
-          "alphat": "387e06d32a0ae4745980f7c3f0164aeda32ded32bf123507f4556860c99787bf",
-          "phi": "6815ccca0552b8fa2860dae695cc3223058e41fa3ce4fffc78dc94925514f018",
-          "T": "3290281c852085351290f19a5f6e44fbba08a1692560f20d34daca5014d8ef59",
-          "p": "564cdb46fc5ce9662aa03bd0b42c9888d6923ed3a0fa866c6c073910696109fd",
-          "p_rgh": "c2c29a82b6f32dfe58f30c69df0b2632a5b996c2826d5c5951a0d6435886fab7"
+          "U": "c5b90c6fefff6a18701d30b5d91e0f336129419ee17b56d574a805ba0c89ea25",
+          "alphat": "5574b3dd53f900511dbe06cb2be43dd3ceab3fb68c5d8326af67839ccd124a7b",
+          "phi": "faddc32f994f63c28aa6e23a993196f8ca99522a59c638e5f34190cb16cc6967",
+          "T": "6fe2794c3ab5da0961547a9de6d219577cb2ca2ad18c86cc3ed7cfb3ebf2d24f",
+          "p": "5a028686da30124596492bc0857784ffa30d96bee3c40b2d1254ec872846b74f",
+          "p_rgh": "1141f89690918a5052611ed4ba2fed226c0b5d908897e4afc03f44700c45ef20"
         },
         "mesh_sha256": {
           "constant/polyMesh/faces": "cc83d432b2f6e5bc59786b4d29703220ab4615cccc64e45478d7d160ba1a86a4",
@@ -1953,20 +2134,20 @@
           "constant/polyMesh/neighbour": "1efe776acf18f1efd60f48fe4d473a755c42f8730e362e7510476b5413231db1",
           "constant/polyMesh/owner": "2591161faec40a988ae34c6c8204439fa37c63f64d51ce0bcc702b58a9f054b8"
         },
-        "original_solver_log_sha256": "b28ba07f7762b1b007988e83761aa7cadb73a9398b323eb7eac27e61aaef859b",
-        "solver_log_path": "/home/mirai/OpenFOAM/mirai-6/run/deVahlDavisBenchmark/cases/routeB/Ra1e3_fine/log.buoyantBoussinesqSimpleFoam.continuation9000-12000",
-        "original_log_backup": "/home/mirai/OpenFOAM/mirai-6/run/deVahlDavisBenchmark/cases/routeB/Ra1e3_fine/log.buoyantBoussinesqSimpleFoam.through9000",
-        "original_controlDict_backup": "/home/mirai/OpenFOAM/mirai-6/run/deVahlDavisBenchmark/cases/routeB/Ra1e3_fine/system/controlDict.before9000-to-12000",
+        "original_solver_log_sha256": "5a7ac1d2ba740ad4d7106870d97fb939c1a06a2dde520c0b20f0a41441ad3982",
+        "solver_log_path": "/home/mirai/OpenFOAM/mirai-6/run/deVahlDavisBenchmark/cases/routeB/Ra1e3_fine/log.buoyantBoussinesqSimpleFoam.continuation18000-21000",
+        "original_log_backup": "/home/mirai/OpenFOAM/mirai-6/run/deVahlDavisBenchmark/cases/routeB/Ra1e3_fine/log.buoyantBoussinesqSimpleFoam.through18000",
+        "original_controlDict_backup": "/home/mirai/OpenFOAM/mirai-6/run/deVahlDavisBenchmark/cases/routeB/Ra1e3_fine/system/controlDict.before18000-to-21000",
         "physics_unchanged": true,
         "schemes_unchanged": true,
         "relaxation_unchanged": true,
         "tolerance_unchanged": true,
-        "started_at": "2026-10-03T23:43:14.004290+09:00",
-        "first_logged_iteration": 9001,
-        "last_logged_iteration": 12000,
-        "continuation_ended_at": 12000,
-        "completed_at": "2026-10-03T23:49:22.542781+09:00",
-        "continuation_log_sha256": "b3719efc041c6f5f2067c88f91a31c448f235ec80e29a57143d3b7e0b1c73e38",
+        "started_at": "2026-10-04T00:09:36.003823+09:00",
+        "first_logged_iteration": 18001,
+        "last_logged_iteration": 21000,
+        "continuation_ended_at": 21000,
+        "completed_at": "2026-10-04T00:16:42.391187+09:00",
+        "continuation_log_sha256": "a431102196a67dc853757eb6c924d9fad298dc0810652c921f25e48cbbb8bd25",
         "preserved_iteration_3000_fields": true,
         "unchanged_other_inputs": true,
         "unchanged_mesh": true
@@ -2066,6 +2247,88 @@
           "preserved_iteration_3000_fields": true,
           "unchanged_other_inputs": true,
           "unchanged_mesh": true
+        },
+        {
+          "kind": "additional steady iterations only",
+          "continuation_started_from": 9000,
+          "previous_endTime": 9000,
+          "new_endTime": 12000,
+          "startFrom": "latestTime",
+          "original_controlDict_sha256": "0fb6182709f800a151586286c18cfe0e38a1572c7ad25a6fbcbed92b68d31bfa",
+          "continuation_controlDict_sha256": "65fd9820ed61b7df813d8090fc3b8727be37cd95677589dab52a5c938614ff00",
+          "start_field_sha256": {
+            "U": "4e0cfdbf31763b77b7a984101528038e3610d1cbfed6775c083811b979b66816",
+            "alphat": "387e06d32a0ae4745980f7c3f0164aeda32ded32bf123507f4556860c99787bf",
+            "phi": "6815ccca0552b8fa2860dae695cc3223058e41fa3ce4fffc78dc94925514f018",
+            "T": "3290281c852085351290f19a5f6e44fbba08a1692560f20d34daca5014d8ef59",
+            "p": "564cdb46fc5ce9662aa03bd0b42c9888d6923ed3a0fa866c6c073910696109fd",
+            "p_rgh": "c2c29a82b6f32dfe58f30c69df0b2632a5b996c2826d5c5951a0d6435886fab7"
+          },
+          "mesh_sha256": {
+            "constant/polyMesh/faces": "cc83d432b2f6e5bc59786b4d29703220ab4615cccc64e45478d7d160ba1a86a4",
+            "constant/polyMesh/points": "0dc6d8f2bb286d4a5c71d1e7613f971b6ea84bc6aef6c9c7193b50ffde6da78d",
+            "constant/polyMesh/boundary": "8edf8a0cd7b922cc9fec8dda9d14f937a961d02478cf50a79d324025a4f471c7",
+            "constant/polyMesh/neighbour": "1efe776acf18f1efd60f48fe4d473a755c42f8730e362e7510476b5413231db1",
+            "constant/polyMesh/owner": "2591161faec40a988ae34c6c8204439fa37c63f64d51ce0bcc702b58a9f054b8"
+          },
+          "original_solver_log_sha256": "b28ba07f7762b1b007988e83761aa7cadb73a9398b323eb7eac27e61aaef859b",
+          "solver_log_path": "/home/mirai/OpenFOAM/mirai-6/run/deVahlDavisBenchmark/cases/routeB/Ra1e3_fine/log.buoyantBoussinesqSimpleFoam.continuation9000-12000",
+          "original_log_backup": "/home/mirai/OpenFOAM/mirai-6/run/deVahlDavisBenchmark/cases/routeB/Ra1e3_fine/log.buoyantBoussinesqSimpleFoam.through9000",
+          "original_controlDict_backup": "/home/mirai/OpenFOAM/mirai-6/run/deVahlDavisBenchmark/cases/routeB/Ra1e3_fine/system/controlDict.before9000-to-12000",
+          "physics_unchanged": true,
+          "schemes_unchanged": true,
+          "relaxation_unchanged": true,
+          "tolerance_unchanged": true,
+          "started_at": "2026-10-03T23:43:14.004290+09:00",
+          "first_logged_iteration": 9001,
+          "last_logged_iteration": 12000,
+          "continuation_ended_at": 12000,
+          "completed_at": "2026-10-03T23:49:22.542781+09:00",
+          "continuation_log_sha256": "b3719efc041c6f5f2067c88f91a31c448f235ec80e29a57143d3b7e0b1c73e38",
+          "preserved_iteration_3000_fields": true,
+          "unchanged_other_inputs": true,
+          "unchanged_mesh": true
+        },
+        {
+          "kind": "additional steady iterations only",
+          "continuation_started_from": 12000,
+          "previous_endTime": 12000,
+          "new_endTime": 18000,
+          "startFrom": "latestTime",
+          "original_controlDict_sha256": "65fd9820ed61b7df813d8090fc3b8727be37cd95677589dab52a5c938614ff00",
+          "continuation_controlDict_sha256": "304c150c884efcc9f19a7dd2be6157432f376aeafa939209ab27373b65783fe3",
+          "start_field_sha256": {
+            "U": "336a08b7e3b2f65e52d5c69d86adf6938db28e9e61b9163bbed7d7a0ac7dc747",
+            "alphat": "e29fe1c6dddb9eb38423349801b4d71a8ae5f21aa25d800bc26798fbd46f12db",
+            "phi": "504daef365223df8cb8d33c987e0489270bb0b570ba78879e5cc81cf05d19f5e",
+            "T": "d86827d8a763981636337ddbe7a01091af0fbaef4c17286d608708f57b8cb284",
+            "p": "c2a191c0810caac7a0aa6728503d41e9925fb7fb19b81af715c8739e5c57c326",
+            "p_rgh": "157556c96e021ebc7c34f2b77d2a9d95444edf5b00ac7138a7493dbf2b33e9cd"
+          },
+          "mesh_sha256": {
+            "constant/polyMesh/faces": "cc83d432b2f6e5bc59786b4d29703220ab4615cccc64e45478d7d160ba1a86a4",
+            "constant/polyMesh/points": "0dc6d8f2bb286d4a5c71d1e7613f971b6ea84bc6aef6c9c7193b50ffde6da78d",
+            "constant/polyMesh/boundary": "8edf8a0cd7b922cc9fec8dda9d14f937a961d02478cf50a79d324025a4f471c7",
+            "constant/polyMesh/neighbour": "1efe776acf18f1efd60f48fe4d473a755c42f8730e362e7510476b5413231db1",
+            "constant/polyMesh/owner": "2591161faec40a988ae34c6c8204439fa37c63f64d51ce0bcc702b58a9f054b8"
+          },
+          "original_solver_log_sha256": "8a39df29544d6c7e5857d451808e73b0bdd782ae174f027c7337aec9a46a5c5b",
+          "solver_log_path": "/home/mirai/OpenFOAM/mirai-6/run/deVahlDavisBenchmark/cases/routeB/Ra1e3_fine/log.buoyantBoussinesqSimpleFoam.continuation12000-18000",
+          "original_log_backup": "/home/mirai/OpenFOAM/mirai-6/run/deVahlDavisBenchmark/cases/routeB/Ra1e3_fine/log.buoyantBoussinesqSimpleFoam.through12000",
+          "original_controlDict_backup": "/home/mirai/OpenFOAM/mirai-6/run/deVahlDavisBenchmark/cases/routeB/Ra1e3_fine/system/controlDict.before12000-to-18000",
+          "physics_unchanged": true,
+          "schemes_unchanged": true,
+          "relaxation_unchanged": true,
+          "tolerance_unchanged": true,
+          "started_at": "2026-10-03T23:59:34.345096+09:00",
+          "first_logged_iteration": 12001,
+          "last_logged_iteration": 18000,
+          "continuation_ended_at": 18000,
+          "completed_at": "2026-10-04T00:09:35.411679+09:00",
+          "continuation_log_sha256": "ba7eaaa8f8348b2d2578685e40d19fece3a88c356b62e07843b2f6ba56983f8e",
+          "preserved_iteration_3000_fields": true,
+          "unchanged_other_inputs": true,
+          "unchanged_mesh": true
         }
       ],
       "executed_continuation_input_sha256": {
@@ -2078,7 +2341,7 @@
         "constant/transportProperties": "8aa8ea4ad47f60b2e054c9b505cef27508155eb5b8f84c6008e08dd473f15b64",
         "constant/turbulenceProperties": "4f816c5a682c5c842f930b88d5e0b06d4f831ba8eed4efc72b6a9b067fe8cf39",
         "system/blockMeshDict": "8d257dd572ede0f09709f0902e5f471de16334929497d8113cee0a0c14e2a2f6",
-        "system/controlDict": "65fd9820ed61b7df813d8090fc3b8727be37cd95677589dab52a5c938614ff00",
+        "system/controlDict": "77fddff0e3c49b8d1989305f2f2c907b2f501f5129b0ce807ba0842e37019060",
         "system/fvSchemes": "3bedc2642ace9a13843ad341ca92ad1b8320ab5ad46c8f2f32ad5759c191d1eb",
         "system/fvSolution": "a6fafe4fa039d0d6b814aa802d96280acd099df73c77e34df02abd47916dc701"
       },
@@ -2086,60 +2349,46 @@
         "Rwin": {
           "Nu_bar_0": {
             "before": 0.021328812687099827,
-            "after": 0.0003543385166790232,
-            "reduction_factor": 60.19332272144857
+            "after": 7.980414159323069e-07,
+            "reduction_factor": 26726.448353789478
           },
           "Umax": {
             "before": 0.06174063648866751,
-            "after": 0.00015369373424017096,
-            "reduction_factor": 401.7121244005167
+            "after": 5.446580411110002e-06,
+            "reduction_factor": 11335.669691523914
           },
           "Vmax": {
             "before": 0.04950082765211266,
-            "after": 9.660016077456969e-05,
-            "reduction_factor": 512.430075221406
+            "after": 5.374969571434606e-06,
+            "reduction_factor": 9209.508443580016
           }
         },
         "final_initial_residuals": {
           "Ux": {
             "before": 0.0001304117747327533,
-            "after": 3.560276069385285e-07,
-            "reduction_factor": 366.2968044926643
+            "after": 1.261527185588058e-08,
+            "reduction_factor": 10337.611129003308
           },
           "Uy": {
             "before": 0.0001445365505697651,
-            "after": 4.507125890428417e-07,
-            "reduction_factor": 320.68452065364085
+            "after": 1.255873914009128e-08,
+            "reduction_factor": 11508.842484701421
           },
           "T": {
             "before": 2.917098378812021e-05,
-            "after": 8.578778747498405e-07,
-            "reduction_factor": 34.00365558632287
+            "after": 2.198930766981429e-09,
+            "reduction_factor": 13265.985553589999
           },
           "p_rgh": {
             "before": 0.0003920027421681874,
-            "after": 6.858169197782188e-06,
-            "reduction_factor": 57.15851138448935
+            "after": 2.450444044852739e-08,
+            "reduction_factor": 15997.212545685572
           }
         }
-      },
-      "improvement_since_6000": {
-        "Rwin_reduction_factors": {
-          "Nu_bar_0": 5.475952182596353,
-          "Umax": 60.572184018556094,
-          "Vmax": 96.85251702322414
-        },
-        "final_residual_reduction_factors": {
-          "Ux": 62.1288377925581,
-          "Uy": 48.152405899811306,
-          "T": 15.0497800558159,
-          "p_rgh": 14.776986361422969
-        }
-      },
-      "continuation_diagnosis": "All residuals and monitored quantities improved from 6000 to 12000, but residuals remain above the existing Gate D criterion. No extension beyond 12000 was performed; further iteration requires user authorization."
+      }
     }
   },
-  "status": "STOPPED_CONVERGENCE_NOT_REACHED",
+  "status": "READY_TO_RESUME_AWAITING_USER",
   "existing_uncommitted_work_preserved": true,
   "solver_runs_this_invocation": 2,
   "script_sha256": {
@@ -2158,13 +2407,13 @@
   "ROUTE_B_FULL_MATRIX_COMPLETE": "NO",
   "BENCHMARK_CORE_PASS": "NOT_EVALUATED",
   "limitation": "Full 12-point matrix incomplete. Other Ra formal gates remain unevaluated. No automatic iteration extension or other case execution.",
-  "FULL_MATRIX_RESUME": "NO",
+  "FULL_MATRIX_RESUME": "YES",
   "continuation_solver_runs": 1,
   "formal_Ra_gates": {
     "1000": {
-      "E": "NOT_EVALUATED",
-      "F": "NOT_EVALUATED",
-      "G": "NOT_EVALUATED"
+      "E": "PASS",
+      "F": "FAIL",
+      "G": "FAIL"
     },
     "10000": {
       "E": "NOT_EVALUATED",
@@ -2182,7 +2431,101 @@
       "G": "NOT_EVALUATED"
     }
   },
-  "Ra1e3_gate_evaluations": {},
+  "Ra1e3_gate_evaluations": {
+    "E": {
+      "checks": {
+        "Nu_bar_cavity": true,
+        "Umax": true,
+        "Wmax": true,
+        "Umax_Z": true,
+        "Wmax_X": true
+      },
+      "absolute_errors": {
+        "Nu_bar_cavity_absolute_relative_error": 0.00012154518006995633,
+        "Nu_bar_half_absolute_relative_error": 0.00013743601301801205,
+        "Nu_bar_0_absolute_relative_error": 0.0007684884772285172,
+        "Nu_hot_local_max_absolute_relative_error": 0.0010750506349707027,
+        "Nu_hot_local_max_Z_absolute_position_error": 0.003562478511895048,
+        "Nu_hot_local_min_absolute_relative_error": 0.0012304993777358005,
+        "Nu_hot_local_min_Z_absolute_position_error": 0.0,
+        "Umax_absolute_relative_error": 2.1820491022538897e-05,
+        "Umax_Z_absolute_position_error": 0.002429687500000055,
+        "Wmax_absolute_relative_error": 0.00011791521056765766,
+        "Wmax_X_absolute_position_error": 0.00022265625000000844
+      },
+      "note": "Nu_bar_0 and Nu_bar_half errors reported; no added Hard condition or Nu_bar_1 reference."
+    },
+    "F": [
+      {
+        "Ra_target": "1000",
+        "quantity": "Nu_bar_cavity",
+        "coarse": 1.1187958706851366,
+        "medium": 1.1180442973567672,
+        "fine": 1.117864112488682,
+        "fine_medium_difference": 0.00016118673644886138,
+        "convergence_type": "monotonic",
+        "p_obs": 2.0604360109020394,
+        "GCI": 0.0001524886107940077,
+        "Gate_F": "PASS",
+        "needs_320": false,
+        "reason": "Monotonic convergence; existing fine-medium and GCI thresholds applied."
+      },
+      {
+        "Ra_target": "1000",
+        "quantity": "Umax",
+        "coarse": 3.6477752919664113,
+        "medium": 3.646999248885325,
+        "fine": 3.6490796229717413,
+        "fine_medium_difference": 0.000570109260790027,
+        "convergence_type": "oscillatory",
+        "p_obs": "",
+        "GCI": "",
+        "Gate_F": "FAIL",
+        "needs_320": true,
+        "reason": "Nonmonotonic or undefined/nonpositive observed order; no 320 run performed."
+      },
+      {
+        "Ra_target": "1000",
+        "quantity": "Wmax",
+        "coarse": 3.6889568613677906,
+        "medium": 3.6963023532816552,
+        "fine": 3.6974359325334687,
+        "fine_medium_difference": 0.00030658523163016124,
+        "convergence_type": "monotonic",
+        "p_obs": 2.6959738510076905,
+        "GCI": 0.00016784137659154344,
+        "Gate_F": "PASS",
+        "needs_320": false,
+        "reason": "Monotonic convergence; existing fine-medium and GCI thresholds applied."
+      }
+    ],
+    "G": {
+      "checks": {
+        "heat_imbalance": true,
+        "section_conservation": true,
+        "reconstructed_mass_divergence": false,
+        "reconstructed_volume_divergence": true,
+        "temperature_symmetry": true,
+        "velocity_symmetry": true
+      },
+      "continuity": {
+        "mean_abs_div_phi_1_s": 1.4751798531145742e-13,
+        "mean_abs_div_U_1_s": 1.1471800501973435e-06,
+        "epsilon_phi": 2.8283979308217443e-11,
+        "epsilon_v": 0.00021995159935295997,
+        "epsilon_m": 0.00021995159935295997,
+        "mass_relation": "rho0 is constant, so normalized mass- and volume-divergence metrics are identical; solver phi is volume flux"
+      },
+      "symmetry": {
+        "theta_L2_relative": 8.929904725875264e-08,
+        "velocity_L2_relative": 6.742284969940663e-08,
+        "method": "paired cell centres under 180-degree rotation; RMS defect divided by RMS original theta or in-plane velocity magnitude"
+      },
+      "heat_imbalance": 2.1795141890090027e-07,
+      "section_Nu_max_relative_deviation_from_half": 1.1002165465487265e-05,
+      "note": "Saved solver volume-flux epsilon_phi reported separately; epsilon_m=epsilon_v from reconstructed U is compared to both existing criteria without substitution."
+    }
+  },
   "canonical_execution_scripts_match": true,
   "Ra1e3_cavity_method_diagnostic": {
     "coarse": {
@@ -2198,11 +2541,13 @@
       "Nu_bar_cavity_method_relative_difference": 4.103425388537474e-05
     },
     "fine": {
-      "Nu_bar_cavity": 1.116954967375215,
-      "Nu_bar_cavity_from_section_trapezoid": 1.1169435813696968,
-      "Nu_bar_cavity_method_absolute_difference": 1.1386005518199127e-05,
-      "Nu_bar_cavity_method_relative_difference": 1.0193791021813203e-05
+      "Nu_bar_cavity": 1.117864112488682,
+      "Nu_bar_cavity_from_section_trapezoid": 1.117852644749353,
+      "Nu_bar_cavity_method_absolute_difference": 1.1467739328807625e-05,
+      "Nu_bar_cavity_method_relative_difference": 1.0258616589164126e-05
     }
   },
-  "ACCEPTED_FINE_ITERATION": "NONE"
+  "ACCEPTED_FINE_ITERATION": 21000,
+  "conservation_audit_file": "results/routeB/gateG_conservation_audit.json",
+  "heat_imbalance_trend_audit_file": "results/routeB/heat_imbalance_trend_audit.json"
 }
