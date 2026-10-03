@@ -1,6 +1,19 @@
 # Route A — Foundation v13 minimal implementation record
 
-実施日: 2026-09-30（Asia/Tokyo）。対象仕様: `benchmark_spec.md` v1.1、判定基準: `acceptance_criteria.md` v1.1。Route A は Foundation v13 標準 formulation の特性評価用であり、古典 Boussinesq 方程式の Verification route ではない。
+記録改訂: 1.1（2026-10-03）。実施日: 2026-09-30（Asia/Tokyo）。実行時の対象仕様: `benchmark_spec.md` v1.1、判定基準: `acceptance_criteria.md` v1.1。現行の交差参照は両文書とも v1.2であり、閾値は実行時から変更していない。Route A は Foundation v13 標準 formulation の特性評価用であり、古典 Boussinesq 方程式の Verification route ではない。
+
+### 現在の status summary
+
+| 項目 | 状態 |
+|---|---|
+| `ROUTE_A_AUDIT_PASS` | **付与**。根拠は `openfoam_design.md` の v13 ソース監査 |
+| OQ-02 / minimal-case Gate A | **PASS**。cell と4物理 wall patch で確認 |
+| Route A Gate C | **PASS**（A-COND） |
+| Route A smoke / minimal implementation | **PASS**（A-SMOKE） |
+| full Gate D/F/G/K、Gate H、Gate J | **未実施** |
+| `ROUTE_A_CHARACTERIZED` / `DOWNSTREAM_TRANSIENT_READY` | **未付与** |
+
+本文の数値、失敗試行、diagnostic concern は実施記録として変更しない。
 
 ## 1. Pre-implementation plan
 
@@ -146,7 +159,9 @@ OpenFOAM FV 診断では A-SMOKE の `mean|div(phi)|=7.859e-13 kg/(m3 s)`、`eps
 - `results/routeA/figures/`
 - case 内の `log.environment`, `log.blockMesh`, `log.checkMesh`, `log.foamRun`, post-process logs
 
-A-COND は Gate C に合格し、A-SMOKE accepted attempt は OQ-02、正常終了、residual、200反復 Rwin、熱収支、自然対流方向の health 条件に合格した。volume divergence の懸念は status を隠さず記録した。この PASS は minimal Route A 実装だけを意味し、`BENCHMARK_CORE_PASS`、Route A と原論文方程式の同一性、grid convergence、tea simulation validation を意味しない。full matrix、感度、transient、Route B へは進まない。
+A-COND は Gate C に合格し、A-SMOKE accepted attempt は OQ-02、正常終了、residual、200反復 Rwin、熱収支、自然対流方向の health 条件に合格した。volume divergence の懸念は status を隠さず記録した。この PASS は minimal Route A 実装だけを意味し、`BENCHMARK_CORE_PASS`、Route A と原論文方程式の同一性、grid convergence、tea simulation validation を意味しない。この Route A 実装タスクでは full matrix、感度、transient、Route B へは進まなかった。Route B はその後に別タスクで minimal implementation まで完了している。
+
+現在の次段階は、まず Route B の full 4 Ra × 3 grid Verification matrix、続いて Route A の full matrix と3比較、その後に Gate H である。Gate H は A–B 同一性の証明としない。
 
 ROUTE A GATE C: PASS
 

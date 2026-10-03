@@ -1,10 +1,12 @@
 # de Vahl Davis benchmark — OpenFOAM Foundation v13 実装前設計監査
 
-監査日: 2026-09-29（Asia/Tokyo）。研究仕様: `benchmark_spec.md` 1.0、判定基準: `acceptance_criteria.md` 1.0。両文書を全文読了し、物理条件、掲載基準値、許容値は変更していない。
+記録改訂: 1.1（2026-10-03）。原監査日: 2026-09-29（Asia/Tokyo）。原監査の研究仕様: `benchmark_spec.md` 1.0、判定基準: `acceptance_criteria.md` 1.0。現行の仕様・判定基準はそれぞれ v1.2。原監査本文の一次証拠と当時の判断を保持し、現在の状態は下記の post-audit update で分離する。物理条件、掲載基準値、許容値は変更していない。
 
-**監査結論:** Foundation v13 の標準 Route A は利用可能な構成であるが、古典的 Boussinesq 方程式と厳密には一致しない。温度依存密度による差に加え、総エネルギーに由来する追加項がある。固定 Ra の二点感度だけで全差分が消えることは証明できない。A を段階検証の第一候補として維持するが、初期圧力の整合と追加エネルギー項の評価方法に判断が必要であり、実装準備判定は **NO** とする。
+> **記録の読み方:** 直下の「実装準備 NO」「NOT_RUN」「A を第一候補」は 2026-09-29 の監査時点の結論である。2026-10-03 時点で OQ-02 と minimal implementation は完了し、v1.2 では Route B を主 Verification、Route A を特性評価とする。旧コア合格論理は superseded である。
 
-計算状態は `NOT_RUN`。ソース調査は完了したが、未解決の設計判断を残して `AUDIT_PASS`、`BENCHMARK_CORE_PASS`、`DOWNSTREAM_TRANSIENT_READY` は宣言しない。作成・変更した成果物は本書のみ。ケース、solver、辞書、スクリプトの作成、計算、OpenFOAM 本体の変更・再ビルドは行っていない。
+**監査当時の結論（historical）:** Foundation v13 の標準 Route A は利用可能な構成であるが、古典的 Boussinesq 方程式と厳密には一致しない。温度依存密度による差に加え、総エネルギーに由来する追加項がある。固定 Ra の二点感度だけで全差分が消えることは証明できない。当時は A を段階検証の第一候補とし、初期圧力の整合と追加エネルギー項の評価方法に判断が必要なため、実装準備判定を **NO** とした。
+
+**監査当時の状態（historical）:** 計算状態は `NOT_RUN`。ソース調査は完了したが、未解決の設計判断を残して `AUDIT_PASS`、`BENCHMARK_CORE_PASS`、`DOWNSTREAM_TRANSIENT_READY` は宣言しなかった。当時の作成・変更成果物は本書のみで、ケース、solver、辞書、スクリプトの作成、計算、OpenFOAM 本体の変更・再ビルドは行っていなかった。
 
 区分は研究仕様に従う。**[PAPER]** は仕様書が採録した原論文条件、**[OF13]** は本機の v13 ソースから確認した実装事実、**[PROJECT]** は研究上の設定・提案、**[GATE]** は進行条件、**[OPEN]** は未確定事項。式の変形・尺度評価は、実装事実からの解析的推論として明記する。
 
@@ -455,6 +457,8 @@ Gate D は最終200反復以上の Rwin≤5e-4、速度/e/圧力の正規化残�
 
 ## 11. Route A vs Route B
 
+> **Historical design boundary:** 本節の Route B 「最小専用実装」案と A を第一候補とする判断は v1.0 監査時点のもの。現在は `routeB_design.md` により Foundation v6 標準 solver を Route B に採用済みで、主 Verification は B、A は特性評価である。表の Route A 方程式差の証拠は依然として有効である。
+
 | 評価 | Route A: foamRun+fluid+Boussinesq | Route B: 最小専用実装 |
 |---|---|---|
 | continuity | 密度付き、体積 divergence 非零 | div(u)=0 の volume-flux projection |
@@ -470,7 +474,7 @@ Gate D は最終200反復以上の Rwin≤5e-4、速度/e/圧力の正規化残�
 
 B が必要となる条件は、(i) Gate H/G 等の不合格がモデル差に起因、(ii) 非 O(epsilon) の energy 影響を許容以下と立証できない、(iii) 圧力 gauge に主量が依存して古典 benchmark の比較を損なう、(iv) 研究目的が項単位の厳密一致を要求する、と整理する。今回コードは作成しない。B は既存 v13 thermo を単に Boussinesq に変えるだけでは達成できず、一定密度の質量/運動量と独立 T 式を設計する必要がある。
 
-**現時点の推奨 route:** 仕様どおり **A を条件付きの第一候補**として、初期圧力整合と energy 誤差の検証設計を先に確定する。A の完全一致や Gate H だけによる十分性は認めない。採否と追加証拠の扱いはユーザーが決定する。
+**監査当時の推奨 route（historical/superseded）:** 仕様どおり **A を条件付きの第一候補**として、初期圧力整合と energy 誤差の検証設計を先に確定する。A の完全一致や Gate H だけによる十分性は認めない。採否と追加証拠の扱いはユーザーが決定する。
 
 ## 12. Proposed file structure
 
@@ -506,6 +510,8 @@ e/rho/K/phi を不要な独立初期入力として追加せず、thermo/module 
 
 ### 13.1 順序と合否
 
+> **Superseded status logic:** 下記は v1.0 監査時の計画である。特に手順8の A∧B∧C∧D∧E∧F∧G∧H∧K を `BENCHMARK_CORE_PASS` とする論理は現行 v1.2 で superseded。現行コア合格は Route B の $A_B\land B_B\land C_B\land D_B\land E_B\land F_B\land G_B\land K_B$ で、Gate H はコア合格に含めない。
+
 **[PROJECT]/[GATE]** 指定順序は妥当。保存・対称性は計算中から監視し、後段で正式判定する。物理条件・基準値・acceptance criteria の変更は提案しない。
 
 1. 本監査の Open questions 解決、route/圧力規約/抽出法を決定、実装開始の明示指示。実装後に Gate A/B の全証拠を確認。
@@ -515,7 +521,7 @@ e/rho/K/phi を不要な独立初期入力として追加せず、thermo/module 
 5. **grid convergence** → Nu単調、fine–medium差・観測次数・GCI。非漸近/振動する量は320²を追加。
 6. **conservation / symmetry** → fineでGate G。基準値一致だけで保存失敗を合格にしない。
 7. **Boussinesq sensitivity** → AのGate H。必要な追加energy証拠は11節の提案をユーザー判断後に組み込む。
-8. Gate I diagnostic と Gate K traceability を確認。A∧B∧C∧D∧E∧F∧G∧H∧K成立時だけ `BENCHMARK_CORE_PASS`。
+8. **[HISTORICAL/SUPERSEDED]** Gate I diagnostic と Gate K traceability を確認。A∧B∧C∧D∧E∧F∧G∧H∧K成立時だけ `BENCHMARK_CORE_PASS`。現行論理は直上の注記に従う。
 9. **optional transient** → Gate J、Co0.5/0.25、必要なら0.125。合格時だけ `DOWNSTREAM_TRANSIENT_READY`。
 
 | Gate | 変更せず維持する判定値 |
@@ -592,8 +598,33 @@ hot の w/Q は正、cold は負。絶対値ではなくこの座標変換を使
 
 **[PROJECT]** Route Aを条件付き第一候補として保持し、主計算の直接定常SIMPLE mode、中心差分相当、Stokes/Fourier、仕様物性、指定の検証順序を推奨する。理由はFoundation v13の標準機構を利用でき、研究仕様の計画と一致すること。ただし **古典式と完全に同じsolverという前提で実装しない**。
 
-**[GATE]** 実装前に OQ-02 の初期圧力/基準場の整合案と OQ-03 の非O(epsilon) energy差を評価する方針を決定し、OQ-05/06の診断・抽出法を固定する必要がある。Gate Hはそのまま必須とし、追加証拠が必要か、Bを選ぶかはユーザーが最終判断する。これらを未解決のまま実装準備完了やAUDIT_PASSとはしない。
+**[監査当時の GATE，historical/superseded]** 実装前に OQ-02 の初期圧力/基準場の整合案と OQ-03 の非O(epsilon) energy差を評価する方針を決定し、OQ-05/06の診断・抽出法を固定する必要がある。Gate Hはそのまま必須とし、追加証拠が必要か、Bを選ぶかはユーザーが最終判断する。これらを未解決のまま実装準備完了やAUDIT_PASSとはしない。
 
-本書は実装前監査の成果物であり、計算による合否証拠ではない。ユーザーが明示的に許可するまで、ケース・solver・スクリプト実装へ進まない。
+【監査当時の記録】本書は実装前監査の成果物であり、計算による合否証拠ではない。ユーザーが明示的に許可するまで、ケース・solver・スクリプト実装へ進まない。
 
 IMPLEMENTATION READY: NO
+（historical audit-time decision, 2026-09-29）
+
+## 16. Post-audit status update（2026-10-03）
+
+この節だけが現在の状態を示す。上記のソース監査事実と当時の記録は書き換えない。
+
+### 16.1 解決済みの点
+
+- `routeA_implementation.md` により A-COND（80×80×1）と A-SMOKE（40×40×1）を実装・実行した。OpenFOAM Foundation v13 build、入力・mesh hash、Stokes/Fourier、中心差分相当、圧力基準を `results/routeA/run_manifest.json` に保存した。
+- OQ-02 は internal cell と全4物理 wall patch で解決した。最初の cell-only 判定は patch の EOS 密度と非整合だったため無効化し、`results/routeA/failed_runs/A-SMOKE-attempt1-boundary-init/` に保存。受理試行では $p_{rgh}=p-\rho gh-p_{Ref}$ と $p_{rgh}\simeq0$ の最大誤差は cell/patch とも $10^{-12}$ Pa 以内である。
+- A-COND は Gate C PASS、A-SMOKE は smoke test PASS、Route A minimal implementation PASS。これは古典 Boussinesq 式との同一性や benchmark core 合格を意味しない。
+- 現行 `acceptance_criteria.md` v1.2 の `ROUTE_A_AUDIT_PASS` は、本書が Gate B の Route A 要件を項目ごとに満たすため付与する。OQ-02 はその定義上、監査 status とは別の Gate A 実装確認である。
+
+### 16.2 未解決・未実施
+
+- 本書の連続式・運動量・エネルギー差分は依然として有効であり、Route A を古典式そのものの Verification route に変更しない。
+- A-SMOKE の再構成 volume-divergence は $\epsilon_v=4.3650864\times10^{-3}$ で、fine-grid に適用する Gate G 閾値 $2\times10^{-3}$ を超える。coarse smoke なので formal Gate G failure とはしないが、full matrix で格子依存性と formulation 差を追跡する。
+- Route A の4 Ra × 3 grids、formal Gate D/F/G/K、Gate H、3比較、Gate J は未実施。Gate H は A の観測量感度であり、A–B 同一性の証明ではない。
+- `BENCHMARK_CORE_PASS`、`ROUTE_A_CHARACTERIZED`、`DOWNSTREAM_TRANSIENT_READY` はいずれも未付与。
+
+POST-AUDIT CURRENT STATUS: ROUTE_A_AUDIT_PASS
+
+ROUTE A MINIMAL IMPLEMENTATION: PASS
+
+FULL ROUTE A CHARACTERIZATION: NOT COMPLETED

@@ -1,6 +1,19 @@
 # Route B — Foundation v6 minimal implementation record
 
-実施日: 2026-09-30（Asia/Tokyo）。対象仕様: `benchmark_spec.md` v1.1、判定基準: `acceptance_criteria.md` v1.1、実装根拠: `routeB_design.md`。
+記録改訂: 1.1（2026-10-03）。実施日: 2026-09-30（Asia/Tokyo）。実行時の対象仕様: `benchmark_spec.md` v1.1、判定基準: `acceptance_criteria.md` v1.1、実装根拠: `routeB_design.md`。現行の交差参照は仕様・判定基準とも v1.2で、閾値は実行時から変更していない。
+
+### 現在の status summary
+
+| 項目 | 状態 |
+|---|---|
+| `ROUTE_B_AUDIT_PASS` | **付与**。根拠は `routeB_design.md` の v6 ソース監査 |
+| minimal-case Gate A | **PASS**。Foundation v6 build、入力、mesh、kinematic pressure、`alphat=0` を確認 |
+| Route B Gate C | **PASS**（B-COND） |
+| Route B smoke / minimal implementation | **PASS**（B-SMOKE） |
+| full Gate D/E/F/G/K | **未実施** |
+| `BENCHMARK_CORE_PASS` | **未付与** |
+
+本文の実測値、失敗・無効化試行、diagnostic concern は変更しない。
 
 ## 1. Pre-implementation plan
 
@@ -126,7 +139,9 @@ coarse-grid の比較量は近い。しかし Route A は mass-weighted continui
 
 残る懸念は、(1) installed v6 command-line function-object digest の不具合により B1 を OpenFOAM utility の出力 field として保存できていないこと、(2) B-SMOKE coarse の B1/B2差が0.1%をわずかに超えること、(3) reconstructed `epsilon_v` が fine-grid用 Gate G 閾値を coarse grid で超えること、である。B1 は v6 patch operator と同じ式を actual mesh 上で評価し、B-COND の解析解で検証したため、この最小実装の blocker とはしない。full Route B matrix では格子収束と fine-grid Gate G を必ず再評価する。
 
-この PASS は native Foundation v6 Route B case、B-COND Gate C、B-SMOKE の数値健全性だけを意味する。full 4 Ra × 3 grids、Gate E/F/G/K、transient、`BENCHMARK_CORE_PASS` は未実施である。
+この PASS は native Foundation v6 Route B case、B-COND Gate C、B-SMOKE の数値健全性だけを意味する。full 4 Ra × 3 grids、Gate E/F、formal fine-grid Gate G、final Gate K、`BENCHMARK_CORE_PASS` は未実施・未付与である。本定常 Route B solver は transient Gate J 用ではない。
+
+現在の次段階は Route B の full 4 Ra × 3 grid matrix である。ここで Gate D/E/F/G/I/K を判定し、全 Hard 条件が揃った場合にのみ `BENCHMARK_CORE_PASS` を付与する。B-SMOKE の原論文値への近さや coarse A/B の近さは、その代用証拠ではない。
 
 ROUTE B GATE C: PASS
 

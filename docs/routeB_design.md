@@ -1,6 +1,8 @@
 # Route B — OpenFOAM Foundation v6 pre-implementation audit
 
-監査日: 2026-09-30。対象は **Foundation v6 `buoyantBoussinesqSimpleFoam` のソース上の適合性**であり、計算結果の合格ではない。研究仕様は `benchmark_spec.md` v1.1、判定基準は `acceptance_criteria.md` v1.1。`openfoam_design.md` は Route A の v13 監査としてのみ参照した。3文書を監査前に読んだ。原論文値、物性計画、許容値は変更していない。
+記録改訂: 1.1（2026-10-03）。原監査日: 2026-09-30。対象は **Foundation v6 `buoyantBoussinesqSimpleFoam` のソース上の適合性**であり、計算結果の合格ではない。原監査の研究仕様は `benchmark_spec.md` v1.1、判定基準は `acceptance_criteria.md` v1.1。現行は両文書とも v1.2。`openfoam_design.md` は Route A の v13 監査としてのみ参照した。3文書を監査前に読んだ。原論文値、物性計画、許容値は変更していない。
+
+> **記録の読み方:** 本文の「将来」「実装前」「今回は作成しない」は監査実施時の記録として保持する。その後 `routeB_implementation.md` により minimal implementation は完了した。現在状態は末尾の post-audit update にまとめる。
 
 本書の **[PAPER]** は研究仕様に採録された原論文条件、**[OF6]** は下記ローカル v6 ソースで確認した実装事実、**[OF6-CANDIDATE]** は採用候補という研究上の位置づけ、**[OF13]** は既存 Route A 監査に限定した事実、**[PROJECT]** は今後の設定案、**[GATE]** は実装・計算前に満たす条件、**[OPEN]** は未確定事項を表す。ソースからの連続体式への変形は「解析的導出」と明記する。
 
@@ -287,3 +289,26 @@ v6 公式 hotRoom tutorial S20 は RAS と U/T の `bounded Gauss upwind`、corr
 ROUTE B CANDIDATE: ACCEPTABLE
 
 IMPLEMENTATION READY: YES
+
+## 21. Post-audit status update（2026-10-03）
+
+本節は `routeB_implementation.md`、`results/routeB/run_manifest.json`、`minimal_test_summary.csv`、`conservation.csv`、`failed_runs/` を照合した現在の状態である。上記の監査本文と当時の結論は保持する。
+
+### 21.1 実装で確認された項目
+
+- Foundation v6 build `6-af7d7f427be7`、Newtonian/laminar/Stokes、`alphat=0`、放射・MRF・fvOptions なし、定数 $\nu_0$/$\alpha_0$、kinematic $p/p_{rgh}$、中心差分相当を B-COND/B-SMOKE の実入力・log で確認した。RB-03 と RB-05 の minimal-case 確認は完了。
+- B-COND（$Ra=0$、80×80×1）は Gate C PASS。B-SMOKE（$Ra=10^4$、40×40×1）は正常終了、収束、熱収支、流れの向きを確認し smoke test PASS。Route B minimal implementation PASS。
+- RB-01 は計画どおり「v6 標準 `wallHeatFlux` を使えない」ことを実行時にも確認した。command-line `postProcess -func grad(T)` も installed v6 の dictionary digest で停止したため、B1 は監査済み fixed-value patch `snGrad=(Twall-Towner)*deltaCoeffs` を実 field/mesh に直接適用した。B2 は `Tw,T1,T2` の独立二次再構成。失敗 log は `results/routeB/failed_runs/F-B1-POST-001/` に保存済み。
+- 上記ソース監査は現行 v1.2 の Gate B の全条件を満たすため、`ROUTE_B_AUDIT_PASS` を付与する。
+
+### 21.2 未完了と diagnostic concern
+
+- B-SMOKE の B1/B2 平均 Nu 差は `0.1013155%`で、Gate C に用いる0.1%値を僅かに超える。B-COND 自体は十分な余裕で Gate C 合格であり、これは coarse smoke の後処理 diagnostic として full matrix で追跡する。
+- B-SMOKE の補正後 volume-flux は $\epsilon_\phi=4.2984\times10^{-11}$ だが、cell U から再構成した $\epsilon_v=\epsilon_m=4.3054223\times10^{-3}$ は fine-grid Gate G 閾値 $2\times10^{-3}$ を超える。coarse smoke なので formal Gate G failure ではない。
+- Route B の4 Ra × 3 grids、Gate E/F、formal fine-grid Gate G、final Gate K は未実施。`BENCHMARK_CORE_PASS` は未付与である。coarse smoke の原論文への近さを benchmark 合格と呼ばない。
+
+POST-AUDIT CURRENT STATUS: ROUTE_B_AUDIT_PASS
+
+ROUTE B MINIMAL IMPLEMENTATION: PASS
+
+BENCHMARK_CORE_PASS: NOT AWARDED

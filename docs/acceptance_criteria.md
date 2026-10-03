@@ -5,11 +5,11 @@
 | 項目 | 内容 |
 |---|---|
 | 文書ID | DVD-OF13-AC |
-| 版 | 1.1 |
-| 対象仕様 | `docs/benchmark_spec.md` 版1.1 |
+| 版 | 1.2 |
+| 対象仕様 | `docs/benchmark_spec.md` 版1.2 |
 | 対象 | Route B（原論文 Verification）および Foundation v13 Route A（特性評価） |
-| 状態 | 実装・実行前の受入条件 |
-| 更新日 | 2026-09-30 |
+| 状態 | 受入条件は v1.1 から不変。現在の証拠・付与状況を更新 |
+| 更新日 | 2026-10-03 |
 
 ### 変更履歴
 
@@ -17,6 +17,7 @@
 |---|---|---|
 | 1.0 | 2026-09-28 | Foundation v13 標準 route を主判定とする初版 |
 | 1.1 | 2026-09-30 | Route B の原論文 Verification と Route A の特性評価を分離。v6 候補の別監査、初期圧力整合、A–B 比較および Gate H の役割を定義 |
+| 1.2 | 2026-10-03 | 閾値・Hard/Diagnostic 区分・総合判定論理を変更せず、両 route の監査、Gate C、smoke/minimal implementation の実績と現在の上位ステータスを反映 |
 
 本書は、計算を「動いた／動かなかった」ではなく、方程式、入力、数値誤差、保存則および基準解との一致で判定するための規範である。**Hard** 条件は一つでも不合格なら該当ステータスを付与しない。**Diagnostic** 条件は原因分析を必須とするが、それ単独ではコア不合格にしない。同じ Gate の共通閾値は route ごとに独立判定する。$G_B$ は「Gate G の Route B 判定」、$G_A$ は「Gate G の Route A 判定」を表す。
 
@@ -34,7 +35,27 @@
 | `DOWNSTREAM_TRANSIENT_READY` | B コア合格、A 特性評価、Gate H 合格、A 非定常 Gate J 合格 |
 | `FAIL` | 当該 route・当該段階の必須条件を満たさない、または証拠不足。別 route の合格を自動的に取り消さない |
 
-本仕様書作成時点で計算ステータスは両 route とも `NOT_RUN`。v13 Route A の既存 `docs/openfoam_design.md` は監査の証拠であるが、v6 Route B の監査または計算結果ではない。旧 v1.0 の `AUDIT_PASS` を新版の route 別ステータスへ自動移行しない。
+### 1.1 現在の付与状況（2026-10-03）
+
+以下は現在の証拠を v1.1 から不変の定義に適用した結果である。「未付与」は、必要な full-matrix 段階をまだ実行・判定していないことを意味し、実施済みの必須条件に対する `FAIL` とは区別する。
+
+| ステータス | 現在値 | 根拠 |
+|---|---|---|
+| `ROUTE_A_AUDIT_PASS` | **付与** | `openfoam_design.md` は v13 の continuity、momentum、energy、transport、$p_{rgh}$、pressure reference、heat flux、laminar/active scheme をローカルソースまで追跡し、古典式との差も明示する。OQ-02 は定義上 Gate A の別確認であり、`routeA_implementation.md` で cell/patch とも実測済み |
+| `ROUTE_B_AUDIT_PASS` | **付与** | `routeB_design.md` が Foundation v6 ソースで Gate B の各項を確認し、所定条件下の採用を確定 |
+| `BENCHMARK_CORE_PASS` | **未付与** | B-COND/B-SMOKE は完了したが、Route B の4 Ra × 3 grids、Gate E/F、formal fine-grid Gate G、Gate K が未実施 |
+| `ROUTE_A_CHARACTERIZED` | **未付与** | 前提の `BENCHMARK_CORE_PASS` に加え、A の full matrix、formal D/F/G/K、3比較、Gate H 実施報告が未完了 |
+| `DOWNSTREAM_TRANSIENT_READY` | **未付与** | `ROUTE_A_CHARACTERIZED`、Gate H PASS、Gate J がいずれも未成立 |
+
+minimal implementation の実施状況は次のとおり。これらは上表の上位ステータスを代替しない。
+
+| 証拠 | Route A | Route B |
+|---|---|---|
+| ソース Gate B | PASS | PASS |
+| minimal-case Gate A | OQ-02、版・入力・mesh を A-COND/A-SMOKE で確認 | 版・入力・mesh・kinematic pressure・`alphat=0` を B-COND/B-SMOKE で確認 |
+| Gate C | A-COND PASS | B-COND PASS |
+| coarse smoke | A-SMOKE PASS | B-SMOKE PASS |
+| minimal implementation | PASS | PASS |
 
 ## 2. 誤差と規格化の定義
 
@@ -80,7 +101,7 @@ $$
 
 ## 3. Gate A — 出所、版、入力の再現性（Hard）
 
-各 route で全項目を満たすこと。実行版の出所を必ず確認し、Route B の Foundation v6 `buoyantBoussinesqSimpleFoam` は**未監査の第一候補**である。v6 の採用は Gate B の別監査合格後に限る。
+各 route で全項目を満たすこと。実行版の出所を必ず確認する。Route B は Gate B の別監査に合格した Foundation v6 `buoyantBoussinesqSimpleFoam` を採用済みであるが、今後の各実行ケースでも版・build・入力の一致を再確認する。
 
 - [ ] Route A は **OpenFOAM Foundation v13**、Route B は Gate B で採用確定した Foundation の版・実装である。OpenCFD/ESI fork や版違いを同一 route に混在させていない。
 - [ ] OpenFOAM の版、ビルド情報、実行環境、ホスト、実行日時を manifest に保存している。
@@ -92,6 +113,8 @@ $$
 - [ ] mesh check に fatal error がなく、格子が構造・等間隔・直交であることを記録している。
 - [ ] front/back は二次元用 `empty` であり、面外速度・面外勾配が導入されていない。
 - [ ] Route A の初期場 $\boldsymbol u=0,T=T_0,\rho=\rho_0,p_{rgh}=0$ と $p=\rho_0gh+p_{Ref}$ が、v13 の初期化後の場および基準 cell/value と整合している。`pRefValue` と $p_{Ref}$ を混同せず、初期場と確認方法を記録している（OQ-02）。Route B の初期圧力は採用版の監査結果に従う。
+
+**現在の証拠:** A-COND/A-SMOKE と B-COND/B-SMOKE の個別ケースで上記の入力・版・mesh を manifest に保存した。Route A OQ-02 は internal cell と4物理壁で確認済み。ただし40²/80²/160²の full matrix 全体の Gate A は未完了である。
 
 ## 4. Gate B — 方程式監査（Hard）
 
@@ -108,6 +131,8 @@ $$
 満たせない候補は B として採用しない。必要なら最小代替実装を別途設計し、ユーザーの実装指示を得る。v13 新規 solver を初めから必須としない。
 
 **Route A の Hard 監査:** 既存 `docs/openfoam_design.md` の v13 ソース位置と式対応を確認し、連続式・運動量・エネルギー・輸送・$p_{rgh}$・圧力基準・熱流束・定常連成・laminar と active scheme の設計を追跡可能にする。密度重み付き連続式・運動量、局所密度依存の輸送、運動エネルギー・圧力仕事・重力仕事を含むエネルギー差を明記する。初期場の OQ-02 は Gate A の実装時 Hard 確認とする。**OQ-03 の A–B 非同一性は監査不合格や実装停止の理由にせず、比較研究の対象とする**。A の監査は B の式監査の代わりにならない。
+
+**現在の証拠:** `routeB_design.md` の Gate B checklist は全項をソース上で満たし、`openfoam_design.md` は Route A 要件と原論文式との差を全て追跡する。したがって `ROUTE_A_AUDIT_PASS` と `ROUTE_B_AUDIT_PASS` を付与する。この判定は計算 Gate の合格を意味しない。
 
 ## 5. Gate C — 純熱伝導単体試験 $Ra=0$（Hard）
 
@@ -131,6 +156,8 @@ $$
 
 壁面熱流束の符号を絶対値で処理してこの試験を通してはならない。高温側から低温側へ向かう熱輸送が正になる変換を明文化する。
 
+**現在の判定:** A-COND と B-COND は、それぞれ上表の全 Hard 条件に合格した。実測値は各 implementation record と `results/route*/minimal_test_summary.csv` に保存する。
+
 ## 6. Gate D — 各計算の健全性と定常収束（Hard）
 
 Route B の12主計算、Route A の12主計算、および A の Gate H 感度計算を、それぞれ独立に判定する。$Ra=0$ と smoke test も正常終了・入力整合・収束を確認する。各該当計算で次を満たすこと。
@@ -144,6 +171,8 @@ Route B の12主計算、Route A の12主計算、および A の Gate H 感度�
 - [ ] 数値安定化、緩和または solver tolerance を変更したケースは、その変更を記録している。
 
 残差に合格しても比較量が定常でなければ不合格とする。逆に、残差形式が異なることを理由に、比較量・保存量の監視を省略してはならない。
+
+**現在の判定:** A-COND/A-SMOKE/B-COND/B-SMOKE は各ケースの正常終了、200反復窓、残差、熱収支を確認し、minimal/smoke 範囲で PASS。ただし両 route の12主計算に対する formal Gate D は未実施である。
 
 ## 7. Gate E — 原論文基準値との一致（Hard）
 
@@ -240,6 +269,8 @@ $$
 
 離散 divergence の定義、境界 face の扱い、体積重みを route ごとに固定して記録する。B が定数 $\rho_0$ を使うと監査で確認された場合は $\epsilon_m=\epsilon_v$ に対応するため、両基準を満たすことを確認する。A では両者を別々に評価する。$U_p$ がゼロとなる $Ra=0$ では Gate C の絶対速度基準を用いる。
 
+**coarse smoke の diagnostic:** A-SMOKE の再構成 $\epsilon_v=4.3650864\times10^{-3}$、B-SMOKE の再構成 $\epsilon_v=\epsilon_m=4.3054223\times10^{-3}$ は上記 fine-grid 閾値を超える。これは coarse case の診断であり formal Gate G failure ではない。A の補正後 mass flux からの $\epsilon_m=2.8332\times10^{-11}$、B の補正後 volume flux からの $\epsilon_\phi=4.2984\times10^{-11}$ と、再構成 U divergence を混同しない。formal Gate G は各 $Ra$ の fine 解で未実施である。
+
 ### 9.3 中心対称性
 
 180°回転対応点で
@@ -310,11 +341,11 @@ Foundation v13 Route A に必須の実施・報告項目である。**既存の 
 
 ## 13. Gate K — 成果物と追跡可能性（Hard）
 
-`BENCHMARK_CORE_PASS` の宣言には **Route B の**次の証拠が必要である。`ROUTE_A_CHARACTERIZED` には A の対応する証拠と、3種類の比較を分離した表・解釈が必要である。v6 候補の監査記録を v13 設計書の結論だけで代替しない。
+`BENCHMARK_CORE_PASS` の宣言には **Route B の**次の証拠が必要である。`ROUTE_A_CHARACTERIZED` には A の対応する証拠と、3種類の比較を分離した表・解釈が必要である。採用済み v6 Route B の監査記録を v13 設計書の結論だけで代替しない。
 
 | 成果物 | 必須内容 |
 |---|---|
-| `docs/openfoam_design.md` と Route B の監査記録 | A の v13 監査に加え、採用 B の該当版ソース・方程式・辞書・スキーム・後処理を追跡できること。既存設計書は今回変更しない |
+| `docs/openfoam_design.md` と Route B の監査記録 | A の v13 監査に加え、採用 B の該当版ソース・方程式・辞書・スキーム・後処理を追跡できること |
 | `results/run_manifest.json` | route ごとの版、環境、ケースID、入力ハッシュ、物性、無次元数、格子、実行状態 |
 | `results/benchmark_summary.csv` | route ごとの4 Ra × 3格子の主量、基準値、誤差。B の Verification 合否と A の実用比較を分離 |
 | `results/route_comparison.csv` | 対応する A–B の主量・位置・局所 Nu・保存・対称性、差と解釈。A–B Hard 閾値は設けない |
@@ -327,10 +358,10 @@ Foundation v13 Route A に必須の実施・報告項目である。**既存の 
 
 ## 14. 総合判定手順
 
-1. 既存 v13 Route A 監査を確認し、B の v6 第一候補を別途ソース監査する。B 候補が Gate B に不合格なら採用手段を再設計する。両監査は別ステータスにする。
-2. A の Gate A（OQ-02 初期圧力を含む）・C を実装時に確認し、$Ra=10^4$ coarse smoke test まで行う。この先行計算は Verification 合格の証拠としない。
-3. B の Gate A・C と $Ra=10^4$ coarse smoke test を行う。
-4. B の12主計算で Gate D、E、F、G、K を量・Ra ごとに判定し、Gate I を診断する。全 Hard 合格時のみ `BENCHMARK_CORE_PASS` とする。
+1. **完了:** v13 Route A と Foundation v6 Route B を別々にソース監査し、route 別 audit status を付与する。
+2. **完了:** A の minimal Gate A（OQ-02 を含む）・C と $Ra=10^4$ coarse smoke test を行う。この先行計算は Verification 合格の証拠としない。
+3. **完了:** B の minimal Gate A・C と $Ra=10^4$ coarse smoke test を行う。
+4. **次段階:** B の12主計算で Gate D、E、F、G、K を量・Ra ごとに判定し、Gate I を診断する。全 Hard 合格時のみ `BENCHMARK_CORE_PASS` とする。
 5. A の12主計算で Gate D、F、G、K を判定し、Gate E 相当の原論文値差と Gate I を報告する。A–B の対応比較を実施する。
 6. A の Gate H 感度試験を行い、数値閾値への合否とモデル差への解釈を報告する。B コア合格と A の必須評価が揃った場合に `ROUTE_A_CHARACTERIZED` とする。
 7. 下流研究が必要な場合のみ、Gate H 合格を確認して A の Gate J を実施し、合格時に `DOWNSTREAM_TRANSIENT_READY` とする。
@@ -365,14 +396,14 @@ $$
 - 基準値に合うよう物性や $Ra$ を事後調整してはならない。
 - 許容値を変更する場合は計算結果を見てから緩和せず、物理的・数値的根拠、影響範囲、版更新履歴を記録し、ユーザーの判断を得る。
 
-## 16. 実装開始前チェック
+## 16. 次段階（full matrix）開始前チェック
 
 Codex はコードまたはケースを作成する前に、次をユーザーへ提示する。
 
-- 両 route の役割、既存 v13 Route A 差分監査結果、Foundation v6 Route B 候補が未監査であることとその確認計画
+- 両 route の役割、v13 Route A の差分監査結果、Foundation v6 Route B の採用監査結果、minimal implementation で得た concern
 - 作成・変更予定ファイルの一覧
 - A/B それぞれの4 Ra × 3格子、単体試験、A 感度試験、非定常拡張の実行順序
 - 想定計算量と、320²追加が必要になる条件
 - 本基準に残る未確定事項と、その決定方法
 
-ユーザーが実装開始を指示するまでは、ケース、スクリプト、ソルバコードを作成しない。
+現在の minimal case・script・result は保持する。full matrix 開始の指示があるまで、追加の Ra/grid ケースを実行しない。
