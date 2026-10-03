@@ -1,0 +1,325 @@
+{
+  "schema": "routeB-gateG-conservation-error-budget-review-v1",
+  "review_date": "2026-10-04",
+  "timezone": "Asia/Tokyo",
+  "scope": "Route B only; research design review, no implementation",
+  "current_formal_gate_G": "FAIL",
+  "criteria_modified": false,
+  "solver_executed": false,
+  "microcase_executed": false,
+  "additional_tests_executed": false,
+  "benchmark_results_used_for_threshold_derivation": false,
+  "benchmark_post_hoc_comparison_performed": false,
+  "candidate_B_status_before_review": "PROVISIONAL",
+  "prior_verification_state": {
+    "operator": "PASS",
+    "stock_audit_equivalence": "YES",
+    "residual_mapping": "PARTIAL",
+    "numerical_floor": "PARTIAL",
+    "tau_phi": "UNRESOLVED",
+    "scope": "Independent synthetic 20/40/80/160^2 and microcase 20/40/80^2 serial DP ASCII16 first ten SIMPLE iterations; not steady QoI sensitivity."
+  },
+  "error_categories": {
+    "numerical_floor": "Measurement/reproduction limits from finite precision, arithmetic evaluation, IO/parser/restart; only partly quantified. Reducible linear-solve error is not automatically an unavoidable floor.",
+    "solver_capability": "Achievable conservation error for specified grid, state, linear tolerance, stopping reason, precision and solver; distinct from physical acceptance.",
+    "research_acceptance_budget": "Independent allowance for conservation-related influence on scientific conclusions/QoIs, with scope and uncertainty; not obtained by multiplying observed floor by an arbitrary factor."
+  },
+  "qoi_direct_mapping_available": false,
+  "qoi_mapping_review": {
+    "qois": [
+      "Nu_bar_cavity",
+      "Nu_bar_0",
+      "Nu_bar_half",
+      "Umax",
+      "Wmax",
+      "extrema_positions"
+    ],
+    "conclusion": "No general scalar epsilon_phi-to-QoI relative/position error proportional guarantee.",
+    "conditional_linearized_relation": "For a nonsingular gauge-fixed coupled system and smooth QoI near a converged discrete solution: delta_Q approximately lambda_Q^T*r, J^T*lambda_Q=grad_Q. Continuity contribution <= ||lambda_Q,c||_infinity*(Up*V_total/L)*epsilon_mean, with additional residuals and nonlinear remainder.",
+    "adjoint_or_certified_bound_computed": false,
+    "limitations": [
+      "Sensitivity depends on QoI/grid/Ra/state/BC/branch and defect location/sign.",
+      "Extreme positions may be nonsmooth or ambiguous.",
+      "Continuity alone does not ensure momentum/temperature equation accuracy.",
+      "Equation units/scaling must be accounted for in coupled residual sensitivity."
+    ]
+  },
+  "budget_A": {
+    "hard": [
+      "epsilon_phi_mean<=tau_mean"
+    ],
+    "diagnostics": [
+      "epsilon_phi_max",
+      "P95",
+      "P99",
+      "global_signed",
+      "boundary_net"
+    ],
+    "advantage": "Clear whole-domain L1 criterion, directly tied to corrected phi.",
+    "limitation": "Known isolated defects can be diluted; no mandatory investigation.",
+    "assessment": "NOT_RECOMMENDED_AS_STANDALONE_NOW"
+  },
+  "budget_B": {
+    "hard": [
+      "epsilon_phi_mean<=tau_mean",
+      "epsilon_phi_max<=tau_max"
+    ],
+    "diagnostics": [
+      "P95",
+      "P99",
+      "global_signed"
+    ],
+    "advantage": "Directly limits isolated cell source-rate defects.",
+    "limitation": "Requires an independent local physical budget, cell-size/scaling applicability and measured feasibility; same q defect grows as 1/Vi.",
+    "assessment": "DEFER_MAX_HARD_PENDING_LOCAL_BUDGET"
+  },
+  "budget_C": {
+    "hard": [
+      "epsilon_phi_mean<=tau_mean"
+    ],
+    "mandatory_diagnostic": [
+      "epsilon_phi_max"
+    ],
+    "investigation": "Pre-registered local max/ratio/pattern and boundary/closure triggers; trigger is not automatic Gate FAIL.",
+    "advantage": "Mandatory investigation of isolated defects without imposing unjustified fixed max Hard.",
+    "limitation": "Trigger cutoff, protocol and mean budget still unresolved.",
+    "assessment": "RECOMMENDED_ROLE_ARCHITECTURE"
+  },
+  "budget_D": {
+    "hard": [
+      "epsilon_phi_mean<=tau_mean",
+      "epsilon_phi_global_absolute<=tau_global"
+    ],
+    "advantage": "Potential separate closed-boundary net leakage constraint.",
+    "limitation": "Global <= mean in exact shared-incidence arithmetic; redundant when tau_global>=tau_mean. Net zero does not exclude opposing wall leaks. Tighter separate quota has no current numerical justification.",
+    "assessment": "NOT_RECOMMENDED_AS_ADDITIONAL_HARD_NOW",
+    "combination_with_C": "Possible after separate boundary quota justification, with absolute/patch wall diagnostics retained."
+  },
+  "recommended_budget": "C",
+  "recommended_architecture": {
+    "hard_metrics": [
+      "epsilon_phi_mean"
+    ],
+    "investigation_triggers": [
+      "local_max_exceeds_pre_registered_Tmax_or_pattern_rule",
+      "local_concentration_ratio_exceeds_pre_registered_grid_aware_T_ratio",
+      "boundary_leakage_inconsistent_with_pre_registered_BC_error_envelope",
+      "cell_sum_boundary_closure_inconsistent_with_pre_registered_arithmetic_IO_envelope"
+    ],
+    "diagnostics": [
+      "epsilon_phi_max",
+      "P95_abs_div_phi",
+      "P99_abs_div_phi",
+      "normalized_P95_P99",
+      "signed_volume_mean_div_phi",
+      "epsilon_phi_global_absolute",
+      "net_boundary_flux_signed",
+      "boundary_net_flux_absolute",
+      "absolute_total_physical_wall_flux",
+      "normalized_absolute_total_wall_flux",
+      "patch_signed_and_absolute_flux",
+      "cell_sum_minus_boundary_flux",
+      "local_signed_q_and_Vi",
+      "maximum_cell_id_and_location",
+      "epsilon_v",
+      "epsilon_m_reconstructed_legacy",
+      "Up_grid_precision_residual_stopping_context"
+    ],
+    "other_existing_Gate_G_hard_conditions_retained": {
+      "heat_imbalance": 0.002,
+      "section_deviation": 0.005,
+      "temperature_symmetry": 0.002,
+      "velocity_symmetry": 0.002
+    },
+    "hard_semantics": "Exceeding adopted Hard threshold means Gate FAIL; no adopted threshold exists here.",
+    "trigger_semantics": "Investigate and document location/cause/impact; not automatic FAIL, not automatic clearance/PASS while review is pending.",
+    "diagnostic_semantics": "Record and report; no standalone pass/fail consequence.",
+    "no_new_max_or_global_hard": true,
+    "local_trigger_cutoffs_status": "UNRESOLVED",
+    "boundary_trigger_cutoffs_status": "UNRESOLVED"
+  },
+  "tau_mean": null,
+  "tau_mean_status": "UNRESOLVED",
+  "tau_max": null,
+  "tau_max_status": "NOT_PROPOSED",
+  "tau_global": null,
+  "tau_global_status": "NOT_PROPOSED",
+  "threshold_field_semantics": "tau_max and tau_global denote HARD cutoffs only. Their investigation cutoffs are separate unresolved parameters.",
+  "local_threshold_status": "UNRESOLVED",
+  "local_investigation_T_max": null,
+  "local_investigation_T_ratio": null,
+  "boundary_investigation_cutoff": null,
+  "architecture_status": "READY",
+  "architecture_ready_scope": "Roles and review workflow only; not an executable, adopted acceptance specification.",
+  "numerical_thresholds_status": "UNRESOLVED",
+  "global_metric_review": {
+    "definition": "epsilon_global=L/(Up*V_total)*abs(sum_i(q_i)); exact shared incidence gives sum(q_i)=B_net.",
+    "inequality": "epsilon_global<=epsilon_mean (triangle inequality).",
+    "hard_redundancy": "tau_global>=tau_mean is redundant except arithmetic/IO inconsistency; tau_global<tau_mean is an additional independently justified requirement.",
+    "boundary_counterexample": "Equal inflow/outflow through opposite walls can have q=0 and B_net=0 while violating impermeability.",
+    "recommended_role": "Mandatory signed/net/absolute/patch diagnostics and closure/leakage investigation, no independent global Hard proposed."
+  },
+  "grid_scaling": {
+    "mean": "Whole-domain sum(abs(q))/V_total; fixed isolated internal-face delta gives 2*abs(delta)/V_total, independent of grid.",
+    "max": "Cell source-rate max(abs(q)/Vi); fixed delta gives abs(delta)/(h^2*W).",
+    "global": "Boundary integral; internal delta cancels, boundary leakage contributes abs(delta)/V_total.",
+    "synthetic_max_mean_ratios": {
+      "20": 200,
+      "40": 800,
+      "80": 3200,
+      "160": 12800
+    },
+    "320_ratio_theoretical_only": 51200,
+    "320_test_executed": false,
+    "cell_throughput_candidate": "chi_i=abs(q_i)/(Up*A_char_i)=(ell_i/L)*epsilon_local_i, ell_i=Vi/A_char_i. Square extruded active side face gives ell=h. Fixed chi and fixed epsilon_local impose different requirements.",
+    "cell_throughput_metric_formally_proposed": false,
+    "local_flux_budget_constants": null,
+    "scope_caveats": [
+      "Global Up is a reference scale, not actual local throughput.",
+      "Actual local throughput may vanish at stagnation cells.",
+      "Exclude empty faces when defining A_char.",
+      "Nonuniform/aspect-ratio/orientation generalization requires new metric verification."
+    ]
+  },
+  "gate_alignment": {
+    "D": "Keep iterative/steady convergence, monitoring window and residual criteria; conservation does not replace them.",
+    "E": "Keep paper comparison tolerance and absolute position rules; do not copy 1% to continuity or assume all 1% is available error budget.",
+    "F": "Compare conservation-induced QoI impact with the SAME QoI discretization uncertainty; never compare epsilon directly with GCI/10.",
+    "G": "Keep heat/section/symmetry criteria, decompose native phi conservation roles; reconstructed U stays proposed diagnostic."
+  },
+  "sensitivity_experiment_required": true,
+  "sensitivity_experiment_scope": "PLAN ONLY: independent Ra_test=30000 cavity, initially 20/40/80^2 serial DP ASCII16, no formal case/Ra/reference. Fully converged paired pressure-tolerance runs plus separately scoped controlled zero-net continuity residual patterns. Assess relative Nu_bar_cavity/Nu_0/Nu_half/Umax/Wmax and absolute extrema-position impact with baseline, iteration, grid and serialization uncertainty. Certified sensitivity/error bounds could substitute for empirical work.",
+  "sensitivity_experiment_executed": false,
+  "sensitivity_plan": {
+    "independent_acceptance_quotas": {
+      "b_Q": null,
+      "status": "UNRESOLVED",
+      "selection": "Research purpose and acceptable QoI impact specified before examining benchmark conservation values."
+    },
+    "baseline": "Establish steady QoI and other equation convergence and bound baseline error; prior ten-iteration suite is insufficient.",
+    "arm_1": "Pressure tolerance 1e-6/1e-8/1e-10, relTol=0, all other setup fixed, fully converged same-grid QoI differences; trajectory confounding explicitly assessed.",
+    "arm_2": "Verification-only maintained known zero-net residual/flux patterns with paired cell defects and spread/local/near-wall/centre/reference locations. Explicitly specify altered equation/state timing; one-time pressure-projected or frozen-field perturbations do not measure coupled response.",
+    "boundary_leakage": "Treat as separate BC verification, not closed-domain QoI calibration.",
+    "qoi_error_evaluation": "Upper-envelope estimate of conservation-related QoI impact with uncertainty in same QoI units; no undocumented RSS independence assumption.",
+    "threshold_selection": "Pre-register scope/candidate rules; impact plus uncertainty must satisfy independent b_Q for every selected QoI and tested pattern/state. Finite experiments do not certify arbitrary untested patterns.",
+    "scope_extension": "Single Ra_test and microcase grids do not justify automatic application to all formal Ra, 160^2 or future 320^2."
+  },
+  "literature_sources": [
+    {
+      "id": "L01",
+      "title": "Journal of Fluids Engineering Statement on the Control of Numerical Accuracy; bundled Procedure for Estimation and Reporting of Uncertainty Due to Discretization in CFD Applications",
+      "authors_or_provider": "ASME; bundled procedure PDF lists Ismail B. Celik, Urmila Ghia, Patrick J. Roache, Christopher J. Freitas",
+      "url": "https://www.asme.org/wwwasmeorg/media/resourcefiles/shop/journals/jfenumaccuracy.pdf",
+      "doi": null,
+      "location": "PDF pages 1-2 editorial policy; pages 3-15 procedure; Appendix A page 14 (zero-based page 13)",
+      "supports": "Estimate convergence error and establish iterative convergence before discretization assessment. Appendix A recommends estimated iteration convergence error at least one order smaller than discretization error.",
+      "transferable": "Qualitative hierarchy for comparable solution errors; NOT epsilon_phi<GCI/10. No numerical conservation threshold transferred.",
+      "reference_factor_adopted": false,
+      "accessed_date": "2026-10-04"
+    },
+    {
+      "id": "L02",
+      "title": "Examining Iterative Convergence",
+      "authors_or_provider": "NASA Glenn / NPARC Alliance; John W. Slater",
+      "url": "https://www.grc.nasa.gov/www/wind/valid/tutorial/iterconv.html",
+      "doi": null,
+      "supports": "Monitor normalized residuals and convergence of engineering quantities; quantity-specific convergence.",
+      "transferable": "Monitoring principle only, no compatible tau.",
+      "accessed_date": "2026-10-04"
+    },
+    {
+      "id": "L03",
+      "title": "Examining Spatial (Grid) Convergence",
+      "authors_or_provider": "NASA Glenn / NPARC Alliance; John W. Slater",
+      "url": "https://www.grc.nasa.gov/www/wind/valid/tutorial/spatconv.html",
+      "doi": null,
+      "supports": "Grid-refinement estimation of discretization uncertainty and GCI.",
+      "transferable": "Same-QoI uncertainty assessment, not residual-to-QoI conversion.",
+      "accessed_date": "2026-10-04"
+    },
+    {
+      "id": "L04",
+      "title": "Verification Assessment",
+      "authors_or_provider": "NASA Glenn / NPARC Alliance; John W. Slater",
+      "url": "https://www.grc.nasa.gov/www/wind/valid/tutorial/verassess.html",
+      "doi": null,
+      "supports": "Distinguishes consistency/conservation, iterative convergence, spatial convergence and code/calculation verification.",
+      "transferable": "Verification architecture, no local/mean numeric budget.",
+      "accessed_date": "2026-10-04"
+    },
+    {
+      "id": "L05",
+      "title": "Notes on Computational Fluid Dynamics: General Principles, 5.4 Residual",
+      "authors_or_provider": "Chris Greenshields and Henry Weller, CFD Direct",
+      "url": "https://doc.cfd.direct/notes/cfd-general-principles/residual",
+      "doi": null,
+      "supports": "Scale-normalized residual and absolute/relative stopping criteria.",
+      "transferable": "Residual semantics only; no QoI or epsilon numerical equivalence.",
+      "accessed_date": "2026-10-04"
+    },
+    {
+      "id": "L06",
+      "title": "An Introduction to Adjoints and Output Error Estimation in Computational Fluid Dynamics",
+      "authors_or_provider": "Steven M. Kast (2017), author preprint",
+      "url": "https://arxiv.org/abs/1712.00693",
+      "doi": "10.48550/arXiv.1712.00693",
+      "supports": "Output-specific adjoint error estimation research context.",
+      "transferable": "Abstract/metadata inspected only; no claimed full-text theorem or peer-reviewed standard.",
+      "accessed_date": "2026-10-04"
+    }
+  ],
+  "literature_hierarchy_supported": true,
+  "ASME_numeric_factor_transferred_to_epsilon": false,
+  "assumptions": [
+    "Route B constant reference density and native volume flux.",
+    "Shared oriented face incidence for global/mean inequality.",
+    "Uniform square extruded mesh for explicit h-scaling examples.",
+    "Positive Up for normalized Ra>0 metrics; Ra=0 uses Gate C.",
+    "Coupled linearized QoI explanation requires gauge fixing, consistent scaling, smoothness and nonsingular branch."
+  ],
+  "limitations": [
+    "No independent mean/local QoI quota supplied or justified.",
+    "No sensitivity or adjoint computation performed.",
+    "Prior operator/mapping tests do not establish steady QoI impact.",
+    "Trigger cutoffs remain unresolved despite role architecture readiness.",
+    "No universal numerical floor or arbitrary Ra/grid certification.",
+    "Global net cannot detect balanced wall leakage or local defects.",
+    "Percentiles can miss isolated cells.",
+    "ASME public guidance reviewed, no claim of full ASME V&V20/AIAA original-standard audit.",
+    "Author preprint abstract only, not cited as a verified theorem."
+  ],
+  "candidate_B_status_after_review": "PROVISIONAL",
+  "new_spec_Ra1e3_gate_G": "NOT_EVALUATED",
+  "solver_rerun_required": false,
+  "solver_rerun_scope": "No solver execution in this task; no existing benchmark rerun required. Future independent sensitivity experiment is planned but not executed.",
+  "spec_change_executed": false,
+  "user_decision_required": true,
+  "required_user_decision": [
+    "Use Budget C roles as the next-stage design basis, without formal adoption.",
+    "Specify independent QoI impact quotas and applicability scope.",
+    "Decide whether to scope the independent sensitivity experiment and local/boundary trigger calibration."
+  ],
+  "route_A_automatic_application": false,
+  "created_files": [
+    "results/routeB/gateG_conservation_error_budget_review.md",
+    "results/routeB/gateG_conservation_error_budget_review.json"
+  ],
+  "git_status_start": [
+    "?? cases/routeA/Ra0_medium/",
+    "?? cases/routeA/Ra1e4_coarse/",
+    "?? verification/"
+  ],
+  "preexisting_untracked_paths_touched": false,
+  "git_status_final": [
+    "?? cases/routeA/Ra0_medium/",
+    "?? cases/routeA/Ra1e4_coarse/",
+    "?? results/routeB/gateG_conservation_error_budget_review.json",
+    "?? results/routeB/gateG_conservation_error_budget_review.md",
+    "?? verification/"
+  ],
+  "validation": {
+    "protected_read_files_unchanged": true,
+    "tracked_git_diff_empty": true,
+    "solver_and_additional_test_execution": false
+  }
+}
