@@ -46,13 +46,13 @@ def finalize_ra1e3(state):
     preserved_start_fields = True
     if continuation:
         preserved_start_fields = all(sha(case / str(continuation['continuation_started_from']) / p) == h
-                                    for p, h in continuation['iteration_3000_field_sha256'].items())
-        continuation_log = case / 'log.buoyantBoussinesqSimpleFoam.continuation3000-6000'
+                                    for p, h in continuation.get('start_field_sha256', continuation.get('iteration_3000_field_sha256', {})).items())
+        continuation_log = Path(continuation.get('solver_log_path', str(case / 'log.buoyantBoussinesqSimpleFoam.continuation3000-6000')))
         with continuation_log.open() as stream:
             logged_iterations = [int(match.group(1)) for line in stream
                                  if (match := re.match(r'Time = (\d+)', line))]
-        if logged_iterations != list(range(3001, 6001)):
-            raise SystemExit('Continuation log is not the authorized 3001 through 6000 sequence')
+        if logged_iterations != list(range(continuation['continuation_started_from'] + 1, continuation['new_endTime'] + 1)):
+            raise SystemExit('Continuation log is not the authorized iteration sequence')
         continuation.update(first_logged_iteration=logged_iterations[0], last_logged_iteration=logged_iterations[-1],
                             continuation_ended_at=metrics['final_iteration'], completed_at=datetime.now().astimezone().isoformat(),
                             continuation_log_sha256=sha(continuation_log), preserved_iteration_3000_fields=preserved_start_fields,
@@ -88,7 +88,7 @@ def finalize_ra1e3(state):
                maximum_final_normalized_residual=max(metrics['final_initial_residuals'].values()))
     with (OUT / 'grid_convergence.csv').open() as stream:
         grid_rows = list(csv.DictReader(stream))
-    ra_metrics = {level: json.loads((OUT / 'cases' / f'B-Ra1e3-{level}' / 'metrics.json').read_text()) for level in ['coarse', 'medium']}
+    ra_metrics = {level: json.loads((OUT / 'cases' / f'B-Ra1e3-{level}' / 'metrics.json').read_text()) for level in ['coarse', 'medium']} if passed else {}
     ra_metrics['fine'] = metrics
     if passed:
         comparisons = metrics['paper_comparison_like_for_like']
@@ -134,7 +134,7 @@ def finalize_ra1e3(state):
     else:
         for g in grid_rows:
             if int(g['Ra_target']) == 1000:
-                g.update(**{level:ra_metrics[level][g['quantity']] for level in ['coarse','medium','fine']},
+                g.update(fine=metrics[g['quantity']],
                          reason='Fine Gate D failed; values are unaccepted diagnostics; formal three-grid evaluation not performed.')
     row.update(Gate_E=formal['E'], Gate_G=formal['G'])
     record = dict(matrix_case_id=cid, source_case_id=cid, reused_existing_solver_result=False,
@@ -167,11 +167,14 @@ def finalize_ra1e3(state):
                if item['iteration'] != metrics['final_iteration']]
     result = {'iteration':metrics['final_iteration'], 'stage':stage, 'Gate_D':entry['Gate_D'],
               'Rwin':r, 'final_initial_residuals':metrics['final_initial_residuals'],
-              'heat_imbalance':metrics['heat_imbalance'], 'residual_trend':record['final_window_residual_trend']}
+              'heat_imbalance':metrics['heat_imbalance'], 'heat_imbalance_slope':r['heat_imbalance_linear_slope_per_iteration'],
+              'normal_exit':metrics['normal_exit'], 'fatal_or_nan':metrics['fatal_or_nan'],
+              'residual_trend':record['final_window_residual_trend']}
     record['iteration_history'] = history + [result]
     entry['iteration_history'] = record['iteration_history']
     if continuation:
         record['continuation'] = continuation
+        record['continuation_history'] = previous_record.get('continuation_history', [])
         record['executed_continuation_input_sha256'] = expected_inputs
         entry['continuation'] = continuation
         before = next(item['metrics'] for item in history if item['iteration'] == 3000)
@@ -207,7 +210,7 @@ def finalize_ra1e3(state):
                     script_sha256={str(p.relative_to(V13)):sha(p) for p in (V13/'Scripts/routeB').glob('*') if p.is_file()},
                     canonical_execution_scripts_match=all(sha(p)==sha(V6/'Scripts/routeB'/p.name) for p in (V13/'Scripts/routeB').glob('*') if p.is_file()),
                     limitation='Full 12-point matrix incomplete. Other Ra formal gates remain unevaluated. No automatic iteration extension or other case execution.')
-    manifest['Ra1e3_cavity_method_diagnostic'] = {level:{key:v[key] for key in ['Nu_bar_cavity','Nu_bar_cavity_from_section_trapezoid','Nu_bar_cavity_method_absolute_difference','Nu_bar_cavity_method_relative_difference']} for level,v in ra_metrics.items()}
+    manifest.setdefault('Ra1e3_cavity_method_diagnostic', {}).update({level:{key:v[key] for key in ['Nu_bar_cavity','Nu_bar_cavity_from_section_trapezoid','Nu_bar_cavity_method_absolute_difference','Nu_bar_cavity_method_relative_difference']} for level,v in ra_metrics.items()})
     (OUT/'full_matrix_status.json').write_text(json.dumps(state,indent=2)+'\n')
     manifest_path.write_text(json.dumps(manifest,indent=2)+'\n')
     print(json.dumps({'Gate_D':entry['Gate_D'],'formal_gates':formal,'needs_320':needs,'accepted_matrix_points':state['accepted_matrix_points']}))
