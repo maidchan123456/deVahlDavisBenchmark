@@ -18,20 +18,7 @@ import numpy as np
 from foam_fields import latest_time, read_scalar, read_vector
 
 ROOT = Path(__file__).resolve().parents[2]
-PAPER_TABLE_V = {
-    1_000: {"Nu_bar_cavity": 1.118, "Nu_bar_half": 1.118, "Nu_bar_0": 1.117,
-            "Nu_hot_local_max": 1.505, "Nu_hot_local_max_Z": 0.092,
-            "Nu_hot_local_min": 0.692, "Nu_hot_local_min_Z": 1.000},
-    10_000: {"Nu_bar_cavity": 2.243, "Nu_bar_half": 2.243, "Nu_bar_0": 2.238,
-             "Nu_hot_local_max": 3.528, "Nu_hot_local_max_Z": 0.143,
-             "Nu_hot_local_min": 0.586, "Nu_hot_local_min_Z": 1.000},
-    100_000: {"Nu_bar_cavity": 4.519, "Nu_bar_half": 4.519, "Nu_bar_0": 4.509,
-              "Nu_hot_local_max": 7.717, "Nu_hot_local_max_Z": 0.081,
-              "Nu_hot_local_min": 0.729, "Nu_hot_local_min_Z": 1.000},
-    1_000_000: {"Nu_bar_cavity": 8.800, "Nu_bar_half": 8.799, "Nu_bar_0": 8.817,
-                "Nu_hot_local_max": 17.925, "Nu_hot_local_max_Z": 0.0378,
-                "Nu_hot_local_min": 0.989, "Nu_hot_local_min_Z": 1.000},
-}
+PAPER_REFERENCE = ROOT / "reference/de_vahl_davis_table_v.csv"
 
 
 def read_wall_heat(path: Path) -> dict[float, dict[str, dict[str, float]]]:
@@ -83,6 +70,38 @@ def parse_residuals(log: Path) -> dict[int, dict[str, float]]:
 
 def relative_range(values: np.ndarray, scale: float) -> float:
     return float((values.max() - values.min()) / max(abs(values.mean()), scale))
+
+
+def read_paper_reference(path: Path) -> dict[int, dict[str, float]]:
+    """Read the single canonical machine-readable source for Table V."""
+    table: dict[int, dict[str, float]] = {}
+    with path.open(newline="") as stream:
+        for row in csv.DictReader(stream):
+            table[int(row["Ra"])] = {
+                key: float(value) for key, value in row.items()
+                if key not in ("Ra", "source_note") and value not in (None, "")
+            }
+    return table
+
+
+def paper_difference(calculated: float, reference: float, position: bool) -> dict[str, float | str]:
+    signed = calculated - reference
+    if position:
+        return {
+            "calculated": calculated, "reference": reference,
+            "signed_position_difference": signed,
+            "absolute_position_error": abs(signed),
+            "error": signed,
+            "error_legacy_semantics": "signed position difference; do not use for Gate judgement",
+        }
+    signed_relative = signed / reference
+    return {
+        "calculated": calculated, "reference": reference,
+        "signed_relative_difference": signed_relative,
+        "absolute_relative_error": abs(signed) / abs(reference),
+        "error": signed_relative,
+        "error_legacy_semantics": "signed relative difference; do not use for Gate judgement",
+    }
 
 
 def local_quartic_extremum(z: np.ndarray, values: np.ndarray, kind: str) -> dict[str, float | str]:
@@ -198,7 +217,7 @@ def main() -> None:
     z_faces = y / L
     nu_maximum = local_quartic_extremum(z_faces, nu_hot_local, "max")
     nu_minimum = local_quartic_extremum(z_faces, nu_hot_local, "min")
-    reference = PAPER_TABLE_V.get(int(round(manifest["Ra_target"])))
+    reference = read_paper_reference(PAPER_REFERENCE).get(int(round(manifest["Ra_target"])))
     paper_comparison = None
     if reference:
         calculated = {
@@ -208,9 +227,7 @@ def main() -> None:
             "Nu_hot_local_min": nu_minimum["value"], "Nu_hot_local_min_Z": nu_minimum["Z"],
         }
         paper_comparison = {
-            key: {"calculated": calculated[key], "reference": value,
-                  "error": (calculated[key]-value)/value if not key.endswith("_Z") else calculated[key]-value,
-                  "error_type": "relative" if not key.endswith("_Z") else "absolute"}
+            key: paper_difference(calculated[key], value, key.endswith("_Z"))
             for key, value in reference.items()
         }
         paper_comparison["Nu_bar_1"] = {
@@ -363,6 +380,10 @@ def main() -> None:
         "Nu_bar_cavity": paper_nu["Nu_bar_cavity"], "Nu_bar_1": paper_nu["Nu_bar_1"],
         "Nu_bar_cavity_from_section_trapezoid": paper_nu["Nu_bar_cavity_from_section_trapezoid"],
         "Nu_bar_cavity_discrete_method_difference": paper_nu["Nu_bar_cavity"] - paper_nu["Nu_bar_cavity_from_section_trapezoid"],
+        "Nu_bar_cavity_discrete_method_difference_legacy_semantics": "signed primary minus section-trapezoid; use the explicit absolute/relative fields for diagnostics",
+        "Nu_bar_cavity_method_absolute_difference": abs(paper_nu["Nu_bar_cavity"] - paper_nu["Nu_bar_cavity_from_section_trapezoid"]),
+        "Nu_bar_cavity_method_relative_difference": abs(paper_nu["Nu_bar_cavity"] - paper_nu["Nu_bar_cavity_from_section_trapezoid"]) / abs(paper_nu["Nu_bar_cavity"]),
+        "Nu_bar_cavity_method_relative_difference_denominator": "abs(Nu_bar_cavity), where Nu_bar_cavity is the primary cell-volume quadrature",
         "Nu_bar_0_path1": paper_nu["Nu_bar_0"], "Nu_bar_1_path1": paper_nu["Nu_bar_1"],
         "Nu_bar_0_path2": nu_hot_a2, "Nu_bar_1_path2": nu_cold_a2,
         "Nu_hot_path1": nu_hot_a1, "Nu_cold_path1": nu_cold_a1,
@@ -378,6 +399,7 @@ def main() -> None:
             / abs(paper_nu["Nu_bar_half"])
         ),
         "paper_Nu_definition": "Q=U*theta-dtheta/dX; Route A diagnostic only because its governing equations differ from the paper",
+        "paper_reference_file": str(PAPER_REFERENCE.relative_to(ROOT)),
         "paper_Nu_discretization": "walls: orthogonal patch face gradient; internal vertical faces: linear U/theta interpolation plus two-cell orthogonal temperature gradient and face-area integration; cavity: cell-volume U*theta quadrature plus exact imposed-wall conductive integral 1",
         "Nu_hot_local_max": nu_maximum["value"], "Nu_hot_local_max_Z": nu_maximum["Z"],
         "Nu_hot_local_min": nu_minimum["value"], "Nu_hot_local_min_Z": nu_minimum["Z"],

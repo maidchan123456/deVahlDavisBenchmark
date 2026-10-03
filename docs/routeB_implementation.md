@@ -1,6 +1,6 @@
 # Route B — Foundation v6 minimal implementation record
 
-記録改訂: 1.2（2026-10-03）。実施日: 2026-09-30（Asia/Tokyo）。実行時の対象仕様: `benchmark_spec.md` v1.1、判定基準: `acceptance_criteria.md` v1.1、実装根拠: `routeB_design.md`。現行の交差参照は仕様・判定基準とも v1.3で、閾値は実行時から変更していない。
+記録改訂: 1.3（2026-10-03）。実施日: 2026-09-30（Asia/Tokyo）。実行時の対象仕様: `benchmark_spec.md` v1.1、判定基準: `acceptance_criteria.md` v1.1、実装根拠: `routeB_design.md`。現行の交差参照は仕様・判定基準とも v1.4で、閾値は実行時から変更していない。
 
 ### 現在の status summary
 
@@ -20,6 +20,10 @@ CFD field、数値条件、失敗・無効化試行、diagnostic concern は変�
 旧記録は高温壁平均 `2.257421662...` を Table V の全領域平均 `2.243` と比較していた。この比較は異なる定義の混同であり無効である。原論文の $Q=U\theta-\partial\theta/\partial X$ に従い、全鉛直 face plane を再評価した。内部 face の対流項は保存済み v6 volume flux `phi` と線形補間した $\theta_f$、伝導項は直交2-cell 温度勾配と face 面積を用いる。全領域平均は cell-volume $U\theta$ 積分と固定壁による伝導積分1で計算し、Simpson 則は使わない。
 
 高温壁局所極値は raw face-centre 値と、固定5点局所4次多項式による benchmark 値を分離した。内部極値は微分根、端点は端の5点から明示的に外挿する。全量を `metrics.json`、summary、`section_nusselt.csv` に保存した。
+
+Table V 基準値は canonical `reference/de_vahl_davis_table_v.csv` だけから読む。原論文比較は符号付き相対差と絶対相対誤差、位置の符号付き差と絶対誤差を別フィールドに保存する。legacy `error` は互換用の符号付き差であり Gate に使わない。`Nu_bar_cavity` は cell-volume primary、`Nu_bar_cavity_from_section_trapezoid` は独立な台形積分 diagnostic であり、方法相対差の分母は $|Nu_{cell}|$ に固定した。
+
+accepted 結果に使った v6 実行側の5スクリプトを canonical `Scripts/routeB/` に hash 一致を確認して収録した。収録後、Nu 定義は変えずに canonical reference 読み込み、誤差フィールド分離、方法差、manifest provenance を v6/canonical の両方へ同一内容で追加した。旧 accepted 時の script hash、新しい実行側/canonical hash、両者の一致は `run_manifest.json` に記録する。この変更は保存済み field の後処理のみであり、solver、physics、BC、scheme、relaxation、tolerance、Gate 閾値を変更していない。
 
 ## 1. Pre-implementation plan
 
@@ -56,7 +60,7 @@ CFD field、数値条件、失敗・無効化試行、diagnostic concern は変�
 | execution root | `/home/mirai/OpenFOAM/mirai-6/run/deVahlDavisBenchmark` |
 | canonical root | `/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark` |
 
-v6 側に reusable template、`Ra0_medium`、Gate C 合格後にだけ `Ra1e4_coarse`、生成・実行・解析・集約 script を作成した。v13 側には本書と `results/routeB/` の machine-readable 結果だけを置き、Route B case dictionary はコピーしていない。両 mesh は uniform structured orthogonal、front/back `empty`、1 cell in z である。`checkMesh -allGeometry -allTopology` は B-COND 6400 cells、B-SMOKE 1600 cells の双方で `Mesh OK`、geometric/solution directions `(1 1 0)`、max non-orthogonality 0° を確認した。
+v6 側に reusable template、`Ra0_medium`、Gate C 合格後にだけ `Ra1e4_coarse`、生成・実行・解析・集約 script を作成した。v13 canonical 側には本書、`results/routeB/`、`Scripts/routeB/` の実スクリプトを置き、Route B case directory と Foundation v6 本体はコピーしていない。両 mesh は uniform structured orthogonal、front/back `empty`、1 cell in z である。`checkMesh -allGeometry -allTopology` は B-COND 6400 cells、B-SMOKE 1600 cells の双方で `Mesh OK`、geometric/solution directions `(1 1 0)`、max non-orthogonality 0° を確認した。
 
 実行時選択は両 case とも `Newtonian`、`laminar`、`Stokes`、`radiationModel none` である。`0/p` は存在せず、solver が `p` を生成した。入力 hash、mesh hash、log hash、script hash、両 root は `run_manifest.json` に記録した。保護対象5文書の hash は実行後も manifest 記載値で固定されている。
 

@@ -1,6 +1,6 @@
 # Route A — Foundation v13 minimal implementation record
 
-記録改訂: 1.2（2026-10-03）。実施日: 2026-09-30（Asia/Tokyo）。実行時の対象仕様: `benchmark_spec.md` v1.1、判定基準: `acceptance_criteria.md` v1.1。現行の交差参照は両文書とも v1.3であり、閾値は実行時から変更していない。Route A は Foundation v13 標準 formulation の特性評価用であり、古典 Boussinesq 方程式の Verification route ではない。
+記録改訂: 1.3（2026-10-03）。実施日: 2026-09-30（Asia/Tokyo）。実行時の対象仕様: `benchmark_spec.md` v1.1、判定基準: `acceptance_criteria.md` v1.1。現行の交差参照は両文書とも v1.4であり、閾値は実行時から変更していない。Route A は Foundation v13 標準 formulation の特性評価用であり、古典 Boussinesq 方程式の Verification route ではない。
 
 ### 現在の status summary
 
@@ -20,6 +20,8 @@ CFD field、数値条件、失敗試行、diagnostic concern は変更してい�
 旧記録は高温壁平均 `2.257421422...` を Table V の全領域平均 `2.243` と比較していた。この比較は異なる定義の混同であり無効である。原論文どおり $Q=U\theta-\partial\theta/\partial X$ とし、全鉛直 face plane、中央断面、cell-volume 全領域、高温・低温壁を別々に保存した。Route A のこれらは **de Vahl Davis paper-definition diagnostic** であり、v13 `wallHeatFlux` による物理的壁熱流束 A2 と区別する。
 
 内部 face は線形補間した $U_f,\theta_f$ と直交2-cell 温度勾配を face 面積積分する。全領域平均は cell-volume $U\theta$ 積分と固定壁による伝導積分1を使う。Simpson 則は使わない。高温壁局所極値は raw face-centre 値に加え、固定5点局所4次多項式の内部微分根／端点外挿を benchmark 値として保存した。
+
+Table V 基準値は `reference/de_vahl_davis_table_v.csv` だけから読む。原論文比較は符号付き相対差と絶対相対誤差、位置の符号付き差と絶対誤差を別フィールドに保存する。legacy `error` は互換用の符号付き差であり Gate に使わない。`Nu_bar_cavity` は cell-volume primary、`Nu_bar_cavity_from_section_trapezoid` は独立な台形積分 diagnostic とし、方法相対差の分母は $|Nu_{cell}|$ に固定した。この変更は保存済み field の後処理のみであり、solver、physics、BC、scheme、relaxation、tolerance、Gate 閾値を変更していない。
 
 ## 1. Pre-implementation plan
 
@@ -153,7 +155,7 @@ OpenFOAM FV 診断では A-SMOKE の `mean|div(phi)|=7.859e-13 kg/(m3 s)`、`eps
 4. A-SMOKE attempt 1 は OQ-02 の内部検査だけで一度実行したが、patch 再監査で無効化した。hot/cold `p` patch seed を実際の EOS patch density に合わせ、attempt 2 で cell/patch の OQ-02 を合格させた。attempt 1 は上記 failed-runs path に保存した。
 5. A-COND で `div(U)` scheme を追加する前に試した post-process は dictionary error となった。Ra=0 の volume-divergence 判定は仕様どおり絶対速度 Gate C を使い、この失敗ログは `results/routeA/failed_runs/A-COND-postprocess-divU-attempt1-missingScheme.log` に保存した。
 
-残る懸念は3点ある。
+残る懸念は4点ある。
 
 - 仕様の「全領域 `T=T0,rho=rho0,p=rho0 gh`」は OpenFOAM field の内部初期場として実現できるが、fixedValue hot/cold patch は開始時から `Th/Tc` であり patch density は `rho0` ではない。accepted 実装は全 cell で仕様式を保ち、patch では完全な pressure relation と `p_rgh=0` を優先した。この internal/patch 区別は後続実装でも保持する。
 - coarse smoke の `epsilon_v=4.365e-3` は formal fine-grid Gate G 閾値を超える。Route A の formulation 差、格子依存性、post-processing definition を full matrix 前に追跡する必要がある。

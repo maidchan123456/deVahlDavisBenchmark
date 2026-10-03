@@ -27,6 +27,11 @@ def input_hashes(case: Path, generated: dict) -> dict[str, str]:
     return {name: digest(case / name) for name in names}
 
 
+def repository_script_hashes(folder: Path) -> dict[str, str]:
+    return {str(path.relative_to(ROOT)): digest(path) for path in sorted(folder.iterdir())
+            if path.is_file() and path.suffix in (".py", ".sh")}
+
+
 def main() -> None:
     records = {}
     for case_id, case in CASES.items():
@@ -34,10 +39,15 @@ def main() -> None:
         metrics = json.loads((RESULTS / "cases" / case_id / "metrics.json").read_text())
         init = json.loads((RESULTS / "cases" / case_id / "initialization.json").read_text())
         mesh_files = sorted((case / "constant/polyMesh").glob("*"))
+        final_dir = case / str(metrics["final_iteration"])
+        accepted_fields = [final_dir / name for name in ("T", "U", "phi", "p", "p_rgh", "rho")]
         records[case_id] = {
             "generated_manifest": generated,
             "executed_input_sha256": input_hashes(case, generated),
             "mesh_sha256": {p.name: digest(p) for p in mesh_files if p.is_file()},
+            "accepted_final_field_sha256": {
+                str(path.relative_to(ROOT)): digest(path) for path in accepted_fields if path.is_file()
+            },
             "mesh": {
                 "cell_count": generated["grid"][0] * generated["grid"][1],
                 "patch_faces": {
@@ -95,11 +105,14 @@ def main() -> None:
     docs = ["benchmark_spec.md", "acceptance_criteria.md", "openfoam_design.md", "routeB_design.md"]
     run_manifest = {
         "schema": "routeA-minimal-v1",
+        "postprocessing_version": "dvd-nusselt-post-v2.1",
         "postprocessing_revision": {
             "date": "2026-10-03", "solver_rerun": False,
-            "reason": "Correct de Vahl Davis paper-definition Nusselt mapping and add section/cavity/local-extrema outputs from saved fields",
+            "reason": "Centralize Table V reference data, separate signed differences from absolute Gate errors, and add explicit cavity-method diagnostics using saved fields",
             "invalidated_comparison": "Nu_hot_path1=2.257421422... versus Table V Nu_bar_cavity=2.243 mixed Nu_bar_0 with Nu_bar_cavity",
             "hard_gate_definition_changed": False,
+            "physics_boundary_scheme_relaxation_tolerance_changed": False,
+            "accepted_cfd_fields_modified": False,
         },
         "generated_at": datetime.now().astimezone().isoformat(),
         "workspace": str(ROOT),
@@ -117,6 +130,12 @@ def main() -> None:
             "distribution": "OpenFOAM Foundation (not OpenCFD/ESI)",
         },
         "immutable_document_sha256": {name: digest(ROOT / "docs" / name) for name in docs},
+        "script_sha256": repository_script_hashes(ROOT / "Scripts/routeA"),
+        "canonical_paper_reference": {
+            "path": "reference/de_vahl_davis_table_v.csv",
+            "sha256": digest(ROOT / "reference/de_vahl_davis_table_v.csv"),
+            "role": "single machine-readable source for de Vahl Davis Table V",
+        },
         "model_summary": "foamRun + solver fluid; Boussinesq heRhoThermo; laminar Stokes; laminar Fourier; no turbulence/radiation/MRF/particles/fvModels/fvConstraints",
         "boundary_summary": {
             "U": "noSlip on four physical walls; empty front/back",
@@ -176,6 +195,7 @@ def main() -> None:
     summary_fields = [
         "case_id", "route", "Ra_target", "Ra_actual", "Pr_actual", "grid",
         "Nu_bar_0", "Nu_bar_half", "Nu_bar_cavity", "Nu_bar_1",
+        "Nu_bar_cavity_from_section_trapezoid", "Nu_bar_cavity_method_absolute_difference", "Nu_bar_cavity_method_relative_difference",
         "Nu_bar_0_path1", "Nu_bar_0_path2", "Nu_bar_1_path1", "Nu_bar_1_path2",
         "Nu_hot_local_max", "Nu_hot_local_max_Z", "Nu_hot_local_min", "Nu_hot_local_min_Z",
         "Nu_hot_local_raw_max", "Nu_hot_local_raw_max_Z", "Nu_hot_local_raw_min", "Nu_hot_local_raw_min_Z",
@@ -197,6 +217,9 @@ def main() -> None:
                 "grid": "x".join(map(str, gen["grid"])),
                 "Nu_bar_0": met["Nu_bar_0"], "Nu_bar_half": met["Nu_bar_half"],
                 "Nu_bar_cavity": met["Nu_bar_cavity"], "Nu_bar_1": met["Nu_bar_1"],
+                "Nu_bar_cavity_from_section_trapezoid": met["Nu_bar_cavity_from_section_trapezoid"],
+                "Nu_bar_cavity_method_absolute_difference": met["Nu_bar_cavity_method_absolute_difference"],
+                "Nu_bar_cavity_method_relative_difference": met["Nu_bar_cavity_method_relative_difference"],
                 "Nu_bar_0_path1": met["Nu_bar_0_path1"], "Nu_bar_0_path2": met["Nu_bar_0_path2"],
                 "Nu_bar_1_path1": met["Nu_bar_1_path1"], "Nu_bar_1_path2": met["Nu_bar_1_path2"],
                 "Nu_hot_local_max": met["Nu_hot_local_max"], "Nu_hot_local_max_Z": met["Nu_hot_local_max_Z"],
@@ -228,6 +251,7 @@ def main() -> None:
 
     with (RESULTS / "conservation.csv").open("w", newline="") as stream:
         fields = ["case_id", "Nu_bar_0", "Nu_bar_half", "Nu_bar_cavity", "Nu_bar_1",
+                  "Nu_bar_cavity_from_section_trapezoid", "Nu_bar_cavity_method_absolute_difference", "Nu_bar_cavity_method_relative_difference",
                   "section_Nu_max_relative_deviation_from_half", "heat_imbalance", "mean_abs_mass_divergence_kg_m3_s",
                   "mean_abs_volume_divergence_1_s", "epsilon_m", "epsilon_v", "note"]
         writer = csv.DictWriter(stream, fieldnames=fields, lineterminator="\n")
@@ -238,6 +262,9 @@ def main() -> None:
             writer.writerow({
                 "case_id": case_id, "Nu_bar_0": met["Nu_bar_0"], "Nu_bar_half": met["Nu_bar_half"],
                 "Nu_bar_cavity": met["Nu_bar_cavity"], "Nu_bar_1": met["Nu_bar_1"],
+                "Nu_bar_cavity_from_section_trapezoid": met["Nu_bar_cavity_from_section_trapezoid"],
+                "Nu_bar_cavity_method_absolute_difference": met["Nu_bar_cavity_method_absolute_difference"],
+                "Nu_bar_cavity_method_relative_difference": met["Nu_bar_cavity_method_relative_difference"],
                 "section_Nu_max_relative_deviation_from_half": met["section_Nu_max_relative_deviation_from_half"],
                 "heat_imbalance": met["heat_imbalance"],
                 "mean_abs_mass_divergence_kg_m3_s": div["mean_abs_mass_divergence_kg_m3_s"],

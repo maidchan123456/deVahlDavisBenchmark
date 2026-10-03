@@ -7,6 +7,10 @@
   "Nu_bar_1": 2.2574214718534904,
   "Nu_bar_cavity_from_section_trapezoid": 2.258060407675404,
   "Nu_bar_cavity_discrete_method_difference": 0.0018942217281234797,
+  "Nu_bar_cavity_discrete_method_difference_legacy_semantics": "signed primary minus section-trapezoid; use the explicit absolute/relative fields for diagnostics",
+  "Nu_bar_cavity_method_absolute_difference": 0.0018942217281234797,
+  "Nu_bar_cavity_method_relative_difference": 0.0008381680337642105,
+  "Nu_bar_cavity_method_relative_difference_denominator": "abs(Nu_bar_cavity), where Nu_bar_cavity is the primary cell-volume quadrature",
   "Nu_bar_0_path1": 2.257421422257835,
   "Nu_bar_1_path1": 2.2574214718534904,
   "Nu_bar_0_path2": 2.2574214222572673,
@@ -26,6 +30,7 @@
   "heat_imbalance": 2.197039218332305e-08,
   "section_Nu_max_relative_deviation_from_half": 0.000567414679344954,
   "paper_Nu_definition": "Q=U*theta-dtheta/dX; Route A diagnostic only because its governing equations differ from the paper",
+  "paper_reference_file": "reference/de_vahl_davis_table_v.csv",
   "paper_Nu_discretization": "walls: orthogonal patch face gradient; internal vertical faces: linear U/theta interpolation plus two-cell orthogonal temperature gradient and face-area integration; cavity: cell-volume U*theta quadrature plus exact imposed-wall conductive integral 1",
   "Nu_hot_local_max": 3.5771345173177806,
   "Nu_hot_local_max_Z": 0.13966097452034604,
@@ -44,44 +49,58 @@
     "Nu_bar_cavity": {
       "calculated": 2.2599546294035275,
       "reference": 2.243,
+      "signed_relative_difference": 0.0075589074469583845,
+      "absolute_relative_error": 0.0075589074469583845,
       "error": 0.0075589074469583845,
-      "error_type": "relative"
+      "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
     },
     "Nu_bar_half": {
       "calculated": 2.258514696997335,
       "reference": 2.243,
+      "signed_relative_difference": 0.006916940257394109,
+      "absolute_relative_error": 0.006916940257394109,
       "error": 0.006916940257394109,
-      "error_type": "relative"
+      "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
     },
     "Nu_bar_0": {
       "calculated": 2.257421422257835,
       "reference": 2.238,
+      "signed_relative_difference": 0.008678026031204124,
+      "absolute_relative_error": 0.008678026031204124,
       "error": 0.008678026031204124,
-      "error_type": "relative"
+      "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
     },
     "Nu_hot_local_max": {
       "calculated": 3.5771345173177806,
       "reference": 3.528,
+      "signed_relative_difference": 0.013927017380323306,
+      "absolute_relative_error": 0.013927017380323306,
       "error": 0.013927017380323306,
-      "error_type": "relative"
+      "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
     },
     "Nu_hot_local_max_Z": {
       "calculated": 0.13966097452034604,
       "reference": 0.143,
+      "signed_position_difference": -0.003339025479653951,
+      "absolute_position_error": 0.003339025479653951,
       "error": -0.003339025479653951,
-      "error_type": "absolute"
+      "error_legacy_semantics": "signed position difference; do not use for Gate judgement"
     },
     "Nu_hot_local_min": {
       "calculated": 0.5821556110530395,
       "reference": 0.586,
+      "signed_relative_difference": -0.0065603906944718205,
+      "absolute_relative_error": 0.0065603906944718205,
       "error": -0.0065603906944718205,
-      "error_type": "relative"
+      "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
     },
     "Nu_hot_local_min_Z": {
       "calculated": 1.0,
       "reference": 1.0,
+      "signed_position_difference": 0.0,
+      "absolute_position_error": 0.0,
       "error": 0.0,
-      "error_type": "absolute"
+      "error_legacy_semantics": "signed position difference; do not use for Gate judgement"
     },
     "Nu_bar_1": {
       "calculated": 2.2574214718534904,

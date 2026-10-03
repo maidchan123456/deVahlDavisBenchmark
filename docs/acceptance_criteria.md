@@ -5,8 +5,8 @@
 | 項目 | 内容 |
 |---|---|
 | 文書ID | DVD-OF13-AC |
-| 版 | 1.3 |
-| 対象仕様 | `docs/benchmark_spec.md` 版1.3 |
+| 版 | 1.4 |
+| 対象仕様 | `docs/benchmark_spec.md` 版1.4 |
 | 対象 | Route B（原論文 Verification）および Foundation v13 Route A（特性評価） |
 | 状態 | 受入条件は v1.1 から不変。現在の証拠・付与状況を更新 |
 | 更新日 | 2026-10-03 |
@@ -19,6 +19,7 @@
 | 1.1 | 2026-09-30 | Route B の原論文 Verification と Route A の特性評価を分離。v6 候補の別監査、初期圧力整合、A–B 比較および Gate H の役割を定義 |
 | 1.2 | 2026-10-03 | 閾値・Hard/Diagnostic 区分・総合判定論理を変更せず、両 route の監査、Gate C、smoke/minimal implementation の実績と現在の上位ステータスを反映 |
 | 1.3 | 2026-10-03 | Nu の定義対応を修正し、Table V の全領域平均・中央断面平均・高温壁平均を分離。座標を X/Z、速度を U/W に統一。Hard/Diagnostic 区分と数値閾値は変更しない |
+| 1.4 | 2026-10-03 | 原論文比較の符号付き差と絶対誤差を分離し、Gate 判定量を絶対誤差に限定。キャビティ平均 Nu の primary/補助評価と方法差を固定し、Table V 参照元を一元化。Hard/Diagnostic 区分と数値閾値は変更しない |
 
 本書は、計算を「動いた／動かなかった」ではなく、方程式、入力、数値誤差、保存則および基準解との一致で判定するための規範である。**Hard** 条件は一つでも不合格なら該当ステータスを付与しない。**Diagnostic** 条件は原因分析を必須とするが、それ単独ではコア不合格にしない。同じ Gate の共通閾値は route ごとに独立判定する。$G_B$ は「Gate G の Route B 判定」、$G_A$ は「Gate G の Route A 判定」を表す。
 
@@ -76,7 +77,40 @@ $$
 
 を用いる。$s$ は $X$ または $Z$ で、範囲は0から1である。
 
-### 2.2 格子間差
+machine-readable 結果では非位置量を
+
+$$
+\texttt{signed\_relative\_difference}=\frac{\phi-\phi_{ref}}{\phi_{ref}},\qquad
+\texttt{absolute\_relative\_error}=\frac{|\phi-\phi_{ref}|}{|\phi_{ref}|}
+$$
+
+と分離する。位置量は
+
+$$
+\texttt{signed\_position\_difference}=s-s_{ref},\qquad
+\texttt{absolute\_position\_error}=|s-s_{ref}|
+$$
+
+とする。Gate E および Gate I の判定・目安照合には、必ず `absolute_relative_error` または `absolute_position_error` を使う。互換性のため残す `error` は符号付き差の legacy alias であり、Gate 判定に使用しない。
+
+Table V の唯一の machine-readable 参照元は `reference/de_vahl_davis_table_v.csv` とする。スクリプト内への同値の再入力は行わない。
+
+### 2.2 キャビティ平均 Nu の複数離散評価
+
+`Nu_bar_cavity` は cell-volume quadrature による primary 値、`Nu_bar_cavity_from_section_trapezoid` は全鉛直断面値の台形積分による independent diagnostic とする。方法差は
+
+$$
+\texttt{Nu\_bar\_cavity\_method\_absolute\_difference}=|Nu_{cell}-Nu_{section}|,
+$$
+
+$$
+\texttt{Nu\_bar\_cavity\_method\_relative\_difference}
+=\frac{|Nu_{cell}-Nu_{section}|}{|Nu_{cell}|}
+$$
+
+とし、分母は primary の絶対値に固定する。40²、80²、160²で保存し、格子細分化による変化を追跡する。これは Diagnostic であり新しい Hard 閾値を設けない。160²で増大する、または異常に大きい場合は、Gate E の正式判定前に原因分析する。
+
+### 2.3 格子間差
 
 fine 値 $\phi_f$ と medium 値 $\phi_m$ に対し、
 
@@ -86,7 +120,7 @@ $$
 
 とする。分母が実質ゼロの量には、この相対誤差を適用せず、別途絶対許容値を定める。
 
-### 2.3 反復定常性
+### 2.4 反復定常性
 
 最終200反復、または実装上これより長い監視窓について、比較量 $\phi$ の相対レンジを
 
@@ -96,7 +130,7 @@ $$
 
 とする。$\phi_{scale}$ はゼロ除算防止のため、監査時に量ごとに定めて記録する。単に残差が下がったことではなく、平均 Nu、$U_{max}$、$W_{max}$、壁面熱収支が定常であることを確認する。既存 Gate D の Hard 監視量は高温壁平均 $\overline{Nu}_0$ であり、閾値も変更しない。原論文が代表値として扱う $\overline{Nu}_{1/2}$ を追加の primary-candidate monitor として保存するが、今回これへ Hard 対象を切り替えない。
 
-### 2.4 Route 間差（Diagnostic）
+### 2.5 Route 間差（Diagnostic）
 
 同条件の非零の B の量 $Q_B$ に対し $D_{AB}(Q)=|Q_A-Q_B|/|Q_B|$ とする。位置は絶対差を用いる。$Q_B\simeq0$ の規格化は計算前に固定する。$\overline{Nu}_0,\overline{Nu}_{1/2},\overline{Nu},\overline{Nu}_1$、$U_{max}$・位置、$W_{max}$・位置、局所 Nu、保存量、対称性を同一定義同士で比較する。**A–B 差に Hard な一致閾値を設けない**。両 route の格子・反復・後処理誤差を併記し、差をモデル・定式化差と解釈できる範囲を限定する。
 
@@ -179,6 +213,8 @@ Route B の12主計算、Route A の12主計算、および A の Gate H 感度�
 
 ## 7. Gate E — 原論文基準値との一致（Hard）
 
+Table V の machine-readable 基準値は canonical `reference/de_vahl_davis_table_v.csv` だけから読み込む。
+
 `benchmark_spec.md` 3.6の基準値を使用する。原論文 Table V の同名量だけを比較し、計算 $\overline{Nu}_0\leftrightarrow$ 論文 $\overline{Nu}_0$、計算 $\overline{Nu}_{1/2}\leftrightarrow$ 論文 $\overline{Nu}_{1/2}$、計算 $\overline{Nu}\leftrightarrow$ 論文 $\overline{Nu}$ とする。$\overline{Nu}_1$ には独立 reference error を作らない。**Route B の主 Verification の既存 Hard 条件**として、各 $Ra$ の **fine 160²** 解について、全ての主比較量が次を満たすこと。Route A でも同じ基準値と誤差を報告するが、A の結果は practical benchmark comparison であり、B のコア合格条件を代替せず、A の特性評価ステータスにこの閾値への合格を要求しない。
 
 | 判定量 | 許容値 |
@@ -195,6 +231,7 @@ Route B の12主計算、Route A の12主計算、および A の Gate H 感度�
 2. 複数量の平均誤差で、一つの不合格を相殺しない。
 3. 基準値の表示桁より細かい差に物理的意味を付与しない。
 4. 原論文自身の不確かさがあるため、1%以内の一致を「厳密解に対する1%精度」と言い換えない。
+5. 値は `absolute_relative_error`、位置は `absolute_position_error` で判定する。符号付き差または legacy `error` で PASS/FAIL を決めない。
 
 $\overline{Nu}_0$ と $\overline{Nu}_{1/2}$ の like-for-like 誤差も必ず報告する。ただしこれらを新しい Hard 条件へ追加することは研究判断を要するため、今回の修正では提案に留め、既存 Hard 論理を変更しない。
 
@@ -321,6 +358,8 @@ Foundation v13 Route A に必須の実施・報告項目である。**既存の 
 
 値と位置 $Z$ を必ず同時に記録する。raw face-centre extrema と、事前固定した5点局所4次補間（端点は明示的外挿）による benchmark extrema を区別し、原論文比較には後者を用いる。
 
+診断目安との照合は、値に `absolute_relative_error`、位置に `absolute_position_error` だけを使う。符号付き差は方向の説明用であり、目安以下の判定に使用しない。
+
 目安を超えた場合は、少なくとも以下を切り分ける。
 
 1. 壁 face 勾配と補間方法
@@ -360,6 +399,7 @@ Foundation v13 Route A に必須の実施・報告項目である。**既存の 
 | `results/conservation.csv` | route ごとの壁面熱収支、断面熱収支、質量・体積保存、対称誤差 |
 | `results/figures/` | route ごとの温度、流れ、中心線速度、局所 Nu、格子収束図 |
 | 実行ログ | 全ケースの収束履歴と異常の有無 |
+| canonical scripts/reference | route ごとの実スクリプト hash、canonical Table V CSV の path/hash、post-processing version、solver 再実行有無、accepted field hash を manifest から追跡できること |
 
 各表の各行は最低限、`case_id`, `Ra_target`, `Ra_actual`, `Pr_actual`, `grid`, `route`, `status`, `source_time_or_iteration`, `method_version` を持つこと。数値の手入力だけで出所が追えない表は受け入れない。
 

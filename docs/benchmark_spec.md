@@ -5,7 +5,7 @@
 | 項目 | 内容 |
 |---|---|
 | 文書ID | DVD-OF13-SPEC |
-| 版 | 1.3 |
+| 版 | 1.4 |
 | 対象 | de Vahl Davis の Verification 用 Route B（Foundation v6）、および OpenFOAM Foundation v13 の比較・特性評価用 Route A |
 | 状態 | 両 route のソース監査と minimal implementation が完了。full 4 Ra × 3 grids と上位 Gate は未実施 |
 | 対応する判定基準 | `docs/acceptance_criteria.md` |
@@ -19,6 +19,7 @@
 | 1.1 | 2026-09-30 | Route B を主 Verification、Route A をモデル比較・特性評価に分離。Foundation v6 solver を Route B の未監査候補とし、初期圧力整合、感度試験の解釈、両 route の計算順序を更新 |
 | 1.2 | 2026-10-03 | Foundation v6 Route B のソース監査・採用と、A-COND/A-SMOKE/B-COND/B-SMOKE の minimal implementation 結果を反映。実施済み、未実施、diagnostic concern を分離 |
 | 1.3 | 2026-10-03 | 原論文の heat-flux 定義と Table V の量を再監査し、全領域・中央断面・高温壁・低温壁の平均 Nu を分離。座標を X/Z、速度を U/W に統一し、既存4ケースを保存 field から再後処理 |
+| 1.4 | 2026-10-03 | Route B scripts を canonical repository に収録。Table V の唯一の機械可読 source を `reference/` に移し、符号付き差と絶対誤差、2種類の cavity 積分診断を明確化 |
 
 本書中の **MUST** は必須、**SHOULD** は合理的理由がない限り採用、**MAY** は任意を意味する。
 
@@ -182,7 +183,7 @@ $$
 | $10^5$ | 34.73 | 0.855 | 68.59 | 0.066 | 4.519 | 4.519 | 4.509 | 7.717 | 0.081 | 0.729 | 1.000 |
 | $10^6$ | 64.63 | 0.850 | 219.36 | 0.0379 | 8.800 | 8.799 | 8.817 | 17.925 | 0.0378 | 0.989 | 1.000 |
 
-$\overline{Nu}_1$ は熱収支・断面保存性の診断専用であり、Table V reference error を計算しない。
+$\overline{Nu}_1$ は熱収支・断面保存性の診断専用であり、Table V reference error を計算しない。Table V 数値の唯一の機械可読 source は `reference/de_vahl_davis_table_v.csv` とし、scripts、manifest、results は同ファイルを参照する。原論文値を analyzer 内へ重複ハードコードしない。
 
 任意診断値として、中心流れ関数の大きさ $|\psi_c|$ は順に 1.174、5.071、9.111、16.32 である。ただし、流れ関数を主判定量にするには、離散速度からの再構成法と符号規約を先に固定する必要がある。
 
@@ -368,7 +369,14 @@ $$
 \overline{Nu}_X(X)=\int_0^1\left(U\theta-\frac{\partial\theta}{\partial X}\right)dZ
 $$
 
-を必ず計算し `section_nusselt.csv` に保存する。Route B の内部面対流項は保存済み volume flux `phi` と線形補間した $\theta_f$、伝導項は直交 face 勾配と face 面積を用いる。$\overline{Nu}$ は cell-volume quadrature で $U\theta$ を積分し、固定壁による伝導体積積分 $\theta(0)-\theta(1)=1$ を加える。Route A の同じ量は **de Vahl Davis paper-definition diagnostic** であり、公式 `wallHeatFlux` の物理的壁熱流束と区別する。定常かつ厳密 Boussinesq の保存解では断面位置によらず一定になる。
+を必ず計算し `section_nusselt.csv` に保存する。Route B の内部面対流項は保存済み volume flux `phi` と線形補間した $\theta_f$、伝導項は直交 face 勾配と face 面積を用いる。$\overline{Nu}$ の正式主値 `Nu_bar_cavity` は cell-volume quadrature で $U\theta$ を積分し、固定壁による伝導体積積分 $\theta(0)-\theta(1)=1$ を加える。独立診断 `Nu_bar_cavity_from_section_trapezoid` は全 face-plane の $\overline{Nu}_X$ を $X$ 方向へ台形積分する。両者の差は
+
+$$
+\Delta_{method}=|Nu_{cell}-Nu_{section}|,\qquad
+\delta_{method}=\frac{|Nu_{cell}-Nu_{section}|}{|Nu_{cell}|}
+$$
+
+とし、それぞれ `Nu_bar_cavity_method_absolute_difference`、`Nu_bar_cavity_method_relative_difference` に保存する。相対差の分母は事前固定した primary `abs(Nu_bar_cavity)` である。40²、80²、160²で推移を保存するが、新しい Hard 閾値は設けない。細分化して増大または異常値となる場合は Gate E 判定前の原因分析対象とする。Route A の同じ量は **de Vahl Davis paper-definition diagnostic** であり、公式 `wallHeatFlux` の物理的壁熱流束と区別する。定常かつ厳密 Boussinesq の保存解では断面位置によらず一定になる。
 
 高温壁局所 Nu は raw face-centre extrema と benchmark 用補間 extrema を両方保存する。後者は raw 極値を囲む連続5 face の4次多項式を固定ルールとし、内部はその微分根、端の5点窓に限り $Z=0,1$ を同じ多項式で明示的に外挿評価する。
 
@@ -407,7 +415,7 @@ minimal implementation の成果物は route 別に作成済みである。full 
 1. **作成済み:** `docs/openfoam_design.md`、`docs/routeB_design.md`、両 implementation record。
 2. **作成済み:** `cases/routeA/`、v6 実行 root の `cases/routeB/`、`Scripts/routeA/`、`Scripts/routeB/`。現時点は conduction/smoke のみ。
 3. **作成済み:** `results/routeA/run_manifest.json`、`results/routeB/run_manifest.json`、route 別 `minimal_test_summary.csv`、`convergence.csv`、`conservation.csv`、`figures/`、実行 log、`failed_runs/`。
-4. **Nu 再後処理で作成済み:** 各ケースの `section_nusselt.csv`、raw/補間局所極値を含む `metrics.json`、および `results/de_vahl_davis_table_v.csv`。
+4. **Nu 再後処理で作成済み:** 各ケースの `section_nusselt.csv`、raw/補間局所極値を含む `metrics.json`、および canonical `reference/de_vahl_davis_table_v.csv`。
 5. **補助比較のみ作成済み:** `results/routeB/minimal_route_comparison.csv`。coarse A/B の近さをモデル同一性の証明に使わない。
 6. **full matrix 後に必要:** route 別の4 Ra × 3 grid を含む `benchmark_summary.csv`、`route_comparison.csv`、`grid_convergence.csv`、完全な `conservation.csv`、対応図。現時点では未作成または未完であり、Gate K 合格としない。
 
