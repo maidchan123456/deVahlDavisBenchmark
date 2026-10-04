@@ -1,0 +1,170 @@
+{
+  "schema": "routeA-Ra1e3-trio-report-v1",
+  "date": "2026-10-04",
+  "timezone": "Asia/Tokyo",
+  "task": "RUN_ROUTE_A_RA1E3_TRIO",
+  "observed_HEAD": "0031c2c072b8f204a0de95fd06cb98ef7f39c8c6",
+  "overall": "STOPPED",
+  "stop_stage": "pre-execution evaluator verification, before case generation",
+  "contract": {
+    "version": "1.0",
+    "path": "docs/routeA_execution_contract.json",
+    "expected_sha256": "33eb082f77f00b2330003ba8bafcb0438a24d7ec6b0bf456625741bfae63c936",
+    "actual_sha256": "33eb082f77f00b2330003ba8bafcb0438a24d7ec6b0bf456625741bfae63c936",
+    "hash_guard": "PASS",
+    "implementation_template_reference_hash_guard": "PASS (21 files)",
+    "contract_modified": false,
+    "analyzer_modified": false
+  },
+  "environment": {
+    "version": "OpenFOAM-13",
+    "WM_PROJECT": "OpenFOAM",
+    "WM_PROJECT_VERSION": "13",
+    "WM_PROJECT_DIR": "/opt/openfoam13",
+    "WM_OPTIONS": "linux64GccDPInt32Opt",
+    "foamRun": "/opt/openfoam13/platforms/linux64GccDPInt32Opt/bin/foamRun",
+    "runtime_selected_model": "NOT_RUN"
+  },
+  "stop_evidence": {
+    "stop_reason": "STOP_EVALUATOR_AMBIGUITY",
+    "analyzer_path": "Scripts/routeA/analyze_case.py",
+    "analyzer_line": 541,
+    "frozen_analyzer_sha256": "f63d2d958bdc48ed21519dbb0a87daf0f5f4fc99ba8c84b18290809d0dcd9783",
+    "canonical_regex": "FOAM FATAL (?:ERROR|IO ERROR)|Floating point exception|\\bnan\\b|\\binf\\b",
+    "evidence_log": "cases/routeA/Ra1e4_coarse/log.foamRun",
+    "read_scope": "first 30 lines only; no solver executed",
+    "normal_banner_line": "sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).",
+    "regex_match": "floating point exception",
+    "canonical_fatal_or_nan_on_normal_banner": true,
+    "prior_dry_validation_scope": "numerical monitor helper, not main writer health flag",
+    "case_destinations_absent": true
+  },
+  "why_stop": "The frozen main writer emits fatal_or_nan=true for a normal startup safety banner. Running now would create contradictory canonical health evidence; user stop rule for evaluator failure/ambiguity applies. No new exclusion or alternate health interpretation was introduced.",
+  "previous_validation_limitation": "The previous dry validation exercised numerical monitor/residual helpers, but did not test the main writer fatal_or_nan expression against the startup banner.",
+  "case_order": [
+    "A-Ra1e3-coarse",
+    "A-Ra1e3-medium",
+    "A-Ra1e3-fine"
+  ],
+  "cases": [
+    {
+      "case_id": "A-Ra1e3-coarse",
+      "grid": [
+        40,
+        40,
+        1
+      ],
+      "Ra_target": 1000,
+      "Pr_target": 0.71,
+      "case_created": false,
+      "computed": false,
+      "accepted": false,
+      "final_iteration": null,
+      "Gate_D": "NOT_EVALUATED",
+      "status": "NOT_STARTED_BATCH_STOP",
+      "stop_reason": "STOP_EVALUATOR_AMBIGUITY"
+    },
+    {
+      "case_id": "A-Ra1e3-medium",
+      "grid": [
+        80,
+        80,
+        1
+      ],
+      "Ra_target": 1000,
+      "Pr_target": 0.71,
+      "case_created": false,
+      "computed": false,
+      "accepted": false,
+      "final_iteration": null,
+      "Gate_D": "NOT_EVALUATED",
+      "status": "NOT_STARTED_BATCH_STOP",
+      "stop_reason": "STOP_EVALUATOR_AMBIGUITY"
+    },
+    {
+      "case_id": "A-Ra1e3-fine",
+      "grid": [
+        160,
+        160,
+        1
+      ],
+      "Ra_target": 1000,
+      "Pr_target": 0.71,
+      "case_created": false,
+      "computed": false,
+      "accepted": false,
+      "final_iteration": null,
+      "Gate_D": "NOT_EVALUATED",
+      "status": "NOT_STARTED_BATCH_STOP",
+      "stop_reason": "STOP_EVALUATOR_AMBIGUITY"
+    }
+  ],
+  "concurrency": {
+    "planned": 1,
+    "executed": 0
+  },
+  "solver_processes_started": 0,
+  "initialization_solver_processes_started": 0,
+  "meshes_generated": 0,
+  "gates": {
+    "D": "NOT_EVALUATED",
+    "E_diagnostic": "NOT_EVALUATED",
+    "F": "NOT_EVALUATED",
+    "G": "NOT_EVALUATED",
+    "needs_320": null,
+    "AB_comparison": "NOT_EVALUATED"
+  },
+  "output_semantics": "NO computed/accepted means this invocation did not create/run the formal cases; no historical accepted result or Gate status was changed",
+  "protected_hashes": {
+    "docs/routeA_execution_contract.md": "a4e123e22662a364b37cf0f4fc9f7902a5b6a94075f87d922689d22627fcdb7b",
+    "docs/routeA_execution_contract.json": "33eb082f77f00b2330003ba8bafcb0438a24d7ec6b0bf456625741bfae63c936",
+    "docs/routeA_iteration_caps.csv": "fc6b85ea6c0216650222597ec1cee267aac911736459d05905d8fb9440e64484",
+    "results/routeB/full_matrix_manifest.json": "9ae1f681f98469e891983aa02acead90de0c56d795c033a47fbcc1ce3a92fd27",
+    "results/routeB/cases/B-Ra1e3-coarse/metrics.json": "cd5e2b7e0bf74f14769f45772e0537f5a67344565ed7c8bdd7c06fddaad3e994",
+    "results/routeB/cases/B-Ra1e3-medium/metrics.json": "93b5c88bfdda8a6a0304be0ecd27802c439da08ca945e4c088526e8e61776d7f",
+    "results/routeB/cases/B-Ra1e3-fine/metrics.json": "3e1fa0c2506555cdc36b00ccc84730e91a5d0f64d9430ae370408089b5dd8199"
+  },
+  "protection_check": "all 78 contract-recorded protected hashes unchanged; Route B inputs/results only read",
+  "required_followup": {
+    "task": "REVIEW_ROUTE_A_RA1E3_ISSUE",
+    "scope": "review/fix the startup-banner false positive and authorize a versioned pre-solver amendment if needed; repeat guard and health-path dry validation before re-authorizing trio",
+    "solver_autostart": false,
+    "contract_in_place_edit_performed": false,
+    "new_threshold_proposed": false
+  },
+  "final_status": {
+    "ROUTE_A_RA1E3_TRIO": "STOPPED",
+    "CONTRACT_HASH_VERIFIED": "YES",
+    "A_RA1E3_COARSE_COMPUTED": "NO",
+    "A_RA1E3_COARSE_ACCEPTED": "NO",
+    "A_RA1E3_COARSE_FINAL_ITERATION": "NONE",
+    "A_RA1E3_COARSE_GATE_D": "NOT_EVALUATED",
+    "A_RA1E3_MEDIUM_COMPUTED": "NO",
+    "A_RA1E3_MEDIUM_ACCEPTED": "NO",
+    "A_RA1E3_MEDIUM_FINAL_ITERATION": "NONE",
+    "A_RA1E3_MEDIUM_GATE_D": "NOT_EVALUATED",
+    "A_RA1E3_FINE_COMPUTED": "NO",
+    "A_RA1E3_FINE_ACCEPTED": "NO",
+    "A_RA1E3_FINE_FINAL_ITERATION": "NONE",
+    "A_RA1E3_FINE_GATE_D": "NOT_EVALUATED",
+    "RA1E3_GATE_E_DIAGNOSTIC": "NOT_EVALUATED",
+    "RA1E3_GATE_F": "NOT_EVALUATED",
+    "RA1E3_NEEDS_320": "NOT_EVALUATED",
+    "RA1E3_GATE_G": "NOT_EVALUATED",
+    "ROUTE_A_VS_ROUTE_B_COMPARISON": "NOT_EVALUATED",
+    "FORMAL_CRITERIA_CHANGED": "NO",
+    "SOLVER_TUNING_PERFORMED": "NO",
+    "POST_CAP_EXTENSION_PERFORMED": "NO",
+    "AUTOMATIC_320_PERFORMED": "NO",
+    "ROUTE_B_MODIFIED": "NO",
+    "NEXT_RA_READY": "NO",
+    "NEXT_SINGLE_TASK": "REVIEW_ROUTE_A_RA1E3_ISSUE",
+    "USER_DECISION_REQUIRED": "YES"
+  },
+  "extra_status": {
+    "SOLVER_EXECUTED": "NO",
+    "CASE_CREATED": "NO",
+    "MESH_GENERATED": "NO",
+    "STOP_REASON": "STOP_EVALUATOR_AMBIGUITY"
+  }
+}

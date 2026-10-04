@@ -1,0 +1,4 @@
+case_id_A,case_id_B,Ra_target,grid,QoI,status,Q_A,Q_B,D_AB,absolute_position_difference,LIKE_FOR_LIKE,reason
+A-Ra1e3-coarse,B-Ra1e3-coarse,1000,40x40x1,ALL_REQUESTED,NOT_EVALUATED,,,,,NOT_EVALUATED,No Route A formal case generated because evaluator preflight stopped
+A-Ra1e3-medium,B-Ra1e3-medium,1000,80x80x1,ALL_REQUESTED,NOT_EVALUATED,,,,,NOT_EVALUATED,No Route A formal case generated because evaluator preflight stopped
+A-Ra1e3-fine,B-Ra1e3-fine,1000,160x160x1,ALL_REQUESTED,NOT_EVALUATED,,,,,NOT_EVALUATED,No Route A formal case generated because evaluator preflight stopped

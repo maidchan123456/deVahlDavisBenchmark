@@ -1,0 +1,4 @@
+case_id,Ra_target,Pr_target,grid,case_created,computed,accepted,final_iteration,Gate_D,Nu_bar_cavity,Nu_bar_0,Umax,Wmax,status,reason
+A-Ra1e3-coarse,1000,0.71,40x40x1,NO,NO,NO,,NOT_EVALUATED,,,,,NOT_STARTED_BATCH_STOP,STOP_EVALUATOR_AMBIGUITY
+A-Ra1e3-medium,1000,0.71,80x80x1,NO,NO,NO,,NOT_EVALUATED,,,,,NOT_STARTED_BATCH_STOP,STOP_EVALUATOR_AMBIGUITY
+A-Ra1e3-fine,1000,0.71,160x160x1,NO,NO,NO,,NOT_EVALUATED,,,,,NOT_STARTED_BATCH_STOP,STOP_EVALUATOR_AMBIGUITY
