@@ -1,0 +1,37 @@
+{
+  "verified_utc": "2026-10-03T19:14:16.420409+00:00",
+  "checks_passed": [
+    "three normal process exits with exact12001\u201315000,12001\u201318000,15001\u201318000 iteration sequences",
+    "single continuous C PID, no15000 process interruption",
+    "common12000 complete tree and copied inputs verified",
+    "all four15000 raw and canonical numerical hashes equal",
+    "151 archived actual field states per branch,302 total",
+    "139 complete matched200-iteration windows per branch,278 total; all>=15240",
+    "unchanged original source, binary, input files, all previous results and preregistrations",
+    "immutable amendment002 and registered driver/analysis digests unchanged",
+    "18000 numerical-hash differences consistent with nonzero numerical differences",
+    "native qualified sample counts both zero; no steady PASS claim",
+    "all19 required report sections and requested CSV/JSON/figures exist",
+    "git tracked diff empty; no add/commit/push"
+  ],
+  "R_matches_previous_microcase_checkpoint_hashes": {
+    "15000": {
+      "U": true,
+      "T": true,
+      "p_rgh": true,
+      "phi": true
+    },
+    "18000": {
+      "U": true,
+      "T": true,
+      "p_rgh": true,
+      "phi": true
+    }
+  },
+  "additional_solver_calls_for_repeatability_check": 0,
+  "formal_data_used": false,
+  "plots_visually_checked": [
+    "restart_field_divergence.png",
+    "restart_variation_comparison.png"
+  ]
+}
