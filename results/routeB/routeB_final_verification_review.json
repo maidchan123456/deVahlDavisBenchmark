@@ -1,0 +1,1454 @@
+{
+  "schema": "routeB.final_verification_review.v1",
+  "start_head": "69d715d61391f39a8e197fb7f83bd8b8ed1bf7cc",
+  "scope": "EXISTING_RESULTS_ONLY",
+  "status": {
+    "ROUTE_B_FINAL_REVIEW": "COMPLETE",
+    "COMPUTED_MATRIX_COUNT": "12/12",
+    "ACCEPTED_MATRIX_COUNT": "9/12",
+    "RA1E3_GATE_F": "FAIL",
+    "RA1E3_NEEDS_320": "YES",
+    "RA1E3_320_RECOMMENDATION": "DEFER",
+    "RA1E4_GATE_F": "FAIL",
+    "RA1E4_NEEDS_320": "YES",
+    "RA1E4_320_RECOMMENDATION": "DEFER",
+    "RA1E5_GATE_F": "FAIL",
+    "RA1E5_NEEDS_320": "YES",
+    "RA1E5_320_RECOMMENDATION": "DEFER",
+    "RA1E6_ORIGINAL_GATE_D": "FAIL",
+    "RA1E6_GATE_E": "NOT_EVALUATED",
+    "RA1E6_GATE_F": "NOT_EVALUATED",
+    "RA1E6_320_RECOMMENDATION": "NOT_NEEDED",
+    "GATE_G_INVESTIGATION_STATUS": "FROZEN_PENDING_POST_MATRIX_REVIEW",
+    "GATE_G_BLOCKS_NEXT_RESEARCH_STAGE": "NO",
+    "CRITICAL_UNRESOLVED_ISSUES": "NONE_FOR_NEXT_STAGE; ALL_GATE_PASS_NOT_ESTABLISHED",
+    "DEFERRED_NONCRITICAL_ISSUES": "Ra1e6 Gate D; Gate F/320; Gate G; floor mechanism UNKNOWN",
+    "ADDITIONAL_SOLVER_RUN_REQUIRED_BEFORE_NEXT_STAGE": "NO",
+    "ROUTE_B_COMPLETION_STATUS": "COMPLETE_WITH_DOCUMENTED_LIMITATIONS",
+    "ROUTE_B_CAN_BE_CLOSED": "YES",
+    "NEXT_RESEARCH_STEP": "自然対流場と単一粒子の相互作用を扱う最小連成モデルの構築",
+    "FORMAL_CRITERIA_CHANGED": "NO",
+    "ACCEPTED_STATUS_CHANGED": "NO",
+    "SOLVER_EXECUTED": "NO",
+    "USER_DECISION_REQUIRED": "YES"
+  },
+  "master_table": [
+    {
+      "case_id": "B-Ra1e3-coarse",
+      "source_case_id": "B-Ra1e3-coarse",
+      "Ra": 1000,
+      "grid": "40x40x1",
+      "final_iteration": 3000,
+      "computed": "YES",
+      "Gate_D": "PASS",
+      "accepted": "YES",
+      "Nu_bar_cavity": 1.1187958706851366,
+      "Nu_bar_0": 1.1186121610359123,
+      "Umax": 3.6477752919664113,
+      "Wmax": 3.6889568613677906,
+      "TableV_Nu_bar_cavity_absolute_relative_error_pct": 0.07118700224834838,
+      "TableV_Umax_absolute_relative_error_pct": 0.03356284005450155,
+      "TableV_Wmax_absolute_relative_error_pct": 0.2175585239980934,
+      "residual_status": "ORIGINAL_RESIDUAL_CRITERION_PASS",
+      "max_final_initial_residual": 9.805226411579618e-11,
+      "Gate_E_status": "NOT_APPLICABLE",
+      "Gate_F_status_Ra_scope": "FAIL",
+      "needs_320_Ra_scope": "YES",
+      "Gate_G_formal_status": "NOT_APPLICABLE",
+      "Gate_G_diagnostic_status": "RECORDED_SUPPORTING_EVIDENCE_ONLY",
+      "epsilon_phi": 6.643040205927176e-12,
+      "epsilon_v": 0.003442367732986051,
+      "epsilon_m": 0.003442367732986051,
+      "temperature_symmetry": 1.320518480465572e-09,
+      "velocity_symmetry": 8.638577729262234e-10
+    },
+    {
+      "case_id": "B-Ra1e3-medium",
+      "source_case_id": "B-Ra1e3-medium",
+      "Ra": 1000,
+      "grid": "80x80x1",
+      "final_iteration": 6000,
+      "computed": "YES",
+      "Gate_D": "PASS",
+      "accepted": "YES",
+      "Nu_bar_cavity": 1.1180442973567672,
+      "Nu_bar_0": 1.118001427241552,
+      "Umax": 3.646999248885325,
+      "Wmax": 3.6963023532816552,
+      "TableV_Nu_bar_cavity_absolute_relative_error_pct": 0.003962196490799848,
+      "TableV_Umax_absolute_relative_error_pct": 0.05483012098314951,
+      "TableV_Wmax_absolute_relative_error_pct": 0.018870617212464816,
+      "residual_status": "ORIGINAL_RESIDUAL_CRITERION_PASS",
+      "max_final_initial_residual": 3.692534578130231e-08,
+      "Gate_E_status": "NOT_APPLICABLE",
+      "Gate_F_status_Ra_scope": "FAIL",
+      "needs_320_Ra_scope": "YES",
+      "Gate_G_formal_status": "NOT_APPLICABLE",
+      "Gate_G_diagnostic_status": "RECORDED_SUPPORTING_EVIDENCE_ONLY",
+      "epsilon_phi": 2.1104403733352112e-11,
+      "epsilon_v": 0.0008765523373272206,
+      "epsilon_m": 0.0008765523373272206,
+      "temperature_symmetry": 7.1265300116173495e-09,
+      "velocity_symmetry": 8.681114995210166e-09
+    },
+    {
+      "case_id": "B-Ra1e3-fine",
+      "source_case_id": "B-Ra1e3-fine",
+      "Ra": 1000,
+      "grid": "160x160x1",
+      "final_iteration": 21000,
+      "computed": "YES",
+      "Gate_D": "PASS",
+      "accepted": "YES",
+      "Nu_bar_cavity": 1.117864112488682,
+      "Nu_bar_0": 1.1178584016290642,
+      "Umax": 3.6490796229717413,
+      "Wmax": 3.6974359325334687,
+      "TableV_Nu_bar_cavity_absolute_relative_error_pct": 0.012154518006995633,
+      "TableV_Umax_absolute_relative_error_pct": 0.0021820491022538895,
+      "TableV_Wmax_absolute_relative_error_pct": 0.011791521056765765,
+      "residual_status": "ORIGINAL_RESIDUAL_CRITERION_PASS",
+      "max_final_initial_residual": 2.450444044852739e-08,
+      "Gate_E_status": "PASS",
+      "Gate_F_status_Ra_scope": "FAIL",
+      "needs_320_Ra_scope": "YES",
+      "Gate_G_formal_status": "FAIL",
+      "Gate_G_diagnostic_status": "RECORDED_SUPPORTING_EVIDENCE_ONLY",
+      "epsilon_phi": 2.8283979308217443e-11,
+      "epsilon_v": 0.00021995159935295997,
+      "epsilon_m": 0.00021995159935295997,
+      "temperature_symmetry": 8.929904725875264e-08,
+      "velocity_symmetry": 6.742284969940663e-08
+    },
+    {
+      "case_id": "B-Ra1e4-coarse",
+      "source_case_id": "B-SMOKE",
+      "Ra": 10000,
+      "grid": "40x40x1",
+      "final_iteration": 3000,
+      "computed": "YES",
+      "Gate_D": "PASS",
+      "accepted": "YES",
+      "Nu_bar_cavity": 2.259326039868519,
+      "Nu_bar_0": 2.257421662232673,
+      "Umax": 16.118437458362845,
+      "Wmax": 19.5952224755579,
+      "TableV_Nu_bar_cavity_absolute_relative_error_pct": 0.7278662446954522,
+      "TableV_Umax_absolute_relative_error_pct": 0.3681699940484369,
+      "TableV_Wmax_absolute_relative_error_pct": 0.1110135313355792,
+      "residual_status": "ORIGINAL_RESIDUAL_CRITERION_PASS",
+      "max_final_initial_residual": 1.227881200125584e-08,
+      "Gate_E_status": "NOT_APPLICABLE",
+      "Gate_F_status_Ra_scope": "FAIL",
+      "needs_320_Ra_scope": "YES",
+      "Gate_G_formal_status": "NOT_APPLICABLE",
+      "Gate_G_diagnostic_status": "RECORDED_PARTIAL; SYMMETRY_UNKNOWN",
+      "epsilon_phi": 4.298418092921215e-11,
+      "epsilon_v": 0.004305422275437945,
+      "epsilon_m": 0.004305422275437945,
+      "temperature_symmetry": "UNKNOWN",
+      "velocity_symmetry": "UNKNOWN"
+    },
+    {
+      "case_id": "B-Ra1e4-medium",
+      "source_case_id": "B-Ra1e4-medium",
+      "Ra": 10000,
+      "grid": "80x80x1",
+      "final_iteration": 6000,
+      "computed": "YES",
+      "Gate_D": "PASS",
+      "accepted": "YES",
+      "Nu_bar_cavity": 2.2484533240277327,
+      "Nu_bar_0": 2.2479853049708254,
+      "Umax": 16.17018720597726,
+      "Wmax": 19.62471259658983,
+      "TableV_Nu_bar_cavity_absolute_relative_error_pct": 0.24312634987662943,
+      "TableV_Umax_absolute_relative_error_pct": 0.048292706284709955,
+      "TableV_Wmax_absolute_relative_error_pct": 0.03931588209119489,
+      "residual_status": "ORIGINAL_RESIDUAL_CRITERION_PASS",
+      "max_final_initial_residual": 1.719830353300369e-10,
+      "Gate_E_status": "NOT_APPLICABLE",
+      "Gate_F_status_Ra_scope": "FAIL",
+      "needs_320_Ra_scope": "YES",
+      "Gate_G_formal_status": "NOT_APPLICABLE",
+      "Gate_G_diagnostic_status": "RECORDED_SUPPORTING_EVIDENCE_ONLY",
+      "epsilon_phi": 1.5629928934543094e-11,
+      "epsilon_v": 0.0010955017216146062,
+      "epsilon_m": 0.0010955017216146062,
+      "temperature_symmetry": 2.857805416058742e-09,
+      "velocity_symmetry": 2.6425121151566893e-09
+    },
+    {
+      "case_id": "B-Ra1e4-fine",
+      "source_case_id": "B-Ra1e4-fine",
+      "Ra": 10000,
+      "grid": "160x160x1",
+      "final_iteration": 18000,
+      "computed": "YES",
+      "Gate_D": "PASS",
+      "accepted": "YES",
+      "Nu_bar_cavity": 2.245720240746932,
+      "Nu_bar_0": 2.245611060789088,
+      "Umax": 16.181023277126965,
+      "Wmax": 19.61933076302222,
+      "TableV_Nu_bar_cavity_absolute_relative_error_pct": 0.1212768946470006,
+      "TableV_Umax_absolute_relative_error_pct": 0.018687582686140555,
+      "TableV_Wmax_absolute_relative_error_pct": 0.011881342826214317,
+      "residual_status": "ORIGINAL_RESIDUAL_CRITERION_PASS",
+      "max_final_initial_residual": 1.966001879049697e-08,
+      "Gate_E_status": "PASS",
+      "Gate_F_status_Ra_scope": "FAIL",
+      "needs_320_Ra_scope": "YES",
+      "Gate_G_formal_status": "NOT_EVALUATED_UNDER_FROZEN_REVIEW",
+      "Gate_G_diagnostic_status": "RECORDED_SUPPORTING_EVIDENCE_ONLY",
+      "epsilon_phi": 5.829131242747621e-11,
+      "epsilon_v": 0.00027327412411273197,
+      "epsilon_m": 0.00027327412411273197,
+      "temperature_symmetry": 1.3813708774524402e-08,
+      "velocity_symmetry": 1.1815439683029026e-08
+    },
+    {
+      "case_id": "B-Ra1e5-coarse",
+      "source_case_id": "B-Ra1e5-coarse",
+      "Ra": 100000,
+      "grid": "40x40x1",
+      "final_iteration": 6000,
+      "computed": "YES",
+      "Gate_D": "PASS",
+      "accepted": "YES",
+      "Nu_bar_cavity": 4.6243636549688,
+      "Nu_bar_0": 4.616287819891795,
+      "Umax": 34.81924998888706,
+      "Wmax": 68.86509024083921,
+      "TableV_Nu_bar_cavity_absolute_relative_error_pct": 2.331570147572466,
+      "TableV_Umax_absolute_relative_error_pct": 0.25698240393625604,
+      "TableV_Wmax_absolute_relative_error_pct": 0.4010646462154907,
+      "residual_status": "ORIGINAL_RESIDUAL_CRITERION_PASS",
+      "max_final_initial_residual": 8.681866191934442e-08,
+      "Gate_E_status": "NOT_APPLICABLE",
+      "Gate_F_status_Ra_scope": "FAIL",
+      "needs_320_Ra_scope": "YES",
+      "Gate_G_formal_status": "NOT_APPLICABLE",
+      "Gate_G_diagnostic_status": "RECORDED_SUPPORTING_EVIDENCE_ONLY",
+      "epsilon_phi": 1.9961484810371346e-10,
+      "epsilon_v": 0.007784823819956849,
+      "epsilon_m": 0.007784823819956849,
+      "temperature_symmetry": 7.144068069533122e-09,
+      "velocity_symmetry": 1.5434839519958746e-08
+    },
+    {
+      "case_id": "B-Ra1e5-medium",
+      "source_case_id": "B-Ra1e5-medium",
+      "Ra": 100000,
+      "grid": "80x80x1",
+      "final_iteration": 9000,
+      "computed": "YES",
+      "Gate_D": "PASS",
+      "accepted": "YES",
+      "Nu_bar_cavity": 4.5474797308600134,
+      "Nu_bar_0": 4.54559358799861,
+      "Umax": 34.776470529287806,
+      "Wmax": 68.56246861531022,
+      "TableV_Nu_bar_cavity_absolute_relative_error_pct": 0.6302219707902925,
+      "TableV_Umax_absolute_relative_error_pct": 0.13380515199484416,
+      "TableV_Wmax_absolute_relative_error_pct": 0.04013906500915618,
+      "residual_status": "ORIGINAL_RESIDUAL_CRITERION_PASS",
+      "max_final_initial_residual": 4.988472467027825e-08,
+      "Gate_E_status": "NOT_APPLICABLE",
+      "Gate_F_status_Ra_scope": "FAIL",
+      "needs_320_Ra_scope": "YES",
+      "Gate_G_formal_status": "NOT_APPLICABLE",
+      "Gate_G_diagnostic_status": "RECORDED_SUPPORTING_EVIDENCE_ONLY",
+      "epsilon_phi": 1.2302947198699767e-10,
+      "epsilon_v": 0.0019601298145323397,
+      "epsilon_m": 0.0019601298145323397,
+      "temperature_symmetry": 8.494120134403616e-10,
+      "velocity_symmetry": 1.0621951376722798e-09
+    },
+    {
+      "case_id": "B-Ra1e5-fine",
+      "source_case_id": "B-Ra1e5-fine",
+      "Ra": 100000,
+      "grid": "160x160x1",
+      "final_iteration": 12000,
+      "computed": "YES",
+      "Gate_D": "PASS",
+      "accepted": "YES",
+      "Nu_bar_cavity": 4.528062764593452,
+      "Nu_bar_0": 4.527651133922632,
+      "Umax": 34.74628032803062,
+      "Wmax": 68.64693029290197,
+      "TableV_Nu_bar_cavity_absolute_relative_error_pct": 0.200548010476915,
+      "TableV_Umax_absolute_relative_error_pct": 0.04687684431507331,
+      "TableV_Wmax_absolute_relative_error_pct": 0.08300086441458966,
+      "residual_status": "ORIGINAL_RESIDUAL_CRITERION_PASS",
+      "max_final_initial_residual": 9.334275295493122e-08,
+      "Gate_E_status": "PASS",
+      "Gate_F_status_Ra_scope": "FAIL",
+      "needs_320_Ra_scope": "YES",
+      "Gate_G_formal_status": "NOT_EVALUATED_UNDER_FROZEN_REVIEW",
+      "Gate_G_diagnostic_status": "RECORDED_SUPPORTING_EVIDENCE_ONLY",
+      "epsilon_phi": 1.9203401831457897e-10,
+      "epsilon_v": 0.0004957276959032412,
+      "epsilon_m": 0.0004957276959032412,
+      "temperature_symmetry": 1.2044404886452221e-08,
+      "velocity_symmetry": 1.9823170388523974e-08
+    },
+    {
+      "case_id": "B-Ra1e6-coarse",
+      "source_case_id": "B-Ra1e6-coarse",
+      "Ra": 1000000,
+      "grid": "40x40x1",
+      "final_iteration": 30000,
+      "computed": "YES",
+      "Gate_D": "FAIL",
+      "accepted": "NO",
+      "Nu_bar_cavity": 9.434811346851925,
+      "Nu_bar_0": 9.402326316873655,
+      "Umax": 65.61513152926874,
+      "Wmax": 222.67839358059658,
+      "TableV_Nu_bar_cavity_absolute_relative_error_pct": 7.2137653051354995,
+      "TableV_Umax_absolute_relative_error_pct": 1.5242635452092554,
+      "TableV_Wmax_absolute_relative_error_pct": 1.5127614791195125,
+      "residual_status": "PLATEAU_OR_OSCILLATORY",
+      "max_final_initial_residual": 7.375120871349657e-07,
+      "Gate_E_status": "NOT_APPLICABLE",
+      "Gate_F_status_Ra_scope": "NOT_EVALUATED_DUE_TO_UNACCEPTED_GRID",
+      "needs_320_Ra_scope": "NOT_EVALUATED",
+      "Gate_G_formal_status": "NOT_APPLICABLE",
+      "Gate_G_diagnostic_status": "RECORDED_SUPPORTING_EVIDENCE_ONLY",
+      "epsilon_phi": 7.395421448455267e-10,
+      "epsilon_v": 0.01640512762004611,
+      "epsilon_m": 0.01640512762004611,
+      "temperature_symmetry": 5.932400981919104e-08,
+      "velocity_symmetry": 4.1287798167715203e-07
+    },
+    {
+      "case_id": "B-Ra1e6-medium",
+      "source_case_id": "B-Ra1e6-medium",
+      "Ra": 1000000,
+      "grid": "80x80x1",
+      "final_iteration": 30000,
+      "computed": "YES",
+      "Gate_D": "FAIL",
+      "accepted": "NO",
+      "Nu_bar_cavity": 8.983834274501707,
+      "Nu_bar_0": 8.976522814505074,
+      "Umax": 65.10299281858052,
+      "Wmax": 218.30795364349288,
+      "TableV_Nu_bar_cavity_absolute_relative_error_pct": 2.089025846610294,
+      "TableV_Umax_absolute_relative_error_pct": 0.7318471585649422,
+      "TableV_Wmax_absolute_relative_error_pct": 0.47959808374686985,
+      "residual_status": "PLATEAU_OR_OSCILLATORY",
+      "max_final_initial_residual": 3.14037897505866e-07,
+      "Gate_E_status": "NOT_APPLICABLE",
+      "Gate_F_status_Ra_scope": "NOT_EVALUATED_DUE_TO_UNACCEPTED_GRID",
+      "needs_320_Ra_scope": "NOT_EVALUATED",
+      "Gate_G_formal_status": "NOT_APPLICABLE",
+      "Gate_G_diagnostic_status": "RECORDED_SUPPORTING_EVIDENCE_ONLY",
+      "epsilon_phi": 4.4080783856526825e-10,
+      "epsilon_v": 0.0036501005532018397,
+      "epsilon_m": 0.0036501005532018397,
+      "temperature_symmetry": 8.362787800389538e-09,
+      "velocity_symmetry": 3.887891745230302e-08
+    },
+    {
+      "case_id": "B-Ra1e6-fine",
+      "source_case_id": "B-Ra1e6-fine",
+      "Ra": 1000000,
+      "grid": "160x160x1",
+      "final_iteration": 30000,
+      "computed": "YES",
+      "Gate_D": "FAIL",
+      "accepted": "NO",
+      "Nu_bar_cavity": 8.865121227158834,
+      "Nu_bar_0": 8.863397466499123,
+      "Umax": 64.89951254779456,
+      "Wmax": 219.87347099648537,
+      "TableV_Nu_bar_cavity_absolute_relative_error_pct": 0.7400139449867443,
+      "TableV_Umax_absolute_relative_error_pct": 0.41700842920402653,
+      "TableV_Wmax_absolute_relative_error_pct": 0.23407685835400835,
+      "residual_status": "PLATEAU_OR_OSCILLATORY",
+      "max_final_initial_residual": 2.714748998004017e-07,
+      "Gate_E_status": "NOT_EVALUATED_DUE_TO_UNACCEPTED_FINE",
+      "Gate_F_status_Ra_scope": "NOT_EVALUATED_DUE_TO_UNACCEPTED_GRID",
+      "needs_320_Ra_scope": "NOT_EVALUATED",
+      "Gate_G_formal_status": "NOT_EVALUATED_UNDER_FROZEN_REVIEW",
+      "Gate_G_diagnostic_status": "RECORDED_SUPPORTING_EVIDENCE_ONLY",
+      "epsilon_phi": 3.9547864215633615e-10,
+      "epsilon_v": 0.0009022182435446689,
+      "epsilon_m": 0.0009022182435446689,
+      "temperature_symmetry": 1.2367716817766722e-09,
+      "velocity_symmetry": 5.59506275323893e-09
+    }
+  ],
+  "case_provenance": {
+    "B-Ra1e3-coarse": {
+      "metrics_path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/cases/B-Ra1e3-coarse/metrics.json",
+      "metrics_sha256": "cd5e2b7e0bf74f14769f45772e0537f5a67344565ed7c8bdd7c06fddaad3e994",
+      "source_case_id": "B-Ra1e3-coarse",
+      "membership_basis": "existing Gate_D and explicit flags where present, aligned with current totals",
+      "missing_error_fields_recomputed_from_saved_QoI_and_reference": []
+    },
+    "B-Ra1e3-medium": {
+      "metrics_path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/cases/B-Ra1e3-medium/metrics.json",
+      "metrics_sha256": "93b5c88bfdda8a6a0304be0ecd27802c439da08ca945e4c088526e8e61776d7f",
+      "source_case_id": "B-Ra1e3-medium",
+      "membership_basis": "existing Gate_D and explicit flags where present, aligned with current totals",
+      "missing_error_fields_recomputed_from_saved_QoI_and_reference": []
+    },
+    "B-Ra1e3-fine": {
+      "metrics_path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/cases/B-Ra1e3-fine/metrics.json",
+      "metrics_sha256": "3e1fa0c2506555cdc36b00ccc84730e91a5d0f64d9430ae370408089b5dd8199",
+      "source_case_id": "B-Ra1e3-fine",
+      "membership_basis": "existing Gate_D and explicit flags where present, aligned with current totals",
+      "missing_error_fields_recomputed_from_saved_QoI_and_reference": []
+    },
+    "B-Ra1e4-coarse": {
+      "metrics_path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/cases/B-SMOKE/metrics.json",
+      "metrics_sha256": "9570ec87a1296df26cd5d48214f7964b780cc7e5ad44ec92984abb392796e22e",
+      "source_case_id": "B-SMOKE",
+      "membership_basis": "existing Gate_D and explicit flags where present, aligned with current totals",
+      "missing_error_fields_recomputed_from_saved_QoI_and_reference": [
+        "Umax",
+        "Wmax"
+      ]
+    },
+    "B-Ra1e4-medium": {
+      "metrics_path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/cases/B-Ra1e4-medium/metrics.json",
+      "metrics_sha256": "c8d3d9fdb759bae35b7a17595b8dffee2fe2d72ea81fc5ba4c011967e720e351",
+      "source_case_id": "B-Ra1e4-medium",
+      "membership_basis": "existing Gate_D and explicit flags where present, aligned with current totals",
+      "missing_error_fields_recomputed_from_saved_QoI_and_reference": []
+    },
+    "B-Ra1e4-fine": {
+      "metrics_path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/cases/B-Ra1e4-fine/metrics.json",
+      "metrics_sha256": "573f8c95d478bd3f2d1ea2a8ea14e077b879d09bd95b6da9f4277b924a1c568a",
+      "source_case_id": "B-Ra1e4-fine",
+      "membership_basis": "existing Gate_D and explicit flags where present, aligned with current totals",
+      "missing_error_fields_recomputed_from_saved_QoI_and_reference": []
+    },
+    "B-Ra1e5-coarse": {
+      "metrics_path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/cases/B-Ra1e5-coarse/metrics.json",
+      "metrics_sha256": "1a85d44eecce87ac66009ab08a14808a92b34078ee219c8ca30b446e3f4c6c8b",
+      "source_case_id": "B-Ra1e5-coarse",
+      "membership_basis": "existing Gate_D and explicit flags where present, aligned with current totals",
+      "missing_error_fields_recomputed_from_saved_QoI_and_reference": []
+    },
+    "B-Ra1e5-medium": {
+      "metrics_path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/cases/B-Ra1e5-medium/metrics.json",
+      "metrics_sha256": "78af7d109a97fa99e543e0565fbb5031821ee6ab176a17e80f65f15972362a9c",
+      "source_case_id": "B-Ra1e5-medium",
+      "membership_basis": "existing Gate_D and explicit flags where present, aligned with current totals",
+      "missing_error_fields_recomputed_from_saved_QoI_and_reference": []
+    },
+    "B-Ra1e5-fine": {
+      "metrics_path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/cases/B-Ra1e5-fine/metrics.json",
+      "metrics_sha256": "c4d089ae8b6d21a20771b639c951895b95576c6c39223bd37a780459f67f10fd",
+      "source_case_id": "B-Ra1e5-fine",
+      "membership_basis": "existing Gate_D and explicit flags where present, aligned with current totals",
+      "missing_error_fields_recomputed_from_saved_QoI_and_reference": []
+    },
+    "B-Ra1e6-coarse": {
+      "metrics_path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/cases/B-Ra1e6-coarse/metrics.json",
+      "metrics_sha256": "c0032cbf2938197e866ac23368ef95475f174e31e780770a3b1f207fbe8e49f2",
+      "source_case_id": "B-Ra1e6-coarse",
+      "membership_basis": "existing Gate_D and explicit flags where present, aligned with current totals",
+      "missing_error_fields_recomputed_from_saved_QoI_and_reference": []
+    },
+    "B-Ra1e6-medium": {
+      "metrics_path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/cases/B-Ra1e6-medium/metrics.json",
+      "metrics_sha256": "c6f560e95a9f10b0597ca85f31a69eb000699192f3cdf7df9ba50484ed67f419",
+      "source_case_id": "B-Ra1e6-medium",
+      "membership_basis": "existing Gate_D and explicit flags where present, aligned with current totals",
+      "missing_error_fields_recomputed_from_saved_QoI_and_reference": []
+    },
+    "B-Ra1e6-fine": {
+      "metrics_path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/cases/B-Ra1e6-fine/metrics.json",
+      "metrics_sha256": "2f548586e65d35c50e7cc7a26a784c0b26e132369b99f0d527edc4fc03df574d",
+      "source_case_id": "B-Ra1e6-fine",
+      "membership_basis": "existing Gate_D and explicit flags where present, aligned with current totals",
+      "missing_error_fields_recomputed_from_saved_QoI_and_reference": []
+    }
+  },
+  "column_semantics": {
+    "E/G": "fine正式判定、他レベルNOT_APPLICABLE",
+    "F/needs_320": "既存Ra-group判定を各行に併記。review recommendationとは別。",
+    "errors": "絶対相対[%]。B-SMOKE旧比較にないU/Wのみ保存QoIとcanonical CSVから算出。",
+    "diagnostics": "既存metrics記録の支持材料で新しい正式判定ではない。"
+  },
+  "Gate_A_to_G": [
+    {
+      "gate": "A",
+      "purpose": "環境・input・mesh・物性・Ra/Pr・hash",
+      "status": "PASS (既存記録)",
+      "evidence": "manifest preflight/generated_manifest; status; run_manifest",
+      "limitation": "歴史的binary digest保存なし。既存provenanceを引用、再監査なし。",
+      "blocks_next_stage": "NO",
+      "thesis": "Foundation v6設定とprovenanceを記述",
+      "blocks_all_gate_pass_claim": "NO"
+    },
+    {
+      "gate": "B",
+      "purpose": "方程式/solver対応",
+      "status": "PASS / ROUTE_B_AUDIT_PASS",
+      "evidence": "docs/routeB_design.md:213,268–281,302",
+      "limitation": "定常laminar/Newtonian/Boussinesq・零放射/源/MRF等の条件。粒子連成を含まない。",
+      "blocks_next_stage": "NO",
+      "thesis": "既存source-to-equation audit結論を引用",
+      "blocks_all_gate_pass_claim": "NO"
+    },
+    {
+      "gate": "C",
+      "purpose": "Ra=0伝導・Nu unit test",
+      "status": "PASS",
+      "evidence": "run_manifest statuses; B-COND metrics",
+      "limitation": "伝導極限のみ。高Ra/粒子連成保証ではない。",
+      "blocks_next_stage": "NO",
+      "thesis": "Nu≈1、U=0、線形温度場を報告",
+      "blocks_all_gate_pass_claim": "NO"
+    },
+    {
+      "gate": "D",
+      "purpose": "反復収束・QoI定常性・熱傾き",
+      "status": "PASS 9/12; Ra1e6 FAIL 3/3",
+      "evidence": "current manifest; Ra1e6 post-matrix review",
+      "limitation": "floor likely、機構UNKNOWN。coarse/medium熱傾きもFAIL。",
+      "blocks_next_stage": "NO (限界開示)",
+      "thesis": "Original維持、computed/accepted分離",
+      "blocks_all_gate_pass_claim": "YES"
+    },
+    {
+      "gate": "E",
+      "purpose": "accepted fine Table V一致",
+      "status": "PASS Ra1e3–1e5; Ra1e6 NOT_EVALUATED",
+      "evidence": "formal_Ra_gates; manifest E; reference CSV",
+      "limitation": "Ra1e6はdiagnostic-only。実現象Validationではない。",
+      "blocks_next_stage": "NO",
+      "thesis": "formal/diagnosticを分離",
+      "blocks_all_gate_pass_claim": "YES"
+    },
+    {
+      "gate": "F",
+      "purpose": "3格子・order・GCI",
+      "status": "FAIL Ra1e3–1e5; Ra1e6 NOT_EVALUATED",
+      "evidence": "manifest F; criteria.md:238–278",
+      "limitation": "速度極値非単調、p/GCI未定義。needs_320 YES保持。",
+      "blocks_next_stage": "NO (320 deferred)",
+      "thesis": "fine一致と漸近性不足を区別",
+      "blocks_all_gate_pass_claim": "YES"
+    },
+    {
+      "gate": "G",
+      "purpose": "保存則・対称性",
+      "status": "FAIL Ra1e3; others frozen NOT_EVALUATED",
+      "evidence": "manifest Ra1e3 G; freeze JSON; metrics",
+      "limitation": "tau UNRESOLVED、Candidate B PROVISIONAL。phi/Uは別演算子。",
+      "blocks_next_stage": "NO (known limitation)",
+      "thesis": "formal FAIL/未評価と診断を別記",
+      "blocks_all_gate_pass_claim": "YES"
+    }
+  ],
+  "foundation_evidence": {
+    "A": {
+      "environment": {
+        "activation": "source /home/mirai/OpenFOAM/OpenFOAM-6/etc/bashrc",
+        "foamVersion": "OpenFOAM-6",
+        "build": "6-af7d7f427be7",
+        "source_git_head": "af7d7f427be78e9b9beb6aceca8fe7d5d4636876",
+        "binary": "/home/mirai/OpenFOAM/OpenFOAM-6/platforms/linux64GccDPInt32Opt/bin/buoyantBoussinesqSimpleFoam",
+        "WM_PROJECT": "OpenFOAM",
+        "WM_PROJECT_VERSION": "6",
+        "WM_PROJECT_DIR": "/home/mirai/OpenFOAM/OpenFOAM-6",
+        "FOAM_RUN": "/home/mirai/OpenFOAM/mirai-6/run",
+        "WM_OPTIONS": "linux64GccDPInt32Opt",
+        "distribution": "OpenFOAM Foundation (not OpenCFD/ESI)"
+      },
+      "preflight": "PASS",
+      "historical_binary_digest_available": false,
+      "reaudit": false
+    },
+    "B": {
+      "status": "ROUTE_B_AUDIT_PASS",
+      "source": "docs/routeB_design.md:213,268–281,302",
+      "conclusion": "指定条件で原論文式に十分対応という既存監査結論。",
+      "reaudit": false
+    },
+    "C": {
+      "status": "PASS",
+      "metrics": {
+        "final_iteration": 3000,
+        "Nu_bar_cavity": 1.0,
+        "Nu_bar_0": 1.000039392488361,
+        "Nu_bar_half": 0.9999606321543411,
+        "Nu_bar_1": 1.000039404026552,
+        "Nu_path_relative_difference": 5.247289046886508e-08,
+        "max_dimensionless_velocity": 0.0,
+        "max_theta_analytic_error": 6.32833221070328e-06
+      }
+    }
+  },
+  "formal_Ra_gates": {
+    "1000": {
+      "E": "PASS",
+      "F": "FAIL",
+      "G": "FAIL"
+    },
+    "10000": {
+      "E": "PASS",
+      "F": "FAIL",
+      "G": "NOT_EVALUATED_UNDER_FROZEN_REVIEW"
+    },
+    "100000": {
+      "E": "PASS",
+      "F": "FAIL",
+      "G": "NOT_EVALUATED_UNDER_FROZEN_REVIEW"
+    },
+    "1000000": {
+      "E": "NOT_EVALUATED_DUE_TO_UNACCEPTED_FINE",
+      "F": "NOT_EVALUATED_DUE_TO_UNACCEPTED_GRID",
+      "G": "NOT_EVALUATED_UNDER_FROZEN_REVIEW"
+    }
+  },
+  "fine_comparisons": {
+    "1000": {
+      "Nu_bar_cavity": {
+        "calculated": 1.117864112488682,
+        "reference": 1.118,
+        "signed_relative_difference": -0.00012154518006995633,
+        "absolute_relative_error": 0.00012154518006995633,
+        "error": -0.00012154518006995633,
+        "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+      },
+      "Nu_bar_half": {
+        "calculated": 1.117846346537446,
+        "reference": 1.118,
+        "signed_relative_difference": -0.00013743601301801205,
+        "absolute_relative_error": 0.00013743601301801205,
+        "error": -0.00013743601301801205,
+        "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+      },
+      "Nu_bar_0": {
+        "calculated": 1.1178584016290642,
+        "reference": 1.117,
+        "signed_relative_difference": 0.0007684884772285172,
+        "absolute_relative_error": 0.0007684884772285172,
+        "error": 0.0007684884772285172,
+        "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+      },
+      "Nu_hot_local_max": {
+        "calculated": 1.5066179512056308,
+        "reference": 1.505,
+        "signed_relative_difference": 0.0010750506349707027,
+        "absolute_relative_error": 0.0010750506349707027,
+        "error": 0.0010750506349707027,
+        "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+      },
+      "Nu_hot_local_max_Z": {
+        "calculated": 0.08843752148810495,
+        "reference": 0.092,
+        "signed_position_difference": -0.003562478511895048,
+        "absolute_position_error": 0.003562478511895048,
+        "error": -0.003562478511895048,
+        "error_legacy_semantics": "signed position difference; do not use for Gate judgement"
+      },
+      "Nu_hot_local_min": {
+        "calculated": 0.6911484944306068,
+        "reference": 0.692,
+        "signed_relative_difference": -0.0012304993777358005,
+        "absolute_relative_error": 0.0012304993777358005,
+        "error": -0.0012304993777358005,
+        "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+      },
+      "Nu_hot_local_min_Z": {
+        "calculated": 1.0,
+        "reference": 1.0,
+        "signed_position_difference": 0.0,
+        "absolute_position_error": 0.0,
+        "error": 0.0,
+        "error_legacy_semantics": "signed position difference; do not use for Gate judgement"
+      },
+      "Umax": {
+        "calculated": 3.6490796229717413,
+        "reference": 3.649,
+        "signed_relative_difference": 2.1820491022538897e-05,
+        "absolute_relative_error": 2.1820491022538897e-05,
+        "error": 2.1820491022538897e-05,
+        "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+      },
+      "Umax_Z": {
+        "calculated": 0.8154296875,
+        "reference": 0.813,
+        "signed_position_difference": 0.002429687500000055,
+        "absolute_position_error": 0.002429687500000055,
+        "error": 0.002429687500000055,
+        "error_legacy_semantics": "signed position difference; do not use for Gate judgement"
+      },
+      "Wmax": {
+        "calculated": 3.6974359325334687,
+        "reference": 3.697,
+        "signed_relative_difference": 0.00011791521056765766,
+        "absolute_relative_error": 0.00011791521056765766,
+        "error": 0.00011791521056765766,
+        "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+      },
+      "Wmax_X": {
+        "calculated": 0.17822265625,
+        "reference": 0.178,
+        "signed_position_difference": 0.00022265625000000844,
+        "absolute_position_error": 0.00022265625000000844,
+        "error": 0.00022265625000000844,
+        "error_legacy_semantics": "signed position difference; do not use for Gate judgement"
+      },
+      "Nu_bar_1": {
+        "calculated": 1.1178586452679156,
+        "reference": null,
+        "error": null,
+        "note": "Table V contains no independent cold-wall mean reference"
+      }
+    },
+    "10000": {
+      "Nu_bar_cavity": {
+        "calculated": 2.245720240746932,
+        "reference": 2.243,
+        "signed_relative_difference": 0.001212768946470006,
+        "absolute_relative_error": 0.001212768946470006,
+        "error": 0.001212768946470006,
+        "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+      },
+      "Nu_bar_half": {
+        "calculated": 2.2455970053366445,
+        "reference": 2.243,
+        "signed_relative_difference": 0.0011578267216427296,
+        "absolute_relative_error": 0.0011578267216427296,
+        "error": 0.0011578267216427296,
+        "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+      },
+      "Nu_bar_0": {
+        "calculated": 2.245611060789088,
+        "reference": 2.238,
+        "signed_relative_difference": 0.003400831451781858,
+        "absolute_relative_error": 0.003400831451781858,
+        "error": 0.003400831451781858,
+        "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+      },
+      "Nu_hot_local_max": {
+        "calculated": 3.5339850384370153,
+        "reference": 3.528,
+        "signed_relative_difference": 0.0016964394662741654,
+        "absolute_relative_error": 0.0016964394662741654,
+        "error": 0.0016964394662741654,
+        "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+      },
+      "Nu_hot_local_max_Z": {
+        "calculated": 0.14387443736805236,
+        "reference": 0.143,
+        "signed_position_difference": 0.000874437368052372,
+        "absolute_position_error": 0.000874437368052372,
+        "error": 0.000874437368052372,
+        "error_legacy_semantics": "signed position difference; do not use for Gate judgement"
+      },
+      "Nu_hot_local_min": {
+        "calculated": 0.5848016672344443,
+        "reference": 0.586,
+        "signed_relative_difference": -0.0020449364599926597,
+        "absolute_relative_error": 0.0020449364599926597,
+        "error": -0.0020449364599926597,
+        "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+      },
+      "Nu_hot_local_min_Z": {
+        "calculated": 1.0,
+        "reference": 1.0,
+        "signed_position_difference": 0.0,
+        "absolute_position_error": 0.0,
+        "error": 0.0,
+        "error_legacy_semantics": "signed position difference; do not use for Gate judgement"
+      },
+      "Umax": {
+        "calculated": 16.181023277126965,
+        "reference": 16.178,
+        "signed_relative_difference": 0.00018687582686140555,
+        "absolute_relative_error": 0.00018687582686140555,
+        "error": 0.00018687582686140555,
+        "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+      },
+      "Umax_Z": {
+        "calculated": 0.8220214843750001,
+        "reference": 0.823,
+        "signed_position_difference": -0.0009785156249998428,
+        "absolute_position_error": 0.0009785156249998428,
+        "error": -0.0009785156249998428,
+        "error_legacy_semantics": "signed position difference; do not use for Gate judgement"
+      },
+      "Wmax": {
+        "calculated": 19.61933076302222,
+        "reference": 19.617,
+        "signed_relative_difference": 0.00011881342826214317,
+        "absolute_relative_error": 0.00011881342826214317,
+        "error": 0.00011881342826214317,
+        "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+      },
+      "Wmax_X": {
+        "calculated": 0.12182617187500001,
+        "reference": 0.119,
+        "signed_position_difference": 0.002826171875000019,
+        "absolute_position_error": 0.002826171875000019,
+        "error": 0.002826171875000019,
+        "error_legacy_semantics": "signed position difference; do not use for Gate judgement"
+      },
+      "Nu_bar_1": {
+        "calculated": 2.2456111099077134,
+        "reference": null,
+        "error": null,
+        "note": "Table V contains no independent cold-wall mean reference"
+      }
+    },
+    "100000": {
+      "Nu_bar_cavity": {
+        "calculated": 4.528062764593452,
+        "reference": 4.519,
+        "signed_relative_difference": 0.00200548010476915,
+        "absolute_relative_error": 0.00200548010476915,
+        "error": 0.00200548010476915,
+        "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+      },
+      "Nu_bar_half": {
+        "calculated": 4.527555717121404,
+        "reference": 4.519,
+        "signed_relative_difference": 0.0018932766367345565,
+        "absolute_relative_error": 0.0018932766367345565,
+        "error": 0.0018932766367345565,
+        "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+      },
+      "Nu_bar_0": {
+        "calculated": 4.527651133922632,
+        "reference": 4.509,
+        "signed_relative_difference": 0.00413642358009124,
+        "absolute_relative_error": 0.00413642358009124,
+        "error": 0.00413642358009124,
+        "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+      },
+      "Nu_hot_local_max": {
+        "calculated": 7.748258591528115,
+        "reference": 7.717,
+        "signed_relative_difference": 0.004050614426346457,
+        "absolute_relative_error": 0.004050614426346457,
+        "error": 0.004050614426346457,
+        "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+      },
+      "Nu_hot_local_max_Z": {
+        "calculated": 0.0810967775427785,
+        "reference": 0.081,
+        "signed_position_difference": 9.677754277849504e-05,
+        "absolute_position_error": 9.677754277849504e-05,
+        "error": 9.677754277849504e-05,
+        "error_legacy_semantics": "signed position difference; do not use for Gate judgement"
+      },
+      "Nu_hot_local_min": {
+        "calculated": 0.7271824001583127,
+        "reference": 0.729,
+        "signed_relative_difference": -0.0024932782464846073,
+        "absolute_relative_error": 0.0024932782464846073,
+        "error": -0.0024932782464846073,
+        "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+      },
+      "Nu_hot_local_min_Z": {
+        "calculated": 1.0,
+        "reference": 1.0,
+        "signed_position_difference": 0.0,
+        "absolute_position_error": 0.0,
+        "error": 0.0,
+        "error_legacy_semantics": "signed position difference; do not use for Gate judgement"
+      },
+      "Umax": {
+        "calculated": 34.74628032803062,
+        "reference": 34.73,
+        "signed_relative_difference": 0.00046876844315073306,
+        "absolute_relative_error": 0.00046876844315073306,
+        "error": 0.00046876844315073306,
+        "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+      },
+      "Umax_Z": {
+        "calculated": 0.853271484375,
+        "reference": 0.855,
+        "signed_position_difference": -0.0017285156249999822,
+        "absolute_position_error": 0.0017285156249999822,
+        "error": -0.0017285156249999822,
+        "error_legacy_semantics": "signed position difference; do not use for Gate judgement"
+      },
+      "Wmax": {
+        "calculated": 68.64693029290197,
+        "reference": 68.59,
+        "signed_relative_difference": 0.0008300086441458966,
+        "absolute_relative_error": 0.0008300086441458966,
+        "error": 0.0008300086441458966,
+        "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+      },
+      "Wmax_X": {
+        "calculated": 0.065673828125,
+        "reference": 0.066,
+        "signed_position_difference": -0.0003261718750000031,
+        "absolute_position_error": 0.0003261718750000031,
+        "error": -0.0003261718750000031,
+        "error_legacy_semantics": "signed position difference; do not use for Gate judgement"
+      },
+      "Nu_bar_1": {
+        "calculated": 4.527651233674646,
+        "reference": null,
+        "error": null,
+        "note": "Table V contains no independent cold-wall mean reference"
+      }
+    },
+    "1000000": {
+      "Nu_bar_cavity": {
+        "calculated": 8.865121227158834,
+        "reference": 8.8,
+        "signed_relative_difference": 0.007400139449867443,
+        "absolute_relative_error": 0.007400139449867443,
+        "error": 0.007400139449867443,
+        "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+      },
+      "Nu_bar_half": {
+        "calculated": 8.863397472312313,
+        "reference": 8.799,
+        "signed_relative_difference": 0.007318726254382691,
+        "absolute_relative_error": 0.007318726254382691,
+        "error": 0.007318726254382691,
+        "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+      },
+      "Nu_bar_0": {
+        "calculated": 8.863397466499123,
+        "reference": 8.817,
+        "signed_relative_difference": 0.005262273619045331,
+        "absolute_relative_error": 0.005262273619045331,
+        "error": 0.005262273619045331,
+        "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+      },
+      "Nu_hot_local_max": {
+        "calculated": 17.82417613900965,
+        "reference": 17.925,
+        "signed_relative_difference": -0.005624762119405821,
+        "absolute_relative_error": 0.005624762119405821,
+        "error": -0.005624762119405821,
+        "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+      },
+      "Nu_hot_local_max_Z": {
+        "calculated": 0.03714507764255327,
+        "reference": 0.0378,
+        "signed_position_difference": -0.0006549223574467272,
+        "absolute_position_error": 0.0006549223574467272,
+        "error": -0.0006549223574467272,
+        "error_legacy_semantics": "signed position difference; do not use for Gate judgement"
+      },
+      "Nu_hot_local_min": {
+        "calculated": 0.9756462890327384,
+        "reference": 0.989,
+        "signed_relative_difference": -0.013502235558404012,
+        "absolute_relative_error": 0.013502235558404012,
+        "error": -0.013502235558404012,
+        "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+      },
+      "Nu_hot_local_min_Z": {
+        "calculated": 1.0,
+        "reference": 1.0,
+        "signed_position_difference": 0.0,
+        "absolute_position_error": 0.0,
+        "error": 0.0,
+        "error_legacy_semantics": "signed position difference; do not use for Gate judgement"
+      },
+      "Umax": {
+        "calculated": 64.89951254779456,
+        "reference": 64.63,
+        "signed_relative_difference": 0.004170084292040265,
+        "absolute_relative_error": 0.004170084292040265,
+        "error": 0.004170084292040265,
+        "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+      },
+      "Umax_Z": {
+        "calculated": 0.85302734375,
+        "reference": 0.85,
+        "signed_position_difference": 0.003027343750000022,
+        "absolute_position_error": 0.003027343750000022,
+        "error": 0.003027343750000022,
+        "error_legacy_semantics": "signed position difference; do not use for Gate judgement"
+      },
+      "Wmax": {
+        "calculated": 219.87347099648537,
+        "reference": 219.36,
+        "signed_relative_difference": 0.0023407685835400835,
+        "absolute_relative_error": 0.0023407685835400835,
+        "error": 0.0023407685835400835,
+        "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+      },
+      "Wmax_X": {
+        "calculated": 0.04052734375,
+        "reference": 0.0379,
+        "signed_position_difference": 0.002627343749999997,
+        "absolute_position_error": 0.002627343749999997,
+        "error": 0.002627343749999997,
+        "error_legacy_semantics": "signed position difference; do not use for Gate judgement"
+      },
+      "Nu_bar_1": {
+        "calculated": 8.8633974514712,
+        "reference": null,
+        "error": null,
+        "note": "Table V contains no independent cold-wall mean reference"
+      }
+    }
+  },
+  "fine_diagnostics": {
+    "1000": {
+      "continuity": {
+        "mean_abs_div_phi_1_s": 1.4751798531145742e-13,
+        "mean_abs_div_U_1_s": 1.1471800501973435e-06,
+        "epsilon_phi": 2.8283979308217443e-11,
+        "epsilon_v": 0.00021995159935295997,
+        "epsilon_m": 0.00021995159935295997,
+        "mass_relation": "rho0 is constant, so normalized mass- and volume-divergence metrics are identical; solver phi is volume flux"
+      },
+      "symmetry": {
+        "theta_L2_relative": 8.929904725875264e-08,
+        "velocity_L2_relative": 6.742284969940663e-08,
+        "method": "paired cell centres under 180-degree rotation; RMS defect divided by RMS original theta or in-plane velocity magnitude"
+      },
+      "heat_imbalance": 2.1795141890090027e-07,
+      "section_Nu_max_relative_deviation_from_half": 1.1002165465487265e-05
+    },
+    "10000": {
+      "continuity": {
+        "mean_abs_div_phi_1_s": 1.6166984145689846e-12,
+        "mean_abs_div_U_1_s": 7.5792056276903085e-06,
+        "epsilon_phi": 5.829131242747621e-11,
+        "epsilon_v": 0.00027327412411273197,
+        "epsilon_m": 0.00027327412411273197,
+        "mass_relation": "rho0 is constant, so normalized mass- and volume-divergence metrics are identical; solver phi is volume flux"
+      },
+      "symmetry": {
+        "theta_L2_relative": 1.3813708774524402e-08,
+        "velocity_L2_relative": 1.1815439683029026e-08,
+        "method": "paired cell centres under 180-degree rotation; RMS defect divided by RMS original theta or in-plane velocity magnitude"
+      },
+      "heat_imbalance": 2.1873166699156645e-08,
+      "section_Nu_max_relative_deviation_from_half": 6.280989436374483e-06
+    },
+    "100000": {
+      "continuity": {
+        "mean_abs_div_phi_1_s": 1.8572934417779405e-11,
+        "mean_abs_div_U_1_s": 4.794524462850757e-05,
+        "epsilon_phi": 1.9203401831457897e-10,
+        "epsilon_v": 0.0004957276959032412,
+        "epsilon_m": 0.0004957276959032412,
+        "mass_relation": "rho0 is constant, so normalized mass- and volume-divergence metrics are identical; solver phi is volume flux"
+      },
+      "symmetry": {
+        "theta_L2_relative": 1.2044404886452221e-08,
+        "velocity_L2_relative": 1.9823170388523974e-08,
+        "method": "paired cell centres under 180-degree rotation; RMS defect divided by RMS original theta or in-plane velocity magnitude"
+      },
+      "heat_imbalance": 2.2031735793902634e-08,
+      "section_Nu_max_relative_deviation_from_half": 2.1096715139605512e-05
+    },
+    "1000000": {
+      "continuity": {
+        "mean_abs_div_phi_1_s": 1.231073482679515e-10,
+        "mean_abs_div_U_1_s": 0.0002808487834289828,
+        "epsilon_phi": 3.9547864215633615e-10,
+        "epsilon_v": 0.0009022182435446689,
+        "epsilon_m": 0.0009022182435446689,
+        "mass_relation": "rho0 is constant, so normalized mass- and volume-divergence metrics are identical; solver phi is volume flux"
+      },
+      "symmetry": {
+        "theta_L2_relative": 1.2367716817766722e-09,
+        "velocity_L2_relative": 5.59506275323893e-09,
+        "method": "paired cell centres under 180-degree rotation; RMS defect divided by RMS original theta or in-plane velocity magnitude"
+      },
+      "heat_imbalance": 1.695503568180042e-09,
+      "section_Nu_max_relative_deviation_from_half": 4.365096453143245e-09
+    }
+  },
+  "Gate_F_results": {
+    "1000": [
+      {
+        "Ra_target": "1000",
+        "quantity": "Nu_bar_cavity",
+        "coarse": 1.1187958706851366,
+        "medium": 1.1180442973567672,
+        "fine": 1.117864112488682,
+        "fine_medium_difference": 0.00016118673644886138,
+        "convergence_type": "monotonic",
+        "p_obs": 2.0604360109020394,
+        "GCI": 0.0001524886107940077,
+        "Gate_F": "PASS",
+        "needs_320": false,
+        "reason": "Monotonic convergence; existing fine-medium and GCI thresholds applied."
+      },
+      {
+        "Ra_target": "1000",
+        "quantity": "Umax",
+        "coarse": 3.6477752919664113,
+        "medium": 3.646999248885325,
+        "fine": 3.6490796229717413,
+        "fine_medium_difference": 0.000570109260790027,
+        "convergence_type": "oscillatory",
+        "p_obs": "",
+        "GCI": "",
+        "Gate_F": "FAIL",
+        "needs_320": true,
+        "reason": "Nonmonotonic or undefined/nonpositive observed order; no 320 run performed."
+      },
+      {
+        "Ra_target": "1000",
+        "quantity": "Wmax",
+        "coarse": 3.6889568613677906,
+        "medium": 3.6963023532816552,
+        "fine": 3.6974359325334687,
+        "fine_medium_difference": 0.00030658523163016124,
+        "convergence_type": "monotonic",
+        "p_obs": 2.6959738510076905,
+        "GCI": 0.00016784137659154344,
+        "Gate_F": "PASS",
+        "needs_320": false,
+        "reason": "Monotonic convergence; existing fine-medium and GCI thresholds applied."
+      }
+    ],
+    "10000": [
+      {
+        "Ra_target": "10000",
+        "quantity": "Nu_bar_cavity",
+        "coarse": 2.259326039868519,
+        "medium": 2.2484533240277327,
+        "fine": 2.245720240746932,
+        "fine_medium_difference": 0.0012170185899431285,
+        "convergence_type": "monotonic",
+        "p_obs": 1.9921110223460146,
+        "GCI": 0.001225932424867197,
+        "Gate_F": "PASS",
+        "needs_320": false,
+        "reason": "Existing three-grid thresholds applied; no 320 run performed."
+      },
+      {
+        "Ra_target": "10000",
+        "quantity": "Umax",
+        "coarse": 16.118437458362845,
+        "medium": 16.17018720597726,
+        "fine": 16.181023277126965,
+        "fine_medium_difference": 0.0006696777431265277,
+        "convergence_type": "monotonic",
+        "p_obs": 2.255710055120406,
+        "GCI": 0.0005320965725105151,
+        "Gate_F": "PASS",
+        "needs_320": false,
+        "reason": "Existing three-grid thresholds applied; no 320 run performed."
+      },
+      {
+        "Ra_target": "10000",
+        "quantity": "Wmax",
+        "coarse": 19.5952224755579,
+        "medium": 19.62471259658983,
+        "fine": 19.61933076302222,
+        "fine_medium_difference": 0.00027431280060554955,
+        "convergence_type": "oscillatory",
+        "p_obs": "",
+        "GCI": "",
+        "Gate_F": "FAIL",
+        "needs_320": true,
+        "reason": "Nonmonotonic or undefined/nonpositive observed order; no 320 run performed."
+      }
+    ],
+    "100000": [
+      {
+        "Ra_target": "100000",
+        "quantity": "Nu_bar_cavity",
+        "coarse": 4.6243636549688,
+        "medium": 4.5474797308600134,
+        "fine": 4.528062764593452,
+        "fine_medium_difference": 0.0042881398240302146,
+        "convergence_type": "monotonic",
+        "p_obs": 1.9853641625568228,
+        "GCI": 0.004346636890267837,
+        "Gate_F": "PASS",
+        "needs_320": false,
+        "reason": "Existing three-grid thresholds applied; no 320 run performed."
+      },
+      {
+        "Ra_target": "100000",
+        "quantity": "Umax",
+        "coarse": 34.81924998888706,
+        "medium": 34.776470529287806,
+        "fine": 34.74628032803062,
+        "fine_medium_difference": 0.0008688757752532516,
+        "convergence_type": "monotonic",
+        "p_obs": 0.5028378838030705,
+        "GCI": 0.006250932455981117,
+        "Gate_F": "PASS",
+        "needs_320": false,
+        "reason": "Existing three-grid thresholds applied; no 320 run performed."
+      },
+      {
+        "Ra_target": "100000",
+        "quantity": "Wmax",
+        "coarse": 68.86509024083921,
+        "medium": 68.56246861531022,
+        "fine": 68.64693029290197,
+        "fine_medium_difference": 0.0012303780698039535,
+        "convergence_type": "oscillatory",
+        "p_obs": "",
+        "GCI": "",
+        "Gate_F": "FAIL",
+        "needs_320": true,
+        "reason": "Nonmonotonic or undefined/nonpositive observed order; no 320 run performed."
+      }
+    ],
+    "1000000": {
+      "scope": "DIAGNOSTIC_ONLY",
+      "formal_status": "NOT_EVALUATED_DUE_TO_UNACCEPTED_GRID",
+      "quantities": [
+        {
+          "quantity": "Nu_bar_cavity",
+          "fine_medium_difference": 0.01339102357440841,
+          "trend": "MONOTONIC_TOWARD_REFERENCE",
+          "p_obs": "NOT_EVALUATED",
+          "GCI": "NOT_EVALUATED"
+        },
+        {
+          "quantity": "Umax",
+          "fine_medium_difference": 0.003135312775055265,
+          "trend": "MONOTONIC_TOWARD_REFERENCE",
+          "p_obs": "NOT_EVALUATED",
+          "GCI": "NOT_EVALUATED"
+        },
+        {
+          "quantity": "Wmax",
+          "fine_medium_difference": 0.00712008295451665,
+          "trend": "NON_MONOTONIC",
+          "p_obs": "NOT_EVALUATED",
+          "GCI": "NOT_EVALUATED"
+        }
+      ]
+    }
+  },
+  "320_decisions": {
+    "1000": {
+      "recommendation": "DEFER",
+      "existing_needs_320": "YES",
+      "Q1_fine_agreement": "既存 Gate E PASS。主要量の一致は良好。",
+      "Q2_fine_medium_difference_max_pct": 0.057010926079002704,
+      "Q3_failure": "Umax NON_MONOTONIC。p/GCI未定義。fine解が大誤差という意味ではない。",
+      "Q4_expected_gain": "速度極値の漸近域・離散化不確かさ評価に価値。320追加だけで解決/PASS保証なし。",
+      "Q5_schedule_value": "限定的benchmark根拠から本線へ進む現論旨には必須でなく、今移行を遅らせる価値は低い。",
+      "scientific_value": "速度極値の格子挙動解明。",
+      "verification_value": "formal Gate F completionに価値。",
+      "computational_cost": "160²の4倍セル数。必要反復数/時間は未見積り。",
+      "thesis_necessity": "全Hard Gate PASS・速度極値の格子不確かさ保証を主張するなら追加評価が必要。",
+      "formal_requirement": "acceptance_criteria.md:276–278 の320追加要件を免除しない。FAIL/needs_320 YESを保った日程判断。"
+    },
+    "10000": {
+      "recommendation": "DEFER",
+      "existing_needs_320": "YES",
+      "Q1_fine_agreement": "既存 Gate E PASS。主要量の一致は良好。",
+      "Q2_fine_medium_difference_max_pct": 0.12170185899431285,
+      "Q3_failure": "Wmax NON_MONOTONIC。p/GCI未定義。fine解が大誤差という意味ではない。",
+      "Q4_expected_gain": "速度極値の漸近域・離散化不確かさ評価に価値。320追加だけで解決/PASS保証なし。",
+      "Q5_schedule_value": "限定的benchmark根拠から本線へ進む現論旨には必須でなく、今移行を遅らせる価値は低い。",
+      "scientific_value": "速度極値の格子挙動解明。",
+      "verification_value": "formal Gate F completionに価値。",
+      "computational_cost": "160²の4倍セル数。必要反復数/時間は未見積り。",
+      "thesis_necessity": "全Hard Gate PASS・速度極値の格子不確かさ保証を主張するなら追加評価が必要。",
+      "formal_requirement": "acceptance_criteria.md:276–278 の320追加要件を免除しない。FAIL/needs_320 YESを保った日程判断。"
+    },
+    "100000": {
+      "recommendation": "DEFER",
+      "existing_needs_320": "YES",
+      "Q1_fine_agreement": "既存 Gate E PASS。主要量の一致は良好。",
+      "Q2_fine_medium_difference_max_pct": 0.42881398240302143,
+      "Q3_failure": "Wmax NON_MONOTONIC。p/GCI未定義。fine解が大誤差という意味ではない。",
+      "Q4_expected_gain": "速度極値の漸近域・離散化不確かさ評価に価値。320追加だけで解決/PASS保証なし。",
+      "Q5_schedule_value": "限定的benchmark根拠から本線へ進む現論旨には必須でなく、今移行を遅らせる価値は低い。",
+      "scientific_value": "速度極値の格子挙動解明。",
+      "verification_value": "formal Gate F completionに価値。",
+      "computational_cost": "160²の4倍セル数。必要反復数/時間は未見積り。",
+      "thesis_necessity": "全Hard Gate PASS・速度極値の格子不確かさ保証を主張するなら追加評価が必要。",
+      "formal_requirement": "acceptance_criteria.md:276–278 の320追加要件を免除しない。FAIL/needs_320 YESを保った日程判断。"
+    },
+    "1000000": {
+      "recommendation": "NOT_NEEDED",
+      "existing_needs_320": "NOT_EVALUATED",
+      "Q1_fine_agreement": "既存E数値条件をDIAGNOSTIC_ONLYで満たす。",
+      "Q2_fine_medium_difference": "上記診断値。unacceptedのため正式F未評価。",
+      "Q3_failure": "F FAILではなく未評価、診断上W非単調。",
+      "Q4_expected_gain": "細格子trendを増やせるがD FAIL/floor機構は解決保証なし。",
+      "Q5_schedule_value": "現段階の移行には不要。",
+      "scientific_value": "現stationarity/参照比較以上の増分は限定的。",
+      "verification_value": "unaccepted grid増加だけではformal Fに進めない。",
+      "computational_cost": "4倍セル数、時間/反復数未知。",
+      "thesis_necessity": "Ra1e6を診断結果として限定して報告する論旨には不要。将来の全formal PASS保証ではない。"
+    }
+  },
+  "Ra1e6_Gate_D": {
+    "computed": "YES",
+    "accepted": "NO",
+    "Original_Gate_D": "FAIL",
+    "QoI_stationarity_support": "STRONG",
+    "residual_behavior": "PLATEAU_OR_OSCILLATORY_FLOOR_LIKELY",
+    "mechanism": "UNKNOWN",
+    "heat_support": "MODERATE",
+    "failed_conditions": {
+      "coarse": [
+        "residuals",
+        "heat_trend"
+      ],
+      "medium": [
+        "residuals",
+        "heat_trend"
+      ],
+      "fine": [
+        "residuals"
+      ]
+    },
+    "policy": "A_KEEP_ORIGINAL",
+    "additional_run_required": "NO",
+    "fine_E_diagnostic_checks": {
+      "Nu_bar_cavity": true,
+      "Umax": true,
+      "Wmax": true,
+      "Umax_Z": true,
+      "Wmax_X": true
+    }
+  },
+  "Gate_G": {
+    "freeze": {
+      "GATE_G_INVESTIGATION_STATUS": "FROZEN_PENDING_POST_MATRIX_REVIEW",
+      "CURRENT_FORMAL_RA1E3_GATE_G": "FAIL",
+      "GATE_G_CRITERIA_MODIFIED": "NO",
+      "TAU_MEAN": "UNRESOLVED",
+      "CANDIDATE_B_STATUS": "PROVISIONAL"
+    },
+    "existing_Ra1e3_checks": {
+      "heat_imbalance": true,
+      "section_conservation": true,
+      "reconstructed_mass_divergence": false,
+      "reconstructed_volume_divergence": true,
+      "temperature_symmetry": true,
+      "velocity_symmetry": true
+    },
+    "operator_semantics": "native pressure-corrected face phi divergence differs from reconstructed U divergence. rho0 constant gives epsilon_v=legacy epsilon_m.",
+    "operator_independent_verification": "PASS",
+    "options": {
+      "A_continue": "正式基準解決に価値があるがtau研究などscope/schedule costが今の移行結論に見合わない。",
+      "B_freeze": "RECOMMENDED。known limitationとしてFAIL/未評価を残し本線へ進む。"
+    },
+    "new_threshold_or_microcase": false
+  },
+  "verified_scope": [
+    "既存equation/solver対応",
+    "conduction/Nu unit test",
+    "Ra1e3–1e5 accepted自然対流とfine一致",
+    "全12反復挙動",
+    "格子依存挙動（FAIL含む）",
+    "保存native continuity/symmetry診断、formal G未完了"
+  ],
+  "unresolved": [
+    {
+      "issue": "Ra1e6 Gate D FAIL",
+      "classification": "DEFERRED",
+      "critical_for": "全12 formal convergence/acceptance宣言",
+      "blocks_next_stage": false
+    },
+    {
+      "issue": "Gate F non-monotonic / undefined p,GCI",
+      "classification": "DEFERRED",
+      "critical_for": "全Ra格子収束・速度極値の不確かさ保証",
+      "blocks_next_stage": false
+    },
+    {
+      "issue": "320² follow-up",
+      "classification": "DEFERRED",
+      "critical_for": "formal Gate F completion",
+      "blocks_next_stage": false
+    },
+    {
+      "issue": "Gate G / tau_mean / Candidate B",
+      "classification": "DEFERRED",
+      "critical_for": "全Hard Gate PASS・正式保存基準完了宣言",
+      "blocks_next_stage": false
+    },
+    {
+      "issue": "floor mechanism UNKNOWN",
+      "classification": "NON_CRITICAL",
+      "critical_for": "因果説明・残差緩和正当化",
+      "blocks_next_stage": false
+    },
+    {
+      "issue": "historical binary digest missing",
+      "classification": "NON_CRITICAL",
+      "critical_for": "歴史的binary完全同一性のhash立証",
+      "blocks_next_stage": false
+    }
+  ],
+  "completion_questions": {
+    "Q1": "研究移行の主要目的（方程式対応・伝導極限・自然対流QoI再現のcredibility evidence）は限定範囲で達成。全12/全Hard Gate PASSの正式目標は未達。",
+    "Q2": "YES。Ra1e3–1e5のD/E PASSと小さいfine-medium差を根拠に、320を今実行せず次段階へ進める。完全な格子不確かさ保証は主張しない。",
+    "Q3": "NO。formal FAIL/未評価とoperator差を開示する限り、G未解決は移行のcritical blockerでない。連成保存性は別途根拠が必要。",
+    "Q4": "NO。Ra1e6 FAILは完全合格宣言を阻むが、既存9ケースPASSを取り消さず限界付き一区切りを妨げない。",
+    "Q5": "今の移行への増分価値はcostに見合わない。正式grid uncertaintyが論旨に必要なら320はdeferred。新規調査/計算を今開始しない。"
+  },
+  "verification_vs_validation": "Numerical Verification benchmark agreement supports credibility; not Validation of tea-leaf jumping or particle/nonspherical interaction. Coupled conservation/accuracy need separate evidence.",
+  "thesis_structure": [
+    "benchmark定義と方程式対応",
+    "numerical conditions/provenance",
+    "Original Gate D、computed/accepted区別",
+    "格子study・F FAIL・320未実施",
+    "Table V：formal EとRa1e6 diagnostic",
+    "未解決D/F/G・floor mechanism",
+    "限定的credibilityと研究移行、Verification vs Validation"
+  ],
+  "thesis_conclusion_draft": "Foundation v6の定常Boussinesqモデルについて、既存方程式監査とRa=0伝導試験を確認し、Ra=1e3–1e5の9ケースがOriginal Gate D、各fine解がGate Eを満たした。全12ケースを計算したがRa=1e6はformal未達で診断的結果として扱う。速度極値の非単調格子傾向とGate G基準は未解決として残し、全Gate合格とは宣言しない。制限下で研究次段階へ進む数値的根拠は得られたが、茶葉・粒子現象のValidationは別途必要である。",
+  "historical_summary_precedence": "full_matrix_completion_summary.json is historical coarse24000-stop snapshot. Current status/manifest and completed Ra1e6 review take precedence.",
+  "workflow_vs_formal_completion": "Review closure recommendation only; existing formal completion NO and BENCHMARK_CORE_PASS NOT_EVALUATED unchanged.",
+  "formal_state_preserved": {
+    "FULL_MATRIX_COMPLETE": "NO",
+    "ROUTE_B_FULL_MATRIX_COMPLETE": "NO",
+    "BENCHMARK_CORE_PASS": "NOT_EVALUATED",
+    "needs_320": true,
+    "Ra1e4_needs_320": true,
+    "Ra1e5_needs_320": true,
+    "Ra1e6_needs_320": "NOT_EVALUATED"
+  },
+  "input_sha256": {
+    "results/routeB/full_matrix_status.json": "ddbbdba38a8f7aa9cf59d0e3208e427113a1cced2f289dd2bec94ac511036845",
+    "results/routeB/full_matrix_manifest.json": "9ae1f681f98469e891983aa02acead90de0c56d795c033a47fbcc1ce3a92fd27",
+    "results/routeB/Ra1e6_post_matrix_gateD_review.json": "1c8e8ea2c3f8dc58b42a4954c80642f8cd00f8cdc549b80c592851e04d86daac",
+    "results/routeB/Ra1e6_post_matrix_gateD_review.md": "02f28b72e9b9d3f4ca4bfc7a7ede22167f7e2c5a6355da24ef2636f3e0197638",
+    "results/routeB/gateG_investigation_freeze.json": "5a128399ffab53c5b3b87bcc357a6981e4650f99105735d2c26ad2cc5a66b6b2",
+    "results/routeB/full_matrix_completion_summary.json": "63cdf2143ef1e4c67aec0a0f2ff63b9e23d9765393cc19a2019b355a9e6220eb",
+    "results/routeB/run_manifest.json": "1be667177f66b5e26cb0d341d12dc1dfc6ee48e130b20d5b63a060a0e531811f",
+    "results/routeB/cases/B-COND/metrics.json": "93063f4bb23df7e8f74b0a4d7366884f8ab126f2579ab138321208e948cd2b1b",
+    "reference/de_vahl_davis_table_v.csv": "96952fa9ca283b4fa75645b7cbcf3abf400765e56888667d1dfa9ef46a6b5466",
+    "docs/routeB_design.md": "d87ab88109c1080e3b32867719f217df7118c43b4d3caa0da30bc814938eabf6",
+    "docs/routeB_implementation.md": "a98777f56718ee9f4e7d763e384409e241f118e91d6857648e361677bc757ca5",
+    "docs/acceptance_criteria.md": "2fe82dba1644621a7e57ddc11c4ea5ba5007db50122fbd0c0179f5af5ac38db4",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/cases/B-Ra1e3-coarse/metrics.json": "cd5e2b7e0bf74f14769f45772e0537f5a67344565ed7c8bdd7c06fddaad3e994",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/cases/B-Ra1e3-medium/metrics.json": "93b5c88bfdda8a6a0304be0ecd27802c439da08ca945e4c088526e8e61776d7f",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/cases/B-Ra1e3-fine/metrics.json": "3e1fa0c2506555cdc36b00ccc84730e91a5d0f64d9430ae370408089b5dd8199",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/cases/B-SMOKE/metrics.json": "9570ec87a1296df26cd5d48214f7964b780cc7e5ad44ec92984abb392796e22e",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/cases/B-Ra1e4-medium/metrics.json": "c8d3d9fdb759bae35b7a17595b8dffee2fe2d72ea81fc5ba4c011967e720e351",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/cases/B-Ra1e4-fine/metrics.json": "573f8c95d478bd3f2d1ea2a8ea14e077b879d09bd95b6da9f4277b924a1c568a",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/cases/B-Ra1e5-coarse/metrics.json": "1a85d44eecce87ac66009ab08a14808a92b34078ee219c8ca30b446e3f4c6c8b",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/cases/B-Ra1e5-medium/metrics.json": "78af7d109a97fa99e543e0565fbb5031821ee6ab176a17e80f65f15972362a9c",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/cases/B-Ra1e5-fine/metrics.json": "c4d089ae8b6d21a20771b639c951895b95576c6c39223bd37a780459f67f10fd",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/cases/B-Ra1e6-coarse/metrics.json": "c0032cbf2938197e866ac23368ef95475f174e31e780770a3b1f207fbe8e49f2",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/cases/B-Ra1e6-medium/metrics.json": "c6f560e95a9f10b0597ca85f31a69eb000699192f3cdf7df9ba50484ed67f419",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/cases/B-Ra1e6-fine/metrics.json": "2f548586e65d35c50e7cc7a26a784c0b26e132369b99f0d527edc4fc03df574d"
+  },
+  "input_hashes_unchanged": true,
+  "invariants": {
+    "solver_executed": false,
+    "320_generated_or_executed": false,
+    "new_experiment": false,
+    "source_reaudit": false,
+    "Gate_G_reopened": false,
+    "existing_files_modified": false,
+    "formal_criteria_or_status_or_needs_320_modified": false,
+    "git_add_commit_push": false
+  }
+}
