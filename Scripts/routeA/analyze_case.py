@@ -22,6 +22,21 @@ ROOT = Path(__file__).resolve().parents[2]
 PAPER_REFERENCE = ROOT / "reference/de_vahl_davis_table_v.csv"
 
 
+def classify_health_lines(lines) -> dict[str, bool]:
+    """Keep fatal/nonfinite detection; exclude only known normal FPE banners."""
+    normal_fpe_banner = re.compile(
+        r"(?:sigFpe\s*:\s*Enabling\s+)?floating point exception trapping"
+        r"(?:\s+\(FOAM_SIGFPE\)\.)?", re.I,
+    )
+    flags = {"fatal": False, "fpe": False, "nonfinite": False}
+    for line in lines:
+        flags["fatal"] |= bool(re.search(r"FOAM FATAL (?:ERROR|IO ERROR)", line, re.I))
+        flags["nonfinite"] |= bool(re.search(r"\bnan\b|\binf\b", line, re.I))
+        if not normal_fpe_banner.fullmatch(line.strip()):
+            flags["fpe"] |= bool(re.search(r"Floating point exception", line, re.I))
+    return flags
+
+
 def read_wall_heat(path: Path) -> dict[float, dict[str, dict[str, float | str]]]:
     data: dict[float, dict[str, dict[str, float | str]]] = {}
     with path.open() as stream:
@@ -538,7 +553,7 @@ def main() -> None:
             "definitions": "mass: volume mean |fvc::div(phi)| using solver mass flux; volume: volume mean |fvc::div(U)| using Gauss linear; normalized per acceptance_criteria 9.2",
         },
         "normal_exit": bool(re.search(r"^End\s*$", solver_log.read_text(), re.M)),
-        "fatal_or_nan": bool(re.search(r"FOAM FATAL (?:ERROR|IO ERROR)|Floating point exception|\bnan\b|\binf\b", solver_log.read_text(), re.I)),
+        "fatal_or_nan": any(classify_health_lines(solver_log.read_text().splitlines()).values()),
     }
     (result_dir / "metrics.json").write_text(json.dumps(result, indent=2) + "\n")
 
