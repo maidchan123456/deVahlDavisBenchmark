@@ -1,0 +1,6 @@
+{"iteration": 6000, "stage": "CONVERGENCE_NOT_REACHED", "failed_checks": ["QoI", "residuals"]}
+{"iteration": 9000, "stage": "CONVERGENCE_NOT_REACHED", "failed_checks": ["QoI", "residuals", "heat_trend"]}
+{"iteration": 12000, "stage": "CONVERGENCE_NOT_REACHED", "failed_checks": ["residuals"]}
+{"iteration": 15000, "stage": "CONVERGENCE_NOT_REACHED", "failed_checks": ["heat_trend"]}
+{"iteration": 18000, "stage": "GATE_D_PASS", "failed_checks": []}
+{"case_id": "B-Ra1e4-fine", "Gate_D": "PASS", "final_iteration": 18000}

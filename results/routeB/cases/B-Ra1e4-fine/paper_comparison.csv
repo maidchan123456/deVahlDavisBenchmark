@@ -1,0 +1,13 @@
+quantity,calculated,reference,signed_difference,absolute_relative_error,absolute_position_error,interpretation
+Nu_bar_cavity,2.245720240746932,2.243,0.002720240746932223,0.001212768946470006,,relative quantity error
+Nu_bar_half,2.2455970053366445,2.243,0.002597005336644642,0.0011578267216427296,,relative quantity error
+Nu_bar_0,2.245611060789088,2.238,0.007611060789087798,0.003400831451781858,,relative quantity error
+Nu_hot_local_max,3.5339850384370153,3.528,0.005985038437015255,0.0016964394662741654,,relative quantity error
+Nu_hot_local_max_Z,0.14387443736805236,0.143,0.000874437368052372,0.006114946629736868,0.000874437368052372,position diagnostic; formal position criterion uses absolute position error
+Nu_hot_local_min,0.5848016672344443,0.586,-0.0011983327655556986,0.0020449364599926597,,relative quantity error
+Nu_hot_local_min_Z,1.0,1.0,0.0,0.0,0.0,position diagnostic; formal position criterion uses absolute position error
+Umax,16.181023277126965,16.178,0.0030232771269638192,0.00018687582686140555,,relative quantity error
+Umax_Z,0.8220214843750001,0.823,-0.0009785156249998428,0.0011889618772780593,0.0009785156249998428,position diagnostic; formal position criterion uses absolute position error
+Wmax,19.61933076302222,19.617,0.0023307630222184628,0.00011881342826214317,,relative quantity error
+Wmax_X,0.12182617187500001,0.119,0.002826171875000019,0.02374934348739512,0.002826171875000019,position diagnostic; formal position criterion uses absolute position error
+Nu_bar_1,2.2456111099077134,,,,,relative quantity error

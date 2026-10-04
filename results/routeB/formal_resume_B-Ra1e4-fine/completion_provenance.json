@@ -1,0 +1,46 @@
+{
+  "initial_HEAD": "fe823fd399ea8b5f38b346b0fe2ecef7f0022aac",
+  "final_status": {
+    "TARGET_CASE": "B-Ra1e4-fine",
+    "TARGET_CASE_EXECUTED": "YES",
+    "TARGET_CASE_GATE_D": "PASS",
+    "TARGET_CASE_ACCEPTED": "YES",
+    "ACCEPTED_FINAL_ITERATION": 18000,
+    "RA1E4_GATE_E": "PASS",
+    "RA1E4_GATE_F": "FAIL",
+    "RA1E4_NU_GRID_CONVERGENCE": "MONOTONIC",
+    "RA1E4_UMAX_GRID_CONVERGENCE": "MONOTONIC",
+    "RA1E4_WMAX_GRID_CONVERGENCE": "NON_MONOTONIC",
+    "RA1E4_NEEDS_320": "YES",
+    "GATE_G_INVESTIGATION_STATUS": "FROZEN_PENDING_POST_MATRIX_REVIEW",
+    "GATE_G_BLOCKS_MATRIX_EXECUTION": "NO",
+    "GATE_G_CRITERIA_MODIFIED": "NO",
+    "TAU_MEAN": "UNRESOLVED",
+    "FORMAL_NUMERICAL_SPEC_CHANGED": "NO",
+    "MICROCASE_SOLVER_EXECUTED": "NO",
+    "MATRIX_ACCEPTED_COUNT": "6/12",
+    "NEXT_CASE": "B-Ra1e5-coarse",
+    "USER_DECISION_REQUIRED": "YES"
+  },
+  "updated_output_sha256": {
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/full_matrix_status.json": "56dcc3d26a771761d68d4138af0b5975e3fd762da6f5795bb021dc017bf7cc08",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/full_matrix_manifest.json": "add55e5d9fab69c68976bbf98f77a497749e1e0618c71b4e46193d66c1a23eb0",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/benchmark_summary.csv": "ea055ec3173ce6bfa0845447e9361c8b399775abaef7577cd7e49564d055e84a",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/conservation.csv": "dfcfb205cdd96c4809b0205fcc4a96b46fb60fb48c4b5e4e1e19ec9800adf856",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/grid_convergence.csv": "ede8e2aa5aee17b31050930399312d448e93001bf58491d49c41072f0b5f59b9",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/cases/B-Ra1e4-fine/metrics.json": "573f8c95d478bd3f2d1ea2a8ea14e077b879d09bd95b6da9f4277b924a1c568a",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/cases/B-Ra1e4-fine/gateG_diagnostics.json": "2e59fd18358f2f32afc7df6524a2cf183f665282faac1baf3733c344d5477a61",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/cases/B-Ra1e4-fine/paper_comparison.csv": "c76d6e97231a5fa9d74b3eac7ba3e2d478029ec4cdee70f58b7651ed6c93642a"
+  },
+  "workflow_script_sha256": {
+    "continue_matrix_case.py": "2330204192c76e6ccabc2f50af6e5b8ec7e80fb6ed43e430e53957c0139efc86",
+    "publish_matrix_case.py": "699e3b56564d8f94427697d6b840e386c95ae5a4f2b2a8a0b08e322e88a8434d"
+  },
+  "validation_path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/formal_resume_B-Ra1e4-fine/validation.json",
+  "intentional_tracked_changes": [
+    "Scripts/routeB/publish_matrix_case.py",
+    "five matrix result files"
+  ],
+  "unintended_tracked_changes": false,
+  "git_add_commit_push_performed": false
+}

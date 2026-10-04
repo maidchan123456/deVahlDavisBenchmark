@@ -1,0 +1,63 @@
+{
+  "case_id": "B-Ra1e4-fine",
+  "route": "B",
+  "generated_at": "2026-10-04T11:25:30.612764+09:00",
+  "case_path": "/home/mirai/OpenFOAM/mirai-6/run/deVahlDavisBenchmark/cases/routeB/Ra1e4_fine",
+  "grid": [
+    160,
+    160,
+    1
+  ],
+  "geometry_m": {
+    "L": 0.1,
+    "W": 0.001
+  },
+  "properties": {
+    "TRef_K": 300.0,
+    "Th_K": 300.5,
+    "Tc_K": 299.5,
+    "DeltaT_K": 1.0,
+    "rho0_reference_kg_m3": 1.0,
+    "mu_reference_Pa_s": 1e-05,
+    "nu_m2_s": 1e-05,
+    "beta_1_K": 0.001,
+    "Pr_input": 0.71,
+    "Prt": 0.85,
+    "alpha0_m2_s": 1.4084507042253522e-05
+  },
+  "gravity_m_s2": [
+    0.0,
+    -1.408450704225352,
+    0.0
+  ],
+  "gmag_m_s2": 1.408450704225352,
+  "Ra_target": 10000.0,
+  "Ra_actual": 10000.0,
+  "Pr_actual": 0.71,
+  "beta_DeltaT": 0.001,
+  "pRefCell": 12719,
+  "pRefCellCentre_m": [
+    0.0496875,
+    0.0496875,
+    0.0005
+  ],
+  "pRefValue_m2_s2": 0.0,
+  "hRef_m": 0.0,
+  "endTime_iterations": 3000,
+  "model": "Foundation v6 buoyantBoussinesqSimpleFoam; Newtonian; laminar/Stokes; no radiation/MRF/fvOptions",
+  "pressure": "kinematic p and p_rgh; input p_rgh=0; p generated internally as p_rgh+rhok*gh; no 0/p",
+  "input_sha256": {
+    "0/T": "707cdd899fb6decc39beaadcb59b8ad4ca8247a6b768b179625fa19dcf0e66b3",
+    "0/U": "ad122c8aa24172a9c82002b6d6fb0ea6ea7fe85f3b55a12f993a86e74a71c16d",
+    "0/alphat": "67990c5ef8837c1c5c8be88c71c617ff363f57ba5f365ae985c4d47955e86955",
+    "0/p_rgh": "fb7b65387f86b04e0608b9997f5f08f295cef41bf32ce0dff3d2f5ecfd886c87",
+    "constant/g": "f8490ec83348452ede89e59d5e2598a17f52950a1187540b11212acefa97936b",
+    "constant/hRef": "de584c87bcdd3bc4958c5ac9f701d9ae0ab3ff2462e478180b1e58604b3deb30",
+    "constant/transportProperties": "8aa8ea4ad47f60b2e054c9b505cef27508155eb5b8f84c6008e08dd473f15b64",
+    "constant/turbulenceProperties": "4f816c5a682c5c842f930b88d5e0b06d4f831ba8eed4efc72b6a9b067fe8cf39",
+    "system/blockMeshDict": "8d257dd572ede0f09709f0902e5f471de16334929497d8113cee0a0c14e2a2f6",
+    "system/controlDict": "433d12eeb7e7143628830598a51854506e90ed1dc1261ab5847424cc11cfabf5",
+    "system/fvSchemes": "3bedc2642ace9a13843ad341ca92ad1b8320ab5ad46c8f2f32ad5759c191d1eb",
+    "system/fvSolution": "a6fafe4fa039d0d6b814aa802d96280acd099df73c77e34df02abd47916dc701"
+  }
+}

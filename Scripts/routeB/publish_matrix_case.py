@@ -3,6 +3,7 @@
 import argparse
 import csv
 import json
+import math
 from datetime import datetime
 from pathlib import Path
 
@@ -108,11 +109,52 @@ def main():
                Rwin_Wmax=metrics['Rwin']['Vmax'],
                maximum_final_normalized_residual=max(metrics['final_initial_residuals'].values()))
     grids = list(csv.DictReader((OUT/'grid_convergence.csv').open()))
+    fine = cid.endswith('-fine')
+    ra_key = str(int(generated['Ra_target']))
+    evaluations = {}
     for g in grids:
-        if int(g['Ra_target']) == int(generated['Ra_target']):
+        if not fine and int(g['Ra_target']) == int(generated['Ra_target']):
             g.update(medium=metrics[g['quantity']] if passed else '', Gate_F='NOT_EVALUATED',
                      reason='Two accepted grids available; fine not executed. Three-grid evaluation deferred.' if passed
                      else 'Medium Gate D failed; no three-grid evaluation.')
+    if fine and passed:
+        comparisons = metrics['paper_comparison_like_for_like']
+        e_checks = {key:comparisons[key]['absolute_relative_error'] <= .01
+                    for key in ('Nu_bar_cavity','Umax','Wmax')}
+        e_checks.update({key:comparisons[key]['absolute_position_error'] <= .01
+                         for key in ('Umax_Z','Wmax_X')})
+        row['Gate_E'] = 'PASS' if all(e_checks.values()) else 'FAIL'
+        evaluations['E'] = dict(checks=e_checks, criteria_source='Scripts/routeB/finalize_full_matrix.py',
+                                comparisons=comparisons)
+        prefix = cid.rsplit('-',1)[0]
+        levels = {}
+        for level in ('coarse','medium'):
+            rec = manifest['cases'][prefix+'-'+level]
+            assert rec['Gate_D'] == 'PASS', 'Three accepted grids required'
+            levels[level] = json.loads(Path(rec['metrics_path']).read_text())
+        f_checks = []
+        for g in grids:
+            if str(g['Ra_target']) != ra_key:
+                continue
+            quantity = g['quantity']
+            c,m,f = levels['coarse'][quantity],levels['medium'][quantity],metrics[quantity]
+            d32,d21 = c-m,m-f
+            monotonic = d32*d21 > 0
+            p = math.log(abs(d32/d21),2) if monotonic else None
+            valid = p is not None and math.isfinite(p) and p > 0
+            fm = abs((f-m)/f)
+            gci = 3*fm/(2**p-1) if valid else None
+            passed_f = valid and fm <= .01 and gci <= (.015 if quantity=='Nu_bar_cavity' else .02)
+            g.update(coarse=c,medium=m,fine=f,fine_medium_difference=fm,
+                     convergence_type='monotonic' if monotonic else ('oscillatory' if d32*d21 < 0 else 'other'),
+                     p_obs=p if valid else '',GCI=gci if valid else '',
+                     Gate_F='PASS' if passed_f else 'FAIL',needs_320=not valid,
+                     reason='Existing three-grid thresholds applied; no 320 run performed.' if valid
+                     else 'Nonmonotonic or undefined/nonpositive observed order; no 320 run performed.')
+            f_checks.append(passed_f)
+        evaluations['F'] = [g.copy() for g in grids if str(g['Ra_target']) == ra_key]
+        state['formal_Ra_gates'][ra_key] = dict(E=row['Gate_E'],F='PASS' if all(f_checks) else 'FAIL',
+                                             G=diagnostics['GATE_G_FORMAL_STATUS'])
     conservation = list(csv.DictReader((OUT/'conservation.csv').open()))
     conservation = [r for r in conservation if r.get('matrix_case_id') != cid]
     cons = {k: row[k] for k in ['case_id','matrix_case_id','source_case_id','reused_existing_solver_result',
@@ -140,14 +182,27 @@ def main():
                  FULL_MATRIX_RESUME='YES' if passed else 'NO', new_solver_runs_this_invocation=1,
                  continuation_solver_runs_this_invocation=len(history)-1,
                  GATE_G_INVESTIGATION_STATUS='FROZEN_PENDING_POST_MATRIX_REVIEW', GATE_G_BLOCKS_MATRIX_EXECUTION='NO',
-                 required_user_decision='Authorize B-Ra1e4-fine separately; this invocation ran only B-Ra1e4-medium.' if passed
+                 required_user_decision=('Authorize the next case separately; this invocation ran only '+cid+'.') if passed
                  else 'Gate D not reached within the bounded continuation policy; review before further work.')
     manifest.update(generated_at=datetime.now().astimezone().isoformat(), status=state['status'],
                     FULL_MATRIX_RESUME=state['FULL_MATRIX_RESUME'], solver_runs_this_invocation=1,
                     continuation_solver_runs_this_invocation=len(history)-1,
                     GATE_G_INVESTIGATION_STATUS=state['GATE_G_INVESTIGATION_STATUS'], GATE_G_BLOCKS_MATRIX_EXECUTION='NO')
+    if fine and passed:
+        manifest['formal_Ra_gates'] = state['formal_Ra_gates']
+        manifest[cid.rsplit('-',1)[0].removeprefix('B-')+'_gate_evaluations'] = evaluations
+        state[cid.rsplit('-',1)[0].removeprefix('B-')+'_needs_320'] = any(g['needs_320'] for g in evaluations['F'])
+        record.update(Gate_E=state['formal_Ra_gates'][ra_key]['E'],
+                      Gate_F=state['formal_Ra_gates'][ra_key]['F'],
+                      needs_320=state[cid.rsplit('-',1)[0].removeprefix('B-')+'_needs_320'])
+        if record['needs_320']:
+            state['needs_320'] = True
+            state['needs_320_reason'] = 'Existing Ra=1000 findings retained; Ra='+ra_key+' has a nonmonotonic or invalid-order quantity. See grid_convergence.csv; no 320 run performed.'
+            state['required_user_decision'] = 'Review the 320-grid follow-up in a separate task; this invocation executed only '+cid+'.'
+        manifest['limitation'] = 'Full 12-point matrix incomplete. Accepted fine case '+cid+' has Gate E '+record['Gate_E']+' and Gate F '+record['Gate_F']+'. Gate G review remains frozen; no extra grid or other case executed.'
     assert state['formal_Ra_gates']['1000']['G'] == 'FAIL'
-    assert state['formal_Ra_gates']['10000']['E'] == state['formal_Ra_gates']['10000']['F'] == 'NOT_EVALUATED'
+    if not fine:
+        assert state['formal_Ra_gates'][ra_key]['E'] == state['formal_Ra_gates'][ra_key]['F'] == 'NOT_EVALUATED'
     write_csv(OUT/'benchmark_summary.csv', summaries)
     write_csv(OUT/'grid_convergence.csv', grids)
     write_csv(OUT/'conservation.csv', conservation)
