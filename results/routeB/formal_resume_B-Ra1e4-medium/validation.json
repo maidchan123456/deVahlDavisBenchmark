@@ -1,0 +1,13 @@
+{
+  "protected_file_hashes": "PASS",
+  "protected_file_count": 240,
+  "existing_case_records": "UNCHANGED",
+  "existing_summary_and_conservation_rows": "UNCHANGED",
+  "existing_Ra1e3_grid_rows": "UNCHANGED",
+  "formal_Ra_gates": "UNCHANGED",
+  "target_Gate_D": "PASS",
+  "accepted_count": 5,
+  "other_case_execution": "NONE",
+  "microcase_solver_executed": false,
+  "formal_numerical_spec_changed": false
+}

@@ -1,0 +1,20 @@
+# Route B Gate G investigation freeze
+
+This is a research workflow decision, not a specification change. The methodological investigation is frozen, not resolved. Full matrix completion now has priority.
+
+- GATE_G_INVESTIGATION_STATUS: FROZEN_PENDING_POST_MATRIX_REVIEW
+- resolved: False
+- CURRENT_FORMAL_RA1E3_GATE_G: FAIL
+- GATE_G_CRITERIA_MODIFIED: NO
+- TAU_MEAN: UNRESOLVED
+- CANDIDATE_B_STATUS: PROVISIONAL
+- GATE_G_BLOCKS_MATRIX_EXECUTION: NO
+- epsilon_phi_operator_independent_verification: PASS
+- epsilon_v_and_legacy_epsilon_m: Reconstructed cell-velocity divergence is a different operator from solver-native pressure-corrected face-flux divergence.
+- restart_evidence: Restart effect detected; the additional 15000 restart was not necessary for the variation band.
+- pressure_tolerance_evidence: Strong relationship between pressure tolerance and the variation band; tolerance is not itself an epsilon_phi threshold.
+- pressure_three_level_comparison: INCONCLUSIVE: P12 reached native steady early; the prespecified late window was not observed.
+- further_microcase_tuning: DEFERRED
+- research_priority: Complete the formal full matrix with unchanged numerical specification and Gate D.
+- Gate_G_diagnostics: Continue recording for each formal case; unresolved thresholds do not block matrix execution.
+- final_Gate_G_specification: Revisit after full matrix completion.
