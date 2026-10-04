@@ -110,13 +110,14 @@ def main():
                maximum_final_normalized_residual=max(metrics['final_initial_residuals'].values()))
     grids = list(csv.DictReader((OUT/'grid_convergence.csv').open()))
     fine = cid.endswith('-fine')
+    level = cid.rsplit('-',1)[1]
     ra_key = str(int(generated['Ra_target']))
     evaluations = {}
     for g in grids:
         if not fine and int(g['Ra_target']) == int(generated['Ra_target']):
-            g.update(medium=metrics[g['quantity']] if passed else '', Gate_F='NOT_EVALUATED',
-                     reason='Two accepted grids available; fine not executed. Three-grid evaluation deferred.' if passed
-                     else 'Medium Gate D failed; no three-grid evaluation.')
+            g.update(**{level:metrics[g['quantity']] if passed else ''}, Gate_F='NOT_EVALUATED',
+                     reason='Three accepted grids not yet available; three-grid evaluation deferred.' if passed
+                     else level+' Gate D failed; no three-grid evaluation.')
     if fine and passed:
         comparisons = metrics['paper_comparison_like_for_like']
         e_checks = {key:comparisons[key]['absolute_relative_error'] <= .01

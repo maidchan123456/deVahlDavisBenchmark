@@ -1,0 +1,54 @@
+{
+  "epsilon_phi_mean": 1.996148481037134e-10,
+  "epsilon_phi_max": 2.033788040969705e-09,
+  "epsilon_phi_P95": 5.012333259012155e-10,
+  "epsilon_phi_P99": 7.547049416462156e-10,
+  "definition": "L*abs(sum oriented saved pressure-corrected face phi / cell volume)/max cell speed",
+  "normalization_Umax_m_s": 0.009702539928273994,
+  "boundary_patches": {
+    "hotWall": {
+      "net_volume_flux_m3_s": -8.271806125530277e-25,
+      "absolute_volume_flux_m3_s": 2.481541837659083e-24
+    },
+    "coldWall": {
+      "net_volume_flux_m3_s": 2.378144261089954e-24,
+      "absolute_volume_flux_m3_s": 4.239300639334266e-24
+    },
+    "bottomWall": {
+      "net_volume_flux_m3_s": 0.0,
+      "absolute_volume_flux_m3_s": 0.0
+    },
+    "topWall": {
+      "net_volume_flux_m3_s": 0.0,
+      "absolute_volume_flux_m3_s": 0.0
+    },
+    "front": {
+      "type": "empty",
+      "net_volume_flux_m3_s": 0.0
+    },
+    "back": {
+      "type": "empty",
+      "net_volume_flux_m3_s": 0.0
+    }
+  },
+  "boundary_net_volume_flux_m3_s": 1.5509636485369262e-24,
+  "global_signed_div_phi_1_s": -3.8903338184134573e-19,
+  "flux_balance_closure_m3_s": -5.4412974669503844e-24,
+  "final_solver_log_continuity": {
+    "sum_local": 1.93677055504563e-11,
+    "global": 1.258542377302337e-18,
+    "cumulative": -4.587278720911858e-16
+  },
+  "mean_abs_div_phi_1_s": 1.936771034002628e-11,
+  "mean_abs_div_U_1_s": 0.000755325639477098,
+  "epsilon_phi": 1.9961484810371346e-10,
+  "epsilon_v": 0.007784823819956849,
+  "epsilon_m": 0.007784823819956849,
+  "mass_relation": "rho0 is constant, so normalized mass- and volume-divergence metrics are identical; solver phi is volume flux",
+  "theta_L2_relative": 7.144068069533122e-09,
+  "velocity_L2_relative": 1.5434839519958746e-08,
+  "method": "paired cell centres under 180-degree rotation; RMS defect divided by RMS original theta or in-plane velocity magnitude",
+  "heat_imbalance": 7.618045511667686e-09,
+  "section_Nu_max_relative_deviation_from_half": 1.0987354215310883e-08,
+  "GATE_G_FORMAL_STATUS": "NOT_EVALUATED_UNDER_FROZEN_REVIEW"
+}

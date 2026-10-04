@@ -1,0 +1,609 @@
+[
+  {
+    "iteration": 3000,
+    "field_sha256": {
+      "U": "9485dd047803e18594d94434deb7c3f2c3398177b53789941274437f0b113be9",
+      "alphat": "207664da8b570eb683e0fb9defa54aee68890dd925c5f9cba69593f24e09925f",
+      "phi": "45b69bb1dcf2bf7187914a9712029aebcb533e74e7ba7c3b6ebf508ce426438d",
+      "T": "a54abf7395b99f8db0c8d72f2bfc4e9db7539f92d816c162f1487be422c74c64",
+      "p": "dbfd0767e36d03d44cfd09965aa76fe5139fe5628c0c34048271ce40a282cafb",
+      "p_rgh": "944a412c5e450314d70937b581d0d258b69da6b94a99ed40479e8fa6820b5e63"
+    },
+    "input_sha256": {
+      "0/T": "707cdd899fb6decc39beaadcb59b8ad4ca8247a6b768b179625fa19dcf0e66b3",
+      "0/U": "ad122c8aa24172a9c82002b6d6fb0ea6ea7fe85f3b55a12f993a86e74a71c16d",
+      "0/alphat": "67990c5ef8837c1c5c8be88c71c617ff363f57ba5f365ae985c4d47955e86955",
+      "0/p_rgh": "fb7b65387f86b04e0608b9997f5f08f295cef41bf32ce0dff3d2f5ecfd886c87",
+      "constant/g": "4be6d6e64952fd18bea299353cb22a48e14e0182c0540ebeabcc8db4e62a4611",
+      "constant/hRef": "de584c87bcdd3bc4958c5ac9f701d9ae0ab3ff2462e478180b1e58604b3deb30",
+      "constant/transportProperties": "8aa8ea4ad47f60b2e054c9b505cef27508155eb5b8f84c6008e08dd473f15b64",
+      "constant/turbulenceProperties": "4f816c5a682c5c842f930b88d5e0b06d4f831ba8eed4efc72b6a9b067fe8cf39",
+      "system/blockMeshDict": "06eca661844863116a426eb21d1688ed7a9ec8973d98ec96f9744d15368128e1",
+      "system/controlDict": "433d12eeb7e7143628830598a51854506e90ed1dc1261ab5847424cc11cfabf5",
+      "system/fvSchemes": "3bedc2642ace9a13843ad341ca92ad1b8320ab5ad46c8f2f32ad5759c191d1eb",
+      "system/fvSolution": "947eaa9ebec112969269073376ff8f9cc857a9928f1793e505f58e3cdb7c9758"
+    },
+    "mesh_sha256": {
+      "constant/polyMesh/faces": "14ebb88083f45f9b20e1a654410e477aad3d9b334bcc28fc151e1417a97b2fe2",
+      "constant/polyMesh/points": "608ba95f30ca4ad10cdef9dd8e233b138759a8bf922220c85771d2c806c001b9",
+      "constant/polyMesh/boundary": "05b5bac4e06222719db7405b4e37ddfc52738afe54896b7e525fe7175b7f3bfd",
+      "constant/polyMesh/neighbour": "d2e5e7ec4cbfbb9e6969b8a8af580d55fe70a9f21e784e882ca6fa1d32f9165c",
+      "constant/polyMesh/owner": "8beef1f197482b84bffa5490200b2299fd94b74ce7bc3d62ec0e1fac8057cbd2"
+    },
+    "log_sha256": {
+      "log.buoyantBoussinesqSimpleFoam": "e36f31cc37aceb639893dcc7d336e3bdf446769852520edb5776cadce4cacf26",
+      "log.blockMesh": "336544ed191d487f66e9b94b6d789a69203faf7eaad92b3f53fa5fe2955a4184",
+      "log.checkMesh": "917f03678cc90896669d0d0f5b0253d5bce5b4b29c9ce1e70b47b6f5676a7847",
+      "log.full_matrix_runner": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "log.analyze_case": "73d2c45bcec20c9418f4b619bc818c422b26ccd97f5285871a1a7d9998aeb7ad",
+      "log.environment": "f1f0ca336937372f5073152a25841438dab9bec33e612e9045349ec15aab48ca"
+    },
+    "Gate_D_checks": {
+      "normal_exit": true,
+      "finite_execution": true,
+      "window": true,
+      "samples": true,
+      "QoI": true,
+      "residuals": true,
+      "heat_trend": false
+    },
+    "Gate_D": "FAIL",
+    "metrics": {
+      "case_id": "B-Ra1e5-coarse",
+      "final_iteration": 3000,
+      "Nu_bar_0": 4.6162877569570355,
+      "Nu_bar_half": 4.616287727394072,
+      "Nu_bar_cavity": 4.624363619563258,
+      "Nu_bar_1": 4.616287820838238,
+      "Nu_bar_cavity_from_section_trapezoid": 4.616287767307723,
+      "Nu_bar_cavity_discrete_method_difference": 0.00807585225553531,
+      "Nu_bar_cavity_discrete_method_difference_legacy_semantics": "signed primary minus section-trapezoid; use the explicit absolute/relative fields for diagnostics",
+      "Nu_bar_cavity_method_absolute_difference": 0.00807585225553531,
+      "Nu_bar_cavity_method_relative_difference": 0.001746370510608338,
+      "Nu_bar_cavity_method_relative_difference_denominator": "abs(Nu_bar_cavity), where Nu_bar_cavity is the primary cell-volume quadrature",
+      "Nu_bar_0_path1": 4.6162877569570355,
+      "Nu_bar_0_path2": 4.649964784416923,
+      "Nu_bar_1_path1": 4.616287820838238,
+      "Nu_bar_1_path2": 4.649964854817512,
+      "Nu_hot_B1": 4.6162877569570355,
+      "Nu_hot_B2": 4.649964784416923,
+      "Nu_cold_B1": 4.616287820838238,
+      "Nu_cold_B2": 4.649964854817512,
+      "Nu_path_relative_difference": 0.007268749333319973,
+      "heat_imbalance": 1.383821925132172e-08,
+      "section_Nu_max_relative_deviation_from_half": 2.077595838129767e-08,
+      "paper_Nu_definition": "Q=U*theta-dtheta/dX",
+      "paper_reference_file": "reference/de_vahl_davis_table_v.csv",
+      "paper_Nu_discretization": "walls: B1 orthogonal patch snGrad; internal vertical faces: saved volume flux phi times linearly interpolated theta plus two-cell orthogonal conductive flux integrated with face area; cavity: cell-volume U*theta quadrature plus exact imposed-wall conductive integral 1",
+      "Nu_hot_local_max": 8.142914992618808,
+      "Nu_hot_local_max_Z": 0.07255754981419385,
+      "Nu_hot_local_min": 0.7154410520361125,
+      "Nu_hot_local_min_Z": 1.0,
+      "Nu_max": 8.142914992618808,
+      "Z_at_Nu_max": 0.07255754981419385,
+      "Nu_min": 0.7154410520361125,
+      "Z_at_Nu_min": 1.0,
+      "Nu_hot_local_raw_max": 8.132696836919424,
+      "Nu_hot_local_raw_max_Z": 0.0625,
+      "Nu_hot_local_raw_min": 0.7184273732309521,
+      "Nu_hot_local_raw_min_Z": 0.9875,
+      "Nu_hot_local_extrema_method": "fixed local quartic through five adjacent face-centre values; derivative root inside the local interval; endpoint evaluated by the same quartic only when the five-point window touches it",
+      "paper_comparison_like_for_like": {
+        "Nu_bar_cavity": {
+          "calculated": 4.624363619563258,
+          "reference": 4.519,
+          "signed_relative_difference": 0.023315693640906864,
+          "absolute_relative_error": 0.023315693640906864,
+          "error": 0.023315693640906864,
+          "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+        },
+        "Nu_bar_half": {
+          "calculated": 4.616287727394072,
+          "reference": 4.519,
+          "signed_relative_difference": 0.021528596458081823,
+          "absolute_relative_error": 0.021528596458081823,
+          "error": 0.021528596458081823,
+          "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+        },
+        "Nu_bar_0": {
+          "calculated": 4.6162877569570355,
+          "reference": 4.509,
+          "signed_relative_difference": 0.02379413549723557,
+          "absolute_relative_error": 0.02379413549723557,
+          "error": 0.02379413549723557,
+          "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+        },
+        "Nu_hot_local_max": {
+          "calculated": 8.142914992618808,
+          "reference": 7.717,
+          "signed_relative_difference": 0.05519178341568073,
+          "absolute_relative_error": 0.05519178341568073,
+          "error": 0.05519178341568073,
+          "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+        },
+        "Nu_hot_local_max_Z": {
+          "calculated": 0.07255754981419385,
+          "reference": 0.081,
+          "signed_position_difference": -0.008442450185806152,
+          "absolute_position_error": 0.008442450185806152,
+          "error": -0.008442450185806152,
+          "error_legacy_semantics": "signed position difference; do not use for Gate judgement"
+        },
+        "Nu_hot_local_min": {
+          "calculated": 0.7154410520361125,
+          "reference": 0.729,
+          "signed_relative_difference": -0.018599379923028063,
+          "absolute_relative_error": 0.018599379923028063,
+          "error": -0.018599379923028063,
+          "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+        },
+        "Nu_hot_local_min_Z": {
+          "calculated": 1.0,
+          "reference": 1.0,
+          "signed_position_difference": 0.0,
+          "absolute_position_error": 0.0,
+          "error": 0.0,
+          "error_legacy_semantics": "signed position difference; do not use for Gate judgement"
+        },
+        "Umax": {
+          "calculated": 34.819249077846855,
+          "reference": 34.73,
+          "signed_relative_difference": 0.002569797807280692,
+          "absolute_relative_error": 0.002569797807280692,
+          "error": 0.002569797807280692,
+          "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+        },
+        "Umax_Z": {
+          "calculated": 0.862548828125,
+          "reference": 0.855,
+          "signed_position_difference": 0.007548828125000018,
+          "absolute_position_error": 0.007548828125000018,
+          "error": 0.007548828125000018,
+          "error_legacy_semantics": "signed position difference; do not use for Gate judgement"
+        },
+        "Wmax": {
+          "calculated": 68.86509019635255,
+          "reference": 68.59,
+          "signed_relative_difference": 0.004010645813566856,
+          "absolute_relative_error": 0.004010645813566856,
+          "error": 0.004010645813566856,
+          "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+        },
+        "Wmax_X": {
+          "calculated": 0.0625,
+          "reference": 0.066,
+          "signed_position_difference": -0.003500000000000003,
+          "absolute_position_error": 0.003500000000000003,
+          "error": -0.003500000000000003,
+          "error_legacy_semantics": "signed position difference; do not use for Gate judgement"
+        },
+        "Nu_bar_1": {
+          "calculated": 4.616287820838238,
+          "reference": null,
+          "error": null,
+          "note": "Table V contains no independent cold-wall mean reference"
+        }
+      },
+      "B1_method": "OpenFOAM v6 fixedValue patch snGrad formula (Twall-Towner)*deltaCoeffs, evaluated from actual patch and owner-cell T; orthogonal mesh deltaCoeffs=2/h; uniform face-area average. Used after postProcess grad(T) failed in the installed v6 OSHA1 dictionary-digest path.",
+      "B2_method": "independent quadratic through Tw,T1,T2 at inward coordinates 0,h/2,3h/2; derivative (-8Tw/3+3T1-T2/3)/h; Nu_hot=-L*dT/ds/DeltaT and Nu_cold=+L*dT/ds/DeltaT; face-centre rows only",
+      "Umax": 34.819249077846855,
+      "Umax_Z": 0.862548828125,
+      "Wmax": 68.86509019635255,
+      "Wmax_X": 0.0625,
+      "Umin": -34.81924931194423,
+      "Umin_Z": 0.137451171875,
+      "Wmin": -68.86509000964067,
+      "Wmin_X": 0.9375,
+      "Umax_Y": 0.862548828125,
+      "Vmax": 68.86509019635255,
+      "Vmax_X": 0.0625,
+      "Umin_Y": 0.137451171875,
+      "Vmin": -68.86509000964067,
+      "Vmin_X": 0.9375,
+      "centreline_method": "linear interpolation from two bracketing cell-centre lines to exact centreline, then 4097 uniform points including no-slip endpoints",
+      "max_dimensionless_velocity": 68.88803343495272,
+      "max_theta_analytic_error": 0.5711947690283751,
+      "temperature_range_K": [
+        299.5089803429995,
+        300.4910196578346
+      ],
+      "rhok_range": [
+        0.9995089803421654,
+        1.0004910196570005
+      ],
+      "alphat_max_abs_internal_m2_s": 0.0,
+      "alphat_max_abs_physical_patches_m2_s": 0.0,
+      "pressure": {
+        "p_dimension": "m2/s2",
+        "p_rgh_dimension": "m2/s2",
+        "p_min": -0.7041447214644275,
+        "p_max": 0.6692071506582863,
+        "p_rgh_min": 0.6861294315622891,
+        "p_rgh_max": 0.6872599613603004,
+        "p_at_ref_cell": 0.0,
+        "pRefCell": 779,
+        "actual_pRefCellCentre_m": [
+          0.04875,
+          0.04875,
+          0.0005
+        ],
+        "pRefCellCentre_error_m": 0.0,
+        "pRefValue_m2_s2": 0.0
+      },
+      "continuity": {
+        "mean_abs_div_phi_1_s": 1.7587197918703848e-11,
+        "mean_abs_div_U_1_s": 0.0007553256217056424,
+        "epsilon_phi": 1.812638552684256e-10,
+        "epsilon_v": 0.007784823643098881,
+        "epsilon_m": 0.007784823643098881,
+        "mass_relation": "rho0 is constant, so normalized mass- and volume-divergence metrics are identical; solver phi is volume flux"
+      },
+      "symmetry": {
+        "theta_L2_relative": 7.907043886675583e-09,
+        "velocity_L2_relative": 1.571970311075828e-08,
+        "method": "paired cell centres under 180-degree rotation; RMS defect divided by RMS original theta or in-plane velocity magnitude"
+      },
+      "final_initial_residuals": {
+        "Ux": 2.646505843999921e-09,
+        "Uy": 2.927260654460713e-09,
+        "T": 4.003824314356561e-09,
+        "p_rgh": 8.51065271669275e-08
+      },
+      "final_log_continuity": {
+        "sum_local": 1.758719385469408e-11,
+        "global": -8.48344804008209e-19,
+        "cumulative": -1.348380028152945e-16
+      },
+      "Rwin": {
+        "window_start_iteration": 2800,
+        "window_end_iteration": 3000,
+        "sample_times": [
+          2800,
+          2810,
+          2820,
+          2830,
+          2840,
+          2850,
+          2860,
+          2870,
+          2880,
+          2890,
+          2900,
+          2910,
+          2920,
+          2930,
+          2940,
+          2950,
+          2960,
+          2970,
+          2980,
+          2990,
+          3000
+        ],
+        "samples": 21,
+        "Nu": 1.509056818176369e-08,
+        "Nu_bar_0": 1.509056818176369e-08,
+        "Nu_legacy_wall_pair_monitor": 8.948844816830273e-09,
+        "Nu_bar_half": 5.0674304361846756e-08,
+        "primary_mean_Nu_candidate": "Nu_bar_half; legacy Gate D remains unchanged",
+        "Umax": 3.268541045488747e-08,
+        "Vmax": 8.39526899202691e-09,
+        "scales": {
+          "Nu": 1.0,
+          "Umax": 1.0,
+          "Vmax": 1.0
+        },
+        "heat_imbalance_start": 4.830847554161082e-09,
+        "heat_imbalance_end": 1.383821925132172e-08,
+        "heat_imbalance_linear_slope_per_iteration": 2.791555386995451e-11
+      },
+      "normal_exit": true,
+      "fatal_or_nan": false
+    }
+  },
+  {
+    "iteration": 6000,
+    "field_sha256": {
+      "U": "32e057f5bc15ae874980d297bb526040ec7e3e5df25f87963fbeda9ef410ed88",
+      "alphat": "6d40a357679c77f1d6324b15dc487f5322848ea0f0b5ca803ef23aa0a0579372",
+      "phi": "42da6242f2949d39b9d843ed0892e2dcf479c36ac58ce45c48d00d7aa5760b7e",
+      "T": "860b4d6a6b793cc5145ab6a00365e9dddd8f69419046f569a281402a56705319",
+      "p": "0a98bcf87c28415cad1fe49d477e2a2a0b34f505075c075ab5bc4e8860046003",
+      "p_rgh": "3e9eda010a2a98767d2c45ecc78e2a712d1f98f938752c6398ae9b97c0ae54e0"
+    },
+    "input_sha256": {
+      "0/T": "707cdd899fb6decc39beaadcb59b8ad4ca8247a6b768b179625fa19dcf0e66b3",
+      "0/U": "ad122c8aa24172a9c82002b6d6fb0ea6ea7fe85f3b55a12f993a86e74a71c16d",
+      "0/alphat": "67990c5ef8837c1c5c8be88c71c617ff363f57ba5f365ae985c4d47955e86955",
+      "0/p_rgh": "fb7b65387f86b04e0608b9997f5f08f295cef41bf32ce0dff3d2f5ecfd886c87",
+      "constant/g": "4be6d6e64952fd18bea299353cb22a48e14e0182c0540ebeabcc8db4e62a4611",
+      "constant/hRef": "de584c87bcdd3bc4958c5ac9f701d9ae0ab3ff2462e478180b1e58604b3deb30",
+      "constant/transportProperties": "8aa8ea4ad47f60b2e054c9b505cef27508155eb5b8f84c6008e08dd473f15b64",
+      "constant/turbulenceProperties": "4f816c5a682c5c842f930b88d5e0b06d4f831ba8eed4efc72b6a9b067fe8cf39",
+      "system/blockMeshDict": "06eca661844863116a426eb21d1688ed7a9ec8973d98ec96f9744d15368128e1",
+      "system/controlDict": "d7f816a9c34454b23d68a52d293cf73c006b42e4bb42c0656c2f7c46b3a9bdeb",
+      "system/fvSchemes": "3bedc2642ace9a13843ad341ca92ad1b8320ab5ad46c8f2f32ad5759c191d1eb",
+      "system/fvSolution": "947eaa9ebec112969269073376ff8f9cc857a9928f1793e505f58e3cdb7c9758"
+    },
+    "mesh_sha256": {
+      "constant/polyMesh/faces": "14ebb88083f45f9b20e1a654410e477aad3d9b334bcc28fc151e1417a97b2fe2",
+      "constant/polyMesh/points": "608ba95f30ca4ad10cdef9dd8e233b138759a8bf922220c85771d2c806c001b9",
+      "constant/polyMesh/boundary": "05b5bac4e06222719db7405b4e37ddfc52738afe54896b7e525fe7175b7f3bfd",
+      "constant/polyMesh/neighbour": "d2e5e7ec4cbfbb9e6969b8a8af580d55fe70a9f21e784e882ca6fa1d32f9165c",
+      "constant/polyMesh/owner": "8beef1f197482b84bffa5490200b2299fd94b74ce7bc3d62ec0e1fac8057cbd2"
+    },
+    "log_sha256": {
+      "log.buoyantBoussinesqSimpleFoam.initial0-3000": "e36f31cc37aceb639893dcc7d336e3bdf446769852520edb5776cadce4cacf26",
+      "log.analyze_case.6000": "1a85d44eecce87ac66009ab08a14808a92b34078ee219c8ca30b446e3f4c6c8b",
+      "log.buoyantBoussinesqSimpleFoam": "bc2e715bbd2dabcca6c04a8bbe03ff0722cd31858aac2ede42d186e698a66de4",
+      "log.blockMesh": "336544ed191d487f66e9b94b6d789a69203faf7eaad92b3f53fa5fe2955a4184",
+      "log.checkMesh": "917f03678cc90896669d0d0f5b0253d5bce5b4b29c9ce1e70b47b6f5676a7847",
+      "log.full_matrix_runner": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "log.analyze_case": "73d2c45bcec20c9418f4b619bc818c422b26ccd97f5285871a1a7d9998aeb7ad",
+      "log.environment": "f1f0ca336937372f5073152a25841438dab9bec33e612e9045349ec15aab48ca",
+      "log.buoyantBoussinesqSimpleFoam.continuation3000-6000": "9941e91eab1278cd987d8ec770d6cb43fb80577694f49c6937db79063cbfaa64"
+    },
+    "Gate_D": "PASS",
+    "Gate_D_checks": {
+      "normal_exit": true,
+      "finite_execution": true,
+      "window": true,
+      "samples": true,
+      "QoI": true,
+      "residuals": true,
+      "heat_trend": true
+    },
+    "metrics": {
+      "case_id": "B-Ra1e5-coarse",
+      "final_iteration": 6000,
+      "Nu_bar_0": 4.616287819891795,
+      "Nu_bar_half": 4.61628781164033,
+      "Nu_bar_cavity": 4.6243636549688,
+      "Nu_bar_1": 4.616287784724705,
+      "Nu_bar_cavity_from_section_trapezoid": 4.616287800050171,
+      "Nu_bar_cavity_discrete_method_difference": 0.008075854918629055,
+      "Nu_bar_cavity_discrete_method_difference_legacy_semantics": "signed primary minus section-trapezoid; use the explicit absolute/relative fields for diagnostics",
+      "Nu_bar_cavity_method_absolute_difference": 0.008075854918629055,
+      "Nu_bar_cavity_method_relative_difference": 0.0017463710731208794,
+      "Nu_bar_cavity_method_relative_difference_denominator": "abs(Nu_bar_cavity), where Nu_bar_cavity is the primary cell-volume quadrature",
+      "Nu_bar_0_path1": 4.616287819891795,
+      "Nu_bar_0_path2": 4.649964860501726,
+      "Nu_bar_1_path1": 4.616287784724705,
+      "Nu_bar_1_path2": 4.64996482097456,
+      "Nu_hot_B1": 4.616287819891795,
+      "Nu_hot_B2": 4.649964860501726,
+      "Nu_cold_B1": 4.616287784724705,
+      "Nu_cold_B2": 4.64996482097456,
+      "Nu_path_relative_difference": 0.007268750760744479,
+      "heat_imbalance": 7.618045511667686e-09,
+      "section_Nu_max_relative_deviation_from_half": 1.0987354215310883e-08,
+      "paper_Nu_definition": "Q=U*theta-dtheta/dX",
+      "paper_reference_file": "reference/de_vahl_davis_table_v.csv",
+      "paper_Nu_discretization": "walls: B1 orthogonal patch snGrad; internal vertical faces: saved volume flux phi times linearly interpolated theta plus two-cell orthogonal conductive flux integrated with face area; cavity: cell-volume U*theta quadrature plus exact imposed-wall conductive integral 1",
+      "Nu_hot_local_max": 8.142915551224467,
+      "Nu_hot_local_max_Z": 0.07255751221665037,
+      "Nu_hot_local_min": 0.7154414137164622,
+      "Nu_hot_local_min_Z": 1.0,
+      "Nu_max": 8.142915551224467,
+      "Z_at_Nu_max": 0.07255751221665037,
+      "Nu_min": 0.7154414137164622,
+      "Z_at_Nu_min": 1.0,
+      "Nu_hot_local_raw_max": 8.132697420310251,
+      "Nu_hot_local_raw_max_Z": 0.0625,
+      "Nu_hot_local_raw_min": 0.7184274248083966,
+      "Nu_hot_local_raw_min_Z": 0.9875,
+      "Nu_hot_local_extrema_method": "fixed local quartic through five adjacent face-centre values; derivative root inside the local interval; endpoint evaluated by the same quartic only when the five-point window touches it",
+      "paper_comparison_like_for_like": {
+        "Nu_bar_cavity": {
+          "calculated": 4.6243636549688,
+          "reference": 4.519,
+          "signed_relative_difference": 0.02331570147572466,
+          "absolute_relative_error": 0.02331570147572466,
+          "error": 0.02331570147572466,
+          "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+        },
+        "Nu_bar_half": {
+          "calculated": 4.61628781164033,
+          "reference": 4.519,
+          "signed_relative_difference": 0.021528615100758958,
+          "absolute_relative_error": 0.021528615100758958,
+          "error": 0.021528615100758958,
+          "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+        },
+        "Nu_bar_0": {
+          "calculated": 4.616287819891795,
+          "reference": 4.509,
+          "signed_relative_difference": 0.023794149454822534,
+          "absolute_relative_error": 0.023794149454822534,
+          "error": 0.023794149454822534,
+          "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+        },
+        "Nu_hot_local_max": {
+          "calculated": 8.142915551224467,
+          "reference": 7.717,
+          "signed_relative_difference": 0.0551918558020562,
+          "absolute_relative_error": 0.0551918558020562,
+          "error": 0.0551918558020562,
+          "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+        },
+        "Nu_hot_local_max_Z": {
+          "calculated": 0.07255751221665037,
+          "reference": 0.081,
+          "signed_position_difference": -0.008442487783349634,
+          "absolute_position_error": 0.008442487783349634,
+          "error": -0.008442487783349634,
+          "error_legacy_semantics": "signed position difference; do not use for Gate judgement"
+        },
+        "Nu_hot_local_min": {
+          "calculated": 0.7154414137164622,
+          "reference": 0.729,
+          "signed_relative_difference": -0.018598883790861165,
+          "absolute_relative_error": 0.018598883790861165,
+          "error": -0.018598883790861165,
+          "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+        },
+        "Nu_hot_local_min_Z": {
+          "calculated": 1.0,
+          "reference": 1.0,
+          "signed_position_difference": 0.0,
+          "absolute_position_error": 0.0,
+          "error": 0.0,
+          "error_legacy_semantics": "signed position difference; do not use for Gate judgement"
+        },
+        "Umax": {
+          "calculated": 34.81924998888706,
+          "reference": 34.73,
+          "signed_relative_difference": 0.00256982403936256,
+          "absolute_relative_error": 0.00256982403936256,
+          "error": 0.00256982403936256,
+          "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+        },
+        "Umax_Z": {
+          "calculated": 0.862548828125,
+          "reference": 0.855,
+          "signed_position_difference": 0.007548828125000018,
+          "absolute_position_error": 0.007548828125000018,
+          "error": 0.007548828125000018,
+          "error_legacy_semantics": "signed position difference; do not use for Gate judgement"
+        },
+        "Wmax": {
+          "calculated": 68.86509024083921,
+          "reference": 68.59,
+          "signed_relative_difference": 0.004010646462154907,
+          "absolute_relative_error": 0.004010646462154907,
+          "error": 0.004010646462154907,
+          "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+        },
+        "Wmax_X": {
+          "calculated": 0.0625,
+          "reference": 0.066,
+          "signed_position_difference": -0.003500000000000003,
+          "absolute_position_error": 0.003500000000000003,
+          "error": -0.003500000000000003,
+          "error_legacy_semantics": "signed position difference; do not use for Gate judgement"
+        },
+        "Nu_bar_1": {
+          "calculated": 4.616287784724705,
+          "reference": null,
+          "error": null,
+          "note": "Table V contains no independent cold-wall mean reference"
+        }
+      },
+      "B1_method": "OpenFOAM v6 fixedValue patch snGrad formula (Twall-Towner)*deltaCoeffs, evaluated from actual patch and owner-cell T; orthogonal mesh deltaCoeffs=2/h; uniform face-area average. Used after postProcess grad(T) failed in the installed v6 OSHA1 dictionary-digest path.",
+      "B2_method": "independent quadratic through Tw,T1,T2 at inward coordinates 0,h/2,3h/2; derivative (-8Tw/3+3T1-T2/3)/h; Nu_hot=-L*dT/ds/DeltaT and Nu_cold=+L*dT/ds/DeltaT; face-centre rows only",
+      "Umax": 34.81924998888706,
+      "Umax_Z": 0.862548828125,
+      "Wmax": 68.86509024083921,
+      "Wmax_X": 0.0625,
+      "Umin": -34.819249490841266,
+      "Umin_Z": 0.137451171875,
+      "Wmin": -68.8650902206286,
+      "Wmin_X": 0.9375,
+      "Umax_Y": 0.862548828125,
+      "Vmax": 68.86509024083921,
+      "Vmax_X": 0.0625,
+      "Umin_Y": 0.137451171875,
+      "Vmin": -68.8650902206286,
+      "Vmin_X": 0.9375,
+      "centreline_method": "linear interpolation from two bracketing cell-centre lines to exact centreline, then 4097 uniform points including no-slip endpoints",
+      "max_dimensionless_velocity": 68.88803349074536,
+      "max_theta_analytic_error": 0.5711947680876733,
+      "temperature_range_K": [
+        299.5089803416103,
+        300.4910196571899
+      ],
+      "rhok_range": [
+        0.9995089803428101,
+        1.0004910196583896
+      ],
+      "alphat_max_abs_internal_m2_s": 0.0,
+      "alphat_max_abs_physical_patches_m2_s": 0.0,
+      "pressure": {
+        "p_dimension": "m2/s2",
+        "p_rgh_dimension": "m2/s2",
+        "p_min": -0.7041447214759134,
+        "p_max": 0.6692071506495012,
+        "p_rgh_min": 0.6861294315546433,
+        "p_rgh_max": 0.6872599613491962,
+        "p_at_ref_cell": 0.0,
+        "pRefCell": 779,
+        "actual_pRefCellCentre_m": [
+          0.04875,
+          0.04875,
+          0.0005
+        ],
+        "pRefCellCentre_error_m": 0.0,
+        "pRefValue_m2_s2": 0.0
+      },
+      "continuity": {
+        "mean_abs_div_phi_1_s": 1.936771034002628e-11,
+        "mean_abs_div_U_1_s": 0.000755325639477098,
+        "epsilon_phi": 1.9961484810371346e-10,
+        "epsilon_v": 0.007784823819956849,
+        "epsilon_m": 0.007784823819956849,
+        "mass_relation": "rho0 is constant, so normalized mass- and volume-divergence metrics are identical; solver phi is volume flux"
+      },
+      "symmetry": {
+        "theta_L2_relative": 7.144068069533122e-09,
+        "velocity_L2_relative": 1.5434839519958746e-08,
+        "method": "paired cell centres under 180-degree rotation; RMS defect divided by RMS original theta or in-plane velocity magnitude"
+      },
+      "final_initial_residuals": {
+        "Ux": 2.375599752174005e-09,
+        "Uy": 2.454937412046059e-09,
+        "T": 3.550636324991695e-09,
+        "p_rgh": 8.681866191934442e-08
+      },
+      "final_log_continuity": {
+        "sum_local": 1.93677055504563e-11,
+        "global": 1.258542377302337e-18,
+        "cumulative": -4.587278720911858e-16
+      },
+      "Rwin": {
+        "window_start_iteration": 5800,
+        "window_end_iteration": 6000,
+        "sample_times": [
+          5800,
+          5810,
+          5820,
+          5830,
+          5840,
+          5850,
+          5860,
+          5870,
+          5880,
+          5890,
+          5900,
+          5910,
+          5920,
+          5930,
+          5940,
+          5950,
+          5960,
+          5970,
+          5980,
+          5990,
+          6000
+        ],
+        "samples": 21,
+        "Nu": 1.934774677980825e-08,
+        "Nu_bar_0": 1.934774677980825e-08,
+        "Nu_legacy_wall_pair_monitor": 9.961409764673585e-09,
+        "Nu_bar_half": 2.76210006941215e-08,
+        "primary_mean_Nu_candidate": "Nu_bar_half; legacy Gate D remains unchanged",
+        "Umax": 4.3949263834130855e-08,
+        "Vmax": 9.33233872785862e-09,
+        "scales": {
+          "Nu": 1.0,
+          "Umax": 1.0,
+          "Vmax": 1.0
+        },
+        "heat_imbalance_start": 3.7886929107695795e-09,
+        "heat_imbalance_end": 7.618045511667686e-09,
+        "heat_imbalance_linear_slope_per_iteration": -4.238440034570174e-12
+      },
+      "normal_exit": true,
+      "fatal_or_nan": false
+    }
+  }
+]
