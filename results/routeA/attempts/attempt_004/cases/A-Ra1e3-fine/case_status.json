@@ -1,0 +1,76 @@
+{
+  "case_id": "A-Ra1e3-fine",
+  "grid": [
+    160,
+    160,
+    1
+  ],
+  "computed": true,
+  "accepted": true,
+  "final_iteration": 18000,
+  "Gate_D": "PASS",
+  "segments": [
+    {
+      "end_iteration": 3000,
+      "path": "results/routeA/cases/A-Ra1e3-fine/segments/end_3000",
+      "Gate_D": "FAIL",
+      "failure_components": [
+        "QOI_RWIN_PASS",
+        "RESIDUAL_PASS",
+        "HEAT_TREND_PASS"
+      ],
+      "sealed_sha256_manifest": "fadb80dc0734e29738113cfc0873ecc656d081d330d8308f9cfb6dcd7f34a397"
+    },
+    {
+      "end_iteration": 6000,
+      "path": "results/routeA/cases/A-Ra1e3-fine/segments/end_6000",
+      "Gate_D": "FAIL",
+      "failure_components": [
+        "QOI_RWIN_PASS",
+        "RESIDUAL_PASS",
+        "HEAT_TREND_PASS"
+      ],
+      "sealed_sha256_manifest": "6d1f8d8e0485de3e6a3957ebb2c6dc7e7a18417c1f5ab9ec71f4462927fe4589"
+    },
+    {
+      "end_iteration": 9000,
+      "path": "results/routeA/cases/A-Ra1e3-fine/segments/end_9000",
+      "Gate_D": "FAIL",
+      "failure_components": [
+        "QOI_RWIN_PASS",
+        "RESIDUAL_PASS"
+      ],
+      "sealed_sha256_manifest": "81c1eeb97e698334fbe4460940aba1fc45401fef526dc314929d13b252b55726"
+    },
+    {
+      "end_iteration": 12000,
+      "path": "results/routeA/cases/A-Ra1e3-fine/segments/end_12000",
+      "Gate_D": "FAIL",
+      "failure_components": [
+        "RESIDUAL_PASS"
+      ],
+      "sealed_sha256_manifest": "e8cb9e83281341373ba09b6b0a25ae87eb5f9d1222cd18c3ca8b25639ff49df0"
+    },
+    {
+      "end_iteration": 15000,
+      "path": "results/routeA/cases/A-Ra1e3-fine/segments/end_15000",
+      "Gate_D": "FAIL",
+      "failure_components": [
+        "RESIDUAL_PASS"
+      ],
+      "sealed_sha256_manifest": "f903c139bb46ebeefca267266b6a9619b75deeb7dd92fd3ecc0f454b5007dcac"
+    },
+    {
+      "end_iteration": 18000,
+      "path": "results/routeA/cases/A-Ra1e3-fine/segments/end_18000",
+      "Gate_D": "PASS",
+      "failure_components": [],
+      "sealed_sha256_manifest": "1efae81f54dc616e673e12c283bdc6d2e87a354e991f1e96690b942b428c5c0b"
+    }
+  ],
+  "status": "ACCEPTED",
+  "case_reused": false,
+  "runtime_provenance": "PASS",
+  "OQ02": "PASS",
+  "Gate_D_failure_components": []
+}

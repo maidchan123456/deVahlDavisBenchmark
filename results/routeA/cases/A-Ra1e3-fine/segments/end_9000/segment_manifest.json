@@ -1,0 +1,377 @@
+{
+  "attempt": "004",
+  "case_id": "A-Ra1e3-fine",
+  "segment_start": 6000,
+  "end_iteration": 9000,
+  "contract_version": "1.3",
+  "contract_sha256": "227414aaff22a0f37bed234f6b26c0a296d18f592da641aa55f1c4a4538ff3f1",
+  "amendment_chain": [
+    {
+      "id": "Route A Execution Contract Amendment 001",
+      "path": "docs/routeA_execution_contract_amendment_001.json",
+      "sha256": "63769f59ab7e5ed49115120e4c34326795fc40a8413d07e6086446af3be2b352",
+      "parent": {
+        "version": "1.0",
+        "path": "docs/routeA_execution_contract.json",
+        "sha256": "33eb082f77f00b2330003ba8bafcb0438a24d7ec6b0bf456625741bfae63c936"
+      },
+      "snapshot_rule": "Full v1.0 snapshot plus Amendment 001; only classifier implementation and necessary version/artifact/attempt metadata differ."
+    },
+    {
+      "id": "Route A Execution Contract Amendment 002",
+      "path": "docs/routeA_execution_contract_amendment_002.json",
+      "sha256": "a8b2d80647f491d0ee06e434604b5d9a49d2d8e7ce7b622cfa19548e5f1a56eb",
+      "parent": {
+        "version": "1.1",
+        "path": "docs/routeA_execution_contract_v1.1.json",
+        "sha256": "dbd70320ceb3f20e4455c5d67d24b3dae40d2616a832438b23faa99c6b0b892b"
+      },
+      "snapshot_rule": "v1.0 + Amendment 001 + Amendment 002; unchanged numerical contract, canonical runtime checker added plus necessary metadata/reuse policy."
+    },
+    {
+      "id": "Route A Execution Contract Amendment 003",
+      "path": "docs/routeA_execution_contract_amendment_003.json",
+      "sha256": "c34d29178c7d6193f44efbfeb255855a8b82c62a7874201411a7de37fdbb92f7",
+      "parent": {
+        "version": "1.2",
+        "path": "docs/routeA_execution_contract_v1.2.json",
+        "sha256": "7db8d5b8217f009243cb884e291f3d7a09a699b4fe35073792cbaedb5bf7b7fe"
+      },
+      "snapshot_rule": "v1.0 + A001 + A002 + A003; unchanged scientific/numerical contract, analyzer order/key guard and necessary ownership/restart/version metadata."
+    }
+  ],
+  "analyzer_sha256": "e1f5da10349b997d858cc04802a04366a668e6af4cf51367569e198993e8e0ac",
+  "runtime_checker_sha256": "5055345c7e64758a4f902c81219e2dda2e5b9cdec22c3f22fc8297bbc1bb9e5a",
+  "input_sha256": {
+    "0/T": "2aa0b82fdbef9ea1d970d3135fdfeebb4253a2d69a3b0c5f69601e802af17a6a",
+    "0/U": "2d73c61cd16ca22f804a03a09a7cb9381881d1e5a2e679cbc8b589511bda42c6",
+    "0/p": "37f72f4d51d35ce0a24517d7ec642f1c5b0f4caf13d6a5bab0e8384a73661522",
+    "0/p_rgh": "7a474b49f9e53d8a275c7a8b37e18d9069e44f9fb0640bcbef816b5364efe1b1",
+    "constant/g": "5e58b612dd032115f3a833149e363c16f5b349499d4ed7fc0a73bfb1e53b58f9",
+    "constant/hRef": "b3cfc4ab0c5b5266283096fd98687c65930df337dedbeb34b67a5288c9946976",
+    "constant/momentumTransport": "3bfe7027873405f63753c0cec85e91c6069dafe94228154189d5b6616233200e",
+    "constant/pRef": "13e8b23d9a316804a134ea8abb6d385f120d64f3dc89ea40b3dcbf09956e8df1",
+    "constant/physicalProperties": "baea2c76140ca1481c1d0dc064e4fba44076f666de79f6162dfd5cfff4b440b4",
+    "constant/thermophysicalTransport": "9c550714c97c8fd84bbd68d80558826ba76a028d521e6cafbe15c1b20cd0d08e",
+    "system/blockMeshDict": "d21ce471d23a17969ff7541b01ae9b0278d9a3e973354373a1244f556c6ff15c",
+    "system/controlDict": "7a7c51f05ca31f812c26f0235877d72f8b35333b8ac51427d090387980c4262a",
+    "system/fvSchemes": "1a5031f97e7a7f2cb086f9119f6ca19b8e79ce128a454bfdb4af57f08944ed56",
+    "system/fvSolution": "2b51eaaf20f37b480ad010275b263f7f6ee0940ac2f37b8fa02df51afd90d9f4"
+  },
+  "mesh_sha256": {
+    "constant/polyMesh/faces": "ac195415a58b99183d674e0884e34b1c39303e9a6e2077d2064c78837a106c53",
+    "constant/polyMesh/points": "61ffe73184d836dba64e3f0ae36308862e37ce32464959b0fbbd59cb12be8e8b",
+    "constant/polyMesh/boundary": "07cc9b62820911e4536eab8b7b3d74e4cba8301ae886017defd2598f495f6c82",
+    "constant/polyMesh/neighbour": "04263cff8323ef8660b4bee13cf40bf9808c5390ca61b2c15272ce58d1abfead",
+    "constant/polyMesh/owner": "afe5e635bc106f92b4d403e25a5736ea43747404104ac5ea640c319ba516a81b"
+  },
+  "controlDict_sha256": "7a7c51f05ca31f812c26f0235877d72f8b35333b8ac51427d090387980c4262a",
+  "permitted_control_diff": {
+    "startFrom": {
+      "initial": "startTime",
+      "current": "latestTime"
+    },
+    "endTime": {
+      "initial": 3000,
+      "current": 9000
+    }
+  },
+  "process": {
+    "argv": [
+      "foamRun",
+      "-case",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/A-Ra1e3-fine"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 366.57652139663696,
+    "log": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/A-Ra1e3-fine/log.foamRun.segment_9000",
+    "log_sha256": "a8223fbb803b3a3019b41e834de688db2b379b8b9984f1d39c08286a9ab161c9"
+  },
+  "health": {
+    "exit_code": 0,
+    "standalone_End": true,
+    "flags": {
+      "fatal": false,
+      "fpe": false,
+      "nonfinite": false
+    },
+    "normal_banner_present": true,
+    "normal_banner_misclassified_as_FPE": false,
+    "explicit_divergence_evidence": [],
+    "runtime_selection_lines": [
+      "Build  : 13-441953dfbb42",
+      "Selecting solver fluid",
+      "Selecting thermodynamics package",
+      "Selecting turbulence model type laminar",
+      "Selecting laminar stress model Stokes",
+      "Selecting thermophysical transport type laminar",
+      "Selecting laminar thermophysical transport model Fourier",
+      "PIMPLE: Operating solver in SIMPLE mode"
+    ],
+    "normal_exit": true,
+    "no_fatal_or_nan": true
+  },
+  "runtime_provenance": {
+    "status": "PASS",
+    "failure_class": null,
+    "missing": [],
+    "mismatches": [],
+    "expected": {
+      "version": "13",
+      "build": "13-441953dfbb42",
+      "solver": "fluid",
+      "thermo.type": "heRhoThermo",
+      "thermo.mixture": "pureMixture",
+      "thermo.transport": "const",
+      "thermo.thermo": "eConst",
+      "thermo.equationOfState": "Boussinesq",
+      "thermo.specie": "specie",
+      "thermo.energy": "sensibleInternalEnergy",
+      "momentum_regime": "laminar",
+      "stress_model": "Stokes",
+      "thermal_regime": "laminar",
+      "thermal_model": "Fourier",
+      "algorithm": "SIMPLE"
+    },
+    "actual": {
+      "version": "13",
+      "build": "13-441953dfbb42",
+      "solver": "fluid",
+      "thermo.type": "heRhoThermo",
+      "thermo.mixture": "pureMixture",
+      "thermo.transport": "const",
+      "thermo.thermo": "eConst",
+      "thermo.equationOfState": "Boussinesq",
+      "thermo.specie": "specie",
+      "thermo.energy": "sensibleInternalEnergy",
+      "momentum_regime": "laminar",
+      "stress_model": "Stokes",
+      "thermal_regime": "laminar",
+      "thermal_model": "Fourier",
+      "algorithm": "SIMPLE"
+    },
+    "evidence": {
+      "selections": {
+        "version": [
+          {
+            "value": "13",
+            "line": 5
+          }
+        ],
+        "build": [
+          {
+            "value": "13-441953dfbb42",
+            "line": 8
+          }
+        ],
+        "solver": [
+          {
+            "value": "fluid",
+            "line": 26
+          }
+        ],
+        "momentum_regime": [
+          {
+            "value": "laminar",
+            "line": 38
+          }
+        ],
+        "stress_model": [
+          {
+            "value": "Stokes",
+            "line": 39
+          }
+        ],
+        "thermal_regime": [
+          {
+            "value": "laminar",
+            "line": 42
+          }
+        ],
+        "thermal_model": [
+          {
+            "value": "Fourier",
+            "line": 43
+          }
+        ],
+        "algorithm": [
+          {
+            "value": "SIMPLE",
+            "line": 49
+          }
+        ]
+      },
+      "thermo_blocks": [
+        {
+          "start_line": 28,
+          "end_line": 36,
+          "entries": {
+            "type": {
+              "value": "heRhoThermo",
+              "line": 29
+            },
+            "mixture": {
+              "value": "pureMixture",
+              "line": 30
+            },
+            "transport": {
+              "value": "const",
+              "line": 31
+            },
+            "thermo": {
+              "value": "eConst",
+              "line": 32
+            },
+            "equationOfState": {
+              "value": "Boussinesq",
+              "line": 33
+            },
+            "specie": {
+              "value": "specie",
+              "line": 34
+            },
+            "energy": {
+              "value": "sensibleInternalEnergy",
+              "line": 35
+            }
+          },
+          "duplicates": [],
+          "complete": true
+        }
+      ]
+    },
+    "source": "Actual OpenFOAM runtime log; no fallback to input dictionary or generator manifest",
+    "input_provenance_checked": false,
+    "health_or_Gate_D_checked": false,
+    "log": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/cases/A-Ra1e3-fine/segments/end_9000/solver.log",
+    "contract": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/docs/routeA_execution_contract_v1.3.json",
+    "log_read_scope": "first 120 lines only"
+  },
+  "gate_A": "PASS",
+  "OQ_02": "PASS",
+  "final_field_validation": {
+    "all_required_fields_finite": true,
+    "rho_positive": true,
+    "field_ranges": {
+      "T": [
+        299.5022135648048,
+        300.497786220614
+      ],
+      "U": [
+        -0.0005208646739394867,
+        0.000521020680860794
+      ],
+      "rho": [
+        0.999502213779386,
+        1.000497786435195
+      ],
+      "p": [
+        -0.01404156606042484,
+        -4.168546185108419e-05
+      ],
+      "p_rgh": [
+        -4.732005059761756e-06,
+        5.935537699837442e-06
+      ],
+      "phi": [
+        -3.256194609057095e-10,
+        3.255212306312234e-10
+      ]
+    },
+    "EOS_proxy_max_absolute_difference": 6.661338147750939e-16,
+    "EOS_proxy_max_relative_difference": 6.661337123445467e-16,
+    "independent_thermo_rho_dump": "NOT_AVAILABLE",
+    "field_sha256": {
+      "rho": "28820eca5bf63a3e1b69179fec55dc93a224d6d0da0ab627a889f4cbf8a9c757",
+      "U": "7ed9f8302bfecbb96a636c239e3861d10c4b70acf932feeba76027ffccc10c11",
+      "phi": "f6f9bb447cb6a79184411ab94defdb689f2d3914de1c4fbbb23b094dd9ac6e6d",
+      "T": "711deb22688fa6eb965b78e7558421da027e034a34aa01ba0d4e5eb8fbef777e",
+      "wallHeatFlux": "0495c98f98e206604f8618dfe34be903f8601eee6451dc72468033f4da92b8a8",
+      "p": "cc0d8b20fe7c8b91d8952a7987ea788442e27fb168ecd9375084a54108d7a42f",
+      "p_rgh": "1d93d2d60a46059e92b0894cacfc6a12bb0ea4c346479f19a4fed4cbcabfeda2"
+    }
+  },
+  "Gate_D": {
+    "status": "FAIL",
+    "booleans": {
+      "NORMAL_EXIT": true,
+      "NO_FATAL_OR_NAN": true,
+      "INPUT_PROVENANCE_PASS": true,
+      "QOI_RWIN_PASS": false,
+      "RESIDUAL_PASS": false,
+      "HEAT_TREND_PASS": true
+    },
+    "failure_components": [
+      "QOI_RWIN_PASS",
+      "RESIDUAL_PASS"
+    ],
+    "computed": true,
+    "accepted": false,
+    "numerical_evaluation": {
+      "contract_version": "1.0",
+      "window_start_iteration": 8801,
+      "window_end_iteration": 9000,
+      "window_inclusive": true,
+      "Nu_samples": 200,
+      "velocity_samples": 20,
+      "velocity_sample_iterations": [
+        8810,
+        8820,
+        8830,
+        8840,
+        8850,
+        8860,
+        8870,
+        8880,
+        8890,
+        8900,
+        8910,
+        8920,
+        8930,
+        8940,
+        8950,
+        8960,
+        8970,
+        8980,
+        8990,
+        9000
+      ],
+      "Rwin": {
+        "Nu_bar_0": 0.0014099482205223051,
+        "Umax": 0.0007845861883911823,
+        "Wmax": 0.000956457710310061
+      },
+      "Nu_monitor": "hot-wall Q/(k*DeltaT*W), not the hot/cold pair average",
+      "Nu_bar_0_last": 1.1021219536661422,
+      "Nu_bar_1_last": 1.102135630445974,
+      "heat_imbalance_start": 1.2765510073794634e-05,
+      "heat_imbalance_end": 1.2409420686906756e-05,
+      "heat_trend_method": "OLS exact rational arithmetic on original decimal Q tokens",
+      "heat_slope_per_iteration_display": -1.7896349998535043e-09,
+      "heat_slope_sign_exact": -1,
+      "heat_trend_pass": true,
+      "residual_fields": [
+        "Ux",
+        "Uy",
+        "e",
+        "p_rgh"
+      ],
+      "final_initial_residuals": {
+        "Ux": 2.475166778574412e-06,
+        "Uy": 2.102934721286897e-06,
+        "e": 4.025355908580518e-06,
+        "p_rgh": 9.425439728430226e-06
+      },
+      "residual_pass": false,
+      "qoi_rwin_pass": false,
+      "numerical_checks_pass": false,
+      "formal_Gate_D_requires_external_execution_and_provenance_flags": true
+    },
+    "formal_criteria_unchanged": true
+  },
+  "diagnostic_field_sha256": {
+    "div(phi)": "1e860151b171b61e4522914100d70bc107e264e704ea17541ca7b1f87b51e0cc",
+    "div(U)": "96af196c6bea9ba6b2f3364567887902900d2725f3686daf2a46d3745b51bdfe"
+  },
+  "plot_output_routing": "Canonical main/source unchanged; savefig redirected to new fine case/figures only; historical plots protected."
+}

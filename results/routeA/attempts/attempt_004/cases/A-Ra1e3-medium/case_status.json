@@ -1,0 +1,36 @@
+{
+  "case_id": "A-Ra1e3-medium",
+  "grid": [
+    80,
+    80,
+    1
+  ],
+  "computed": true,
+  "accepted": true,
+  "final_iteration": 6000,
+  "Gate_D": "PASS",
+  "segments": [
+    {
+      "end_iteration": 3000,
+      "path": "results/routeA/cases/A-Ra1e3-medium/segments/end_3000",
+      "Gate_D": "FAIL",
+      "failure_components": [
+        "QOI_RWIN_PASS",
+        "RESIDUAL_PASS"
+      ],
+      "sealed_sha256_manifest": "74085c854b74c83d5f2446c33aeade9d51e51a512a8111dd98918d44b7d168fd"
+    },
+    {
+      "end_iteration": 6000,
+      "path": "results/routeA/cases/A-Ra1e3-medium/segments/end_6000",
+      "Gate_D": "PASS",
+      "failure_components": [],
+      "sealed_sha256_manifest": "51b97179d2c9abdc87934201b5b55c9b24562454876b76a25259514f891b5702"
+    }
+  ],
+  "status": "ACCEPTED",
+  "case_reused": false,
+  "runtime_provenance": "PASS",
+  "OQ02": "PASS",
+  "Gate_D_failure_components": []
+}

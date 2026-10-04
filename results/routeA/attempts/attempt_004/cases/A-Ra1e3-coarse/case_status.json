@@ -1,0 +1,23 @@
+{
+  "case_id": "A-Ra1e3-coarse",
+  "grid": [
+    40,
+    40,
+    1
+  ],
+  "computed": true,
+  "accepted": true,
+  "final_iteration": 3000,
+  "Gate_D": "PASS",
+  "Gate_D_failure_components": [],
+  "segments": [],
+  "status": "ACCEPTED_REUSE",
+  "case_reused": true,
+  "runtime_provenance": "PASS",
+  "OQ02": "PASS",
+  "solver_rerun": false,
+  "source_owner": "POST_FIX_REEVALUATION_OF_ATTEMPT_003_CHECKPOINT",
+  "source_segment": "results/routeA/cases/A-Ra1e3-coarse/segments/end_3000/",
+  "source_segment_seal_sha256": "7578f6ae34865b17628bc7e941af89a72193be65317ab54c2354017fe441a245",
+  "metrics_path": "results/routeA/attempts/attempt_004/cases/A-Ra1e3-coarse/accepted_reuse/metrics.json"
+}

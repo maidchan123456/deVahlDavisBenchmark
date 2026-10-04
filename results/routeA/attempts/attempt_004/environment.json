@@ -1,0 +1,16 @@
+{
+  "WM_PROJECT": "OpenFOAM",
+  "WM_PROJECT_VERSION": "13",
+  "WM_PROJECT_DIR": "/opt/openfoam13",
+  "WM_OPTIONS": "linux64GccDPInt32Opt",
+  "foamRun": "/opt/openfoam13/platforms/linux64GccDPInt32Opt/bin/foamRun",
+  "host": "mirai-Precision-5860-Tower",
+  "started": "2026-10-04T18:26:56.231207+09:00",
+  "HEAD": "d68140988ec6fbc1473614bf62f2fe9ca8cf73ca",
+  "contract_version": "1.3",
+  "contract_sha256": "227414aaff22a0f37bed234f6b26c0a296d18f592da641aa55f1c4a4538ff3f1",
+  "analyzer_sha256": "e1f5da10349b997d858cc04802a04366a668e6af4cf51367569e198993e8e0ac",
+  "runtime_checker_sha256": "5055345c7e64758a4f902c81219e2dda2e5b9cdec22c3f22fc8297bbc1bb9e5a",
+  "attempt": "004",
+  "primary_solver_concurrency": 1
+}

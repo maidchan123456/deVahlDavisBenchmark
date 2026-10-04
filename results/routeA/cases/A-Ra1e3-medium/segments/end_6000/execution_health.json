@@ -1,0 +1,37 @@
+{
+  "process": {
+    "argv": [
+      "foamRun",
+      "-case",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/A-Ra1e3-medium"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 41.81001114845276,
+    "log": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/A-Ra1e3-medium/log.foamRun.segment_6000",
+    "log_sha256": "19336943592419fab4ca39ae993124a27569b2cfe5538908182494d08ed757b5"
+  },
+  "health": {
+    "exit_code": 0,
+    "standalone_End": true,
+    "flags": {
+      "fatal": false,
+      "fpe": false,
+      "nonfinite": false
+    },
+    "normal_banner_present": true,
+    "normal_banner_misclassified_as_FPE": false,
+    "explicit_divergence_evidence": [],
+    "runtime_selection_lines": [
+      "Build  : 13-441953dfbb42",
+      "Selecting solver fluid",
+      "Selecting thermodynamics package",
+      "Selecting turbulence model type laminar",
+      "Selecting laminar stress model Stokes",
+      "Selecting thermophysical transport type laminar",
+      "Selecting laminar thermophysical transport model Fourier",
+      "PIMPLE: Operating solver in SIMPLE mode"
+    ],
+    "normal_exit": true,
+    "no_fatal_or_nan": true
+  }
+}

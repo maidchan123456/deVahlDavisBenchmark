@@ -1,0 +1,115 @@
+{
+  "status": "PASS",
+  "protected_hash_entries": 7094,
+  "native_restart_fields_and_diagnostic_divergence_fields_checked": true,
+  "accepted_final_field_hashes_all_match": true,
+  "permitted_control_changes_only": true,
+  "segments": [
+    {
+      "case_id": "A-Ra1e3-medium",
+      "iteration": 3000,
+      "seal_native_restart_fields_mesh_health": "PASS"
+    },
+    {
+      "case_id": "A-Ra1e3-medium",
+      "iteration": 6000,
+      "seal_native_restart_fields_mesh_health": "PASS"
+    },
+    {
+      "case_id": "A-Ra1e3-fine",
+      "iteration": 3000,
+      "seal_native_restart_fields_mesh_health": "PASS"
+    },
+    {
+      "case_id": "A-Ra1e3-fine",
+      "iteration": 6000,
+      "seal_native_restart_fields_mesh_health": "PASS"
+    },
+    {
+      "case_id": "A-Ra1e3-fine",
+      "iteration": 9000,
+      "seal_native_restart_fields_mesh_health": "PASS"
+    },
+    {
+      "case_id": "A-Ra1e3-fine",
+      "iteration": 12000,
+      "seal_native_restart_fields_mesh_health": "PASS"
+    },
+    {
+      "case_id": "A-Ra1e3-fine",
+      "iteration": 15000,
+      "seal_native_restart_fields_mesh_health": "PASS"
+    },
+    {
+      "case_id": "A-Ra1e3-fine",
+      "iteration": 18000,
+      "seal_native_restart_fields_mesh_health": "PASS"
+    }
+  ],
+  "working_derived_wallHeatFlux_observations": [
+    {
+      "case_id": "A-Ra1e3-medium",
+      "iteration": 3000,
+      "field": "wallHeatFlux",
+      "checkpoint_observed_sha256": "562dffd5e5cfc6dc0456009b787cbd2082f0e22ce6b586a2af46f58af2eb1934",
+      "current_working_derived_sha256": "7c14f081d190adaa9946157fec8c4fe06854320f261fc157c851c1b0813afe3b",
+      "restart_hash_guard_at_segment_start": "PASS",
+      "raw_wall_Q_seal": "UNCHANGED",
+      "classification": "DERIVED_FUNCTION_OBJECT_OUTPUT_REGENERATED_IN_WORKING_CASE; not native restart input or sealed raw Q"
+    },
+    {
+      "case_id": "A-Ra1e3-fine",
+      "iteration": 3000,
+      "field": "wallHeatFlux",
+      "checkpoint_observed_sha256": "6cfd8b4e0eb7c7ada3b3b499e3fade32c94fa421af8ed7df839018f324343541",
+      "current_working_derived_sha256": "2f535bbd1f259ce0a9674c4075af69d75835145bd71684f73d2c8778ca7f29d6",
+      "restart_hash_guard_at_segment_start": "PASS",
+      "raw_wall_Q_seal": "UNCHANGED",
+      "classification": "DERIVED_FUNCTION_OBJECT_OUTPUT_REGENERATED_IN_WORKING_CASE; not native restart input or sealed raw Q"
+    },
+    {
+      "case_id": "A-Ra1e3-fine",
+      "iteration": 6000,
+      "field": "wallHeatFlux",
+      "checkpoint_observed_sha256": "0026721a6202733fd04e689548473d059d151c9a8911c4cd7f6833718361d859",
+      "current_working_derived_sha256": "0b7d7ae723e7ed736d5c895651ef0293d7d45ce218503ccf667f9f2d05c761c8",
+      "restart_hash_guard_at_segment_start": "PASS",
+      "raw_wall_Q_seal": "UNCHANGED",
+      "classification": "DERIVED_FUNCTION_OBJECT_OUTPUT_REGENERATED_IN_WORKING_CASE; not native restart input or sealed raw Q"
+    },
+    {
+      "case_id": "A-Ra1e3-fine",
+      "iteration": 9000,
+      "field": "wallHeatFlux",
+      "checkpoint_observed_sha256": "0495c98f98e206604f8618dfe34be903f8601eee6451dc72468033f4da92b8a8",
+      "current_working_derived_sha256": "7bdfc77d362541ae38a2f4e091150e1b34f5ad56029e2487f62a89390cc2ac53",
+      "restart_hash_guard_at_segment_start": "PASS",
+      "raw_wall_Q_seal": "UNCHANGED",
+      "classification": "DERIVED_FUNCTION_OBJECT_OUTPUT_REGENERATED_IN_WORKING_CASE; not native restart input or sealed raw Q"
+    },
+    {
+      "case_id": "A-Ra1e3-fine",
+      "iteration": 12000,
+      "field": "wallHeatFlux",
+      "checkpoint_observed_sha256": "6f07fc5c1205c5e969f6778702cd5d34fe087ef609869a9cead7649a83ac35f6",
+      "current_working_derived_sha256": "8b6b6e2af707b0451534fc4e82ad390f628037c01a6495666496040079d3e66d",
+      "restart_hash_guard_at_segment_start": "PASS",
+      "raw_wall_Q_seal": "UNCHANGED",
+      "classification": "DERIVED_FUNCTION_OBJECT_OUTPUT_REGENERATED_IN_WORKING_CASE; not native restart input or sealed raw Q"
+    },
+    {
+      "case_id": "A-Ra1e3-fine",
+      "iteration": 15000,
+      "field": "wallHeatFlux",
+      "checkpoint_observed_sha256": "b0e8ff5d75e32096c8da15a685f2457cc80570fdaf1c62473a07aa92e082ed56",
+      "current_working_derived_sha256": "5e52fa1b4340644690b49194dd81ef1d20153e938760c790c2161a22a26f709a",
+      "restart_hash_guard_at_segment_start": "PASS",
+      "raw_wall_Q_seal": "UNCHANGED",
+      "classification": "DERIVED_FUNCTION_OBJECT_OUTPUT_REGENERATED_IN_WORKING_CASE; not native restart input or sealed raw Q"
+    }
+  ],
+  "all_contract_sources_unchanged": true,
+  "RouteB_baseline_unchanged": true,
+  "fine_visual_review": "theta/streamlines inspected; left hot wall ascent, clockwise circulation, no obvious nonphysical oscillation; formal status based on numeric diagnostics",
+  "git_add_commit_push_performed": false
+}

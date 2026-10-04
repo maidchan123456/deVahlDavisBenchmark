@@ -1,0 +1,37 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  13
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 13-441953dfbb42
+Exec   : foamPostProcess -case /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/A-Ra1e3-fine -func div(phi) -time 15000
+Date   : Oct 04 2026
+Time   : 18:58:36
+Host   : "mirai-Precision-5860-Tower"
+PID    : 382031
+I/O    : uncollated
+Case   : /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/A-Ra1e3-fine
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 15000
+
+Time = 15000s
+
+Reading fields:
+    surfaceScalarFields: phi
+
+
+
+Executing functionObjects
+    functionObjects::div div(phi) writing field: div(phi)
+
+End
+

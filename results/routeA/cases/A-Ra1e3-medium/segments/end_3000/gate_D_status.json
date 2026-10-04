@@ -1,0 +1,78 @@
+{
+  "status": "FAIL",
+  "booleans": {
+    "NORMAL_EXIT": true,
+    "NO_FATAL_OR_NAN": true,
+    "INPUT_PROVENANCE_PASS": true,
+    "QOI_RWIN_PASS": false,
+    "RESIDUAL_PASS": false,
+    "HEAT_TREND_PASS": true
+  },
+  "failure_components": [
+    "QOI_RWIN_PASS",
+    "RESIDUAL_PASS"
+  ],
+  "computed": true,
+  "accepted": false,
+  "numerical_evaluation": {
+    "contract_version": "1.0",
+    "window_start_iteration": 2801,
+    "window_end_iteration": 3000,
+    "window_inclusive": true,
+    "Nu_samples": 200,
+    "velocity_samples": 20,
+    "velocity_sample_iterations": [
+      2810,
+      2820,
+      2830,
+      2840,
+      2850,
+      2860,
+      2870,
+      2880,
+      2890,
+      2900,
+      2910,
+      2920,
+      2930,
+      2940,
+      2950,
+      2960,
+      2970,
+      2980,
+      2990,
+      3000
+    ],
+    "Rwin": {
+      "Nu_bar_0": 0.0016556275136380238,
+      "Umax": 0.0005243828132662381,
+      "Wmax": 0.00027920512787192603
+    },
+    "Nu_monitor": "hot-wall Q/(k*DeltaT*W), not the hot/cold pair average",
+    "Nu_bar_0_last": 1.1150164408740015,
+    "Nu_bar_1_last": 1.1150242316043526,
+    "heat_imbalance_start": 8.258345646779791e-06,
+    "heat_imbalance_end": 6.9870746729993735e-06,
+    "heat_trend_method": "OLS exact rational arithmetic on original decimal Q tokens",
+    "heat_slope_per_iteration_display": -6.390215481867059e-09,
+    "heat_slope_sign_exact": -1,
+    "heat_trend_pass": true,
+    "residual_fields": [
+      "Ux",
+      "Uy",
+      "e",
+      "p_rgh"
+    ],
+    "final_initial_residuals": {
+      "Ux": 1.409791439000762e-06,
+      "Uy": 1.786259979762264e-06,
+      "e": 3.286142062943432e-06,
+      "p_rgh": 8.189761439522727e-06
+    },
+    "residual_pass": false,
+    "qoi_rwin_pass": false,
+    "numerical_checks_pass": false,
+    "formal_Gate_D_requires_external_execution_and_provenance_flags": true
+  },
+  "formal_criteria_unchanged": true
+}

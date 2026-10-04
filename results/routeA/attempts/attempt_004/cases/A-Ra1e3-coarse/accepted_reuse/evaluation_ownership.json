@@ -1,0 +1,46 @@
+{
+  "classification": "POST_FIX_REEVALUATION_OF_ATTEMPT_003_CHECKPOINT",
+  "original_attempt_003_status": "STOPPED",
+  "original_coarse_computed": false,
+  "original_coarse_accepted": false,
+  "original_coarse_Gate_D": "NOT_EVALUATED",
+  "original_reports_unchanged": true,
+  "current_post_fix_computed": true,
+  "current_post_fix_Gate_D": "PASS",
+  "acceptable_for_attempt_004": true,
+  "effective_contract_version": "1.3",
+  "effective_contract_sha256": "227414aaff22a0f37bed234f6b26c0a296d18f592da641aa55f1c4a4538ff3f1",
+  "analyzer_sha256": "e1f5da10349b997d858cc04802a04366a668e6af4cf51367569e198993e8e0ac",
+  "coarse_attempt_004_policy": {
+    "action": "SKIP_SOLVER_AND_ACCEPT_3000",
+    "checkpoint_iteration": 3000,
+    "reason": "Post-fix canonical metrics complete and all six formal Gate D booleans PASS under unchanged criteria.",
+    "owner": "POST_FIX_REEVALUATION_OF_ATTEMPT_003_CHECKPOINT",
+    "gate_D_status_path": "results/routeA/attempts/attempt_003/post_fix_reanalysis/gate_D_status.json",
+    "gate_D_status_sha256": "a9d09ad152777f2ac00ba634c79b17935c53d885b246f52b7ee179f3ec3b33ac",
+    "metrics_path": "results/routeA/attempts/attempt_003/post_fix_reanalysis/metrics.json",
+    "metrics_sha256": "edbf3582aac70a7f9c74509a35f3a42ea97c7f7575d4661986ed693b6a4ecd44",
+    "source_segment": "results/routeA/cases/A-Ra1e3-coarse/segments/end_3000/",
+    "source_segment_seal_sha256": "7578f6ae34865b17628bc7e941af89a72193be65317ab54c2354017fe441a245",
+    "native_field_sha256": {
+      "rho": "8b53f3aee8331419fa9589a544d217484233a258714159aad9901e6b2469187e",
+      "U": "5ec1b1c19eeb25726db0fea7ff292b3dedcac0622f83cd500e34b5c7bf89e346",
+      "phi": "d57b3a7471836d939c56d7dc968694066dbaddc1a63919b013a3044744d50f1d",
+      "T": "d067a9290b5ffa5ffb1053bb46cb7f66fd9af9732ddb1d6a767432554d76114c",
+      "wallHeatFlux": "95c659d1ca5284de6ce7e28ae1ec637c39335d1f38a36af0fdf34c0975fdb09b",
+      "p": "a9637bda9ffb6d1a4b9bf96fea15dc2d5aad64236073e600a91da473f273289b",
+      "p_rgh": "32fe3547657aa411d2f0f54932981d6509090d07355e6988110e047168ae48d0"
+    },
+    "primary_coarse_solver_rerun": false,
+    "coarse_continuation_required": false,
+    "next_case": "A-Ra1e3-medium",
+    "pre_attempt_004_checks": [
+      "Verify v1.3 effective digest and every current implementation/template/caps/reference hash",
+      "Verify original end_3000 seal, post-fix gate/metrics hashes and current native 3000 field/input/mesh hashes",
+      "Record coarse accepted checkpoint linkage in new attempt_004 root; keep historical attempt_003 STOP and end_3000 seal unchanged",
+      "Proceed to NEW medium, then NEW fine sequentially with canonical generation/mesh/initialization/runtime/OQ-02/Gate A steps"
+    ],
+    "historical_result_policy": "No rewriting attempt_003 report/matrix/comparison or historical end_3000 gate_D_status.json; record accepted reuse only in new execution state.",
+    "future_user_run_instruction_required": true
+  }
+}
