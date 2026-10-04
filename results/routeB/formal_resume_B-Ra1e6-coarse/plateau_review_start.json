@@ -1,0 +1,9 @@
+{
+  "initial_HEAD": "afd628193d4d649032784e98c02ae21a1e7a783f",
+  "continued_from": 24000,
+  "authorized_checkpoints": [
+    27000,
+    30000
+  ],
+  "fields_and_inputs_verified": true
+}

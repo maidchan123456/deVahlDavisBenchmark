@@ -24,6 +24,8 @@ def snapshot(case, generated, iteration):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--case-id', required=True)
+    parser.add_argument('--resume', action='store_true')
+    parser.add_argument('--maximum-end-time', type=int)
     args = parser.parse_args()
     cid = args.case_id
     run_dir = OUT/f'formal_resume_{cid}'
@@ -39,14 +41,26 @@ def main():
     checks, passed = gate_d(metrics)
     initial = dict(snapshot(case, generated, metrics['final_iteration']), Gate_D_checks=checks,
                    Gate_D='PASS' if passed else 'FAIL', metrics=metrics)
-    history = [initial]
     history_path = run_dir/'iteration_history.json'
-    assert not history_path.exists(), 'Refusing to overwrite continuation history'
-    history_path.write_text(json.dumps(history, indent=2)+'\n')
-    shutil.copy2(metrics_path, run_dir/f'metrics_{metrics["final_iteration"]}.json')
     main_log = case/'log.buoyantBoussinesqSimpleFoam'
-    shutil.copy2(main_log, case/f'log.buoyantBoussinesqSimpleFoam.initial0-{metrics["final_iteration"]}')
-    policy = startup['continuation_policy']
+    if args.resume:
+        history = json.loads(history_path.read_text())
+        assert history[-1]['iteration'] == metrics['final_iteration'], 'Resume history mismatch'
+        assert history[-1]['field_sha256'] == initial['field_sha256'], 'Resume field mismatch'
+        assert history[-1]['input_sha256'] == initial['input_sha256'], 'Resume input mismatch'
+    else:
+        assert not history_path.exists(), 'Refusing to overwrite continuation history'
+        history = [initial]
+        history_path.write_text(json.dumps(history, indent=2)+'\n')
+        shutil.copy2(metrics_path, run_dir/f'metrics_{metrics["final_iteration"]}.json')
+        shutil.copy2(main_log, case/f'log.buoyantBoussinesqSimpleFoam.initial0-{metrics["final_iteration"]}')
+    policy = dict(startup['continuation_policy'])
+    if args.maximum_end_time is not None:
+        assert args.resume and args.maximum_end_time > metrics['final_iteration']
+        policy['maximum_endTime'] = args.maximum_end_time
+        authorization = run_dir/f'authorized_resume_{metrics["final_iteration"]}-{args.maximum_end_time}.json'
+        assert not authorization.exists(), 'Resume already recorded'
+        authorization.write_text(json.dumps(dict(before=initial, policy=policy),indent=2)+'\n')
     while not passed and metrics['final_iteration'] < policy['maximum_endTime']:
         assert metrics['normal_exit'] and not metrics['fatal_or_nan'], 'STOP: numerical failure'
         start = metrics['final_iteration']

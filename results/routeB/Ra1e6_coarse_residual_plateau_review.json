@@ -1,0 +1,194 @@
+{
+  "HEAD": "afd628193d4d649032784e98c02ae21a1e7a783f",
+  "target": "B-Ra1e6-coarse",
+  "continued_from": 24000,
+  "provenance_24000": "PASS",
+  "checkpoint_residuals": [
+    {
+      "iteration": 3000,
+      "Ux": 1.651408051078662e-07,
+      "Uy": 9.318912749877696e-08,
+      "T": 4.707117835457955e-08,
+      "p_rgh": 1.02654870291041e-06
+    },
+    {
+      "iteration": 6000,
+      "Ux": 1.447261719811603e-07,
+      "Uy": 8.468948552586653e-08,
+      "T": 4.274870530030262e-08,
+      "p_rgh": 8.891940930452907e-07
+    },
+    {
+      "iteration": 9000,
+      "Ux": 1.422469610527012e-07,
+      "Uy": 7.987440112670953e-08,
+      "T": 3.769772341018385e-08,
+      "p_rgh": 7.579884376370165e-07
+    },
+    {
+      "iteration": 12000,
+      "Ux": 1.382931188981764e-07,
+      "Uy": 7.45651050121213e-08,
+      "T": 4.074618202956719e-08,
+      "p_rgh": 8.076108245643826e-07
+    },
+    {
+      "iteration": 15000,
+      "Ux": 1.519125572133009e-07,
+      "Uy": 8.453461394662064e-08,
+      "T": 4.154262946916798e-08,
+      "p_rgh": 8.930735272008638e-07
+    },
+    {
+      "iteration": 18000,
+      "Ux": 1.54315667270561e-07,
+      "Uy": 8.104532175508303e-08,
+      "T": 4.506756955815508e-08,
+      "p_rgh": 9.367682822298386e-07
+    },
+    {
+      "iteration": 21000,
+      "Ux": 1.388247188379526e-07,
+      "Uy": 8.073166366217738e-08,
+      "T": 3.713466749797526e-08,
+      "p_rgh": 7.27096844573015e-07
+    },
+    {
+      "iteration": 24000,
+      "Ux": 1.192279104679858e-07,
+      "Uy": 6.66322812346728e-08,
+      "T": 4.162862399072201e-08,
+      "p_rgh": 8.78382688388305e-07
+    },
+    {
+      "iteration": 27000,
+      "Ux": 1.354377360081861e-07,
+      "Uy": 7.506168310564636e-08,
+      "T": 3.248149629541373e-08,
+      "p_rgh": 6.079278208338726e-07
+    },
+    {
+      "iteration": 30000,
+      "Ux": 1.540830067219442e-07,
+      "Uy": 7.968423239325492e-08,
+      "T": 4.038734986064311e-08,
+      "p_rgh": 7.375120871349657e-07
+    }
+  ],
+  "recent_checkpoint_iterations": [
+    15000,
+    18000,
+    21000,
+    24000,
+    27000,
+    30000
+  ],
+  "residual_statistics": {
+    "Ux": {
+      "recent_min": 1.192279104679858e-07,
+      "recent_max": 1.54315667270561e-07,
+      "ratio_24000_to_27000": 1.135956635292647,
+      "ratio_27000_to_30000": 1.1376667335360002,
+      "recent_strict_monotonic_decrease": false,
+      "recent_order_span_decades": 0.11203208831568337,
+      "whole_history_order_span_decades": 0.14147646479141057,
+      "whole_history_decade_drop_observed": false
+    },
+    "Uy": {
+      "recent_min": 6.66322812346728e-08,
+      "recent_max": 8.453461394662064e-08,
+      "ratio_24000_to_27000": 1.1265062776597123,
+      "ratio_27000_to_30000": 1.061583341811061,
+      "recent_strict_monotonic_decrease": false,
+      "recent_order_span_decades": 0.10334989155280021,
+      "whole_history_order_span_decades": 0.14568056348045205,
+      "whole_history_decade_drop_observed": false
+    },
+    "T": {
+      "recent_min": 3.248149629541373e-08,
+      "recent_max": 4.506756955815508e-08,
+      "ratio_24000_to_27000": 0.7802683149616727,
+      "ratio_27000_to_30000": 1.2433956087899085,
+      "recent_strict_monotonic_decrease": false,
+      "recent_order_span_decades": 0.14222811042685662,
+      "whole_history_order_span_decades": 0.16111904306025193,
+      "whole_history_decade_drop_observed": false
+    },
+    "p_rgh": {
+      "recent_min": 6.079278208338726e-07,
+      "recent_max": 9.367682822298386e-07,
+      "ratio_24000_to_27000": 0.6920990462019752,
+      "ratio_27000_to_30000": 1.2131573220704837,
+      "recent_strict_monotonic_decrease": false,
+      "recent_order_span_decades": 0.1877801590361555,
+      "whole_history_order_span_decades": 0.2275275399568739,
+      "whole_history_decade_drop_observed": false
+    }
+  },
+  "RESIDUAL_BEHAVIOR": "PLATEAU_OR_OSCILLATORY",
+  "diagnostic_note": "All four residual histories fluctuate at the same scale without sustained recent monotonic decay. This is a checkpoint-based diagnostic, not proof of the mechanism or a new acceptance threshold.",
+  "formal_residual_limit": 1e-07,
+  "checkpoint_diagnostics": {
+    "27000": {
+      "Gate_D": "FAIL",
+      "Gate_D_checks": {
+        "normal_exit": true,
+        "finite_execution": true,
+        "window": true,
+        "samples": true,
+        "QoI": true,
+        "residuals": false,
+        "heat_trend": true
+      },
+      "final_initial_residuals": {
+        "Ux": 1.354377360081861e-07,
+        "Uy": 7.506168310564636e-08,
+        "T": 3.248149629541373e-08,
+        "p_rgh": 6.079278208338726e-07
+      },
+      "Rwin": {
+        "Nu_bar_0": 1.5161536757784977e-07,
+        "Umax": 1.0949002959197836e-06,
+        "Vmax": 1.1733605440592147e-07
+      },
+      "heat_imbalance": 2.6591434586628095e-08,
+      "heat_trend": -8.361002686577509e-11,
+      "normal_exit": true,
+      "fatal_or_nan": false
+    },
+    "30000": {
+      "Gate_D": "FAIL",
+      "Gate_D_checks": {
+        "normal_exit": true,
+        "finite_execution": true,
+        "window": true,
+        "samples": true,
+        "QoI": true,
+        "residuals": false,
+        "heat_trend": false
+      },
+      "final_initial_residuals": {
+        "Ux": 1.540830067219442e-07,
+        "Uy": 7.968423239325492e-08,
+        "T": 4.038734986064311e-08,
+        "p_rgh": 7.375120871349657e-07
+      },
+      "Rwin": {
+        "Nu_bar_0": 1.0697914879119291e-07,
+        "Umax": 1.5075761769231617e-06,
+        "Vmax": 1.1582906783836666e-07
+      },
+      "heat_imbalance": 4.5920803934252854e-08,
+      "heat_trend": 7.41812458881868e-11,
+      "normal_exit": true,
+      "fatal_or_nan": false
+    }
+  },
+  "target_accepted": false,
+  "matrix_accepted_count": 9,
+  "formal_numerical_spec_changed": false,
+  "formal_Gate_D_criteria_changed": false,
+  "medium_or_fine_solver_executed": false,
+  "microcase_solver_executed": false,
+  "USER_DECISION_REQUIRED": true
+}

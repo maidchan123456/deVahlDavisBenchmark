@@ -1,0 +1,3 @@
+{"iteration": 27000, "stage": "CONVERGENCE_NOT_REACHED", "failed_checks": ["residuals"]}
+{"iteration": 30000, "stage": "CONVERGENCE_NOT_REACHED", "failed_checks": ["residuals", "heat_trend"]}
+{"case_id": "B-Ra1e6-coarse", "Gate_D": "FAIL", "final_iteration": 30000}
