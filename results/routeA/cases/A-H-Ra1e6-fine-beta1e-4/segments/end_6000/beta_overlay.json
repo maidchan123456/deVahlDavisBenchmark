@@ -1,0 +1,9 @@
+{
+  "path": "constant/physicalProperties",
+  "count": 1,
+  "before_literal": "beta 1e-3;",
+  "after_literal": "beta 1e-4;",
+  "before_sha256": "baea2c76140ca1481c1d0dc064e4fba44076f666de79f6162dfd5cfff4b440b4",
+  "after_sha256": "ee59e12919b6858dfe0c6d3f05536a30eb2b233c394628f36d6a580e198a757d",
+  "template_modified": false
+}

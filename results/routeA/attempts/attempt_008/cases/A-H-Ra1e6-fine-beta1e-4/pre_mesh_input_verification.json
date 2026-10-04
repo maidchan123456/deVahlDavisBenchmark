@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "input_sha256": {
+    "0/T": "2aa0b82fdbef9ea1d970d3135fdfeebb4253a2d69a3b0c5f69601e802af17a6a",
+    "0/U": "2d73c61cd16ca22f804a03a09a7cb9381881d1e5a2e679cbc8b589511bda42c6",
+    "0/p": "6f1d8a263f93de4c8aca72c2f014f3de1eb22ec42b22fcb985cd0669fbb4f57b",
+    "0/p_rgh": "7a474b49f9e53d8a275c7a8b37e18d9069e44f9fb0640bcbef816b5364efe1b1",
+    "constant/g": "de860d74b068aab99ccaa1adc3b0fb0f2b26295a23befc1ec0b5bd34cd469b41",
+    "constant/hRef": "b3cfc4ab0c5b5266283096fd98687c65930df337dedbeb34b67a5288c9946976",
+    "constant/momentumTransport": "3bfe7027873405f63753c0cec85e91c6069dafe94228154189d5b6616233200e",
+    "constant/pRef": "13e8b23d9a316804a134ea8abb6d385f120d64f3dc89ea40b3dcbf09956e8df1",
+    "constant/physicalProperties": "ee59e12919b6858dfe0c6d3f05536a30eb2b233c394628f36d6a580e198a757d",
+    "constant/thermophysicalTransport": "9c550714c97c8fd84bbd68d80558826ba76a028d521e6cafbe15c1b20cd0d08e",
+    "system/blockMeshDict": "d21ce471d23a17969ff7541b01ae9b0278d9a3e973354373a1244f556c6ff15c",
+    "system/controlDict": "c52927780325527833971f84ab73559afc5584391039c1911f2ba90adbce0c75",
+    "system/fvSchemes": "1a5031f97e7a7f2cb086f9119f6ca19b8e79ce128a454bfdb4af57f08944ed56",
+    "system/fvSolution": "2b51eaaf20f37b480ad010275b263f7f6ee0940ac2f37b8fa02df51afd90d9f4"
+  },
+  "Ra_actual_from_g": "999999.9999999999909999999999999999999997",
+  "Pr_actual": 0.7100000000000001,
+  "template_expansion": "PASS"
+}

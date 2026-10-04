@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "historical_protected_count": 223995,
+  "historical_changed_count": 0,
+  "contract_hash_unchanged": true,
+  "baseline_fields_mesh_status_unchanged": true,
+  "segment_seals": [
+    {
+      "path": "results/routeA/cases/A-H-Ra1e6-fine-beta1e-4/segments/end_3000/raw_seal_sha256.json",
+      "member_count": 55,
+      "verified": true
+    },
+    {
+      "path": "results/routeA/cases/A-H-Ra1e6-fine-beta1e-4/segments/end_3000/sealed_sha256.json",
+      "member_count": 72,
+      "verified": true
+    },
+    {
+      "path": "results/routeA/cases/A-H-Ra1e6-fine-beta1e-4/segments/end_6000/raw_seal_sha256.json",
+      "member_count": 55,
+      "verified": true
+    },
+    {
+      "path": "results/routeA/cases/A-H-Ra1e6-fine-beta1e-4/segments/end_6000/sealed_sha256.json",
+      "member_count": 72,
+      "verified": true
+    },
+    {
+      "path": "results/routeA/cases/A-H-Ra1e6-fine-beta1e-4/segments/end_9000/raw_seal_sha256.json",
+      "member_count": 55,
+      "verified": true
+    },
+    {
+      "path": "results/routeA/cases/A-H-Ra1e6-fine-beta1e-4/segments/end_9000/sealed_sha256.json",
+      "member_count": 72,
+      "verified": true
+    },
+    {
+      "path": "results/routeA/cases/A-H-Ra1e6-fine-beta1e-4/segments/end_12000/raw_seal_sha256.json",
+      "member_count": 55,
+      "verified": true
+    },
+    {
+      "path": "results/routeA/cases/A-H-Ra1e6-fine-beta1e-4/segments/end_12000/sealed_sha256.json",
+      "member_count": 72,
+      "verified": true
+    }
+  ],
+  "final_native_field_hashes_verified": true,
+  "primary_case_count": 1,
+  "baseline_rerun": false,
+  "criteria_and_numerics_unchanged": true,
+  "comparison_denominator": "historical baseline",
+  "epsilon_v_slack": 0,
+  "characterization_vs_formal_result_separated": true,
+  "full_report_MD_sections": 17,
+  "git_status": "?? cases/routeA/A-H-Ra1e6-fine-beta1e-4/\n?? cases/routeA/A-Ra1e3-coarse/\n?? cases/routeA/A-Ra1e3-fine/\n?? cases/routeA/A-Ra1e3-medium/\n?? cases/routeA/A-Ra1e4-coarse/\n?? cases/routeA/A-Ra1e4-fine/\n?? cases/routeA/A-Ra1e4-medium/\n?? cases/routeA/A-Ra1e5-coarse/\n?? cases/routeA/A-Ra1e5-fine/\n?? cases/routeA/A-Ra1e5-medium/\n?? cases/routeA/A-Ra1e6-coarse/\n?? cases/routeA/A-Ra1e6-fine/\n?? cases/routeA/A-Ra1e6-medium/\n?? cases/routeA/Ra0_medium/\n?? cases/routeA/Ra1e4_coarse/\n?? results/routeA/attempts/attempt_008/\n?? results/routeA/cases/A-H-Ra1e6-fine-beta1e-4/\n?? results/routeA/initialization_check/A-H-Ra1e6-fine-beta1e-4/\n?? verification/\n",
+  "git_diff_stat": ""
+}

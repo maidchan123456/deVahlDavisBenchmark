@@ -1,0 +1,331 @@
+{
+  "attempt": "008",
+  "case_id": "A-H-Ra1e6-fine-beta1e-4",
+  "segment_start": 0,
+  "end_iteration": 3000,
+  "contract_version": "1.7",
+  "contract_sha256": "fbc744e012f66b37b5d9409be961cb5a9410c3d75ac7e2f026b2acf118d3bb60",
+  "amendment007_sha256": "9bb55b9c266aeb935c3dd49f77a2e023a2e55b33bc2fc9b2e9159b9b9fb9b592",
+  "amendment_chain": [
+    {
+      "id": "Route A Execution Contract Amendment 001",
+      "path": "docs/routeA_execution_contract_amendment_001.json",
+      "sha256": "63769f59ab7e5ed49115120e4c34326795fc40a8413d07e6086446af3be2b352",
+      "parent": {
+        "version": "1.0",
+        "path": "docs/routeA_execution_contract.json",
+        "sha256": "33eb082f77f00b2330003ba8bafcb0438a24d7ec6b0bf456625741bfae63c936"
+      },
+      "snapshot_rule": "Full v1.0 snapshot plus Amendment 001; only classifier implementation and necessary version/artifact/attempt metadata differ."
+    },
+    {
+      "id": "Route A Execution Contract Amendment 002",
+      "path": "docs/routeA_execution_contract_amendment_002.json",
+      "sha256": "a8b2d80647f491d0ee06e434604b5d9a49d2d8e7ce7b622cfa19548e5f1a56eb",
+      "parent": {
+        "version": "1.1",
+        "path": "docs/routeA_execution_contract_v1.1.json",
+        "sha256": "dbd70320ceb3f20e4455c5d67d24b3dae40d2616a832438b23faa99c6b0b892b"
+      },
+      "snapshot_rule": "v1.0 + Amendment 001 + Amendment 002; unchanged numerical contract, canonical runtime checker added plus necessary metadata/reuse policy."
+    },
+    {
+      "id": "Route A Execution Contract Amendment 003",
+      "path": "docs/routeA_execution_contract_amendment_003.json",
+      "sha256": "c34d29178c7d6193f44efbfeb255855a8b82c62a7874201411a7de37fdbb92f7",
+      "parent": {
+        "version": "1.2",
+        "path": "docs/routeA_execution_contract_v1.2.json",
+        "sha256": "7db8d5b8217f009243cb884e291f3d7a09a699b4fe35073792cbaedb5bf7b7fe"
+      },
+      "snapshot_rule": "v1.0 + A001 + A002 + A003; unchanged scientific/numerical contract, analyzer order/key guard and necessary ownership/restart/version metadata."
+    },
+    {
+      "id": "Route A Execution Contract Amendment 004",
+      "path": "docs/routeA_execution_contract_amendment_004.json",
+      "sha256": "803befbe8a0fd9a6f396b4f33dee70bbaa692036b9238ac259b8277b48340c64",
+      "parent": {
+        "version": "1.3",
+        "path": "docs/routeA_execution_contract_v1.3.json",
+        "sha256": "227414aaff22a0f37bed234f6b26c0a296d18f592da641aa55f1c4a4538ff3f1"
+      },
+      "snapshot_rule": "v1.0 + Amendments 001\u2013004; only explicit paper position classification and necessary version/ownership/next-trio metadata change; numerical contract identical."
+    },
+    {
+      "id": "Route A Execution Contract Amendment 005",
+      "path": "docs/routeA_execution_contract_amendment_005.json",
+      "sha256": "37670b3456af33fcb131f4460eb0cb501d842ff34da6531cbd554efd59181aa9",
+      "parent": {
+        "version": "1.4",
+        "path": "docs/routeA_execution_contract_v1.4.json",
+        "sha256": "2665b8a62211618ae531e7b8d42242e3d8f9ae469b95b634beab672c89b345d7"
+      },
+      "snapshot_rule": "Full v1.0 + Amendments 001\u2013005; Amendment 005 advances only next formal execution unit and necessary guards/ownership/readiness metadata. All scientific and numerical criteria remain identical to v1.4."
+    },
+    {
+      "id": "Route A Execution Contract Amendment 006",
+      "path": "docs/routeA_execution_contract_amendment_006.json",
+      "sha256": "2877be4048f8e76283528baf9da16831683fad8ed850c339da82cdf9e096a7e0",
+      "parent": {
+        "version": "1.5",
+        "path": "docs/routeA_execution_contract_v1.5.json",
+        "sha256": "c33efe4aa81ce0644fd709fe944563e93c7ee2f08304161000784f6418e159c1"
+      },
+      "snapshot_rule": "Full v1.0 + Amendments 001\u2013006. Advance next formal unit to Ra1e6/attempt007 and clarify unaccepted B diagnostic comparison ownership only. Scientific/numerical/AB acceptance criteria unchanged."
+    },
+    {
+      "id": "Route A Execution Contract Amendment 007",
+      "path": "docs/routeA_execution_contract_amendment_007.json",
+      "sha256": "9bb55b9c266aeb935c3dd49f77a2e023a2e55b33bc2fc9b2e9159b9b9fb9b592",
+      "parent": {
+        "version": "1.6",
+        "path": "docs/routeA_execution_contract_v1.6.json",
+        "sha256": "c0cdf8d6a08c6190ceff49535c1d44b4050a92373a3faa06cc1e49b9b3b7fe59"
+      },
+      "snapshot_rule": "Full v1.0 plus Amendments001\u2013007; preregister Gate H one NEW sensitivity case with historical accepted baseline reuse; all original D/E/F/G/numerical/model definitions retained, two physical inputs vary as specified by prior Gate H authority."
+    }
+  ],
+  "analyzer_sha256": "e6207e33ae2279e84786115ebfd912b170dcb23f220f1b1155314c723c54cfed",
+  "runtime_checker_sha256": "5055345c7e64758a4f902c81219e2dda2e5b9cdec22c3f22fc8297bbc1bb9e5a",
+  "input_sha256": {
+    "0/T": "2aa0b82fdbef9ea1d970d3135fdfeebb4253a2d69a3b0c5f69601e802af17a6a",
+    "0/U": "2d73c61cd16ca22f804a03a09a7cb9381881d1e5a2e679cbc8b589511bda42c6",
+    "0/p": "6f1d8a263f93de4c8aca72c2f014f3de1eb22ec42b22fcb985cd0669fbb4f57b",
+    "0/p_rgh": "7a474b49f9e53d8a275c7a8b37e18d9069e44f9fb0640bcbef816b5364efe1b1",
+    "constant/g": "de860d74b068aab99ccaa1adc3b0fb0f2b26295a23befc1ec0b5bd34cd469b41",
+    "constant/hRef": "b3cfc4ab0c5b5266283096fd98687c65930df337dedbeb34b67a5288c9946976",
+    "constant/momentumTransport": "3bfe7027873405f63753c0cec85e91c6069dafe94228154189d5b6616233200e",
+    "constant/pRef": "13e8b23d9a316804a134ea8abb6d385f120d64f3dc89ea40b3dcbf09956e8df1",
+    "constant/physicalProperties": "ee59e12919b6858dfe0c6d3f05536a30eb2b233c394628f36d6a580e198a757d",
+    "constant/thermophysicalTransport": "9c550714c97c8fd84bbd68d80558826ba76a028d521e6cafbe15c1b20cd0d08e",
+    "system/blockMeshDict": "d21ce471d23a17969ff7541b01ae9b0278d9a3e973354373a1244f556c6ff15c",
+    "system/controlDict": "c52927780325527833971f84ab73559afc5584391039c1911f2ba90adbce0c75",
+    "system/fvSchemes": "1a5031f97e7a7f2cb086f9119f6ca19b8e79ce128a454bfdb4af57f08944ed56",
+    "system/fvSolution": "2b51eaaf20f37b480ad010275b263f7f6ee0940ac2f37b8fa02df51afd90d9f4"
+  },
+  "mesh_sha256": {
+    "constant/polyMesh/faces": "ac195415a58b99183d674e0884e34b1c39303e9a6e2077d2064c78837a106c53",
+    "constant/polyMesh/points": "61ffe73184d836dba64e3f0ae36308862e37ce32464959b0fbbd59cb12be8e8b",
+    "constant/polyMesh/boundary": "07cc9b62820911e4536eab8b7b3d74e4cba8301ae886017defd2598f495f6c82",
+    "constant/polyMesh/neighbour": "04263cff8323ef8660b4bee13cf40bf9808c5390ca61b2c15272ce58d1abfead",
+    "constant/polyMesh/owner": "afe5e635bc106f92b4d403e25a5736ea43747404104ac5ea640c319ba516a81b"
+  },
+  "controlDict_sha256": "c52927780325527833971f84ab73559afc5584391039c1911f2ba90adbce0c75",
+  "permitted_control_diff": {},
+  "process": {
+    "argv": [
+      "foamRun",
+      "-case",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/A-H-Ra1e6-fine-beta1e-4"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 384.8739128112793,
+    "log": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/A-H-Ra1e6-fine-beta1e-4/log.foamRun.segment_3000",
+    "log_sha256": "f0d3bfa0d143386b95861b2e24f216dbd78c3206569d6088e43029d4cce8906a"
+  },
+  "health": {
+    "exit_code": 0,
+    "standalone_End": true,
+    "flags": {
+      "fatal": false,
+      "fpe": false,
+      "nonfinite": false
+    },
+    "normal_banner_present": true,
+    "normal_banner_misclassified_as_FPE": false,
+    "explicit_divergence_evidence": [],
+    "runtime_selection_lines": [
+      "Build  : 13-441953dfbb42",
+      "Selecting solver fluid",
+      "Selecting thermodynamics package",
+      "Selecting turbulence model type laminar",
+      "Selecting laminar stress model Stokes",
+      "Selecting thermophysical transport type laminar",
+      "Selecting laminar thermophysical transport model Fourier",
+      "PIMPLE: Operating solver in SIMPLE mode"
+    ],
+    "normal_exit": true,
+    "no_fatal_or_nan": true
+  },
+  "runtime_provenance": {
+    "status": "PASS",
+    "failure_class": null,
+    "missing": [],
+    "mismatches": [],
+    "expected": {
+      "version": "13",
+      "build": "13-441953dfbb42",
+      "solver": "fluid",
+      "thermo.type": "heRhoThermo",
+      "thermo.mixture": "pureMixture",
+      "thermo.transport": "const",
+      "thermo.thermo": "eConst",
+      "thermo.equationOfState": "Boussinesq",
+      "thermo.specie": "specie",
+      "thermo.energy": "sensibleInternalEnergy",
+      "momentum_regime": "laminar",
+      "stress_model": "Stokes",
+      "thermal_regime": "laminar",
+      "thermal_model": "Fourier",
+      "algorithm": "SIMPLE"
+    },
+    "actual": {
+      "version": "13",
+      "build": "13-441953dfbb42",
+      "solver": "fluid",
+      "thermo.type": "heRhoThermo",
+      "thermo.mixture": "pureMixture",
+      "thermo.transport": "const",
+      "thermo.thermo": "eConst",
+      "thermo.equationOfState": "Boussinesq",
+      "thermo.specie": "specie",
+      "thermo.energy": "sensibleInternalEnergy",
+      "momentum_regime": "laminar",
+      "stress_model": "Stokes",
+      "thermal_regime": "laminar",
+      "thermal_model": "Fourier",
+      "algorithm": "SIMPLE"
+    },
+    "evidence": {
+      "selections": {
+        "version": [
+          {
+            "value": "13",
+            "line": 5
+          }
+        ],
+        "build": [
+          {
+            "value": "13-441953dfbb42",
+            "line": 8
+          }
+        ],
+        "solver": [
+          {
+            "value": "fluid",
+            "line": 26
+          }
+        ],
+        "momentum_regime": [
+          {
+            "value": "laminar",
+            "line": 38
+          }
+        ],
+        "stress_model": [
+          {
+            "value": "Stokes",
+            "line": 39
+          }
+        ],
+        "thermal_regime": [
+          {
+            "value": "laminar",
+            "line": 42
+          }
+        ],
+        "thermal_model": [
+          {
+            "value": "Fourier",
+            "line": 43
+          }
+        ],
+        "algorithm": [
+          {
+            "value": "SIMPLE",
+            "line": 49
+          }
+        ]
+      },
+      "thermo_blocks": [
+        {
+          "start_line": 28,
+          "end_line": 36,
+          "entries": {
+            "type": {
+              "value": "heRhoThermo",
+              "line": 29
+            },
+            "mixture": {
+              "value": "pureMixture",
+              "line": 30
+            },
+            "transport": {
+              "value": "const",
+              "line": 31
+            },
+            "thermo": {
+              "value": "eConst",
+              "line": 32
+            },
+            "equationOfState": {
+              "value": "Boussinesq",
+              "line": 33
+            },
+            "specie": {
+              "value": "specie",
+              "line": 34
+            },
+            "energy": {
+              "value": "sensibleInternalEnergy",
+              "line": 35
+            }
+          },
+          "duplicates": [],
+          "complete": true
+        }
+      ]
+    },
+    "source": "Actual OpenFOAM runtime log; no fallback to input dictionary or generator manifest",
+    "input_provenance_checked": false,
+    "health_or_Gate_D_checked": false,
+    "log": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/cases/A-H-Ra1e6-fine-beta1e-4/segments/end_3000/solver.log",
+    "contract": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/docs/routeA_execution_contract_v1.7.json",
+    "log_read_scope": "first 120 lines only"
+  },
+  "gate_A": "PASS",
+  "OQ_02": "PASS",
+  "final_field_validation": {
+    "all_required_fields_finite": true,
+    "rho_positive": true,
+    "field_ranges": {
+      "T": [
+        299.503067322582,
+        300.4969326319388
+      ],
+      "U": [
+        -0.03108926998238253,
+        0.03108991776459775
+      ],
+      "rho": [
+        0.9999503067368061,
+        1.000049693267742
+      ],
+      "p": [
+        -140.403829899246,
+        -0.4383751808112324
+      ],
+      "p_rgh": [
+        -0.005214031449671134,
+        0.007382529481948888
+      ],
+      "phi": [
+        -1.943061325009577e-08,
+        1.943022607235211e-08
+      ]
+    },
+    "max_relative_density_deviation": 4.969326774206806e-05,
+    "EOS_proxy_max_absolute_difference": 6.661338147750939e-16,
+    "EOS_proxy_max_relative_difference": 6.661318408143687e-16,
+    "independent_thermo_rho_dump": "NOT_AVAILABLE",
+    "field_sha256": {
+      "rho": "73af15d2b9fd956d73d2fd3b3cf3e2854113c885d81b2f3d341f4bdc1a887c73",
+      "U": "f4f8d4d765f1d5fd298dc066a7cc45362322056f914dac62bbbe3b3c48946662",
+      "phi": "6fbc2127820e889556b7edee02f5e7b33d0bbb2cc63fa55706be3b9400802443",
+      "T": "ec0a49392bc692ace68bed6bb1a5641be1cf87e2652f90d7a7c6ac2d6be2f52d",
+      "wallHeatFlux": "7916f28a1dd07b7fa16c0c25050cf6d507e30d08db322a8432767b72118cbdab",
+      "p": "bf41d4b3a9119ec4cb8cc839859ce7c74cc8123df112f980bd3b95b051380bf1",
+      "p_rgh": "0231093168ee4aa8ec4d79b6cbc2f51d46ae8d2b4d91a132c03c481a142bc17d"
+    }
+  }
+}

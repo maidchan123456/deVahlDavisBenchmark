@@ -1,0 +1,71 @@
+{
+  "schema": "routeA.GateH-diagnostics.v1",
+  "baseline": {
+    "physical_heat_imbalance": 4.1059911683730156e-08,
+    "section_Nu_deviation": 0.0005392664063731737,
+    "native_mass_epsilon_m": 9.201282491398326e-11,
+    "reconstructed_velocity_epsilon_v": 0.000949693061760976,
+    "temperature_symmetry": 0.00011037035422029161,
+    "velocity_symmetry": 0.0004010982483525466,
+    "T_min": 299.5030523700989,
+    "T_max": 300.4969470476793,
+    "rho_min": 0.9995030529523208,
+    "rho_max": 1.000496947629901,
+    "max_relative_density_deviation": 0.0004969476299010456
+  },
+  "perturbed": {
+    "physical_heat_imbalance": 1.3495032757267415e-10,
+    "section_Nu_deviation": 0.0002606109787786637,
+    "native_mass_epsilon_m": 8.805332110374995e-11,
+    "reconstructed_velocity_epsilon_v": 0.0009026457665325413,
+    "temperature_symmetry": 1.1531482570008994e-05,
+    "velocity_symmetry": 4.115582908994948e-05,
+    "T_min": 299.5030504890369,
+    "T_max": 300.4969494608452,
+    "rho_min": 0.9999503050539155,
+    "rho_max": 1.000049694951096,
+    "max_relative_density_deviation": 4.9694951095968776e-05,
+    "symmetry_method": "Frozen 180-degree paired uniform cells, constant cell-volume weights; RMS defect / max(RMS theta or dimensionless in-plane velocity,1e-12)."
+  },
+  "density_amplitude_ratio": 0.10000037852251002,
+  "continuity_operator_metadata": {
+    "native_mass_flux": {
+      "field": "phi",
+      "unit": "kg/s",
+      "name": "A_native_mass_phi",
+      "divergence_name": "A_native_mass_phi_mean_abs_div_kg_m3_s",
+      "operator": "corrected phi face balance / cell volume, same fvc::div(phi) diagnostic as minimal implementation",
+      "normalization": "epsilon_mass_phi_A=L*volume_mean(abs(div(phi)))/(rho0*max|u|)",
+      "legacy_alias": "epsilon_m; retain with explicit operator metadata"
+    },
+    "reconstructed_volume": {
+      "name": "A_reconstructed_U_divergence",
+      "field": "fvc::div(U)",
+      "unit": "1/s",
+      "operator": "Gauss linear from cell-centred U, physical no-slip walls, empty faces contribute zero, volume weighting V_i/sum(V)",
+      "normalization": "epsilon_volume_reconstructed_U_A=L*volume_mean(abs(div(U)))/max|u|",
+      "legacy_alias": "epsilon_v; retain with explicit operator metadata"
+    },
+    "mass_versus_volume": "separate operators and units; never copy B epsilon_phi name; no new phi/rhof operator study",
+    "zero_velocity": "Ra0 uses Gate C absolute velocity criterion; relative divergence indicators null",
+    "symmetry": "existing design §13.2: 180-degree matched uniform cells, theta(X,Z)+theta(1-X,1-Z)-1; U(X,Z)+U(1-X,1-Z). Volume L2 divided by max(volume RMS of theta or dimensionless velocity,1e-12); existing 0.2% criterion unchanged"
+  },
+  "baseline_source": "results/routeA/cases/A-Ra1e6-fine/segments/end_9000",
+  "perturbed_source": "results/routeA/cases/A-H-Ra1e6-fine-beta1e-4/segments/end_12000",
+  "eligibility": true,
+  "Gate_H": {
+    "status": "PASS",
+    "eligible_accepted_pair": true,
+    "checks": {
+      "Nu_bar_cavity": "PASS",
+      "Umax": "PASS",
+      "Wmax": "PASS",
+      "reconstructed_velocity_epsilon_v": "PASS"
+    },
+    "failure_components": [],
+    "threshold_relative_fraction": 0.002,
+    "epsilon_v_slack": 0
+  },
+  "new_thresholds": false,
+  "note": "Steady diagnostic support does not certify transient mass/energy or particle coupling."
+}
