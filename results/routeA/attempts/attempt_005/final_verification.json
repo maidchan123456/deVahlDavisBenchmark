@@ -1,0 +1,106 @@
+{
+  "status": "PASS",
+  "protected_file_count": 83282,
+  "all_historical_evidence_unchanged": true,
+  "permitted_control_changes_only": true,
+  "accepted_final_fields_all_match": true,
+  "segments": [
+    {
+      "case_id": "A-Ra1e4-coarse",
+      "iteration": 3000,
+      "native_restart_fields_mesh_input_raw_final_seals_runtime_health": "PASS"
+    },
+    {
+      "case_id": "A-Ra1e4-medium",
+      "iteration": 3000,
+      "native_restart_fields_mesh_input_raw_final_seals_runtime_health": "PASS"
+    },
+    {
+      "case_id": "A-Ra1e4-medium",
+      "iteration": 6000,
+      "native_restart_fields_mesh_input_raw_final_seals_runtime_health": "PASS"
+    },
+    {
+      "case_id": "A-Ra1e4-fine",
+      "iteration": 3000,
+      "native_restart_fields_mesh_input_raw_final_seals_runtime_health": "PASS"
+    },
+    {
+      "case_id": "A-Ra1e4-fine",
+      "iteration": 6000,
+      "native_restart_fields_mesh_input_raw_final_seals_runtime_health": "PASS"
+    },
+    {
+      "case_id": "A-Ra1e4-fine",
+      "iteration": 9000,
+      "native_restart_fields_mesh_input_raw_final_seals_runtime_health": "PASS"
+    },
+    {
+      "case_id": "A-Ra1e4-fine",
+      "iteration": 12000,
+      "native_restart_fields_mesh_input_raw_final_seals_runtime_health": "PASS"
+    },
+    {
+      "case_id": "A-Ra1e4-fine",
+      "iteration": 15000,
+      "native_restart_fields_mesh_input_raw_final_seals_runtime_health": "PASS"
+    }
+  ],
+  "derived_wallHeatFlux_regeneration_observations": [
+    {
+      "case_id": "A-Ra1e4-medium",
+      "iteration": 3000,
+      "field": "wallHeatFlux",
+      "observed_checkpoint_sha256": "449bceb3ab6e52cf45bc56ab0305c707b8e525efee468cd1014eb75c60d5532e",
+      "current_derived_working_sha256": "b2aadbca14803d9b910b2e1a11f3122e1ec4e1023317f46ed7b6dab6cc86283b",
+      "classification": "DERIVED_FUNCTION_OBJECT_FIELD_REGENERATED_IN_WORKING_CASE; not native restart input or sealed raw Q",
+      "restart_guard_before_continuation": "PASS",
+      "raw_evidence_seal": "UNCHANGED"
+    },
+    {
+      "case_id": "A-Ra1e4-fine",
+      "iteration": 3000,
+      "field": "wallHeatFlux",
+      "observed_checkpoint_sha256": "0775c3afbf4ee301c7ada28a181e35464d75d594a95fe92c9e92e7bd31595a40",
+      "current_derived_working_sha256": "b8b0dd72113e10891fef9f0911fb50ae60f3d2ae5cd5c4e624d77c9794df6c70",
+      "classification": "DERIVED_FUNCTION_OBJECT_FIELD_REGENERATED_IN_WORKING_CASE; not native restart input or sealed raw Q",
+      "restart_guard_before_continuation": "PASS",
+      "raw_evidence_seal": "UNCHANGED"
+    },
+    {
+      "case_id": "A-Ra1e4-fine",
+      "iteration": 6000,
+      "field": "wallHeatFlux",
+      "observed_checkpoint_sha256": "b7491d9a5ea299cff670a9565d0ba61df167547d6992672fa68b4decbacd7b57",
+      "current_derived_working_sha256": "9710eaacacd81818a187d9bfa904c1d3aca71cd4ba4261539936b0d9b12e1e28",
+      "classification": "DERIVED_FUNCTION_OBJECT_FIELD_REGENERATED_IN_WORKING_CASE; not native restart input or sealed raw Q",
+      "restart_guard_before_continuation": "PASS",
+      "raw_evidence_seal": "UNCHANGED"
+    },
+    {
+      "case_id": "A-Ra1e4-fine",
+      "iteration": 9000,
+      "field": "wallHeatFlux",
+      "observed_checkpoint_sha256": "2f1aacaf152b9f29e8ece635a13c5d1775d76a260e6a9e90cc99e92e509c926b",
+      "current_derived_working_sha256": "59f28e24a8b46dc8837b329f78c9b66a99cedea17b8d78175c7944c9eec69cd6",
+      "classification": "DERIVED_FUNCTION_OBJECT_FIELD_REGENERATED_IN_WORKING_CASE; not native restart input or sealed raw Q",
+      "restart_guard_before_continuation": "PASS",
+      "raw_evidence_seal": "UNCHANGED"
+    },
+    {
+      "case_id": "A-Ra1e4-fine",
+      "iteration": 12000,
+      "field": "wallHeatFlux",
+      "observed_checkpoint_sha256": "80df4986f177b77a70ce8beaa3c377de5a70abfd7764fab69cca5bc14ea3b15e",
+      "current_derived_working_sha256": "ed0f6051413217bd7da73cf8424c7e3f9d995c4c078f890c0dff8186f57d8645",
+      "classification": "DERIVED_FUNCTION_OBJECT_FIELD_REGENERATED_IN_WORKING_CASE; not native restart input or sealed raw Q",
+      "restart_guard_before_continuation": "PASS",
+      "raw_evidence_seal": "UNCHANGED"
+    }
+  ],
+  "solver_concurrency": 1,
+  "numerical_physical_model_criteria_changed": false,
+  "Ra1e3_results_modified": false,
+  "Route_B_modified": false,
+  "bootstrap_help_false_negative_resolved_before_case_generation": true
+}

@@ -1,0 +1,266 @@
+{
+  "case_id": "A-Ra1e4-fine",
+  "final_iteration": 9000,
+  "Nu_bar_0": 2.241881015658805,
+  "Nu_bar_half": 2.254648997695278,
+  "Nu_bar_cavity": 2.2489000617337336,
+  "Nu_bar_1": 2.24189994822018,
+  "Nu_bar_cavity_from_section_trapezoid": 2.2487833395170393,
+  "Nu_bar_cavity_discrete_method_difference": 0.00011672221669423166,
+  "Nu_bar_cavity_discrete_method_difference_legacy_semantics": "signed primary minus section-trapezoid; use the explicit absolute/relative fields for diagnostics",
+  "Nu_bar_cavity_method_absolute_difference": 0.00011672221669423166,
+  "Nu_bar_cavity_method_relative_difference": 5.190191359781794e-05,
+  "Nu_bar_cavity_method_relative_difference_denominator": "abs(Nu_bar_cavity), where Nu_bar_cavity is the primary cell-volume quadrature",
+  "Nu_bar_0_path1": 2.241881015658805,
+  "Nu_bar_1_path1": 2.24189994822018,
+  "Nu_bar_0_path2": 2.241881015658351,
+  "Nu_bar_1_path2": 2.2418999482196353,
+  "Nu_hot_path1": 2.241881015658805,
+  "Nu_cold_path1": 2.24189994822018,
+  "Nu_hot_path2": 2.241881015658351,
+  "Nu_cold_path2": 2.2418999482196353,
+  "Nu_path_relative_difference": 2.428535545078533e-13,
+  "wallHeatFlux_Q_W": {
+    "hotWall": 3.157578895293452e-05,
+    "coldWall": -3.157605560872726e-05
+  },
+  "wall_area_m2": 0.0001,
+  "wallHeatFlux_sign": "wallHeatFlux=-q; hot Q positive, cold Q negative; cold Nu uses -Q",
+  "radiation_contribution": "absent (no radiation field/model selected)",
+  "heat_imbalance": 8.444909078750255e-06,
+  "section_Nu_max_relative_deviation_from_half": 0.0056629577595112696,
+  "paper_Nu_definition": "Q=U*theta-dtheta/dX; Route A diagnostic only because its governing equations differ from the paper",
+  "paper_reference_file": "reference/de_vahl_davis_table_v.csv",
+  "paper_Nu_discretization": "walls: orthogonal patch face gradient; internal vertical faces: linear U/theta interpolation plus two-cell orthogonal temperature gradient and face-area integration; cavity: cell-volume U*theta quadrature plus exact imposed-wall conductive integral 1",
+  "Nu_hot_local_max": 3.528032656359375,
+  "Nu_hot_local_max_Z": 0.1442733314655773,
+  "Nu_hot_local_min": 0.5843101284018815,
+  "Nu_hot_local_min_Z": 1.0,
+  "Nu_max": 3.528032656359375,
+  "Z_at_Nu_max": 0.1442733314655773,
+  "Nu_min": 0.5843101284018815,
+  "Z_at_Nu_min": 1.0,
+  "Nu_hot_local_raw_max": 3.5279477330186637,
+  "Nu_hot_local_raw_max_Z": 0.146875,
+  "Nu_hot_local_raw_min": 0.5843747382641595,
+  "Nu_hot_local_raw_min_Z": 0.996875,
+  "Nu_hot_local_extrema_method": "fixed local quartic through five adjacent face-centre values; derivative root inside the local interval; endpoint evaluated by the same quartic only when the five-point window touches it",
+  "paper_comparison_like_for_like": {
+    "Nu_bar_cavity": {
+      "calculated": 2.2489000617337336,
+      "reference": 2.243,
+      "signed_relative_difference": 0.0026304332294844837,
+      "absolute_relative_error": 0.0026304332294844837,
+      "error": 0.0026304332294844837,
+      "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+    },
+    "Nu_bar_half": {
+      "calculated": 2.254648997695278,
+      "reference": 2.243,
+      "signed_relative_difference": 0.005193489832937161,
+      "absolute_relative_error": 0.005193489832937161,
+      "error": 0.005193489832937161,
+      "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+    },
+    "Nu_bar_0": {
+      "calculated": 2.241881015658805,
+      "reference": 2.238,
+      "signed_relative_difference": 0.0017341446196627189,
+      "absolute_relative_error": 0.0017341446196627189,
+      "error": 0.0017341446196627189,
+      "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+    },
+    "Nu_hot_local_max": {
+      "calculated": 3.528032656359375,
+      "reference": 3.528,
+      "signed_relative_difference": 9.256337691293362e-06,
+      "absolute_relative_error": 9.256337691293362e-06,
+      "error": 9.256337691293362e-06,
+      "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+    },
+    "Nu_hot_local_max_Z": {
+      "calculated": 0.1442733314655773,
+      "reference": 0.143,
+      "signed_position_difference": 0.0012733314655773154,
+      "absolute_position_error": 0.0012733314655773154,
+      "error": 0.0012733314655773154,
+      "error_legacy_semantics": "signed position difference; do not use for Gate judgement"
+    },
+    "Nu_hot_local_min": {
+      "calculated": 0.5843101284018815,
+      "reference": 0.586,
+      "signed_relative_difference": -0.002883739928529878,
+      "absolute_relative_error": 0.002883739928529878,
+      "error": -0.002883739928529878,
+      "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+    },
+    "Nu_hot_local_min_Z": {
+      "calculated": 1.0,
+      "reference": 1.0,
+      "signed_position_difference": 0.0,
+      "absolute_position_error": 0.0,
+      "error": 0.0,
+      "error_legacy_semantics": "signed position difference; do not use for Gate judgement"
+    },
+    "Umax": {
+      "calculated": 16.233929271464177,
+      "reference": 16.178,
+      "signed_relative_difference": 0.003457119017441981,
+      "absolute_relative_error": 0.003457119017441981,
+      "error": 0.003457119017441981,
+      "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+    },
+    "Umax_Z": {
+      "calculated": 0.8220214843750001,
+      "reference": 0.823,
+      "signed_position_difference": -0.0009785156249998428,
+      "absolute_position_error": 0.0009785156249998428,
+      "error": -0.0009785156249998428,
+      "error_legacy_semantics": "signed position difference; do not use for Gate judgement"
+    },
+    "Wmax": {
+      "calculated": 19.6549660709593,
+      "reference": 19.617,
+      "signed_relative_difference": 0.0019353658030942403,
+      "absolute_relative_error": 0.0019353658030942403,
+      "error": 0.0019353658030942403,
+      "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+    },
+    "Wmax_X": {
+      "calculated": 0.12182617187500001,
+      "reference": 0.119,
+      "signed_position_difference": 0.002826171875000019,
+      "absolute_position_error": 0.002826171875000019,
+      "error": 0.002826171875000019,
+      "error_legacy_semantics": "signed position difference; do not use for Gate judgement"
+    },
+    "Nu_bar_1": {
+      "calculated": 2.24189994822018,
+      "reference": null,
+      "error": null,
+      "note": "Table V contains no independent cold-wall mean reference"
+    }
+  },
+  "Umax": 16.233929271464177,
+  "Umax_Z": 0.8220214843750001,
+  "Wmax": 19.6549660709593,
+  "Wmax_X": 0.12182617187500001,
+  "Umax_Y": 0.8220214843750001,
+  "Vmax": 19.6549660709593,
+  "Vmax_X": 0.12182617187500001,
+  "Umin": -16.228202974749134,
+  "Umin_Y": 0.177978515625,
+  "Wmin": -19.650732926246988,
+  "Wmin_X": 0.8781738281250001,
+  "Vmin": -19.650732926246988,
+  "Vmin_X": 0.8781738281250001,
+  "centreline_method": "linear interpolation to exact centreline from the two bracketing cell-centre lines, then 4097 uniform points including no-slip endpoints",
+  "max_dimensionless_velocity": 19.726802840318733,
+  "max_theta_analytic_error": 0.39356796151262186,
+  "temperature_range_K": [
+    299.5018258030872,
+    300.4981738289429
+  ],
+  "density_range_kg_m3": [
+    0.9995018261710571,
+    1.000498174196913
+  ],
+  "final_initial_residuals": {
+    "Ux": 5.781335262352145e-07,
+    "Uy": 4.035596172937329e-07,
+    "e": 1.297056006752013e-06,
+    "p_rgh": 2.108932606196897e-06
+  },
+  "Rwin": {
+    "window_start_iteration": 8801,
+    "window_end_iteration": 9000,
+    "Nu": 0.0006325815799479685,
+    "Nu_legacy_wall_pair_monitor": 0.0006325815799479685,
+    "Nu_bar_half": 2.622798439599456e-05,
+    "Nu_bar_half_sample_times": [
+      8900,
+      9000
+    ],
+    "Umax": 2.0147517286417455e-05,
+    "Vmax": 0.000156567637583764,
+    "Nu_samples": 200,
+    "velocity_samples": 20,
+    "scales": {
+      "Nu": 1.0,
+      "Umax": 1.0,
+      "Vmax": 1.0
+    },
+    "primary_mean_Nu_candidate": "Nu_bar_half; legacy Gate D remains unchanged",
+    "heat_imbalance_start": 8.950598885042131e-06,
+    "heat_imbalance_end": 8.444909078863517e-06
+  },
+  "Gate_D_monitor_evaluation": {
+    "contract_version": "1.0",
+    "window_start_iteration": 8801,
+    "window_end_iteration": 9000,
+    "window_inclusive": true,
+    "Nu_samples": 200,
+    "velocity_samples": 20,
+    "velocity_sample_iterations": [
+      8810,
+      8820,
+      8830,
+      8840,
+      8850,
+      8860,
+      8870,
+      8880,
+      8890,
+      8900,
+      8910,
+      8920,
+      8930,
+      8940,
+      8950,
+      8960,
+      8970,
+      8980,
+      8990,
+      9000
+    ],
+    "Rwin": {
+      "Nu_bar_0": 0.0006328344243676466,
+      "Umax": 2.014751728649233e-05,
+      "Wmax": 0.00015656763758377924
+    },
+    "Nu_monitor": "hot-wall Q/(k*DeltaT*W), not the hot/cold pair average",
+    "Nu_bar_0_last": 2.241881015658351,
+    "Nu_bar_1_last": 2.2418999482196353,
+    "heat_imbalance_start": 8.95059888501493e-06,
+    "heat_imbalance_end": 8.444909078867394e-06,
+    "heat_trend_method": "OLS exact rational arithmetic on original decimal Q tokens",
+    "heat_slope_per_iteration_display": -2.541001821486148e-09,
+    "heat_slope_sign_exact": -1,
+    "heat_trend_pass": true,
+    "residual_fields": [
+      "Ux",
+      "Uy",
+      "e",
+      "p_rgh"
+    ],
+    "final_initial_residuals": {
+      "Ux": 5.781335262352145e-07,
+      "Uy": 4.035596172937329e-07,
+      "e": 1.297056006752013e-06,
+      "p_rgh": 2.108932606196897e-06
+    },
+    "residual_pass": false,
+    "qoi_rwin_pass": false,
+    "numerical_checks_pass": false,
+    "formal_Gate_D_requires_external_execution_and_provenance_flags": true
+  },
+  "divergence": {
+    "mean_abs_mass_divergence_kg_m3_s": 6.363943001587985e-14,
+    "mean_abs_volume_divergence_1_s": 1.4714363636038168e-05,
+    "epsilon_m": 2.290487499521471e-12,
+    "epsilon_v": 0.0005295940891260158,
+    "definitions": "mass: volume mean |fvc::div(phi)| using solver mass flux; volume: volume mean |fvc::div(U)| using Gauss linear; normalized per acceptance_criteria 9.2"
+  },
+  "normal_exit": true,
+  "fatal_or_nan": false
+}

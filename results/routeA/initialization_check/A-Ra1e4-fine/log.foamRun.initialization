@@ -1,0 +1,67 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  13
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 13-441953dfbb42
+Exec   : foamRun -case /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/initialization_check/A-Ra1e4-fine
+Date   : Oct 04 2026
+Time   : 19:43:34
+Host   : "mirai-Precision-5860-Tower"
+PID    : 385116
+I/O    : uncollated
+Case   : /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/initialization_check/A-Ra1e4-fine
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Selecting solver fluid
+Selecting thermodynamics package 
+{
+    type            heRhoThermo;
+    mixture         pureMixture;
+    transport       const;
+    thermo          eConst;
+    equationOfState Boussinesq;
+    specie          specie;
+    energy          sensibleInternalEnergy;
+}
+
+Selecting turbulence model type laminar
+    Selecting laminar stress model Stokes
+No MRF models present
+
+Selecting thermophysical transport type laminar
+Selecting laminar thermophysical transport model Fourier
+
+PIMPLE: No convergence criteria found
+
+
+PIMPLE: Operating solver in steady-state mode with 1 outer corrector
+PIMPLE: Operating solver in SIMPLE mode
+
+
+
+Starting time loop
+
+Time = 1s
+
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.99999999999858, Final residual = 3.124446951303417e-11, No Iterations 4
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.9100059201777064, Final residual = 1.761774610888818e-11, No Iterations 4
+DILUPBiCGStab:  Solving for e, Initial residual = 0.9999999999938952, Final residual = 4.669614327846356e-11, No Iterations 5
+DICPCG:  Solving for p_rgh, Initial residual = 0.999999999970793, Final residual = 8.691740088787535e-11, No Iterations 283
+time step continuity errors : sum local = 4.402275225859627e-13, global = 3.103540972145269e-20
+DICPCG:  Solving for p_rgh, Initial residual = 0.06063921738050344, Final residual = 8.692884280555817e-11, No Iterations 259
+time step continuity errors : sum local = 8.281177430326067e-13, global = 3.11238448037883e-20, cumulative = 3.11238448037883e-20
+ExecutionTime = 0.287804 s  ClockTime = 0 s
+
+End
+

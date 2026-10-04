@@ -1,0 +1,157 @@
+{
+  "Gate_E_diagnostic": {
+    "status": "PASS",
+    "classification": "PRACTICAL_BENCHMARK_COMPARISON",
+    "relative_errors": {
+      "Nu_bar_cavity": 0.0015092299100596077,
+      "Umax": 0.00040690653599414675,
+      "Wmax": 0.00025291374971062877
+    },
+    "absolute_position_errors": {
+      "Umax_Z": 0.0009785156249998428,
+      "Wmax_X": 0.002826171875000019
+    },
+    "checks": {
+      "Nu_bar_cavity": true,
+      "Umax": true,
+      "Wmax": true,
+      "Umax_Z": true,
+      "Wmax_X": true
+    },
+    "not_pure_numerical_error": true,
+    "note": "Position criterion uses absolute coordinate difference as acceptance_criteria specifies; canonical paper comparison payload retained unchanged."
+  },
+  "Gate_F": {
+    "status": "FAIL",
+    "needs_320": "YES",
+    "quantities": {
+      "Nu_bar_cavity": {
+        "values_coarse_medium_fine": [
+          2.2599546294035275,
+          2.2490772787596685,
+          2.2463852026882636
+        ],
+        "convergence_type": "MONOTONIC_CONVERGENCE",
+        "monotonic": true,
+        "fine_medium_relative_difference": 0.001198403581088072,
+        "p_obs": 2.0145361248427722,
+        "GCI_fine": 0.0011824381366717367,
+        "GCI_limit": 0.015,
+        "checks": {
+          "fine_medium_le_1pct": true,
+          "GCI_within_existing_limit": true
+        },
+        "needs_320": false,
+        "status": "PASS"
+      },
+      "Umax": {
+        "values_coarse_medium_fine": [
+          16.121335096250803,
+          16.173070494115187,
+          16.184582933939314
+        ],
+        "convergence_type": "MONOTONIC_CONVERGENCE",
+        "monotonic": true,
+        "fine_medium_relative_difference": 0.0007113213773328274,
+        "p_obs": 2.167958109096661,
+        "GCI_fine": 0.0006107739175196977,
+        "GCI_limit": 0.02,
+        "checks": {
+          "fine_medium_le_1pct": true,
+          "GCI_within_existing_limit": true
+        },
+        "needs_320": false,
+        "status": "PASS"
+      },
+      "Wmax": {
+        "values_coarse_medium_fine": [
+          19.597333463027827,
+          19.626839529075486,
+          19.621961409028074
+        ],
+        "convergence_type": "NON_MONOTONIC_OR_UNDEFINED",
+        "monotonic": false,
+        "fine_medium_relative_difference": 0.0002486051188117872,
+        "p_obs": null,
+        "GCI_fine": null,
+        "needs_320": true,
+        "status": "FAIL"
+      }
+    },
+    "accepted_data_only": true,
+    "blocking": false,
+    "automatic_320_executed": false
+  },
+  "Gate_G": {
+    "status": "PASS",
+    "diagnostic_status": "PASS",
+    "values": {
+      "physical_heat_imbalance": 1.1068983033567934e-06,
+      "section_Nu_deviation": 0.0005386738988085124,
+      "native_mass_epsilon_m": 2.594755004802806e-12,
+      "reconstructed_velocity_epsilon_v": 0.0005292183447432433,
+      "temperature_symmetry": 8.189118663393264e-05,
+      "velocity_symmetry": 0.00034899332177116903
+    },
+    "limits": {
+      "physical_heat_imbalance": 0.002,
+      "section_Nu_deviation": 0.005,
+      "native_mass_epsilon_m": 1e-06,
+      "reconstructed_velocity_epsilon_v": 0.002,
+      "temperature_symmetry": 0.002,
+      "velocity_symmetry": 0.002
+    },
+    "checks": {
+      "physical_heat_imbalance": true,
+      "section_Nu_deviation": true,
+      "native_mass_epsilon_m": true,
+      "reconstructed_velocity_epsilon_v": true,
+      "temperature_symmetry": true,
+      "velocity_symmetry": true
+    },
+    "failure_components": [],
+    "formal_fine_accepted": true,
+    "blocking": false,
+    "operator_metadata": {
+      "native_mass_flux": {
+        "field": "phi",
+        "unit": "kg/s",
+        "name": "A_native_mass_phi",
+        "divergence_name": "A_native_mass_phi_mean_abs_div_kg_m3_s",
+        "operator": "corrected phi face balance / cell volume, same fvc::div(phi) diagnostic as minimal implementation",
+        "normalization": "epsilon_mass_phi_A=L*volume_mean(abs(div(phi)))/(rho0*max|u|)",
+        "legacy_alias": "epsilon_m; retain with explicit operator metadata"
+      },
+      "reconstructed_volume": {
+        "name": "A_reconstructed_U_divergence",
+        "field": "fvc::div(U)",
+        "unit": "1/s",
+        "operator": "Gauss linear from cell-centred U, physical no-slip walls, empty faces contribute zero, volume weighting V_i/sum(V)",
+        "normalization": "epsilon_volume_reconstructed_U_A=L*volume_mean(abs(div(U)))/max|u|",
+        "legacy_alias": "epsilon_v; retain with explicit operator metadata"
+      },
+      "mass_versus_volume": "separate operators and units; never copy B epsilon_phi name; no new phi/rhof operator study",
+      "zero_velocity": "Ra0 uses Gate C absolute velocity criterion; relative divergence indicators null",
+      "symmetry": "existing design \u00a713.2: 180-degree matched uniform cells, theta(X,Z)+theta(1-X,1-Z)-1; U(X,Z)+U(1-X,1-Z). Volume L2 divided by max(volume RMS of theta or dimensionless velocity,1e-12); existing 0.2% criterion unchanged"
+    },
+    "bounded_cause_category": "NONE",
+    "additional_research_performed": false
+  },
+  "symmetry": {
+    "A-Ra1e4-coarse": {
+      "theta_L2_relative": 8.375277804372871e-05,
+      "velocity_L2_relative": 0.0003517402735634307,
+      "method": "Frozen 180-degree paired uniform cells, constant cell-volume weights; RMS defect / max(RMS theta or dimensionless in-plane velocity,1e-12)."
+    },
+    "A-Ra1e4-medium": {
+      "theta_L2_relative": 8.269742303164483e-05,
+      "velocity_L2_relative": 0.0003495876008033721,
+      "method": "Frozen 180-degree paired uniform cells, constant cell-volume weights; RMS defect / max(RMS theta or dimensionless in-plane velocity,1e-12)."
+    },
+    "A-Ra1e4-fine": {
+      "theta_L2_relative": 8.189118663393264e-05,
+      "velocity_L2_relative": 0.00034899332177116903,
+      "method": "Frozen 180-degree paired uniform cells, constant cell-volume weights; RMS defect / max(RMS theta or dimensionless in-plane velocity,1e-12)."
+    }
+  }
+}
