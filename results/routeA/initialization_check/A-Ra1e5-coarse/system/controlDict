@@ -1,0 +1,35 @@
+FoamFile
+{
+    format ascii;
+    class dictionary;
+    location "system";
+    object controlDict;
+}
+solver fluid;
+startFrom startTime;
+startTime 0;
+stopAt endTime;
+deltaT 1;
+writeControl timeStep;
+writeInterval 100;
+purgeWrite 0;
+writeFormat ascii;
+writePrecision 16;
+writeCompression off;
+timeFormat general;
+timePrecision 12;
+runTimeModifiable true;
+
+endTime 1;
+
+functions
+{
+    constructorState
+    {
+        type writeObjects;
+        libs ("libutilityFunctionObjects.so");
+        objects (p p_rgh rho gh);
+        writeOption anyWrite;
+        executeAtStart true;
+    }
+}

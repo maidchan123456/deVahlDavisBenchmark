@@ -1,0 +1,17 @@
+{
+  "owner": "ATTEMPT_006_EXECUTION_ORCHESTRATION",
+  "execution_runner_source": {
+    "path": "results/routeA/attempts/attempt_005/execution_runner.py",
+    "sha256": "80e99180a5d6ba6beb9193ced7d03f79492b37368dd69925e437bfe82e2f4a33"
+  },
+  "changes": "Only new Ra1e5/attempt006/v1.5 scheduling/paths/hash metadata; remove historical bootstrap false-negative prerequisite; add v1.5 start_guard hashes. No canonical source edited.",
+  "group_source": {
+    "path": "results/routeA/attempts/attempt_005/group_evaluation.py",
+    "sha256": "5f7c7f6bc6b6d844618073f856645d71e7aeb3c0b78403c2e0f2c55a3735ce9a"
+  },
+  "frozen_symmetry_and_grid_convergence_helpers_AST_identical": true,
+  "reporting_changes": "Use explicit POSITION_KEYS, v1.5 nonblocking auxiliary comparison interpretation, separate Ra1e6 scientific allowance from metadata readiness; next PREPARE_ROUTE_A_RA1E6_EXECUTION_CONTRACT.",
+  "all_implementation_hashes_match": "PASS",
+  "protected_file_count": 9356,
+  "solver_concurrency": 1
+}

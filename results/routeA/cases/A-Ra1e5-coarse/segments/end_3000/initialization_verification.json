@@ -1,0 +1,79 @@
+{
+  "case_id": "A-Ra1e5-coarse",
+  "method": "foamRun constructor followed by writeObjects executeAtStart in an isolated one-iteration clone; only clone time 0 is inspected",
+  "source_case": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/A-Ra1e5-coarse",
+  "initialization_clone": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/initialization_check/A-Ra1e5-coarse",
+  "n_cells": 1600,
+  "max_abs_constructor_relation_residual_Pa": 6.661338147750939e-16,
+  "max_abs_constructor_p_rgh_Pa": 6.661338147750939e-16,
+  "max_abs_input_p_rgh_Pa": 0.0,
+  "max_abs_constructor_minus_input_p_Pa": 4.440892098500626e-16,
+  "max_abs_constructor_rho_minus_rho0_kg_m3": 0.0,
+  "constructor_gh_range_m2_s2": [
+    -1.390845070422535,
+    -0.01760563380281687
+  ],
+  "physical_patches": {
+    "hotWall": {
+      "max_abs_relation_residual_Pa": 4.440892098500626e-16,
+      "max_abs_constructor_p_rgh_Pa": 2.220446049250313e-16,
+      "max_abs_input_p_rgh_Pa": 0.0,
+      "max_abs_constructor_minus_input_p_Pa": 2.220446049250313e-16,
+      "rho_range_kg_m3": [
+        0.9995,
+        0.9995
+      ],
+      "gh_range_m2_s2": [
+        -1.390845070422535,
+        -0.0176056338028169
+      ]
+    },
+    "coldWall": {
+      "max_abs_relation_residual_Pa": 6.661338147750939e-16,
+      "max_abs_constructor_p_rgh_Pa": 3.33066907387547e-16,
+      "max_abs_input_p_rgh_Pa": 0.0,
+      "max_abs_constructor_minus_input_p_Pa": 4.440892098500626e-16,
+      "rho_range_kg_m3": [
+        1.0005,
+        1.0005
+      ],
+      "gh_range_m2_s2": [
+        -1.390845070422535,
+        -0.0176056338028169
+      ]
+    },
+    "bottomWall": {
+      "max_abs_relation_residual_Pa": 0.0,
+      "max_abs_constructor_p_rgh_Pa": 0.0,
+      "max_abs_input_p_rgh_Pa": 0.0,
+      "max_abs_constructor_minus_input_p_Pa": 0.0,
+      "rho_range_kg_m3": [
+        1.0,
+        1.0
+      ],
+      "gh_range_m2_s2": [
+        0.0,
+        0.0
+      ]
+    },
+    "topWall": {
+      "max_abs_relation_residual_Pa": 2.220446049250313e-16,
+      "max_abs_constructor_p_rgh_Pa": 2.220446049250313e-16,
+      "max_abs_input_p_rgh_Pa": 0.0,
+      "max_abs_constructor_minus_input_p_Pa": 0.0,
+      "rho_range_kg_m3": [
+        1.0,
+        1.0
+      ],
+      "gh_range_m2_s2": [
+        -1.408450704225352,
+        -1.408450704225352
+      ]
+    }
+  },
+  "max_abs_patch_relation_residual_Pa": 6.661338147750939e-16,
+  "max_abs_patch_constructor_p_rgh_Pa": 3.33066907387547e-16,
+  "max_abs_patch_constructor_minus_input_p_Pa": 4.440892098500626e-16,
+  "tolerance_Pa": 1e-12,
+  "pass": true
+}

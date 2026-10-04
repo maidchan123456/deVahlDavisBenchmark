@@ -1,0 +1,133 @@
+{
+  "overall": "COMPLETE",
+  "attempt": "006",
+  "cases": [
+    {
+      "case_id": "A-Ra1e5-coarse",
+      "grid": [
+        40,
+        40,
+        1
+      ],
+      "computed": true,
+      "accepted": true,
+      "final_iteration": 3000,
+      "Gate_D": "PASS",
+      "Gate_D_failure_components": [],
+      "segments": [
+        {
+          "end_iteration": 3000,
+          "path": "results/routeA/cases/A-Ra1e5-coarse/segments/end_3000",
+          "Gate_D": "PASS",
+          "failure_components": [],
+          "sealed_sha256_manifest": "81689dbfd2dfd0e7686322111370e1d3af932db9c1c4aac96d3e9933af3ec819"
+        }
+      ],
+      "status": "ACCEPTED",
+      "case_reused": false,
+      "runtime_provenance": "PASS",
+      "OQ02": "PASS"
+    },
+    {
+      "case_id": "A-Ra1e5-medium",
+      "grid": [
+        80,
+        80,
+        1
+      ],
+      "computed": true,
+      "accepted": true,
+      "final_iteration": 3000,
+      "Gate_D": "PASS",
+      "Gate_D_failure_components": [],
+      "segments": [
+        {
+          "end_iteration": 3000,
+          "path": "results/routeA/cases/A-Ra1e5-medium/segments/end_3000",
+          "Gate_D": "PASS",
+          "failure_components": [],
+          "sealed_sha256_manifest": "a6f51d0d937ab7ad22cd10606eef3c14666d767495f4ddf963c326302e5e40ff"
+        }
+      ],
+      "status": "ACCEPTED",
+      "case_reused": false,
+      "runtime_provenance": "PASS",
+      "OQ02": "PASS"
+    },
+    {
+      "case_id": "A-Ra1e5-fine",
+      "grid": [
+        160,
+        160,
+        1
+      ],
+      "computed": true,
+      "accepted": true,
+      "final_iteration": 12000,
+      "Gate_D": "PASS",
+      "Gate_D_failure_components": [],
+      "segments": [
+        {
+          "end_iteration": 3000,
+          "path": "results/routeA/cases/A-Ra1e5-fine/segments/end_3000",
+          "Gate_D": "FAIL",
+          "failure_components": [
+            "QOI_RWIN_PASS",
+            "RESIDUAL_PASS",
+            "HEAT_TREND_PASS"
+          ],
+          "sealed_sha256_manifest": "3069fbb890d70633541b280908b142dd5864af531bace5f199cf408f19241e90"
+        },
+        {
+          "end_iteration": 6000,
+          "path": "results/routeA/cases/A-Ra1e5-fine/segments/end_6000",
+          "Gate_D": "FAIL",
+          "failure_components": [
+            "QOI_RWIN_PASS",
+            "RESIDUAL_PASS"
+          ],
+          "sealed_sha256_manifest": "be56e18279eccbf4c3ae998fac0fdd3f24775813fecae8d32afdd66bc902e7c3"
+        },
+        {
+          "end_iteration": 9000,
+          "path": "results/routeA/cases/A-Ra1e5-fine/segments/end_9000",
+          "Gate_D": "FAIL",
+          "failure_components": [
+            "RESIDUAL_PASS"
+          ],
+          "sealed_sha256_manifest": "015bdc7fbd9126a1bf0dc31f041a2e755f3463e3411d5fec5cf057d5ef5b0880"
+        },
+        {
+          "end_iteration": 12000,
+          "path": "results/routeA/cases/A-Ra1e5-fine/segments/end_12000",
+          "Gate_D": "PASS",
+          "failure_components": [],
+          "sealed_sha256_manifest": "729798ee635ed0b543d24226036ad9379d5c863a8cf1ed509218ea8e0cdfe700"
+        }
+      ],
+      "status": "ACCEPTED",
+      "case_reused": false,
+      "runtime_provenance": "PASS",
+      "OQ02": "PASS"
+    }
+  ],
+  "environment": {
+    "WM_PROJECT": "OpenFOAM",
+    "WM_PROJECT_VERSION": "13",
+    "WM_PROJECT_DIR": "/opt/openfoam13",
+    "WM_OPTIONS": "linux64GccDPInt32Opt",
+    "foamRun": "/opt/openfoam13/platforms/linux64GccDPInt32Opt/bin/foamRun",
+    "host": "mirai-Precision-5860-Tower",
+    "started": "2026-10-04T21:06:47.359561+09:00",
+    "HEAD": "85d7f5ebc76b8be3b840ae31217a457833b5a8d6",
+    "contract_version": "1.5",
+    "contract_sha256": "c33efe4aa81ce0644fd709fe944563e93c7ee2f08304161000784f6418e159c1",
+    "analyzer_sha256": "e6207e33ae2279e84786115ebfd912b170dcb23f220f1b1155314c723c54cfed",
+    "runtime_checker_sha256": "5055345c7e64758a4f902c81219e2dda2e5b9cdec22c3f22fc8297bbc1bb9e5a",
+    "attempt": "006",
+    "primary_solver_concurrency": 1,
+    "actual_build": "13-441953dfbb42"
+  },
+  "stop_reason": null,
+  "finished": "2026-10-04T21:28:41.214617+09:00"
+}

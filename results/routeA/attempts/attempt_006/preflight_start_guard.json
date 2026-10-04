@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "contract_version": "1.5",
+  "contract_sha256": "c33efe4aa81ce0644fd709fe944563e93c7ee2f08304161000784f6418e159c1",
+  "protected_file_count": 9356,
+  "review_verified": true,
+  "B_Ra1e5_baselines": "ACCEPTED_ALL",
+  "destinations_before_bootstrap": "ABSENT",
+  "current_guard_only": "v1.5",
+  "solver_started": false
+}

@@ -1,0 +1,26 @@
+{
+  "case_id": "A-Ra1e5-medium",
+  "grid": [
+    80,
+    80,
+    1
+  ],
+  "computed": true,
+  "accepted": true,
+  "final_iteration": 3000,
+  "Gate_D": "PASS",
+  "Gate_D_failure_components": [],
+  "segments": [
+    {
+      "end_iteration": 3000,
+      "path": "results/routeA/cases/A-Ra1e5-medium/segments/end_3000",
+      "Gate_D": "PASS",
+      "failure_components": [],
+      "sealed_sha256_manifest": "a6f51d0d937ab7ad22cd10606eef3c14666d767495f4ddf963c326302e5e40ff"
+    }
+  ],
+  "status": "ACCEPTED",
+  "case_reused": false,
+  "runtime_provenance": "PASS",
+  "OQ02": "PASS"
+}

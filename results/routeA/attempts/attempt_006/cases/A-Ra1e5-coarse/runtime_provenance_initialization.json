@@ -1,0 +1,136 @@
+{
+  "status": "PASS",
+  "failure_class": null,
+  "missing": [],
+  "mismatches": [],
+  "expected": {
+    "version": "13",
+    "build": "13-441953dfbb42",
+    "solver": "fluid",
+    "thermo.type": "heRhoThermo",
+    "thermo.mixture": "pureMixture",
+    "thermo.transport": "const",
+    "thermo.thermo": "eConst",
+    "thermo.equationOfState": "Boussinesq",
+    "thermo.specie": "specie",
+    "thermo.energy": "sensibleInternalEnergy",
+    "momentum_regime": "laminar",
+    "stress_model": "Stokes",
+    "thermal_regime": "laminar",
+    "thermal_model": "Fourier",
+    "algorithm": "SIMPLE"
+  },
+  "actual": {
+    "version": "13",
+    "build": "13-441953dfbb42",
+    "solver": "fluid",
+    "thermo.type": "heRhoThermo",
+    "thermo.mixture": "pureMixture",
+    "thermo.transport": "const",
+    "thermo.thermo": "eConst",
+    "thermo.equationOfState": "Boussinesq",
+    "thermo.specie": "specie",
+    "thermo.energy": "sensibleInternalEnergy",
+    "momentum_regime": "laminar",
+    "stress_model": "Stokes",
+    "thermal_regime": "laminar",
+    "thermal_model": "Fourier",
+    "algorithm": "SIMPLE"
+  },
+  "evidence": {
+    "selections": {
+      "version": [
+        {
+          "value": "13",
+          "line": 5
+        }
+      ],
+      "build": [
+        {
+          "value": "13-441953dfbb42",
+          "line": 8
+        }
+      ],
+      "solver": [
+        {
+          "value": "fluid",
+          "line": 26
+        }
+      ],
+      "momentum_regime": [
+        {
+          "value": "laminar",
+          "line": 38
+        }
+      ],
+      "stress_model": [
+        {
+          "value": "Stokes",
+          "line": 39
+        }
+      ],
+      "thermal_regime": [
+        {
+          "value": "laminar",
+          "line": 42
+        }
+      ],
+      "thermal_model": [
+        {
+          "value": "Fourier",
+          "line": 43
+        }
+      ],
+      "algorithm": [
+        {
+          "value": "SIMPLE",
+          "line": 49
+        }
+      ]
+    },
+    "thermo_blocks": [
+      {
+        "start_line": 28,
+        "end_line": 36,
+        "entries": {
+          "type": {
+            "value": "heRhoThermo",
+            "line": 29
+          },
+          "mixture": {
+            "value": "pureMixture",
+            "line": 30
+          },
+          "transport": {
+            "value": "const",
+            "line": 31
+          },
+          "thermo": {
+            "value": "eConst",
+            "line": 32
+          },
+          "equationOfState": {
+            "value": "Boussinesq",
+            "line": 33
+          },
+          "specie": {
+            "value": "specie",
+            "line": 34
+          },
+          "energy": {
+            "value": "sensibleInternalEnergy",
+            "line": 35
+          }
+        },
+        "duplicates": [],
+        "complete": true
+      }
+    ]
+  },
+  "source": "Actual OpenFOAM runtime log; no fallback to input dictionary or generator manifest",
+  "input_provenance_checked": false,
+  "health_or_Gate_D_checked": false,
+  "log": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/initialization_check/A-Ra1e5-coarse/log.foamRun.initialization",
+  "contract": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/docs/routeA_execution_contract_v1.5.json",
+  "log_read_scope": "first 120 lines only"
+}

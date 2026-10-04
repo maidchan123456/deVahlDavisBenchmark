@@ -1,0 +1,26 @@
+{
+  "case_id": "A-Ra1e5-coarse",
+  "grid": [
+    40,
+    40,
+    1
+  ],
+  "computed": true,
+  "accepted": true,
+  "final_iteration": 3000,
+  "Gate_D": "PASS",
+  "Gate_D_failure_components": [],
+  "segments": [
+    {
+      "end_iteration": 3000,
+      "path": "results/routeA/cases/A-Ra1e5-coarse/segments/end_3000",
+      "Gate_D": "PASS",
+      "failure_components": [],
+      "sealed_sha256_manifest": "81689dbfd2dfd0e7686322111370e1d3af932db9c1c4aac96d3e9933af3ec819"
+    }
+  ],
+  "status": "ACCEPTED",
+  "case_reused": false,
+  "runtime_provenance": "PASS",
+  "OQ02": "PASS"
+}

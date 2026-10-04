@@ -1,0 +1,76 @@
+{
+  "status": "PASS",
+  "protected_file_count": 9356,
+  "all_historical_evidence_unchanged": true,
+  "permitted_control_changes_only": true,
+  "accepted_final_fields_all_match": true,
+  "segments": [
+    {
+      "case_id": "A-Ra1e5-coarse",
+      "iteration": 3000,
+      "native_restart_fields_mesh_input_raw_final_seals_runtime_health": "PASS"
+    },
+    {
+      "case_id": "A-Ra1e5-medium",
+      "iteration": 3000,
+      "native_restart_fields_mesh_input_raw_final_seals_runtime_health": "PASS"
+    },
+    {
+      "case_id": "A-Ra1e5-fine",
+      "iteration": 3000,
+      "native_restart_fields_mesh_input_raw_final_seals_runtime_health": "PASS"
+    },
+    {
+      "case_id": "A-Ra1e5-fine",
+      "iteration": 6000,
+      "native_restart_fields_mesh_input_raw_final_seals_runtime_health": "PASS"
+    },
+    {
+      "case_id": "A-Ra1e5-fine",
+      "iteration": 9000,
+      "native_restart_fields_mesh_input_raw_final_seals_runtime_health": "PASS"
+    },
+    {
+      "case_id": "A-Ra1e5-fine",
+      "iteration": 12000,
+      "native_restart_fields_mesh_input_raw_final_seals_runtime_health": "PASS"
+    }
+  ],
+  "derived_wallHeatFlux_regeneration_observations": [
+    {
+      "case_id": "A-Ra1e5-fine",
+      "iteration": 3000,
+      "field": "wallHeatFlux",
+      "observed_checkpoint_sha256": "1f96d57f4f89e74f2713d18505690981d2e0e61c8a3ef1b8fcd3a601488ed9a4",
+      "current_derived_working_sha256": "4e954d811418e7bd3e16c99aa84d1f105695db3f7a3187d985969882535b553f",
+      "classification": "DERIVED_FUNCTION_OBJECT_FIELD_REGENERATED_IN_WORKING_CASE; not native restart input or sealed raw Q",
+      "restart_guard_before_continuation": "PASS",
+      "raw_evidence_seal": "UNCHANGED"
+    },
+    {
+      "case_id": "A-Ra1e5-fine",
+      "iteration": 6000,
+      "field": "wallHeatFlux",
+      "observed_checkpoint_sha256": "fb18662ac49d89f0e73cd95ff5f7dc4553d411d302cf8cfe59efd2a468768759",
+      "current_derived_working_sha256": "37de4bfd90f030e97853b31fe4a2cb8237a5e00aac0dbb82988a6ccfdc2742e4",
+      "classification": "DERIVED_FUNCTION_OBJECT_FIELD_REGENERATED_IN_WORKING_CASE; not native restart input or sealed raw Q",
+      "restart_guard_before_continuation": "PASS",
+      "raw_evidence_seal": "UNCHANGED"
+    },
+    {
+      "case_id": "A-Ra1e5-fine",
+      "iteration": 9000,
+      "field": "wallHeatFlux",
+      "observed_checkpoint_sha256": "a973446c323975c221dce4fca007945ab34f40abd853d5fa56e472ec485d1ec7",
+      "current_derived_working_sha256": "99f73e43628a4f6d2606cd1eef19e69df73e9854b27a7186fec631c6a67b1bf3",
+      "classification": "DERIVED_FUNCTION_OBJECT_FIELD_REGENERATED_IN_WORKING_CASE; not native restart input or sealed raw Q",
+      "restart_guard_before_continuation": "PASS",
+      "raw_evidence_seal": "UNCHANGED"
+    }
+  ],
+  "solver_concurrency": 1,
+  "numerical_physical_model_criteria_changed": false,
+  "Ra1e3_results_modified": false,
+  "Route_B_modified": false,
+  "current_environment_checked_before_case_generation": true
+}

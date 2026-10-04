@@ -1,0 +1,56 @@
+{
+  "case_id": "A-Ra1e5-fine",
+  "grid": [
+    160,
+    160,
+    1
+  ],
+  "computed": true,
+  "accepted": true,
+  "final_iteration": 12000,
+  "Gate_D": "PASS",
+  "Gate_D_failure_components": [],
+  "segments": [
+    {
+      "end_iteration": 3000,
+      "path": "results/routeA/cases/A-Ra1e5-fine/segments/end_3000",
+      "Gate_D": "FAIL",
+      "failure_components": [
+        "QOI_RWIN_PASS",
+        "RESIDUAL_PASS",
+        "HEAT_TREND_PASS"
+      ],
+      "sealed_sha256_manifest": "3069fbb890d70633541b280908b142dd5864af531bace5f199cf408f19241e90"
+    },
+    {
+      "end_iteration": 6000,
+      "path": "results/routeA/cases/A-Ra1e5-fine/segments/end_6000",
+      "Gate_D": "FAIL",
+      "failure_components": [
+        "QOI_RWIN_PASS",
+        "RESIDUAL_PASS"
+      ],
+      "sealed_sha256_manifest": "be56e18279eccbf4c3ae998fac0fdd3f24775813fecae8d32afdd66bc902e7c3"
+    },
+    {
+      "end_iteration": 9000,
+      "path": "results/routeA/cases/A-Ra1e5-fine/segments/end_9000",
+      "Gate_D": "FAIL",
+      "failure_components": [
+        "RESIDUAL_PASS"
+      ],
+      "sealed_sha256_manifest": "015bdc7fbd9126a1bf0dc31f041a2e755f3463e3411d5fec5cf057d5ef5b0880"
+    },
+    {
+      "end_iteration": 12000,
+      "path": "results/routeA/cases/A-Ra1e5-fine/segments/end_12000",
+      "Gate_D": "PASS",
+      "failure_components": [],
+      "sealed_sha256_manifest": "729798ee635ed0b543d24226036ad9379d5c863a8cf1ed509218ea8e0cdfe700"
+    }
+  ],
+  "status": "ACCEPTED",
+  "case_reused": false,
+  "runtime_provenance": "PASS",
+  "OQ02": "PASS"
+}
