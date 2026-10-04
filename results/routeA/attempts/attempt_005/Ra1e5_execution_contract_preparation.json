@@ -1,0 +1,611 @@
+{
+  "schema": "routeA-Ra1e5-execution-contract-preparation-v1",
+  "owner": "PRE_RA1E5_EXECUTION_CONTRACT_PREPARATION",
+  "task": "PREPARE_ROUTE_A_RA1E5_EXECUTION_CONTRACT",
+  "date": "2026-10-04",
+  "HEAD": "c3d9a0421e565213b57785fadc8b3fb5e3ea31e3",
+  "final_status": {
+    "ROUTE_A_RA1E5_EXECUTION_CONTRACT_PREPARATION": "COMPLETE",
+    "PARENT_EFFECTIVE_CONTRACT_VERSION": "1.4",
+    "PARENT_EFFECTIVE_CONTRACT_HASH_VERIFIED": "YES",
+    "PARENT_EFFECTIVE_CONTRACT_SHA256": "2665b8a62211618ae531e7b8d42242e3d8f9ae469b95b634beab672c89b345d7",
+    "RA1E4_RESULT_REVIEW_VERIFIED": "YES",
+    "RA1E4_FORMAL_EXECUTION_COMPLETE": "YES",
+    "RA1E4_ACCEPTED_CASE_COUNT": 3,
+    "RA1E4_GATE_D": "PASS_ALL",
+    "RA1E4_GATE_E_DIAGNOSTIC": "PASS",
+    "RA1E4_GATE_F": "FAIL",
+    "RA1E4_NEEDS_320": "YES",
+    "RA1E4_GATE_G": "PASS",
+    "A_B_REVIEWED_OVERALL_STATUS": "COMPLETE",
+    "A_B_HARD_THRESHOLD_EXISTS": "NO",
+    "A_B_PARTIAL_BLOCKS_NEXT_RA": "NO",
+    "NEXT_FORMAL_RA": 100000,
+    "NEXT_FORMAL_CASES": "A-Ra1e5-coarse,A-Ra1e5-medium,A-Ra1e5-fine",
+    "NEXT_GRID_SEQUENCE": "40x40x1,80x80x1,160x160x1",
+    "NEXT_ATTEMPT_ID": "006",
+    "CONTRACT_AMENDMENT_005_CREATED": "YES",
+    "AMENDMENT_005_SCOPE": "NEXT_FORMAL_EXECUTION_UNIT_ONLY",
+    "EFFECTIVE_CONTRACT_VERSION": "1.5",
+    "EFFECTIVE_CONTRACT_SHA256": "c33efe4aa81ce0644fd709fe944563e93c7ee2f08304161000784f6418e159c1",
+    "ANALYZER_SHA256": "e6207e33ae2279e84786115ebfd912b170dcb23f220f1b1155314c723c54cfed",
+    "RUNTIME_CHECKER_SHA256": "5055345c7e64758a4f902c81219e2dda2e5b9cdec22c3f22fc8297bbc1bb9e5a",
+    "IMPLEMENTATION_HASHES_CHANGED": "NO",
+    "TEMPLATE_HASHES_CHANGED": "NO",
+    "FORMAL_CRITERIA_CHANGED": "NO",
+    "NUMERICAL_SETTINGS_CHANGED": "NO",
+    "PHYSICAL_MODEL_CHANGED": "NO",
+    "REFERENCE_DATA_CHANGED": "NO",
+    "AB_COMPARISON_POLICY_CHANGED": "NO",
+    "POSITION_SEMANTICS_CHANGED": "NO",
+    "ITERATION_POLICY_CHANGED": "NO",
+    "ROUTE_A_SOLVER_EXECUTED": "NO",
+    "ROUTE_B_SOLVER_EXECUTED": "NO",
+    "CONTINUATION_EXECUTED": "NO",
+    "CASE_GENERATED": "NO",
+    "MESH_GENERATED": "NO",
+    "RA1E5_ROUTE_B_BASELINES_AVAILABLE": "YES",
+    "RA1E5_TRIO_TECHNICALLY_READY": "YES",
+    "NEXT_SINGLE_TASK": "RUN_ROUTE_A_RA1E5_TRIO",
+    "RECOMMENDED_REASONING_MODEL_FOR_NEXT_TASK": "gpt-6.1-sol / medium",
+    "USER_DECISION_REQUIRED": "YES"
+  },
+  "parent": {
+    "version": "1.4",
+    "path": "docs/routeA_execution_contract_v1.4.json",
+    "sha256": "2665b8a62211618ae531e7b8d42242e3d8f9ae469b95b634beab672c89b345d7"
+  },
+  "review_linkage": {
+    "json": {
+      "path": "results/routeA/attempts/attempt_005/Ra1e4_result_review.json",
+      "sha256": "94a0c25ca9080d31938dd1e4637806e952bc2ccc5768bf3f17397b6d5b641c14"
+    },
+    "markdown": {
+      "path": "results/routeA/attempts/attempt_005/Ra1e4_result_review.md",
+      "sha256": "4c5b8e76957db8156ba08e10d09e2638d25171d5c8d70da1004b8ea71de887a1"
+    },
+    "verified_status": {
+      "ROUTE_A_RA1E4_RESULT_REVIEW": "COMPLETE",
+      "RA1E4_TRIO_FORMAL_EXECUTION_STATUS": "COMPLETE",
+      "RA1E4_ACCEPTED_CASE_COUNT": 3,
+      "RA1E4_GATE_D": "PASS_ALL",
+      "RA1E4_GATE_E_DIAGNOSTIC": "PASS",
+      "RA1E4_GATE_F": "FAIL",
+      "RA1E4_NEEDS_320": "YES",
+      "RA1E4_GATE_G": "PASS",
+      "A_B_REVIEWED_OVERALL_STATUS": "COMPLETE",
+      "A_B_HARD_THRESHOLD_EXISTS": "NO",
+      "A_B_PARTIAL_BLOCKS_NEXT_RA": "NO",
+      "NEXT_EXECUTION_CONTRACT_UPDATE_REQUIRED": "YES",
+      "RA1E4_STEADY_TRIO_COMPLETE": "YES",
+      "RA1E4_STEADY_TRIO_CHARACTERIZED": "NO",
+      "B_COARSE_FINAL_FIELDS_PROVENANCE": "PROVEN_ACCEPTED",
+      "B_COARSE_DERIVED_SYMMETRY_OWNERSHIP": "DERIVED_DIAGNOSTIC_FROM_EXISTING_ACCEPTED_B_FIELDS",
+      "B_COARSE_TEMPERATURE_SYMMETRY": 4.698632878379736e-10,
+      "B_COARSE_VELOCITY_SYMMETRY": 3.7722791370251563e-10
+    },
+    "original_A_B_status": "PARTIAL",
+    "reviewed_A_B_status": "COMPLETE",
+    "historical_reports_unchanged": true,
+    "interpretation_only": "A–B comparison completeness is not a Hard prerequisite for next-Ra matrix execution unless an explicit frozen contract rule states otherwise. This is application of v1.4 AB_comparison and batch_stop_policy, not a new AB policy."
+  },
+  "accepted_A_history": [
+    {
+      "case_id": "A-Ra1e3-coarse",
+      "accepted": true,
+      "Gate_D": "PASS",
+      "final_iteration": 3000,
+      "report_path": "results/routeA/attempts/attempt_004/Ra1e3_trio_report.json",
+      "final_segment_manifest": "results/routeA/cases/A-Ra1e3-coarse/segments/end_3000/segment_manifest.json",
+      "sha256": "0077a5817996d0540c2a6c9892e3ed67ef331a3bf695d448d860b63b21aae70f"
+    },
+    {
+      "case_id": "A-Ra1e3-medium",
+      "accepted": true,
+      "Gate_D": "PASS",
+      "final_iteration": 6000,
+      "report_path": "results/routeA/attempts/attempt_004/Ra1e3_trio_report.json",
+      "final_segment_manifest": "results/routeA/cases/A-Ra1e3-medium/segments/end_6000/segment_manifest.json",
+      "sha256": "29036ecbbd741abf731ea1ec7806947487a9eceb2d22bddf48eb8c2b5fffa50a"
+    },
+    {
+      "case_id": "A-Ra1e3-fine",
+      "accepted": true,
+      "Gate_D": "PASS",
+      "final_iteration": 18000,
+      "report_path": "results/routeA/attempts/attempt_004/Ra1e3_trio_report.json",
+      "final_segment_manifest": "results/routeA/cases/A-Ra1e3-fine/segments/end_18000/segment_manifest.json",
+      "sha256": "a9104d8ae7c61fadaf9bef9e33329e0a220e2c7a12be48fa217ee44e07c68337"
+    },
+    {
+      "case_id": "A-Ra1e4-coarse",
+      "accepted": true,
+      "Gate_D": "PASS",
+      "final_iteration": 3000,
+      "report_path": "results/routeA/attempts/attempt_005/Ra1e4_trio_report.json",
+      "final_segment_manifest": "results/routeA/cases/A-Ra1e4-coarse/segments/end_3000/segment_manifest.json",
+      "sha256": "2d225c1231eeb7d3676ce53689f938a6855a7f923c2ffd1929840474c7dbc92e"
+    },
+    {
+      "case_id": "A-Ra1e4-medium",
+      "accepted": true,
+      "Gate_D": "PASS",
+      "final_iteration": 6000,
+      "report_path": "results/routeA/attempts/attempt_005/Ra1e4_trio_report.json",
+      "final_segment_manifest": "results/routeA/cases/A-Ra1e4-medium/segments/end_6000/segment_manifest.json",
+      "sha256": "badc01cce33212c980f322e1a34583fdef1ec8c14891cb061c2e951b1751acb3"
+    },
+    {
+      "case_id": "A-Ra1e4-fine",
+      "accepted": true,
+      "Gate_D": "PASS",
+      "final_iteration": 15000,
+      "report_path": "results/routeA/attempts/attempt_005/Ra1e4_trio_report.json",
+      "final_segment_manifest": "results/routeA/cases/A-Ra1e4-fine/segments/end_15000/segment_manifest.json",
+      "sha256": "4add80508f352420c77b6860532b9bbee14afa601366636c938c64d92aa9625e"
+    }
+  ],
+  "amendment": {
+    "id": "Route A Execution Contract Amendment 005",
+    "path": "docs/routeA_execution_contract_amendment_005.json",
+    "sha256": "37670b3456af33fcb131f4460eb0cb501d842ff34da6531cbd554efd59181aa9",
+    "parent": {
+      "version": "1.4",
+      "path": "docs/routeA_execution_contract_v1.4.json",
+      "sha256": "2665b8a62211618ae531e7b8d42242e3d8f9ae469b95b634beab672c89b345d7"
+    },
+    "snapshot_rule": "Full v1.0 + Amendments 001–005; Amendment 005 advances only next formal execution unit and necessary guards/ownership/readiness metadata. All scientific and numerical criteria remain identical to v1.4."
+  },
+  "effective_contract": {
+    "path": "docs/routeA_execution_contract_v1.5.json",
+    "sha256": "c33efe4aa81ce0644fd709fe944563e93c7ee2f08304161000784f6418e159c1"
+  },
+  "snapshot_validation": {
+    "status": "PASS",
+    "scientific_subtrees_identical": [
+      "frozen_model",
+      "template_source",
+      "implementation_sha256",
+      "monitor",
+      "Gate_D",
+      "statuses",
+      "batch_stop_policy",
+      "Gate_F",
+      "Gate_G",
+      "continuity",
+      "energy_diagnostics",
+      "AB_comparison",
+      "iteration_caps_csv",
+      "paper_comparison_position_semantics",
+      "runtime_provenance_checker"
+    ],
+    "execution_except_first_unit_identical": true,
+    "case_generation_except_metadata_identical": true,
+    "other_existing_top_level_subtrees_identical": true,
+    "changed_top_level_metadata_keys": [
+      "version",
+      "baseline_HEAD",
+      "observed_HEAD",
+      "contract_hash",
+      "supersedes",
+      "execution",
+      "case_generation",
+      "next_single_task",
+      "final_status",
+      "amendment",
+      "attempt_policy",
+      "amendment_chain",
+      "current_protected_evidence",
+      "current_execution_guard",
+      "parent_effective_contract",
+      "historical_v1_4_amendment",
+      "historical_v1_4_attempt_policy",
+      "historical_v1_4_final_status",
+      "Ra1e4_result_review_linkage",
+      "RouteB_Ra1e5_baseline_availability",
+      "accepted_history_start_guard",
+      "start_guard_hashes",
+      "historical_v1_4_protected_evidence"
+    ],
+    "all_current_implementation_template_hashes_match_parent": true,
+    "all_start_guard_existing_paths_match": true,
+    "amendment_chain_length": 5,
+    "destination_state": {
+      "A-Ra1e5-coarse": "ABSENT",
+      "A-Ra1e5-medium": "ABSENT",
+      "A-Ra1e5-fine": "ABSENT"
+    },
+    "attempt_006_directory_created": false,
+    "checks": [
+      {
+        "category": "v1.4 authority/implementation/template/reference/caps",
+        "status": "PASS",
+        "file_count": 23
+      },
+      {
+        "category": "Route A Execution Contract Amendment 001",
+        "status": "PASS",
+        "file_count": 2
+      },
+      {
+        "category": "Route A Execution Contract Amendment 002",
+        "status": "PASS",
+        "file_count": 2
+      },
+      {
+        "category": "Route A Execution Contract Amendment 003",
+        "status": "PASS",
+        "file_count": 2
+      },
+      {
+        "category": "Route A Execution Contract Amendment 004",
+        "status": "PASS",
+        "file_count": 2
+      },
+      {
+        "category": "A-Ra1e3-coarse sealed end_3000",
+        "status": "PASS",
+        "file_count": 59
+      },
+      {
+        "category": "A-Ra1e3-coarse accepted final fields",
+        "status": "PASS",
+        "file_count": 7
+      },
+      {
+        "category": "A-Ra1e3-coarse accepted mesh",
+        "status": "PASS",
+        "file_count": 5
+      },
+      {
+        "category": "A-Ra1e3-medium sealed end_3000",
+        "status": "PASS",
+        "file_count": 62
+      },
+      {
+        "category": "A-Ra1e3-medium sealed end_6000",
+        "status": "PASS",
+        "file_count": 62
+      },
+      {
+        "category": "A-Ra1e3-medium accepted final fields",
+        "status": "PASS",
+        "file_count": 7
+      },
+      {
+        "category": "A-Ra1e3-medium accepted mesh",
+        "status": "PASS",
+        "file_count": 5
+      },
+      {
+        "category": "A-Ra1e3-fine sealed end_15000",
+        "status": "PASS",
+        "file_count": 68
+      },
+      {
+        "category": "A-Ra1e3-fine sealed end_3000",
+        "status": "PASS",
+        "file_count": 68
+      },
+      {
+        "category": "A-Ra1e3-fine sealed end_18000",
+        "status": "PASS",
+        "file_count": 68
+      },
+      {
+        "category": "A-Ra1e3-fine sealed end_9000",
+        "status": "PASS",
+        "file_count": 68
+      },
+      {
+        "category": "A-Ra1e3-fine sealed end_12000",
+        "status": "PASS",
+        "file_count": 68
+      },
+      {
+        "category": "A-Ra1e3-fine sealed end_6000",
+        "status": "PASS",
+        "file_count": 68
+      },
+      {
+        "category": "A-Ra1e3-fine accepted final fields",
+        "status": "PASS",
+        "file_count": 7
+      },
+      {
+        "category": "A-Ra1e3-fine accepted mesh",
+        "status": "PASS",
+        "file_count": 5
+      },
+      {
+        "category": "A-Ra1e4-coarse sealed end_3000",
+        "status": "PASS",
+        "file_count": 62
+      },
+      {
+        "category": "A-Ra1e4-coarse accepted final fields",
+        "status": "PASS",
+        "file_count": 7
+      },
+      {
+        "category": "A-Ra1e4-coarse accepted mesh",
+        "status": "PASS",
+        "file_count": 5
+      },
+      {
+        "category": "A-Ra1e4-medium sealed end_3000",
+        "status": "PASS",
+        "file_count": 62
+      },
+      {
+        "category": "A-Ra1e4-medium sealed end_6000",
+        "status": "PASS",
+        "file_count": 62
+      },
+      {
+        "category": "A-Ra1e4-medium accepted final fields",
+        "status": "PASS",
+        "file_count": 7
+      },
+      {
+        "category": "A-Ra1e4-medium accepted mesh",
+        "status": "PASS",
+        "file_count": 5
+      },
+      {
+        "category": "A-Ra1e4-fine sealed end_15000",
+        "status": "PASS",
+        "file_count": 68
+      },
+      {
+        "category": "A-Ra1e4-fine sealed end_3000",
+        "status": "PASS",
+        "file_count": 68
+      },
+      {
+        "category": "A-Ra1e4-fine sealed end_9000",
+        "status": "PASS",
+        "file_count": 68
+      },
+      {
+        "category": "A-Ra1e4-fine sealed end_12000",
+        "status": "PASS",
+        "file_count": 68
+      },
+      {
+        "category": "A-Ra1e4-fine sealed end_6000",
+        "status": "PASS",
+        "file_count": 68
+      },
+      {
+        "category": "A-Ra1e4-fine accepted final fields",
+        "status": "PASS",
+        "file_count": 7
+      },
+      {
+        "category": "A-Ra1e4-fine accepted mesh",
+        "status": "PASS",
+        "file_count": 5
+      },
+      {
+        "category": "Ra1e4 review separate ownership seal",
+        "status": "PASS",
+        "file_count": 8
+      },
+      {
+        "category": "Ra1e4 review protected evidence",
+        "status": "PASS",
+        "file_count": 751
+      },
+      {
+        "category": "B-Ra1e5-coarse accepted canonical metrics",
+        "status": "PASS",
+        "file_count": 1
+      },
+      {
+        "category": "B-Ra1e5-coarse accepted native hashes",
+        "status": "PASS",
+        "file_count": 6
+      },
+      {
+        "category": "B-Ra1e5-coarse accepted mesh hashes",
+        "status": "PASS",
+        "file_count": 5
+      },
+      {
+        "category": "B-Ra1e5-medium accepted canonical metrics",
+        "status": "PASS",
+        "file_count": 1
+      },
+      {
+        "category": "B-Ra1e5-medium accepted native hashes",
+        "status": "PASS",
+        "file_count": 6
+      },
+      {
+        "category": "B-Ra1e5-medium accepted mesh hashes",
+        "status": "PASS",
+        "file_count": 5
+      },
+      {
+        "category": "B-Ra1e5-fine accepted canonical metrics",
+        "status": "PASS",
+        "file_count": 1
+      },
+      {
+        "category": "B-Ra1e5-fine accepted native hashes",
+        "status": "PASS",
+        "file_count": 6
+      },
+      {
+        "category": "B-Ra1e5-fine accepted mesh hashes",
+        "status": "PASS",
+        "file_count": 5
+      }
+    ]
+  },
+  "protected_evidence": {
+    "status": "PASS",
+    "protected_file_count": 2143,
+    "mismatches": [],
+    "before_manifest_sha256": "f8e62d294b0ae617b23cbf7d1f27e358186ffb1fcd7c44e785fff10401b0c499",
+    "old_attempts_001_005_unchanged": true,
+    "accepted_A_B_native_fields_unchanged": true,
+    "old_contracts_amendments_scripts_templates_reference_unchanged": true
+  },
+  "RouteB_baselines": [
+    {
+      "matrix_case_id": "B-Ra1e5-coarse",
+      "source_case_id": "B-Ra1e5-coarse",
+      "accepted": "YES",
+      "computed": "YES",
+      "Gate_D": "PASS",
+      "Ra_actual": 100000,
+      "Pr_actual": 0.71,
+      "grid": [
+        40,
+        40,
+        1
+      ],
+      "final_iteration": 6000,
+      "metrics_path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/cases/B-Ra1e5-coarse/metrics.json",
+      "metrics_sha256": "1a85d44eecce87ac66009ab08a14808a92b34078ee219c8ca30b446e3f4c6c8b",
+      "accepted_field_hash_root": "/home/mirai/OpenFOAM/mirai-6/run/deVahlDavisBenchmark",
+      "accepted_final_field_sha256": {
+        "cases/routeB/Ra1e5_coarse/6000/U": "32e057f5bc15ae874980d297bb526040ec7e3e5df25f87963fbeda9ef410ed88",
+        "cases/routeB/Ra1e5_coarse/6000/alphat": "6d40a357679c77f1d6324b15dc487f5322848ea0f0b5ca803ef23aa0a0579372",
+        "cases/routeB/Ra1e5_coarse/6000/phi": "42da6242f2949d39b9d843ed0892e2dcf479c36ac58ce45c48d00d7aa5760b7e",
+        "cases/routeB/Ra1e5_coarse/6000/T": "860b4d6a6b793cc5145ab6a00365e9dddd8f69419046f569a281402a56705319",
+        "cases/routeB/Ra1e5_coarse/6000/p": "0a98bcf87c28415cad1fe49d477e2a2a0b34f505075c075ab5bc4e8860046003",
+        "cases/routeB/Ra1e5_coarse/6000/p_rgh": "3e9eda010a2a98767d2c45ecc78e2a712d1f98f938752c6398ae9b97c0ae54e0"
+      },
+      "mesh_sha256": {
+        "constant/polyMesh/faces": "14ebb88083f45f9b20e1a654410e477aad3d9b334bcc28fc151e1417a97b2fe2",
+        "constant/polyMesh/points": "608ba95f30ca4ad10cdef9dd8e233b138759a8bf922220c85771d2c806c001b9",
+        "constant/polyMesh/boundary": "05b5bac4e06222719db7405b4e37ddfc52738afe54896b7e525fe7175b7f3bfd",
+        "constant/polyMesh/neighbour": "d2e5e7ec4cbfbb9e6969b8a8af580d55fe70a9f21e784e882ca6fa1d32f9165c",
+        "constant/polyMesh/owner": "8beef1f197482b84bffa5490200b2299fd94b74ce7bc3d62ec0e1fac8057cbd2"
+      },
+      "comparison_precomputed": false
+    },
+    {
+      "matrix_case_id": "B-Ra1e5-medium",
+      "source_case_id": "B-Ra1e5-medium",
+      "accepted": "YES",
+      "computed": "YES",
+      "Gate_D": "PASS",
+      "Ra_actual": 100000,
+      "Pr_actual": 0.71,
+      "grid": [
+        80,
+        80,
+        1
+      ],
+      "final_iteration": 9000,
+      "metrics_path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/cases/B-Ra1e5-medium/metrics.json",
+      "metrics_sha256": "78af7d109a97fa99e543e0565fbb5031821ee6ab176a17e80f65f15972362a9c",
+      "accepted_field_hash_root": "/home/mirai/OpenFOAM/mirai-6/run/deVahlDavisBenchmark",
+      "accepted_final_field_sha256": {
+        "cases/routeB/Ra1e5_medium/9000/U": "105bf8f627e139d2f91c451c1ac83ecdb65930d327ea375113bc416f1ad1ae71",
+        "cases/routeB/Ra1e5_medium/9000/alphat": "387e06d32a0ae4745980f7c3f0164aeda32ded32bf123507f4556860c99787bf",
+        "cases/routeB/Ra1e5_medium/9000/phi": "55614e90aff0f59b7f91b8b87e75e050599090d9f0ba5d4de97a9c3fdfea9efa",
+        "cases/routeB/Ra1e5_medium/9000/T": "11f180a6aacf19b44934fc11433baf04af2125f621e3558e6c5c862138efdec5",
+        "cases/routeB/Ra1e5_medium/9000/p": "33184e7cb579261fda78b2fd5e4d48f8df79b4b1ddb821dd3959021490a5f829",
+        "cases/routeB/Ra1e5_medium/9000/p_rgh": "249552e2b9e80364048ce4bb5101280349503a17bae3b3b022f92ec49fa0a898"
+      },
+      "mesh_sha256": {
+        "constant/polyMesh/faces": "222f0f628d837dd323241b71c390ca0aefc76b1d7b7385c44cf5306a3db62f71",
+        "constant/polyMesh/points": "e36c10eb472aa593a4e07573c03bb9cf55c132e8389dad196948b84dc837f9e0",
+        "constant/polyMesh/boundary": "68c5e8ba4c1443ecc36e819382e3e98ecde6c2e2d27282ca3e2fa120e24bb345",
+        "constant/polyMesh/neighbour": "bc86f1fcb3fccf51dec58e0ef685f31be4c8f847b3afc603d1ce8bfc51675307",
+        "constant/polyMesh/owner": "5fb5f126983674baa67ff2cb813d3a13493f1e8ae59b4a03da4200e6f423a987"
+      },
+      "comparison_precomputed": false
+    },
+    {
+      "matrix_case_id": "B-Ra1e5-fine",
+      "source_case_id": "B-Ra1e5-fine",
+      "accepted": "YES",
+      "computed": "YES",
+      "Gate_D": "PASS",
+      "Ra_actual": 100000,
+      "Pr_actual": 0.71,
+      "grid": [
+        160,
+        160,
+        1
+      ],
+      "final_iteration": 12000,
+      "metrics_path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/cases/B-Ra1e5-fine/metrics.json",
+      "metrics_sha256": "c4d089ae8b6d21a20771b639c951895b95576c6c39223bd37a780459f67f10fd",
+      "accepted_field_hash_root": "/home/mirai/OpenFOAM/mirai-6/run/deVahlDavisBenchmark",
+      "accepted_final_field_sha256": {
+        "cases/routeB/Ra1e5_fine/12000/U": "fa1f4c692654291d7c1d9c4a308f1ca4f4d085b3e524f635b92483b553222846",
+        "cases/routeB/Ra1e5_fine/12000/alphat": "e29fe1c6dddb9eb38423349801b4d71a8ae5f21aa25d800bc26798fbd46f12db",
+        "cases/routeB/Ra1e5_fine/12000/phi": "6af7f20944555ae160b2b84305112480aa943e78363d1b3641fb1c89e864633b",
+        "cases/routeB/Ra1e5_fine/12000/T": "1212d2591c4b9bcee5d62950a835e9e2e6e1de52097aabaf3536c9f7c816ab9e",
+        "cases/routeB/Ra1e5_fine/12000/p": "52986220aff1a344df459996f396be310ea4455996ed99e45ff6e795052ab2be",
+        "cases/routeB/Ra1e5_fine/12000/p_rgh": "b839f91638938fbe86f0b945f84dc50c78d6708b303003571dbec332aabd9e3a"
+      },
+      "mesh_sha256": {
+        "constant/polyMesh/faces": "cc83d432b2f6e5bc59786b4d29703220ab4615cccc64e45478d7d160ba1a86a4",
+        "constant/polyMesh/points": "0dc6d8f2bb286d4a5c71d1e7613f971b6ea84bc6aef6c9c7193b50ffde6da78d",
+        "constant/polyMesh/boundary": "8edf8a0cd7b922cc9fec8dda9d14f937a961d02478cf50a79d324025a4f471c7",
+        "constant/polyMesh/neighbour": "1efe776acf18f1efd60f48fe4d473a755c42f8730e362e7510476b5413231db1",
+        "constant/polyMesh/owner": "2591161faec40a988ae34c6c8204439fa37c63f64d51ce0bcc702b58a9f054b8"
+      },
+      "comparison_precomputed": false
+    }
+  ],
+  "attempt_006": {
+    "id": "attempt_006",
+    "attempt_id": "006",
+    "status": "NOT_STARTED",
+    "batch_artifact_root": "results/routeA/attempts/attempt_006/",
+    "case_ids": [
+      "A-Ra1e5-coarse",
+      "A-Ra1e5-medium",
+      "A-Ra1e5-fine"
+    ],
+    "Ra_target": 100000,
+    "Pr_target": 0.71,
+    "grids": [
+      [
+        40,
+        40,
+        1
+      ],
+      [
+        80,
+        80,
+        1
+      ],
+      [
+        160,
+        160,
+        1
+      ]
+    ],
+    "requires_new_user_run_instruction": true,
+    "formal_case_destinations_absent": true,
+    "destination_state": {
+      "A-Ra1e5-coarse": "Absent; generate new only in authorized Ra1e5 task",
+      "A-Ra1e5-medium": "Absent; generate new only in authorized Ra1e5 task",
+      "A-Ra1e5-fine": "Absent; generate new only in authorized Ra1e5 task"
+    },
+    "coarse_reuse": {
+      "allowed": false,
+      "reason": "Generate all three Ra1e5 formal cases anew; historical Ra1e3/Ra1e4 cases and A-SMOKE cannot be promoted."
+    },
+    "batch_filenames": [
+      "Ra1e5_trio_report.md",
+      "Ra1e5_trio_report.json",
+      "Ra1e5_trio_matrix.csv",
+      "Ra1e5_routeA_vs_routeB.csv"
+    ],
+    "historical_batch_paths_must_not_be_overwritten": true
+  },
+  "scientifically_nonblocking": "No unresolved Hard issue; Gate F unresolved but nonblocking; AB complete evidence coverage is not a new Hard prerequisite.",
+  "snapshot_needed": "v1.4 first_unit/next_attempt/final task targeted Ra1e4/attempt005; inherited next_single_task also had stale Ra1e3 metadata. v1.5 aligns all current execution metadata to Ra1e5/attempt006.",
+  "git_add_commit_push_performed": false
+}

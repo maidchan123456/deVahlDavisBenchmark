@@ -1,0 +1,273 @@
+{
+  "schema": "routeA-execution-contract-amendment-v1",
+  "id": "Route A Execution Contract Amendment 005",
+  "date": "2026-10-04",
+  "timezone": "Asia/Tokyo",
+  "observed_HEAD": "c3d9a0421e565213b57785fadc8b3fb5e3ea31e3",
+  "parent_contract": {
+    "version": "1.4",
+    "path": "docs/routeA_execution_contract_v1.4.json",
+    "sha256": "2665b8a62211618ae531e7b8d42242e3d8f9ae469b95b634beab672c89b345d7",
+    "unchanged": true
+  },
+  "effective_version": "1.5",
+  "effective_path": "docs/routeA_execution_contract_v1.5.json",
+  "scope": "NEXT_FORMAL_EXECUTION_UNIT_ONLY",
+  "purpose": "NEXT FORMAL EXECUTION UNIT ADVANCE ONLY",
+  "user_authorization": {
+    "task": "PREPARE_ROUTE_A_RA1E5_EXECUTION_CONTRACT",
+    "source": "/home/mirai/.codex/attachments/4e505a2f-e306-49fa-9b69-8de33733829d/貼り付けたテキスト.txt",
+    "authorized": "Create Amendment 005 and v1.5 execution metadata snapshot only; solver/case/mesh generation not authorized in this preparation task."
+  },
+  "reason": "Accepted Ra1e4 trio and separate review permit scientific matrix progression, while v1.4 active first_unit/next_attempt/final_status still specify Ra1e4/attempt_005. Normalize the inherited stale next_single_task Ra1e3/attempt_004 pointer as execution metadata.",
+  "Ra1e4_result_review": {
+    "json": {
+      "path": "results/routeA/attempts/attempt_005/Ra1e4_result_review.json",
+      "sha256": "94a0c25ca9080d31938dd1e4637806e952bc2ccc5768bf3f17397b6d5b641c14"
+    },
+    "markdown": {
+      "path": "results/routeA/attempts/attempt_005/Ra1e4_result_review.md",
+      "sha256": "4c5b8e76957db8156ba08e10d09e2638d25171d5c8d70da1004b8ea71de887a1"
+    },
+    "verified_status": {
+      "ROUTE_A_RA1E4_RESULT_REVIEW": "COMPLETE",
+      "RA1E4_TRIO_FORMAL_EXECUTION_STATUS": "COMPLETE",
+      "RA1E4_ACCEPTED_CASE_COUNT": 3,
+      "RA1E4_GATE_D": "PASS_ALL",
+      "RA1E4_GATE_E_DIAGNOSTIC": "PASS",
+      "RA1E4_GATE_F": "FAIL",
+      "RA1E4_NEEDS_320": "YES",
+      "RA1E4_GATE_G": "PASS",
+      "A_B_REVIEWED_OVERALL_STATUS": "COMPLETE",
+      "A_B_HARD_THRESHOLD_EXISTS": "NO",
+      "A_B_PARTIAL_BLOCKS_NEXT_RA": "NO",
+      "NEXT_EXECUTION_CONTRACT_UPDATE_REQUIRED": "YES",
+      "RA1E4_STEADY_TRIO_COMPLETE": "YES",
+      "RA1E4_STEADY_TRIO_CHARACTERIZED": "NO",
+      "B_COARSE_FINAL_FIELDS_PROVENANCE": "PROVEN_ACCEPTED",
+      "B_COARSE_DERIVED_SYMMETRY_OWNERSHIP": "DERIVED_DIAGNOSTIC_FROM_EXISTING_ACCEPTED_B_FIELDS",
+      "B_COARSE_TEMPERATURE_SYMMETRY": 4.698632878379736e-10,
+      "B_COARSE_VELOCITY_SYMMETRY": 3.7722791370251563e-10
+    },
+    "original_A_B_status": "PARTIAL",
+    "reviewed_A_B_status": "COMPLETE",
+    "historical_reports_unchanged": true,
+    "interpretation_only": "A–B comparison completeness is not a Hard prerequisite for next-Ra matrix execution unless an explicit frozen contract rule states otherwise. This is application of v1.4 AB_comparison and batch_stop_policy, not a new AB policy."
+  },
+  "Ra1e4_execution_COMPLETE": true,
+  "Gate_F_unresolved_but_nonblocking": {
+    "status": "FAIL",
+    "reason": "WMAX_NON_MONOTONIC",
+    "p_GCI": "UNDEFINED",
+    "needs_320": "YES",
+    "automatic_320": false
+  },
+  "next_execution": {
+    "id": "attempt_006",
+    "attempt_id": "006",
+    "status": "NOT_STARTED",
+    "batch_artifact_root": "results/routeA/attempts/attempt_006/",
+    "case_ids": [
+      "A-Ra1e5-coarse",
+      "A-Ra1e5-medium",
+      "A-Ra1e5-fine"
+    ],
+    "Ra_target": 100000,
+    "Pr_target": 0.71,
+    "grids": [
+      [
+        40,
+        40,
+        1
+      ],
+      [
+        80,
+        80,
+        1
+      ],
+      [
+        160,
+        160,
+        1
+      ]
+    ],
+    "requires_new_user_run_instruction": true,
+    "formal_case_destinations_absent": true,
+    "destination_state": {
+      "A-Ra1e5-coarse": "Absent; generate new only in authorized Ra1e5 task",
+      "A-Ra1e5-medium": "Absent; generate new only in authorized Ra1e5 task",
+      "A-Ra1e5-fine": "Absent; generate new only in authorized Ra1e5 task"
+    },
+    "coarse_reuse": {
+      "allowed": false,
+      "reason": "Generate all three Ra1e5 formal cases anew; historical Ra1e3/Ra1e4 cases and A-SMOKE cannot be promoted."
+    },
+    "batch_filenames": [
+      "Ra1e5_trio_report.md",
+      "Ra1e5_trio_report.json",
+      "Ra1e5_trio_matrix.csv",
+      "Ra1e5_routeA_vs_routeB.csv"
+    ],
+    "historical_batch_paths_must_not_be_overwritten": true
+  },
+  "next_task": "RUN_ROUTE_A_RA1E5_TRIO",
+  "all_physical_criteria_unchanged": true,
+  "all_numerical_criteria_unchanged": true,
+  "all_implementation_hashes_unchanged": true,
+  "all_template_hashes_unchanged": true,
+  "AB_policy_unchanged": true,
+  "position_semantics_unchanged": true,
+  "reference_unchanged": true,
+  "iteration_continuation_policy_unchanged": true,
+  "solver_executed": false,
+  "case_generated": false,
+  "mesh_generated": false,
+  "continuation_executed": false,
+  "historical_statuses_rewritten": false,
+  "implementation_sha256": {
+    "Scripts/routeA/analyze_case.py": "e6207e33ae2279e84786115ebfd912b170dcb23f220f1b1155314c723c54cfed",
+    "Scripts/routeA/generate_case.py": "0b4d6fabc7e648e29a8e511cf47088d569c68eda5ce7a46bba6a1fdac72e6075",
+    "Scripts/routeA/run_case.sh": "aa48c216f883675b4eca4987b3bda178a26bcc039660c0ae6be42e49e03877e6",
+    "Scripts/routeA/foam_fields.py": "c16f33a63a42b213c7089011c5e8d74862160ee1588de656ec5e55bcfdd22d7c",
+    "Scripts/routeA/prepare_initialization_check.py": "1c49d819ede6699dcc3336b06448cda277b66acd26bb19c46166538c79d72dc8",
+    "Scripts/routeA/verify_initialization.py": "d9b050b803b17d2ae8533c5132130c525599aff80e2fc297b161dd23f46d6e58",
+    "reference/de_vahl_davis_table_v.csv": "96952fa9ca283b4fa75645b7cbcf3abf400765e56888667d1dfa9ef46a6b5466",
+    "Scripts/routeA/runtime_provenance.py": "5055345c7e64758a4f902c81219e2dda2e5b9cdec22c3f22fc8297bbc1bb9e5a"
+  },
+  "template_sha256": {
+    "cases/routeA/template/0/T": "2aa0b82fdbef9ea1d970d3135fdfeebb4253a2d69a3b0c5f69601e802af17a6a",
+    "cases/routeA/template/0/U": "2d73c61cd16ca22f804a03a09a7cb9381881d1e5a2e679cbc8b589511bda42c6",
+    "cases/routeA/template/0/p_rgh": "7a474b49f9e53d8a275c7a8b37e18d9069e44f9fb0640bcbef816b5364efe1b1",
+    "cases/routeA/template/constant/g": "0e4479e7ccc140bb8ffb1481b66d73a0abb584e0b29358e250aca18bcc6b4875",
+    "cases/routeA/template/constant/hRef": "b3cfc4ab0c5b5266283096fd98687c65930df337dedbeb34b67a5288c9946976",
+    "cases/routeA/template/constant/momentumTransport": "3bfe7027873405f63753c0cec85e91c6069dafe94228154189d5b6616233200e",
+    "cases/routeA/template/constant/pRef": "13e8b23d9a316804a134ea8abb6d385f120d64f3dc89ea40b3dcbf09956e8df1",
+    "cases/routeA/template/constant/physicalProperties": "baea2c76140ca1481c1d0dc064e4fba44076f666de79f6162dfd5cfff4b440b4",
+    "cases/routeA/template/constant/thermophysicalTransport": "9c550714c97c8fd84bbd68d80558826ba76a028d521e6cafbe15c1b20cd0d08e",
+    "cases/routeA/template/system/blockMeshDict": "d54bad73935c633caf7108c1ff79c0104875782e6e4f18b2a4613ecbea213570",
+    "cases/routeA/template/system/controlDict": "4b645f36b693062f150656bb4372b64529e0bf0d43b4a0699ed221748b49ff99",
+    "cases/routeA/template/system/fvSchemes": "1a5031f97e7a7f2cb086f9119f6ca19b8e79ce128a454bfdb4af57f08944ed56",
+    "cases/routeA/template/system/fvSolution": "0ca7859d7381120990bea32fabce561b547b7665c0b8badbd87d4aac1733d15b"
+  },
+  "RouteB_Ra1e5_baseline_availability": [
+    {
+      "matrix_case_id": "B-Ra1e5-coarse",
+      "source_case_id": "B-Ra1e5-coarse",
+      "accepted": "YES",
+      "computed": "YES",
+      "Gate_D": "PASS",
+      "Ra_actual": 100000,
+      "Pr_actual": 0.71,
+      "grid": [
+        40,
+        40,
+        1
+      ],
+      "final_iteration": 6000,
+      "metrics_path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/cases/B-Ra1e5-coarse/metrics.json",
+      "metrics_sha256": "1a85d44eecce87ac66009ab08a14808a92b34078ee219c8ca30b446e3f4c6c8b",
+      "accepted_field_hash_root": "/home/mirai/OpenFOAM/mirai-6/run/deVahlDavisBenchmark",
+      "accepted_final_field_sha256": {
+        "cases/routeB/Ra1e5_coarse/6000/U": "32e057f5bc15ae874980d297bb526040ec7e3e5df25f87963fbeda9ef410ed88",
+        "cases/routeB/Ra1e5_coarse/6000/alphat": "6d40a357679c77f1d6324b15dc487f5322848ea0f0b5ca803ef23aa0a0579372",
+        "cases/routeB/Ra1e5_coarse/6000/phi": "42da6242f2949d39b9d843ed0892e2dcf479c36ac58ce45c48d00d7aa5760b7e",
+        "cases/routeB/Ra1e5_coarse/6000/T": "860b4d6a6b793cc5145ab6a00365e9dddd8f69419046f569a281402a56705319",
+        "cases/routeB/Ra1e5_coarse/6000/p": "0a98bcf87c28415cad1fe49d477e2a2a0b34f505075c075ab5bc4e8860046003",
+        "cases/routeB/Ra1e5_coarse/6000/p_rgh": "3e9eda010a2a98767d2c45ecc78e2a712d1f98f938752c6398ae9b97c0ae54e0"
+      },
+      "mesh_sha256": {
+        "constant/polyMesh/faces": "14ebb88083f45f9b20e1a654410e477aad3d9b334bcc28fc151e1417a97b2fe2",
+        "constant/polyMesh/points": "608ba95f30ca4ad10cdef9dd8e233b138759a8bf922220c85771d2c806c001b9",
+        "constant/polyMesh/boundary": "05b5bac4e06222719db7405b4e37ddfc52738afe54896b7e525fe7175b7f3bfd",
+        "constant/polyMesh/neighbour": "d2e5e7ec4cbfbb9e6969b8a8af580d55fe70a9f21e784e882ca6fa1d32f9165c",
+        "constant/polyMesh/owner": "8beef1f197482b84bffa5490200b2299fd94b74ce7bc3d62ec0e1fac8057cbd2"
+      },
+      "comparison_precomputed": false
+    },
+    {
+      "matrix_case_id": "B-Ra1e5-medium",
+      "source_case_id": "B-Ra1e5-medium",
+      "accepted": "YES",
+      "computed": "YES",
+      "Gate_D": "PASS",
+      "Ra_actual": 100000,
+      "Pr_actual": 0.71,
+      "grid": [
+        80,
+        80,
+        1
+      ],
+      "final_iteration": 9000,
+      "metrics_path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/cases/B-Ra1e5-medium/metrics.json",
+      "metrics_sha256": "78af7d109a97fa99e543e0565fbb5031821ee6ab176a17e80f65f15972362a9c",
+      "accepted_field_hash_root": "/home/mirai/OpenFOAM/mirai-6/run/deVahlDavisBenchmark",
+      "accepted_final_field_sha256": {
+        "cases/routeB/Ra1e5_medium/9000/U": "105bf8f627e139d2f91c451c1ac83ecdb65930d327ea375113bc416f1ad1ae71",
+        "cases/routeB/Ra1e5_medium/9000/alphat": "387e06d32a0ae4745980f7c3f0164aeda32ded32bf123507f4556860c99787bf",
+        "cases/routeB/Ra1e5_medium/9000/phi": "55614e90aff0f59b7f91b8b87e75e050599090d9f0ba5d4de97a9c3fdfea9efa",
+        "cases/routeB/Ra1e5_medium/9000/T": "11f180a6aacf19b44934fc11433baf04af2125f621e3558e6c5c862138efdec5",
+        "cases/routeB/Ra1e5_medium/9000/p": "33184e7cb579261fda78b2fd5e4d48f8df79b4b1ddb821dd3959021490a5f829",
+        "cases/routeB/Ra1e5_medium/9000/p_rgh": "249552e2b9e80364048ce4bb5101280349503a17bae3b3b022f92ec49fa0a898"
+      },
+      "mesh_sha256": {
+        "constant/polyMesh/faces": "222f0f628d837dd323241b71c390ca0aefc76b1d7b7385c44cf5306a3db62f71",
+        "constant/polyMesh/points": "e36c10eb472aa593a4e07573c03bb9cf55c132e8389dad196948b84dc837f9e0",
+        "constant/polyMesh/boundary": "68c5e8ba4c1443ecc36e819382e3e98ecde6c2e2d27282ca3e2fa120e24bb345",
+        "constant/polyMesh/neighbour": "bc86f1fcb3fccf51dec58e0ef685f31be4c8f847b3afc603d1ce8bfc51675307",
+        "constant/polyMesh/owner": "5fb5f126983674baa67ff2cb813d3a13493f1e8ae59b4a03da4200e6f423a987"
+      },
+      "comparison_precomputed": false
+    },
+    {
+      "matrix_case_id": "B-Ra1e5-fine",
+      "source_case_id": "B-Ra1e5-fine",
+      "accepted": "YES",
+      "computed": "YES",
+      "Gate_D": "PASS",
+      "Ra_actual": 100000,
+      "Pr_actual": 0.71,
+      "grid": [
+        160,
+        160,
+        1
+      ],
+      "final_iteration": 12000,
+      "metrics_path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/cases/B-Ra1e5-fine/metrics.json",
+      "metrics_sha256": "c4d089ae8b6d21a20771b639c951895b95576c6c39223bd37a780459f67f10fd",
+      "accepted_field_hash_root": "/home/mirai/OpenFOAM/mirai-6/run/deVahlDavisBenchmark",
+      "accepted_final_field_sha256": {
+        "cases/routeB/Ra1e5_fine/12000/U": "fa1f4c692654291d7c1d9c4a308f1ca4f4d085b3e524f635b92483b553222846",
+        "cases/routeB/Ra1e5_fine/12000/alphat": "e29fe1c6dddb9eb38423349801b4d71a8ae5f21aa25d800bc26798fbd46f12db",
+        "cases/routeB/Ra1e5_fine/12000/phi": "6af7f20944555ae160b2b84305112480aa943e78363d1b3641fb1c89e864633b",
+        "cases/routeB/Ra1e5_fine/12000/T": "1212d2591c4b9bcee5d62950a835e9e2e6e1de52097aabaf3536c9f7c816ab9e",
+        "cases/routeB/Ra1e5_fine/12000/p": "52986220aff1a344df459996f396be310ea4455996ed99e45ff6e795052ab2be",
+        "cases/routeB/Ra1e5_fine/12000/p_rgh": "b839f91638938fbe86f0b945f84dc50c78d6708b303003571dbec332aabd9e3a"
+      },
+      "mesh_sha256": {
+        "constant/polyMesh/faces": "cc83d432b2f6e5bc59786b4d29703220ab4615cccc64e45478d7d160ba1a86a4",
+        "constant/polyMesh/points": "0dc6d8f2bb286d4a5c71d1e7613f971b6ea84bc6aef6c9c7193b50ffde6da78d",
+        "constant/polyMesh/boundary": "8edf8a0cd7b922cc9fec8dda9d14f937a961d02478cf50a79d324025a4f471c7",
+        "constant/polyMesh/neighbour": "1efe776acf18f1efd60f48fe4d473a755c42f8730e362e7510476b5413231db1",
+        "constant/polyMesh/owner": "2591161faec40a988ae34c6c8204439fa37c63f64d51ce0bcc702b58a9f054b8"
+      },
+      "comparison_precomputed": false
+    }
+  ],
+  "permitted_snapshot_changes": [
+    "version/date/HEAD/current guard and digest-location metadata",
+    "first_unit/next_single_task/attempt_006/new Ra1e5 destination and output metadata",
+    "new parent/amendment linkage and required start/hash guards",
+    "historical Ra1e4 review interpretation/diagnostic ownership linkage",
+    "preparation readiness/status metadata"
+  ],
+  "forbidden_changes": [
+    "frozen_model",
+    "schemes/relaxation/linear tolerances/correctors",
+    "mesh policy",
+    "Gate D/E/F/G definitions/thresholds",
+    "AB_comparison",
+    "position semantics",
+    "reference/implementation/template hashes",
+    "iteration caps/checkpoints/continuation/retry/tuning/320 policy"
+  ]
+}
