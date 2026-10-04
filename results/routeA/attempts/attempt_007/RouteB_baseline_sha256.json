@@ -1,0 +1,6 @@
+{
+  "results/routeB/full_matrix_manifest.json": "9ae1f681f98469e891983aa02acead90de0c56d795c033a47fbcc1ce3a92fd27",
+  "results/routeB/cases/B-Ra1e6-coarse/metrics.json": "c0032cbf2938197e866ac23368ef95475f174e31e780770a3b1f207fbe8e49f2",
+  "results/routeB/cases/B-Ra1e6-medium/metrics.json": "c6f560e95a9f10b0597ca85f31a69eb000699192f3cdf7df9ba50484ed67f419",
+  "results/routeB/cases/B-Ra1e6-fine/metrics.json": "2f548586e65d35c50e7cc7a26a784c0b26e132369b99f0d527edc4fc03df574d"
+}

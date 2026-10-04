@@ -1,0 +1,250 @@
+{
+  "owner": "ATTEMPT_007_POST_RA1E6_STEADY_MATRIX_SUMMARY",
+  "rows": [
+    {
+      "case_id": "A-Ra1e3-coarse",
+      "Ra_target": 1000,
+      "grid": [
+        40,
+        40,
+        1
+      ],
+      "computed": true,
+      "accepted": true,
+      "Gate_D": "PASS",
+      "final_iteration": 3000,
+      "Gate_E_diagnostic": "PASS",
+      "Gate_F": "FAIL",
+      "Gate_G": "PASS",
+      "needs_320": "YES",
+      "historical_status_source": "results/routeA/attempts/attempt_004/Ra1e3_trio_report.json",
+      "source_sha256": "10bab3a03554b413259ba35837c9a9ce62f3c5fd3d6d4531acef090d4d7858ac",
+      "statuses_recomputed": false
+    },
+    {
+      "case_id": "A-Ra1e3-medium",
+      "Ra_target": 1000,
+      "grid": [
+        80,
+        80,
+        1
+      ],
+      "computed": true,
+      "accepted": true,
+      "Gate_D": "PASS",
+      "final_iteration": 6000,
+      "Gate_E_diagnostic": "PASS",
+      "Gate_F": "FAIL",
+      "Gate_G": "PASS",
+      "needs_320": "YES",
+      "historical_status_source": "results/routeA/attempts/attempt_004/Ra1e3_trio_report.json",
+      "source_sha256": "10bab3a03554b413259ba35837c9a9ce62f3c5fd3d6d4531acef090d4d7858ac",
+      "statuses_recomputed": false
+    },
+    {
+      "case_id": "A-Ra1e3-fine",
+      "Ra_target": 1000,
+      "grid": [
+        160,
+        160,
+        1
+      ],
+      "computed": true,
+      "accepted": true,
+      "Gate_D": "PASS",
+      "final_iteration": 18000,
+      "Gate_E_diagnostic": "PASS",
+      "Gate_F": "FAIL",
+      "Gate_G": "PASS",
+      "needs_320": "YES",
+      "historical_status_source": "results/routeA/attempts/attempt_004/Ra1e3_trio_report.json",
+      "source_sha256": "10bab3a03554b413259ba35837c9a9ce62f3c5fd3d6d4531acef090d4d7858ac",
+      "statuses_recomputed": false
+    },
+    {
+      "case_id": "A-Ra1e4-coarse",
+      "Ra_target": 10000,
+      "grid": [
+        40,
+        40,
+        1
+      ],
+      "computed": true,
+      "accepted": true,
+      "Gate_D": "PASS",
+      "final_iteration": 3000,
+      "Gate_E_diagnostic": "PASS",
+      "Gate_F": "FAIL",
+      "Gate_G": "PASS",
+      "needs_320": "YES",
+      "historical_status_source": "results/routeA/attempts/attempt_005/Ra1e4_trio_report.json",
+      "source_sha256": "36283fa158aa54ac11c83357c61cbc2ca6e476b2a74dc55282c6ed99d5a99afa",
+      "statuses_recomputed": false
+    },
+    {
+      "case_id": "A-Ra1e4-medium",
+      "Ra_target": 10000,
+      "grid": [
+        80,
+        80,
+        1
+      ],
+      "computed": true,
+      "accepted": true,
+      "Gate_D": "PASS",
+      "final_iteration": 6000,
+      "Gate_E_diagnostic": "PASS",
+      "Gate_F": "FAIL",
+      "Gate_G": "PASS",
+      "needs_320": "YES",
+      "historical_status_source": "results/routeA/attempts/attempt_005/Ra1e4_trio_report.json",
+      "source_sha256": "36283fa158aa54ac11c83357c61cbc2ca6e476b2a74dc55282c6ed99d5a99afa",
+      "statuses_recomputed": false
+    },
+    {
+      "case_id": "A-Ra1e4-fine",
+      "Ra_target": 10000,
+      "grid": [
+        160,
+        160,
+        1
+      ],
+      "computed": true,
+      "accepted": true,
+      "Gate_D": "PASS",
+      "final_iteration": 15000,
+      "Gate_E_diagnostic": "PASS",
+      "Gate_F": "FAIL",
+      "Gate_G": "PASS",
+      "needs_320": "YES",
+      "historical_status_source": "results/routeA/attempts/attempt_005/Ra1e4_trio_report.json",
+      "source_sha256": "36283fa158aa54ac11c83357c61cbc2ca6e476b2a74dc55282c6ed99d5a99afa",
+      "statuses_recomputed": false
+    },
+    {
+      "case_id": "A-Ra1e5-coarse",
+      "Ra_target": 100000,
+      "grid": [
+        40,
+        40,
+        1
+      ],
+      "computed": true,
+      "accepted": true,
+      "Gate_D": "PASS",
+      "final_iteration": 3000,
+      "Gate_E_diagnostic": "PASS",
+      "Gate_F": "FAIL",
+      "Gate_G": "PASS",
+      "needs_320": "YES",
+      "historical_status_source": "results/routeA/attempts/attempt_006/Ra1e5_trio_report.json",
+      "source_sha256": "bda0b3558b935ed07db1d2fab9d79466c3c48e922807157c7f087197af00d88c",
+      "statuses_recomputed": false
+    },
+    {
+      "case_id": "A-Ra1e5-medium",
+      "Ra_target": 100000,
+      "grid": [
+        80,
+        80,
+        1
+      ],
+      "computed": true,
+      "accepted": true,
+      "Gate_D": "PASS",
+      "final_iteration": 3000,
+      "Gate_E_diagnostic": "PASS",
+      "Gate_F": "FAIL",
+      "Gate_G": "PASS",
+      "needs_320": "YES",
+      "historical_status_source": "results/routeA/attempts/attempt_006/Ra1e5_trio_report.json",
+      "source_sha256": "bda0b3558b935ed07db1d2fab9d79466c3c48e922807157c7f087197af00d88c",
+      "statuses_recomputed": false
+    },
+    {
+      "case_id": "A-Ra1e5-fine",
+      "Ra_target": 100000,
+      "grid": [
+        160,
+        160,
+        1
+      ],
+      "computed": true,
+      "accepted": true,
+      "Gate_D": "PASS",
+      "final_iteration": 12000,
+      "Gate_E_diagnostic": "PASS",
+      "Gate_F": "FAIL",
+      "Gate_G": "PASS",
+      "needs_320": "YES",
+      "historical_status_source": "results/routeA/attempts/attempt_006/Ra1e5_trio_report.json",
+      "source_sha256": "bda0b3558b935ed07db1d2fab9d79466c3c48e922807157c7f087197af00d88c",
+      "statuses_recomputed": false
+    },
+    {
+      "case_id": "A-Ra1e6-coarse",
+      "Ra_target": 1000000,
+      "grid": [
+        40,
+        40,
+        1
+      ],
+      "computed": true,
+      "accepted": true,
+      "Gate_D": "PASS",
+      "final_iteration": 3000,
+      "Gate_E_diagnostic": "PASS",
+      "Gate_F": "FAIL",
+      "Gate_G": "PASS",
+      "needs_320": "YES",
+      "historical_status_source": "CURRENT_ATTEMPT_007",
+      "statuses_recomputed": false
+    },
+    {
+      "case_id": "A-Ra1e6-medium",
+      "Ra_target": 1000000,
+      "grid": [
+        80,
+        80,
+        1
+      ],
+      "computed": true,
+      "accepted": true,
+      "Gate_D": "PASS",
+      "final_iteration": 3000,
+      "Gate_E_diagnostic": "PASS",
+      "Gate_F": "FAIL",
+      "Gate_G": "PASS",
+      "needs_320": "YES",
+      "historical_status_source": "CURRENT_ATTEMPT_007",
+      "statuses_recomputed": false
+    },
+    {
+      "case_id": "A-Ra1e6-fine",
+      "Ra_target": 1000000,
+      "grid": [
+        160,
+        160,
+        1
+      ],
+      "computed": true,
+      "accepted": true,
+      "Gate_D": "PASS",
+      "final_iteration": 9000,
+      "Gate_E_diagnostic": "PASS",
+      "Gate_F": "FAIL",
+      "Gate_G": "PASS",
+      "needs_320": "YES",
+      "historical_status_source": "CURRENT_ATTEMPT_007",
+      "statuses_recomputed": false
+    }
+  ],
+  "case_count": 12,
+  "computed_count": 12,
+  "accepted_count": 12,
+  "computation_complete": true,
+  "all_Gates_passed": false,
+  "full_steady_matrix_review_required": true,
+  "past_statuses_recomputed": false,
+  "not_full_verification": true
+}

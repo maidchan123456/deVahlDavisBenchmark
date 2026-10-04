@@ -1,0 +1,17 @@
+{
+  "owner": "ATTEMPT_007_EXECUTION_ORCHESTRATION",
+  "source_execution_runner": "results/routeA/attempts/attempt_006/execution_runner.py",
+  "source_execution_runner_sha256": "499502725c1b1e3fa00189ce178d63424afb05464c72d833cec065c3f7689299",
+  "execution_metadata_changes_only": [
+    "Ra1e6/attempt007/v1.6/current hash paths/target Ra1000000",
+    "explicit B computed/unaccepted semantic guard"
+  ],
+  "frozen_symmetry_grid_convergence_helper_AST_identical": true,
+  "report_changes": [
+    "B_computed true/B_accepted false/diagnostic_only true/ownership explicit for every comparison",
+    "A gates independent; formal E/G accepted fine and formal F accepted three required",
+    "all12 matrix summary from immutable earlier statuses; next REVIEW_ROUTE_A_FULL_STEADY_MATRIX"
+  ],
+  "canonical_scripts_changed": false,
+  "solver_concurrency": 1
+}

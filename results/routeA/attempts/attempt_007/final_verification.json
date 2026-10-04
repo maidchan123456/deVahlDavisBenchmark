@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "protected_file_count": 10077,
+  "all_historical_evidence_unchanged": true,
+  "permitted_control_changes_only": true,
+  "accepted_final_fields_all_match": true,
+  "segments": [
+    {
+      "case_id": "A-Ra1e6-coarse",
+      "iteration": 3000,
+      "native_restart_fields_mesh_input_raw_final_seals_runtime_health": "PASS"
+    },
+    {
+      "case_id": "A-Ra1e6-medium",
+      "iteration": 3000,
+      "native_restart_fields_mesh_input_raw_final_seals_runtime_health": "PASS"
+    },
+    {
+      "case_id": "A-Ra1e6-fine",
+      "iteration": 3000,
+      "native_restart_fields_mesh_input_raw_final_seals_runtime_health": "PASS"
+    },
+    {
+      "case_id": "A-Ra1e6-fine",
+      "iteration": 6000,
+      "native_restart_fields_mesh_input_raw_final_seals_runtime_health": "PASS"
+    },
+    {
+      "case_id": "A-Ra1e6-fine",
+      "iteration": 9000,
+      "native_restart_fields_mesh_input_raw_final_seals_runtime_health": "PASS"
+    }
+  ],
+  "derived_wallHeatFlux_regeneration_observations": [
+    {
+      "case_id": "A-Ra1e6-fine",
+      "iteration": 3000,
+      "field": "wallHeatFlux",
+      "observed_checkpoint_sha256": "37f6340a21d4b1838309a4bc96fc5ee4bc4e3e7740305933e0d4ffdabae406dd",
+      "current_derived_working_sha256": "c99924eeb96084a839b5135db526a69512510ad7188df4b8fb230d599f1f96a4",
+      "classification": "DERIVED_FUNCTION_OBJECT_FIELD_REGENERATED_IN_WORKING_CASE; not native restart input or sealed raw Q",
+      "restart_guard_before_continuation": "PASS",
+      "raw_evidence_seal": "UNCHANGED"
+    },
+    {
+      "case_id": "A-Ra1e6-fine",
+      "iteration": 6000,
+      "field": "wallHeatFlux",
+      "observed_checkpoint_sha256": "d9049c7a029a7dc782159f6e8750f3bf8a38528b263922a9db216e85e1e3d8ec",
+      "current_derived_working_sha256": "fd8869ade72568f878f25d2b30e190d1f20d6c0dfaf56570730fc1b441c72d2f",
+      "classification": "DERIVED_FUNCTION_OBJECT_FIELD_REGENERATED_IN_WORKING_CASE; not native restart input or sealed raw Q",
+      "restart_guard_before_continuation": "PASS",
+      "raw_evidence_seal": "UNCHANGED"
+    }
+  ],
+  "solver_concurrency": 1,
+  "numerical_physical_model_criteria_changed": false,
+  "Ra1e3_results_modified": false,
+  "Route_B_modified": false,
+  "current_environment_checked_before_case_generation": true
+}

@@ -1,0 +1,13 @@
+case_id,Ra_target,grid,computed,accepted,Gate_D,final_iteration,Gate_E_diagnostic,Gate_F,Gate_G,needs_320,historical_status_source,source_sha256,statuses_recomputed
+A-Ra1e3-coarse,1000,"[40, 40, 1]",true,true,PASS,3000,PASS,FAIL,PASS,YES,results/routeA/attempts/attempt_004/Ra1e3_trio_report.json,10bab3a03554b413259ba35837c9a9ce62f3c5fd3d6d4531acef090d4d7858ac,false
+A-Ra1e3-medium,1000,"[80, 80, 1]",true,true,PASS,6000,PASS,FAIL,PASS,YES,results/routeA/attempts/attempt_004/Ra1e3_trio_report.json,10bab3a03554b413259ba35837c9a9ce62f3c5fd3d6d4531acef090d4d7858ac,false
+A-Ra1e3-fine,1000,"[160, 160, 1]",true,true,PASS,18000,PASS,FAIL,PASS,YES,results/routeA/attempts/attempt_004/Ra1e3_trio_report.json,10bab3a03554b413259ba35837c9a9ce62f3c5fd3d6d4531acef090d4d7858ac,false
+A-Ra1e4-coarse,10000,"[40, 40, 1]",true,true,PASS,3000,PASS,FAIL,PASS,YES,results/routeA/attempts/attempt_005/Ra1e4_trio_report.json,36283fa158aa54ac11c83357c61cbc2ca6e476b2a74dc55282c6ed99d5a99afa,false
+A-Ra1e4-medium,10000,"[80, 80, 1]",true,true,PASS,6000,PASS,FAIL,PASS,YES,results/routeA/attempts/attempt_005/Ra1e4_trio_report.json,36283fa158aa54ac11c83357c61cbc2ca6e476b2a74dc55282c6ed99d5a99afa,false
+A-Ra1e4-fine,10000,"[160, 160, 1]",true,true,PASS,15000,PASS,FAIL,PASS,YES,results/routeA/attempts/attempt_005/Ra1e4_trio_report.json,36283fa158aa54ac11c83357c61cbc2ca6e476b2a74dc55282c6ed99d5a99afa,false
+A-Ra1e5-coarse,100000,"[40, 40, 1]",true,true,PASS,3000,PASS,FAIL,PASS,YES,results/routeA/attempts/attempt_006/Ra1e5_trio_report.json,bda0b3558b935ed07db1d2fab9d79466c3c48e922807157c7f087197af00d88c,false
+A-Ra1e5-medium,100000,"[80, 80, 1]",true,true,PASS,3000,PASS,FAIL,PASS,YES,results/routeA/attempts/attempt_006/Ra1e5_trio_report.json,bda0b3558b935ed07db1d2fab9d79466c3c48e922807157c7f087197af00d88c,false
+A-Ra1e5-fine,100000,"[160, 160, 1]",true,true,PASS,12000,PASS,FAIL,PASS,YES,results/routeA/attempts/attempt_006/Ra1e5_trio_report.json,bda0b3558b935ed07db1d2fab9d79466c3c48e922807157c7f087197af00d88c,false
+A-Ra1e6-coarse,1000000,"[40, 40, 1]",true,true,PASS,3000,PASS,FAIL,PASS,YES,CURRENT_ATTEMPT_007,,false
+A-Ra1e6-medium,1000000,"[80, 80, 1]",true,true,PASS,3000,PASS,FAIL,PASS,YES,CURRENT_ATTEMPT_007,,false
+A-Ra1e6-fine,1000000,"[160, 160, 1]",true,true,PASS,9000,PASS,FAIL,PASS,YES,CURRENT_ATTEMPT_007,,false

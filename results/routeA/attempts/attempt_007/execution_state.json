@@ -1,0 +1,123 @@
+{
+  "overall": "COMPLETE",
+  "attempt": "007",
+  "cases": [
+    {
+      "case_id": "A-Ra1e6-coarse",
+      "grid": [
+        40,
+        40,
+        1
+      ],
+      "computed": true,
+      "accepted": true,
+      "final_iteration": 3000,
+      "Gate_D": "PASS",
+      "Gate_D_failure_components": [],
+      "segments": [
+        {
+          "end_iteration": 3000,
+          "path": "results/routeA/cases/A-Ra1e6-coarse/segments/end_3000",
+          "Gate_D": "PASS",
+          "failure_components": [],
+          "sealed_sha256_manifest": "cffc6afa6a5de34c6df3cdd78c50cd995911e4bcbda591281f1df5dbb1a9de92"
+        }
+      ],
+      "status": "ACCEPTED",
+      "case_reused": false,
+      "runtime_provenance": "PASS",
+      "OQ02": "PASS"
+    },
+    {
+      "case_id": "A-Ra1e6-medium",
+      "grid": [
+        80,
+        80,
+        1
+      ],
+      "computed": true,
+      "accepted": true,
+      "final_iteration": 3000,
+      "Gate_D": "PASS",
+      "Gate_D_failure_components": [],
+      "segments": [
+        {
+          "end_iteration": 3000,
+          "path": "results/routeA/cases/A-Ra1e6-medium/segments/end_3000",
+          "Gate_D": "PASS",
+          "failure_components": [],
+          "sealed_sha256_manifest": "53e728b42506b17b5a8526f5c595db5a41c83f19cf6a4dbfaa0ec6a78a0d9d4c"
+        }
+      ],
+      "status": "ACCEPTED",
+      "case_reused": false,
+      "runtime_provenance": "PASS",
+      "OQ02": "PASS"
+    },
+    {
+      "case_id": "A-Ra1e6-fine",
+      "grid": [
+        160,
+        160,
+        1
+      ],
+      "computed": true,
+      "accepted": true,
+      "final_iteration": 9000,
+      "Gate_D": "PASS",
+      "Gate_D_failure_components": [],
+      "segments": [
+        {
+          "end_iteration": 3000,
+          "path": "results/routeA/cases/A-Ra1e6-fine/segments/end_3000",
+          "Gate_D": "FAIL",
+          "failure_components": [
+            "QOI_RWIN_PASS",
+            "RESIDUAL_PASS"
+          ],
+          "sealed_sha256_manifest": "afe066de98c670ec3f42fc75344612a63cae20450332b22ea7830d4d8b54bd11"
+        },
+        {
+          "end_iteration": 6000,
+          "path": "results/routeA/cases/A-Ra1e6-fine/segments/end_6000",
+          "Gate_D": "FAIL",
+          "failure_components": [
+            "QOI_RWIN_PASS",
+            "RESIDUAL_PASS"
+          ],
+          "sealed_sha256_manifest": "0264b8ebef296025d6a0e32b4415634e3d1cbc551b1f8e174882bce9f32d16bb"
+        },
+        {
+          "end_iteration": 9000,
+          "path": "results/routeA/cases/A-Ra1e6-fine/segments/end_9000",
+          "Gate_D": "PASS",
+          "failure_components": [],
+          "sealed_sha256_manifest": "ba1211fdff8caa2adb991dc63c4f8309288d2ebf41493887377888aeffd008b9"
+        }
+      ],
+      "status": "ACCEPTED",
+      "case_reused": false,
+      "runtime_provenance": "PASS",
+      "OQ02": "PASS"
+    }
+  ],
+  "environment": {
+    "WM_PROJECT": "OpenFOAM",
+    "WM_PROJECT_VERSION": "13",
+    "WM_PROJECT_DIR": "/opt/openfoam13",
+    "WM_OPTIONS": "linux64GccDPInt32Opt",
+    "foamRun": "/opt/openfoam13/platforms/linux64GccDPInt32Opt/bin/foamRun",
+    "host": "mirai-Precision-5860-Tower",
+    "started": "2026-10-04T21:53:20.182031+09:00",
+    "HEAD": "302e5b4ac41dba187678b84f0132d5c6db72fa99",
+    "contract_version": "1.6",
+    "contract_sha256": "c0cdf8d6a08c6190ceff49535c1d44b4050a92373a3faa06cc1e49b9b3b7fe59",
+    "analyzer_sha256": "e6207e33ae2279e84786115ebfd912b170dcb23f220f1b1155314c723c54cfed",
+    "runtime_checker_sha256": "5055345c7e64758a4f902c81219e2dda2e5b9cdec22c3f22fc8297bbc1bb9e5a",
+    "attempt": "007",
+    "primary_solver_concurrency": 1,
+    "actual_build": "13-441953dfbb42"
+  },
+  "stop_reason": null,
+  "finished": "2026-10-04T22:09:38.049915+09:00"
+}
