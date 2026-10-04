@@ -1,0 +1,12 @@
+{
+  "initial_HEAD": "382b1f1bc55256aa1a74bf2dd0d51095798dc1f8",
+  "target": "B-Ra1e5-medium",
+  "target_case_path": "/home/mirai/OpenFOAM/mirai-6/run/deVahlDavisBenchmark/cases/routeB/Ra1e5_medium",
+  "initial_accepted_count": 7,
+  "initial_endTime": 3000,
+  "continuation_policy": {
+    "checkpoint_increment": 3000,
+    "maximum_endTime": 24000,
+    "reason": "Existing runner has no continuation cap. Bounded 3000-step checkpoints follow prior formal medium/fine continuation practice; stop at the first Gate D PASS or numerical failure, at most 24000."
+  }
+}

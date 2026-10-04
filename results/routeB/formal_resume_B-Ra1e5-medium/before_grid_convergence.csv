@@ -5,9 +5,9 @@ Ra_target,quantity,coarse,medium,fine,fine_medium_difference,convergence_type,p_
 10000,Nu_bar_cavity,2.259326039868519,2.2484533240277327,2.245720240746932,0.0012170185899431285,monotonic,1.9921110223460146,0.001225932424867197,PASS,False,Existing three-grid thresholds applied; no 320 run performed.
 10000,Umax,16.118437458362845,16.17018720597726,16.181023277126965,0.0006696777431265277,monotonic,2.255710055120406,0.0005320965725105151,PASS,False,Existing three-grid thresholds applied; no 320 run performed.
 10000,Wmax,19.5952224755579,19.62471259658983,19.61933076302222,0.00027431280060554955,oscillatory,,,FAIL,True,Nonmonotonic or undefined/nonpositive observed order; no 320 run performed.
-100000,Nu_bar_cavity,4.6243636549688,4.5474797308600134,4.528062764593452,0.0042881398240302146,monotonic,1.9853641625568228,0.004346636890267837,PASS,False,Existing three-grid thresholds applied; no 320 run performed.
-100000,Umax,34.81924998888706,34.776470529287806,34.74628032803062,0.0008688757752532516,monotonic,0.5028378838030705,0.006250932455981117,PASS,False,Existing three-grid thresholds applied; no 320 run performed.
-100000,Wmax,68.86509024083921,68.56246861531022,68.64693029290197,0.0012303780698039535,oscillatory,,,FAIL,True,Nonmonotonic or undefined/nonpositive observed order; no 320 run performed.
-1000000,Nu_bar_cavity,,,,,INSUFFICIENT_GRIDS,,,NOT_EVALUATED,,coarse Gate D failed; no three-grid evaluation.
-1000000,Umax,,,,,INSUFFICIENT_GRIDS,,,NOT_EVALUATED,,coarse Gate D failed; no three-grid evaluation.
-1000000,Wmax,,,,,INSUFFICIENT_GRIDS,,,NOT_EVALUATED,,coarse Gate D failed; no three-grid evaluation.
+100000,Nu_bar_cavity,4.6243636549688,,,,INSUFFICIENT_GRIDS,,,NOT_EVALUATED,,Three accepted grids not yet available; three-grid evaluation deferred.
+100000,Umax,34.81924998888706,,,,INSUFFICIENT_GRIDS,,,NOT_EVALUATED,,Three accepted grids not yet available; three-grid evaluation deferred.
+100000,Wmax,68.86509024083921,,,,INSUFFICIENT_GRIDS,,,NOT_EVALUATED,,Three accepted grids not yet available; three-grid evaluation deferred.
+1000000,Nu_bar_cavity,,,,,INSUFFICIENT_GRIDS,,,NOT_EVALUATED,,Stopped at Gate D failure; three accepted grids unavailable.
+1000000,Umax,,,,,INSUFFICIENT_GRIDS,,,NOT_EVALUATED,,Stopped at Gate D failure; three accepted grids unavailable.
+1000000,Wmax,,,,,INSUFFICIENT_GRIDS,,,NOT_EVALUATED,,Stopped at Gate D failure; three accepted grids unavailable.

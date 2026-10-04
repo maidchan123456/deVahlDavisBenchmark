@@ -1,0 +1,3 @@
+{"iteration": 6000, "stage": "CONVERGENCE_NOT_REACHED", "failed_checks": ["heat_trend"]}
+{"iteration": 9000, "stage": "GATE_D_PASS", "failed_checks": []}
+{"case_id": "B-Ra1e5-medium", "Gate_D": "PASS", "final_iteration": 9000}

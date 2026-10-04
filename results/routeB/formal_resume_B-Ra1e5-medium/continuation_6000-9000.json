@@ -1,0 +1,120 @@
+{
+  "before": {
+    "iteration": 6000,
+    "field_sha256": {
+      "U": "e622be999bed011a614abe8f9fd5cd2a61a8f24d11205952c0f3f03d7c4af5d6",
+      "alphat": "6d40a357679c77f1d6324b15dc487f5322848ea0f0b5ca803ef23aa0a0579372",
+      "phi": "4bfb6419bbe7783a6ecf3fdbf2ee335e742576f15f5f66a53899e84decd08bd9",
+      "T": "1a3fd7c65c4c7c6a4d4a6277cbbaad55bb66aba7ec76ed7f21bf7dd7e9887b96",
+      "p": "b50bd7546e29233cdd25ce1318ffa5a1d04cddfc8bc0d66d13ebc041e59d790d",
+      "p_rgh": "5fecc42a4fd86bc1291b92067d1bf26e77fd89fc5171008ad873b8ff1ac0a5b1"
+    },
+    "input_sha256": {
+      "0/T": "707cdd899fb6decc39beaadcb59b8ad4ca8247a6b768b179625fa19dcf0e66b3",
+      "0/U": "ad122c8aa24172a9c82002b6d6fb0ea6ea7fe85f3b55a12f993a86e74a71c16d",
+      "0/alphat": "67990c5ef8837c1c5c8be88c71c617ff363f57ba5f365ae985c4d47955e86955",
+      "0/p_rgh": "fb7b65387f86b04e0608b9997f5f08f295cef41bf32ce0dff3d2f5ecfd886c87",
+      "constant/g": "4be6d6e64952fd18bea299353cb22a48e14e0182c0540ebeabcc8db4e62a4611",
+      "constant/hRef": "de584c87bcdd3bc4958c5ac9f701d9ae0ab3ff2462e478180b1e58604b3deb30",
+      "constant/transportProperties": "8aa8ea4ad47f60b2e054c9b505cef27508155eb5b8f84c6008e08dd473f15b64",
+      "constant/turbulenceProperties": "4f816c5a682c5c842f930b88d5e0b06d4f831ba8eed4efc72b6a9b067fe8cf39",
+      "system/blockMeshDict": "281d83f0aa82df80f5e99e27c77b20a84137de5fb9b24cbc3acf9aba111619a0",
+      "system/controlDict": "d7f816a9c34454b23d68a52d293cf73c006b42e4bb42c0656c2f7c46b3a9bdeb",
+      "system/fvSchemes": "3bedc2642ace9a13843ad341ca92ad1b8320ab5ad46c8f2f32ad5759c191d1eb",
+      "system/fvSolution": "ddb6e153c2b4fee0da51abec70469ade19d8daa388aeba856e45e78687c6bf5d"
+    },
+    "mesh_sha256": {
+      "constant/polyMesh/faces": "222f0f628d837dd323241b71c390ca0aefc76b1d7b7385c44cf5306a3db62f71",
+      "constant/polyMesh/points": "e36c10eb472aa593a4e07573c03bb9cf55c132e8389dad196948b84dc837f9e0",
+      "constant/polyMesh/boundary": "68c5e8ba4c1443ecc36e819382e3e98ecde6c2e2d27282ca3e2fa120e24bb345",
+      "constant/polyMesh/neighbour": "bc86f1fcb3fccf51dec58e0ef685f31be4c8f847b3afc603d1ce8bfc51675307",
+      "constant/polyMesh/owner": "5fb5f126983674baa67ff2cb813d3a13493f1e8ae59b4a03da4200e6f423a987"
+    },
+    "log_sha256": {
+      "log.buoyantBoussinesqSimpleFoam.initial0-3000": "ea1fde4d0b2de2e337a21a76276a0b142c039e2ca3a3e873d26a00c3a4bf1870",
+      "log.analyze_case.6000": "56f6f2c5fc15ea712f250cdf3eba8145742350670ec7ee31b5c87c280541121e",
+      "log.buoyantBoussinesqSimpleFoam": "73a918a11623fb492892455acd8657b576dc887fcab05a0a286e6401da29d9a6",
+      "log.blockMesh": "8f73b8d4aae528d91797f38d9f7fb3ea5b5fc248b5186b903c3aec1c65d99320",
+      "log.checkMesh": "98ff4a0951aeda11d1cc3b89576c61e18db89d199c3b14de39b68efc1462bb48",
+      "log.full_matrix_runner": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "log.analyze_case": "45030d664b4807e52d2d8ae8b3d216799fc15f6d171c1aa4d247bb9ac21478a0",
+      "log.environment": "9c65a930e5013ebfe84dc158a7062be125241cf1bfcfd2148bf74afafa00b8a7",
+      "log.buoyantBoussinesqSimpleFoam.continuation3000-6000": "ef9ca3660f3e0fccb5844d2a0531f1e707c07666a91720278de84f226b5a3dcc"
+    }
+  },
+  "executed_input_sha256": {
+    "0/T": "707cdd899fb6decc39beaadcb59b8ad4ca8247a6b768b179625fa19dcf0e66b3",
+    "0/U": "ad122c8aa24172a9c82002b6d6fb0ea6ea7fe85f3b55a12f993a86e74a71c16d",
+    "0/alphat": "67990c5ef8837c1c5c8be88c71c617ff363f57ba5f365ae985c4d47955e86955",
+    "0/p_rgh": "fb7b65387f86b04e0608b9997f5f08f295cef41bf32ce0dff3d2f5ecfd886c87",
+    "constant/g": "4be6d6e64952fd18bea299353cb22a48e14e0182c0540ebeabcc8db4e62a4611",
+    "constant/hRef": "de584c87bcdd3bc4958c5ac9f701d9ae0ab3ff2462e478180b1e58604b3deb30",
+    "constant/transportProperties": "8aa8ea4ad47f60b2e054c9b505cef27508155eb5b8f84c6008e08dd473f15b64",
+    "constant/turbulenceProperties": "4f816c5a682c5c842f930b88d5e0b06d4f831ba8eed4efc72b6a9b067fe8cf39",
+    "system/blockMeshDict": "281d83f0aa82df80f5e99e27c77b20a84137de5fb9b24cbc3acf9aba111619a0",
+    "system/controlDict": "0fb6182709f800a151586286c18cfe0e38a1572c7ad25a6fbcbed92b68d31bfa",
+    "system/fvSchemes": "3bedc2642ace9a13843ad341ca92ad1b8320ab5ad46c8f2f32ad5759c191d1eb",
+    "system/fvSolution": "ddb6e153c2b4fee0da51abec70469ade19d8daa388aeba856e45e78687c6bf5d"
+  },
+  "permitted_changes": [
+    "startFrom latestTime",
+    "endTime extension"
+  ],
+  "log_path": "/home/mirai/OpenFOAM/mirai-6/run/deVahlDavisBenchmark/cases/routeB/Ra1e5_medium/log.buoyantBoussinesqSimpleFoam.continuation6000-9000",
+  "solver_exit_code": 0,
+  "after": {
+    "iteration": 9000,
+    "field_sha256": {
+      "U": "105bf8f627e139d2f91c451c1ac83ecdb65930d327ea375113bc416f1ad1ae71",
+      "alphat": "387e06d32a0ae4745980f7c3f0164aeda32ded32bf123507f4556860c99787bf",
+      "phi": "55614e90aff0f59b7f91b8b87e75e050599090d9f0ba5d4de97a9c3fdfea9efa",
+      "T": "11f180a6aacf19b44934fc11433baf04af2125f621e3558e6c5c862138efdec5",
+      "p": "33184e7cb579261fda78b2fd5e4d48f8df79b4b1ddb821dd3959021490a5f829",
+      "p_rgh": "249552e2b9e80364048ce4bb5101280349503a17bae3b3b022f92ec49fa0a898"
+    },
+    "input_sha256": {
+      "0/T": "707cdd899fb6decc39beaadcb59b8ad4ca8247a6b768b179625fa19dcf0e66b3",
+      "0/U": "ad122c8aa24172a9c82002b6d6fb0ea6ea7fe85f3b55a12f993a86e74a71c16d",
+      "0/alphat": "67990c5ef8837c1c5c8be88c71c617ff363f57ba5f365ae985c4d47955e86955",
+      "0/p_rgh": "fb7b65387f86b04e0608b9997f5f08f295cef41bf32ce0dff3d2f5ecfd886c87",
+      "constant/g": "4be6d6e64952fd18bea299353cb22a48e14e0182c0540ebeabcc8db4e62a4611",
+      "constant/hRef": "de584c87bcdd3bc4958c5ac9f701d9ae0ab3ff2462e478180b1e58604b3deb30",
+      "constant/transportProperties": "8aa8ea4ad47f60b2e054c9b505cef27508155eb5b8f84c6008e08dd473f15b64",
+      "constant/turbulenceProperties": "4f816c5a682c5c842f930b88d5e0b06d4f831ba8eed4efc72b6a9b067fe8cf39",
+      "system/blockMeshDict": "281d83f0aa82df80f5e99e27c77b20a84137de5fb9b24cbc3acf9aba111619a0",
+      "system/controlDict": "0fb6182709f800a151586286c18cfe0e38a1572c7ad25a6fbcbed92b68d31bfa",
+      "system/fvSchemes": "3bedc2642ace9a13843ad341ca92ad1b8320ab5ad46c8f2f32ad5759c191d1eb",
+      "system/fvSolution": "ddb6e153c2b4fee0da51abec70469ade19d8daa388aeba856e45e78687c6bf5d"
+    },
+    "mesh_sha256": {
+      "constant/polyMesh/faces": "222f0f628d837dd323241b71c390ca0aefc76b1d7b7385c44cf5306a3db62f71",
+      "constant/polyMesh/points": "e36c10eb472aa593a4e07573c03bb9cf55c132e8389dad196948b84dc837f9e0",
+      "constant/polyMesh/boundary": "68c5e8ba4c1443ecc36e819382e3e98ecde6c2e2d27282ca3e2fa120e24bb345",
+      "constant/polyMesh/neighbour": "bc86f1fcb3fccf51dec58e0ef685f31be4c8f847b3afc603d1ce8bfc51675307",
+      "constant/polyMesh/owner": "5fb5f126983674baa67ff2cb813d3a13493f1e8ae59b4a03da4200e6f423a987"
+    },
+    "log_sha256": {
+      "log.buoyantBoussinesqSimpleFoam.initial0-3000": "ea1fde4d0b2de2e337a21a76276a0b142c039e2ca3a3e873d26a00c3a4bf1870",
+      "log.analyze_case.6000": "56f6f2c5fc15ea712f250cdf3eba8145742350670ec7ee31b5c87c280541121e",
+      "log.buoyantBoussinesqSimpleFoam": "b313fa95d91473f9bbba8aaa705820c990f00e7c99a15598a588ccaf44cea42f",
+      "log.blockMesh": "8f73b8d4aae528d91797f38d9f7fb3ea5b5fc248b5186b903c3aec1c65d99320",
+      "log.analyze_case.9000": "78af7d109a97fa99e543e0565fbb5031821ee6ab176a17e80f65f15972362a9c",
+      "log.buoyantBoussinesqSimpleFoam.continuation6000-9000": "0155bb6ebd9d2be0edfcc648fb4d44df63e84efda3c3c360d827331034ddb5e3",
+      "log.checkMesh": "98ff4a0951aeda11d1cc3b89576c61e18db89d199c3b14de39b68efc1462bb48",
+      "log.full_matrix_runner": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "log.analyze_case": "45030d664b4807e52d2d8ae8b3d216799fc15f6d171c1aa4d247bb9ac21478a0",
+      "log.environment": "9c65a930e5013ebfe84dc158a7062be125241cf1bfcfd2148bf74afafa00b8a7",
+      "log.buoyantBoussinesqSimpleFoam.continuation3000-6000": "ef9ca3660f3e0fccb5844d2a0531f1e707c07666a91720278de84f226b5a3dcc"
+    }
+  },
+  "preserved_start_field_hashes": true,
+  "Gate_D_checks": {
+    "normal_exit": true,
+    "finite_execution": true,
+    "window": true,
+    "samples": true,
+    "QoI": true,
+    "residuals": true,
+    "heat_trend": true
+  }
+}

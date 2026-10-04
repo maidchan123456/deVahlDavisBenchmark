@@ -1,0 +1,8 @@
+{"iteration": 6000, "stage": "CONVERGENCE_NOT_REACHED", "failed_checks": ["residuals", "heat_trend"]}
+{"iteration": 9000, "stage": "CONVERGENCE_NOT_REACHED", "failed_checks": ["residuals"]}
+{"iteration": 12000, "stage": "CONVERGENCE_NOT_REACHED", "failed_checks": ["residuals", "heat_trend"]}
+{"iteration": 15000, "stage": "CONVERGENCE_NOT_REACHED", "failed_checks": ["residuals"]}
+{"iteration": 18000, "stage": "CONVERGENCE_NOT_REACHED", "failed_checks": ["residuals"]}
+{"iteration": 21000, "stage": "CONVERGENCE_NOT_REACHED", "failed_checks": ["residuals"]}
+{"iteration": 24000, "stage": "CONVERGENCE_NOT_REACHED", "failed_checks": ["residuals"]}
+{"case_id": "B-Ra1e6-coarse", "Gate_D": "FAIL", "final_iteration": 24000}

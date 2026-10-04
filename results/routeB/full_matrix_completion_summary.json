@@ -1,0 +1,86 @@
+{
+  "initial_HEAD": "382b1f1bc55256aa1a74bf2dd0d51095798dc1f8",
+  "cases": [
+    {
+      "case": "B-Ra1e5-medium",
+      "grid": 80,
+      "final_iteration": 9000,
+      "Gate_D": "PASS",
+      "Gate_E": "NOT_EVALUATED",
+      "Gate_F": "NOT_EVALUATED",
+      "needs_320": "NOT_EVALUATED"
+    },
+    {
+      "case": "B-Ra1e5-fine",
+      "grid": 160,
+      "final_iteration": 12000,
+      "Gate_D": "PASS",
+      "Gate_E": "PASS",
+      "Gate_F": "FAIL",
+      "needs_320": true
+    },
+    {
+      "case": "B-Ra1e6-coarse",
+      "grid": 40,
+      "final_iteration": 24000,
+      "Gate_D": "FAIL",
+      "Gate_E": "NOT_EVALUATED",
+      "Gate_F": "NOT_EVALUATED",
+      "needs_320": "NOT_EVALUATED"
+    },
+    {
+      "case": "B-Ra1e6-medium",
+      "grid": 80,
+      "final_iteration": null,
+      "Gate_D": "NOT_RUN",
+      "Gate_E": "NOT_EVALUATED",
+      "Gate_F": "NOT_EVALUATED",
+      "needs_320": "NOT_EVALUATED"
+    },
+    {
+      "case": "B-Ra1e6-fine",
+      "grid": 160,
+      "final_iteration": null,
+      "Gate_D": "NOT_RUN",
+      "Gate_E": "NOT_EVALUATED",
+      "Gate_F": "NOT_EVALUATED",
+      "needs_320": "NOT_EVALUATED"
+    }
+  ],
+  "accepted_count": 9,
+  "FULL_MATRIX_COMPLETE": "NO",
+  "stopped_early": true,
+  "stop_reason": "B-Ra1e6-coarse: CONVERGENCE_NOT_REACHED at existing cap 24000",
+  "formal_Ra_gates": {
+    "1000": {
+      "E": "PASS",
+      "F": "FAIL",
+      "G": "FAIL"
+    },
+    "10000": {
+      "E": "PASS",
+      "F": "FAIL",
+      "G": "NOT_EVALUATED_UNDER_FROZEN_REVIEW"
+    },
+    "100000": {
+      "E": "PASS",
+      "F": "FAIL",
+      "G": "NOT_EVALUATED_UNDER_FROZEN_REVIEW"
+    },
+    "1000000": {
+      "E": "NOT_EVALUATED",
+      "F": "NOT_EVALUATED",
+      "G": "NOT_EVALUATED"
+    }
+  },
+  "needs_320": {
+    "1e3": true,
+    "1e4": true,
+    "1e5": true,
+    "1e6": "NOT_EVALUATED"
+  },
+  "next_action": "FIX_STOPPED_CASE",
+  "Gate_G_investigation": "FROZEN_PENDING_POST_MATRIX_REVIEW",
+  "formal_numerical_spec_changed": false,
+  "microcase_solver_executed": false
+}

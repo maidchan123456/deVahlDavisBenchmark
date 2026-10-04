@@ -1,0 +1,10 @@
+{
+  "protected_files": 357,
+  "protected_hashes": "PASS",
+  "initial_7_case_records": "UNCHANGED",
+  "new_accepted_field_hashes": "PASS",
+  "accepted_count": 9,
+  "remaining_Ra1e6_cases": "NOT_RUN",
+  "formal_numerical_spec_changed": false,
+  "microcase_solver_executed": false
+}
