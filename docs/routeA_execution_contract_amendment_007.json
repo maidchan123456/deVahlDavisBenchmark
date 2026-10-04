@@ -1,0 +1,487 @@
+{
+  "schema": "routeA-execution-contract-amendment-v1",
+  "id": "Route A Execution Contract Amendment 007",
+  "date": "2026-10-04",
+  "timezone": "Asia/Tokyo",
+  "observed_HEAD": "8b3cf320508a9f70b7cc5be533a7346581ad8b7d",
+  "parent_contract": {
+    "version": "1.6",
+    "path": "docs/routeA_execution_contract_v1.6.json",
+    "sha256": "c0cdf8d6a08c6190ceff49535c1d44b4050a92373a3faa06cc1e49b9b3b7fe59",
+    "unchanged": true
+  },
+  "effective_version": "1.7",
+  "effective_path": "docs/routeA_execution_contract_v1.7.json",
+  "effective_sha256_location": "docs/routeA_execution_contract_v1.7.md and GateH_execution_contract_preparation.json; external to avoid circular hash",
+  "scope": "GATE_H_FIXED_GRID_MODEL_SENSITIVITY",
+  "purpose": "AUTHORIZE AND PREREGISTER GATE H FIXED-GRID MODEL/FORMULATION SENSITIVITY",
+  "user_authorization": {
+    "task": "PREPARE_ROUTE_A_GATE_H_EXECUTION_CONTRACT",
+    "attachment": "/home/mirai/.codex/attachments/44c31871-020a-4e1e-9e32-419470ab4a54/貼り付けたテキスト.txt",
+    "scope": "Contract preparation only; no solver, generation, clone or continuation; future run requires separate instruction."
+  },
+  "reason": "Full steady review COMPLETE, accepted12, partial Verification; all F FAIL and needs_320 retained. Prepare common160-grid two-point sensitivity, not refinement or full Verification.",
+  "full_steady_review_linkage": {
+    "owner": "HISTORICAL_FULL_STEADY_MATRIX_REVIEW",
+    "artifacts": {
+      "results/routeA/attempts/attempt_007/RouteA_full_steady_matrix_review.md": "dae0a611bf10bc915a27b71ad012bd05e6315df3326ad4f94eb059b29ead2daf",
+      "results/routeA/attempts/attempt_007/RouteA_full_steady_matrix_review.json": "5faa9b10a240c25848e61e5fdc6dc327b5e1deb60694168e610baff24744a62c",
+      "results/routeA/attempts/attempt_007/full_steady_review_checks/review_artifacts_sha256.json": "7efafd03c32dde5daa675fc54d02bfcc143432fa543aa14d38b968afde5f3114"
+    },
+    "verified_status": {
+      "ROUTE_A_FULL_STEADY_MATRIX_REVIEW": "COMPLETE",
+      "EFFECTIVE_CONTRACT_VERSION": "1.6",
+      "EFFECTIVE_CONTRACT_HASH_VERIFIED": "YES",
+      "ROUTE_A_MATRIX_CASE_COUNT": 12,
+      "ROUTE_A_MATRIX_COMPUTED_COUNT": 12,
+      "ROUTE_A_MATRIX_ACCEPTED_COUNT": 12,
+      "ROUTE_A_STEADY_MATRIX_COMPUTATION_COMPLETE": "YES",
+      "ALL_ROUTE_A_CASES_ACCEPTED": "YES",
+      "ALL_ROUTE_A_GATE_D": "PASS",
+      "ALL_ROUTE_A_GATE_E_DIAGNOSTIC": "PASS",
+      "ALL_ROUTE_A_GATE_G": "PASS",
+      "ALL_ROUTE_A_GATE_F": "FAIL",
+      "RA1E3_GATE_F": "FAIL",
+      "RA1E3_GATE_F_PRIMARY_REASON": "Umax NON_MONOTONIC_OR_UNDEFINED; p_obs/GCI=null",
+      "RA1E4_GATE_F": "FAIL",
+      "RA1E4_GATE_F_PRIMARY_REASON": "Wmax NON_MONOTONIC_OR_UNDEFINED; p_obs/GCI=null",
+      "RA1E5_GATE_F": "FAIL",
+      "RA1E5_GATE_F_PRIMARY_REASON": "Wmax NON_MONOTONIC_OR_UNDEFINED; p_obs/GCI=null",
+      "RA1E6_GATE_F": "FAIL",
+      "RA1E6_GATE_F_PRIMARY_REASON": "Nu_bar_cavity fine-medium 1.3402375460880519% > 1%; Wmax NON_MONOTONIC_OR_UNDEFINED, p_obs/GCI=null",
+      "ALL_RA_NEEDS_320": "YES",
+      "OVERALL_VERIFICATION_STATUS": "VERIFICATION_PARTIAL_WITH_DOCUMENTED_GRID_CONVERGENCE_LIMITATION",
+      "GRID_CONVERGENCE_FORMALLY_ESTABLISHED_FOR_ALL_MONITORED_QOIS": "NO",
+      "FINE_GRID_PRACTICAL_BENCHMARK_AGREEMENT_SUPPORTED": "YES",
+      "CONSERVATION_AND_SYMMETRY_SUPPORTED": "YES",
+      "RA1E6_A_B_CONVERGENCE_CLASSIFICATION_DIFFERS": "YES",
+      "RA1E6_A_ACCEPTED": "YES",
+      "RA1E6_B_ACCEPTED": "NO",
+      "RA1E6_A_B_PRIMARY_QOIS_CLOSE": "YES",
+      "RA1E6_A_B_CAUSAL_MECHANISM_ESTABLISHED": "NO",
+      "TARGETED_320_INFORMATION_VALUE_RA1E3": "LOW",
+      "TARGETED_320_INFORMATION_VALUE_RA1E4": "LOW",
+      "TARGETED_320_INFORMATION_VALUE_RA1E5": "MEDIUM",
+      "TARGETED_320_INFORMATION_VALUE_RA1E6": "HIGH",
+      "RECOMMENDED_320_STRATEGY": "NO_320_NOW",
+      "TARGETED_320_REQUIRED_BEFORE_GATE_H": "NO",
+      "STEADY_BASELINE_USABLE_FOR_MODEL_SENSITIVITY": "CONDITIONAL",
+      "GATE_H_SCIENTIFICALLY_ALLOWED": "YES",
+      "GATE_H_TECHNICALLY_READY": "NO",
+      "GATE_H_CONTRACT_UPDATE_REQUIRED": "YES",
+      "GATE_J_EXECUTED": "NO",
+      "GRID_320_EXECUTED": "NO",
+      "SOLVER_EXECUTED": "NO",
+      "FORMAL_CRITERIA_CHANGED": "NO",
+      "HISTORICAL_STATUS_CHANGED": "NO",
+      "CONTRACT_AMENDMENT_CREATED": "NO",
+      "FULL_VERIFICATION_CLAIM_ALLOWED": "NO",
+      "NEXT_SINGLE_TASK": "PREPARE_ROUTE_A_GATE_H_EXECUTION_CONTRACT",
+      "RECOMMENDED_REASONING_MODEL_FOR_NEXT_TASK": "gpt-6.1-sol / medium",
+      "USER_DECISION_REQUIRED": "YES",
+      "ROUTE_A_SOLVER_EXECUTED": "NO",
+      "ROUTE_B_SOLVER_EXECUTED": "NO",
+      "CASE_GENERATED": "NO",
+      "MESH_GENERATED": "NO",
+      "CONTINUATION_EXECUTED": "NO",
+      "GATE_H_EXECUTED": "NO",
+      "EFFECTIVE_CONTRACT_CHANGED": "NO",
+      "STEADY_BASELINE_USABLE_FOR_FUTURE_PARTICLE_WORK": "CONDITIONAL"
+    },
+    "review_seal_members_verified": true,
+    "historical_review_unchanged": true
+  },
+  "Gate_H": {
+    "status": "PREREGISTERED_NOT_STARTED",
+    "classification": "FIXED_GRID_MODEL_FORMULATION_SENSITIVITY",
+    "scientific_question": "At fixed Ra=1e6, Pr=.71, common 160x160x1 grid and numerics, how do steady QoIs change when EOS beta*DeltaT decreases from 1e-3 to 1e-4 with beta/10 and g*10?",
+    "authority": {
+      "docs/routeA_pre_full_matrix_review.md": {
+        "sha256": "0ceac629a9fd98d85b0d882eb523410237be84ae005acfb34033a8c71ade557e",
+        "section": "10: matrix baseline A-Ra1e6-fine; one additional sensitivity case; 0.2%; epsilon_v non-worsening"
+      },
+      "docs/acceptance_criteria.md": {
+        "sha256": "2fe82dba1644621a7e57ddc11c4ea5ba5007db50122fbd0c0179f5af5ac38db4",
+        "section": "10: beta/10 and g*10, fixed numerical conditions, existing Gate H criteria"
+      },
+      "docs/benchmark_spec.md": {
+        "sha256": "f4436fd4fa8184052b05555b70d9382f7c82b9647aa46e13b126d6796e6d9496",
+        "section": "6.4: two-point Route A formulation sensitivity"
+      },
+      "results/routeA/attempts/attempt_007/RouteA_full_steady_matrix_review.json": {
+        "sha256": "5faa9b10a240c25848e61e5fdc6dc327b5e1deb60694168e610baff24744a62c",
+        "section": "Gate_H_conditions and final_status"
+      },
+      "results/routeA/attempts/attempt_007/RouteA_full_steady_matrix_review.md": {
+        "sha256": "dae0a611bf10bc915a27b71ad012bd05e6315df3326ad4f94eb059b29ead2daf",
+        "section": "12: common-grid sensitivity conditions"
+      }
+    },
+    "baseline": {
+      "case_id": "A-Ra1e6-fine",
+      "owner": "HISTORICAL_ACCEPTED_STEADY_BASELINE",
+      "execution_policy": "HISTORICAL_ACCEPTED_BASELINE_REUSE",
+      "solver_rerun_required": false,
+      "final_iteration": 9000,
+      "computed": true,
+      "accepted": true,
+      "Gate_D": "PASS",
+      "beta_1_K": 0.001,
+      "beta_DeltaT": 0.001,
+      "DeltaT_K": 1,
+      "case_path": "cases/routeA/A-Ra1e6-fine",
+      "segment_path": "results/routeA/cases/A-Ra1e6-fine/segments/end_9000",
+      "segment_manifest_sha256": "2efd0136ab36176bd22c373f5dd1d7b12619d5b9d8b4c5f9d96d490bfce6154d",
+      "segment_seal_sha256": "ba1211fdff8caa2adb991dc63c4f8309288d2ebf41493887377888aeffd008b9",
+      "raw_segment_seal_sha256": "af31ba5992b4d431772764b3eb91a01d162b36ce234aba2c8dfc75c248aab3c6",
+      "metrics_sha256": "c4652da4abd77bc9446fe53a07fbca548c1d0b0265f36a634b218be168293e0d",
+      "final_field_sha256": {
+        "rho": "29cae24933e34ac39903427a5e2a9f1ce3386c4f3b902ceb00ce1b1e65c321da",
+        "U": "e60556f46a162f41d628682e68dee60238285a75640686bcc9950df5fec05ca2",
+        "phi": "057ea797878e0751b38780b5e6441912435680c90aa9fb6f5fea2b85395a5f69",
+        "T": "c1ab0135369f9ad223193681ac0385b873ce655f0680b866965e592b7b3f22b0",
+        "wallHeatFlux": "b50fb54343b1435c2bab9bc76216b071dabda5be087794fcedf4e1983f3863a9",
+        "p": "76f7bf7b1c5a14e0136c04dfda9d99146815f6f86c8930592309cf8a537b7613",
+        "p_rgh": "16ae93cd94d53af9378fec4ee3e60b28e66ba453b1238ffbef52aa5e8118ddbf"
+      },
+      "mesh_sha256": {
+        "constant/polyMesh/faces": "ac195415a58b99183d674e0884e34b1c39303e9a6e2077d2064c78837a106c53",
+        "constant/polyMesh/points": "61ffe73184d836dba64e3f0ae36308862e37ce32464959b0fbbd59cb12be8e8b",
+        "constant/polyMesh/boundary": "07cc9b62820911e4536eab8b7b3d74e4cba8301ae886017defd2598f495f6c82",
+        "constant/polyMesh/neighbour": "04263cff8323ef8660b4bee13cf40bf9808c5390ca61b2c15272ce58d1abfead",
+        "constant/polyMesh/owner": "afe5e635bc106f92b4d403e25a5736ea43747404104ac5ea640c319ba516a81b"
+      },
+      "reference_properties": {
+        "T0_K": 300.0,
+        "Th_K": 300.5,
+        "Tc_K": 299.5,
+        "DeltaT_K": 1.0,
+        "rho0_kg_m3": 1.0,
+        "beta_1_K": 0.001,
+        "mu_Pa_s": 1e-05,
+        "Pr_input": 0.71,
+        "Cv_J_kgK": 1000.0,
+        "nu0_m2_s": 1e-05,
+        "alpha0_m2_s": 1.4084507042253522e-05,
+        "k_W_mK": 0.014084507042253521
+      },
+      "gravity_m_s2": [
+        0.0,
+        -140.8450704225352,
+        0.0
+      ],
+      "immutable": true,
+      "forbidden": [
+        "rerun",
+        "restart",
+        "continuation",
+        "field edits",
+        "formal status reanalysis",
+        "baseline-result-directory analyzer output"
+      ]
+    },
+    "perturbed": {
+      "case_id": "A-H-Ra1e6-fine-beta1e-4",
+      "owner": "GATE_H_FORMAL_SENSITIVITY_CASE",
+      "beta_1_K": 0.0001,
+      "beta_DeltaT": 0.0001,
+      "DeltaT_K": 1,
+      "Ra_target": 1000000,
+      "Pr_target": 0.71,
+      "grid": [
+        160,
+        160,
+        1
+      ],
+      "gmag_formula": "Ra*(mu/rho0)*((mu/rho0)/Pr)/(beta*DeltaT*L^3)",
+      "gmag_decimal_planning": "1408.450704225352112676056338028169014085",
+      "g_vector_direction": [
+        0,
+        -1,
+        0
+      ],
+      "manual_rounded_g_forbidden": true,
+      "initialization": "Same canonical cold state U=0,T=T0, canonical EOS-consistent hydrostatic p; no historical warm start",
+      "computed": false,
+      "accepted": false
+    },
+    "parameter_relationship": {
+      "beta_ratio": 0.1,
+      "g_ratio": 10,
+      "g_beta_product_fixed": true,
+      "Ra_fixed": true,
+      "Pr_fixed": true,
+      "DeltaT_fixed": true
+    },
+    "held_fixed": [
+      "Ra",
+      "Pr",
+      "L",
+      "depth",
+      "T0",
+      "Th",
+      "Tc",
+      "DeltaT",
+      "rho0",
+      "mu",
+      "Cv",
+      "Cp treatment",
+      "k/alpha reference relation",
+      "grid/geometry",
+      "BC types and thermal/velocity values",
+      "solver/framework",
+      "schemes",
+      "relaxation",
+      "linear tolerances",
+      "Gate D",
+      "postprocessing/operators/QoI definitions"
+    ],
+    "property_note": "eConst Cv=1000; keep existing thermo Cp treatment and k=rho0*Cv*alpha0 reference convention, do not invent independently adjustable Cp. Initial pressure values change dependently with g and EOS patch rho; this preserves canonical initialization relation, not an additional physical parameter.",
+    "generation_procedure": [
+      "Only during separately authorized RUN_ROUTE_A_GATE_H: verify v1.7 external SHA, Amendment007 SHA and every start guard; refuse any existing new-case/result/initialization/attempt008 destination.",
+      "Use importlib.util.spec_from_file_location/module_from_spec/exec_module to load the hash-guarded unchanged Scripts/routeA/generate_case.py without calling main automatically. Assign module.BETA=module.Decimal(\"1e-4\") in memory only. No source edit; all other constants/functions remain unchanged.",
+      "Set sys.argv to [generator, --case-id, A-SMOKE, --name, A-H-Ra1e6-fine-beta1e-4, --nx, 160, --ny, 160, --ra, 1000000, --end-time, 3000] and call module.main(). This canonical main computes gravity from perturbed BETA and builds 0/p using canonical make_p with that same BETA. No baseline fields or mesh are copied.",
+      "Before any mesh or constructor/solver run, preserve the raw generated manifest as generated_manifest_original.json. The canonical template has literal beta 1e-3: require exactly one beta 1e-3; entry in NEW constant/physicalProperties, replace only its value with beta 1e-4;. Reject count!=1. This is the registered Gate H physical overlay on the newly generated case; canonical template is never edited.",
+      "Finalize NEW case_manifest.json: formal case_id, generator_role=A-SMOKE, attempt008, contract/version/hash, generator SHA, in-memory BETA override and exact overlay record; beta/g/Ra/Pr from actual dictionaries and formula. Recompute input_sha256 for all initial OpenFOAM inputs after overlay, excluding manifests/evidence files; preserve raw generator hashes separately. Freeze final input manifest before mesh. Raw generator physicalProperties hash is intermediate, not final authority.",
+      "Verify immutable properties, schemes, BC types, geometry and numerical values against the baseline/template; only beta and g are independent physical changes. Dependent initial 0/p is regenerated using p=rho*gh+pRef (internal rho0 at T0; wall EOS rho at Th/Tc), not warm-started. p_rgh remains canonical zero; pRef=hRef=0. Gate A recomputes Ra/Pr from actual inputs with existing 1e-10 relative criterion; mesh geometry must match baseline.",
+      "Then canonical blockMesh/checkMesh and existing isolated prepare_initialization_check.py + verify_initialization.py workflow, including its one-iteration constructor check, followed by runtime_provenance.py with v1.7. These are future execution operations, all prohibited during preparation.",
+      "One primary solution path: initial 3000, seal; D PASS -> accepted stop; normal finite D FAIL -> +3000 from same sealed latestTime, cap30000. Only startFrom/endTime continuation edits. STOP on evaluator, provenance, nonfinite, fatal, divergence or evidence corruption; no tuning, retry, cap extension, baseline rerun or extra grid.",
+      "Use unchanged canonical analyzer on the NEW sensitivity case only; snapshot metrics/raw monitors/logs/fields after every segment before continuation. Extract baseline comparisons from sealed historical metrics (read-only); do not route analyzer/postprocessing output into baseline directories."
+    ],
+    "schedule": {
+      "initial": 3000,
+      "increment": 3000,
+      "cap": 30000,
+      "checkpoints": [
+        3000,
+        6000,
+        9000,
+        12000,
+        15000,
+        18000,
+        21000,
+        24000,
+        27000,
+        30000
+      ],
+      "maximum_segments": 10,
+      "concurrency": 1,
+      "baseline_runs": 0,
+      "new_primary_cases": 1
+    },
+    "Gate_D": {
+      "status": "READY",
+      "boolean_logic": "NORMAL_EXIT AND NO_FATAL_OR_NAN AND INPUT_PROVENANCE_PASS AND QOI_RWIN_PASS AND RESIDUAL_PASS AND HEAT_TREND_PASS",
+      "NORMAL_EXIT": "actual process exit_code=0 AND standalone ^End line for the selected segment",
+      "NO_FATAL_OR_NAN": "no fatal/FPE/nonfinite/divergence evidence during entire selected segment; final T,U,e(if stored),rho,p,p_rgh,phi and monitor values finite; missing mandatory fields or safety checks -> evaluator/provenance failure, STOP",
+      "INPUT_PROVENANCE_PASS": "actual env/model/BC/properties/gravity/grid/input hashes match frozen generated/per-segment manifests; Gate A mesh/OQ-02 evidence intact",
+      "QOI_RWIN_PASS": {
+        "QoIs": [
+          "Nu_bar_0",
+          "Umax",
+          "Wmax"
+        ],
+        "formula": "(max-min)/max(abs(mean),1)",
+        "limit": 0.0005,
+        "all_individually": true
+      },
+      "RESIDUAL_PASS": {
+        "fields": [
+          "Ux",
+          "Uy",
+          "e",
+          "p_rgh"
+        ],
+        "kind": "normalized Initial residual",
+        "limit": 1e-07,
+        "active_velocity": "Ux,Uy (physical vertical is OpenFOAM y, paper Z); Uz inactive in 2D empty mesh",
+        "iteration": "final checkpoint N only",
+        "within_iteration": "maximum Initial residual among every solve/corrector for each field; NOT the final linear-solver residual",
+        "parser": "parse_residual_lines; parse_residuals streams segment file through the same parser",
+        "final_linear_residuals": "record separately for diagnostics, never substitute for Initial"
+      },
+      "density": {
+        "new_residual_threshold": false,
+        "save": [
+          "finite/positive rho",
+          "EOS rho0*(1-beta*(T-T0)) from stored T",
+          "max absolute/relative solver rho minus EOS rho",
+          "T/rho range",
+          "native corrected mass flux continuity diagnostics"
+        ],
+        "thermo_rho_rule": "EOS-derived thermo density is the available comparison proxy; do not claim an independent thermo-rho registry dump was stored; unavailable independent evidence explicitly NOT_AVAILABLE",
+        "any_new_density_tolerance": false
+      },
+      "Nu_monitor_identity": {
+        "status": "CONFIRMED",
+        "formal_definition": "Nu_bar_0 = Q_hot/(k*DeltaT*W) = L/(DeltaT*A_hot) integral_hot dT/dn dA on uniform orthogonal wall",
+        "Q_hot_sign": "positive into fluid, official wallHeatFlux=-q",
+        "area": "A_hot=L*W; Q is area integral, not area-mean q or volume mean",
+        "wall_convection": "no-slip wall, normal convective flux zero; paper Nu_bar_0 at X=0 is conductive only",
+        "legacy_pair_average": "(Q_hot-Q_cold)/(2*k*DeltaT*W) retained only as legacy diagnostic, never formal Hard monitor",
+        "path1": "temperature/orthogonal wall-gradient snapshot remains independent primary final-value path; gate monitor uses calibrated official path2",
+        "normalization_precision": "same generated property values and k*DeltaT*W as canonical implementation, supplied via str(float) to rational monitor arithmetic"
+      },
+      "HEAT_TREND_PASS": {
+        "input": "original 17-significant-digit Q_hot/Q_cold decimal tokens from physical wallHeatFlux",
+        "formula": "epsilon_Q=2*abs(Q_hot+Q_cold)/(Q_hot-Q_cold) = abs(Nu_hot-Nu_cold)/((Nu_hot+Nu_cold)/2), with Q_hot>0,Q_cold<0",
+        "independent_variable": "absolute integer iteration",
+        "samples": 200,
+        "sampling_interval": 1,
+        "window": "same inclusive [N-199,N] window as Rwin",
+        "method": "ordinary least squares, intercept included; slope=sum((i-mean(i))*(epsilon-mean(epsilon)))/sum((i-mean(i))^2)",
+        "arithmetic": "Python Fraction from original decimal Q tokens; exact rational normalization, centering, accumulation and sign",
+        "pass_rule": "slope <= 0",
+        "fail_rule": "slope > 0",
+        "positive_tolerance": null,
+        "source_precision": "scientific tokens with >=16 digits after decimal; existing .16e has 17 significant digits; controlDict writePrecision 16 unchanged",
+        "display": "float slope is display only; heat_slope_sign_exact governs PASS/FAIL, including underflow-to-zero display",
+        "ambiguity": "missing/duplicate samples, nonfinite/low-precision Q, bad sign or parser error -> HEAT_TREND_EVALUATOR_UNRESOLVED / EVALUATOR_FAILURE and STOP; never use endpoints only or a positive epsilon"
+      }
+    },
+    "comparison_eligibility": "Both baseline and perturbation computed/accepted with formal D PASS. Cap D FAIL -> computed YES accepted NO, formal H NOT_EVALUATED; optionally record separately labeled unaccepted diagnostics, never formal H promotion. Invalid/evaluator/provenance stop -> H NOT_EVALUATED.",
+    "primary_threshold_qois": [
+      "Nu_bar_cavity",
+      "Umax",
+      "Wmax"
+    ],
+    "scalar_metric": "D_H(Q)=abs(Q_perturbed-Q_baseline)/abs(Q_baseline); save signed difference and signed relative difference separately. Nonzero baseline only; zero baseline -> null relative, absolute-only diagnostic, no invented threshold.",
+    "position_metric": "signed coordinate difference and absolute coordinate difference on [0,1], no relative-percent interpretation or new Hard threshold.",
+    "hard_threshold": 0.002,
+    "hard_threshold_units": "relative fraction, 0.2%",
+    "epsilon_v_rule": "perturbed reconstructed epsilon_v <= baseline reconstructed epsilon_v using same frozen Gauss-linear operator and normalization; no new rounding allowance or numerical slack",
+    "result_type": "PASS_FAIL",
+    "result_semantics": {
+      "NOT_EVALUATED": "No accepted perturbation or incomplete required comparison evidence",
+      "PASS": "eligible accepted pair, each primary D_H<=.002 and epsilon_v non-worsening",
+      "FAIL": "eligible complete pair, any existing H criterion fails",
+      "characterization_completed": "Accepted pair and complete quantified fixed-grid sensitivity, report regardless of H PASS/FAIL; H PASS required for downstream roadmap, not an award of full verification"
+    },
+    "secondary_diagnostics": [
+      "Nu_bar_0",
+      "Nu_bar_half",
+      "Nu_bar_1",
+      "Umax_Z",
+      "Wmax_X",
+      "Nu_hot_local_max",
+      "Nu_hot_local_max_Z",
+      "Nu_hot_local_min",
+      "Nu_hot_local_min_Z",
+      "physical_heat_imbalance",
+      "section_Nu_deviation",
+      "native_mass_epsilon_m",
+      "reconstructed_velocity_epsilon_v",
+      "temperature_symmetry",
+      "velocity_symmetry",
+      "T range",
+      "rho_min",
+      "rho_max",
+      "max(abs(rho/rho0-1))"
+    ],
+    "density_plan": "Read recorded finite final rho/T for each pair; use min/max and maximum absolute relative deviation from rho0. Approximate factor-ten amplitude reduction at similar T profiles is EXPECTED_SCALING, not a preregistered result or new criterion.",
+    "grid_independent_claim_allowed": false,
+    "allowed_future_claim": "At the common 160² grid, reducing beta*DeltaT one order at fixed Ra/Pr changed Q by the observed X%; no result X is set in this contract.",
+    "prohibited_claims": [
+      "grid independence",
+      "continuum-limit sensitivity exactly X%",
+      "formal validation/full Verification",
+      "classical Boussinesq limit proven",
+      "all A/B differences caused by betaDeltaT",
+      "Route A formulation error equals H difference",
+      "Gate F resolved",
+      "transient or particle readiness"
+    ],
+    "limitations": {
+      "all_Ra_Gate_F": "FAIL",
+      "all_Ra_needs_320": "YES",
+      "Ra1e6_Nu_fine_medium_relative_difference": 0.013402375460880519,
+      "Ra1e6_Wmax_convergence_type": "NON_MONOTONIC_OR_UNDEFINED",
+      "grid_320_executed": false,
+      "targeted_320_required_before_H": false,
+      "model_grid_interaction": "UNKNOWN; shared-grid cancellation possible but not assured; grid-independent claims require separate targeted study"
+    },
+    "after_execution_task": "REVIEW_ROUTE_A_GATE_H_RESULT",
+    "Gate_J_authorized": false,
+    "particle_work_authorized": false,
+    "no_automatic_followup": [
+      "Gate J",
+      "320",
+      "extra beta points",
+      "energy/gauge studies",
+      "Route B runs",
+      "solver tuning"
+    ]
+  },
+  "next_execution": {
+    "id": "attempt_008",
+    "attempt_id": "008",
+    "status": "NOT_STARTED",
+    "batch_artifact_root": "results/routeA/attempts/attempt_008/",
+    "case_ids": [
+      "A-H-Ra1e6-fine-beta1e-4"
+    ],
+    "Ra_target": 1000000,
+    "Pr_target": 0.71,
+    "grids": [
+      [
+        160,
+        160,
+        1
+      ]
+    ],
+    "requires_new_user_run_instruction": true,
+    "formal_case_destinations_absent": true,
+    "baseline_reused": true,
+    "baseline_solver_runs": 0,
+    "batch_filenames": [
+      "GateH_report.md",
+      "GateH_report.json",
+      "GateH_comparison.csv",
+      "GateH_diagnostics.json"
+    ],
+    "execution_result_directory_created": false
+  },
+  "next_task": "RUN_ROUTE_A_GATE_H",
+  "post_execution_task": "REVIEW_ROUTE_A_GATE_H_RESULT",
+  "all_existing_formal_criteria_unchanged": true,
+  "numerical_settings_unchanged": true,
+  "scripts_templates_reference_unchanged": true,
+  "physical_input_changes_in_future_H_only": [
+    "beta/10",
+    "g*10"
+  ],
+  "new_H_threshold_added": false,
+  "historical_results_changed": false,
+  "solver_executed": false,
+  "case_generated": false,
+  "mesh_generated": false,
+  "initialization_clone_executed": false,
+  "continuation_executed": false,
+  "grid_320_executed": false,
+  "Gate_J_authorized": false,
+  "implementation_sha256": {
+    "Scripts/routeA/analyze_case.py": "e6207e33ae2279e84786115ebfd912b170dcb23f220f1b1155314c723c54cfed",
+    "Scripts/routeA/generate_case.py": "0b4d6fabc7e648e29a8e511cf47088d569c68eda5ce7a46bba6a1fdac72e6075",
+    "Scripts/routeA/run_case.sh": "aa48c216f883675b4eca4987b3bda178a26bcc039660c0ae6be42e49e03877e6",
+    "Scripts/routeA/foam_fields.py": "c16f33a63a42b213c7089011c5e8d74862160ee1588de656ec5e55bcfdd22d7c",
+    "Scripts/routeA/prepare_initialization_check.py": "1c49d819ede6699dcc3336b06448cda277b66acd26bb19c46166538c79d72dc8",
+    "Scripts/routeA/verify_initialization.py": "d9b050b803b17d2ae8533c5132130c525599aff80e2fc297b161dd23f46d6e58",
+    "reference/de_vahl_davis_table_v.csv": "96952fa9ca283b4fa75645b7cbcf3abf400765e56888667d1dfa9ef46a6b5466",
+    "Scripts/routeA/runtime_provenance.py": "5055345c7e64758a4f902c81219e2dda2e5b9cdec22c3f22fc8297bbc1bb9e5a"
+  },
+  "template_sha256": {
+    "cases/routeA/template/0/T": "2aa0b82fdbef9ea1d970d3135fdfeebb4253a2d69a3b0c5f69601e802af17a6a",
+    "cases/routeA/template/0/U": "2d73c61cd16ca22f804a03a09a7cb9381881d1e5a2e679cbc8b589511bda42c6",
+    "cases/routeA/template/0/p_rgh": "7a474b49f9e53d8a275c7a8b37e18d9069e44f9fb0640bcbef816b5364efe1b1",
+    "cases/routeA/template/constant/g": "0e4479e7ccc140bb8ffb1481b66d73a0abb584e0b29358e250aca18bcc6b4875",
+    "cases/routeA/template/constant/hRef": "b3cfc4ab0c5b5266283096fd98687c65930df337dedbeb34b67a5288c9946976",
+    "cases/routeA/template/constant/momentumTransport": "3bfe7027873405f63753c0cec85e91c6069dafe94228154189d5b6616233200e",
+    "cases/routeA/template/constant/pRef": "13e8b23d9a316804a134ea8abb6d385f120d64f3dc89ea40b3dcbf09956e8df1",
+    "cases/routeA/template/constant/physicalProperties": "baea2c76140ca1481c1d0dc064e4fba44076f666de79f6162dfd5cfff4b440b4",
+    "cases/routeA/template/constant/thermophysicalTransport": "9c550714c97c8fd84bbd68d80558826ba76a028d521e6cafbe15c1b20cd0d08e",
+    "cases/routeA/template/system/blockMeshDict": "d54bad73935c633caf7108c1ff79c0104875782e6e4f18b2a4613ecbea213570",
+    "cases/routeA/template/system/controlDict": "4b645f36b693062f150656bb4372b64529e0bf0d43b4a0699ed221748b49ff99",
+    "cases/routeA/template/system/fvSchemes": "1a5031f97e7a7f2cb086f9119f6ca19b8e79ce128a454bfdb4af57f08944ed56",
+    "cases/routeA/template/system/fvSolution": "0ca7859d7381120990bea32fabce561b547b7665c0b8badbd87d4aac1733d15b"
+  }
+}
