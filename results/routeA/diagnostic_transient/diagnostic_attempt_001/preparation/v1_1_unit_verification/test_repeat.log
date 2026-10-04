@@ -1,0 +1,6 @@
+I/O    : uncollated
+diagonal:  Solving for e, Initial residual = 0, Final residual = 0, No Iterations 0
+diagonal:  Solving for e, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for e, Initial residual = 1, Final residual = 0, No Iterations 1
+DILUPBiCGStab:  Solving for e, Initial residual = 1, Final residual = 0, No Iterations 1
+{"status":"PASS","checks":75,"max_absolute_identity_defect":7.1054273576010019e-15,"cancellation_bound":22.204460492503156,"stationary_mass_floor_kg_s":0,"stationary_mass_stored_matrix_bound_kg_s":5.8619775700208689e-13,"stationary_energy_floor_W":0,"stationary_energy_stored_matrix_bound_W":1.0844658504538608e-09,"synthetic_linear_solve_residual_floor_W":8.8817841970012523e-16,"synthetic_linear_solves":4,"production_solver_executed":false,"case_written":false}

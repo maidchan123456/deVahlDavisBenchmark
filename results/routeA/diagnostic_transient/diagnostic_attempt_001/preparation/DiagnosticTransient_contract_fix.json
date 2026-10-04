@@ -1,0 +1,974 @@
+{
+  "schema": "routeA_diagnostic_transient_contract_fix/1.1",
+  "task": "FIX_ROUTE_A_DIAGNOSTIC_TRANSIENT_STUDY_CONTRACT",
+  "result": "INCOMPLETE",
+  "HEAD": "74b1f7b2c0e844ac559997277ce30dde2450b3f8",
+  "start_guard": {
+    "HEAD_equals_requested": true,
+    "initial_git_status": "?? cases/routeA/A-H-Ra1e6-fine-beta1e-4/\n?? cases/routeA/A-Ra1e3-coarse/\n?? cases/routeA/A-Ra1e3-fine/\n?? cases/routeA/A-Ra1e3-medium/\n?? cases/routeA/A-Ra1e4-coarse/\n?? cases/routeA/A-Ra1e4-fine/\n?? cases/routeA/A-Ra1e4-medium/\n?? cases/routeA/A-Ra1e5-coarse/\n?? cases/routeA/A-Ra1e5-fine/\n?? cases/routeA/A-Ra1e5-medium/\n?? cases/routeA/A-Ra1e6-coarse/\n?? cases/routeA/A-Ra1e6-fine/\n?? cases/routeA/A-Ra1e6-medium/\n?? cases/routeA/Ra0_medium/\n?? cases/routeA/Ra1e4_coarse/\n?? verification/\n"
+  },
+  "parent_verification": {
+    "path": "docs/routeA_diagnostic_transient_contract_v1.0.json",
+    "version": "1.0",
+    "sha256": "3ea8c134b1c0468a455c8d090eb3b47dae510b06a9886eedbaa5f79aed8e152f",
+    "unchanged": true
+  },
+  "formal_authority": {
+    "path": "docs/routeA_execution_contract_v1.7.json",
+    "version": "1.7",
+    "sha256": "fbc744e012f66b37b5d9409be961cb5a9410c3d75ac7e2f026b2acf118d3bb60",
+    "execution_guard": "v1.7",
+    "Gate_J_authorized": false,
+    "read_only": true,
+    "superseded": false
+  },
+  "contract": {
+    "version": "1.1",
+    "json_path": "docs/routeA_diagnostic_transient_contract_v1.1.json",
+    "json_sha256": "574b83ed63e244e9fbb1307d1a463e1c92fade86a99375054d599b06b155d675",
+    "md_path": "docs/routeA_diagnostic_transient_contract_v1.1.md",
+    "md_sha256": "9b59a858c85f68e43a9b0afee135947756aa4dec7a01b75a2818e8160bbc10b8",
+    "sidecar_path": "docs/routeA_diagnostic_transient_contract_v1.1.sha256"
+  },
+  "closure": {
+    "U01": "CLOSED",
+    "U02": "CLOSED",
+    "U03": "CLOSED",
+    "U04": "UNRESOLVED"
+  },
+  "numerical_rationale_paths": [
+    "transient_algorithm",
+    "inner_convergence",
+    "courant_control",
+    "duration",
+    "steady_arrival"
+  ],
+  "source_to_decision_inventory": [
+    {
+      "id": "RUN",
+      "path": "/opt/openfoam13/applications/solvers/foamRun/foamRun.C",
+      "line_anchors": [
+        125
+      ],
+      "sha256": "5c1e6e34c4bd253f5cc4665a8672f21b6ded2c7a5e391c67419f7586a7b5de91",
+      "source_to_equation": "time/outer/postSolve ordering",
+      "diagnostic_saved_evidence": "stage/time identifiers",
+      "scope": "LOCAL_NATIVE_SOURCE_FACT",
+      "decisions": [
+        "U01",
+        "U02",
+        "U03",
+        "U04"
+      ]
+    },
+    {
+      "id": "DT",
+      "path": "/opt/openfoam13/applications/solvers/foamRun/setDeltaT.C",
+      "line_anchors": [
+        30,
+        50
+      ],
+      "sha256": "656a3a8782614b0f14aff03d0925d339eb6e568356c792f61fa4095d1ade5f11",
+      "source_to_equation": "initial and growth caps",
+      "diagnostic_saved_evidence": "deltaT/cap decisions",
+      "scope": "LOCAL_NATIVE_SOURCE_FACT",
+      "decisions": [
+        "U02"
+      ]
+    },
+    {
+      "id": "CO",
+      "path": "/opt/openfoam13/applications/modules/fluidSolver/fluidSolver.C",
+      "line_anchors": [
+        106,
+        174,
+        229
+      ],
+      "sha256": "cc7e5f228ad7e421decd14cf711f4e75a381b2474821253a96c91a3c6793116a",
+      "source_to_equation": "Co/controller and native transient density discrepancy",
+      "diagnostic_saved_evidence": "control/end Co and native continuity",
+      "scope": "LOCAL_NATIVE_SOURCE_FACT",
+      "decisions": [
+        "U02",
+        "U04"
+      ]
+    },
+    {
+      "id": "GROWTH",
+      "path": "/opt/openfoam13/src/finiteVolume/solver/solver.C",
+      "line_anchors": [
+        38,
+        83
+      ],
+      "sha256": "0f1ede0fc97973104955820e1d1f5796240ae17c3f460babfa9763581d0c3180",
+      "source_to_equation": "deltaTFactor native default/read",
+      "diagnostic_saved_evidence": "explicit 1.2 controller guard",
+      "scope": "LOCAL_NATIVE_SOURCE_FACT",
+      "decisions": [
+        "U02"
+      ]
+    },
+    {
+      "id": "RHOSTAGES",
+      "path": "/opt/openfoam13/applications/modules/isothermalFluid/isothermalFluid.C",
+      "line_anchors": [
+        329,
+        387,
+        393
+      ],
+      "sha256": "b1f6631e889b2c83d6468c2d631a106d35d75f5e2bd75e85518d8569e250cf59",
+      "source_to_equation": "density prediction and EOS postSolve assignment",
+      "diagnostic_saved_evidence": "stage masses/rho/pressure relation",
+      "scope": "LOCAL_NATIVE_SOURCE_FACT",
+      "decisions": [
+        "U01",
+        "U04"
+      ]
+    },
+    {
+      "id": "MOMENTUM",
+      "path": "/opt/openfoam13/applications/modules/isothermalFluid/momentumPredictor.C",
+      "line_anchors": [
+        36
+      ],
+      "sha256": "e6b9640e94a0f478bab8cca90f9c892a301789c59ec9c5c1fc15f5578063dec3",
+      "source_to_equation": "rho-weighted momentum and K",
+      "diagnostic_saved_evidence": "stage U/K epochs",
+      "scope": "LOCAL_NATIVE_SOURCE_FACT",
+      "decisions": [
+        "U01",
+        "U04"
+      ]
+    },
+    {
+      "id": "DENSITY",
+      "path": "/opt/openfoam13/applications/modules/isothermalFluid/correctDensity.C",
+      "line_anchors": [
+        35
+      ],
+      "sha256": "15c8711fc833fa32ac800b15cdbb5f4d638d9bfa16a2b387596408a232993227",
+      "source_to_equation": "fvm ddt(rho)+fvc div(phi)",
+      "diagnostic_saved_evidence": "R_M,C, storage, native boundary phi",
+      "scope": "LOCAL_NATIVE_SOURCE_FACT",
+      "decisions": [
+        "U01",
+        "U04"
+      ]
+    },
+    {
+      "id": "PRESSURE",
+      "path": "/opt/openfoam13/applications/modules/isothermalFluid/correctBuoyantPressure.C",
+      "line_anchors": [
+        180,
+        226
+      ],
+      "sha256": "c6524988fa021329821055747369c30720240e005aa0eef322cbeb3a12ef3bb7",
+      "source_to_equation": "EOS reset, referenced pressure, phi/U/K and continuity",
+      "diagnostic_saved_evidence": "pressure compatibility and rho stages",
+      "scope": "LOCAL_NATIVE_SOURCE_FACT",
+      "decisions": [
+        "U01",
+        "U04"
+      ]
+    },
+    {
+      "id": "ENERGY",
+      "path": "/opt/openfoam13/applications/modules/fluid/thermophysicalPredictor.C",
+      "line_anchors": [
+        34
+      ],
+      "sha256": "b3271ffca3d544eec49c79cf220ade3013204a5de959a9d887a4f46a64223be9",
+      "source_to_equation": "rho e/rho K/pressure/Fourier/gravity",
+      "diagnostic_saved_evidence": "unrelaxed assembly energy terms/residual",
+      "scope": "LOCAL_NATIVE_SOURCE_FACT",
+      "decisions": [
+        "U01",
+        "U04"
+      ]
+    },
+    {
+      "id": "FOURIER",
+      "path": "/opt/openfoam13/src/ThermophysicalTransportModels/fluid/laminar/Fourier/Fourier.C",
+      "line_anchors": [
+        99,
+        130
+      ],
+      "sha256": "55ec6259efb0a7046ff0099632a049875899f7d7948c1bec5a74aaf861d8f256",
+      "source_to_equation": "q and divq including matrix correction",
+      "diagnostic_saved_evidence": "Q walls and correction action",
+      "scope": "LOCAL_NATIVE_SOURCE_FACT",
+      "decisions": [
+        "U02",
+        "U04"
+      ]
+    },
+    {
+      "id": "LAPCORR",
+      "path": "/opt/openfoam13/src/finiteVolume/finiteVolume/fvm/fvmLaplacian.C",
+      "line_anchors": [
+        370
+      ],
+      "sha256": "86371e490115fef3073d187d186f808a6623aadfacab96b4930af21d42ae407e",
+      "source_to_equation": "uncorrected matrix correction",
+      "diagnostic_saved_evidence": "thermal matrix actions",
+      "scope": "LOCAL_NATIVE_SOURCE_FACT",
+      "decisions": [
+        "U04"
+      ]
+    },
+    {
+      "id": "MATRIX",
+      "path": "/opt/openfoam13/src/finiteVolume/fvMatrices/fvMatrix/fvMatrix.C",
+      "line_anchors": [
+        562,
+        1494
+      ],
+      "sha256": "ccc320e987c1c825a73f65b6ef84bd434afc0453ecd16dbda4d347edde2cef2e",
+      "source_to_equation": "setReference and correction matrix",
+      "diagnostic_saved_evidence": "reference-cell reaction and correction source",
+      "scope": "LOCAL_NATIVE_SOURCE_FACT",
+      "decisions": [
+        "U01",
+        "U04"
+      ],
+      "additional_line_anchors": [
+        578,
+        603,
+        754
+      ],
+      "additional_fact": "Omitted equation relaxation entries return0/no-op. alpha=1 still diagonal-dominance modification; field relaxation defaults1."
+    },
+    {
+      "id": "RESIDUAL",
+      "path": "/opt/openfoam13/src/finiteVolume/fvMatrices/fvMatrix/fvMatrixSolve.C",
+      "line_anchors": [
+        348
+      ],
+      "sha256": "643527cc128fb6e0d9ec36aabf7ea62971c277c71b4b690cff49c933155bf237",
+      "source_to_equation": "b-Apsi with boundary terms",
+      "diagnostic_saved_evidence": "negative residual as LHS-RHS; integrated units",
+      "scope": "LOCAL_NATIVE_SOURCE_FACT",
+      "decisions": [
+        "U04"
+      ]
+    },
+    {
+      "id": "WALLQ",
+      "path": "/opt/openfoam13/src/functionObjects/field/wallHeatFlux/wallHeatFlux.C",
+      "line_anchors": [
+        62,
+        256
+      ],
+      "sha256": "6c48e26ffad1fcca1aab0cd878ac2e2481e7f59aa6effe047f5d420e0c4e20b6",
+      "source_to_equation": "-q and wall area integration",
+      "diagnostic_saved_evidence": "inward-positive Q_hot/cold",
+      "scope": "LOCAL_NATIVE_SOURCE_FACT",
+      "decisions": [
+        "U03",
+        "U04"
+      ]
+    },
+    {
+      "id": "BACKWARD",
+      "path": "/opt/openfoam13/src/finiteVolume/finiteVolume/ddtSchemes/backwardDdtScheme/backwardDdtScheme.C",
+      "line_anchors": [
+        59,
+        149,
+        279,
+        518
+      ],
+      "sha256": "e1cb8572ea6aa1054f9d44d4bdbba19aabbad33bbd27897310a1210f5ec33310",
+      "source_to_equation": "startup and variable-step BDF2 products",
+      "diagnostic_saved_evidence": "effective coefficients/oldTime storage",
+      "scope": "LOCAL_NATIVE_SOURCE_FACT",
+      "decisions": [
+        "U02",
+        "U04"
+      ]
+    },
+    {
+      "id": "EOS",
+      "path": "/opt/openfoam13/src/thermophysicalModels/specie/equationOfState/Boussinesq/BoussinesqI.H",
+      "line_anchors": [
+        75,
+        137
+      ],
+      "sha256": "4e23872bfb92a392ee199b1a2f2ee869e4eddd55e23d64eee7ec67478409f740",
+      "source_to_equation": "rho(T), psi=0",
+      "diagnostic_saved_evidence": "independent EOS consistency",
+      "scope": "LOCAL_NATIVE_SOURCE_FACT",
+      "decisions": [
+        "U01",
+        "U04"
+      ]
+    },
+    {
+      "id": "ECONST",
+      "path": "/opt/openfoam13/src/thermophysicalModels/specie/thermo/eConst/eConstThermo.C",
+      "line_anchors": [
+        39
+      ],
+      "sha256": "498e3027993e6c0c8fa52864e9265e25b76e14866d11b6e102833ac0cbf34927",
+      "source_to_equation": "Cv/Tref/esRef input/default",
+      "diagnostic_saved_evidence": "energy reference provenance",
+      "scope": "LOCAL_NATIVE_SOURCE_FACT",
+      "decisions": [
+        "U04"
+      ]
+    },
+    {
+      "id": "EFORM",
+      "path": "/opt/openfoam13/src/thermophysicalModels/specie/thermo/eConst/eConstThermoI.H",
+      "line_anchors": [
+        97
+      ],
+      "sha256": "e0455961505f927cfeefc2871d14aefd1593a095368e81c7393781582f41e0ae",
+      "source_to_equation": "e=Cv(T-Tref)+esRef+EOS.e",
+      "diagnostic_saved_evidence": "raw/reference/anomaly energies",
+      "scope": "LOCAL_NATIVE_SOURCE_FACT",
+      "decisions": [
+        "U04"
+      ]
+    },
+    {
+      "id": "THERMORHO",
+      "path": "/opt/openfoam13/src/thermophysicalModels/basic/rhoFluidThermo/rhoFluidThermo.C",
+      "line_anchors": [
+        57,
+        64
+      ],
+      "sha256": "d909089526c372d595ae2a87c83cf604472678bfcccda8edee4a91853cc66c9e",
+      "source_to_equation": "renameRho and correctRho",
+      "diagnostic_saved_evidence": "independent solver/thermo density",
+      "scope": "LOCAL_NATIVE_SOURCE_FACT",
+      "decisions": [
+        "U01",
+        "U04"
+      ]
+    },
+    {
+      "id": "PIMPLE",
+      "path": "/opt/openfoam13/src/finiteVolume/cfdTools/general/solutionControl/pimpleControl/pimpleLoop/pimpleLoop.C",
+      "line_anchors": [
+        69,
+        106
+      ],
+      "sha256": "eef31c12e39d503413e82e6edb822feaf52b5f130b3fdade6f0fc48086787467",
+      "source_to_equation": "outer cap and convergence final iteration",
+      "diagnostic_saved_evidence": "actual corrector counts/failure events",
+      "scope": "LOCAL_NATIVE_SOURCE_FACT",
+      "decisions": [
+        "U01"
+      ]
+    },
+    {
+      "id": "RHOMODE",
+      "path": "/opt/openfoam13/src/finiteVolume/cfdTools/general/solutionControl/pimpleControl/pimpleNoLoopControl/pimpleNoLoopControl.C",
+      "line_anchors": [
+        56
+      ],
+      "sha256": "4e9228b5c9c35652b0f3bfaf37425448ce8342f5fd4083ed273c67312281d7f5",
+      "source_to_equation": "simpleRho and transport controls",
+      "diagnostic_saved_evidence": "explicit transient switches",
+      "scope": "LOCAL_NATIVE_SOURCE_FACT",
+      "decisions": [
+        "U01"
+      ]
+    },
+    {
+      "id": "OUTERRES",
+      "path": "/opt/openfoam13/src/finiteVolume/cfdTools/general/solutionControl/convergenceControl/singleRegionCorrectorConvergenceControl/singleRegionCorrectorConvergenceControl.C",
+      "line_anchors": [
+        40,
+        182
+      ],
+      "sha256": "0f4fe8609836aaf5899f637b12d08db20be6d6fb80adeb4dac92db93be8876ab",
+      "source_to_equation": "outerCorrectorResidualControl initial residual checks",
+      "diagnostic_saved_evidence": "component/index-aware solve history",
+      "scope": "LOCAL_NATIVE_SOURCE_FACT",
+      "decisions": [
+        "U01"
+      ]
+    },
+    {
+      "id": "INIT",
+      "path": "/opt/openfoam13/src/thermophysicalModels/basic/fluidThermo/hydrostaticInitialisation.C",
+      "line_anchors": [
+        51
+      ],
+      "sha256": "d554ab47c911c7bd55655356d1a85cc593a5d879903f3d21ab12eda612fb354c",
+      "source_to_equation": "constructor pressure relation",
+      "diagnostic_saved_evidence": "time-0 cells/patch consistency",
+      "scope": "LOCAL_NATIVE_SOURCE_FACT",
+      "decisions": [
+        "U04"
+      ]
+    },
+    {
+      "id": "NUSTRESS",
+      "path": "/opt/openfoam13/src/MomentumTransportModels/momentumTransportModels/linearViscousStress/linearViscousStress.C",
+      "line_anchors": [
+        89
+      ],
+      "sha256": "cb10dee31fc2fd6e78a42a238fac52b45be918e5f366a4a0b25a72a2054c1fc7",
+      "source_to_equation": "rho_s nuEff stress",
+      "diagnostic_saved_evidence": "density-dependent stress interpretation",
+      "scope": "LOCAL_NATIVE_SOURCE_FACT",
+      "decisions": [
+        "U04"
+      ]
+    },
+    {
+      "id": "TIME_END",
+      "path": "/opt/openfoam13/src/OpenFOAM/db/Time/Time.C",
+      "line_anchors": [
+        884
+      ],
+      "sha256": "c25af623b370d07b877fa127398b499e1e0358931ddf46413f533d9305e685da",
+      "source_to_equation": "running: t < endTime-0.5*previous/current stored deltaT; next adjust precedes increment",
+      "decisions": [
+        "U03"
+      ],
+      "scope": "LOCAL_NATIVE_SOURCE_FACT"
+    },
+    {
+      "id": "LDU_RESIDUAL",
+      "path": "/opt/openfoam13/src/OpenFOAM/matrices/lduMatrix/lduMatrix/lduMatrixATmul.C",
+      "line_anchors": [
+        203
+      ],
+      "sha256": "bc2ad138919867c3b4209a8b597ad638011ec033ee967da7281a4bf60ad288b1",
+      "source_to_equation": "native residual requests lower/upper arrays, including diagonal matrices; private scratch zero offdiagonals required",
+      "decisions": [
+        "U04"
+      ],
+      "scope": "LOCAL_NATIVE_SOURCE_FACT"
+    },
+    {
+      "id": "SCALAR_SMALL",
+      "path": "/opt/openfoam13/src/OpenFOAM/primitives/Scalar/doubleScalar/doubleScalar.H",
+      "line_anchors": [
+        60,
+        63,
+        69
+      ],
+      "sha256": "b0d8d82dc7e8b960120b57dba07532c83e8a6454c72234072e7b325649810d06",
+      "source_to_equation": "DP small equals numeric_limits<double>::epsilon()=2.220446049250313e-16; scalar.H WM_DP branch maps scalar small to doubleScalarSmall.",
+      "decisions": [
+        "U02"
+      ],
+      "scope": "LOCAL_NATIVE_SOURCE_FACT"
+    }
+  ],
+  "tests": {
+    "status": "PASS",
+    "checks": 75,
+    "max_absolute_identity_defect": 7.105427357601002e-15,
+    "cancellation_bound": 22.204460492503156,
+    "stationary_mass_floor_kg_s": 0,
+    "stationary_mass_stored_matrix_bound_kg_s": 5.861977570020869e-13,
+    "stationary_energy_floor_W": 0,
+    "stationary_energy_stored_matrix_bound_W": 1.0844658504538608e-09,
+    "synthetic_linear_solve_residual_floor_W": 8.881784197001252e-16,
+    "synthetic_linear_solves": 4,
+    "production_solver_executed": false,
+    "case_written": false,
+    "deterministic_summary": true,
+    "binary_sha256": "10bda5853fa7759387574a2da1b21c7bb4cd111853be51669fbdbcef5e04d417",
+    "policy_tests": 12,
+    "policy_status": "PASS",
+    "source_anchor_tests": {
+      "actual_runtime_hooks_connected": false,
+      "anchors": 14,
+      "status": "PASS"
+    }
+  },
+  "test_evidence_path": "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/v1_1_unit_verification",
+  "unit_test_failures_and_repairs": [
+    "Initial synthetic native diagonal residual aborted because lower/upper were unallocated. Repaired only private copy with zero offdiagonals; final75checkPASS.",
+    "Standalone floor helper initially failed compile due native boundary coefficient getter being non-const; floor method now non-const on private copy.",
+    "Unit runner initially hit OpenFOAM bashrc under shell errexit; conditional environment-source call avoids this shell setup issue. These were unit/tooling failures; no CFD attempts."
+  ],
+  "U04_remaining": [
+    "Native source hooks and coefficient/field/term exporter not implemented",
+    "Native oldTime/field/BC epoch binding and complete actual-stage sequence not tested",
+    "Safe single-assembly term extraction/non-invasiveness of full instrumentation not verified",
+    "Native synthetic driver export/replay and STOP propagation not tested; source/library overlay hash pinning required before RUN"
+  ],
+  "bounds_scope": "Native synthetic stationary mass/energy and1/2cell PCG/PBiCGStab solves only. Bounds gamma_m times absolute stored matrix products inclboundary and compensated summation, not coefficient assembly uncertainty, conditioning bounds, actual CFD floors or physical conservation tolerance. Recalculate stored-action/cancellation bounds each actual stage; belowbound=>unresolved_by_evaluator, abovebound=>detected algebraic defect, never scientific PASS/FAIL.",
+  "scope_preservation": {
+    "protected_file_count": 86,
+    "protected_before_sha256": {
+      "Scripts/routeA/analyze_case.py": "e6207e33ae2279e84786115ebfd912b170dcb23f220f1b1155314c723c54cfed",
+      "Scripts/routeA/finalize_results.py": "12cff103b631424adb7edb8c9b9ddb77e6d37be45cbff3e5f2246b87f15f8c93",
+      "Scripts/routeA/foam_fields.py": "c16f33a63a42b213c7089011c5e8d74862160ee1588de656ec5e55bcfdd22d7c",
+      "Scripts/routeA/generate_case.py": "0b4d6fabc7e648e29a8e511cf47088d569c68eda5ce7a46bba6a1fdac72e6075",
+      "Scripts/routeA/prepare_initialization_check.py": "1c49d819ede6699dcc3336b06448cda277b66acd26bb19c46166538c79d72dc8",
+      "Scripts/routeA/run_case.sh": "aa48c216f883675b4eca4987b3bda178a26bcc039660c0ae6be42e49e03877e6",
+      "Scripts/routeA/runtime_provenance.py": "5055345c7e64758a4f902c81219e2dda2e5b9cdec22c3f22fc8297bbc1bb9e5a",
+      "Scripts/routeA/test_paper_comparison_order.py": "021585f51c139202a7d8d19834198a0e1ac215913e68dcda14d7d99f340b418f",
+      "Scripts/routeA/test_paper_position_semantics.py": "93445dc128e127c8c7da7ad4e14c7df0e81a49ba7b49d5601d88291c736e896d",
+      "Scripts/routeA/test_runtime_provenance.py": "ae49b6a7b29771cb06139de84cb6d066cfa874ead1738e9b8a5f949d93f23ffa",
+      "Scripts/routeA/verify_initialization.py": "d9b050b803b17d2ae8533c5132130c525599aff80e2fc297b161dd23f46d6e58",
+      "cases/routeA/A-Ra1e6-fine/0/T": "2aa0b82fdbef9ea1d970d3135fdfeebb4253a2d69a3b0c5f69601e802af17a6a",
+      "cases/routeA/A-Ra1e6-fine/0/U": "2d73c61cd16ca22f804a03a09a7cb9381881d1e5a2e679cbc8b589511bda42c6",
+      "cases/routeA/A-Ra1e6-fine/0/p": "cc8c1cb870f9f5f960022f8bcae8c2a9f14660a0afaacee5ebe4b5443e52fc09",
+      "cases/routeA/A-Ra1e6-fine/0/p_rgh": "7a474b49f9e53d8a275c7a8b37e18d9069e44f9fb0640bcbef816b5364efe1b1",
+      "cases/routeA/A-Ra1e6-fine/case_manifest.json": "2049de3eec61b9fb22bacba3abbd44ce7b577e65d29234eff1ffd2ef652479ea",
+      "cases/routeA/A-Ra1e6-fine/constant/g": "e896c7d68d27e1cc2915d73146c46e62cb40f46071c5888b215b62a092771848",
+      "cases/routeA/A-Ra1e6-fine/constant/hRef": "b3cfc4ab0c5b5266283096fd98687c65930df337dedbeb34b67a5288c9946976",
+      "cases/routeA/A-Ra1e6-fine/constant/momentumTransport": "3bfe7027873405f63753c0cec85e91c6069dafe94228154189d5b6616233200e",
+      "cases/routeA/A-Ra1e6-fine/constant/pRef": "13e8b23d9a316804a134ea8abb6d385f120d64f3dc89ea40b3dcbf09956e8df1",
+      "cases/routeA/A-Ra1e6-fine/constant/physicalProperties": "baea2c76140ca1481c1d0dc064e4fba44076f666de79f6162dfd5cfff4b440b4",
+      "cases/routeA/A-Ra1e6-fine/constant/thermophysicalTransport": "9c550714c97c8fd84bbd68d80558826ba76a028d521e6cafbe15c1b20cd0d08e",
+      "cases/routeA/A-Ra1e6-fine/system/blockMeshDict": "d21ce471d23a17969ff7541b01ae9b0278d9a3e973354373a1244f556c6ff15c",
+      "cases/routeA/A-Ra1e6-fine/system/controlDict": "7a7c51f05ca31f812c26f0235877d72f8b35333b8ac51427d090387980c4262a",
+      "cases/routeA/A-Ra1e6-fine/system/fvSchemes": "1a5031f97e7a7f2cb086f9119f6ca19b8e79ce128a454bfdb4af57f08944ed56",
+      "cases/routeA/A-Ra1e6-fine/system/fvSolution": "2b51eaaf20f37b480ad010275b263f7f6ee0940ac2f37b8fa02df51afd90d9f4",
+      "docs/acceptance_criteria.md": "2fe82dba1644621a7e57ddc11c4ea5ba5007db50122fbd0c0179f5af5ac38db4",
+      "docs/benchmark_spec.md": "f4436fd4fa8184052b05555b70d9382f7c82b9647aa46e13b126d6796e6d9496",
+      "docs/openfoam_design.md": "eef1e94311e5221e3402d4ba9d1969706e0da04e304cf0b89ce5d3dfd3070b10",
+      "docs/routeA_diagnostic_transient_contract_v1.0.json": "3ea8c134b1c0468a455c8d090eb3b47dae510b06a9886eedbaa5f79aed8e152f",
+      "docs/routeA_diagnostic_transient_contract_v1.0.md": "0340366eb938308007ecee9dbd0c0475bb97df22a4dc560e87ae472c87b4cc15",
+      "docs/routeA_diagnostic_transient_contract_v1.0.sha256": "ae6df74a1867951995352e78ec6bedb07add15d78551f4e588c14b0af8de706f",
+      "docs/routeA_execution_contract.json": "33eb082f77f00b2330003ba8bafcb0438a24d7ec6b0bf456625741bfae63c936",
+      "docs/routeA_execution_contract.md": "a4e123e22662a364b37cf0f4fc9f7902a5b6a94075f87d922689d22627fcdb7b",
+      "docs/routeA_execution_contract_amendment_001.json": "63769f59ab7e5ed49115120e4c34326795fc40a8413d07e6086446af3be2b352",
+      "docs/routeA_execution_contract_amendment_001.md": "49b68d3b5268e932804dc713c518353865363be87ca9e6851c4fb42b173ee988",
+      "docs/routeA_execution_contract_amendment_002.json": "a8b2d80647f491d0ee06e434604b5d9a49d2d8e7ce7b622cfa19548e5f1a56eb",
+      "docs/routeA_execution_contract_amendment_002.md": "674edd2042c45403028f7f19b27bd9ddef6ff77ddd06285a942e8b2076dc881c",
+      "docs/routeA_execution_contract_amendment_003.json": "c34d29178c7d6193f44efbfeb255855a8b82c62a7874201411a7de37fdbb92f7",
+      "docs/routeA_execution_contract_amendment_003.md": "e2356df864bae42b5e1e1740339d6586baff1db2a715550d3aa73fee8ce3b01c",
+      "docs/routeA_execution_contract_amendment_004.json": "803befbe8a0fd9a6f396b4f33dee70bbaa692036b9238ac259b8277b48340c64",
+      "docs/routeA_execution_contract_amendment_004.md": "d5c8be8e97936a0da12375808969aa1edb95b8455f3be8d5b9ba7f1e3a5460d1",
+      "docs/routeA_execution_contract_amendment_005.json": "37670b3456af33fcb131f4460eb0cb501d842ff34da6531cbd554efd59181aa9",
+      "docs/routeA_execution_contract_amendment_005.md": "cd9a76a98c0ab27b79d9451e17e3113868834b39e57e7a755b210c275b348bd9",
+      "docs/routeA_execution_contract_amendment_006.json": "2877be4048f8e76283528baf9da16831683fad8ed850c339da82cdf9e096a7e0",
+      "docs/routeA_execution_contract_amendment_006.md": "36e2240689c341648024c559aadcd90479442ea8e0110bf75d2440a43742bc7c",
+      "docs/routeA_execution_contract_amendment_007.json": "9bb55b9c266aeb935c3dd49f77a2e023a2e55b33bc2fc9b2e9159b9b9fb9b592",
+      "docs/routeA_execution_contract_amendment_007.md": "c6949c3808fa7348020d023790b76bd28cd21d3cc250a812af2b1fa8ee33ff10",
+      "docs/routeA_execution_contract_v1.1.json": "dbd70320ceb3f20e4455c5d67d24b3dae40d2616a832438b23faa99c6b0b892b",
+      "docs/routeA_execution_contract_v1.1.md": "8b809141d07bd77bdd41b8969ed40586f0660652e5cf84f2402769eb0a047700",
+      "docs/routeA_execution_contract_v1.2.json": "7db8d5b8217f009243cb884e291f3d7a09a699b4fe35073792cbaedb5bf7b7fe",
+      "docs/routeA_execution_contract_v1.2.md": "ded798f535c1462953ff1ecae63da828414d5f6548650e2101e963c82119dc73",
+      "docs/routeA_execution_contract_v1.3.json": "227414aaff22a0f37bed234f6b26c0a296d18f592da641aa55f1c4a4538ff3f1",
+      "docs/routeA_execution_contract_v1.3.md": "78fe7f644b2def7f75195c1d8741b256f94403239f53e3343e98c2542dac8317",
+      "docs/routeA_execution_contract_v1.4.json": "2665b8a62211618ae531e7b8d42242e3d8f9ae469b95b634beab672c89b345d7",
+      "docs/routeA_execution_contract_v1.4.md": "e3b0f24121a5591a2836b26e46c022e29a34f2dff1527b283f6270638705dc59",
+      "docs/routeA_execution_contract_v1.5.json": "c33efe4aa81ce0644fd709fe944563e93c7ee2f08304161000784f6418e159c1",
+      "docs/routeA_execution_contract_v1.5.md": "64c1d33fb8f7a89613bcc0ee32c69f93f7354f1015e4e4794b0f333898f54a51",
+      "docs/routeA_execution_contract_v1.6.json": "c0cdf8d6a08c6190ceff49535c1d44b4050a92373a3faa06cc1e49b9b3b7fe59",
+      "docs/routeA_execution_contract_v1.6.md": "9615e087b8622063d96542ddc846157da5aff3dc153dd991957c9069c7c6211e",
+      "docs/routeA_execution_contract_v1.7.json": "fbc744e012f66b37b5d9409be961cb5a9410c3d75ac7e2f026b2acf118d3bb60",
+      "docs/routeA_execution_contract_v1.7.md": "38ba19ba8db21f05d7a11e011e979f3126d2abcad4e1dc48a9d532c1cfb5fd47",
+      "docs/routeA_execution_plan.json": "20958f2cd5461bad0781a2d4ada1fd9df39e66e2ef955694862a1b82dd121b86",
+      "docs/routeA_implementation.md": "068d17f6b0e1aee42dc72fed432256948fe2dff19aff17e7a413a4b74bb6f44a",
+      "reference/de_vahl_davis_table_v.csv": "96952fa9ca283b4fa75645b7cbcf3abf400765e56888667d1dfa9ef46a6b5466",
+      "results/routeA/attempts/attempt_007/RouteA_full_steady_matrix_review.json": "5faa9b10a240c25848e61e5fdc6dc327b5e1deb60694168e610baff24744a62c",
+      "results/routeA/attempts/attempt_007/RouteA_full_steady_matrix_review.md": "dae0a611bf10bc915a27b71ad012bd05e6315df3326ad4f94eb059b29ead2daf",
+      "results/routeA/attempts/attempt_008/GateH_report.json": "718badea2a00f9dddaa7a6b898b9f1d2e0fd9c828f6012a3d022f55f6e82594d",
+      "results/routeA/attempts/attempt_008/GateH_result_review.json": "6014d0d4dc8cbc444aaff83f7cc987eb7b191bd581a7cd33d0358016286a1f84",
+      "results/routeA/attempts/attempt_008/GateH_result_review.md": "9088322fe2d5e2ce13b0cdb065b74f89c96a7f4dbc23715b6b84c5ce7efbf770",
+      "results/routeA/attempts/attempt_008/GateJ_prerequisite_matrix.csv": "5dba8780b24f05ee7b0af87bf69f818d4f676f6f4286591b04b47aad4e5dd8e3",
+      "results/routeA/attempts/attempt_008/GateJ_prerequisite_review.json": "9362c8b3725d7f9af089ae89e91d9080b66055abb3c384178f57ebb8d96832a1",
+      "results/routeA/attempts/attempt_008/GateJ_prerequisite_review.md": "f28f5195130bfc02b9932da81c3309792c6492bd214e9479bc82e692d6c2899c",
+      "results/routeA/attempts/attempt_008/GateJ_roadmap_options.csv": "cf303a62a49621c58c35cc5450d737be77b554a98ccbee04f9d6949dfaa3c6dc",
+      "results/routeA/attempts/attempt_008/attempt_sealed_sha256.json": "dde0365908fc6681cbaa6f16cc573a29b76ab890fdfe55fedc20c7e145a80d2f",
+      "results/routeA/cases/A-Ra1e6-fine/segments/end_9000/controlDict": "7a7c51f05ca31f812c26f0235877d72f8b35333b8ac51427d090387980c4262a",
+      "results/routeA/cases/A-Ra1e6-fine/segments/end_9000/gate_A.json": "9e36757a3400903b8656d10ed5db061b352e287915036ffa892b218afdee1039",
+      "results/routeA/cases/A-Ra1e6-fine/segments/end_9000/gate_D_status.json": "da237bfb94ecf227a08b9d1f8915013f1941a2bc56427ce9f216955dca8b086d",
+      "results/routeA/cases/A-Ra1e6-fine/segments/end_9000/metrics.json": "c4652da4abd77bc9446fe53a07fbca548c1d0b0265f36a634b218be168293e0d",
+      "results/routeA/cases/A-Ra1e6-fine/segments/end_9000/runtime_provenance.json": "d89adef15ebda0a51d021e190b0c09fe38ba20e2b2e60510aa966920918eaa86",
+      "results/routeA/cases/A-Ra1e6-fine/segments/end_9000/sealed_sha256.json": "ba1211fdff8caa2adb991dc63c4f8309288d2ebf41493887377888aeffd008b9",
+      "results/routeA/cases/A-Ra1e6-fine/segments/end_9000/segment_manifest.json": "2efd0136ab36176bd22c373f5dd1d7b12619d5b9d8b4c5f9d96d490bfce6154d",
+      "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_contract_preparation.json": "9547a802e6d3da1d8f7d757c9eb297fadd765941d2025437c1514dd15bfaca5a",
+      "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_contract_preparation.md": "d0ae85635d88c6be2a4833427ec4c8317a06aef2d24d8d88e7e0cf90a634ece2",
+      "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_contract_preparation_verification.json": "68803bfca8d58e0a3090c6d81dcb37af74ce665627eb15ca4e91b0d1bfc73ad3",
+      "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/preparation_sealed_sha256.json": "230e6f80fd4b282d5fab115d2e10df0b6f20395308dd73b57180a57d3ce1b48e"
+    },
+    "protected_after_sha256": {
+      "Scripts/routeA/analyze_case.py": "e6207e33ae2279e84786115ebfd912b170dcb23f220f1b1155314c723c54cfed",
+      "Scripts/routeA/finalize_results.py": "12cff103b631424adb7edb8c9b9ddb77e6d37be45cbff3e5f2246b87f15f8c93",
+      "Scripts/routeA/foam_fields.py": "c16f33a63a42b213c7089011c5e8d74862160ee1588de656ec5e55bcfdd22d7c",
+      "Scripts/routeA/generate_case.py": "0b4d6fabc7e648e29a8e511cf47088d569c68eda5ce7a46bba6a1fdac72e6075",
+      "Scripts/routeA/prepare_initialization_check.py": "1c49d819ede6699dcc3336b06448cda277b66acd26bb19c46166538c79d72dc8",
+      "Scripts/routeA/run_case.sh": "aa48c216f883675b4eca4987b3bda178a26bcc039660c0ae6be42e49e03877e6",
+      "Scripts/routeA/runtime_provenance.py": "5055345c7e64758a4f902c81219e2dda2e5b9cdec22c3f22fc8297bbc1bb9e5a",
+      "Scripts/routeA/test_paper_comparison_order.py": "021585f51c139202a7d8d19834198a0e1ac215913e68dcda14d7d99f340b418f",
+      "Scripts/routeA/test_paper_position_semantics.py": "93445dc128e127c8c7da7ad4e14c7df0e81a49ba7b49d5601d88291c736e896d",
+      "Scripts/routeA/test_runtime_provenance.py": "ae49b6a7b29771cb06139de84cb6d066cfa874ead1738e9b8a5f949d93f23ffa",
+      "Scripts/routeA/verify_initialization.py": "d9b050b803b17d2ae8533c5132130c525599aff80e2fc297b161dd23f46d6e58",
+      "cases/routeA/A-Ra1e6-fine/0/T": "2aa0b82fdbef9ea1d970d3135fdfeebb4253a2d69a3b0c5f69601e802af17a6a",
+      "cases/routeA/A-Ra1e6-fine/0/U": "2d73c61cd16ca22f804a03a09a7cb9381881d1e5a2e679cbc8b589511bda42c6",
+      "cases/routeA/A-Ra1e6-fine/0/p": "cc8c1cb870f9f5f960022f8bcae8c2a9f14660a0afaacee5ebe4b5443e52fc09",
+      "cases/routeA/A-Ra1e6-fine/0/p_rgh": "7a474b49f9e53d8a275c7a8b37e18d9069e44f9fb0640bcbef816b5364efe1b1",
+      "cases/routeA/A-Ra1e6-fine/case_manifest.json": "2049de3eec61b9fb22bacba3abbd44ce7b577e65d29234eff1ffd2ef652479ea",
+      "cases/routeA/A-Ra1e6-fine/constant/g": "e896c7d68d27e1cc2915d73146c46e62cb40f46071c5888b215b62a092771848",
+      "cases/routeA/A-Ra1e6-fine/constant/hRef": "b3cfc4ab0c5b5266283096fd98687c65930df337dedbeb34b67a5288c9946976",
+      "cases/routeA/A-Ra1e6-fine/constant/momentumTransport": "3bfe7027873405f63753c0cec85e91c6069dafe94228154189d5b6616233200e",
+      "cases/routeA/A-Ra1e6-fine/constant/pRef": "13e8b23d9a316804a134ea8abb6d385f120d64f3dc89ea40b3dcbf09956e8df1",
+      "cases/routeA/A-Ra1e6-fine/constant/physicalProperties": "baea2c76140ca1481c1d0dc064e4fba44076f666de79f6162dfd5cfff4b440b4",
+      "cases/routeA/A-Ra1e6-fine/constant/thermophysicalTransport": "9c550714c97c8fd84bbd68d80558826ba76a028d521e6cafbe15c1b20cd0d08e",
+      "cases/routeA/A-Ra1e6-fine/system/blockMeshDict": "d21ce471d23a17969ff7541b01ae9b0278d9a3e973354373a1244f556c6ff15c",
+      "cases/routeA/A-Ra1e6-fine/system/controlDict": "7a7c51f05ca31f812c26f0235877d72f8b35333b8ac51427d090387980c4262a",
+      "cases/routeA/A-Ra1e6-fine/system/fvSchemes": "1a5031f97e7a7f2cb086f9119f6ca19b8e79ce128a454bfdb4af57f08944ed56",
+      "cases/routeA/A-Ra1e6-fine/system/fvSolution": "2b51eaaf20f37b480ad010275b263f7f6ee0940ac2f37b8fa02df51afd90d9f4",
+      "docs/acceptance_criteria.md": "2fe82dba1644621a7e57ddc11c4ea5ba5007db50122fbd0c0179f5af5ac38db4",
+      "docs/benchmark_spec.md": "f4436fd4fa8184052b05555b70d9382f7c82b9647aa46e13b126d6796e6d9496",
+      "docs/openfoam_design.md": "eef1e94311e5221e3402d4ba9d1969706e0da04e304cf0b89ce5d3dfd3070b10",
+      "docs/routeA_diagnostic_transient_contract_v1.0.json": "3ea8c134b1c0468a455c8d090eb3b47dae510b06a9886eedbaa5f79aed8e152f",
+      "docs/routeA_diagnostic_transient_contract_v1.0.md": "0340366eb938308007ecee9dbd0c0475bb97df22a4dc560e87ae472c87b4cc15",
+      "docs/routeA_diagnostic_transient_contract_v1.0.sha256": "ae6df74a1867951995352e78ec6bedb07add15d78551f4e588c14b0af8de706f",
+      "docs/routeA_execution_contract.json": "33eb082f77f00b2330003ba8bafcb0438a24d7ec6b0bf456625741bfae63c936",
+      "docs/routeA_execution_contract.md": "a4e123e22662a364b37cf0f4fc9f7902a5b6a94075f87d922689d22627fcdb7b",
+      "docs/routeA_execution_contract_amendment_001.json": "63769f59ab7e5ed49115120e4c34326795fc40a8413d07e6086446af3be2b352",
+      "docs/routeA_execution_contract_amendment_001.md": "49b68d3b5268e932804dc713c518353865363be87ca9e6851c4fb42b173ee988",
+      "docs/routeA_execution_contract_amendment_002.json": "a8b2d80647f491d0ee06e434604b5d9a49d2d8e7ce7b622cfa19548e5f1a56eb",
+      "docs/routeA_execution_contract_amendment_002.md": "674edd2042c45403028f7f19b27bd9ddef6ff77ddd06285a942e8b2076dc881c",
+      "docs/routeA_execution_contract_amendment_003.json": "c34d29178c7d6193f44efbfeb255855a8b82c62a7874201411a7de37fdbb92f7",
+      "docs/routeA_execution_contract_amendment_003.md": "e2356df864bae42b5e1e1740339d6586baff1db2a715550d3aa73fee8ce3b01c",
+      "docs/routeA_execution_contract_amendment_004.json": "803befbe8a0fd9a6f396b4f33dee70bbaa692036b9238ac259b8277b48340c64",
+      "docs/routeA_execution_contract_amendment_004.md": "d5c8be8e97936a0da12375808969aa1edb95b8455f3be8d5b9ba7f1e3a5460d1",
+      "docs/routeA_execution_contract_amendment_005.json": "37670b3456af33fcb131f4460eb0cb501d842ff34da6531cbd554efd59181aa9",
+      "docs/routeA_execution_contract_amendment_005.md": "cd9a76a98c0ab27b79d9451e17e3113868834b39e57e7a755b210c275b348bd9",
+      "docs/routeA_execution_contract_amendment_006.json": "2877be4048f8e76283528baf9da16831683fad8ed850c339da82cdf9e096a7e0",
+      "docs/routeA_execution_contract_amendment_006.md": "36e2240689c341648024c559aadcd90479442ea8e0110bf75d2440a43742bc7c",
+      "docs/routeA_execution_contract_amendment_007.json": "9bb55b9c266aeb935c3dd49f77a2e023a2e55b33bc2fc9b2e9159b9b9fb9b592",
+      "docs/routeA_execution_contract_amendment_007.md": "c6949c3808fa7348020d023790b76bd28cd21d3cc250a812af2b1fa8ee33ff10",
+      "docs/routeA_execution_contract_v1.1.json": "dbd70320ceb3f20e4455c5d67d24b3dae40d2616a832438b23faa99c6b0b892b",
+      "docs/routeA_execution_contract_v1.1.md": "8b809141d07bd77bdd41b8969ed40586f0660652e5cf84f2402769eb0a047700",
+      "docs/routeA_execution_contract_v1.2.json": "7db8d5b8217f009243cb884e291f3d7a09a699b4fe35073792cbaedb5bf7b7fe",
+      "docs/routeA_execution_contract_v1.2.md": "ded798f535c1462953ff1ecae63da828414d5f6548650e2101e963c82119dc73",
+      "docs/routeA_execution_contract_v1.3.json": "227414aaff22a0f37bed234f6b26c0a296d18f592da641aa55f1c4a4538ff3f1",
+      "docs/routeA_execution_contract_v1.3.md": "78fe7f644b2def7f75195c1d8741b256f94403239f53e3343e98c2542dac8317",
+      "docs/routeA_execution_contract_v1.4.json": "2665b8a62211618ae531e7b8d42242e3d8f9ae469b95b634beab672c89b345d7",
+      "docs/routeA_execution_contract_v1.4.md": "e3b0f24121a5591a2836b26e46c022e29a34f2dff1527b283f6270638705dc59",
+      "docs/routeA_execution_contract_v1.5.json": "c33efe4aa81ce0644fd709fe944563e93c7ee2f08304161000784f6418e159c1",
+      "docs/routeA_execution_contract_v1.5.md": "64c1d33fb8f7a89613bcc0ee32c69f93f7354f1015e4e4794b0f333898f54a51",
+      "docs/routeA_execution_contract_v1.6.json": "c0cdf8d6a08c6190ceff49535c1d44b4050a92373a3faa06cc1e49b9b3b7fe59",
+      "docs/routeA_execution_contract_v1.6.md": "9615e087b8622063d96542ddc846157da5aff3dc153dd991957c9069c7c6211e",
+      "docs/routeA_execution_contract_v1.7.json": "fbc744e012f66b37b5d9409be961cb5a9410c3d75ac7e2f026b2acf118d3bb60",
+      "docs/routeA_execution_contract_v1.7.md": "38ba19ba8db21f05d7a11e011e979f3126d2abcad4e1dc48a9d532c1cfb5fd47",
+      "docs/routeA_execution_plan.json": "20958f2cd5461bad0781a2d4ada1fd9df39e66e2ef955694862a1b82dd121b86",
+      "docs/routeA_implementation.md": "068d17f6b0e1aee42dc72fed432256948fe2dff19aff17e7a413a4b74bb6f44a",
+      "reference/de_vahl_davis_table_v.csv": "96952fa9ca283b4fa75645b7cbcf3abf400765e56888667d1dfa9ef46a6b5466",
+      "results/routeA/attempts/attempt_007/RouteA_full_steady_matrix_review.json": "5faa9b10a240c25848e61e5fdc6dc327b5e1deb60694168e610baff24744a62c",
+      "results/routeA/attempts/attempt_007/RouteA_full_steady_matrix_review.md": "dae0a611bf10bc915a27b71ad012bd05e6315df3326ad4f94eb059b29ead2daf",
+      "results/routeA/attempts/attempt_008/GateH_report.json": "718badea2a00f9dddaa7a6b898b9f1d2e0fd9c828f6012a3d022f55f6e82594d",
+      "results/routeA/attempts/attempt_008/GateH_result_review.json": "6014d0d4dc8cbc444aaff83f7cc987eb7b191bd581a7cd33d0358016286a1f84",
+      "results/routeA/attempts/attempt_008/GateH_result_review.md": "9088322fe2d5e2ce13b0cdb065b74f89c96a7f4dbc23715b6b84c5ce7efbf770",
+      "results/routeA/attempts/attempt_008/GateJ_prerequisite_matrix.csv": "5dba8780b24f05ee7b0af87bf69f818d4f676f6f4286591b04b47aad4e5dd8e3",
+      "results/routeA/attempts/attempt_008/GateJ_prerequisite_review.json": "9362c8b3725d7f9af089ae89e91d9080b66055abb3c384178f57ebb8d96832a1",
+      "results/routeA/attempts/attempt_008/GateJ_prerequisite_review.md": "f28f5195130bfc02b9932da81c3309792c6492bd214e9479bc82e692d6c2899c",
+      "results/routeA/attempts/attempt_008/GateJ_roadmap_options.csv": "cf303a62a49621c58c35cc5450d737be77b554a98ccbee04f9d6949dfaa3c6dc",
+      "results/routeA/attempts/attempt_008/attempt_sealed_sha256.json": "dde0365908fc6681cbaa6f16cc573a29b76ab890fdfe55fedc20c7e145a80d2f",
+      "results/routeA/cases/A-Ra1e6-fine/segments/end_9000/controlDict": "7a7c51f05ca31f812c26f0235877d72f8b35333b8ac51427d090387980c4262a",
+      "results/routeA/cases/A-Ra1e6-fine/segments/end_9000/gate_A.json": "9e36757a3400903b8656d10ed5db061b352e287915036ffa892b218afdee1039",
+      "results/routeA/cases/A-Ra1e6-fine/segments/end_9000/gate_D_status.json": "da237bfb94ecf227a08b9d1f8915013f1941a2bc56427ce9f216955dca8b086d",
+      "results/routeA/cases/A-Ra1e6-fine/segments/end_9000/metrics.json": "c4652da4abd77bc9446fe53a07fbca548c1d0b0265f36a634b218be168293e0d",
+      "results/routeA/cases/A-Ra1e6-fine/segments/end_9000/runtime_provenance.json": "d89adef15ebda0a51d021e190b0c09fe38ba20e2b2e60510aa966920918eaa86",
+      "results/routeA/cases/A-Ra1e6-fine/segments/end_9000/sealed_sha256.json": "ba1211fdff8caa2adb991dc63c4f8309288d2ebf41493887377888aeffd008b9",
+      "results/routeA/cases/A-Ra1e6-fine/segments/end_9000/segment_manifest.json": "2efd0136ab36176bd22c373f5dd1d7b12619d5b9d8b4c5f9d96d490bfce6154d",
+      "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_contract_preparation.json": "9547a802e6d3da1d8f7d757c9eb297fadd765941d2025437c1514dd15bfaca5a",
+      "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_contract_preparation.md": "d0ae85635d88c6be2a4833427ec4c8317a06aef2d24d8d88e7e0cf90a634ece2",
+      "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_contract_preparation_verification.json": "68803bfca8d58e0a3090c6d81dcb37af74ce665627eb15ca4e91b0d1bfc73ad3",
+      "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/preparation_sealed_sha256.json": "230e6f80fd4b282d5fab115d2e10df0b6f20395308dd73b57180a57d3ce1b48e"
+    },
+    "protected_all_unchanged": true,
+    "native_source_count": 24,
+    "native_source_before_sha256": {
+      "/opt/openfoam13/applications/solvers/foamRun/foamRun.C": "5c1e6e34c4bd253f5cc4665a8672f21b6ded2c7a5e391c67419f7586a7b5de91",
+      "/opt/openfoam13/applications/solvers/foamRun/setDeltaT.C": "656a3a8782614b0f14aff03d0925d339eb6e568356c792f61fa4095d1ade5f11",
+      "/opt/openfoam13/applications/modules/fluidSolver/fluidSolver.C": "cc7e5f228ad7e421decd14cf711f4e75a381b2474821253a96c91a3c6793116a",
+      "/opt/openfoam13/src/finiteVolume/solver/solver.C": "0f1ede0fc97973104955820e1d1f5796240ae17c3f460babfa9763581d0c3180",
+      "/opt/openfoam13/applications/modules/isothermalFluid/isothermalFluid.C": "b1f6631e889b2c83d6468c2d631a106d35d75f5e2bd75e85518d8569e250cf59",
+      "/opt/openfoam13/applications/modules/isothermalFluid/momentumPredictor.C": "e6b9640e94a0f478bab8cca90f9c892a301789c59ec9c5c1fc15f5578063dec3",
+      "/opt/openfoam13/applications/modules/isothermalFluid/correctDensity.C": "15c8711fc833fa32ac800b15cdbb5f4d638d9bfa16a2b387596408a232993227",
+      "/opt/openfoam13/applications/modules/isothermalFluid/correctBuoyantPressure.C": "c6524988fa021329821055747369c30720240e005aa0eef322cbeb3a12ef3bb7",
+      "/opt/openfoam13/applications/modules/fluid/thermophysicalPredictor.C": "b3271ffca3d544eec49c79cf220ade3013204a5de959a9d887a4f46a64223be9",
+      "/opt/openfoam13/src/ThermophysicalTransportModels/fluid/laminar/Fourier/Fourier.C": "55ec6259efb0a7046ff0099632a049875899f7d7948c1bec5a74aaf861d8f256",
+      "/opt/openfoam13/src/finiteVolume/finiteVolume/fvm/fvmLaplacian.C": "86371e490115fef3073d187d186f808a6623aadfacab96b4930af21d42ae407e",
+      "/opt/openfoam13/src/finiteVolume/fvMatrices/fvMatrix/fvMatrix.C": "ccc320e987c1c825a73f65b6ef84bd434afc0453ecd16dbda4d347edde2cef2e",
+      "/opt/openfoam13/src/finiteVolume/fvMatrices/fvMatrix/fvMatrixSolve.C": "643527cc128fb6e0d9ec36aabf7ea62971c277c71b4b690cff49c933155bf237",
+      "/opt/openfoam13/src/functionObjects/field/wallHeatFlux/wallHeatFlux.C": "6c48e26ffad1fcca1aab0cd878ac2e2481e7f59aa6effe047f5d420e0c4e20b6",
+      "/opt/openfoam13/src/finiteVolume/finiteVolume/ddtSchemes/backwardDdtScheme/backwardDdtScheme.C": "e1cb8572ea6aa1054f9d44d4bdbba19aabbad33bbd27897310a1210f5ec33310",
+      "/opt/openfoam13/src/thermophysicalModels/specie/equationOfState/Boussinesq/BoussinesqI.H": "4e23872bfb92a392ee199b1a2f2ee869e4eddd55e23d64eee7ec67478409f740",
+      "/opt/openfoam13/src/thermophysicalModels/specie/thermo/eConst/eConstThermo.C": "498e3027993e6c0c8fa52864e9265e25b76e14866d11b6e102833ac0cbf34927",
+      "/opt/openfoam13/src/thermophysicalModels/specie/thermo/eConst/eConstThermoI.H": "e0455961505f927cfeefc2871d14aefd1593a095368e81c7393781582f41e0ae",
+      "/opt/openfoam13/src/thermophysicalModels/basic/rhoFluidThermo/rhoFluidThermo.C": "d909089526c372d595ae2a87c83cf604472678bfcccda8edee4a91853cc66c9e",
+      "/opt/openfoam13/src/finiteVolume/cfdTools/general/solutionControl/pimpleControl/pimpleLoop/pimpleLoop.C": "eef31c12e39d503413e82e6edb822feaf52b5f130b3fdade6f0fc48086787467",
+      "/opt/openfoam13/src/finiteVolume/cfdTools/general/solutionControl/pimpleControl/pimpleNoLoopControl/pimpleNoLoopControl.C": "4e9228b5c9c35652b0f3bfaf37425448ce8342f5fd4083ed273c67312281d7f5",
+      "/opt/openfoam13/src/finiteVolume/cfdTools/general/solutionControl/convergenceControl/singleRegionCorrectorConvergenceControl/singleRegionCorrectorConvergenceControl.C": "0f4fe8609836aaf5899f637b12d08db20be6d6fb80adeb4dac92db93be8876ab",
+      "/opt/openfoam13/src/thermophysicalModels/basic/fluidThermo/hydrostaticInitialisation.C": "d554ab47c911c7bd55655356d1a85cc593a5d879903f3d21ab12eda612fb354c",
+      "/opt/openfoam13/src/MomentumTransportModels/momentumTransportModels/linearViscousStress/linearViscousStress.C": "cb10dee31fc2fd6e78a42a238fac52b45be918e5f366a4a0b25a72a2054c1fc7"
+    },
+    "native_source_after_sha256": {
+      "/opt/openfoam13/applications/solvers/foamRun/foamRun.C": "5c1e6e34c4bd253f5cc4665a8672f21b6ded2c7a5e391c67419f7586a7b5de91",
+      "/opt/openfoam13/applications/solvers/foamRun/setDeltaT.C": "656a3a8782614b0f14aff03d0925d339eb6e568356c792f61fa4095d1ade5f11",
+      "/opt/openfoam13/applications/modules/fluidSolver/fluidSolver.C": "cc7e5f228ad7e421decd14cf711f4e75a381b2474821253a96c91a3c6793116a",
+      "/opt/openfoam13/src/finiteVolume/solver/solver.C": "0f1ede0fc97973104955820e1d1f5796240ae17c3f460babfa9763581d0c3180",
+      "/opt/openfoam13/applications/modules/isothermalFluid/isothermalFluid.C": "b1f6631e889b2c83d6468c2d631a106d35d75f5e2bd75e85518d8569e250cf59",
+      "/opt/openfoam13/applications/modules/isothermalFluid/momentumPredictor.C": "e6b9640e94a0f478bab8cca90f9c892a301789c59ec9c5c1fc15f5578063dec3",
+      "/opt/openfoam13/applications/modules/isothermalFluid/correctDensity.C": "15c8711fc833fa32ac800b15cdbb5f4d638d9bfa16a2b387596408a232993227",
+      "/opt/openfoam13/applications/modules/isothermalFluid/correctBuoyantPressure.C": "c6524988fa021329821055747369c30720240e005aa0eef322cbeb3a12ef3bb7",
+      "/opt/openfoam13/applications/modules/fluid/thermophysicalPredictor.C": "b3271ffca3d544eec49c79cf220ade3013204a5de959a9d887a4f46a64223be9",
+      "/opt/openfoam13/src/ThermophysicalTransportModels/fluid/laminar/Fourier/Fourier.C": "55ec6259efb0a7046ff0099632a049875899f7d7948c1bec5a74aaf861d8f256",
+      "/opt/openfoam13/src/finiteVolume/finiteVolume/fvm/fvmLaplacian.C": "86371e490115fef3073d187d186f808a6623aadfacab96b4930af21d42ae407e",
+      "/opt/openfoam13/src/finiteVolume/fvMatrices/fvMatrix/fvMatrix.C": "ccc320e987c1c825a73f65b6ef84bd434afc0453ecd16dbda4d347edde2cef2e",
+      "/opt/openfoam13/src/finiteVolume/fvMatrices/fvMatrix/fvMatrixSolve.C": "643527cc128fb6e0d9ec36aabf7ea62971c277c71b4b690cff49c933155bf237",
+      "/opt/openfoam13/src/functionObjects/field/wallHeatFlux/wallHeatFlux.C": "6c48e26ffad1fcca1aab0cd878ac2e2481e7f59aa6effe047f5d420e0c4e20b6",
+      "/opt/openfoam13/src/finiteVolume/finiteVolume/ddtSchemes/backwardDdtScheme/backwardDdtScheme.C": "e1cb8572ea6aa1054f9d44d4bdbba19aabbad33bbd27897310a1210f5ec33310",
+      "/opt/openfoam13/src/thermophysicalModels/specie/equationOfState/Boussinesq/BoussinesqI.H": "4e23872bfb92a392ee199b1a2f2ee869e4eddd55e23d64eee7ec67478409f740",
+      "/opt/openfoam13/src/thermophysicalModels/specie/thermo/eConst/eConstThermo.C": "498e3027993e6c0c8fa52864e9265e25b76e14866d11b6e102833ac0cbf34927",
+      "/opt/openfoam13/src/thermophysicalModels/specie/thermo/eConst/eConstThermoI.H": "e0455961505f927cfeefc2871d14aefd1593a095368e81c7393781582f41e0ae",
+      "/opt/openfoam13/src/thermophysicalModels/basic/rhoFluidThermo/rhoFluidThermo.C": "d909089526c372d595ae2a87c83cf604472678bfcccda8edee4a91853cc66c9e",
+      "/opt/openfoam13/src/finiteVolume/cfdTools/general/solutionControl/pimpleControl/pimpleLoop/pimpleLoop.C": "eef31c12e39d503413e82e6edb822feaf52b5f130b3fdade6f0fc48086787467",
+      "/opt/openfoam13/src/finiteVolume/cfdTools/general/solutionControl/pimpleControl/pimpleNoLoopControl/pimpleNoLoopControl.C": "4e9228b5c9c35652b0f3bfaf37425448ce8342f5fd4083ed273c67312281d7f5",
+      "/opt/openfoam13/src/finiteVolume/cfdTools/general/solutionControl/convergenceControl/singleRegionCorrectorConvergenceControl/singleRegionCorrectorConvergenceControl.C": "0f4fe8609836aaf5899f637b12d08db20be6d6fb80adeb4dac92db93be8876ab",
+      "/opt/openfoam13/src/thermophysicalModels/basic/fluidThermo/hydrostaticInitialisation.C": "d554ab47c911c7bd55655356d1a85cc593a5d879903f3d21ab12eda612fb354c",
+      "/opt/openfoam13/src/MomentumTransportModels/momentumTransportModels/linearViscousStress/linearViscousStress.C": "cb10dee31fc2fd6e78a42a238fac52b45be918e5f366a4a0b25a72a2054c1fc7"
+    },
+    "native_sources_all_unchanged": true,
+    "unchanged_parent_sections": [
+      "formal_authority",
+      "formal_status_preserved",
+      "purpose",
+      "physical_problem",
+      "governing_equations",
+      "initial_condition",
+      "spatial_discretization",
+      "temporal_discretization",
+      "series",
+      "dimensionless_time",
+      "QoIs",
+      "thermo_rho_synchronization",
+      "sampling",
+      "restart",
+      "evidence",
+      "STOP_conditions",
+      "no_auto_tuning",
+      "temporal_comparison",
+      "interpretation"
+    ],
+    "tracked_diff_expected_empty": true
+  },
+  "new_implementation_sha256": {
+    "Scripts/routeA/diagnostic_transient/v1_1/NativeMatrixObserver.H": "f2fd88408ed4d20525c8825fbcd0fc54393876860ca84164b18f2708d674392c",
+    "Scripts/routeA/diagnostic_transient/v1_1/TestNativeMatrixObserver.C": "fa7f8a9968caf25f6e3e9fe83fa261b4e4969507d748bd92e59c39b316a08c73",
+    "Scripts/routeA/diagnostic_transient/v1_1/contract_policy.py": "e452f6fb5d225f0ecac7ef94bbdb661ffa601f3f813ae5ab56a97b1007a529b2",
+    "Scripts/routeA/diagnostic_transient/v1_1/instrumentation_stage_plan.json": "26b8e6f688a9c15fa99c8efe3f1f970d7f64a404e7ff8e51a02fb27bd936eba1",
+    "Scripts/routeA/diagnostic_transient/v1_1/run_unit_verification.sh": "6a16bf0f6fc103df0af5fe142375e87de909a8798b449769e2ce874bff24e16e",
+    "Scripts/routeA/diagnostic_transient/v1_1/test_contract_policy.py": "7eb08efa0a89bbc8469abd3d193fc6987045f75b53d1f9b8faacb90066900659",
+    "Scripts/routeA/diagnostic_transient/v1_1/verify_stage_plan.py": "ae3d46cec8fbf3b1335ee4af2be61e58eef62691c1c5bcda6ebe4ff57150590b"
+  },
+  "final_status": {
+    "ROUTE_A_DIAGNOSTIC_TRANSIENT_CONTRACT_PREPARATION": "INCOMPLETE",
+    "DIAGNOSTIC_TRANSIENT_CONTRACT_PREPARATION": "INCOMPLETE",
+    "STUDY_OWNERSHIP": "DIAGNOSTIC_FIXED_GRID_TRANSIENT_CHARACTERIZATION",
+    "FORMAL_GATE_J_EXECUTED": "NO",
+    "FORMAL_GATE_J_CURRENTLY_ALLOWED": "NO",
+    "FORMAL_GATE_J_STATUS_CHANGED": "NO",
+    "FORMAL_ROUTE_A_CONTRACT_VERSION": "1.7",
+    "FORMAL_ROUTE_A_CONTRACT_CHANGED": "NO",
+    "DIAGNOSTIC_CONTRACT_CREATED": "YES",
+    "DIAGNOSTIC_CONTRACT_VERSION": "1.1",
+    "TARGET_RA": 1000000,
+    "TARGET_PR": 0.71,
+    "TARGET_GRID": "160x160x1",
+    "TARGET_BETA_DELTA_T": "1e-3",
+    "INITIAL_CONDITION": "REST_AND_UNIFORM_T0",
+    "TIME_DISCRETIZATION": "BACKWARD_SECOND_ORDER",
+    "CO_SERIES": "0.5,0.25",
+    "CO_0125_CONDITIONAL": "YES",
+    "CO_0125_TRIGGER": "PRIMARY_QOI_DIFFERENCE_GT_0P5_PERCENT",
+    "GRID_HELD_FIXED": "YES",
+    "PHYSICS_HELD_FIXED_ACROSS_CO_SERIES": "YES",
+    "COLD_START_EACH_CO_SERIES": "YES",
+    "TRANSIENT_ALGORITHM": "PIMPLE fixed24 outer;2 pressure;0 nonOrthogonal; momentumPredictor=yes;simpleRho=no;transonic=no;consistent=no; no native early residual termination",
+    "INNER_CONVERGENCE_RULE": "Every solve final normalized native residual <=1e-12 (rho<=1e-14),relTol=0 and fixed maxIter; all8 terminal outer changes(k21..24)<=1e-7, each contracts q<=0.5 or all lie at registered floating floor; conditional tail<=5e-5; otherwise STOP_NO_RETRY",
+    "TRANSIENT_INNER_CONVERGENCE_RULE": "Every solve final normalized native residual <=1e-12 (rho<=1e-14),relTol=0 and fixed maxIter; all8 terminal outer changes(k21..24)<=1e-7, each contracts q<=0.5 or all lie at registered floating floor; conditional tail<=5e-5; otherwise STOP_NO_RETRY",
+    "DIMENSIONLESS_TIME_DEFINITION": "t*=alpha0*t/L^2=t/(710 s)",
+    "STEADY_ARRIVAL_RULE": "Earliest m*0.1 t*>=0.5 with3 consecutive disjoint0.1 windows satisfying primary/state stationarity + all evaluator/inner validity",
+    "MAXIMUM_DURATION_RULE": "t*<=2; controlDict endTime=1419.972265625 s accounts for native final-step overshoot; no extension; unreached=>STEADY_NOT_REACHED",
+    "SAMPLING_RULE": "time0 and every physical step; residual/stage diagnostics every outer/pressure solve; full fields every step",
+    "RESTART_POLICY": "single continuous process per Co series; interruption invalidates primary; new authorized cold attempt; resume requires diagnostic revision",
+    "MASS_DIAGNOSTIC_DESIGNED": "YES",
+    "MASS_STORAGE_TERM_INCLUDED": "YES",
+    "BOUNDARY_MASS_FLUX_INCLUDED": "YES",
+    "MASS_BALANCE_RESIDUAL_DEFINED": "YES",
+    "THERMO_RHO_SYNCHRONIZATION_DIAGNOSTIC_DEFINED": "YES",
+    "ENERGY_DIAGNOSTIC_DESIGNED": "YES",
+    "ENERGY_STORAGE_TERM_INCLUDED": "YES",
+    "WALL_HEAT_TERMS_INCLUDED": "YES",
+    "PRESSURE_WORK_ACCOUNTED": "YES",
+    "KINETIC_ENERGY_TERM_ACCOUNTED": "YES",
+    "GRAVITY_WORK_ACCOUNTED": "YES",
+    "ENERGY_BALANCE_RESIDUAL_DEFINED": "YES",
+    "MASS_ENERGY_HARD_THRESHOLD": "DIAGNOSTIC_ONLY_WITH_REGISTERED_INTERPRETATION",
+    "PRIMARY_TEMPORAL_QOIS": "Nu_bar_cavity,Umax,Wmax",
+    "TEMPORAL_PRIMARY_DIFFERENCE_TARGET": "0.5_percent_diagnostic",
+    "GRID_INDEPENDENT_TRANSIENT_CLAIM_ALLOWED": "NO",
+    "FORMAL_GATE_J_CLAIM_ALLOWED": "NO",
+    "BENCHMARK_CORE_PASS": "NO",
+    "ROUTE_A_CHARACTERIZED": "NO",
+    "FORMAL_GATE_J_PASS": "NOT_EVALUATED",
+    "DOWNSTREAM_TRANSIENT_READY": "NO",
+    "PARTICLE_COUPLING_READY": "NO",
+    "ALL_ROUTE_A_GATE_F": "FAIL",
+    "ALL_RA_NEEDS_320": "YES",
+    "GRID_320_EXECUTED": "NO",
+    "SOLVER_EXECUTED": "NO",
+    "CASE_GENERATED": "NO",
+    "MESH_GENERATED": "NO",
+    "INITIALIZATION_EXECUTED": "NO",
+    "DIAGNOSTIC_TRANSIENT_EXECUTED": "NO",
+    "ROUTE_B_RERUN": "NO",
+    "PARTICLE_COUPLING_STARTED": "NO",
+    "ACCEPTANCE_CRITERIA_CHANGED": "NO",
+    "FORMAL_STATUS_CHANGED": "NO",
+    "FORMAL_GATE_J_AUTHORIZED": "NO",
+    "DIAGNOSTIC_TRANSIENT_SCIENTIFICALLY_ALLOWED": "CONDITIONAL",
+    "DIAGNOSTIC_TRANSIENT_TECHNICALLY_READY": "NO",
+    "NEXT_SINGLE_TASK": "FIX_ROUTE_A_DIAGNOSTIC_TRANSIENT_STUDY_CONTRACT",
+    "RECOMMENDED_REASONING_MODEL_FOR_NEXT_TASK": "gpt-6.1-sol / medium",
+    "USER_DECISION_REQUIRED": "YES",
+    "ROUTE_A_DIAGNOSTIC_TRANSIENT_CONTRACT_FIX": "INCOMPLETE",
+    "DIAGNOSTIC_TRANSIENT_CONTRACT_FIX": "INCOMPLETE",
+    "PARENT_DIAGNOSTIC_CONTRACT_VERSION": "1.0",
+    "PARENT_DIAGNOSTIC_CONTRACT_HASH_VERIFIED": "YES",
+    "PARENT_DIAGNOSTIC_CONTRACT_SHA256": "3ea8c134b1c0468a455c8d090eb3b47dae510b06a9886eedbaa5f79aed8e152f",
+    "U01_STATUS": "CLOSED",
+    "U02_STATUS": "CLOSED",
+    "U03_STATUS": "CLOSED",
+    "U04_STATUS": "UNRESOLVED",
+    "N_OUTER_CORRECTORS": 24,
+    "N_CORRECTORS": 2,
+    "N_NON_ORTHOGONAL_CORRECTORS": 0,
+    "LINEAR_SOLVER_POLICY": "U/e:PBiCGStab/DILU tol1e-12 maxIter2000;p_rgh:PCG/DIC tol1e-12 maxIter4000;rho:diagonal tol1e-14 maxIter1;all relTol0 and explicit identical Final entries",
+    "RELAXATION_POLICY": "Empty relaxationFactors fields/equations; omit all field/equation/Final entries: equation factor0/no-op, field/density/pressure factor1/no under-relaxation; do not specify equation factor1",
+    "ITERATIVE_ERROR_BUDGET_JUSTIFIED": "YES",
+    "ITERATIVE_ERROR_BUDGET_SCOPE": "CONDITIONAL_LOCAL_OUTER_CERTIFICATE_NOT_GLOBAL_TRAJECTORY_PROOF",
+    "INITIAL_DELTA_T": 2.3111979166666666e-05,
+    "FIRST_PHYSICAL_DELTA_T": 2.7734374999999998e-05,
+    "MAX_DELTA_T": 0.027734375,
+    "MIN_DELTA_T": "64*ulp(max(abs(t_seconds),710 seconds)); t+h>t required",
+    "DELTA_T_GROWTH_FACTOR": 1.2,
+    "CO_OVERSHOOT_POLICY": "Record-only for finite achieved Co under exact native controller law; control/end Co separate; all excursions flagged; law/hash/nonfinite failure STOP; no achieved-Co upper bound",
+    "MINIMUM_T_STAR": 0.5,
+    "MAXIMUM_T_STAR": 2.0,
+    "ARRIVAL_WINDOW_T_STAR": 0.1,
+    "CONFIRMATION_WINDOW_COUNT": 3,
+    "QOI_RANGE_CRITERION": "(max-min)/max(abs(time-weighted mean),1)<=5e-5 for Nu_bar_cavity,Umax,Wmax",
+    "QOI_TREND_CRITERION": "abs(secondHalfMean-firstHalfMean)/denom<=2.5e-5 AND abs(continuous OLS slope)*W/denom<=5e-5",
+    "FINAL_VALUE_DEFINITION": "Time-weighted piecewise-linear mean in last confirmed71s window; same duration per Co; also save endpoint/range/OLS/half drift",
+    "MASS_ENERGY_DIAGNOSTIC_REQUIRED": "YES",
+    "EVALUATOR_IMPLEMENTATION": "Native C++ deep fvScalarMatrix observation adapter + native operator synthetic tests + offline policy/StageLedger; stage/export overlay DESIGN_ONLY_NOT_CONNECTED",
+    "ASSEMBLY_STAGE_CAPTURE": "NO",
+    "SYNTHETIC_ASSEMBLY_CAPTURE": "YES",
+    "MASS_EVALUATOR_UNIT_TEST": "PASS",
+    "ENERGY_EVALUATOR_UNIT_TEST": "PASS",
+    "STAGE_IDENTITY_TEST": "PASS",
+    "UNITS_SIGN_TEST": "PASS",
+    "EVALUATOR_FLOOR_CHARACTERIZED": "YES",
+    "EVALUATOR_FLOOR_SCOPE": "SYNTHETIC_STORED_MATRIX_SUMMATION_AND_LINEAR_SOLVE_ONLY;CFD_floor_not_measured",
+    "SYNTHETIC_EVALUATOR_TESTS_EXECUTED": "YES",
+    "SYNTHETIC_LINEAR_MATRIX_SOLVES": 4,
+    "PRODUCTION_SOLVER_EXECUTED": "NO",
+    "FORMAL_CRITERIA_CHANGED": "NO",
+    "HISTORICAL_STATUS_CHANGED": "NO",
+    "DIAGNOSTIC_CONTRACT_SHA256": "574b83ed63e244e9fbb1307d1a463e1c92fade86a99375054d599b06b155d675"
+  },
+  "ordered_required_status_keys": [
+    "ROUTE_A_DIAGNOSTIC_TRANSIENT_CONTRACT_FIX",
+    "STUDY_OWNERSHIP",
+    "PARENT_DIAGNOSTIC_CONTRACT_VERSION",
+    "PARENT_DIAGNOSTIC_CONTRACT_HASH_VERIFIED",
+    "PARENT_DIAGNOSTIC_CONTRACT_SHA256",
+    "FORMAL_ROUTE_A_CONTRACT_VERSION",
+    "FORMAL_ROUTE_A_CONTRACT_CHANGED",
+    "U01_STATUS",
+    "TRANSIENT_ALGORITHM",
+    "N_OUTER_CORRECTORS",
+    "N_CORRECTORS",
+    "N_NON_ORTHOGONAL_CORRECTORS",
+    "LINEAR_SOLVER_POLICY",
+    "RELAXATION_POLICY",
+    "INNER_CONVERGENCE_RULE",
+    "ITERATIVE_ERROR_BUDGET_JUSTIFIED",
+    "U02_STATUS",
+    "INITIAL_DELTA_T",
+    "MAX_DELTA_T",
+    "MIN_DELTA_T",
+    "DELTA_T_GROWTH_FACTOR",
+    "CO_OVERSHOOT_POLICY",
+    "U03_STATUS",
+    "DIMENSIONLESS_TIME_DEFINITION",
+    "MINIMUM_T_STAR",
+    "MAXIMUM_T_STAR",
+    "ARRIVAL_WINDOW_T_STAR",
+    "CONFIRMATION_WINDOW_COUNT",
+    "QOI_RANGE_CRITERION",
+    "QOI_TREND_CRITERION",
+    "FINAL_VALUE_DEFINITION",
+    "MASS_ENERGY_HARD_THRESHOLD",
+    "U04_STATUS",
+    "EVALUATOR_IMPLEMENTATION",
+    "ASSEMBLY_STAGE_CAPTURE",
+    "MASS_EVALUATOR_UNIT_TEST",
+    "ENERGY_EVALUATOR_UNIT_TEST",
+    "STAGE_IDENTITY_TEST",
+    "UNITS_SIGN_TEST",
+    "EVALUATOR_FLOOR_CHARACTERIZED",
+    "SYNTHETIC_EVALUATOR_TESTS_EXECUTED",
+    "DIAGNOSTIC_CONTRACT_CREATED",
+    "DIAGNOSTIC_CONTRACT_VERSION",
+    "DIAGNOSTIC_CONTRACT_SHA256",
+    "DIAGNOSTIC_TRANSIENT_SCIENTIFICALLY_ALLOWED",
+    "DIAGNOSTIC_TRANSIENT_TECHNICALLY_READY",
+    "FORMAL_GATE_J_EXECUTED",
+    "FORMAL_GATE_J_PASS",
+    "FORMAL_GATE_J_CURRENTLY_ALLOWED",
+    "GRID_INDEPENDENT_TRANSIENT_CLAIM_ALLOWED",
+    "DOWNSTREAM_TRANSIENT_READY",
+    "PARTICLE_COUPLING_READY",
+    "ALL_ROUTE_A_GATE_F",
+    "ALL_RA_NEEDS_320",
+    "SOLVER_EXECUTED",
+    "PRODUCTION_SOLVER_EXECUTED",
+    "CASE_GENERATED",
+    "MESH_GENERATED",
+    "INITIALIZATION_EXECUTED",
+    "DIAGNOSTIC_TRANSIENT_EXECUTED",
+    "GRID_320_EXECUTED",
+    "ROUTE_B_RERUN",
+    "FORMAL_CRITERIA_CHANGED",
+    "HISTORICAL_STATUS_CHANGED",
+    "NEXT_SINGLE_TASK",
+    "RECOMMENDED_REASONING_MODEL_FOR_NEXT_TASK",
+    "USER_DECISION_REQUIRED"
+  ],
+  "next_task": {
+    "name": "FIX_ROUTE_A_DIAGNOSTIC_TRANSIENT_STUDY_CONTRACT",
+    "scope": "U04 only; native observation/export/epoch binding and non-invasive synthetic driver verification. Keep U01-U03 fixed. No production build/run or actual case generation."
+  },
+  "build_runtime_provenance": {
+    "path": "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/v1_1_unit_verification/build_runtime_provenance.json",
+    "sha256": "6a41a8904e9c207a244a713c0d111bc0c7474cd6cb35573b8d7559bd8bfbc05a",
+    "linked_libraries": 20,
+    "synthetic_case_directory_exists": false
+  },
+  "final_git_status_short": "?? Scripts/routeA/diagnostic_transient/\n?? cases/routeA/A-H-Ra1e6-fine-beta1e-4/\n?? cases/routeA/A-Ra1e3-coarse/\n?? cases/routeA/A-Ra1e3-fine/\n?? cases/routeA/A-Ra1e3-medium/\n?? cases/routeA/A-Ra1e4-coarse/\n?? cases/routeA/A-Ra1e4-fine/\n?? cases/routeA/A-Ra1e4-medium/\n?? cases/routeA/A-Ra1e5-coarse/\n?? cases/routeA/A-Ra1e5-fine/\n?? cases/routeA/A-Ra1e5-medium/\n?? cases/routeA/A-Ra1e6-coarse/\n?? cases/routeA/A-Ra1e6-fine/\n?? cases/routeA/A-Ra1e6-medium/\n?? cases/routeA/Ra0_medium/\n?? cases/routeA/Ra1e4_coarse/\n?? docs/routeA_diagnostic_transient_contract_v1.1.json\n?? docs/routeA_diagnostic_transient_contract_v1.1.md\n?? docs/routeA_diagnostic_transient_contract_v1.1.sha256\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_contract_fix.json\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_contract_fix.md\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/v1_1_unit_verification/\n?? verification/\n",
+  "final_git_diff_stat": "",
+  "final_git_cached_diff_stat": "",
+  "validation": {
+    "parent_formal_source_historical_hashes_unchanged": true,
+    "contract_json_sha_sidecar_report_match": true,
+    "native_stage_plan_pinned_source_checks": "PASS",
+    "implementation_hash_match": true,
+    "immutable_parent_section_checks": 19,
+    "unit_tests": "PASS",
+    "current_HEAD_unchanged": true,
+    "tracked_and_staged_changes": false
+  },
+  "synthetic_linear_solver_scope": "Four manufactured solves:1-cell native fvMatrix diagonal shortcut for both requested PCG/PBiCGStab settings;2-cell actual PCG/DIC and PBiCGStab/DILU. No production solver."
+}

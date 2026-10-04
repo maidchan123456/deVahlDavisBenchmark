@@ -1,0 +1,17 @@
+test_conditional_iterative_budget (__main__.PolicyTests.test_conditional_iterative_budget) ... ok
+test_controller_targets_and_growth_cap (__main__.PolicyTests.test_controller_targets_and_growth_cap) ... ok
+test_early_invalid_drifting_or_mass_runaway_not_arrival (__main__.PolicyTests.test_early_invalid_drifting_or_mass_runaway_not_arrival) ... ok
+test_first_native_step_growth (__main__.PolicyTests.test_first_native_step_growth) ... ok
+test_independence_of_conservation_accuracy_threshold (__main__.PolicyTests.test_independence_of_conservation_accuracy_threshold) ... ok
+test_inner_missing_or_large_floor_rejected (__main__.PolicyTests.test_inner_missing_or_large_floor_rejected) ... ok
+test_linear_policy_failure_and_completeness (__main__.PolicyTests.test_linear_policy_failure_and_completeness) ... ok
+test_no_extrapolation_duplicate_nonfinite (__main__.PolicyTests.test_no_extrapolation_duplicate_nonfinite) ... ok
+test_nonuniform_time_weighted_mean (__main__.PolicyTests.test_nonuniform_time_weighted_mean) ... ok
+test_representable_minimum_step (__main__.PolicyTests.test_representable_minimum_step) ... ok
+test_stage_duplicates_missing_reordered (__main__.PolicyTests.test_stage_duplicates_missing_reordered) ... ok
+test_three_physical_windows_and_final_value (__main__.PolicyTests.test_three_physical_windows_and_final_value) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.002s
+
+OK

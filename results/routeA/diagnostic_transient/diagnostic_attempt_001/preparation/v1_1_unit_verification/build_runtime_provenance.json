@@ -1,0 +1,31 @@
+{
+  "scope": "STANDALONE_NATIVE_UNIT_BINARY_ONLY",
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+  "compiler_flags": "-std=c++14 -O2 -DWM_DP -DWM_LABEL_SIZE=32 -DNoRepository",
+  "ldd": "\tlinux-vdso.so.1 (0x00007f8d7ee68000)\n\tlibfiniteVolume.so => /opt/openfoam13/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so (0x00007f8d7cc00000)\n\tlibOpenFOAM.so => /opt/openfoam13/platforms/linux64GccDPInt32Opt/lib/libOpenFOAM.so (0x00007f8d7c000000)\n\tlibPstream.so => /opt/openfoam13/platforms/linux64GccDPInt32Opt/lib/openmpi-system/libPstream.so (0x00007f8d7eda1000)\n\tlibstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007f8d7bc00000)\n\tlibgcc_s.so.1 => /usr/lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007f8d7ed71000)\n\tlibc.so.6 => /usr/lib/x86_64-linux-gnu/libc.so.6 (0x00007f8d7b800000)\n\tlibtriSurface.so => /opt/openfoam13/platforms/linux64GccDPInt32Opt/lib/libtriSurface.so (0x00007f8d7ecd5000)\n\tlibmeshTools.so => /opt/openfoam13/platforms/linux64GccDPInt32Opt/lib/libmeshTools.so (0x00007f8d7b200000)\n\tlibm.so.6 => /usr/lib/x86_64-linux-gnu/libm.so.6 (0x00007f8d7bf17000)\n\tlibz.so.1 => /usr/lib/x86_64-linux-gnu/libz.so.1 (0x00007f8d7ecb7000)\n\tlibmpi.so.40 => /usr/lib/x86_64-linux-gnu/libmpi.so.40 (0x00007f8d7bace000)\n\t/lib64/ld-linux-x86-64.so.2 (0x00007f8d7ee6a000)\n\tlibfileFormats.so => /opt/openfoam13/platforms/linux64GccDPInt32Opt/lib/libfileFormats.so (0x00007f8d7ec87000)\n\tlibsurfMesh.so => /opt/openfoam13/platforms/linux64GccDPInt32Opt/lib/libsurfMesh.so (0x00007f8d7b0fb000)\n\tlibopen-rte.so.40 => /usr/lib/x86_64-linux-gnu/libopen-rte.so.40 (0x00007f8d7b03f000)\n\tlibopen-pal.so.40 => /usr/lib/x86_64-linux-gnu/libopen-pal.so.40 (0x00007f8d7ba1a000)\n\tlibhwloc.so.15 => /usr/lib/x86_64-linux-gnu/libhwloc.so.15 (0x00007f8d7cb9f000)\n\tlibevent_core-2.1.so.7 => /usr/lib/x86_64-linux-gnu/libevent_core-2.1.so.7 (0x00007f8d7ec50000)\n\tlibevent_pthreads-2.1.so.7 => /usr/lib/x86_64-linux-gnu/libevent_pthreads-2.1.so.7 (0x00007f8d7ec4b000)\n\tlibudev.so.1 => /usr/lib/x86_64-linux-gnu/libudev.so.1 (0x00007f8d7bee4000)\n\tlibcap.so.2 => /usr/lib/x86_64-linux-gnu/libcap.so.2 (0x00007f8d7cb92000)\n",
+  "linked_library_sha256": {
+    "/opt/openfoam13/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so": "790c1915a09345311de6aaf0dfe9eb03906a2dad6f0f6d0cefb17d35f30c5cef",
+    "/opt/openfoam13/platforms/linux64GccDPInt32Opt/lib/libOpenFOAM.so": "bdb5746a10b6d5296fc6298482484679596824be46ce5c171233d9ca1d41ba72",
+    "/opt/openfoam13/platforms/linux64GccDPInt32Opt/lib/openmpi-system/libPstream.so": "a4e510679efd4906962343641920234db293b5d4ceda37f1997b67dc4d46343e",
+    "/usr/lib/x86_64-linux-gnu/libstdc++.so.6": "1fd75fe70354a416d75aef22bcae68c47bd25d20e2d0568c30b1a9838cf62f11",
+    "/usr/lib/x86_64-linux-gnu/libgcc_s.so.1": "d93224d2b0dab4247598be683adca02f5cf00586f99c187579cd7e92058fb7cb",
+    "/usr/lib/x86_64-linux-gnu/libc.so.6": "3a15d66867d83762c7f2f1e37359cb8f6c5743edb369c65285cb0b1c4f7498bf",
+    "/opt/openfoam13/platforms/linux64GccDPInt32Opt/lib/libtriSurface.so": "5ca66b879bfa31b0ede3204e53b4ace4f7641d83ff7617c13c61855a0ac7e7f6",
+    "/opt/openfoam13/platforms/linux64GccDPInt32Opt/lib/libmeshTools.so": "5b35f9dc67352377711dfd3acff5a13d70e87beb79bc9ee8382334770c4972c0",
+    "/usr/lib/x86_64-linux-gnu/libm.so.6": "fce00b6f25f459cf4ae0b7fae4257909a1a8a86f9149e7c029a5d617baf1ccd0",
+    "/usr/lib/x86_64-linux-gnu/libz.so.1": "86200da370f20476a2507e9097a789b5ef97269b4ca8d5e164ad82dab9d99892",
+    "/usr/lib/x86_64-linux-gnu/libmpi.so.40": "9055018b12757e830591aa0283e485e471f1f2a06d3bc0dd5fb35ab00386c172",
+    "/opt/openfoam13/platforms/linux64GccDPInt32Opt/lib/libfileFormats.so": "35c8fe402257c336611bd6c71b8f174791b15d3a3966ef08033d4c6beba73f24",
+    "/opt/openfoam13/platforms/linux64GccDPInt32Opt/lib/libsurfMesh.so": "96c8e49e2403fb647baa0630692979608d8e0a5e432c847e775ad06c0d19ad35",
+    "/usr/lib/x86_64-linux-gnu/libopen-rte.so.40": "26467e1da428d31dab924ddbc50bc6ade75da47dbb82c77498a5f127a5466ba7",
+    "/usr/lib/x86_64-linux-gnu/libopen-pal.so.40": "59c4d9b111cd3ec326a4df475a338daae050496087c67e86956187056fdc3051",
+    "/usr/lib/x86_64-linux-gnu/libhwloc.so.15": "86dff44a023254d997cea910b9a51f35afefe6780f4b5530f974a2009ba47487",
+    "/usr/lib/x86_64-linux-gnu/libevent_core-2.1.so.7": "7fa4592ebaec38a7c1ce665c29244fbaae249cab6c1dbdd5024418dcdfd4898e",
+    "/usr/lib/x86_64-linux-gnu/libevent_pthreads-2.1.so.7": "e386329c9c16032b489bebbd545750f35eafc0f50ab88ef0c986a31acb4b47a2",
+    "/usr/lib/x86_64-linux-gnu/libudev.so.1": "4298228175fa62a36af88b1afd4406cdd8b1bf166621f957d0dbbde45a698fe5",
+    "/usr/lib/x86_64-linux-gnu/libcap.so.2": "6ac6abc86ac891c6e13486470e26f1d939f47fda9e6b5d5508a7f5ec881adc84"
+  },
+  "synthetic_case_directory_exists": false,
+  "unit_binary_sha256": "10bda5853fa7759387574a2da1b21c7bb4cd111853be51669fbdbcef5e04d417",
+  "production_binary_compiled": false
+}

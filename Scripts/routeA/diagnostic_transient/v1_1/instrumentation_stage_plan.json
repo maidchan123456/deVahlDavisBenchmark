@@ -1,0 +1,269 @@
+{
+  "schema": "routeA_diagnostic_stage_plan/1.1",
+  "status": "DESIGN_ONLY_NOT_CONNECTED",
+  "serial_only": true,
+  "entries": [
+    {
+      "source": "/opt/openfoam13/applications/solvers/foamRun/foamRun.C",
+      "function": "main",
+      "anchor": "solver::New(solverName, mesh)",
+      "lines": [
+        109
+      ],
+      "sha256": "5c1e6e34c4bd253f5cc4665a8672f21b6ded2c7a5e391c67419f7586a7b5de91",
+      "stages": [
+        "constructor_complete"
+      ],
+      "payload": [
+        "time0 cold/EOS/p/p_rgh/phi/mesh identities"
+      ],
+      "hook_implemented": false
+    },
+    {
+      "source": "/opt/openfoam13/applications/solvers/foamRun/foamRun.C",
+      "function": "main",
+      "anchor": "solver.preSolve();",
+      "lines": [
+        124
+      ],
+      "sha256": "5c1e6e34c4bd253f5cc4665a8672f21b6ded2c7a5e391c67419f7586a7b5de91",
+      "stages": [
+        "preSolve_before",
+        "preSolve_after"
+      ],
+      "payload": [
+        "previous-state controller Co, step epoch"
+      ],
+      "hook_implemented": false
+    },
+    {
+      "source": "/opt/openfoam13/applications/solvers/foamRun/foamRun.C",
+      "function": "main",
+      "anchor": "adjustDeltaT(runTime, solver);",
+      "lines": [
+        127
+      ],
+      "sha256": "5c1e6e34c4bd253f5cc4665a8672f21b6ded2c7a5e391c67419f7586a7b5de91",
+      "stages": [
+        "controller_complete"
+      ],
+      "payload": [
+        "old/new deltaT, control Co, native caps"
+      ],
+      "hook_implemented": false
+    },
+    {
+      "source": "/opt/openfoam13/applications/solvers/foamRun/foamRun.C",
+      "function": "main",
+      "anchor": "solver.prePredictor();",
+      "lines": [
+        147
+      ],
+      "sha256": "5c1e6e34c4bd253f5cc4665a8672f21b6ded2c7a5e391c67419f7586a7b5de91",
+      "stages": [
+        "outer_start",
+        "density_predictor_complete"
+      ],
+      "payload": [
+        "outer index and complete state after first-outer density predictor"
+      ],
+      "hook_implemented": false
+    },
+    {
+      "source": "/opt/openfoam13/applications/modules/isothermalFluid/correctDensity.C",
+      "function": "correctDensity",
+      "anchor": "fvm::ddt(rho)",
+      "lines": [
+        37
+      ],
+      "sha256": "15c8711fc833fa32ac800b15cdbb5f4d638d9bfa16a2b387596408a232993227",
+      "stages": [
+        "density_matrix_assembly"
+      ],
+      "payload": [
+        "deep unmodified matrix + native rho history, frozen phi and boundary flux"
+      ],
+      "hook_implemented": false
+    },
+    {
+      "source": "/opt/openfoam13/applications/modules/isothermalFluid/correctDensity.C",
+      "function": "correctDensity",
+      "anchor": ".solve();",
+      "lines": [
+        44
+      ],
+      "sha256": "15c8711fc833fa32ac800b15cdbb5f4d638d9bfa16a2b387596408a232993227",
+      "stages": [
+        "before_correctDensity",
+        "after_correctDensity"
+      ],
+      "payload": [
+        "rho_s/rho_T/phi, mass C balance using original history, solverPerformance"
+      ],
+      "hook_implemented": false
+    },
+    {
+      "source": "/opt/openfoam13/applications/modules/fluid/thermophysicalPredictor.C",
+      "function": "thermophysicalPredictor",
+      "anchor": "EEqn.relax();",
+      "lines": [
+        55
+      ],
+      "sha256": "b3271ffca3d544eec49c79cf220ade3013204a5de959a9d887a4f46a64223be9",
+      "stages": [
+        "energy_unrelaxed_assembly"
+      ],
+      "payload": [
+        "matrix diagonal/upper/lower/source/boundary coefficients; rho/e/K/U/p/T/phi + native old products; frozen Fourier reference; epoch/hash"
+      ],
+      "hook_implemented": false
+    },
+    {
+      "source": "/opt/openfoam13/applications/modules/fluid/thermophysicalPredictor.C",
+      "function": "thermophysicalPredictor",
+      "anchor": "EEqn.solve();",
+      "lines": [
+        59
+      ],
+      "sha256": "b3271ffca3d544eec49c79cf220ade3013204a5de959a9d887a4f46a64223be9",
+      "stages": [
+        "energy_after_solve"
+      ],
+      "payload": [
+        "evaluate frozen unrelaxed matrix on post-solve e BEFORE thermo.correct or later BC refresh; linear status"
+      ],
+      "hook_implemented": false
+    },
+    {
+      "source": "/opt/openfoam13/applications/modules/fluid/thermophysicalPredictor.C",
+      "function": "thermophysicalPredictor",
+      "anchor": "thermo_.correct();",
+      "lines": [
+        63
+      ],
+      "sha256": "b3271ffca3d544eec49c79cf220ade3013204a5de959a9d887a4f46a64223be9",
+      "stages": [
+        "before_thermo_correct",
+        "after_thermo_correct"
+      ],
+      "payload": [
+        "rho_s/rho_T/e/T and synchronization differences"
+      ],
+      "hook_implemented": false
+    },
+    {
+      "source": "/opt/openfoam13/applications/modules/isothermalFluid/correctBuoyantPressure.C",
+      "function": "correctBuoyantPressure",
+      "anchor": "rho = thermo.rho();",
+      "lines": [
+        55,
+        237,
+        271
+      ],
+      "sha256": "c6524988fa021329821055747369c30720240e005aa0eef322cbeb3a12ef3bb7",
+      "stages": [
+        "before_pressure_EOS_copy",
+        "after_pressure_EOS_copy"
+      ],
+      "payload": [
+        "rho epoch differences; first occurrence transient entry; distinguish other conditional occurrences"
+      ],
+      "hook_implemented": false
+    },
+    {
+      "source": "/opt/openfoam13/applications/modules/isothermalFluid/correctBuoyantPressure.C",
+      "function": "correctBuoyantPressure",
+      "anchor": "p_rghEqn.setReference",
+      "lines": [
+        157,
+        195
+      ],
+      "sha256": "c6524988fa021329821055747369c30720240e005aa0eef322cbeb3a12ef3bb7",
+      "stages": [
+        "pressure_pre_reference",
+        "pressure_post_reference"
+      ],
+      "payload": [
+        "registered non-transonic occurrence only; copy pre-reference matrix, reference-cell diagonal/source increment, referenced matrix and solution"
+      ],
+      "hook_implemented": false
+    },
+    {
+      "source": "/opt/openfoam13/applications/modules/isothermalFluid/correctBuoyantPressure.C",
+      "function": "correctBuoyantPressure",
+      "anchor": "continuityErrors();",
+      "lines": [
+        243
+      ],
+      "sha256": "c6524988fa021329821055747369c30720240e005aa0eef322cbeb3a12ef3bb7",
+      "stages": [
+        "pressure_C_complete"
+      ],
+      "payload": [
+        "C rho/phi/p/U/K/thermo; native transient log and C residual distinct"
+      ],
+      "hook_implemented": false
+    },
+    {
+      "source": "/opt/openfoam13/applications/modules/isothermalFluid/isothermalFluid.C",
+      "function": "postSolve",
+      "anchor": "rho_ = thermo.rho();",
+      "lines": [
+        393
+      ],
+      "sha256": "b1f6631e889b2c83d6468c2d631a106d35d75f5e2bd75e85518d8569e250cf59",
+      "stages": [
+        "before_postSolve_EOS_copy",
+        "after_postSolve_EOS_copy"
+      ],
+      "payload": [
+        "C/end rho and mass, unchanged phi, EOS jump, pressure relation defect"
+      ],
+      "hook_implemented": false
+    },
+    {
+      "source": "/opt/openfoam13/applications/solvers/foamRun/foamRun.C",
+      "function": "main",
+      "anchor": "solver.postSolve();",
+      "lines": [
+        191
+      ],
+      "sha256": "5c1e6e34c4bd253f5cc4665a8672f21b6ded2c7a5e391c67419f7586a7b5de91",
+      "stages": [
+        "postSolve_complete"
+      ],
+      "payload": [
+        "end-state mass/energy term reconstruction, raw history row and arrival evaluator"
+      ],
+      "hook_implemented": false
+    }
+  ],
+  "metadata": [
+    "time_index",
+    "physical_time",
+    "outer",
+    "pressure",
+    "nonOrthogonal",
+    "energy_solve",
+    "stage",
+    "dt",
+    "dt_previous",
+    "field_epochs",
+    "field_hashes",
+    "oldTime_ids"
+  ],
+  "oldTime_binding": "Native existing oldTime index and content hash; nOldTimes and effective BDF startup state. Never manufacture oldTime storage or treat multiple C snapshots as oldTime.",
+  "field_packet": "Copy cell/patch arrays, native face addressing/phi and volume, dimensions, current/old epoch hashes, model coefficients; write at binary double or 17 significant figures. Never replace/update fields.",
+  "matrix_packet": "Copy and export actual pre-relax coefficients/source/boundary terms/addressing. Evaluate on the matched post-solve psi before boundary epoch changes. The adapter keeps psi live: it is not a persistent field snapshot.",
+  "term_packet": "At actual energy assembly, record native implicit storage/advection/Fourier-correction matrices and explicit K-storage/K-flux/p/rho-work/gravity/explicit-Fourier arrays. Re-evaluating the operators can update boundary flags; safe term extraction from single native assembly remains unimplemented.",
+  "end_evaluator": "Separate reassembly at synchronized end state with same OLD native products. Never label this as last assembly residual. EOS jump identity applies only if phi/old histories unchanged.",
+  "control": "Native 24 outer / 2 pressure loops; observe before/after all stages, compute terminal outer certificate, abort before accepting failing step; no recovery or numerical changes.",
+  "remaining": [
+    "bind observer and field/matrix/term exporter to these exact native stages in isolated diagnostic overlay",
+    "verify native epoch/oldTime/BC identity and complete stage sequence",
+    "verify extraction introduces no extra BC/history update, governing-coefficient change or update-order change",
+    "verify full export/replay and failure propagation on synthetic native driver; pin overlay/source/library/evaluator hashes before RUN"
+  ],
+  "assembly_stage_capture_actual": false,
+  "noninvasiveness_verified_for_adapter_only": true
+}

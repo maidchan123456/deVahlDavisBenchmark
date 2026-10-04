@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "checks": 75,
+  "max_absolute_identity_defect": 7.105427357601002e-15,
+  "cancellation_bound": 22.204460492503156,
+  "stationary_mass_floor_kg_s": 0,
+  "stationary_mass_stored_matrix_bound_kg_s": 5.861977570020869e-13,
+  "stationary_energy_floor_W": 0,
+  "stationary_energy_stored_matrix_bound_W": 1.0844658504538608e-09,
+  "synthetic_linear_solve_residual_floor_W": 8.881784197001252e-16,
+  "synthetic_linear_solves": 4,
+  "production_solver_executed": false,
+  "case_written": false,
+  "deterministic_summary": true,
+  "binary_sha256": "10bda5853fa7759387574a2da1b21c7bb4cd111853be51669fbdbcef5e04d417",
+  "policy_tests": 12,
+  "policy_status": "PASS",
+  "source_anchor_tests": {
+    "actual_runtime_hooks_connected": false,
+    "anchors": 14,
+    "status": "PASS"
+  }
+}

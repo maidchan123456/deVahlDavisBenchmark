@@ -1,0 +1,25 @@
+{
+  "scope": "NEW_DIAGNOSTIC_v1_1_FIX_ARTIFACTS_ONLY",
+  "excludes_manifest_itself": true,
+  "sha256": {
+    "Scripts/routeA/diagnostic_transient/v1_1/NativeMatrixObserver.H": "f2fd88408ed4d20525c8825fbcd0fc54393876860ca84164b18f2708d674392c",
+    "Scripts/routeA/diagnostic_transient/v1_1/TestNativeMatrixObserver.C": "fa7f8a9968caf25f6e3e9fe83fa261b4e4969507d748bd92e59c39b316a08c73",
+    "Scripts/routeA/diagnostic_transient/v1_1/contract_policy.py": "e452f6fb5d225f0ecac7ef94bbdb661ffa601f3f813ae5ab56a97b1007a529b2",
+    "Scripts/routeA/diagnostic_transient/v1_1/instrumentation_stage_plan.json": "26b8e6f688a9c15fa99c8efe3f1f970d7f64a404e7ff8e51a02fb27bd936eba1",
+    "Scripts/routeA/diagnostic_transient/v1_1/run_unit_verification.sh": "6a16bf0f6fc103df0af5fe142375e87de909a8798b449769e2ce874bff24e16e",
+    "Scripts/routeA/diagnostic_transient/v1_1/test_contract_policy.py": "7eb08efa0a89bbc8469abd3d193fc6987045f75b53d1f9b8faacb90066900659",
+    "Scripts/routeA/diagnostic_transient/v1_1/verify_stage_plan.py": "ae3d46cec8fbf3b1335ee4af2be61e58eef62691c1c5bcda6ebe4ff57150590b",
+    "docs/routeA_diagnostic_transient_contract_v1.1.json": "574b83ed63e244e9fbb1307d1a463e1c92fade86a99375054d599b06b155d675",
+    "docs/routeA_diagnostic_transient_contract_v1.1.md": "9b59a858c85f68e43a9b0afee135947756aa4dec7a01b75a2818e8160bbc10b8",
+    "docs/routeA_diagnostic_transient_contract_v1.1.sha256": "82bb3dd7788337a3b35ef5da160ac3581fa540aea8436997433fb107b8a54c91",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_contract_fix.json": "bd04662b650298b8664d2d8715bfe694a3090f3deadb37c38c9c23162fce2f27",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_contract_fix.md": "17354f795ee508a42ae65c61e872ec8ae44141f1baf72b1c316fabab5045605b",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/v1_1_unit_verification/build_runtime_provenance.json": "6a41a8904e9c207a244a713c0d111bc0c7474cd6cb35573b8d7559bd8bfbc05a",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/v1_1_unit_verification/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/v1_1_unit_verification/policy_tests.log": "16a38732da97be8318c6aa20f0e1193452e126f657de75c2f36e9bd675d903c9",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/v1_1_unit_verification/source_anchors.json": "f4424c2bc9d8175ec1dc65895e2bb98e4091b51eaada269af641bcf4b2fa04a3",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/v1_1_unit_verification/test.log": "5c56b3f44dab834e3f33e1df1771b4cfcbb3dc05d6f03a2dd232b9145f0c29f6",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/v1_1_unit_verification/test_repeat.log": "5c56b3f44dab834e3f33e1df1771b4cfcbb3dc05d6f03a2dd232b9145f0c29f6",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/v1_1_unit_verification/unit_verification.json": "24ad5666764fc8cc88a5f54dca5bc7d0aed0bc3b56d90f711be6fd0f8fe09d97"
+  }
+}
