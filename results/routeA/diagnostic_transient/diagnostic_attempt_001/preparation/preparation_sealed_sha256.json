@@ -1,0 +1,16 @@
+{
+  "schema": "routeA_diagnostic_preparation_seal/1.0",
+  "ownership": "DIAGNOSTIC_FIXED_GRID_TRANSIENT_CHARACTERIZATION",
+  "task": "PREPARE_ROUTE_A_DIAGNOSTIC_TRANSIENT_STUDY_CONTRACT",
+  "complete_execution_configuration": false,
+  "members_sha256": {
+    "docs/routeA_diagnostic_transient_contract_v1.0.md": "0340366eb938308007ecee9dbd0c0475bb97df22a4dc560e87ae472c87b4cc15",
+    "docs/routeA_diagnostic_transient_contract_v1.0.json": "3ea8c134b1c0468a455c8d090eb3b47dae510b06a9886eedbaa5f79aed8e152f",
+    "docs/routeA_diagnostic_transient_contract_v1.0.sha256": "ae6df74a1867951995352e78ec6bedb07add15d78551f4e588c14b0af8de706f",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_contract_preparation.md": "d0ae85635d88c6be2a4833427ec4c8317a06aef2d24d8d88e7e0cf90a634ece2",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_contract_preparation.json": "9547a802e6d3da1d8f7d757c9eb297fadd765941d2025437c1514dd15bfaca5a",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_contract_preparation_verification.json": "68803bfca8d58e0a3090c6d81dcb37af74ce665627eb15ca4e91b0d1bfc73ad3"
+  },
+  "self_excluded": true,
+  "formal_seals_appended": false
+}
