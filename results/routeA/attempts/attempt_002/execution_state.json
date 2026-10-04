@@ -1,0 +1,38 @@
+{
+  "overall": "STOPPED",
+  "attempt": "002",
+  "cases": [
+    {
+      "case_id": "A-Ra1e3-coarse",
+      "grid": [
+        40,
+        40,
+        1
+      ],
+      "computed": false,
+      "accepted": false,
+      "final_iteration": null,
+      "Gate_D": "NOT_EVALUATED",
+      "segments": [],
+      "status": "PREPARING"
+    }
+  ],
+  "environment": {
+    "WM_PROJECT": "OpenFOAM",
+    "WM_PROJECT_VERSION": "13",
+    "WM_PROJECT_DIR": "/opt/openfoam13",
+    "WM_OPTIONS": "linux64GccDPInt32Opt",
+    "foamRun": "/opt/openfoam13/platforms/linux64GccDPInt32Opt/bin/foamRun",
+    "host": "mirai-Precision-5860-Tower",
+    "started": "2026-10-04T17:31:53.371084+09:00",
+    "HEAD": "1370e1d738b5253983f6b0230fb20643d9ac89aa",
+    "contract_version": "1.1",
+    "contract_sha256": "dbd70320ceb3f20e4455c5d67d24b3dae40d2616a832438b23faa99c6b0b892b",
+    "analyzer_sha256": "327761f2b20d86ef8a3a924c64e46bd63da7b11e7a88ba7d74ccfaf232ddbac9",
+    "attempt": "002",
+    "primary_solver_concurrency": 1
+  },
+  "stop_reason": "('runtime missing', 'heRhoThermo', 'Build  : 13-441953dfbb42\\nSelecting solver fluid\\nSelecting thermodynamics package\\nSelecting turbulence model type laminar\\nSelecting laminar stress model Stokes\\nSelecting thermophysical transport type laminar\\nSelecting laminar thermophysical transport model Fourier\\nPIMPLE: Operating solver in SIMPLE mode')",
+  "traceback": "Traceback (most recent call last):\n  File \"/tmp/routeA_attempt002_runner.py\", line 116, in <module>\n    runtime_check(ih)\n  File \"/tmp/routeA_attempt002_runner.py\", line 45, in runtime_check\n    assert token in text,('runtime missing',token,text)\n           ^^^^^^^^^^^^^\nAssertionError: ('runtime missing', 'heRhoThermo', 'Build  : 13-441953dfbb42\\nSelecting solver fluid\\nSelecting thermodynamics package\\nSelecting turbulence model type laminar\\nSelecting laminar stress model Stokes\\nSelecting thermophysical transport type laminar\\nSelecting laminar thermophysical transport model Fourier\\nPIMPLE: Operating solver in SIMPLE mode')\n",
+  "finished": "2026-10-04T17:31:53.617073+09:00"
+}

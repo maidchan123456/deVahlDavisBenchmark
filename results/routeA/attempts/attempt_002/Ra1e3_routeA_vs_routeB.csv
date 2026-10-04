@@ -1,0 +1,4 @@
+attempt,A_case_id,B_case_id,grid,status,reason,scalar_relative_difference,signed_difference,position_absolute_difference,native_flux_comparison,section_operator_comparison
+002,A-Ra1e3-coarse,B-Ra1e3-coarse,40x40x1,NOT_EVALUATED,No primary A solver QoIs; batch stopped before primary execution,,,,NOT_LIKE_FOR_LIKE: A mass kg/s vs B volume m3/s,NOT_LIKE_FOR_LIKE: A reconstructed U_f vs B native corrected volume phi
+002,A-Ra1e3-medium,B-Ra1e3-medium,80x80x1,NOT_EVALUATED,No primary A solver QoIs; batch stopped before primary execution,,,,NOT_LIKE_FOR_LIKE: A mass kg/s vs B volume m3/s,NOT_LIKE_FOR_LIKE: A reconstructed U_f vs B native corrected volume phi
+002,A-Ra1e3-fine,B-Ra1e3-fine,160x160x1,NOT_EVALUATED,No primary A solver QoIs; batch stopped before primary execution,,,,NOT_LIKE_FOR_LIKE: A mass kg/s vs B volume m3/s,NOT_LIKE_FOR_LIKE: A reconstructed U_f vs B native corrected volume phi

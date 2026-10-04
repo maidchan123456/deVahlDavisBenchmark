@@ -1,0 +1,58 @@
+{
+  "stage": "coarse pre-primary runtime-model provenance check after successful initialization clone",
+  "error": "('runtime missing', 'heRhoThermo', 'Build  : 13-441953dfbb42\\nSelecting solver fluid\\nSelecting thermodynamics package\\nSelecting turbulence model type laminar\\nSelecting laminar stress model Stokes\\nSelecting thermophysical transport type laminar\\nSelecting laminar thermophysical transport model Fourier\\nPIMPLE: Operating solver in SIMPLE mode')",
+  "direct_cause": "New execution_runner.py health() collected only Selecting/Build/SIMPLE lines, omitting the multiline thermodynamics dictionary; runtime_check() then incorrectly required heRhoThermo in that incomplete collection.",
+  "faulty_collector": "if Selecting in line or line.startswith(Build) or SIMPLE in line: models.append(line)",
+  "expected_model": {
+    "type": "heRhoThermo",
+    "mixture": "pureMixture",
+    "transport": "const",
+    "thermo": "eConst",
+    "equationOfState": "Boussinesq",
+    "specie": "specie",
+    "energy": "sensibleInternalEnergy"
+  },
+  "raw_log_thermo_dictionary": {
+    "type": "heRhoThermo",
+    "mixture": "pureMixture",
+    "transport": "const",
+    "thermo": "eConst",
+    "equationOfState": "Boussinesq",
+    "specie": "specie",
+    "energy": "sensibleInternalEnergy"
+  },
+  "raw_log_thermo_matches_frozen_model": true,
+  "raw_log_read_scope": "first 95 initialization log lines only for direct-cause review",
+  "runtime_lines_already_collected": [
+    "Build  : 13-441953dfbb42",
+    "Selecting solver fluid",
+    "Selecting thermodynamics package",
+    "Selecting turbulence model type laminar",
+    "Selecting laminar stress model Stokes",
+    "Selecting thermophysical transport type laminar",
+    "Selecting laminar thermophysical transport model Fourier",
+    "PIMPLE: Operating solver in SIMPLE mode"
+  ],
+  "primary_solver_started": false,
+  "initialization_clone_solver_executed": true,
+  "initialization_clone_exit_code": 0,
+  "initialization_clone_End": true,
+  "initialization_clone_health_flags": {
+    "fatal": false,
+    "fpe": false,
+    "nonfinite": false
+  },
+  "normal_banner_present": true,
+  "normal_banner_misclassified_as_FPE": false,
+  "OQ_02_formal_verifier_executed": false,
+  "OQ_02_status": "NOT_EVALUATED; batch stopped before canonical verify_initialization.py",
+  "Gate_A_status": "NOT_EVALUATED; runtime provenance evaluator stopped before Gate A completion",
+  "mesh_created": true,
+  "mesh_check": "Mesh OK.",
+  "actual_model_mismatch_established": false,
+  "numerical_Gate_D_FAILURE_established": false,
+  "classifier_modified": false,
+  "execution_runner_fixed_in_this_task": false,
+  "retry_or_resume_performed": false,
+  "remaining_cases_started": false
+}
