@@ -1,0 +1,12 @@
+{
+  "PASS": true,
+  "matrix_count": 12,
+  "accepted": 12,
+  "computed": 12,
+  "Gate_F_QoI_rows": 12,
+  "Gate_F_failed_QoIs": 5,
+  "required_MD_sections": 17,
+  "historical_statuses_recomputed": false,
+  "AB_evidence_strength_separated": true,
+  "position_semantics_correct": true
+}

@@ -1,0 +1,148 @@
+{
+  "attempt_and_final_segment_seals": [
+    {
+      "path": "results/routeA/attempts/attempt_004",
+      "members": 42,
+      "PASS": true
+    },
+    {
+      "path": "results/routeA/cases/A-Ra1e3-coarse/segments/end_3000/sealed_sha256.json",
+      "members": 59,
+      "PASS": true
+    },
+    {
+      "path": "results/routeA/cases/A-Ra1e3-coarse/segments/end_3000/raw_seal_sha256.json",
+      "members": 51,
+      "PASS": true
+    },
+    {
+      "path": "results/routeA/cases/A-Ra1e3-medium/segments/end_6000/sealed_sha256.json",
+      "members": 62,
+      "PASS": true
+    },
+    {
+      "path": "results/routeA/cases/A-Ra1e3-medium/segments/end_6000/raw_seal_sha256.json",
+      "members": 51,
+      "PASS": true
+    },
+    {
+      "path": "results/routeA/cases/A-Ra1e3-fine/segments/end_18000/sealed_sha256.json",
+      "members": 68,
+      "PASS": true
+    },
+    {
+      "path": "results/routeA/cases/A-Ra1e3-fine/segments/end_18000/raw_seal_sha256.json",
+      "members": 51,
+      "PASS": true
+    },
+    {
+      "path": "results/routeA/attempts/attempt_005",
+      "members": 48,
+      "PASS": true
+    },
+    {
+      "path": "results/routeA/cases/A-Ra1e4-coarse/segments/end_3000/sealed_sha256.json",
+      "members": 62,
+      "PASS": true
+    },
+    {
+      "path": "results/routeA/cases/A-Ra1e4-coarse/segments/end_3000/raw_seal_sha256.json",
+      "members": 51,
+      "PASS": true
+    },
+    {
+      "path": "results/routeA/cases/A-Ra1e4-medium/segments/end_6000/sealed_sha256.json",
+      "members": 62,
+      "PASS": true
+    },
+    {
+      "path": "results/routeA/cases/A-Ra1e4-medium/segments/end_6000/raw_seal_sha256.json",
+      "members": 51,
+      "PASS": true
+    },
+    {
+      "path": "results/routeA/cases/A-Ra1e4-fine/segments/end_15000/sealed_sha256.json",
+      "members": 68,
+      "PASS": true
+    },
+    {
+      "path": "results/routeA/cases/A-Ra1e4-fine/segments/end_15000/raw_seal_sha256.json",
+      "members": 51,
+      "PASS": true
+    },
+    {
+      "path": "results/routeA/attempts/attempt_006",
+      "members": 47,
+      "PASS": true
+    },
+    {
+      "path": "results/routeA/cases/A-Ra1e5-coarse/segments/end_3000/sealed_sha256.json",
+      "members": 62,
+      "PASS": true
+    },
+    {
+      "path": "results/routeA/cases/A-Ra1e5-coarse/segments/end_3000/raw_seal_sha256.json",
+      "members": 51,
+      "PASS": true
+    },
+    {
+      "path": "results/routeA/cases/A-Ra1e5-medium/segments/end_3000/sealed_sha256.json",
+      "members": 62,
+      "PASS": true
+    },
+    {
+      "path": "results/routeA/cases/A-Ra1e5-medium/segments/end_3000/raw_seal_sha256.json",
+      "members": 51,
+      "PASS": true
+    },
+    {
+      "path": "results/routeA/cases/A-Ra1e5-fine/segments/end_12000/sealed_sha256.json",
+      "members": 68,
+      "PASS": true
+    },
+    {
+      "path": "results/routeA/cases/A-Ra1e5-fine/segments/end_12000/raw_seal_sha256.json",
+      "members": 51,
+      "PASS": true
+    },
+    {
+      "path": "results/routeA/attempts/attempt_007",
+      "members": 49,
+      "PASS": true
+    },
+    {
+      "path": "results/routeA/cases/A-Ra1e6-coarse/segments/end_3000/sealed_sha256.json",
+      "members": 62,
+      "PASS": true
+    },
+    {
+      "path": "results/routeA/cases/A-Ra1e6-coarse/segments/end_3000/raw_seal_sha256.json",
+      "members": 51,
+      "PASS": true
+    },
+    {
+      "path": "results/routeA/cases/A-Ra1e6-medium/segments/end_3000/sealed_sha256.json",
+      "members": 62,
+      "PASS": true
+    },
+    {
+      "path": "results/routeA/cases/A-Ra1e6-medium/segments/end_3000/raw_seal_sha256.json",
+      "members": 51,
+      "PASS": true
+    },
+    {
+      "path": "results/routeA/cases/A-Ra1e6-fine/segments/end_9000/sealed_sha256.json",
+      "members": 68,
+      "PASS": true
+    },
+    {
+      "path": "results/routeA/cases/A-Ra1e6-fine/segments/end_9000/raw_seal_sha256.json",
+      "members": 51,
+      "PASS": true
+    }
+  ],
+  "native_final_field_and_mesh_hashes": "PASS",
+  "matrix_summary_sources": "PASS",
+  "runtime_provenance_and_execution": "PASS",
+  "historical_statuses_recomputed": false
+}
