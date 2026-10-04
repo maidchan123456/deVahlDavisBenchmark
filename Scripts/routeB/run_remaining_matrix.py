@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Serial remaining-matrix orchestration using the existing case helpers."""
 import csv
+import argparse
 import json
 import os
 import subprocess
@@ -12,6 +13,7 @@ from publish_matrix_case import OUT, V6, gate_d, sha
 ROOT = OUT.parent.parent
 ORDER = [('1e5','medium'),('1e5','fine'),('1e6','coarse'),('1e6','medium'),('1e6','fine')]
 BATCH = OUT/'remaining_matrix_batch'
+COMPUTED_MODE = False
 
 
 def read(path):
@@ -30,6 +32,8 @@ def execute(script, arguments, log):
 
 
 def finish(reason):
+    if COMPUTED_MODE:
+        return finish_computed(reason)
     state = read(OUT/'full_matrix_status.json')
     rows = []
     for ra,level in ORDER:
@@ -84,15 +88,92 @@ def finish(reason):
     print(json.dumps(summary),flush=True)
 
 
+def computed_count(manifest):
+    return sum(bool(rec.get('generated_manifest') and (rec.get('Gate_D')=='PASS' or
+               (rec.get('iteration_history') and rec['iteration_history'][-1]['metrics']['normal_exit']
+                and not rec['iteration_history'][-1]['metrics']['fatal_or_nan'])))
+               for rec in manifest['cases'].values())
+
+
+def mark_computed(cid):
+    state,manifest=read(OUT/'full_matrix_status.json'),read(OUT/'full_matrix_manifest.json')
+    count=computed_count(manifest)
+    state.update(computed_matrix_points=count,COMPUTED_MATRIX_COUNT=str(count)+'/12',
+                 ACCEPTED_MATRIX_COUNT=str(state['accepted_matrix_points'])+'/12',
+                 FULL_COMPUTED_MATRIX_COMPLETE='YES' if count==12 else 'NO',
+                 FULL_ACCEPTED_MATRIX_COMPLETE='YES' if state['accepted_matrix_points']==12 else 'NO')
+    state['stop_cases']=[key for key,value in state['cases'].items() if value['stage']=='CONVERGENCE_NOT_REACHED']
+    state['cases'][cid].update(COMPUTED_CASE=True,ACCEPTED_CASE=state['cases'][cid]['stage']=='GATE_D_PASS')
+    manifest['cases'][cid].update(COMPUTED_CASE=True,ACCEPTED_CASE=manifest['cases'][cid]['Gate_D']=='PASS')
+    manifest.update({key:state[key] for key in ('COMPUTED_MATRIX_COUNT','ACCEPTED_MATRIX_COUNT','FULL_COMPUTED_MATRIX_COMPLETE','FULL_ACCEPTED_MATRIX_COMPLETE')})
+    write(OUT/'full_matrix_status.json',state);write(OUT/'full_matrix_manifest.json',manifest)
+
+
+def finish_computed(reason):
+    state,manifest=read(OUT/'full_matrix_status.json'),read(OUT/'full_matrix_manifest.json')
+    count=computed_count(manifest);rows=[]
+    for level in ('coarse','medium','fine'):
+        cid='B-Ra1e6-'+level;rec=manifest['cases'].get(cid);entry=state['cases'].get(cid,{})
+        if not rec:
+            rows.append(dict(case=cid,computed=False,accepted=False,Gate_D='NOT_EVALUATED',final_iteration=None,residual_behavior='NOT_APPLICABLE'));continue
+        metrics=read(Path(rec['metrics_path']));accepted=rec['Gate_D']=='PASS';behavior='NOT_APPLICABLE'
+        if not accepted:
+            if level=='coarse':behavior='PLATEAU_OR_OSCILLATORY'
+            else:
+                recent=[x['metrics']['final_initial_residuals'] for x in rec['iteration_history'][-6:]]
+                trends={field:all(b[field]<a[field] for a,b in zip(recent,recent[1:])) for field in ('Ux','Uy','T','p_rgh')}
+                behavior='CONTINUING_DECAY' if len(recent)>=3 and all(trends.values()) else ('PLATEAU_OR_OSCILLATORY' if len(recent)>=3 and not any(trends.values()) else 'INCONCLUSIVE')
+                rec['residual_diagnostic']=dict(classification=behavior,checkpoint_residuals=[dict(iteration=x['iteration'],**x['metrics']['final_initial_residuals']) for x in rec['iteration_history']],recent_monotonic_decrease=trends)
+                entry['residual_behavior']=behavior
+        rows.append(dict(case=cid,computed=metrics['normal_exit'] and not metrics['fatal_or_nan'],accepted=accepted,
+                         Gate_D=rec['Gate_D'],final_iteration=metrics['final_iteration'],residual_behavior=behavior,
+                         QoI={k:metrics[k] for k in ('Nu_bar_cavity','Nu_bar_0','Nu_bar_half','Umax','Umax_Z','Wmax','Wmax_X')},
+                         paper_errors={k:metrics['paper_comparison_like_for_like'][k]['absolute_relative_error'] for k in ('Nu_bar_cavity','Umax','Wmax')},
+                         diagnostics_path=rec['Gate_G_diagnostics_path']))
+    available=all(row['computed'] for row in rows)
+    if available:
+        trends=[]
+        for q in ('Nu_bar_cavity','Umax','Wmax'):
+            c,m,f=[row['QoI'][q] for row in rows];product=(m-c)*(f-m)
+            trends.append(dict(quantity=q,coarse=c,medium=m,fine=f,trend='MONOTONIC' if product>0 else ('NON_MONOTONIC' if product<0 else 'INCONCLUSIVE'),status='DIAGNOSTIC_ONLY'))
+        write(OUT/'Ra1e6_computed_grid_trend.json',dict(status='DIAGNOSTIC_ONLY',formal_p_obs_or_GCI_computed=False,quantities=trends))
+    state.update(computed_matrix_points=count,COMPUTED_MATRIX_COUNT=str(count)+'/12',ACCEPTED_MATRIX_COUNT=str(state['accepted_matrix_points'])+'/12',
+                 FULL_COMPUTED_MATRIX_COMPLETE='YES' if count==12 else 'NO',FULL_ACCEPTED_MATRIX_COMPLETE='NO',
+                 status='COMPUTED_MATRIX_COMPLETE_PENDING_REVIEW' if count==12 else 'COMPUTED_BATCH_EXECUTION_FAILURE',
+                 BATCH_STOPPED_EARLY='YES' if reason else 'NO',BATCH_STOP_REASON=reason or 'NONE',
+                 NEXT_ACTION='FIX_EXECUTION_FAILURE' if reason else 'RA1E6_POST_MATRIX_GATE_D_REVIEW',USER_DECISION_REQUIRED='YES',
+                 required_user_decision='Separate post-matrix Ra1e6 Gate D review; no policy amendment performed.' if not reason else str(reason))
+    manifest.update({key:state[key] for key in ('status','COMPUTED_MATRIX_COUNT','ACCEPTED_MATRIX_COUNT','FULL_COMPUTED_MATRIX_COMPLETE','FULL_ACCEPTED_MATRIX_COMPLETE','BATCH_STOPPED_EARLY','BATCH_STOP_REASON')})
+    manifest['limitation']='Computed completion counts normal saved solutions; it does not imply Gate D acceptance or Gate E/F/G PASS.'
+    write(OUT/'full_matrix_status.json',state);write(OUT/'full_matrix_manifest.json',manifest)
+    summary=dict(cases=rows,computed_count=count,accepted_count=state['accepted_matrix_points'],formal_Ra1e6_gates=state['formal_Ra_gates']['1000000'],
+                 grid_trend_diagnostic='AVAILABLE' if available else 'NOT_AVAILABLE',stopped_early=bool(reason),stop_reason=reason or 'NONE',next_action=state['NEXT_ACTION'])
+    write(OUT/'Ra1e6_computed_matrix_summary.json',summary)
+    lines=['# Ra1e6 computed matrix','', '| Case | Final iteration | Gate D | Residual behavior | Computed | Accepted |','|---|---:|---|---|---|---|']
+    lines += ['| '+row['case']+' | '+str(row['final_iteration'])+' | '+row['Gate_D']+' | '+row['residual_behavior']+' | '+str(row['computed'])+' | '+str(row['accepted'])+' |' for row in rows]
+    lines += ['',f'Computed {count}/12; accepted '+str(state['accepted_matrix_points'])+'/12.', 'Next action: '+state['NEXT_ACTION']+'. No criterion, numerical specification, coarse result, microcase or 320 changes.']
+    (OUT/'Ra1e6_computed_matrix_report.md').write_text('\n'.join(lines)+'\n')
+    print(json.dumps(dict(computed=count,accepted=state['accepted_matrix_points'],stop_reason=reason)),flush=True)
+
+
 def main():
+    global ORDER, BATCH, COMPUTED_MODE
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--computed-ra1e6', action='store_true')
+    COMPUTED_MODE=parser.parse_args().computed_ra1e6
+    if COMPUTED_MODE:
+        ORDER=[('1e6','medium'),('1e6','fine')]
+        BATCH=OUT/'Ra1e6_computed_batch'
     BATCH.mkdir(exist_ok=False)
     state,manifest = read(OUT/'full_matrix_status.json'),read(OUT/'full_matrix_manifest.json')
-    assert state['accepted_matrix_points']==7
+    assert state['accepted_matrix_points']==(9 if COMPUTED_MODE else 7)
     policy=read(OUT/'formal_resume_B-Ra1e5-coarse/startup_provenance.json')['continuation_policy']
+    if COMPUTED_MODE:
+        policy=dict(policy, maximum_endTime=30000, reason='Explicit computed-matrix request: at most 30000, 3000-step checkpoints.')
     mutable=('full_matrix_status.json','full_matrix_manifest.json','benchmark_summary.csv','grid_convergence.csv','conservation.csv')
     protected={}
     for rec in manifest['cases'].values():
-        protected.update({str(V6/f):h for f,h in rec.get('accepted_final_field_sha256',{}).items()})
+        protected.update({str(V6/f):h for f,h in rec.get('accepted_final_field_sha256',rec.get('final_field_sha256',{})).items()})
     for rel in subprocess.check_output(['git','ls-files','results/routeB','reference','cases/routeB/template'],text=True,cwd=ROOT).splitlines():
         if rel in ['results/routeB/'+f for f in mutable]:continue
         path=ROOT/rel
@@ -111,7 +192,10 @@ def main():
                   target_case_path=str(case),initial_accepted_count=before_state['accepted_matrix_points'],
                   initial_endTime=3000,continuation_policy=policy))
             print(json.dumps(dict(case=cid,event='INITIAL_RUN')),flush=True)
-            code=execute('run_full_matrix.py',['--ra',ra,'--grid',level],run/'initial_runner.log')
+            arguments=['--ra',ra,'--grid',level]
+            if COMPUTED_MODE:
+                arguments += ['--allow-unconverged-case','B-Ra1e6-coarse','--allow-unconverged-case','B-Ra1e6-medium']
+            code=execute('run_full_matrix.py',arguments,run/'initial_runner.log')
             metrics_path=OUT/'cases'/cid/'metrics.json'
             if not metrics_path.exists():raise RuntimeError(cid+': initial pipeline failed, exit '+str(code))
             metrics=read(metrics_path)
@@ -120,7 +204,7 @@ def main():
             if entry['stage'] not in ('GATE_D_PASS','CONVERGENCE_NOT_REACHED'):raise RuntimeError(cid+': unexpected pipeline stage '+entry['stage'])
             code=execute('continue_matrix_case.py',['--case-id',cid],run/'continuation_driver.log')
             if code:raise RuntimeError(cid+': continuation helper failed, exit '+str(code))
-            code=execute('publish_matrix_case.py',['--case-id',cid],run/'publish.log')
+            code=execute('publish_matrix_case.py',['--case-id',cid]+(['--computed-matrix'] if COMPUTED_MODE else []),run/'publish.log')
             if code:raise RuntimeError(cid+': publication helper failed, exit '+str(code))
             state,manifest=read(OUT/'full_matrix_status.json'),read(OUT/'full_matrix_manifest.json')
             for previous in before_state['cases']:
@@ -144,8 +228,10 @@ def main():
                                   ('run_remaining_matrix.py','continue_matrix_case.py','publish_matrix_case.py')}))
             print(json.dumps(dict(case=cid,event='SAVED',iteration=metrics['final_iteration'],
                   Gate_D='PASS' if passed else 'FAIL',accepted=state['accepted_matrix_points'])),flush=True)
-            if not passed:raise RuntimeError(cid+': CONVERGENCE_NOT_REACHED at existing cap '+str(policy['maximum_endTime']))
-            protected.update({str(V6/f):h for f,h in record['accepted_final_field_sha256'].items()})
+            if not passed and not COMPUTED_MODE:raise RuntimeError(cid+': CONVERGENCE_NOT_REACHED at existing cap '+str(policy['maximum_endTime']))
+            if COMPUTED_MODE:
+                mark_computed(cid)
+            protected.update({str(V6/f):h for f,h in record.get('accepted_final_field_sha256',record['final_field_sha256']).items()})
             for f in metrics_path.parent.iterdir():
                 if f.is_file():protected[str(f)]=sha(f)
     except Exception as error:

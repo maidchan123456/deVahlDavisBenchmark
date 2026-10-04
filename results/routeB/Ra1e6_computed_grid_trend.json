@@ -1,0 +1,30 @@
+{
+  "status": "DIAGNOSTIC_ONLY",
+  "formal_p_obs_or_GCI_computed": false,
+  "quantities": [
+    {
+      "quantity": "Nu_bar_cavity",
+      "coarse": 9.434811346851925,
+      "medium": 8.983834274501707,
+      "fine": 8.865121227158834,
+      "trend": "MONOTONIC",
+      "status": "DIAGNOSTIC_ONLY"
+    },
+    {
+      "quantity": "Umax",
+      "coarse": 65.61513152926874,
+      "medium": 65.10299281858052,
+      "fine": 64.89951254779456,
+      "trend": "MONOTONIC",
+      "status": "DIAGNOSTIC_ONLY"
+    },
+    {
+      "quantity": "Wmax",
+      "coarse": 222.67839358059658,
+      "medium": 218.30795364349288,
+      "fine": 219.87347099648537,
+      "trend": "NON_MONOTONIC",
+      "status": "DIAGNOSTIC_ONLY"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{"case": "B-Ra1e6-medium", "event": "INITIAL_RUN"}
+{"case": "B-Ra1e6-medium", "event": "SAVED", "iteration": 30000, "Gate_D": "FAIL", "accepted": 9}
+{"case": "B-Ra1e6-fine", "event": "INITIAL_RUN"}
+{"case": "B-Ra1e6-fine", "event": "SAVED", "iteration": 30000, "Gate_D": "FAIL", "accepted": 9}
+{"computed": 12, "accepted": 9, "stop_reason": null}

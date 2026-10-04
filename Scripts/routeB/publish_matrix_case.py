@@ -67,6 +67,7 @@ def flux_diagnostics(case, generated, metrics):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--case-id', required=True)
+    parser.add_argument('--computed-matrix', action='store_true')
     args = parser.parse_args()
     cid = args.case_id
     state_path, manifest_path = OUT/'full_matrix_status.json', OUT/'full_matrix_manifest.json'
@@ -131,11 +132,17 @@ def main():
         levels = {}
         for level in ('coarse','medium'):
             rec = manifest['cases'][prefix+'-'+level]
+            if args.computed_matrix and rec['Gate_D'] != 'PASS':
+                continue
             assert rec['Gate_D'] == 'PASS', 'Three accepted grids required'
             levels[level] = json.loads(Path(rec['metrics_path']).read_text())
         f_checks = []
         for g in grids:
             if str(g['Ra_target']) != ra_key:
+                continue
+            if len(levels) != 2:
+                g.update(Gate_F='NOT_EVALUATED_DUE_TO_UNACCEPTED_GRID', p_obs='', GCI='', needs_320='',
+                         reason='Three accepted grids unavailable; computed data are diagnostic only.')
                 continue
             quantity = g['quantity']
             c,m,f = levels['coarse'][quantity],levels['medium'][quantity],metrics[quantity]
@@ -154,8 +161,16 @@ def main():
                      else 'Nonmonotonic or undefined/nonpositive observed order; no 320 run performed.')
             f_checks.append(passed_f)
         evaluations['F'] = [g.copy() for g in grids if str(g['Ra_target']) == ra_key]
-        state['formal_Ra_gates'][ra_key] = dict(E=row['Gate_E'],F='PASS' if all(f_checks) else 'FAIL',
+        state['formal_Ra_gates'][ra_key] = dict(E=row['Gate_E'],F=('PASS' if all(f_checks) else 'FAIL') if f_checks else 'NOT_EVALUATED_DUE_TO_UNACCEPTED_GRID',
                                              G=diagnostics['GATE_G_FORMAL_STATUS'])
+    if fine and args.computed_matrix and not passed:
+        row['Gate_E'] = 'NOT_EVALUATED_DUE_TO_UNACCEPTED_FINE'
+        state['formal_Ra_gates'][ra_key] = dict(E=row['Gate_E'], F='NOT_EVALUATED_DUE_TO_UNACCEPTED_GRID', G=diagnostics['GATE_G_FORMAL_STATUS'])
+        evaluations['F'] = []
+        for g in grids:
+            if str(g['Ra_target']) == ra_key:
+                g.update(Gate_F='NOT_EVALUATED_DUE_TO_UNACCEPTED_GRID', p_obs='', GCI='', needs_320='',
+                         reason='Computed grid data include unaccepted solutions; no formal grid evaluation.')
     conservation = list(csv.DictReader((OUT/'conservation.csv').open()))
     conservation = [r for r in conservation if r.get('matrix_case_id') != cid]
     cons = {k: row[k] for k in ['case_id','matrix_case_id','source_case_id','reused_existing_solver_result',
@@ -189,14 +204,15 @@ def main():
                     FULL_MATRIX_RESUME=state['FULL_MATRIX_RESUME'], solver_runs_this_invocation=1,
                     continuation_solver_runs_this_invocation=len(history)-1,
                     GATE_G_INVESTIGATION_STATUS=state['GATE_G_INVESTIGATION_STATUS'], GATE_G_BLOCKS_MATRIX_EXECUTION='NO')
-    if fine and passed:
+    if fine and (passed or args.computed_matrix):
         manifest['formal_Ra_gates'] = state['formal_Ra_gates']
         manifest[cid.rsplit('-',1)[0].removeprefix('B-')+'_gate_evaluations'] = evaluations
-        state[cid.rsplit('-',1)[0].removeprefix('B-')+'_needs_320'] = any(g['needs_320'] for g in evaluations['F'])
+        f_evaluated = state['formal_Ra_gates'][ra_key]['F'] in ('PASS','FAIL')
+        state[cid.rsplit('-',1)[0].removeprefix('B-')+'_needs_320'] = any(g['needs_320'] for g in evaluations['F']) if f_evaluated else 'NOT_EVALUATED'
         record.update(Gate_E=state['formal_Ra_gates'][ra_key]['E'],
                       Gate_F=state['formal_Ra_gates'][ra_key]['F'],
                       needs_320=state[cid.rsplit('-',1)[0].removeprefix('B-')+'_needs_320'])
-        if record['needs_320']:
+        if record['needs_320'] is True:
             state['needs_320'] = True
             state['needs_320_reason'] = 'Existing Ra=1000 findings retained; Ra='+ra_key+' has a nonmonotonic or invalid-order quantity. See grid_convergence.csv; no 320 run performed.'
             state['required_user_decision'] = 'Review the 320-grid follow-up in a separate task; this invocation executed only '+cid+'.'

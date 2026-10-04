@@ -42,12 +42,15 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--ra", choices=RA_LABELS, required=True)
     parser.add_argument("--grid", choices=LEVELS, required=True)
+    parser.add_argument("--allow-unconverged-case", action="append", default=[])
     args = parser.parse_args()
     status_path = OUT / "full_matrix_status.json"
     if status_path.exists():
         previous = json.loads(status_path.read_text())
         stopped = [cid for cid, record in previous.get("cases", {}).items()
-                   if record.get("stage") in ("CONVERGENCE_NOT_REACHED", "NUMERICAL_FAILURE", "SOLVER_FAILED", "GATE_A_FAIL")]
+                   if record.get("stage") in ("CONVERGENCE_NOT_REACHED", "NUMERICAL_FAILURE", "SOLVER_FAILED", "GATE_A_FAIL")
+                   and not (cid in args.allow_unconverged_case and record.get("stage") == "CONVERGENCE_NOT_REACHED"
+                            and record.get("normal_exit") and not record.get("fatal_or_nan", True))]
         if stopped:
             raise SystemExit(f"Matrix stopped at {stopped}; user decision is required before any additional solver run")
     case_id = f"B-Ra{args.ra}-{args.grid}"

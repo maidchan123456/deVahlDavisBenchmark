@@ -8,6 +8,6 @@ Ra_target,quantity,coarse,medium,fine,fine_medium_difference,convergence_type,p_
 100000,Nu_bar_cavity,4.6243636549688,4.5474797308600134,4.528062764593452,0.0042881398240302146,monotonic,1.9853641625568228,0.004346636890267837,PASS,False,Existing three-grid thresholds applied; no 320 run performed.
 100000,Umax,34.81924998888706,34.776470529287806,34.74628032803062,0.0008688757752532516,monotonic,0.5028378838030705,0.006250932455981117,PASS,False,Existing three-grid thresholds applied; no 320 run performed.
 100000,Wmax,68.86509024083921,68.56246861531022,68.64693029290197,0.0012303780698039535,oscillatory,,,FAIL,True,Nonmonotonic or undefined/nonpositive observed order; no 320 run performed.
-1000000,Nu_bar_cavity,,,,,INSUFFICIENT_GRIDS,,,NOT_EVALUATED_DUE_TO_UNACCEPTED_GRID,,Computed grid data include unaccepted solutions; no formal grid evaluation.
-1000000,Umax,,,,,INSUFFICIENT_GRIDS,,,NOT_EVALUATED_DUE_TO_UNACCEPTED_GRID,,Computed grid data include unaccepted solutions; no formal grid evaluation.
-1000000,Wmax,,,,,INSUFFICIENT_GRIDS,,,NOT_EVALUATED_DUE_TO_UNACCEPTED_GRID,,Computed grid data include unaccepted solutions; no formal grid evaluation.
+1000000,Nu_bar_cavity,,,,,INSUFFICIENT_GRIDS,,,NOT_EVALUATED,,coarse Gate D failed; no three-grid evaluation.
+1000000,Umax,,,,,INSUFFICIENT_GRIDS,,,NOT_EVALUATED,,coarse Gate D failed; no three-grid evaluation.
+1000000,Wmax,,,,,INSUFFICIENT_GRIDS,,,NOT_EVALUATED,,coarse Gate D failed; no three-grid evaluation.

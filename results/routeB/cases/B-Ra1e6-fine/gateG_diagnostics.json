@@ -1,0 +1,54 @@
+{
+  "epsilon_phi_mean": 3.954786421563361e-10,
+  "epsilon_phi_max": 4.9979421459866504e-09,
+  "epsilon_phi_P95": 9.808303126045266e-10,
+  "epsilon_phi_P99": 1.285745192801302e-09,
+  "definition": "L*abs(sum oriented saved pressure-corrected face phi / cell volume)/max cell speed",
+  "normalization_Umax_m_s": 0.031128697012994724,
+  "boundary_patches": {
+    "hotWall": {
+      "net_volume_flux_m3_s": 6.397725050214823e-25,
+      "absolute_volume_flux_m3_s": 3.702925710881913e-24
+    },
+    "coldWall": {
+      "net_volume_flux_m3_s": 1.0048951972812172e-24,
+      "absolute_volume_flux_m3_s": 4.940465455443669e-24
+    },
+    "bottomWall": {
+      "net_volume_flux_m3_s": 0.0,
+      "absolute_volume_flux_m3_s": 0.0
+    },
+    "topWall": {
+      "net_volume_flux_m3_s": 0.0,
+      "absolute_volume_flux_m3_s": 0.0
+    },
+    "front": {
+      "type": "empty",
+      "net_volume_flux_m3_s": 0.0
+    },
+    "back": {
+      "type": "empty",
+      "net_volume_flux_m3_s": 0.0
+    }
+  },
+  "boundary_net_volume_flux_m3_s": 1.6446677023026996e-24,
+  "global_signed_div_phi_1_s": 3.9400863290726605e-18,
+  "flux_balance_closure_m3_s": 3.775619558842391e-23,
+  "final_solver_log_continuity": {
+    "sum_local": 1.231073165548296e-10,
+    "global": -7.479999298146667e-18,
+    "cumulative": -1.193809006762762e-16
+  },
+  "mean_abs_div_phi_1_s": 1.231073482679515e-10,
+  "mean_abs_div_U_1_s": 0.0002808487834289828,
+  "epsilon_phi": 3.9547864215633615e-10,
+  "epsilon_v": 0.0009022182435446689,
+  "epsilon_m": 0.0009022182435446689,
+  "mass_relation": "rho0 is constant, so normalized mass- and volume-divergence metrics are identical; solver phi is volume flux",
+  "theta_L2_relative": 1.2367716817766722e-09,
+  "velocity_L2_relative": 5.59506275323893e-09,
+  "method": "paired cell centres under 180-degree rotation; RMS defect divided by RMS original theta or in-plane velocity magnitude",
+  "heat_imbalance": 1.695503568180042e-09,
+  "section_Nu_max_relative_deviation_from_half": 4.365096453143245e-09,
+  "GATE_G_FORMAL_STATUS": "NOT_EVALUATED_UNDER_FROZEN_REVIEW"
+}

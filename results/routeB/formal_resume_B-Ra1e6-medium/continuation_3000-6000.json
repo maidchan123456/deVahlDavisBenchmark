@@ -1,0 +1,116 @@
+{
+  "before": {
+    "iteration": 3000,
+    "field_sha256": {
+      "U": "d6abd62021203f37dd7aafb1b925e62ff92e15eacaa834304489707816da0d5e",
+      "alphat": "207664da8b570eb683e0fb9defa54aee68890dd925c5f9cba69593f24e09925f",
+      "phi": "777dd8d46506049b12d8038d9d12e2bd633c9551a777ff16c6ac74fb8d11ef8f",
+      "T": "62bae1b90e185851a88d3a16c92cc4e08a7d646a215083cefd7ec5b335b7a6b0",
+      "p": "01a1a9bc4565105bfaf0e8f7ea0052a5a39af334ee71f9195737d561dbfe3fb4",
+      "p_rgh": "4d6716cea6433efd1b451f43b801c45e62a20ebdc239c6414570b7175ba4e5d9"
+    },
+    "input_sha256": {
+      "0/T": "707cdd899fb6decc39beaadcb59b8ad4ca8247a6b768b179625fa19dcf0e66b3",
+      "0/U": "ad122c8aa24172a9c82002b6d6fb0ea6ea7fe85f3b55a12f993a86e74a71c16d",
+      "0/alphat": "67990c5ef8837c1c5c8be88c71c617ff363f57ba5f365ae985c4d47955e86955",
+      "0/p_rgh": "fb7b65387f86b04e0608b9997f5f08f295cef41bf32ce0dff3d2f5ecfd886c87",
+      "constant/g": "00e5e8989b6c226b341c383fc235f2dd5af64ef72eee522c0cac05cb416ad518",
+      "constant/hRef": "de584c87bcdd3bc4958c5ac9f701d9ae0ab3ff2462e478180b1e58604b3deb30",
+      "constant/transportProperties": "8aa8ea4ad47f60b2e054c9b505cef27508155eb5b8f84c6008e08dd473f15b64",
+      "constant/turbulenceProperties": "4f816c5a682c5c842f930b88d5e0b06d4f831ba8eed4efc72b6a9b067fe8cf39",
+      "system/blockMeshDict": "281d83f0aa82df80f5e99e27c77b20a84137de5fb9b24cbc3acf9aba111619a0",
+      "system/controlDict": "433d12eeb7e7143628830598a51854506e90ed1dc1261ab5847424cc11cfabf5",
+      "system/fvSchemes": "3bedc2642ace9a13843ad341ca92ad1b8320ab5ad46c8f2f32ad5759c191d1eb",
+      "system/fvSolution": "ddb6e153c2b4fee0da51abec70469ade19d8daa388aeba856e45e78687c6bf5d"
+    },
+    "mesh_sha256": {
+      "constant/polyMesh/faces": "222f0f628d837dd323241b71c390ca0aefc76b1d7b7385c44cf5306a3db62f71",
+      "constant/polyMesh/points": "e36c10eb472aa593a4e07573c03bb9cf55c132e8389dad196948b84dc837f9e0",
+      "constant/polyMesh/boundary": "68c5e8ba4c1443ecc36e819382e3e98ecde6c2e2d27282ca3e2fa120e24bb345",
+      "constant/polyMesh/neighbour": "bc86f1fcb3fccf51dec58e0ef685f31be4c8f847b3afc603d1ce8bfc51675307",
+      "constant/polyMesh/owner": "5fb5f126983674baa67ff2cb813d3a13493f1e8ae59b4a03da4200e6f423a987"
+    },
+    "log_sha256": {
+      "log.buoyantBoussinesqSimpleFoam.initial0-3000": "76dba57fc3ef5bab379ef05e000eff065600f09c5ff97646745941dd208f6c08",
+      "log.buoyantBoussinesqSimpleFoam": "76dba57fc3ef5bab379ef05e000eff065600f09c5ff97646745941dd208f6c08",
+      "log.blockMesh": "8f1702172d7772b4ce8ab33f87a6fe0131e9b198f446ad913ba3867788d4de19",
+      "log.checkMesh": "8fd59f6737121222b73a8a82db051663ebddbee3fde3231f1d57fb2a25a53c3e",
+      "log.full_matrix_runner": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "log.analyze_case": "6ab98b4c0711e546dd38f1d417db002cbafd4149dff5eee2486935d7cc0e7c81",
+      "log.environment": "037941629726ad5c16816f406fee8870bc762d0a0f617dec249d7c28de32158a"
+    }
+  },
+  "executed_input_sha256": {
+    "0/T": "707cdd899fb6decc39beaadcb59b8ad4ca8247a6b768b179625fa19dcf0e66b3",
+    "0/U": "ad122c8aa24172a9c82002b6d6fb0ea6ea7fe85f3b55a12f993a86e74a71c16d",
+    "0/alphat": "67990c5ef8837c1c5c8be88c71c617ff363f57ba5f365ae985c4d47955e86955",
+    "0/p_rgh": "fb7b65387f86b04e0608b9997f5f08f295cef41bf32ce0dff3d2f5ecfd886c87",
+    "constant/g": "00e5e8989b6c226b341c383fc235f2dd5af64ef72eee522c0cac05cb416ad518",
+    "constant/hRef": "de584c87bcdd3bc4958c5ac9f701d9ae0ab3ff2462e478180b1e58604b3deb30",
+    "constant/transportProperties": "8aa8ea4ad47f60b2e054c9b505cef27508155eb5b8f84c6008e08dd473f15b64",
+    "constant/turbulenceProperties": "4f816c5a682c5c842f930b88d5e0b06d4f831ba8eed4efc72b6a9b067fe8cf39",
+    "system/blockMeshDict": "281d83f0aa82df80f5e99e27c77b20a84137de5fb9b24cbc3acf9aba111619a0",
+    "system/controlDict": "d7f816a9c34454b23d68a52d293cf73c006b42e4bb42c0656c2f7c46b3a9bdeb",
+    "system/fvSchemes": "3bedc2642ace9a13843ad341ca92ad1b8320ab5ad46c8f2f32ad5759c191d1eb",
+    "system/fvSolution": "ddb6e153c2b4fee0da51abec70469ade19d8daa388aeba856e45e78687c6bf5d"
+  },
+  "permitted_changes": [
+    "startFrom latestTime",
+    "endTime extension"
+  ],
+  "log_path": "/home/mirai/OpenFOAM/mirai-6/run/deVahlDavisBenchmark/cases/routeB/Ra1e6_medium/log.buoyantBoussinesqSimpleFoam.continuation3000-6000",
+  "solver_exit_code": 0,
+  "after": {
+    "iteration": 6000,
+    "field_sha256": {
+      "U": "f07ec381a290e92541c0d953984392febe2190aa6b425d193e01fd3bc60c250c",
+      "alphat": "6d40a357679c77f1d6324b15dc487f5322848ea0f0b5ca803ef23aa0a0579372",
+      "phi": "e89526156bbbdc7ba69863dc323e0b32acc18117a54693635991442a751e16db",
+      "T": "e4cf944cfed8d534f03d71e49a44a27698d9f2b9b03fc043bdde7baf14ccb3e4",
+      "p": "d1cff80b86f94faee672a7c51e0b1cfc555a5d710df6987dab5b8d20fa407da5",
+      "p_rgh": "d15d2752448c52dd73a10904fb1ba064868f2f86f1756954695944a809364de8"
+    },
+    "input_sha256": {
+      "0/T": "707cdd899fb6decc39beaadcb59b8ad4ca8247a6b768b179625fa19dcf0e66b3",
+      "0/U": "ad122c8aa24172a9c82002b6d6fb0ea6ea7fe85f3b55a12f993a86e74a71c16d",
+      "0/alphat": "67990c5ef8837c1c5c8be88c71c617ff363f57ba5f365ae985c4d47955e86955",
+      "0/p_rgh": "fb7b65387f86b04e0608b9997f5f08f295cef41bf32ce0dff3d2f5ecfd886c87",
+      "constant/g": "00e5e8989b6c226b341c383fc235f2dd5af64ef72eee522c0cac05cb416ad518",
+      "constant/hRef": "de584c87bcdd3bc4958c5ac9f701d9ae0ab3ff2462e478180b1e58604b3deb30",
+      "constant/transportProperties": "8aa8ea4ad47f60b2e054c9b505cef27508155eb5b8f84c6008e08dd473f15b64",
+      "constant/turbulenceProperties": "4f816c5a682c5c842f930b88d5e0b06d4f831ba8eed4efc72b6a9b067fe8cf39",
+      "system/blockMeshDict": "281d83f0aa82df80f5e99e27c77b20a84137de5fb9b24cbc3acf9aba111619a0",
+      "system/controlDict": "d7f816a9c34454b23d68a52d293cf73c006b42e4bb42c0656c2f7c46b3a9bdeb",
+      "system/fvSchemes": "3bedc2642ace9a13843ad341ca92ad1b8320ab5ad46c8f2f32ad5759c191d1eb",
+      "system/fvSolution": "ddb6e153c2b4fee0da51abec70469ade19d8daa388aeba856e45e78687c6bf5d"
+    },
+    "mesh_sha256": {
+      "constant/polyMesh/faces": "222f0f628d837dd323241b71c390ca0aefc76b1d7b7385c44cf5306a3db62f71",
+      "constant/polyMesh/points": "e36c10eb472aa593a4e07573c03bb9cf55c132e8389dad196948b84dc837f9e0",
+      "constant/polyMesh/boundary": "68c5e8ba4c1443ecc36e819382e3e98ecde6c2e2d27282ca3e2fa120e24bb345",
+      "constant/polyMesh/neighbour": "bc86f1fcb3fccf51dec58e0ef685f31be4c8f847b3afc603d1ce8bfc51675307",
+      "constant/polyMesh/owner": "5fb5f126983674baa67ff2cb813d3a13493f1e8ae59b4a03da4200e6f423a987"
+    },
+    "log_sha256": {
+      "log.buoyantBoussinesqSimpleFoam.initial0-3000": "76dba57fc3ef5bab379ef05e000eff065600f09c5ff97646745941dd208f6c08",
+      "log.analyze_case.6000": "2fffdde37e6a52969decfc3091e20c05fb33490aeac2d0429abd1ba10f3fa296",
+      "log.buoyantBoussinesqSimpleFoam": "cb12f7834359c9b1d17a2158a6795588f007b94cfc8506be8152106995fe4f00",
+      "log.blockMesh": "8f1702172d7772b4ce8ab33f87a6fe0131e9b198f446ad913ba3867788d4de19",
+      "log.checkMesh": "8fd59f6737121222b73a8a82db051663ebddbee3fde3231f1d57fb2a25a53c3e",
+      "log.full_matrix_runner": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "log.analyze_case": "6ab98b4c0711e546dd38f1d417db002cbafd4149dff5eee2486935d7cc0e7c81",
+      "log.environment": "037941629726ad5c16816f406fee8870bc762d0a0f617dec249d7c28de32158a",
+      "log.buoyantBoussinesqSimpleFoam.continuation3000-6000": "9d4eeae3cf5828259691f5aa0e70f74d9b5717bbcbafe2300d66079e70e3e852"
+    }
+  },
+  "preserved_start_field_hashes": true,
+  "Gate_D_checks": {
+    "normal_exit": true,
+    "finite_execution": true,
+    "window": true,
+    "samples": true,
+    "QoI": true,
+    "residuals": false,
+    "heat_trend": true
+  }
+}

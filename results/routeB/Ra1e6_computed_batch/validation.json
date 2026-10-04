@@ -1,0 +1,11 @@
+{
+  "protected_file_count": 516,
+  "protected_hashes": "PASS",
+  "original_case_records": "UNCHANGED",
+  "coarse_and_plateau_review": "UNCHANGED",
+  "computed_count": 12,
+  "accepted_count": 9,
+  "formal_numerical_spec_changed": false,
+  "formal_Gate_D_criteria_changed": false,
+  "microcase_solver_executed": false
+}

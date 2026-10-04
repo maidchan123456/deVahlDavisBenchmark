@@ -1,0 +1,12 @@
+{
+  "initial_HEAD": "69624c283fa6c1ce21eb92311b56c335bd90c338",
+  "target": "B-Ra1e6-fine",
+  "target_case_path": "/home/mirai/OpenFOAM/mirai-6/run/deVahlDavisBenchmark/cases/routeB/Ra1e6_fine",
+  "initial_accepted_count": 9,
+  "initial_endTime": 3000,
+  "continuation_policy": {
+    "checkpoint_increment": 3000,
+    "maximum_endTime": 30000,
+    "reason": "Explicit computed-matrix request: at most 30000, 3000-step checkpoints."
+  }
+}

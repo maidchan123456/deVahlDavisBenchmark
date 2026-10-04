@@ -1,0 +1,84 @@
+{
+  "cases": [
+    {
+      "case": "B-Ra1e6-coarse",
+      "computed": true,
+      "accepted": false,
+      "Gate_D": "FAIL",
+      "final_iteration": 30000,
+      "residual_behavior": "PLATEAU_OR_OSCILLATORY",
+      "QoI": {
+        "Nu_bar_cavity": 9.434811346851925,
+        "Nu_bar_0": 9.402326316873655,
+        "Nu_bar_half": 9.402326301138675,
+        "Umax": 65.61513152926874,
+        "Umax_Z": 0.862548828125,
+        "Wmax": 222.67839358059658,
+        "Wmax_X": 0.03759765625
+      },
+      "paper_errors": {
+        "Nu_bar_cavity": 0.072137653051355,
+        "Umax": 0.015242635452092554,
+        "Wmax": 0.015127614791195126
+      },
+      "diagnostics_path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/cases/B-Ra1e6-coarse/gateG_diagnostics.json"
+    },
+    {
+      "case": "B-Ra1e6-medium",
+      "computed": true,
+      "accepted": false,
+      "Gate_D": "FAIL",
+      "final_iteration": 30000,
+      "residual_behavior": "PLATEAU_OR_OSCILLATORY",
+      "QoI": {
+        "Nu_bar_cavity": 8.983834274501707,
+        "Nu_bar_0": 8.976522814505074,
+        "Nu_bar_half": 8.976522658419288,
+        "Umax": 65.10299281858052,
+        "Umax_Z": 0.8562011718750001,
+        "Wmax": 218.30795364349288,
+        "Wmax_X": 0.03125
+      },
+      "paper_errors": {
+        "Nu_bar_cavity": 0.020890258466102936,
+        "Umax": 0.007318471585649422,
+        "Wmax": 0.004795980837468699
+      },
+      "diagnostics_path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/cases/B-Ra1e6-medium/gateG_diagnostics.json"
+    },
+    {
+      "case": "B-Ra1e6-fine",
+      "computed": true,
+      "accepted": false,
+      "Gate_D": "FAIL",
+      "final_iteration": 30000,
+      "residual_behavior": "PLATEAU_OR_OSCILLATORY",
+      "QoI": {
+        "Nu_bar_cavity": 8.865121227158834,
+        "Nu_bar_0": 8.863397466499123,
+        "Nu_bar_half": 8.863397472312313,
+        "Umax": 64.89951254779456,
+        "Umax_Z": 0.85302734375,
+        "Wmax": 219.87347099648537,
+        "Wmax_X": 0.04052734375
+      },
+      "paper_errors": {
+        "Nu_bar_cavity": 0.007400139449867443,
+        "Umax": 0.004170084292040265,
+        "Wmax": 0.0023407685835400835
+      },
+      "diagnostics_path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/cases/B-Ra1e6-fine/gateG_diagnostics.json"
+    }
+  ],
+  "computed_count": 12,
+  "accepted_count": 9,
+  "formal_Ra1e6_gates": {
+    "E": "NOT_EVALUATED_DUE_TO_UNACCEPTED_FINE",
+    "F": "NOT_EVALUATED_DUE_TO_UNACCEPTED_GRID",
+    "G": "NOT_EVALUATED_UNDER_FROZEN_REVIEW"
+  },
+  "grid_trend_diagnostic": "AVAILABLE",
+  "stopped_early": false,
+  "stop_reason": "NONE",
+  "next_action": "RA1E6_POST_MATRIX_GATE_D_REVIEW"
+}

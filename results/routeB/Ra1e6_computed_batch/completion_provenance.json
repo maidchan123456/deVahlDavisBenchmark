@@ -1,0 +1,31 @@
+{
+  "initial_HEAD": "69624c283fa6c1ce21eb92311b56c335bd90c338",
+  "validation": {
+    "protected_file_count": 516,
+    "protected_hashes": "PASS",
+    "original_case_records": "UNCHANGED",
+    "coarse_and_plateau_review": "UNCHANGED",
+    "computed_count": 12,
+    "accepted_count": 9,
+    "formal_numerical_spec_changed": false,
+    "formal_Gate_D_criteria_changed": false,
+    "microcase_solver_executed": false
+  },
+  "output_sha256": {
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/full_matrix_status.json": "ddbbdba38a8f7aa9cf59d0e3208e427113a1cced2f289dd2bec94ac511036845",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/full_matrix_manifest.json": "9ae1f681f98469e891983aa02acead90de0c56d795c033a47fbcc1ce3a92fd27",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/benchmark_summary.csv": "788c4dcf61ad4d7caffba5352dbf20603920cb4c288641661d07ceb31851dfcf",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/grid_convergence.csv": "34351fc12268f66e17060523c5ffb1b823a30c54fbe60758c57319dc6cada2e5",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/conservation.csv": "b325fc780035464426c84ae5c12c837385d8271f21762ce66a7854f1cffe51b1",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/Ra1e6_computed_matrix_report.md": "c7c7974922ef9134dbb0c3ae54902c08724e904f85ad266e57a115bfa502f0b3",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/Ra1e6_computed_matrix_summary.json": "278656074ee42704a808d6e7ce4d3e3387c4964d43f620f97e06a028cf5fb80d",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/Ra1e6_computed_grid_trend.json": "b96d67c5915660fc4b341a6ddc5e83dd6748b8798f79b3576ce0c5a031b32694"
+  },
+  "workflow_script_sha256": {
+    "run_full_matrix.py": "99974d29cd4980c844ed99b6d2a1c73d9a9561769389cc272e5a03bcbad943d7",
+    "run_remaining_matrix.py": "e6a3f400d50ef7a52422778c762506adace29d45b2fb347c2a61be56073590a9",
+    "continue_matrix_case.py": "403757d4b8e1f905ede00c1b1d0f38078c89332d297766ba36ecb2f82c809374",
+    "publish_matrix_case.py": "9077fbe9ffd936d0f99b57bae1b26eef4d4c959ef380b973d956265f84587f8f"
+  },
+  "git_add_commit_push_performed": false
+}
