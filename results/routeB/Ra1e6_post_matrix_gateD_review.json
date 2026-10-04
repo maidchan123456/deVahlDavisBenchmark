@@ -1,0 +1,1002 @@
+{
+  "schema": "routeB.Ra1e6.post_matrix_gateD_review.v1",
+  "start_head": "1929734cdf7f691cb9c6133fab826502d40ab030",
+  "expected_head": "1929734cdf7f691cb9c6133fab826502d40ab030",
+  "review_scope": "EXISTING_RESULTS_ONLY",
+  "computed_matrix_count": "12/12",
+  "accepted_matrix_count": "9/12",
+  "original_gate_D": {
+    "criteria_source": "Scripts/routeB/publish_matrix_case.py:16-25",
+    "Rwin_definition_source": "Scripts/routeB/analyze_case.py:119-120,361",
+    "monitored_QoIs": [
+      "Nu_bar_0",
+      "Umax",
+      "Wmax (legacy Vmax alias)"
+    ],
+    "Rwin_definition": "(max(window)-min(window))/max(abs(mean(window)),1.0)",
+    "window_minimum_iterations": 200,
+    "minimum_samples": 21,
+    "actual_final_window": [
+      29800,
+      30000
+    ],
+    "QoI_Rwin_limit": 0.0005,
+    "final_initial_residual_fields": [
+      "Ux",
+      "Uy",
+      "T",
+      "p_rgh"
+    ],
+    "residual_limit": 1e-07,
+    "heat_imbalance_definition": "abs(Nu_hot_B1-Nu_cold_B1)/((Nu_hot_B1+Nu_cold_B1)/2)",
+    "heat_trend_requirement": "OLS slope over evaluation window <= 0 per iteration",
+    "absolute_heat_imbalance_hard_limit": null,
+    "normal_exit_required": true,
+    "finite_execution_required": "not fatal_or_nan, plus finite final residuals; existing flags used without new log scan"
+  },
+  "three_grid_table": [
+    {
+      "case_id": "B-Ra1e6-coarse",
+      "grid": "40x40x1",
+      "final_iteration": 30000,
+      "Original_Gate_D": "FAIL",
+      "residual_classification": "PLATEAU_OR_OSCILLATORY",
+      "MECHANISM": "UNKNOWN",
+      "Ux_initial_residual": 1.540830067219442e-07,
+      "Uy_initial_residual": 7.968423239325492e-08,
+      "T_initial_residual": 4.038734986064311e-08,
+      "p_rgh_initial_residual": 7.375120871349657e-07,
+      "Rwin_Nu_bar_0": 1.0697914879119291e-07,
+      "Rwin_Umax": 1.5075761769231617e-06,
+      "Rwin_Wmax": 1.1582906783836666e-07,
+      "heat_imbalance": 4.5920803934252854e-08,
+      "heat_slope_per_iteration": 7.41812458881868e-11,
+      "epsilon_phi_mean": 7.395421448455268e-10,
+      "epsilon_phi_max": 5.96933705067675e-09,
+      "epsilon_v": 0.01640512762004611,
+      "epsilon_m": 0.01640512762004611,
+      "theta_L2_relative": 5.932400981919104e-08,
+      "velocity_L2_relative": 4.1287798167715203e-07,
+      "Nu_bar_cavity": 9.434811346851925,
+      "Nu_bar_0": 9.402326316873655,
+      "Nu_bar_half": 9.402326301138675,
+      "Umax": 65.61513152926874,
+      "Wmax": 222.67839358059658,
+      "Umax_Z": 0.862548828125,
+      "Wmax_X": 0.03759765625,
+      "Nu_hot_local_max": 20.174278690563206,
+      "Nu_hot_local_max_Z": 0.029462550418111928,
+      "Nu_hot_local_min": 0.9283145904873891,
+      "Nu_hot_local_min_Z": 0.9875,
+      "TableV_Nu_bar_cavity_absolute_relative_error": 0.072137653051355,
+      "TableV_Nu_bar_half_absolute_relative_error": 0.06856759872015863,
+      "TableV_Nu_bar_0_absolute_relative_error": 0.06638610829915557,
+      "TableV_Nu_hot_local_max_absolute_relative_error": 0.1254827721374173,
+      "TableV_Nu_hot_local_max_Z_absolute_position_error": 0.008337449581888073,
+      "TableV_Nu_hot_local_min_absolute_relative_error": 0.06136037362245796,
+      "TableV_Nu_hot_local_min_Z_absolute_position_error": 0.012499999999999956,
+      "TableV_Umax_absolute_relative_error": 0.015242635452092554,
+      "TableV_Umax_Z_absolute_position_error": 0.012548828125000022,
+      "TableV_Wmax_absolute_relative_error": 0.015127614791195126,
+      "TableV_Wmax_X_absolute_position_error": 0.00030234375000000313,
+      "Rwin_Nu_bar_0_over_limit": 0.00021395829758238583,
+      "Rwin_Umax_over_limit": 0.0030151523538463234,
+      "Rwin_Wmax_over_limit": 0.0002316581356767333,
+      "Rwin_worst_over_limit": 0.0030151523538463234,
+      "Original_heat_trend_PASS": false,
+      "Original_residuals_PASS": false
+    },
+    {
+      "case_id": "B-Ra1e6-medium",
+      "grid": "80x80x1",
+      "final_iteration": 30000,
+      "Original_Gate_D": "FAIL",
+      "residual_classification": "PLATEAU_OR_OSCILLATORY",
+      "MECHANISM": "UNKNOWN",
+      "Ux_initial_residual": 1.031029155731923e-08,
+      "Uy_initial_residual": 7.406856952280439e-09,
+      "T_initial_residual": 6.482643723853935e-09,
+      "p_rgh_initial_residual": 3.14037897505866e-07,
+      "Rwin_Nu_bar_0": 1.648081977997738e-08,
+      "Rwin_Umax": 1.0965345164251502e-07,
+      "Rwin_Wmax": 9.19551792237538e-09,
+      "heat_imbalance": 4.680608142356356e-09,
+      "heat_slope_per_iteration": 9.786682920749721e-12,
+      "epsilon_phi_mean": 4.4080783856526825e-10,
+      "epsilon_phi_max": 8.476216075413661e-09,
+      "epsilon_v": 0.0036501005532018397,
+      "epsilon_m": 0.0036501005532018397,
+      "theta_L2_relative": 8.362787800389538e-09,
+      "velocity_L2_relative": 3.887891745230302e-08,
+      "Nu_bar_cavity": 8.983834274501707,
+      "Nu_bar_0": 8.976522814505074,
+      "Nu_bar_half": 8.976522658419288,
+      "Umax": 65.10299281858052,
+      "Wmax": 218.30795364349288,
+      "Umax_Z": 0.8562011718750001,
+      "Wmax_X": 0.03125,
+      "Nu_hot_local_max": 18.60505339823401,
+      "Nu_hot_local_max_Z": 0.034197222522071934,
+      "Nu_hot_local_min": 0.964679778640857,
+      "Nu_hot_local_min_Z": 1.0,
+      "TableV_Nu_bar_cavity_absolute_relative_error": 0.020890258466102936,
+      "TableV_Nu_bar_half_absolute_relative_error": 0.02017532201605735,
+      "TableV_Nu_bar_0_absolute_relative_error": 0.018092640864815015,
+      "TableV_Nu_hot_local_max_absolute_relative_error": 0.03793882277456114,
+      "TableV_Nu_hot_local_max_Z_absolute_position_error": 0.0036027774779280666,
+      "TableV_Nu_hot_local_min_absolute_relative_error": 0.024590719271125404,
+      "TableV_Nu_hot_local_min_Z_absolute_position_error": 0.0,
+      "TableV_Umax_absolute_relative_error": 0.007318471585649422,
+      "TableV_Umax_Z_absolute_position_error": 0.006201171875000133,
+      "TableV_Wmax_absolute_relative_error": 0.004795980837468699,
+      "TableV_Wmax_X_absolute_position_error": 0.006650000000000003,
+      "Rwin_Nu_bar_0_over_limit": 3.2961639559954765e-05,
+      "Rwin_Umax_over_limit": 0.00021930690328503003,
+      "Rwin_Wmax_over_limit": 1.839103584475076e-05,
+      "Rwin_worst_over_limit": 0.00021930690328503003,
+      "Original_heat_trend_PASS": false,
+      "Original_residuals_PASS": false
+    },
+    {
+      "case_id": "B-Ra1e6-fine",
+      "grid": "160x160x1",
+      "final_iteration": 30000,
+      "Original_Gate_D": "FAIL",
+      "residual_classification": "PLATEAU_OR_OSCILLATORY",
+      "MECHANISM": "UNKNOWN",
+      "Ux_initial_residual": 6.980546255302406e-10,
+      "Uy_initial_residual": 7.079404716172061e-10,
+      "T_initial_residual": 1.715498864477732e-09,
+      "p_rgh_initial_residual": 2.714748998004017e-07,
+      "Rwin_Nu_bar_0": 2.7891211334794946e-09,
+      "Rwin_Umax": 3.6408750363305546e-09,
+      "Rwin_Wmax": 8.477418219577872e-10,
+      "heat_imbalance": 1.695503568180042e-09,
+      "heat_slope_per_iteration": -1.7493485999699004e-12,
+      "epsilon_phi_mean": 3.954786421563361e-10,
+      "epsilon_phi_max": 4.9979421459866504e-09,
+      "epsilon_v": 0.0009022182435446689,
+      "epsilon_m": 0.0009022182435446689,
+      "theta_L2_relative": 1.2367716817766722e-09,
+      "velocity_L2_relative": 5.59506275323893e-09,
+      "Nu_bar_cavity": 8.865121227158834,
+      "Nu_bar_0": 8.863397466499123,
+      "Nu_bar_half": 8.863397472312313,
+      "Umax": 64.89951254779456,
+      "Wmax": 219.87347099648537,
+      "Umax_Z": 0.85302734375,
+      "Wmax_X": 0.04052734375,
+      "Nu_hot_local_max": 17.82417613900965,
+      "Nu_hot_local_max_Z": 0.03714507764255327,
+      "Nu_hot_local_min": 0.9756462890327384,
+      "Nu_hot_local_min_Z": 1.0,
+      "TableV_Nu_bar_cavity_absolute_relative_error": 0.007400139449867443,
+      "TableV_Nu_bar_half_absolute_relative_error": 0.007318726254382691,
+      "TableV_Nu_bar_0_absolute_relative_error": 0.005262273619045331,
+      "TableV_Nu_hot_local_max_absolute_relative_error": 0.005624762119405821,
+      "TableV_Nu_hot_local_max_Z_absolute_position_error": 0.0006549223574467272,
+      "TableV_Nu_hot_local_min_absolute_relative_error": 0.013502235558404012,
+      "TableV_Nu_hot_local_min_Z_absolute_position_error": 0.0,
+      "TableV_Umax_absolute_relative_error": 0.004170084292040265,
+      "TableV_Umax_Z_absolute_position_error": 0.003027343750000022,
+      "TableV_Wmax_absolute_relative_error": 0.0023407685835400835,
+      "TableV_Wmax_X_absolute_position_error": 0.002627343749999997,
+      "Rwin_Nu_bar_0_over_limit": 5.578242266958989e-06,
+      "Rwin_Umax_over_limit": 7.281750072661109e-06,
+      "Rwin_Wmax_over_limit": 1.6954836439155742e-06,
+      "Rwin_worst_over_limit": 7.281750072661109e-06,
+      "Original_heat_trend_PASS": true,
+      "Original_residuals_PASS": false
+    }
+  ],
+  "evidence": {
+    "coarse": {
+      "original_checks": {
+        "normal_exit": true,
+        "finite_execution": true,
+        "window": true,
+        "samples": true,
+        "QoI": true,
+        "residuals": false,
+        "heat_trend": false
+      },
+      "failed_original_conditions": [
+        "residuals",
+        "heat_trend"
+      ],
+      "existing_residual_label": null,
+      "review_residual_label": "PLATEAU_OR_OSCILLATORY",
+      "mechanism": "UNKNOWN",
+      "window": {
+        "window_start_iteration": 29800,
+        "window_end_iteration": 30000,
+        "samples": 21
+      },
+      "checkpoint_history": [
+        {
+          "iteration": 3000,
+          "initial_residuals": {
+            "Ux": 1.651408051078662e-07,
+            "Uy": 9.318912749877696e-08,
+            "T": 4.707117835457955e-08,
+            "p_rgh": 1.02654870291041e-06
+          },
+          "heat_imbalance": 5.3155677404591206e-08,
+          "heat_slope_per_iteration": 1.3009868825021455e-10
+        },
+        {
+          "iteration": 6000,
+          "initial_residuals": {
+            "Ux": 1.447261719811603e-07,
+            "Uy": 8.468948552586653e-08,
+            "T": 4.274870530030262e-08,
+            "p_rgh": 8.891940930452907e-07
+          },
+          "heat_imbalance": 3.7292076900713606e-08,
+          "heat_slope_per_iteration": 5.181840480472708e-11
+        },
+        {
+          "iteration": 9000,
+          "initial_residuals": {
+            "Ux": 1.422469610527012e-07,
+            "Uy": 7.987440112670953e-08,
+            "T": 3.769772341018385e-08,
+            "p_rgh": 7.579884376370165e-07
+          },
+          "heat_imbalance": 1.3981751154998484e-08,
+          "heat_slope_per_iteration": -1.393980020001823e-10
+        },
+        {
+          "iteration": 12000,
+          "initial_residuals": {
+            "Ux": 1.382931188981764e-07,
+            "Uy": 7.45651050121213e-08,
+            "T": 4.074618202956719e-08,
+            "p_rgh": 8.076108245643826e-07
+          },
+          "heat_imbalance": 4.5008560443942906e-08,
+          "heat_slope_per_iteration": 2.248011832935866e-11
+        },
+        {
+          "iteration": 15000,
+          "initial_residuals": {
+            "Ux": 1.519125572133009e-07,
+            "Uy": 8.453461394662064e-08,
+            "T": 4.154262946916798e-08,
+            "p_rgh": 8.930735272008638e-07
+          },
+          "heat_imbalance": 5.878210942865048e-09,
+          "heat_slope_per_iteration": -1.1424515997701242e-10
+        },
+        {
+          "iteration": 18000,
+          "initial_residuals": {
+            "Ux": 1.54315667270561e-07,
+            "Uy": 8.104532175508303e-08,
+            "T": 4.506756955815508e-08,
+            "p_rgh": 9.367682822298386e-07
+          },
+          "heat_imbalance": 3.457884981623667e-10,
+          "heat_slope_per_iteration": -3.144164896997988e-11
+        },
+        {
+          "iteration": 21000,
+          "initial_residuals": {
+            "Ux": 1.388247188379526e-07,
+            "Uy": 8.073166366217738e-08,
+            "T": 3.713466749797526e-08,
+            "p_rgh": 7.27096844573015e-07
+          },
+          "heat_imbalance": 3.3484993634104885e-08,
+          "heat_slope_per_iteration": -8.630643347327936e-11
+        },
+        {
+          "iteration": 24000,
+          "initial_residuals": {
+            "Ux": 1.192279104679858e-07,
+            "Uy": 6.66322812346728e-08,
+            "T": 4.162862399072201e-08,
+            "p_rgh": 8.78382688388305e-07
+          },
+          "heat_imbalance": 3.4343877053233086e-08,
+          "heat_slope_per_iteration": -1.156541446993388e-10
+        },
+        {
+          "iteration": 27000,
+          "initial_residuals": {
+            "Ux": 1.354377360081861e-07,
+            "Uy": 7.506168310564636e-08,
+            "T": 3.248149629541373e-08,
+            "p_rgh": 6.079278208338726e-07
+          },
+          "heat_imbalance": 2.6591434586628095e-08,
+          "heat_slope_per_iteration": -8.361002686577509e-11
+        },
+        {
+          "iteration": 30000,
+          "initial_residuals": {
+            "Ux": 1.540830067219442e-07,
+            "Uy": 7.968423239325492e-08,
+            "T": 4.038734986064311e-08,
+            "p_rgh": 7.375120871349657e-07
+          },
+          "heat_imbalance": 4.5920803934252854e-08,
+          "heat_slope_per_iteration": 7.41812458881868e-11
+        }
+      ],
+      "late_checkpoint_range": [
+        15000,
+        30000
+      ],
+      "late_checkpoint_residual_statistics": {
+        "Ux": {
+          "min": 1.192279104679858e-07,
+          "max": 1.54315667270561e-07,
+          "first": 1.519125572133009e-07,
+          "last": 1.540830067219442e-07,
+          "last_over_first": 1.014287492413124
+        },
+        "Uy": {
+          "min": 6.66322812346728e-08,
+          "max": 8.453461394662064e-08,
+          "first": 8.453461394662064e-08,
+          "last": 7.968423239325492e-08,
+          "last_over_first": 0.9426225385446428
+        },
+        "T": {
+          "min": 3.248149629541373e-08,
+          "max": 4.506756955815508e-08,
+          "first": 4.154262946916798e-08,
+          "last": 4.038734986064311e-08,
+          "last_over_first": 0.9721905035071916
+        },
+        "p_rgh": {
+          "min": 6.079278208338726e-07,
+          "max": 9.367682822298386e-07,
+          "first": 8.930735272008638e-07,
+          "last": 7.375120871349657e-07,
+          "last_over_first": 0.8258134013293731
+        }
+      },
+      "positive_heat_slope_checkpoints": [
+        3000,
+        6000,
+        12000,
+        30000
+      ],
+      "nonpositive_heat_slope_checkpoints": [
+        9000,
+        15000,
+        18000,
+        21000,
+        24000,
+        27000
+      ],
+      "native_continuity_support": {
+        "definition": "L*abs(sum oriented saved pressure-corrected face phi / cell volume)/max cell speed",
+        "mass_relation": "rho0 is constant, so normalized mass- and volume-divergence metrics are identical; solver phi is volume flux",
+        "boundary_net_volume_flux_m3_s": 1.6543612251060539e-24,
+        "global_signed_div_phi_1_s": -3.737660834260604e-18,
+        "final_solver_log_continuity": {
+          "sum_local": 2.322513770017214e-10,
+          "global": -6.050050699001016e-18,
+          "cumulative": 5.805605903347432e-16
+        }
+      },
+      "symmetry_definition": "paired cell centres under 180-degree rotation; RMS defect divided by RMS original theta or in-plane velocity magnitude"
+    },
+    "medium": {
+      "original_checks": {
+        "normal_exit": true,
+        "finite_execution": true,
+        "window": true,
+        "samples": true,
+        "QoI": true,
+        "residuals": false,
+        "heat_trend": false
+      },
+      "failed_original_conditions": [
+        "residuals",
+        "heat_trend"
+      ],
+      "existing_residual_label": "PLATEAU_OR_OSCILLATORY",
+      "review_residual_label": "PLATEAU_OR_OSCILLATORY",
+      "mechanism": "UNKNOWN",
+      "window": {
+        "window_start_iteration": 29800,
+        "window_end_iteration": 30000,
+        "samples": 21
+      },
+      "checkpoint_history": [
+        {
+          "iteration": 3000,
+          "initial_residuals": {
+            "Ux": 9.83894705793277e-09,
+            "Uy": 7.389072243255559e-09,
+            "T": 7.366407224554063e-09,
+            "p_rgh": 3.473539900377229e-07
+          },
+          "heat_imbalance": 3.1053469074918675e-08,
+          "heat_slope_per_iteration": -1.132015769974251e-10
+        },
+        {
+          "iteration": 6000,
+          "initial_residuals": {
+            "Ux": 9.545841861677128e-09,
+            "Uy": 6.658064803906303e-09,
+            "T": 6.798056237476029e-09,
+            "p_rgh": 3.355167737303952e-07
+          },
+          "heat_imbalance": 1.3928866150500616e-09,
+          "heat_slope_per_iteration": -2.7302676954054353e-11
+        },
+        {
+          "iteration": 9000,
+          "initial_residuals": {
+            "Ux": 9.978964487015686e-09,
+            "Uy": 7.305503981900392e-09,
+            "T": 6.648079552813361e-09,
+            "p_rgh": 3.244037473030523e-07
+          },
+          "heat_imbalance": 2.0914702830379e-09,
+          "heat_slope_per_iteration": 9.352090591217672e-12
+        },
+        {
+          "iteration": 12000,
+          "initial_residuals": {
+            "Ux": 8.662497663533053e-09,
+            "Uy": 6.119497577079328e-09,
+            "T": 6.588288848540376e-09,
+            "p_rgh": 3.251384878509924e-07
+          },
+          "heat_imbalance": 4.66092687786939e-09,
+          "heat_slope_per_iteration": 6.178241716195324e-12
+        },
+        {
+          "iteration": 15000,
+          "initial_residuals": {
+            "Ux": 8.460206499517003e-09,
+            "Uy": 6.755776466858703e-09,
+            "T": 6.869001677664945e-09,
+            "p_rgh": 3.305970416156531e-07
+          },
+          "heat_imbalance": 3.7532202368351505e-09,
+          "heat_slope_per_iteration": 1.0371810023057152e-11
+        },
+        {
+          "iteration": 18000,
+          "initial_residuals": {
+            "Ux": 9.67775042645542e-09,
+            "Uy": 7.14753293071622e-09,
+            "T": 6.656772848884518e-09,
+            "p_rgh": 3.308225547335461e-07
+          },
+          "heat_imbalance": 8.516770882658827e-10,
+          "heat_slope_per_iteration": 5.2584107750860454e-12
+        },
+        {
+          "iteration": 21000,
+          "initial_residuals": {
+            "Ux": 9.339589391202763e-09,
+            "Uy": 6.814966043964035e-09,
+            "T": 6.917255974683919e-09,
+            "p_rgh": 3.357791957452004e-07
+          },
+          "heat_imbalance": 1.1483905528887115e-09,
+          "heat_slope_per_iteration": -1.890749247170668e-11
+        },
+        {
+          "iteration": 24000,
+          "initial_residuals": {
+            "Ux": 9.512875901242987e-09,
+            "Uy": 6.895415630990775e-09,
+            "T": 6.437252603358627e-09,
+            "p_rgh": 3.17880298564563e-07
+          },
+          "heat_imbalance": 1.892162613731019e-09,
+          "heat_slope_per_iteration": -2.8225790775667696e-11
+        },
+        {
+          "iteration": 27000,
+          "initial_residuals": {
+            "Ux": 9.305160557336679e-09,
+            "Uy": 6.786249226895376e-09,
+            "T": 6.812171204677141e-09,
+            "p_rgh": 3.337910360448691e-07
+          },
+          "heat_imbalance": 1.1482170489155392e-08,
+          "heat_slope_per_iteration": 2.6107659035821913e-11
+        },
+        {
+          "iteration": 30000,
+          "initial_residuals": {
+            "Ux": 1.031029155731923e-08,
+            "Uy": 7.406856952280439e-09,
+            "T": 6.482643723853935e-09,
+            "p_rgh": 3.14037897505866e-07
+          },
+          "heat_imbalance": 4.680608142356356e-09,
+          "heat_slope_per_iteration": 9.786682920749721e-12
+        }
+      ],
+      "late_checkpoint_range": [
+        15000,
+        30000
+      ],
+      "late_checkpoint_residual_statistics": {
+        "Ux": {
+          "min": 8.460206499517003e-09,
+          "max": 1.031029155731923e-08,
+          "first": 8.460206499517003e-09,
+          "last": 1.031029155731923e-08,
+          "last_over_first": 1.2186808392806783
+        },
+        "Uy": {
+          "min": 6.755776466858703e-09,
+          "max": 7.406856952280439e-09,
+          "first": 6.755776466858703e-09,
+          "last": 7.406856952280439e-09,
+          "last_over_first": 1.096373894046923
+        },
+        "T": {
+          "min": 6.437252603358627e-09,
+          "max": 6.917255974683919e-09,
+          "first": 6.869001677664945e-09,
+          "last": 6.482643723853935e-09,
+          "last_over_first": 0.9437534052339395
+        },
+        "p_rgh": {
+          "min": 3.14037897505866e-07,
+          "max": 3.357791957452004e-07,
+          "first": 3.305970416156531e-07,
+          "last": 3.14037897505866e-07,
+          "last_over_first": 0.9499113965785619
+        }
+      },
+      "positive_heat_slope_checkpoints": [
+        9000,
+        12000,
+        15000,
+        18000,
+        27000,
+        30000
+      ],
+      "nonpositive_heat_slope_checkpoints": [
+        3000,
+        6000,
+        21000,
+        24000
+      ],
+      "native_continuity_support": {
+        "definition": "L*abs(sum oriented saved pressure-corrected face phi / cell volume)/max cell speed",
+        "mass_relation": "rho0 is constant, so normalized mass- and volume-divergence metrics are identical; solver phi is volume flux",
+        "boundary_net_volume_flux_m3_s": -1.7163997710475318e-23,
+        "global_signed_div_phi_1_s": 6.984940486286859e-19,
+        "final_solver_log_continuity": {
+          "sum_local": 1.367794250437304e-10,
+          "global": 5.404098573173803e-18,
+          "cumulative": 8.1776254732067e-17
+        }
+      },
+      "symmetry_definition": "paired cell centres under 180-degree rotation; RMS defect divided by RMS original theta or in-plane velocity magnitude"
+    },
+    "fine": {
+      "original_checks": {
+        "normal_exit": true,
+        "finite_execution": true,
+        "window": true,
+        "samples": true,
+        "QoI": true,
+        "residuals": false,
+        "heat_trend": true
+      },
+      "failed_original_conditions": [
+        "residuals"
+      ],
+      "existing_residual_label": "PLATEAU_OR_OSCILLATORY",
+      "review_residual_label": "PLATEAU_OR_OSCILLATORY",
+      "mechanism": "UNKNOWN",
+      "window": {
+        "window_start_iteration": 29800,
+        "window_end_iteration": 30000,
+        "samples": 21
+      },
+      "checkpoint_history": [
+        {
+          "iteration": 3000,
+          "initial_residuals": {
+            "Ux": 0.0001002315693314951,
+            "Uy": 0.000101826379525018,
+            "T": 1.360366545374676e-05,
+            "p_rgh": 4.759696042752291e-05
+          },
+          "heat_imbalance": 4.711167883890723e-06,
+          "heat_slope_per_iteration": -1.121960846818279e-08
+        },
+        {
+          "iteration": 6000,
+          "initial_residuals": {
+            "Ux": 1.485960375260043e-06,
+            "Uy": 1.69001063894118e-06,
+            "T": 5.144385498874238e-07,
+            "p_rgh": 1.548889839113839e-06
+          },
+          "heat_imbalance": 3.5341434079933626e-07,
+          "heat_slope_per_iteration": -2.646025926695882e-10
+        },
+        {
+          "iteration": 9000,
+          "initial_residuals": {
+            "Ux": 2.85103949123531e-08,
+            "Uy": 2.871408157602709e-08,
+            "T": 1.421140080076796e-08,
+            "p_rgh": 3.434691449939618e-07
+          },
+          "heat_imbalance": 3.051359947449228e-08,
+          "heat_slope_per_iteration": 8.555929201860247e-11
+        },
+        {
+          "iteration": 12000,
+          "initial_residuals": {
+            "Ux": 1.497697934409646e-09,
+            "Uy": 1.57305941344353e-09,
+            "T": 1.809715371070746e-09,
+            "p_rgh": 2.87921334455603e-07
+          },
+          "heat_imbalance": 7.278966053664513e-09,
+          "heat_slope_per_iteration": 1.9643229634752093e-11
+        },
+        {
+          "iteration": 15000,
+          "initial_residuals": {
+            "Ux": 6.724190107577617e-10,
+            "Uy": 6.771078422914274e-10,
+            "T": 1.37748619482065e-09,
+            "p_rgh": 1.999009418583589e-07
+          },
+          "heat_imbalance": 2.1959058821833638e-10,
+          "heat_slope_per_iteration": -5.951070866123102e-13
+        },
+        {
+          "iteration": 18000,
+          "initial_residuals": {
+            "Ux": 6.997761990647806e-10,
+            "Uy": 7.216606064010794e-10,
+            "T": 1.734574840986661e-09,
+            "p_rgh": 2.759741432612278e-07
+          },
+          "heat_imbalance": 1.7132170355221186e-09,
+          "heat_slope_per_iteration": -2.7037874065939397e-13
+        },
+        {
+          "iteration": 21000,
+          "initial_residuals": {
+            "Ux": 6.649710453155755e-10,
+            "Uy": 6.708544085530693e-10,
+            "T": 1.704733700141424e-09,
+            "p_rgh": 2.728451258906527e-07
+          },
+          "heat_imbalance": 7.642316831073592e-10,
+          "heat_slope_per_iteration": 1.2845942808781215e-12
+        },
+        {
+          "iteration": 24000,
+          "initial_residuals": {
+            "Ux": 7.027961220232085e-10,
+            "Uy": 7.116398528305722e-10,
+            "T": 1.773955983223842e-09,
+            "p_rgh": 2.703544866957916e-07
+          },
+          "heat_imbalance": 4.851900220537355e-10,
+          "heat_slope_per_iteration": -4.46116510331966e-12
+        },
+        {
+          "iteration": 27000,
+          "initial_residuals": {
+            "Ux": 6.731277360814375e-10,
+            "Uy": 6.800157086239596e-10,
+            "T": 1.641246598279443e-09,
+            "p_rgh": 2.53018878262029e-07
+          },
+          "heat_imbalance": 1.6847036082551243e-09,
+          "heat_slope_per_iteration": 3.4286842155961074e-12
+        },
+        {
+          "iteration": 30000,
+          "initial_residuals": {
+            "Ux": 6.980546255302406e-10,
+            "Uy": 7.079404716172061e-10,
+            "T": 1.715498864477732e-09,
+            "p_rgh": 2.714748998004017e-07
+          },
+          "heat_imbalance": 1.695503568180042e-09,
+          "heat_slope_per_iteration": -1.7493485999699004e-12
+        }
+      ],
+      "late_checkpoint_range": [
+        15000,
+        30000
+      ],
+      "late_checkpoint_residual_statistics": {
+        "Ux": {
+          "min": 6.649710453155755e-10,
+          "max": 7.027961220232085e-10,
+          "first": 6.724190107577617e-10,
+          "last": 6.980546255302406e-10,
+          "last_over_first": 1.0381244646007102
+        },
+        "Uy": {
+          "min": 6.708544085530693e-10,
+          "max": 7.216606064010794e-10,
+          "first": 6.771078422914274e-10,
+          "last": 7.079404716172061e-10,
+          "last_over_first": 1.045535773476551
+        },
+        "T": {
+          "min": 1.37748619482065e-09,
+          "max": 1.773955983223842e-09,
+          "first": 1.37748619482065e-09,
+          "last": 1.715498864477732e-09,
+          "last_over_first": 1.245383707603031
+        },
+        "p_rgh": {
+          "min": 1.999009418583589e-07,
+          "max": 2.759741432612278e-07,
+          "first": 1.999009418583589e-07,
+          "last": 2.714748998004017e-07,
+          "last_over_first": 1.358047127125379
+        }
+      },
+      "positive_heat_slope_checkpoints": [
+        9000,
+        12000,
+        21000,
+        27000
+      ],
+      "nonpositive_heat_slope_checkpoints": [
+        3000,
+        6000,
+        15000,
+        18000,
+        24000,
+        30000
+      ],
+      "native_continuity_support": {
+        "definition": "L*abs(sum oriented saved pressure-corrected face phi / cell volume)/max cell speed",
+        "mass_relation": "rho0 is constant, so normalized mass- and volume-divergence metrics are identical; solver phi is volume flux",
+        "boundary_net_volume_flux_m3_s": 1.6446677023026996e-24,
+        "global_signed_div_phi_1_s": 3.9400863290726605e-18,
+        "final_solver_log_continuity": {
+          "sum_local": 1.231073165548296e-10,
+          "global": -7.479999298146667e-18,
+          "cumulative": -1.193809006762762e-16
+        }
+      },
+      "symmetry_definition": "paired cell centres under 180-degree rotation; RMS defect divided by RMS original theta or in-plane velocity magnitude"
+    }
+  },
+  "residual_mechanism": "UNKNOWN",
+  "support_ratings_scope": "Diagnostic strength, not formal gate decisions; native continuity rating refers to saved phi discrete closure.",
+  "grid_trend": {
+    "classification": "DIAGNOSTIC_ONLY",
+    "Nu_bar_cavity": "monotonically decreasing toward reference",
+    "Umax": "monotonically decreasing toward reference",
+    "Wmax": "non-monotonic values crossing reference; absolute reference error decreases",
+    "formal_GCI": "NOT_EVALUATED",
+    "observed_order": "NOT_EVALUATED",
+    "Richardson": "NOT_EVALUATED",
+    "Gate_F_changed": false
+  },
+  "fine_reference": {
+    "classification": "DIAGNOSTIC_ONLY",
+    "comparisons": {
+      "Nu_bar_cavity": {
+        "calculated": 8.865121227158834,
+        "reference": 8.8,
+        "signed_relative_difference": 0.007400139449867443,
+        "absolute_relative_error": 0.007400139449867443,
+        "error": 0.007400139449867443,
+        "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+      },
+      "Nu_bar_half": {
+        "calculated": 8.863397472312313,
+        "reference": 8.799,
+        "signed_relative_difference": 0.007318726254382691,
+        "absolute_relative_error": 0.007318726254382691,
+        "error": 0.007318726254382691,
+        "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+      },
+      "Nu_bar_0": {
+        "calculated": 8.863397466499123,
+        "reference": 8.817,
+        "signed_relative_difference": 0.005262273619045331,
+        "absolute_relative_error": 0.005262273619045331,
+        "error": 0.005262273619045331,
+        "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+      },
+      "Nu_hot_local_max": {
+        "calculated": 17.82417613900965,
+        "reference": 17.925,
+        "signed_relative_difference": -0.005624762119405821,
+        "absolute_relative_error": 0.005624762119405821,
+        "error": -0.005624762119405821,
+        "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+      },
+      "Nu_hot_local_max_Z": {
+        "calculated": 0.03714507764255327,
+        "reference": 0.0378,
+        "signed_position_difference": -0.0006549223574467272,
+        "absolute_position_error": 0.0006549223574467272,
+        "error": -0.0006549223574467272,
+        "error_legacy_semantics": "signed position difference; do not use for Gate judgement"
+      },
+      "Nu_hot_local_min": {
+        "calculated": 0.9756462890327384,
+        "reference": 0.989,
+        "signed_relative_difference": -0.013502235558404012,
+        "absolute_relative_error": 0.013502235558404012,
+        "error": -0.013502235558404012,
+        "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+      },
+      "Nu_hot_local_min_Z": {
+        "calculated": 1.0,
+        "reference": 1.0,
+        "signed_position_difference": 0.0,
+        "absolute_position_error": 0.0,
+        "error": 0.0,
+        "error_legacy_semantics": "signed position difference; do not use for Gate judgement"
+      },
+      "Umax": {
+        "calculated": 64.89951254779456,
+        "reference": 64.63,
+        "signed_relative_difference": 0.004170084292040265,
+        "absolute_relative_error": 0.004170084292040265,
+        "error": 0.004170084292040265,
+        "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+      },
+      "Umax_Z": {
+        "calculated": 0.85302734375,
+        "reference": 0.85,
+        "signed_position_difference": 0.003027343750000022,
+        "absolute_position_error": 0.003027343750000022,
+        "error": 0.003027343750000022,
+        "error_legacy_semantics": "signed position difference; do not use for Gate judgement"
+      },
+      "Wmax": {
+        "calculated": 219.87347099648537,
+        "reference": 219.36,
+        "signed_relative_difference": 0.0023407685835400835,
+        "absolute_relative_error": 0.0023407685835400835,
+        "error": 0.0023407685835400835,
+        "error_legacy_semantics": "signed relative difference; do not use for Gate judgement"
+      },
+      "Wmax_X": {
+        "calculated": 0.04052734375,
+        "reference": 0.0379,
+        "signed_position_difference": 0.002627343749999997,
+        "absolute_position_error": 0.002627343749999997,
+        "error": 0.002627343749999997,
+        "error_legacy_semantics": "signed position difference; do not use for Gate judgement"
+      },
+      "Nu_bar_1": {
+        "calculated": 8.8633974514712,
+        "reference": null,
+        "error": null,
+        "note": "Table V contains no independent cold-wall mean reference"
+      }
+    },
+    "existing_Gate_E_criteria_source": "Scripts/routeB/publish_matrix_case.py:122-130",
+    "existing_numeric_Gate_E_checks": {
+      "Nu_bar_cavity": true,
+      "Umax": true,
+      "Wmax": true,
+      "Umax_Z": true,
+      "Wmax_X": true
+    },
+    "numeric_Gate_E_conditions_satisfied": true,
+    "formal_Gate_E_changed": false,
+    "local_Nu_min_caveat": "absolute relative error 1.3502%; diagnostic only, not an existing Gate E hard condition"
+  },
+  "questions": {
+    "Q1": "単なる反復不足の証拠は弱い。fine は初期に減衰したが、後半 15000–30000 では圧力残差の持続的減衰が見られない。",
+    "Q2": "停滞・checkpoint 間の変動に整合する証拠は強い。ただし連続周期振動や数学的下限を証明せず、発生機構は UNKNOWN。",
+    "Q3": "監視 QoI の定常性、小さい熱不均衡、native phi の閉鎖、対称性、格子・参照傾向は定常数値解としての利用を支持する。全場定常性・代数誤差の上限・Original Gate D PASS の証明ではない。",
+    "Q4": "残差条件が Ra1e6 の監視 QoI に対して過度に厳しい可能性はある。ただし残差と QoI 誤差の対応は未確立で、安全な緩和幅は決められない。",
+    "Q5": "plateau 経路の検討理由は揃うが、再現可能な正式 acceptance amendment の採用を正当化する証拠は不足。Original 維持を推奨する。"
+  },
+  "options": {
+    "A": {
+      "policy": "KEEP_ORIGINAL",
+      "recommended": true,
+      "scientific_reason": "既存基準を満たさない事実と supporting evidence を別ラベルで保存する。代数誤差保証や許容熱傾きの根拠がない状態で acceptance を変更しない。",
+      "reproducibility": "既存判定をそのまま再計算可能。",
+      "thesis": "computed 12/12、accepted 9/12、Ra1e6 Original FAIL と診断的比較を併記する。",
+      "bias": "結果依存の閾値変更がない。",
+      "limitation": "監視 QoI が十分安定した解も formal acceptance できない可能性。"
+    },
+    "B": {
+      "policy": "RELAX_RESIDUAL",
+      "recommended": false,
+      "example_only_residual_limit": 1e-06,
+      "post_hoc_bias": "現測定値より高い値を後から選ぶ結果合わせ。採用しない。",
+      "counterfactual_only": "全3格子の残差条件は通るが、coarse/medium の heat_trend FAIL は残る。",
+      "reproducibility": "数値ルールは明確でも閾値の選択理由が未検証。",
+      "thesis": "POST_HOC_AMENDMENT として Original 判定と分離した開示が必要。"
+    },
+    "C": {
+      "policy": "PLATEAU_CONDITIONAL",
+      "recommended": false,
+      "advantage": "残差の停滞と QoI の定常性を区別し、単純緩和より複数の根拠を要求できる。",
+      "limitations": "qualitative plateau 判定の観測期間・許容変動、continuity/symmetry の安定性、残差誤差の影響が未確定。final diagnostics のみから時間安定性は証明できない。",
+      "post_hoc_bias": "今回の FAIL を見て設計するため post hoc。Ra1e6 限定の例外は選択 bias を増す。",
+      "reproducibility": "同一データでも裁量が残る。定義と観測期間を凍結する必要。",
+      "thesis": "Original と CONDITIONALLY_STEADY を別結果として、条件と未解決点を開示すれば説明可能。",
+      "illustrative_structure_not_adopted": [
+        "Primary: Original Gate D PASS",
+        "Alternative: Original residual criterion のみ FAIL",
+        "既存の全 non-residual Gate D 条件 PASS",
+        "既存 checkpoint history で PLATEAU_OR_OSCILLATORY と診断、持続的減衰の証拠なし",
+        "continuity/symmetry・grid/reference は supporting evidence として別記"
+      ],
+      "necessary_conditions_only_candidates_at_current_final_window": [
+        "B-Ra1e6-fine"
+      ],
+      "not_a_conditional_acceptance_decision": true,
+      "new_thresholds": "THRESHOLD_UNRESOLVED",
+      "heat_condition": "既存 slope <= 0 を維持する場合 coarse/medium は除外。許容正傾きを導入する根拠は今回確立しない。",
+      "retrospective_scope": "将来採用するなら Ra に依存しない同じ alternative を全12ケースに別ラベルで再評価。既存 Original PASS/FAIL と accepted status を消さない。"
+    }
+  },
+  "recommendation": "A_KEEP_ORIGINAL",
+  "recommendation_reason": "定常性を支持する診断は強いが、残差 floor が無害な証拠や正の熱傾きを許容する定義はない。既存判定を保存して computed 結果を診断的に報告するのが再現性・論文説明・post hoc bias の点で最も妥当。",
+  "additional_solver_decision": "NO_MORE_RA1E6_ITERATIONS",
+  "additional_solver_reason": "15000–30000 の停滞から、同設定で追加反復するだけで Original PASS に向かう証拠は弱い。criterion の妥当性も反復延長だけでは検証できない。PASS を保証する判断ではなく、今回のレビュー・研究報告に追加反復を必須としない判断。",
+  "future_amendment_disclosure_if_adopted": [
+    "POST_HOC_AMENDMENT = YES",
+    "Original Gate D と Original FAIL を保存",
+    "plateau diagnosis を別記",
+    "amendment 理由と凍結条件・適用範囲を別記",
+    "amendment 後判定を別ラベルで報告"
+  ],
+  "user_decision_required_reason": "研究方針として Original を維持するか将来 amendment 設計へ進むかの選択。今回のレビュー完了に承認は不要。",
+  "status": {
+    "RA1E6_THREE_GRID_REVIEW": "COMPLETE",
+    "RESIDUAL_MECHANISM": "PLATEAU_OR_OSCILLATORY_FLOOR_LIKELY",
+    "QOI_STATIONARITY_SUPPORT": "STRONG",
+    "HEAT_BALANCE_SUPPORT": "MODERATE",
+    "CONTINUITY_SUPPORT": "STRONG",
+    "GRID_TREND_SUPPORT": "MODERATE",
+    "REFERENCE_AGREEMENT_SUPPORT": "STRONG",
+    "ORIGINAL_GATE_D_RA1E6": "FAIL",
+    "RECOMMENDED_POLICY": "A_KEEP_ORIGINAL",
+    "POST_HOC_AMENDMENT": "NO",
+    "NEW_NUMERICAL_THRESHOLD_REQUIRED": "NO",
+    "FORMAL_GATE_D_CHANGED": "NO",
+    "ACCEPTED_STATUS_CHANGED": "NO",
+    "SOLVER_EXECUTED": "NO",
+    "ADDITIONAL_RA1E6_SOLVER_RUN_REQUIRED": "NO",
+    "NEXT_ACTION": "KEEP_ORIGINAL_GATE_D",
+    "USER_DECISION_REQUIRED": "YES"
+  },
+  "input_sha256": {
+    "results/routeB/Ra1e6_computed_matrix_report.md": "c7c7974922ef9134dbb0c3ae54902c08724e904f85ad266e57a115bfa502f0b3",
+    "results/routeB/Ra1e6_coarse_residual_plateau_review.md": "627b10bf698174b4daa47bfee99f0e39b3ea4ead504a49630bb7bad1b607e489",
+    "results/routeB/full_matrix_status.json": "ddbbdba38a8f7aa9cf59d0e3208e427113a1cced2f289dd2bec94ac511036845",
+    "Scripts/routeB/publish_matrix_case.py": "9077fbe9ffd936d0f99b57bae1b26eef4d4c959ef380b973d956265f84587f8f",
+    "Scripts/routeB/analyze_case.py": "5b8a503e559f9243109527b5aefe7ed6a86485ac6c21948a35da05871e90414f",
+    "results/routeB/cases/B-Ra1e6-coarse/metrics.json": "c0032cbf2938197e866ac23368ef95475f174e31e780770a3b1f207fbe8e49f2",
+    "results/routeB/cases/B-Ra1e6-coarse/gateG_diagnostics.json": "0bb46f91ddd29d9b24a8f35d849a90d97938063bca19e9e8395889f3616422be",
+    "results/routeB/cases/B-Ra1e6-medium/metrics.json": "c6f560e95a9f10b0597ca85f31a69eb000699192f3cdf7df9ba50484ed67f419",
+    "results/routeB/cases/B-Ra1e6-medium/gateG_diagnostics.json": "9a53fc49a8b69fdb54bb171b444a5ea940980d695703efe05d8bc81d13c9bfac",
+    "results/routeB/cases/B-Ra1e6-fine/metrics.json": "2f548586e65d35c50e7cc7a26a784c0b26e132369b99f0d527edc4fc03df574d",
+    "results/routeB/cases/B-Ra1e6-fine/gateG_diagnostics.json": "43fbd2019c012f7229205f5bde3f86ab8aca41ee57eb3ee567e75c2935d73794"
+  },
+  "input_hashes_unchanged_at_completion": true,
+  "invariants": {
+    "existing_results_or_reports_modified": false,
+    "formal_criteria_modified": false,
+    "solver_cases_or_fields_modified": false,
+    "gate_G_review_reopened": false,
+    "git_add_commit_push_executed": false
+  }
+}
