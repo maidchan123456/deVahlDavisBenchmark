@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "protected_count": 83200,
+  "baseline_sha256": "8ca90ee6418776a1ebe9f1fb2f5b450d9f52f4636b2392b476119afadbe39c2b",
+  "historical_attempt_seal_unchanged": true,
+  "current_v1_4_all_hash_guards": "PASS"
+}

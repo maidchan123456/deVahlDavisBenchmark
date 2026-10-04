@@ -20,9 +20,6 @@ from foam_fields import latest_time, read_scalar, read_vector
 
 ROOT = Path(__file__).resolve().parents[2]
 PAPER_REFERENCE = ROOT / "reference/de_vahl_davis_table_v.csv"
-POSITION_KEYS = frozenset({
-    "Umax_Z", "Wmax_X", "Nu_hot_local_max_Z", "Nu_hot_local_min_Z",
-})
 
 
 def classify_health_lines(lines) -> dict[str, bool]:
@@ -373,7 +370,7 @@ def main() -> None:
         }
         require_paper_comparison_keys(calculated, reference)
         paper_comparison = {
-            key: paper_difference(calculated[key], value, key in POSITION_KEYS)
+            key: paper_difference(calculated[key], value, key.endswith("_Z"))
             for key, value in reference.items()
         }
         paper_comparison["Nu_bar_1"] = {

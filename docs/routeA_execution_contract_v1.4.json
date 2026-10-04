@@ -1,0 +1,2470 @@
+{
+  "schema": "routeA-execution-contract-v1",
+  "version": "1.4",
+  "date": "2026-10-04",
+  "timezone": "Asia/Tokyo",
+  "frozen_before_solver": true,
+  "baseline_HEAD": "d4624b29030521f10b24a59bf6a7af528533bd8c",
+  "observed_HEAD": "922c45ff5b179eead8058045757f07d71cfb17fd",
+  "scope": "formal single-phase steady Route A matrix execution/evaluation only",
+  "authority": {
+    "solver_executed": false,
+    "case_created": false,
+    "mesh_generated": false,
+    "solver_authorized_in_this_task": false,
+    "first_trio_technically_ready": true,
+    "user_decision_required_to_run": true,
+    "formal_criteria_changed": false
+  },
+  "contract_hash": {
+    "algorithm": "SHA-256",
+    "authoritative_file": "docs/routeA_execution_contract_v1.4.json",
+    "expected_digest_location": "docs/routeA_execution_contract_v1.4.md; external to JSON",
+    "start_guard": "Before authorized Ra1e4 execution, verify effective v1.4 digest, all implementation/template/caps/reference and immutable parent/amendment hashes, accepted Ra1e3 historical evidence and position-semantics reanalysis linkage. Any mismatch STOP. v1.3 is immutable history and cannot authorize current execution.",
+    "amendment": "no in-place post-result edits; separate amendment with reason/date/user authorization and new version/hash"
+  },
+  "supersedes": {
+    "documents": [
+      "docs/routeA_pre_full_matrix_review.md",
+      "docs/routeA_execution_plan.json",
+      "docs/routeA_gate_plan.csv"
+    ],
+    "only": "historical D unresolved detail and execution scheduling; this newer contract fixes D and explicitly permits preregistered continuation within cap",
+    "preserves": [
+      "all formal thresholds/status logic",
+      "F/G nonblocking matrix collection with documented limitations",
+      "no automatic tuning/retry/320/post-cap extension",
+      "A-SMOKE remains smoke; existing accepted status unchanged"
+    ],
+    "current_execution_guard": "v1.4 supersedes v1.3 only as current guard; previous contracts/results/statuses retained unchanged."
+  },
+  "frozen_model": {
+    "distribution": "OpenFOAM Foundation",
+    "version": "13",
+    "historical_build": "13-441953dfbb42",
+    "solver": "foamRun + solver fluid",
+    "algorithm": "PIMPLE dictionary, steady SIMPLE mode, nOuterCorrectors=1",
+    "thermo": "heRhoThermo/pureMixture/const/eConst/Boussinesq/specie/sensibleInternalEnergy",
+    "momentum": "laminar Stokes",
+    "thermal": "laminar Fourier",
+    "sources": "none: turbulence/radiation/MRF/fvModels/fvConstraints/particles",
+    "time_scheme": "steadyState",
+    "spatial_schemes": "Gauss linear; Gauss linear orthogonal; linear interpolation; orthogonal snGrad",
+    "linear_tolerance": 1e-10,
+    "relTol": 0,
+    "relaxation": {
+      "p_rgh": 0.3,
+      "U": 0.5,
+      "e": 0.7
+    },
+    "nCorrectors": 2,
+    "nNonOrthogonalCorrectors": 0,
+    "residualControl": false,
+    "rho0": 1,
+    "beta": 0.001,
+    "mu": 1e-05,
+    "Pr": 0.71,
+    "Cv": 1000,
+    "L": 0.1,
+    "W": 0.001,
+    "T0": 300,
+    "Th": 300.5,
+    "Tc": 299.5,
+    "Ra_generation": "g=Ra*nu0*alpha0/(beta*DeltaT*L^3); do not use rounded displayed g"
+  },
+  "template_source": {
+    "root": "cases/routeA/template",
+    "numerical_model_consistency": "PASS against template and both existing minimal cases",
+    "laminar_Stokes": "runtime-selected Stokes from existing implementation audit; dictionary simulationType laminar; do not add a new stress-model entry",
+    "unchanged_template_sha256": {
+      "cases/routeA/template/0/T": "2aa0b82fdbef9ea1d970d3135fdfeebb4253a2d69a3b0c5f69601e802af17a6a",
+      "cases/routeA/template/0/U": "2d73c61cd16ca22f804a03a09a7cb9381881d1e5a2e679cbc8b589511bda42c6",
+      "cases/routeA/template/0/p_rgh": "7a474b49f9e53d8a275c7a8b37e18d9069e44f9fb0640bcbef816b5364efe1b1",
+      "cases/routeA/template/constant/g": "0e4479e7ccc140bb8ffb1481b66d73a0abb584e0b29358e250aca18bcc6b4875",
+      "cases/routeA/template/constant/hRef": "b3cfc4ab0c5b5266283096fd98687c65930df337dedbeb34b67a5288c9946976",
+      "cases/routeA/template/constant/momentumTransport": "3bfe7027873405f63753c0cec85e91c6069dafe94228154189d5b6616233200e",
+      "cases/routeA/template/constant/pRef": "13e8b23d9a316804a134ea8abb6d385f120d64f3dc89ea40b3dcbf09956e8df1",
+      "cases/routeA/template/constant/physicalProperties": "baea2c76140ca1481c1d0dc064e4fba44076f666de79f6162dfd5cfff4b440b4",
+      "cases/routeA/template/constant/thermophysicalTransport": "9c550714c97c8fd84bbd68d80558826ba76a028d521e6cafbe15c1b20cd0d08e",
+      "cases/routeA/template/system/blockMeshDict": "d54bad73935c633caf7108c1ff79c0104875782e6e4f18b2a4613ecbea213570",
+      "cases/routeA/template/system/controlDict": "4b645f36b693062f150656bb4372b64529e0bf0d43b4a0699ed221748b49ff99",
+      "cases/routeA/template/system/fvSchemes": "1a5031f97e7a7f2cb086f9119f6ca19b8e79ce128a454bfdb4af57f08944ed56",
+      "cases/routeA/template/system/fvSolution": "0ca7859d7381120990bea32fabce561b547b7665c0b8badbd87d4aac1733d15b"
+    }
+  },
+  "implementation_sha256": {
+    "Scripts/routeA/analyze_case.py": "e6207e33ae2279e84786115ebfd912b170dcb23f220f1b1155314c723c54cfed",
+    "Scripts/routeA/generate_case.py": "0b4d6fabc7e648e29a8e511cf47088d569c68eda5ce7a46bba6a1fdac72e6075",
+    "Scripts/routeA/run_case.sh": "aa48c216f883675b4eca4987b3bda178a26bcc039660c0ae6be42e49e03877e6",
+    "Scripts/routeA/foam_fields.py": "c16f33a63a42b213c7089011c5e8d74862160ee1588de656ec5e55bcfdd22d7c",
+    "Scripts/routeA/prepare_initialization_check.py": "1c49d819ede6699dcc3336b06448cda277b66acd26bb19c46166538c79d72dc8",
+    "Scripts/routeA/verify_initialization.py": "d9b050b803b17d2ae8533c5132130c525599aff80e2fc297b161dd23f46d6e58",
+    "reference/de_vahl_davis_table_v.csv": "96952fa9ca283b4fa75645b7cbcf3abf400765e56888667d1dfa9ef46a6b5466",
+    "Scripts/routeA/runtime_provenance.py": "5055345c7e64758a4f902c81219e2dda2e5b9cdec22c3f22fc8297bbc1bb9e5a"
+  },
+  "execution": {
+    "initial_iterations": 3000,
+    "continuation_increment": 3000,
+    "iteration_cap_rule": "all 12 primary cases: 30000 absolute iterations from time 0",
+    "iteration_caps": {
+      "A-Ra1e3-coarse": 30000,
+      "A-Ra1e3-medium": 30000,
+      "A-Ra1e3-fine": 30000,
+      "A-Ra1e4-coarse": 30000,
+      "A-Ra1e4-medium": 30000,
+      "A-Ra1e4-fine": 30000,
+      "A-Ra1e5-coarse": 30000,
+      "A-Ra1e5-medium": 30000,
+      "A-Ra1e5-fine": 30000,
+      "A-Ra1e6-coarse": 30000,
+      "A-Ra1e6-medium": 30000,
+      "A-Ra1e6-fine": 30000
+    },
+    "checkpoints": [
+      3000,
+      6000,
+      9000,
+      12000,
+      15000,
+      18000,
+      21000,
+      24000,
+      27000,
+      30000
+    ],
+    "reason": "simple common budget; 3000 matches minimal cases and divides monitor/write cadences; 30000 accommodates B fine 18000-21000 experience but guarantees neither A convergence nor Gate PASS",
+    "maximum_segments_per_case": 10,
+    "automatic_continuation_within_cap": true,
+    "automatic_retry": false,
+    "automatic_tuning": false,
+    "automatic_320": false,
+    "post_cap_extension": false,
+    "continuation_rule": "after each sealed normal finite segment: Gate D PASS -> accepted and finish case; Gate D FAIL and end<cap -> same-case restart +3000; Gate D FAIL at cap -> CONVERGENCE_NOT_REACHED, computed YES accepted NO, continue next case",
+    "continuation_allowed_failures": [
+      "residual threshold miss",
+      "Rwin threshold miss",
+      "positive heat slope in a finite normal result"
+    ],
+    "continuation_not_allowed": [
+      "evaluator error/ambiguity",
+      "incomplete or corrupted evidence",
+      "fatal/nonfinite/divergence",
+      "environment/model/input/mesh mismatch"
+    ],
+    "state": "single primary solution path, no cold restart/re-generation after an unsuccessful checkpoint",
+    "first_segment_controls": {
+      "startFrom": "startTime",
+      "startTime": 0,
+      "endTime": 3000,
+      "deltaT": 1
+    },
+    "continuation_controls": {
+      "startFrom": "latestTime",
+      "endTime": "previous_checkpoint+3000",
+      "deltaT": 1,
+      "startTime": "keep existing 0, ignored by latestTime"
+    },
+    "permitted_between_segment_control_keys": [
+      "startFrom",
+      "endTime"
+    ],
+    "edit_while_solver_running": false,
+    "input_hash_rule": "initial case_manifest immutable; archive a per-segment controlDict hash and exact two-key planned diff; every other input/model/mesh hash must remain unchanged",
+    "restart_state_guard": "latestTime must equal previous sealed checkpoint; previous fields/mesh/hash must match; initialize/OQ-02 at initial state only, not p_rgh=0 at evolved restart",
+    "first_unit": [
+      "A-Ra1e4-coarse",
+      "A-Ra1e4-medium",
+      "A-Ra1e4-fine"
+    ],
+    "case_order": [
+      "A-Ra1e3-coarse",
+      "A-Ra1e3-medium",
+      "A-Ra1e3-fine",
+      "A-Ra1e4-coarse",
+      "A-Ra1e4-medium",
+      "A-Ra1e4-fine",
+      "A-Ra1e5-coarse",
+      "A-Ra1e5-medium",
+      "A-Ra1e5-fine",
+      "A-Ra1e6-coarse",
+      "A-Ra1e6-medium",
+      "A-Ra1e6-fine"
+    ],
+    "concurrent_solver_runs": 1,
+    "parallel_allowed": false,
+    "stop_early_inside_segment": false,
+    "residualControl": false
+  },
+  "monitor": {
+    "window_iterations": 200,
+    "window_end": "last completed sealed checkpoint N",
+    "window_start": "N-199",
+    "inclusive": true,
+    "sampling_intervals": {
+      "Nu_bar_0": 1,
+      "heat_imbalance": 1,
+      "residuals": 1,
+      "Umax": 10,
+      "Wmax": 10
+    },
+    "min_samples": {
+      "Nu_bar_0": 200,
+      "heat_imbalance": 200,
+      "residuals": 200,
+      "Umax": 20,
+      "Wmax": 20
+    },
+    "expected_wall_iterations": "all integers N-199,...,N",
+    "expected_velocity_iterations": "multiples of 10 inside inclusive window: N-190,...,N",
+    "field_write_interval": 100,
+    "velocity_monitor_points": 257,
+    "velocity_final_report_points": 4097,
+    "velocity_monitor_interpolation": "existing sets cellPointFace on exact X=0.5 / Z=0.5 lines; max U_x on vertical.xy, max U_y on horizontal.xy; convert by L/alpha0",
+    "velocity_final_interpolation": "existing analysis: two bracketing cell rows/columns to exact centreline, then 4097 points including no-slip endpoints",
+    "new_sampling_cadence": false,
+    "restart_window": "never crosses segments; minimum 200 fresh iterations; scheduled increments are 3000, so final window is entirely in latest segment; do not interpolate missing samples or merge duplicate restart iterations",
+    "source_selection": {
+      "wall": "CASE/postProcessing/wallHeatFluxMonitor/<segment_start>/wallHeatFlux.dat",
+      "velocity": "CASE/postProcessing/centrelineMonitor/<absolute_iteration>/{vertical,horizontal}.xy",
+      "residuals": "immutable log of the selected segment",
+      "duplicate_samples": "STOP, no silent overwrite/averaging"
+    }
+  },
+  "Gate_D": {
+    "status": "READY",
+    "boolean_logic": "NORMAL_EXIT AND NO_FATAL_OR_NAN AND INPUT_PROVENANCE_PASS AND QOI_RWIN_PASS AND RESIDUAL_PASS AND HEAT_TREND_PASS",
+    "NORMAL_EXIT": "actual process exit_code=0 AND standalone ^End line for the selected segment",
+    "NO_FATAL_OR_NAN": "no fatal/FPE/nonfinite/divergence evidence during entire selected segment; final T,U,e(if stored),rho,p,p_rgh,phi and monitor values finite; missing mandatory fields or safety checks -> evaluator/provenance failure, STOP",
+    "INPUT_PROVENANCE_PASS": "actual env/model/BC/properties/gravity/grid/input hashes match frozen generated/per-segment manifests; Gate A mesh/OQ-02 evidence intact",
+    "QOI_RWIN_PASS": {
+      "QoIs": [
+        "Nu_bar_0",
+        "Umax",
+        "Wmax"
+      ],
+      "formula": "(max-min)/max(abs(mean),1)",
+      "limit": 0.0005,
+      "all_individually": true
+    },
+    "RESIDUAL_PASS": {
+      "fields": [
+        "Ux",
+        "Uy",
+        "e",
+        "p_rgh"
+      ],
+      "kind": "normalized Initial residual",
+      "limit": 1e-07,
+      "active_velocity": "Ux,Uy (physical vertical is OpenFOAM y, paper Z); Uz inactive in 2D empty mesh",
+      "iteration": "final checkpoint N only",
+      "within_iteration": "maximum Initial residual among every solve/corrector for each field; NOT the final linear-solver residual",
+      "parser": "parse_residual_lines; parse_residuals streams segment file through the same parser",
+      "final_linear_residuals": "record separately for diagnostics, never substitute for Initial"
+    },
+    "density": {
+      "new_residual_threshold": false,
+      "save": [
+        "finite/positive rho",
+        "EOS rho0*(1-beta*(T-T0)) from stored T",
+        "max absolute/relative solver rho minus EOS rho",
+        "T/rho range",
+        "native corrected mass flux continuity diagnostics"
+      ],
+      "thermo_rho_rule": "EOS-derived thermo density is the available comparison proxy; do not claim an independent thermo-rho registry dump was stored; unavailable independent evidence explicitly NOT_AVAILABLE",
+      "any_new_density_tolerance": false
+    },
+    "Nu_monitor_identity": {
+      "status": "CONFIRMED",
+      "formal_definition": "Nu_bar_0 = Q_hot/(k*DeltaT*W) = L/(DeltaT*A_hot) integral_hot dT/dn dA on uniform orthogonal wall",
+      "Q_hot_sign": "positive into fluid, official wallHeatFlux=-q",
+      "area": "A_hot=L*W; Q is area integral, not area-mean q or volume mean",
+      "wall_convection": "no-slip wall, normal convective flux zero; paper Nu_bar_0 at X=0 is conductive only",
+      "legacy_pair_average": "(Q_hot-Q_cold)/(2*k*DeltaT*W) retained only as legacy diagnostic, never formal Hard monitor",
+      "path1": "temperature/orthogonal wall-gradient snapshot remains independent primary final-value path; gate monitor uses calibrated official path2",
+      "normalization_precision": "same generated property values and k*DeltaT*W as canonical implementation, supplied via str(float) to rational monitor arithmetic"
+    },
+    "HEAT_TREND_PASS": {
+      "input": "original 17-significant-digit Q_hot/Q_cold decimal tokens from physical wallHeatFlux",
+      "formula": "epsilon_Q=2*abs(Q_hot+Q_cold)/(Q_hot-Q_cold) = abs(Nu_hot-Nu_cold)/((Nu_hot+Nu_cold)/2), with Q_hot>0,Q_cold<0",
+      "independent_variable": "absolute integer iteration",
+      "samples": 200,
+      "sampling_interval": 1,
+      "window": "same inclusive [N-199,N] window as Rwin",
+      "method": "ordinary least squares, intercept included; slope=sum((i-mean(i))*(epsilon-mean(epsilon)))/sum((i-mean(i))^2)",
+      "arithmetic": "Python Fraction from original decimal Q tokens; exact rational normalization, centering, accumulation and sign",
+      "pass_rule": "slope <= 0",
+      "fail_rule": "slope > 0",
+      "positive_tolerance": null,
+      "source_precision": "scientific tokens with >=16 digits after decimal; existing .16e has 17 significant digits; controlDict writePrecision 16 unchanged",
+      "display": "float slope is display only; heat_slope_sign_exact governs PASS/FAIL, including underflow-to-zero display",
+      "ambiguity": "missing/duplicate samples, nonfinite/low-precision Q, bad sign or parser error -> HEAT_TREND_EVALUATOR_UNRESOLVED / EVALUATOR_FAILURE and STOP; never use endpoints only or a positive epsilon"
+    }
+  },
+  "statuses": {
+    "COMPUTED": "normal finite solver exit and field/metrics/provenance artifacts saved; result need not satisfy Gate D numerical thresholds",
+    "ACCEPTED": "COMPUTED AND formal Gate D PASS; applies per row, not global benchmark PASS",
+    "at_cap_failure": "CONVERGENCE_NOT_REACHED, computed YES accepted NO",
+    "evaluator_failure": "UNRESOLVED/EVALUATOR_FAILURE, batch STOP; not an ordinary Gate D FAIL",
+    "Gate_E_F_G_evaluation": "unaccepted data remain diagnostic; do not promote downstream formal accepted-only assessments"
+  },
+  "batch_stop_policy": {
+    "STOP": [
+      "environment/build/version mismatch",
+      "wrong solver/physics",
+      "input/model/hash mismatch beyond registered between-segment control keys",
+      "Ra/Pr mismatch",
+      "mesh/OQ-02 error",
+      "NaN/Inf/FPE/fatal/divergence",
+      "corrupted previous evidence",
+      "evaluator failure/ambiguity/missing cadence/low heat precision"
+    ],
+    "CONTINUE": [
+      "finite normal formal Gate D FAIL: preregistered continuation until cap, then next case",
+      "steady Gate E mismatch",
+      "Gate F non-monotonic/FAIL",
+      "Gate G formal FAIL",
+      "local Nu diagnostic mismatch"
+    ],
+    "divergence": "divergence notification or loss of finite/admissible state; stationary residual floor or positive finite heat slope alone is a threshold miss, not automatically divergence",
+    "failure_tuning_rule": "save result and category, then separate user-decision diagnostic task; no automatic changes"
+  },
+  "Gate_F": {
+    "blocking": false,
+    "policy": "NON_BLOCKING_WITH_DOCUMENTED_LIMITATION",
+    "formal_hard_criteria_preserved": true,
+    "nonmonotonic": "retain FAIL/needs_320 YES and null p/GCI; if upstream unaccepted, retain NOT_EVALUATED and diagnostic-only trend",
+    "automatic_320": false
+  },
+  "Gate_G": {
+    "blocking": false,
+    "policy": "NON_BLOCKING_WITH_DOCUMENTED_LIMITATION",
+    "formal_hard_criteria_preserved": true,
+    "save": [
+      "formal component statuses",
+      "native mass phi diagnostic",
+      "reconstructed U divergence",
+      "physical wall heat balance",
+      "paper section Nu",
+      "temperature/velocity symmetry",
+      "bounded cause category"
+    ],
+    "forbidden": [
+      "threshold study",
+      "microcase",
+      "tolerance study",
+      "methodology redesign",
+      "Route B G investigation reopening"
+    ]
+  },
+  "continuity": {
+    "native_mass_flux": {
+      "field": "phi",
+      "unit": "kg/s",
+      "name": "A_native_mass_phi",
+      "divergence_name": "A_native_mass_phi_mean_abs_div_kg_m3_s",
+      "operator": "corrected phi face balance / cell volume, same fvc::div(phi) diagnostic as minimal implementation",
+      "normalization": "epsilon_mass_phi_A=L*volume_mean(abs(div(phi)))/(rho0*max|u|)",
+      "legacy_alias": "epsilon_m; retain with explicit operator metadata"
+    },
+    "reconstructed_volume": {
+      "name": "A_reconstructed_U_divergence",
+      "field": "fvc::div(U)",
+      "unit": "1/s",
+      "operator": "Gauss linear from cell-centred U, physical no-slip walls, empty faces contribute zero, volume weighting V_i/sum(V)",
+      "normalization": "epsilon_volume_reconstructed_U_A=L*volume_mean(abs(div(U)))/max|u|",
+      "legacy_alias": "epsilon_v; retain with explicit operator metadata"
+    },
+    "mass_versus_volume": "separate operators and units; never copy B epsilon_phi name; no new phi/rhof operator study",
+    "zero_velocity": "Ra0 uses Gate C absolute velocity criterion; relative divergence indicators null",
+    "symmetry": "existing design §13.2: 180-degree matched uniform cells, theta(X,Z)+theta(1-X,1-Z)-1; U(X,Z)+U(1-X,1-Z). Volume L2 divided by max(volume RMS of theta or dimensionless velocity,1e-12); existing 0.2% criterion unchanged"
+  },
+  "energy_diagnostics": {
+    "save": [
+      "Q_hot [W],Q_cold [W],Nu_hot,Nu_cold,epsilon_Q history",
+      "e Initial/Final residual history",
+      "final T/rho/e(if stored) ranges",
+      "rho-EOS discrepancy and availability metadata",
+      "native mass continuity"
+    ],
+    "new_hard_threshold": false,
+    "full_energy_budget_status": "NOT_EVALUATED by wall imbalance alone; do not infer total transient energy conservation",
+    "Gate_J_handoff": "reuse raw fluxes, fields and provenance; J must include energy storage/work, EOS resynchronization and closed-cavity total mass; no energy-term study added here"
+  },
+  "AB_comparison": {
+    "scalar_definition": "D_AB=abs(Q_A-Q_B)/abs(Q_B) for nonzero B; signed differences separately",
+    "position_definition": "absolute coordinate difference in [0,1]",
+    "zero_baseline_policy": "relative difference null with ABSOLUTE_ONLY status; freeze existing scale if relative normalization is needed before execution",
+    "hard_AB_threshold": null,
+    "join_keys": [
+      "Ra_actual",
+      "grid",
+      "QoI_definition",
+      "sampling_method",
+      "postprocessing_version"
+    ],
+    "QoIs": [
+      "Nu_bar_cavity",
+      "Nu_bar_0",
+      "Nu_bar_half",
+      "Nu_bar_1",
+      "Umax",
+      "Umax_Z",
+      "Wmax",
+      "Wmax_X",
+      "Nu_hot_local_max",
+      "Nu_hot_local_max_Z",
+      "Nu_hot_local_min",
+      "Nu_hot_local_min_Z",
+      "heat_conservation_physical",
+      "paper_section_conservation",
+      "native_continuity",
+      "reconstructed_U_divergence",
+      "temperature_symmetry",
+      "velocity_symmetry"
+    ],
+    "primary_Nu": "cell-volume U*theta quadrature plus imposed-wall conductive integral 1",
+    "secondary_Nu": "all-face-plane trapezoid; method difference diagnostic",
+    "velocity_sampling": "exact centrelines, linear interpolation, 4097 points including no-slip endpoints",
+    "monitor_velocity_sampling": "legacy 257 points / every 10 iterations; distinguish from final 4097-point QoIs",
+    "local_Nu": "raw faces and fixed five-point quartic/endpoint extrapolation separately",
+    "operator_difference": "A section uses reconstructed U_f; B section uses native corrected volume phi; identical continuum QoI but distinct discrete operators",
+    "native_flux_units": {
+      "A": "mass kg/s",
+      "B": "volume m3/s"
+    },
+    "unaligned_operator_comparison_allowed": false,
+    "canonical_B_rows": "only accepted YES for accepted comparisons; Ra1e6 labelled diagnostic B baseline",
+    "missing_B_master_columns": "Nu_half/Nu_1/positions/local Nu/section histories not fully in master CSV; obtain existing canonical outputs read-only in future, never invent/recompute B formal statuses",
+    "postprocessing_version": "dvd-nusselt-post-v2.1 for unchanged final QoI definitions; gate_D_evaluation_version stored separately",
+    "operator_rule": "LIKE_FOR_LIKE=NO for different operator/unit/sampling definitions; direct Hard comparison prohibited; retain native diagnostic interpretations and no AB Hard threshold",
+    "native_mass_A_vs_native_volume_B": "LIKE_FOR_LIKE=NO",
+    "section_A_reconstructed_U_vs_B_native_phi": "LIKE_FOR_LIKE=NO",
+    "missing_or_near_zero_B": "relative difference null/ABSOLUTE_ONLY; no new near-zero threshold; if denominator distinguishability is unresolved set comparison NOT_EVALUATED rather than invent cutoff",
+    "positions": "absolute coordinate differences; signed differences separate",
+    "scalar_gap": "abs(A-B)/abs(B) for matched nonzero comparable B",
+    "canonical_B": "accepted YES rows for accepted comparison; Ra1e6 unaccepted explicitly diagnostic only; read existing missing columns only, never rewrite B"
+  },
+  "case_generation": {
+    "execute_now": false,
+    "generator": "Scripts/routeA/generate_case.py unchanged",
+    "invocation": "--case-id A-SMOKE --name <formal case_id> --nx N --ny N --ra Ra --end-time 3000; allocate a NEW distinct case from canonical generator, never reuse A-SMOKE fields",
+    "metadata_mapping": "generator CLI accepts only minimal role IDs. Before any mesh/solver, preserve raw generator manifest as generated_manifest_original.json, relabel NEW case_manifest.case_id to the planned formal ID, record generator_role=A-SMOKE, contract version/hash, and source generator hash. Metadata only: no generated OpenFOAM input changed. Initial input_sha256 dictionary remains authoritative.",
+    "formal_case_directory": "cases/routeA/<formal case_id>",
+    "reject": "Reject unexpected existing Ra1e4 formal destinations; do not overwrite/delete/regenerate historical cases. No Ra1e4 registered reuse exception.",
+    "initial_state": "U=0,T=T0; cell p=rho0*gh+pRef; physical walls p=rho(T_patch)*gh+pRef; constructor p_rgh=0 checked separately",
+    "initialization": "existing prepare_initialization_check.py isolated clone plus existing verify_initialization.py, all cells and 4 physical walls; after generated mesh and BEFORE first primary solve; existing 1-iteration initialization method, no new microcase",
+    "initial_auxiliary_runs": "one existing constructor-check clone per new case, only in future authorized execution task; not a matrix accepted row",
+    "run_case_sh": "do not use as a blind batch/continuation runner: it regenerates mesh and does not interpose explicit initialization verification; future task executes its canonical steps separately with hash/verify guards",
+    "analysis_command": "Use current canonical analyzer with exact segment-start and sealed solver-log; v1.4 position semantics required.",
+    "continuation_no_generation": "no generator/blockMesh/initialization clone on continuation; restart sealed latestTime only",
+    "registered_coarse_reuse": {
+      "allowed_for_Ra1e4": false,
+      "Ra1e3_policy_historical": true
+    }
+  },
+  "artifacts": {
+    "root": "results/routeA/cases/<formal case_id>/",
+    "immutable_segment_directory": "segments/end_<N>/; seal after EVERY segment, before continuation or next case",
+    "per_segment": [
+      "initial/per-segment manifest and contract hash",
+      "actual process exit_code and all-run health scan flags",
+      "input/mesh/log/field hashes and OQ-02 link",
+      "metrics.json incl Gate_D_monitor_evaluation",
+      "convergence.csv with hot-only Nu_bar_0 every iteration and path1 snapshot separately",
+      "raw Q tokens / wall monitor and selected 20 centreline files",
+      "residual parser output Initial/Final separate",
+      "gate_D_status.json with every boolean/failure reason",
+      "computed/accepted/status",
+      "like-for-like comparison or explicitly NOT_EVALUATED missing-baseline status"
+    ],
+    "implementation": "existing analyzer writes current working result files; immediately snapshot them plus raw source/provenance into immutable segment directory before restarting. Complete/seal prior segment before overwriting working outputs.",
+    "current_case_status": "updated atomically only after a segment directory and checksums are sealed; latest accepted checkpoint or cap failure; aggregate case status after each case, never wait for entire trio",
+    "partial": "STOPPED/PARTIAL retained; completed/sealed segments never deleted, averaged or reclassified; raw generator and historical minimal evidence protected",
+    "recorded_phi_unit": "mass kg/s; all quantity/operator/sampling/version metadata included",
+    "no_placeholder_values": "missing metric/comparison is null with reason, never zero/PASS"
+  },
+  "protected_evidence_before_sha256": {
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra0_medium/0/T": "2aa0b82fdbef9ea1d970d3135fdfeebb4253a2d69a3b0c5f69601e802af17a6a",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra0_medium/0/U": "2d73c61cd16ca22f804a03a09a7cb9381881d1e5a2e679cbc8b589511bda42c6",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra0_medium/0/p": "9eebe9b84e3481683de6aeb5a31daae9c5f3643ae2af59413d20fd61322a6d5c",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra0_medium/0/p_rgh": "7a474b49f9e53d8a275c7a8b37e18d9069e44f9fb0640bcbef816b5364efe1b1",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra0_medium/case_manifest.json": "02544916a3dafc9185de653f44e9e037d9df6afc26de3a67e0afacbe19ec4143",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra0_medium/constant/g": "f7f3f4657f00db57f6f94a876d2516232f22bd722af3443768d826991154e518",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra0_medium/constant/hRef": "b3cfc4ab0c5b5266283096fd98687c65930df337dedbeb34b67a5288c9946976",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra0_medium/constant/momentumTransport": "3bfe7027873405f63753c0cec85e91c6069dafe94228154189d5b6616233200e",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra0_medium/constant/pRef": "13e8b23d9a316804a134ea8abb6d385f120d64f3dc89ea40b3dcbf09956e8df1",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra0_medium/constant/physicalProperties": "baea2c76140ca1481c1d0dc064e4fba44076f666de79f6162dfd5cfff4b440b4",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra0_medium/constant/thermophysicalTransport": "9c550714c97c8fd84bbd68d80558826ba76a028d521e6cafbe15c1b20cd0d08e",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra0_medium/postProcessing/wallHeatFluxMonitor/0/wallHeatFlux.dat": "7fef95e8b0da7f481befc2c3b08f605bd4a946fd51d3337e96f43185d8abc5c1",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra0_medium/system/blockMeshDict": "34a4c6b65b61e9d6291c14e768092a8434024bb742532654eab3bf37772f7233",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra0_medium/system/controlDict": "c52927780325527833971f84ab73559afc5584391039c1911f2ba90adbce0c75",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra0_medium/system/fvSchemes": "36b7cfc0936d4bcc43cf3aa360058eecf4f4a336c7bb97e2a34e2ad0f42301a4",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra0_medium/system/fvSolution": "5d1a4c4895b75a7c74c270323d65fbdf5e8be8bc61f62602ffdba4a03854d8e2",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra1e4_coarse/0/T": "2aa0b82fdbef9ea1d970d3135fdfeebb4253a2d69a3b0c5f69601e802af17a6a",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra1e4_coarse/0/U": "2d73c61cd16ca22f804a03a09a7cb9381881d1e5a2e679cbc8b589511bda42c6",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra1e4_coarse/0/p": "6861b329f8faa7f7592b9ffe56a405d181faf4617cd65f93d56d9d054eeaf2df",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra1e4_coarse/0/p_rgh": "7a474b49f9e53d8a275c7a8b37e18d9069e44f9fb0640bcbef816b5364efe1b1",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra1e4_coarse/case_manifest.json": "24078ac9adffec0e7b265c8506e655855b3dcfe5f3fc642af93c681c8e71c7db",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra1e4_coarse/constant/g": "eae51b92c06223e3e9f6be7df3a57da2b12556fae0047d5ecdf0ecf297c64604",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra1e4_coarse/constant/hRef": "b3cfc4ab0c5b5266283096fd98687c65930df337dedbeb34b67a5288c9946976",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra1e4_coarse/constant/momentumTransport": "3bfe7027873405f63753c0cec85e91c6069dafe94228154189d5b6616233200e",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra1e4_coarse/constant/pRef": "13e8b23d9a316804a134ea8abb6d385f120d64f3dc89ea40b3dcbf09956e8df1",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra1e4_coarse/constant/physicalProperties": "baea2c76140ca1481c1d0dc064e4fba44076f666de79f6162dfd5cfff4b440b4",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra1e4_coarse/constant/thermophysicalTransport": "9c550714c97c8fd84bbd68d80558826ba76a028d521e6cafbe15c1b20cd0d08e",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra1e4_coarse/postProcessing/wallHeatFluxMonitor/0/wallHeatFlux.dat": "dfe4a43d7ec3fd766a91681e51a8b43fde784d5f719bd34f635a93a87976efb8",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra1e4_coarse/system/blockMeshDict": "1c0e4a3490ae9174109bf13adc340cdd49546ffe30661e99a85d0e1b9f238a24",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra1e4_coarse/system/controlDict": "c52927780325527833971f84ab73559afc5584391039c1911f2ba90adbce0c75",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra1e4_coarse/system/fvSchemes": "1a5031f97e7a7f2cb086f9119f6ca19b8e79ce128a454bfdb4af57f08944ed56",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra1e4_coarse/system/fvSolution": "2b577ea3dd1ceefd0dfee70af1996559b02a3a9ba46d83ff765bc8d49acc2846",
+    "Scripts/routeA/finalize_results.py": "12cff103b631424adb7edb8c9b9ddb77e6d37be45cbff3e5f2246b87f15f8c93",
+    "Scripts/routeA/foam_fields.py": "c16f33a63a42b213c7089011c5e8d74862160ee1588de656ec5e55bcfdd22d7c",
+    "Scripts/routeA/generate_case.py": "0b4d6fabc7e648e29a8e511cf47088d569c68eda5ce7a46bba6a1fdac72e6075",
+    "Scripts/routeA/prepare_initialization_check.py": "1c49d819ede6699dcc3336b06448cda277b66acd26bb19c46166538c79d72dc8",
+    "Scripts/routeA/run_case.sh": "aa48c216f883675b4eca4987b3bda178a26bcc039660c0ae6be42e49e03877e6",
+    "Scripts/routeA/verify_initialization.py": "d9b050b803b17d2ae8533c5132130c525599aff80e2fc297b161dd23f46d6e58",
+    "cases/routeA/Ra0_medium/3000/T": "2e741a41e02ff1619648e5656bcfb56b78942cc2c596e21698269390a873c3c0",
+    "cases/routeA/Ra0_medium/3000/U": "ef5a5cce30dba8a2c4a0e5b79c4a21e2d7fbb1f44d6030c6f3a7e7349da9f5f7",
+    "cases/routeA/Ra0_medium/3000/p": "bb2b273f73882d8449f86261b94b53ddee3a6b79758cc185cf1a8977c1ea2e4b",
+    "cases/routeA/Ra0_medium/3000/p_rgh": "ea49c1dfff26a97ab0fc3645b0df87b4b050201863aeb9e588f6a2fc7e1f47cf",
+    "cases/routeA/Ra0_medium/3000/phi": "0e49751ae51a645772446377c3ff7b94a487a2e03b616313344e83b3515a014d",
+    "cases/routeA/Ra0_medium/3000/rho": "a3dbabe5cdede18107a9616d82cba897e78c6cbcbac82932a0b7bcec927999dc",
+    "cases/routeA/Ra1e4_coarse/3000/T": "9f2178b93c87750cad65cafa3a8a30308a8c3ec1d0b93523a020e28329f9b1e6",
+    "cases/routeA/Ra1e4_coarse/3000/U": "9271f87baf8dcdc563a66174a56a34efc7f52b96e50c03188ea01b5b77c074ba",
+    "cases/routeA/Ra1e4_coarse/3000/p": "fe148485b16677cc4e669fcd7fbf8c83d86ae2ec74315123dae25d448181653d",
+    "cases/routeA/Ra1e4_coarse/3000/p_rgh": "8fa0a28e7b6bca4e8c36c510d7260ddfbcf0180e5ca4a0423263b1e619d2ea10",
+    "cases/routeA/Ra1e4_coarse/3000/phi": "274d157440fcda8683e6b343aaf24273ca02bc3cb151ac18a582a57d2c0baea2",
+    "cases/routeA/Ra1e4_coarse/3000/rho": "5e0138ed427750abf759075d4614497b7a4853fa8b733674249c398d47e0147e",
+    "cases/routeA/template/0/T": "2aa0b82fdbef9ea1d970d3135fdfeebb4253a2d69a3b0c5f69601e802af17a6a",
+    "cases/routeA/template/0/U": "2d73c61cd16ca22f804a03a09a7cb9381881d1e5a2e679cbc8b589511bda42c6",
+    "cases/routeA/template/0/p_rgh": "7a474b49f9e53d8a275c7a8b37e18d9069e44f9fb0640bcbef816b5364efe1b1",
+    "cases/routeA/template/constant/g": "0e4479e7ccc140bb8ffb1481b66d73a0abb584e0b29358e250aca18bcc6b4875",
+    "cases/routeA/template/constant/hRef": "b3cfc4ab0c5b5266283096fd98687c65930df337dedbeb34b67a5288c9946976",
+    "cases/routeA/template/constant/momentumTransport": "3bfe7027873405f63753c0cec85e91c6069dafe94228154189d5b6616233200e",
+    "cases/routeA/template/constant/pRef": "13e8b23d9a316804a134ea8abb6d385f120d64f3dc89ea40b3dcbf09956e8df1",
+    "cases/routeA/template/constant/physicalProperties": "baea2c76140ca1481c1d0dc064e4fba44076f666de79f6162dfd5cfff4b440b4",
+    "cases/routeA/template/constant/thermophysicalTransport": "9c550714c97c8fd84bbd68d80558826ba76a028d521e6cafbe15c1b20cd0d08e",
+    "cases/routeA/template/system/blockMeshDict": "d54bad73935c633caf7108c1ff79c0104875782e6e4f18b2a4613ecbea213570",
+    "cases/routeA/template/system/controlDict": "4b645f36b693062f150656bb4372b64529e0bf0d43b4a0699ed221748b49ff99",
+    "cases/routeA/template/system/fvSchemes": "1a5031f97e7a7f2cb086f9119f6ca19b8e79ce128a454bfdb4af57f08944ed56",
+    "cases/routeA/template/system/fvSolution": "0ca7859d7381120990bea32fabce561b547b7665c0b8badbd87d4aac1733d15b",
+    "docs/acceptance_criteria.md": "2fe82dba1644621a7e57ddc11c4ea5ba5007db50122fbd0c0179f5af5ac38db4",
+    "docs/benchmark_spec.md": "f4436fd4fa8184052b05555b70d9382f7c82b9647aa46e13b126d6796e6d9496",
+    "docs/openfoam_design.md": "eef1e94311e5221e3402d4ba9d1969706e0da04e304cf0b89ce5d3dfd3070b10",
+    "docs/routeA_execution_plan.json": "20958f2cd5461bad0781a2d4ada1fd9df39e66e2ef955694862a1b82dd121b86",
+    "docs/routeA_gate_plan.csv": "63c6d03b710ac3028ade9d9f9ff9cbe919dce44459823abb24c6e8a28d5aafcf",
+    "docs/routeA_implementation.md": "068d17f6b0e1aee42dc72fed432256948fe2dff19aff17e7a413a4b74bb6f44a",
+    "docs/routeA_pre_full_matrix_review.md": "0ceac629a9fd98d85b0d882eb523410237be84ae005acfb34033a8c71ade557e",
+    "results/routeA/cases/A-COND/convergence.csv": "4a78cacb8a15cc0b033374b5344993a343677d55f6dd67ebe1ee64e5a8fb7272",
+    "results/routeA/cases/A-COND/metrics.json": "2c5ef51ca78cf95adfad95cb1009133bff160ed2a6d526505e637cca68fd5d31",
+    "results/routeA/cases/A-SMOKE/convergence.csv": "e6e76ffce587d4eda5270388010b35de6d56bcbbb7906a2956b108459904eafa",
+    "results/routeA/cases/A-SMOKE/metrics.json": "ddc7f4a666194fb4bc06d4735f0ba89a02e27ce751cdeea370bb5e34e43541dd",
+    "results/routeA/minimal_test_summary.csv": "d38663b2e9d28c42367465cae8edb26d1587c2888b95930d7a7ad1cf414aa636",
+    "results/routeA/run_manifest.json": "a0819e0e8c0fa5bb8bc3d7719249637e15be8ffe5cd8ba3a81d5884242a50ea7",
+    "results/routeB/routeB_final_verification_review.md": "db5c3005e4d3efd67065eac0008d1cc69cd46f80ad08297a15c4ba3dddffec8e",
+    "results/routeB/routeB_master_matrix.csv": "87c92615cae0bf4e65e8ebcbe0544513ce514c7aed79c417f8fbd28e70c16517"
+  },
+  "iteration_caps_csv": {
+    "path": "docs/routeA_iteration_caps.csv",
+    "sha256": "fc6b85ea6c0216650222597ec1cee267aac911736459d05905d8fb9440e64484"
+  },
+  "next_single_task": {
+    "id": "RERUN_ROUTE_A_RA1E3_TRIO_ATTEMPT_004",
+    "case_ids": [
+      "A-Ra1e3-coarse",
+      "A-Ra1e3-medium",
+      "A-Ra1e3-fine"
+    ],
+    "sequential": true,
+    "requires_user_run_instruction": true,
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "medium",
+    "execution_attempt": "attempt_004"
+  },
+  "final_status": {
+    "ROUTE_A_EXECUTION_CONTRACT": "FROZEN",
+    "ROUTE_A_EXECUTION_CONTRACT_VERSION": "1.3",
+    "ROUTE_A_GATE_D_READY": "YES",
+    "GATE_D_QOI_MONITOR_IDENTITY": "CONFIRMED",
+    "GATE_D_RESIDUAL_FIELDS": "Ux,Uy,e,p_rgh",
+    "GATE_D_RESIDUAL_LIMIT": "1e-7",
+    "GATE_D_RWIN_QOIS": "Nu_bar_0,Umax,Wmax",
+    "GATE_D_RWIN_LIMIT": "5e-4",
+    "GATE_D_WINDOW_ITERATIONS": 200,
+    "GATE_D_SAMPLING_INTERVAL": 1,
+    "GATE_D_HEAT_TREND_EVALUATOR": "FROZEN",
+    "GATE_D_HEAT_TREND_RULE": "SLOPE_LE_ZERO",
+    "INITIAL_ITERATIONS": 3000,
+    "CONTINUATION_INCREMENT": 3000,
+    "ITERATION_CAP_POLICY": "FROZEN",
+    "AUTOMATIC_CONTINUATION_WITHIN_CAP": "YES",
+    "POST_CAP_EXTENSION_ALLOWED": "NO",
+    "AUTOMATIC_RETRY": "NO",
+    "AUTOMATIC_SOLVER_TUNING": "NO",
+    "AUTOMATIC_320": "NO",
+    "GATE_F_BLOCKS_MATRIX": "NO",
+    "GATE_G_BLOCKS_MATRIX": "NO",
+    "COMPUTED_ACCEPTED_SEPARATED": "YES",
+    "A_B_OPERATOR_COMPATIBILITY_RULE": "FROZEN",
+    "EVALUATOR_DRY_VALIDATION": "PASS",
+    "SOLVER_EXECUTED": "NO",
+    "CASE_CREATED": "NO",
+    "FORMAL_CRITERIA_CHANGED": "NO",
+    "FIRST_SOLVER_UNIT": "A-Ra1e4-coarse,A-Ra1e4-medium,A-Ra1e4-fine",
+    "FIRST_SOLVER_UNIT_TECHNICALLY_READY": "YES",
+    "NEXT_SINGLE_TASK": "RUN_ROUTE_A_RA1E4_TRIO",
+    "RECOMMENDED_REASONING_MODEL_FOR_NEXT_TASK": "gpt-6.1-sol / medium",
+    "USER_DECISION_REQUIRED": "YES",
+    "EFFECTIVE_CONTRACT_VERSION": "1.4"
+  },
+  "historical_v1_0_evaluator_change": {
+    "file": "Scripts/routeA/analyze_case.py",
+    "previous_sha256": "6f1413b0b056f7c731f3c9e9df2cc921149706a7a2e2ab1b5fd0dafba85b1f57",
+    "new_sha256": "f63d2d958bdc48ed21519dbb0a87daf0f5f4fc99ba8c84b18290809d0dcd9783",
+    "evaluation_version": "routeA-gateD-contract-v1.0",
+    "purpose": [
+      "hot-only formal Nu_bar_0 Rwin, legacy pair average retained as legacy",
+      "exact OLS heat-slope sign from original decimal Q tokens",
+      "reusable residual parser with initial/final/corrector distinction and duplicate/nonfinite rejection",
+      "formal monitor Nu_bar_0 column every iteration; separate path1 snapshot column",
+      "segment-start and solver-log arguments for preregistered continuation"
+    ],
+    "physical_or_numerical_inputs_changed": false,
+    "historical_results_or_script_hashes_in_old_manifests_updated": false
+  },
+  "historical_v1_0_dry_validation": {
+    "status": "PASS",
+    "solver_executed": false,
+    "canonical_status_changed": false,
+    "cases": [
+      {
+        "case_id": "A-COND",
+        "status": "PASS",
+        "kind": "EVALUATOR_DRY_VALIDATION_ONLY",
+        "normal_End_in_bounded_tail": true,
+        "process_exit": "historical canonical normal_exit; no new process",
+        "source_precision": "original scientific Q tokens: 16 digits after decimal, 17 significant digits",
+        "log_read": "tail -n 4000 only",
+        "numerical_component_evaluation": {
+          "contract_version": "1.0",
+          "window_start_iteration": 2801,
+          "window_end_iteration": 3000,
+          "window_inclusive": true,
+          "Nu_samples": 200,
+          "velocity_samples": 20,
+          "velocity_sample_iterations": [
+            2810,
+            2820,
+            2830,
+            2840,
+            2850,
+            2860,
+            2870,
+            2880,
+            2890,
+            2900,
+            2910,
+            2920,
+            2930,
+            2940,
+            2950,
+            2960,
+            2970,
+            2980,
+            2990,
+            3000
+          ],
+          "Rwin": {
+            "Nu_bar_0": 4.14523647999737e-05,
+            "Umax": 0,
+            "Wmax": 0
+          },
+          "Nu_monitor": "hot-wall Q/(k*DeltaT*W), not the hot/cold pair average",
+          "Nu_bar_0_last": 1.0000393924785846,
+          "Nu_bar_1_last": 1.0000394040507548,
+          "heat_imbalance_start": 1.988084454707075e-08,
+          "heat_imbalance_end": 1.1571714388533838e-08,
+          "heat_trend_method": "OLS exact rational arithmetic on original decimal Q tokens",
+          "heat_slope_per_iteration_display": -4.798122872674821e-11,
+          "heat_slope_sign_exact": -1,
+          "heat_trend_pass": true,
+          "residual_fields": [
+            "Ux",
+            "Uy",
+            "e",
+            "p_rgh"
+          ],
+          "final_initial_residuals": {
+            "Ux": 0,
+            "Uy": 0,
+            "e": 2.707670649296052e-08,
+            "p_rgh": 0
+          },
+          "residual_pass": true,
+          "qoi_rwin_pass": true,
+          "numerical_checks_pass": true,
+          "formal_Gate_D_requires_external_execution_and_provenance_flags": true
+        },
+        "canonical_accepted_status_modified": false,
+        "Nu_identity_checks": [
+          {
+            "iteration": 2900,
+            "Nu_bar_0_path1": 1.0000565352087278,
+            "Nu_hot_path2": 1.0000565352079325,
+            "absolute_difference": 7.953637748414621e-13
+          },
+          {
+            "iteration": 3000,
+            "Nu_bar_0_path1": 1.0000393924781292,
+            "Nu_hot_path2": 1.0000393924785846,
+            "absolute_difference": 4.554134847012392e-13
+          }
+        ]
+      },
+      {
+        "case_id": "A-SMOKE",
+        "status": "PASS",
+        "kind": "EVALUATOR_DRY_VALIDATION_ONLY",
+        "normal_End_in_bounded_tail": true,
+        "process_exit": "historical canonical normal_exit; no new process",
+        "source_precision": "original scientific Q tokens: 16 digits after decimal, 17 significant digits",
+        "log_read": "tail -n 4000 only",
+        "numerical_component_evaluation": {
+          "contract_version": "1.0",
+          "window_start_iteration": 2801,
+          "window_end_iteration": 3000,
+          "window_inclusive": true,
+          "Nu_samples": 200,
+          "velocity_samples": 20,
+          "velocity_sample_iterations": [
+            2810,
+            2820,
+            2830,
+            2840,
+            2850,
+            2860,
+            2870,
+            2880,
+            2890,
+            2900,
+            2910,
+            2920,
+            2930,
+            2940,
+            2950,
+            2960,
+            2970,
+            2980,
+            2990,
+            3000
+          ],
+          "Rwin": {
+            "Nu_bar_0": 0,
+            "Umax": 2.7851601453678632e-11,
+            "Wmax": 1.9417961051279377e-11
+          },
+          "Nu_monitor": "hot-wall Q/(k*DeltaT*W), not the hot/cold pair average",
+          "Nu_bar_0_last": 2.257421422257267,
+          "Nu_bar_1_last": 2.257421471853702,
+          "heat_imbalance_start": 2.1970392334445196e-08,
+          "heat_imbalance_end": 2.1970392334445196e-08,
+          "heat_trend_method": "OLS exact rational arithmetic on original decimal Q tokens",
+          "heat_slope_per_iteration_display": 0,
+          "heat_slope_sign_exact": 0,
+          "heat_trend_pass": true,
+          "residual_fields": [
+            "Ux",
+            "Uy",
+            "e",
+            "p_rgh"
+          ],
+          "final_initial_residuals": {
+            "Ux": 4.732429668539095e-12,
+            "Uy": 4.29159538576274e-12,
+            "e": 9.655208094965825e-11,
+            "p_rgh": 1.171047483620124e-10
+          },
+          "residual_pass": true,
+          "qoi_rwin_pass": true,
+          "numerical_checks_pass": true,
+          "formal_Gate_D_requires_external_execution_and_provenance_flags": true
+        },
+        "canonical_accepted_status_modified": false,
+        "Nu_identity_checks": [
+          {
+            "iteration": 2900,
+            "Nu_bar_0_path1": 2.257421422257835,
+            "Nu_hot_path2": 2.2574214222572673,
+            "absolute_difference": 5.6754601018838e-13
+          },
+          {
+            "iteration": 3000,
+            "Nu_bar_0_path1": 2.257421422257835,
+            "Nu_hot_path2": 2.2574214222572673,
+            "absolute_difference": 5.6754601018838e-13
+          }
+        ]
+      }
+    ],
+    "finite_fixture_validation": "PASS: positive/zero/negative slope; hot-only trace; Initial vs Final and max correctors; missing cadence, low precision, duplicate restart rejection. In-memory evaluator data, no CFD case.",
+    "limitation": "dry validation confirms evaluator operation on archived inputs, not formal matrix acceptance or process exit-code re-measurement"
+  },
+  "dry_validation": {
+    "fixtures": [
+      {
+        "id": "normal_banner_fragment",
+        "input": "floating point exception trapping",
+        "expected": {
+          "fatal": false,
+          "fpe": false,
+          "nonfinite": false
+        },
+        "actual": {
+          "fatal": false,
+          "fpe": false,
+          "nonfinite": false
+        },
+        "status": "PASS",
+        "kind": "SYNTHETIC_PARSER_FIXTURE_NOT_CFD_EVIDENCE"
+      },
+      {
+        "id": "normal_openfoam_banner",
+        "input": "sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).",
+        "expected": {
+          "fatal": false,
+          "fpe": false,
+          "nonfinite": false
+        },
+        "actual": {
+          "fatal": false,
+          "fpe": false,
+          "nonfinite": false
+        },
+        "status": "PASS",
+        "kind": "SYNTHETIC_PARSER_FIXTURE_NOT_CFD_EVIDENCE"
+      },
+      {
+        "id": "normal_banner_whitespace_case",
+        "input": "  SIGFPE : Enabling floating point exception trapping (FOAM_SIGFPE).  ",
+        "expected": {
+          "fatal": false,
+          "fpe": false,
+          "nonfinite": false
+        },
+        "actual": {
+          "fatal": false,
+          "fpe": false,
+          "nonfinite": false
+        },
+        "status": "PASS",
+        "kind": "SYNTHETIC_PARSER_FIXTURE_NOT_CFD_EVIDENCE"
+      },
+      {
+        "id": "true_fpe_standalone",
+        "input": "Floating point exception",
+        "expected": {
+          "fatal": false,
+          "fpe": true,
+          "nonfinite": false
+        },
+        "actual": {
+          "fatal": false,
+          "fpe": true,
+          "nonfinite": false
+        },
+        "status": "PASS",
+        "kind": "SYNTHETIC_PARSER_FIXTURE_NOT_CFD_EVIDENCE"
+      },
+      {
+        "id": "true_fpe_shell",
+        "input": "bash: line 1: 123 Floating point exception (core dumped) foamRun",
+        "expected": {
+          "fatal": false,
+          "fpe": true,
+          "nonfinite": false
+        },
+        "actual": {
+          "fatal": false,
+          "fpe": true,
+          "nonfinite": false
+        },
+        "status": "PASS",
+        "kind": "SYNTHETIC_PARSER_FIXTURE_NOT_CFD_EVIDENCE"
+      },
+      {
+        "id": "true_fpe_openfoam",
+        "input": "FOAM exiting on Floating point exception",
+        "expected": {
+          "fatal": false,
+          "fpe": true,
+          "nonfinite": false
+        },
+        "actual": {
+          "fatal": false,
+          "fpe": true,
+          "nonfinite": false
+        },
+        "status": "PASS",
+        "kind": "SYNTHETIC_PARSER_FIXTURE_NOT_CFD_EVIDENCE"
+      },
+      {
+        "id": "banner_then_true_fpe",
+        "input": "sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).\nFloating point exception (core dumped)",
+        "expected": {
+          "fatal": false,
+          "fpe": true,
+          "nonfinite": false
+        },
+        "actual": {
+          "fatal": false,
+          "fpe": true,
+          "nonfinite": false
+        },
+        "status": "PASS",
+        "kind": "SYNTHETIC_PARSER_FIXTURE_NOT_CFD_EVIDENCE"
+      },
+      {
+        "id": "banner_with_event_suffix",
+        "input": "sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE). Floating point exception",
+        "expected": {
+          "fatal": false,
+          "fpe": true,
+          "nonfinite": false
+        },
+        "actual": {
+          "fatal": false,
+          "fpe": true,
+          "nonfinite": false
+        },
+        "status": "PASS",
+        "kind": "SYNTHETIC_PARSER_FIXTURE_NOT_CFD_EVIDENCE"
+      },
+      {
+        "id": "unknown_trapping_context",
+        "input": "Failure: Floating point exception trapping failed",
+        "expected": {
+          "fatal": false,
+          "fpe": true,
+          "nonfinite": false
+        },
+        "actual": {
+          "fatal": false,
+          "fpe": true,
+          "nonfinite": false
+        },
+        "status": "PASS",
+        "kind": "SYNTHETIC_PARSER_FIXTURE_NOT_CFD_EVIDENCE"
+      },
+      {
+        "id": "fatal_error",
+        "input": "FOAM FATAL ERROR: failed",
+        "expected": {
+          "fatal": true,
+          "fpe": false,
+          "nonfinite": false
+        },
+        "actual": {
+          "fatal": true,
+          "fpe": false,
+          "nonfinite": false
+        },
+        "status": "PASS",
+        "kind": "SYNTHETIC_PARSER_FIXTURE_NOT_CFD_EVIDENCE"
+      },
+      {
+        "id": "fatal_io_error",
+        "input": "FOAM FATAL IO ERROR: failed",
+        "expected": {
+          "fatal": true,
+          "fpe": false,
+          "nonfinite": false
+        },
+        "actual": {
+          "fatal": true,
+          "fpe": false,
+          "nonfinite": false
+        },
+        "status": "PASS",
+        "kind": "SYNTHETIC_PARSER_FIXTURE_NOT_CFD_EVIDENCE"
+      },
+      {
+        "id": "nan",
+        "input": "Residual = NaN",
+        "expected": {
+          "fatal": false,
+          "fpe": false,
+          "nonfinite": true
+        },
+        "actual": {
+          "fatal": false,
+          "fpe": false,
+          "nonfinite": true
+        },
+        "status": "PASS",
+        "kind": "SYNTHETIC_PARSER_FIXTURE_NOT_CFD_EVIDENCE"
+      },
+      {
+        "id": "inf",
+        "input": "value = -Inf",
+        "expected": {
+          "fatal": false,
+          "fpe": false,
+          "nonfinite": true
+        },
+        "actual": {
+          "fatal": false,
+          "fpe": false,
+          "nonfinite": true
+        },
+        "status": "PASS",
+        "kind": "SYNTHETIC_PARSER_FIXTURE_NOT_CFD_EVIDENCE"
+      },
+      {
+        "id": "normal_log",
+        "input": "Time = 3000s\nSolving for e, Initial residual = 1e-9, Final residual = 1e-12\nEnd",
+        "expected": {
+          "fatal": false,
+          "fpe": false,
+          "nonfinite": false
+        },
+        "actual": {
+          "fatal": false,
+          "fpe": false,
+          "nonfinite": false
+        },
+        "status": "PASS",
+        "kind": "SYNTHETIC_PARSER_FIXTURE_NOT_CFD_EVIDENCE"
+      },
+      {
+        "id": "banner_then_nan",
+        "input": "sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).\nvalue = nan",
+        "expected": {
+          "fatal": false,
+          "fpe": false,
+          "nonfinite": true
+        },
+        "actual": {
+          "fatal": false,
+          "fpe": false,
+          "nonfinite": true
+        },
+        "status": "PASS",
+        "kind": "SYNTHETIC_PARSER_FIXTURE_NOT_CFD_EVIDENCE"
+      }
+    ],
+    "dry_validation": [
+      {
+        "case_id": "A-COND",
+        "status": "PASS",
+        "kind": "READ_ONLY_BOUNDED_DRY_VALIDATION_NOT_FORMAL_PROMOTION",
+        "log": "cases/routeA/Ra0_medium/log.foamRun",
+        "log_read_scope": "head -n 30 + tail -n 4000; middle not inspected",
+        "normal_banner_present": true,
+        "normal_banner_line": "sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).",
+        "old_regex_matches_banner": true,
+        "health_flags_in_bounded_scope": {
+          "fatal": false,
+          "fpe": false,
+          "nonfinite": false
+        },
+        "fatal_or_nan_in_bounded_scope": false,
+        "normal_End_in_bounded_tail": true,
+        "process_exit": "NO_NEW_PROCESS; bounded End is not a new exit-code check",
+        "numerical_component_evaluation": {
+          "contract_version": "1.0",
+          "window_start_iteration": 2801,
+          "window_end_iteration": 3000,
+          "window_inclusive": true,
+          "Nu_samples": 200,
+          "velocity_samples": 20,
+          "velocity_sample_iterations": [
+            2810,
+            2820,
+            2830,
+            2840,
+            2850,
+            2860,
+            2870,
+            2880,
+            2890,
+            2900,
+            2910,
+            2920,
+            2930,
+            2940,
+            2950,
+            2960,
+            2970,
+            2980,
+            2990,
+            3000
+          ],
+          "Rwin": {
+            "Nu_bar_0": 4.14523647999737e-05,
+            "Umax": 0.0,
+            "Wmax": 0.0
+          },
+          "Nu_monitor": "hot-wall Q/(k*DeltaT*W), not the hot/cold pair average",
+          "Nu_bar_0_last": 1.0000393924785846,
+          "Nu_bar_1_last": 1.0000394040507548,
+          "heat_imbalance_start": 1.988084454707075e-08,
+          "heat_imbalance_end": 1.1571714388533838e-08,
+          "heat_trend_method": "OLS exact rational arithmetic on original decimal Q tokens",
+          "heat_slope_per_iteration_display": -4.798122872674821e-11,
+          "heat_slope_sign_exact": -1,
+          "heat_trend_pass": true,
+          "residual_fields": [
+            "Ux",
+            "Uy",
+            "e",
+            "p_rgh"
+          ],
+          "final_initial_residuals": {
+            "Ux": 0.0,
+            "Uy": 0.0,
+            "e": 2.707670649296052e-08,
+            "p_rgh": 0.0
+          },
+          "residual_pass": true,
+          "qoi_rwin_pass": true,
+          "numerical_checks_pass": true,
+          "formal_Gate_D_requires_external_execution_and_provenance_flags": true
+        },
+        "identical_to_v1_0_numerical_dry_evaluation": true,
+        "canonical_result_rewritten": false
+      },
+      {
+        "case_id": "A-SMOKE",
+        "status": "PASS",
+        "kind": "READ_ONLY_BOUNDED_DRY_VALIDATION_NOT_FORMAL_PROMOTION",
+        "log": "cases/routeA/Ra1e4_coarse/log.foamRun",
+        "log_read_scope": "head -n 30 + tail -n 4000; middle not inspected",
+        "normal_banner_present": true,
+        "normal_banner_line": "sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).",
+        "old_regex_matches_banner": true,
+        "health_flags_in_bounded_scope": {
+          "fatal": false,
+          "fpe": false,
+          "nonfinite": false
+        },
+        "fatal_or_nan_in_bounded_scope": false,
+        "normal_End_in_bounded_tail": true,
+        "process_exit": "NO_NEW_PROCESS; bounded End is not a new exit-code check",
+        "numerical_component_evaluation": {
+          "contract_version": "1.0",
+          "window_start_iteration": 2801,
+          "window_end_iteration": 3000,
+          "window_inclusive": true,
+          "Nu_samples": 200,
+          "velocity_samples": 20,
+          "velocity_sample_iterations": [
+            2810,
+            2820,
+            2830,
+            2840,
+            2850,
+            2860,
+            2870,
+            2880,
+            2890,
+            2900,
+            2910,
+            2920,
+            2930,
+            2940,
+            2950,
+            2960,
+            2970,
+            2980,
+            2990,
+            3000
+          ],
+          "Rwin": {
+            "Nu_bar_0": 0.0,
+            "Umax": 2.7851601453678632e-11,
+            "Wmax": 1.9417961051279377e-11
+          },
+          "Nu_monitor": "hot-wall Q/(k*DeltaT*W), not the hot/cold pair average",
+          "Nu_bar_0_last": 2.257421422257267,
+          "Nu_bar_1_last": 2.257421471853702,
+          "heat_imbalance_start": 2.1970392334445196e-08,
+          "heat_imbalance_end": 2.1970392334445196e-08,
+          "heat_trend_method": "OLS exact rational arithmetic on original decimal Q tokens",
+          "heat_slope_per_iteration_display": 0.0,
+          "heat_slope_sign_exact": 0,
+          "heat_trend_pass": true,
+          "residual_fields": [
+            "Ux",
+            "Uy",
+            "e",
+            "p_rgh"
+          ],
+          "final_initial_residuals": {
+            "Ux": 4.732429668539095e-12,
+            "Uy": 4.29159538576274e-12,
+            "e": 9.655208094965825e-11,
+            "p_rgh": 1.171047483620124e-10
+          },
+          "residual_pass": true,
+          "qoi_rwin_pass": true,
+          "numerical_checks_pass": true,
+          "formal_Gate_D_requires_external_execution_and_provenance_flags": true
+        },
+        "identical_to_v1_0_numerical_dry_evaluation": true,
+        "canonical_result_rewritten": false
+      }
+    ],
+    "non_health_AST_identical": true,
+    "protected_hashes_unchanged": true,
+    "protected_file_count": 90,
+    "real_FPE_repository_example": "NOT_AVAILABLE",
+    "real_FPE_repository_search_scope": "Only bounded A-COND/A-SMOKE sections; no repository-wide search and no crash evidence found here."
+  },
+  "amendment": {
+    "id": "Route A Execution Contract Amendment 004",
+    "path": "docs/routeA_execution_contract_amendment_004.json",
+    "sha256": "803befbe8a0fd9a6f396b4f33dee70bbaa692036b9238ac259b8277b48340c64",
+    "parent": {
+      "version": "1.3",
+      "path": "docs/routeA_execution_contract_v1.3.json",
+      "sha256": "227414aaff22a0f37bed234f6b26c0a296d18f592da641aa55f1c4a4538ff3f1"
+    },
+    "snapshot_rule": "v1.0 + Amendments 001–004; only explicit paper position classification and necessary version/ownership/next-trio metadata change; numerical contract identical."
+  },
+  "attempt_policy": {
+    "attempt_001": {
+      "status": "STOPPED_PRE_SOLVER_EVALUATOR_FALSE_POSITIVE",
+      "historical_artifacts": [
+        "results/routeA/Ra1e3_trio_report.md",
+        "results/routeA/Ra1e3_trio_report.json",
+        "results/routeA/Ra1e3_trio_matrix.csv",
+        "results/routeA/Ra1e3_routeA_vs_routeB.csv"
+      ],
+      "artifacts_unchanged": true,
+      "meaning": "Explanation of the preserved STOP; no PASS rewrite and no CFD result reclassification."
+    },
+    "next_attempt": {
+      "id": "attempt_005",
+      "status": "NOT_STARTED",
+      "batch_artifact_root": "results/routeA/attempts/attempt_005/",
+      "case_ids": [
+        "A-Ra1e4-coarse",
+        "A-Ra1e4-medium",
+        "A-Ra1e4-fine"
+      ],
+      "Ra_target": 10000,
+      "grids": [
+        [
+          40,
+          40,
+          1
+        ],
+        [
+          80,
+          80,
+          1
+        ],
+        [
+          160,
+          160,
+          1
+        ]
+      ],
+      "requires_new_user_run_instruction": true,
+      "formal_case_destinations_absent": true,
+      "destination_state": {
+        "A-Ra1e4-coarse": "Absent; generate new only in authorized Ra1e4 task",
+        "A-Ra1e4-medium": "Absent; generate new only in authorized Ra1e4 task",
+        "A-Ra1e4-fine": "Absent; generate new only in authorized Ra1e4 task"
+      },
+      "coarse_reuse": {
+        "allowed": false,
+        "reason": "Ra1e3 reuse policy is historical and does not authorize Ra1e4 reuse"
+      },
+      "batch_filenames": [
+        "Ra1e4_trio_report.md",
+        "Ra1e4_trio_report.json",
+        "Ra1e4_trio_matrix.csv",
+        "Ra1e4_routeA_vs_routeB.csv"
+      ],
+      "historical_batch_paths_must_not_be_overwritten": true
+    },
+    "attempt_002": {
+      "status": "STOPPED",
+      "stop_reason": "STOP_EVALUATOR_FAILURE_RUNTIME_EVIDENCE_COLLECTION",
+      "root": "results/routeA/attempts/attempt_002/",
+      "historical_runner_unchanged": true,
+      "reports_unchanged": true,
+      "primary_solver_runs": 0,
+      "coarse_generated": true
+    },
+    "attempt_003": {
+      "status": "STOPPED",
+      "root": "results/routeA/attempts/attempt_003/",
+      "stop_reason": "STOP_EVALUATOR_FAILURE_CANONICAL_ANALYZER_KEYERROR_UMAX",
+      "coarse_primary_checkpoint": 3000,
+      "historical_computed": false,
+      "historical_accepted": false,
+      "historical_Gate_D": "NOT_EVALUATED",
+      "reports_and_raw_seal_unchanged": true
+    },
+    "attempt_004": {
+      "status": "COMPLETE",
+      "root": "results/routeA/attempts/attempt_004/",
+      "accepted_case_count": 3,
+      "Gate_D": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "Gate_E_diagnostic": "PASS",
+      "Gate_F": "FAIL",
+      "needs_320": "YES",
+      "Gate_G": "PASS",
+      "historical_artifacts_unchanged": true,
+      "reanalysis_owner": "POSITION_SEMANTICS_REEVALUATION_OF_ACCEPTED_RA1E3_TRIO",
+      "reanalysis_is_separate_from_historical_execution": true
+    }
+  },
+  "historical_v1_1_amendment": {
+    "id": "Route A Execution Contract Amendment 001",
+    "path": "docs/routeA_execution_contract_amendment_001.json",
+    "sha256": "63769f59ab7e5ed49115120e4c34326795fc40a8413d07e6086446af3be2b352",
+    "parent": {
+      "version": "1.0",
+      "path": "docs/routeA_execution_contract.json",
+      "sha256": "33eb082f77f00b2330003ba8bafcb0438a24d7ec6b0bf456625741bfae63c936"
+    },
+    "snapshot_rule": "Full v1.0 snapshot plus Amendment 001; only classifier implementation and necessary version/artifact/attempt metadata differ."
+  },
+  "amendment_chain": [
+    {
+      "id": "Route A Execution Contract Amendment 001",
+      "path": "docs/routeA_execution_contract_amendment_001.json",
+      "sha256": "63769f59ab7e5ed49115120e4c34326795fc40a8413d07e6086446af3be2b352",
+      "parent": {
+        "version": "1.0",
+        "path": "docs/routeA_execution_contract.json",
+        "sha256": "33eb082f77f00b2330003ba8bafcb0438a24d7ec6b0bf456625741bfae63c936"
+      },
+      "snapshot_rule": "Full v1.0 snapshot plus Amendment 001; only classifier implementation and necessary version/artifact/attempt metadata differ."
+    },
+    {
+      "id": "Route A Execution Contract Amendment 002",
+      "path": "docs/routeA_execution_contract_amendment_002.json",
+      "sha256": "a8b2d80647f491d0ee06e434604b5d9a49d2d8e7ce7b622cfa19548e5f1a56eb",
+      "parent": {
+        "version": "1.1",
+        "path": "docs/routeA_execution_contract_v1.1.json",
+        "sha256": "dbd70320ceb3f20e4455c5d67d24b3dae40d2616a832438b23faa99c6b0b892b"
+      },
+      "snapshot_rule": "v1.0 + Amendment 001 + Amendment 002; unchanged numerical contract, canonical runtime checker added plus necessary metadata/reuse policy."
+    },
+    {
+      "id": "Route A Execution Contract Amendment 003",
+      "path": "docs/routeA_execution_contract_amendment_003.json",
+      "sha256": "c34d29178c7d6193f44efbfeb255855a8b82c62a7874201411a7de37fdbb92f7",
+      "parent": {
+        "version": "1.2",
+        "path": "docs/routeA_execution_contract_v1.2.json",
+        "sha256": "7db8d5b8217f009243cb884e291f3d7a09a699b4fe35073792cbaedb5bf7b7fe"
+      },
+      "snapshot_rule": "v1.0 + A001 + A002 + A003; unchanged scientific/numerical contract, analyzer order/key guard and necessary ownership/restart/version metadata."
+    },
+    {
+      "id": "Route A Execution Contract Amendment 004",
+      "path": "docs/routeA_execution_contract_amendment_004.json",
+      "sha256": "803befbe8a0fd9a6f396b4f33dee70bbaa692036b9238ac259b8277b48340c64",
+      "parent": {
+        "version": "1.3",
+        "path": "docs/routeA_execution_contract_v1.3.json",
+        "sha256": "227414aaff22a0f37bed234f6b26c0a296d18f592da641aa55f1c4a4538ff3f1"
+      },
+      "snapshot_rule": "v1.0 + Amendments 001–004; only explicit paper position classification and necessary version/ownership/next-trio metadata change; numerical contract identical."
+    }
+  ],
+  "runtime_provenance_checker": {
+    "path": "Scripts/routeA/runtime_provenance.py",
+    "sha256": "5055345c7e64758a4f902c81219e2dda2e5b9cdec22c3f22fc8297bbc1bb9e5a",
+    "behavior": {
+      "scope": "Runtime evidence collection/comparison only, extracted from old temporary runner into a read-only canonical checker; historical orchestrator is not edited or executed.",
+      "thermo_collection": "Complete Selecting thermodynamics package {...} block parsed as seven individual key/value entries with source line numbers; key order and spacing/tabs do not matter.",
+      "model_comparison": "Actual runtime values compared exactly to frozen_model; version/build/fluid, seven thermo keys, laminar/Stokes, laminar/Fourier and SIMPLE.",
+      "missing": "FAIL/RUNTIME_EVIDENCE_MISSING: no observed expected field; incomplete block cannot supply evidence.",
+      "mismatch": "FAIL/RUNTIME_MODEL_MISMATCH: observed value differs, duplicate keys or multiple thermo blocks make provenance ambiguous; missing list remains separately recorded.",
+      "source_priority": "Actual runtime log only. Frozen contract provides expected values, never substitutes input/manifest for missing runtime evidence. Input provenance remains a separate check.",
+      "CLI": "python3 Scripts/routeA/runtime_provenance.py --log LOG --contract docs/routeA_execution_contract_v1.2.json --max-lines 120; stdout JSON, exit 0 PASS / 1 FAIL.",
+      "startup_scope": "first 120 log lines; if required evidence is absent in the chosen scope, STOP and review instead of assuming PASS.",
+      "not_changed": [
+        "FPE/health analyzer",
+        "Gate D boolean/evaluator/residual/window/Rwin/heat trend",
+        "generator",
+        "solver/mesh inputs",
+        "physics/numerics",
+        "Gate F/G policy",
+        "existing result statuses"
+      ]
+    },
+    "required_use": "Use this canonical checker on saved/current initialization and EACH primary segment startup. Do not use historical attempt_002 runtime_check() or an ad-hoc substitute; FAIL/MISSING/MISMATCH stops the batch. Hash verification is mandatory before any primary solver. Health and input/Gate A checks remain separate."
+  },
+  "historical_v1_1_attempt_policy": {
+    "attempt_001": {
+      "status": "STOPPED_PRE_SOLVER_EVALUATOR_FALSE_POSITIVE",
+      "historical_artifacts": [
+        "results/routeA/Ra1e3_trio_report.md",
+        "results/routeA/Ra1e3_trio_report.json",
+        "results/routeA/Ra1e3_trio_matrix.csv",
+        "results/routeA/Ra1e3_routeA_vs_routeB.csv"
+      ],
+      "artifacts_unchanged": true,
+      "meaning": "Explanation of the preserved STOP; no PASS rewrite and no CFD result reclassification."
+    },
+    "next_attempt": {
+      "id": "attempt_002",
+      "status": "NOT_STARTED",
+      "batch_artifact_root": "results/routeA/attempts/attempt_002/",
+      "batch_filenames": [
+        "Ra1e3_trio_report.md",
+        "Ra1e3_trio_report.json",
+        "Ra1e3_trio_matrix.csv",
+        "Ra1e3_routeA_vs_routeB.csv"
+      ],
+      "historical_batch_paths_must_not_be_overwritten": true,
+      "case_ids": [
+        "A-Ra1e3-coarse",
+        "A-Ra1e3-medium",
+        "A-Ra1e3-fine"
+      ],
+      "case_artifact_root_unchanged": "results/routeA/cases/<formal case_id>/",
+      "formal_case_destinations_absent": true,
+      "requires_new_user_run_instruction": true
+    }
+  },
+  "historical_v1_2_evaluator_change": {
+    "file": "Scripts/routeA/analyze_case.py",
+    "previous_sha256": "f63d2d958bdc48ed21519dbb0a87daf0f5f4fc99ba8c84b18290809d0dcd9783",
+    "new_sha256": "327761f2b20d86ef8a3a924c64e46bd63da7b11e7a88ba7d74ccfaf232ddbac9",
+    "evaluation_version": "routeA-health-amendment-001",
+    "numerical_evaluation_version_unchanged": "routeA-gateD-contract-v1.0",
+    "purpose": "Normal FPE trapping banner exclusion only; all numerical evaluation semantics unchanged.",
+    "behavior": {
+      "helper": "classify_health_lines",
+      "classification": "line-aware; fullmatch after stripping surrounding whitespace; case-insensitive",
+      "normal_banner_exclusion_regex": "(?:sigFpe\\s*:\\s*Enabling\\s+)?floating point exception trapping(?:\\s+\\(FOAM_SIGFPE\\)\\.)?",
+      "exclusion_scope": "FPE flag only; exact known full banner or standalone trapping phrase only",
+      "FPE_event_regex": "Floating point exception",
+      "fatal_regex_unchanged": "FOAM FATAL (?:ERROR|IO ERROR)",
+      "nonfinite_regex_unchanged": "\\bnan\\b|\\binf\\b",
+      "aggregate_health_flag": "fatal_or_nan = any(fatal, fpe, nonfinite)",
+      "other_health_checks": "Full-run execution/field/provenance/divergence checks remain required by unchanged Gate_D. This helper is not a complete divergence or field-finiteness evaluator.",
+      "Gate_D_boolean_unchanged": true,
+      "non_health_code_AST_identical": true,
+      "numerical_evaluator_contract_version": "1.0 (unchanged numerical evaluator; effective execution contract is 1.1)"
+    },
+    "physical_or_numerical_inputs_changed": false,
+    "historical_results_or_script_hashes_in_old_manifests_updated": false
+  },
+  "evaluator_change": {
+    "file": "Scripts/routeA/analyze_case.py",
+    "previous_sha256": "e1f5da10349b997d858cc04802a04366a668e6af4cf51367569e198993e8e0ac",
+    "new_sha256": "e6207e33ae2279e84786115ebfd912b170dcb23f220f1b1155314c723c54cfed",
+    "evaluation_version": "routeA-paper-position-amendment-004",
+    "numerical_evaluation_version_unchanged": "routeA-gateD-contract-v1.0",
+    "behavior": {
+      "scope": "PAPER_POSITION_CLASSIFICATION_ONLY",
+      "position_keys": [
+        "Umax_Z",
+        "Wmax_X",
+        "Nu_hot_local_max_Z",
+        "Nu_hot_local_min_Z"
+      ],
+      "classification": "key in POSITION_KEYS; explicit frozenset; suffix alone is not a position rule",
+      "position_payload": [
+        "calculated",
+        "reference",
+        "signed_position_difference",
+        "absolute_position_error",
+        "error (signed position difference)",
+        "error_legacy_semantics"
+      ],
+      "scalar_payload": [
+        "calculated",
+        "reference",
+        "signed_relative_difference",
+        "absolute_relative_error",
+        "error (signed relative difference)",
+        "error_legacy_semantics"
+      ],
+      "Wmax_X_relative_fields_absent": true,
+      "paper_difference_formula_unchanged": true,
+      "Nu_bar_1_special_handling_unchanged": true,
+      "unchanged_helpers": [
+        "paper_nusselt",
+        "local_quartic_extremum",
+        "sample_extrema",
+        "evaluate_gate_d_monitors",
+        "parse_residuals",
+        "classify_health_lines",
+        "paper_difference"
+      ]
+    },
+    "physical_or_numerical_inputs_changed": false,
+    "historical_results_or_script_hashes_in_old_manifests_updated": false
+  },
+  "historical_v1_2_amendment": {
+    "id": "Route A Execution Contract Amendment 002",
+    "path": "docs/routeA_execution_contract_amendment_002.json",
+    "sha256": "a8b2d80647f491d0ee06e434604b5d9a49d2d8e7ce7b622cfa19548e5f1a56eb",
+    "parent": {
+      "version": "1.1",
+      "path": "docs/routeA_execution_contract_v1.1.json",
+      "sha256": "dbd70320ceb3f20e4455c5d67d24b3dae40d2616a832438b23faa99c6b0b892b"
+    },
+    "snapshot_rule": "v1.0 + Amendment 001 + Amendment 002; unchanged numerical contract, canonical runtime checker added plus necessary metadata/reuse policy."
+  },
+  "historical_v1_2_runtime_checker_validation": {
+    "dry_validation": [
+      {
+        "id": "A-COND",
+        "log": "cases/routeA/Ra0_medium/log.foamRun",
+        "log_sha256": "336b63990fb7fb50758fec3e5989a113f60150562b2f0980c49a5085bbce66af",
+        "read_scope": "first 120 lines only",
+        "result": {
+          "status": "PASS",
+          "failure_class": null,
+          "missing": [],
+          "mismatches": [],
+          "expected": {
+            "version": "13",
+            "build": "13-441953dfbb42",
+            "solver": "fluid",
+            "thermo.type": "heRhoThermo",
+            "thermo.mixture": "pureMixture",
+            "thermo.transport": "const",
+            "thermo.thermo": "eConst",
+            "thermo.equationOfState": "Boussinesq",
+            "thermo.specie": "specie",
+            "thermo.energy": "sensibleInternalEnergy",
+            "momentum_regime": "laminar",
+            "stress_model": "Stokes",
+            "thermal_regime": "laminar",
+            "thermal_model": "Fourier",
+            "algorithm": "SIMPLE"
+          },
+          "actual": {
+            "version": "13",
+            "build": "13-441953dfbb42",
+            "solver": "fluid",
+            "thermo.type": "heRhoThermo",
+            "thermo.mixture": "pureMixture",
+            "thermo.transport": "const",
+            "thermo.thermo": "eConst",
+            "thermo.equationOfState": "Boussinesq",
+            "thermo.specie": "specie",
+            "thermo.energy": "sensibleInternalEnergy",
+            "momentum_regime": "laminar",
+            "stress_model": "Stokes",
+            "thermal_regime": "laminar",
+            "thermal_model": "Fourier",
+            "algorithm": "SIMPLE"
+          },
+          "evidence": {
+            "selections": {
+              "version": [
+                {
+                  "value": "13",
+                  "line": 5
+                }
+              ],
+              "build": [
+                {
+                  "value": "13-441953dfbb42",
+                  "line": 8
+                }
+              ],
+              "solver": [
+                {
+                  "value": "fluid",
+                  "line": 26
+                }
+              ],
+              "momentum_regime": [
+                {
+                  "value": "laminar",
+                  "line": 38
+                }
+              ],
+              "stress_model": [
+                {
+                  "value": "Stokes",
+                  "line": 39
+                }
+              ],
+              "thermal_regime": [
+                {
+                  "value": "laminar",
+                  "line": 42
+                }
+              ],
+              "thermal_model": [
+                {
+                  "value": "Fourier",
+                  "line": 43
+                }
+              ],
+              "algorithm": [
+                {
+                  "value": "SIMPLE",
+                  "line": 49
+                }
+              ]
+            },
+            "thermo_blocks": [
+              {
+                "start_line": 28,
+                "end_line": 36,
+                "entries": {
+                  "type": {
+                    "value": "heRhoThermo",
+                    "line": 29
+                  },
+                  "mixture": {
+                    "value": "pureMixture",
+                    "line": 30
+                  },
+                  "transport": {
+                    "value": "const",
+                    "line": 31
+                  },
+                  "thermo": {
+                    "value": "eConst",
+                    "line": 32
+                  },
+                  "equationOfState": {
+                    "value": "Boussinesq",
+                    "line": 33
+                  },
+                  "specie": {
+                    "value": "specie",
+                    "line": 34
+                  },
+                  "energy": {
+                    "value": "sensibleInternalEnergy",
+                    "line": 35
+                  }
+                },
+                "duplicates": [],
+                "complete": true
+              }
+            ]
+          },
+          "source": "Actual OpenFOAM runtime log; no fallback to input dictionary or generator manifest",
+          "input_provenance_checked": false,
+          "health_or_Gate_D_checked": false
+        },
+        "formal_status_changed": false
+      },
+      {
+        "id": "A-SMOKE",
+        "log": "cases/routeA/Ra1e4_coarse/log.foamRun",
+        "log_sha256": "a338be8567aefa800c5f90857988aa999f387143dabe906f523c6f8dc6c4d61c",
+        "read_scope": "first 120 lines only",
+        "result": {
+          "status": "PASS",
+          "failure_class": null,
+          "missing": [],
+          "mismatches": [],
+          "expected": {
+            "version": "13",
+            "build": "13-441953dfbb42",
+            "solver": "fluid",
+            "thermo.type": "heRhoThermo",
+            "thermo.mixture": "pureMixture",
+            "thermo.transport": "const",
+            "thermo.thermo": "eConst",
+            "thermo.equationOfState": "Boussinesq",
+            "thermo.specie": "specie",
+            "thermo.energy": "sensibleInternalEnergy",
+            "momentum_regime": "laminar",
+            "stress_model": "Stokes",
+            "thermal_regime": "laminar",
+            "thermal_model": "Fourier",
+            "algorithm": "SIMPLE"
+          },
+          "actual": {
+            "version": "13",
+            "build": "13-441953dfbb42",
+            "solver": "fluid",
+            "thermo.type": "heRhoThermo",
+            "thermo.mixture": "pureMixture",
+            "thermo.transport": "const",
+            "thermo.thermo": "eConst",
+            "thermo.equationOfState": "Boussinesq",
+            "thermo.specie": "specie",
+            "thermo.energy": "sensibleInternalEnergy",
+            "momentum_regime": "laminar",
+            "stress_model": "Stokes",
+            "thermal_regime": "laminar",
+            "thermal_model": "Fourier",
+            "algorithm": "SIMPLE"
+          },
+          "evidence": {
+            "selections": {
+              "version": [
+                {
+                  "value": "13",
+                  "line": 5
+                }
+              ],
+              "build": [
+                {
+                  "value": "13-441953dfbb42",
+                  "line": 8
+                }
+              ],
+              "solver": [
+                {
+                  "value": "fluid",
+                  "line": 26
+                }
+              ],
+              "momentum_regime": [
+                {
+                  "value": "laminar",
+                  "line": 38
+                }
+              ],
+              "stress_model": [
+                {
+                  "value": "Stokes",
+                  "line": 39
+                }
+              ],
+              "thermal_regime": [
+                {
+                  "value": "laminar",
+                  "line": 42
+                }
+              ],
+              "thermal_model": [
+                {
+                  "value": "Fourier",
+                  "line": 43
+                }
+              ],
+              "algorithm": [
+                {
+                  "value": "SIMPLE",
+                  "line": 49
+                }
+              ]
+            },
+            "thermo_blocks": [
+              {
+                "start_line": 28,
+                "end_line": 36,
+                "entries": {
+                  "type": {
+                    "value": "heRhoThermo",
+                    "line": 29
+                  },
+                  "mixture": {
+                    "value": "pureMixture",
+                    "line": 30
+                  },
+                  "transport": {
+                    "value": "const",
+                    "line": 31
+                  },
+                  "thermo": {
+                    "value": "eConst",
+                    "line": 32
+                  },
+                  "equationOfState": {
+                    "value": "Boussinesq",
+                    "line": 33
+                  },
+                  "specie": {
+                    "value": "specie",
+                    "line": 34
+                  },
+                  "energy": {
+                    "value": "sensibleInternalEnergy",
+                    "line": 35
+                  }
+                },
+                "duplicates": [],
+                "complete": true
+              }
+            ]
+          },
+          "source": "Actual OpenFOAM runtime log; no fallback to input dictionary or generator manifest",
+          "input_provenance_checked": false,
+          "health_or_Gate_D_checked": false
+        },
+        "formal_status_changed": false
+      },
+      {
+        "id": "ATTEMPT_002_COARSE_INIT",
+        "log": "results/routeA/initialization_check/A-Ra1e3-coarse/log.foamRun.initialization",
+        "log_sha256": "8d9e6a1104834f2a534205543547897d6c09656ef01248a82d91591307b0285e",
+        "read_scope": "first 120 lines only",
+        "result": {
+          "status": "PASS",
+          "failure_class": null,
+          "missing": [],
+          "mismatches": [],
+          "expected": {
+            "version": "13",
+            "build": "13-441953dfbb42",
+            "solver": "fluid",
+            "thermo.type": "heRhoThermo",
+            "thermo.mixture": "pureMixture",
+            "thermo.transport": "const",
+            "thermo.thermo": "eConst",
+            "thermo.equationOfState": "Boussinesq",
+            "thermo.specie": "specie",
+            "thermo.energy": "sensibleInternalEnergy",
+            "momentum_regime": "laminar",
+            "stress_model": "Stokes",
+            "thermal_regime": "laminar",
+            "thermal_model": "Fourier",
+            "algorithm": "SIMPLE"
+          },
+          "actual": {
+            "version": "13",
+            "build": "13-441953dfbb42",
+            "solver": "fluid",
+            "thermo.type": "heRhoThermo",
+            "thermo.mixture": "pureMixture",
+            "thermo.transport": "const",
+            "thermo.thermo": "eConst",
+            "thermo.equationOfState": "Boussinesq",
+            "thermo.specie": "specie",
+            "thermo.energy": "sensibleInternalEnergy",
+            "momentum_regime": "laminar",
+            "stress_model": "Stokes",
+            "thermal_regime": "laminar",
+            "thermal_model": "Fourier",
+            "algorithm": "SIMPLE"
+          },
+          "evidence": {
+            "selections": {
+              "version": [
+                {
+                  "value": "13",
+                  "line": 5
+                }
+              ],
+              "build": [
+                {
+                  "value": "13-441953dfbb42",
+                  "line": 8
+                }
+              ],
+              "solver": [
+                {
+                  "value": "fluid",
+                  "line": 26
+                }
+              ],
+              "momentum_regime": [
+                {
+                  "value": "laminar",
+                  "line": 38
+                }
+              ],
+              "stress_model": [
+                {
+                  "value": "Stokes",
+                  "line": 39
+                }
+              ],
+              "thermal_regime": [
+                {
+                  "value": "laminar",
+                  "line": 42
+                }
+              ],
+              "thermal_model": [
+                {
+                  "value": "Fourier",
+                  "line": 43
+                }
+              ],
+              "algorithm": [
+                {
+                  "value": "SIMPLE",
+                  "line": 49
+                }
+              ]
+            },
+            "thermo_blocks": [
+              {
+                "start_line": 28,
+                "end_line": 36,
+                "entries": {
+                  "type": {
+                    "value": "heRhoThermo",
+                    "line": 29
+                  },
+                  "mixture": {
+                    "value": "pureMixture",
+                    "line": 30
+                  },
+                  "transport": {
+                    "value": "const",
+                    "line": 31
+                  },
+                  "thermo": {
+                    "value": "eConst",
+                    "line": 32
+                  },
+                  "equationOfState": {
+                    "value": "Boussinesq",
+                    "line": 33
+                  },
+                  "specie": {
+                    "value": "specie",
+                    "line": 34
+                  },
+                  "energy": {
+                    "value": "sensibleInternalEnergy",
+                    "line": 35
+                  }
+                },
+                "duplicates": [],
+                "complete": true
+              }
+            ]
+          },
+          "source": "Actual OpenFOAM runtime log; no fallback to input dictionary or generator manifest",
+          "input_provenance_checked": false,
+          "health_or_Gate_D_checked": false
+        },
+        "formal_status_changed": false
+      }
+    ],
+    "reuse_review": {
+      "reusable": true,
+      "decision": "YES",
+      "reason": "Original generated inputs/template/Ra/Pr, mesh/checkMesh, clone dump/log and pre-primary seal match; formal case has time 0 only and primary never started; only runtime checker changes.",
+      "input_hashes_match": true,
+      "template_expansion_matches": true,
+      "Ra_actual_from_gravity_dictionary": "999.9999999999999910000000000",
+      "Pr_actual": "0.7099999999999999559800000000",
+      "Ra_Pr_relative_tolerance": "1e-10",
+      "mesh_hashes_match": true,
+      "checkMesh_evidence_intact": true,
+      "initialization_clone_evidence_intact": true,
+      "initialization_log_intact": true,
+      "pre_primary_stop_seal_intact": true,
+      "primary_never_started": true,
+      "primary_time_directories": [
+        "0"
+      ],
+      "no_evolved_primary_fields": true,
+      "physics_numerics_unchanged": true,
+      "OQ_02_status": "NOT_EVALUATED",
+      "OQ02_still_required_before_primary": true,
+      "initialization_clone_rerun_required": false,
+      "initialization_clone_rerun_reason": "Successful exit 0/End/health and unchanged constructor time-0 dump/log already exist; verify_initialization.py can read these without another clone solver run.",
+      "resume_sequence": [
+        "Verify effective v1.2, checker/analyzer/generator/template/caps and protected coarse provenance hashes",
+        "Apply canonical runtime_provenance.py to saved initialization log; PASS required",
+        "Run canonical verify_initialization.py on existing coarse case and existing clone, write NEW attempt_003 verification output; require PASS",
+        "Complete Gate A from preserved input/mesh evidence and current environment",
+        "Execute primary coarse 0 -> 3000 under unchanged contract; seal each segment before continuation",
+        "Only after coarse sealed: generate/run medium, then fine sequentially"
+      ],
+      "historical_case_manifest_policy": "Keep attempt_002 case/generated manifests immutable. Record v1.2 and attempt_003 provenance/reuse mapping in new attempt_003 manifests; do not rewrite old evidence.",
+      "medium_fine_policy": "New generation in attempt_003 only; no case generation this task."
+    },
+    "synthetic_tests": {
+      "status": "PASS",
+      "test_methods": 12,
+      "required_field_missing_and_wrong_subtests": 15,
+      "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=Scripts/routeA python3 -m unittest discover -s Scripts/routeA -p test_runtime_provenance.py -v",
+      "kind": "SYNTHETIC_PARSER_FIXTURES_NOT_CFD_EVIDENCE"
+    },
+    "protected_files_unchanged": true,
+    "protected_count": 186,
+    "required_fixtures": [
+      {
+        "id": "multiline_thermo",
+        "input": "Version: 13\nBuild : 13-441953dfbb42\nSelecting solver fluid\nSelecting thermodynamics package\n{\ntype heRhoThermo;\nmixture pureMixture;\ntransport const;\nthermo eConst;\nequationOfState Boussinesq;\nspecie specie;\nenergy sensibleInternalEnergy;\n}\nSelecting turbulence model type laminar\nSelecting laminar stress model Stokes\nSelecting thermophysical transport type laminar\nSelecting laminar thermophysical transport model Fourier\nPIMPLE: Operating solver in SIMPLE mode\n",
+        "expected_status": "PASS",
+        "expected_failure_class": null,
+        "actual_status": "PASS",
+        "actual_failure_class": null,
+        "test_result": "PASS",
+        "kind": "SYNTHETIC_PARSER_FIXTURE_NOT_CFD_EVIDENCE"
+      },
+      {
+        "id": "type_missing",
+        "input": "Version: 13\nBuild : 13-441953dfbb42\nSelecting solver fluid\nSelecting thermodynamics package\n{\n\nmixture pureMixture;\ntransport const;\nthermo eConst;\nequationOfState Boussinesq;\nspecie specie;\nenergy sensibleInternalEnergy;\n}\nSelecting turbulence model type laminar\nSelecting laminar stress model Stokes\nSelecting thermophysical transport type laminar\nSelecting laminar thermophysical transport model Fourier\nPIMPLE: Operating solver in SIMPLE mode\n",
+        "expected_status": "FAIL",
+        "expected_failure_class": "RUNTIME_EVIDENCE_MISSING",
+        "actual_status": "FAIL",
+        "actual_failure_class": "RUNTIME_EVIDENCE_MISSING",
+        "test_result": "PASS",
+        "kind": "SYNTHETIC_PARSER_FIXTURE_NOT_CFD_EVIDENCE"
+      },
+      {
+        "id": "EOS_mismatch",
+        "input": "Version: 13\nBuild : 13-441953dfbb42\nSelecting solver fluid\nSelecting thermodynamics package\n{\ntype heRhoThermo;\nmixture pureMixture;\ntransport const;\nthermo eConst;\nequationOfState perfectGas;\nspecie specie;\nenergy sensibleInternalEnergy;\n}\nSelecting turbulence model type laminar\nSelecting laminar stress model Stokes\nSelecting thermophysical transport type laminar\nSelecting laminar thermophysical transport model Fourier\nPIMPLE: Operating solver in SIMPLE mode\n",
+        "expected_status": "FAIL",
+        "expected_failure_class": "RUNTIME_MODEL_MISMATCH",
+        "actual_status": "FAIL",
+        "actual_failure_class": "RUNTIME_MODEL_MISMATCH",
+        "test_result": "PASS",
+        "kind": "SYNTHETIC_PARSER_FIXTURE_NOT_CFD_EVIDENCE"
+      },
+      {
+        "id": "ordering_changed",
+        "input": "Version: 13\nBuild : 13-441953dfbb42\nSelecting solver fluid\nSelecting thermodynamics package\n{\nenergy sensibleInternalEnergy;\nspecie specie;\nequationOfState Boussinesq;\nthermo eConst;\ntransport const;\nmixture pureMixture;\ntype heRhoThermo;\n}\nSelecting turbulence model type laminar\nSelecting laminar stress model Stokes\nSelecting thermophysical transport type laminar\nSelecting laminar thermophysical transport model Fourier\nPIMPLE: Operating solver in SIMPLE mode\n",
+        "expected_status": "PASS",
+        "expected_failure_class": null,
+        "actual_status": "PASS",
+        "actual_failure_class": null,
+        "test_result": "PASS",
+        "kind": "SYNTHETIC_PARSER_FIXTURE_NOT_CFD_EVIDENCE"
+      },
+      {
+        "id": "whitespace_changed",
+        "input": "Version:\t13\n  Build\t:\t13-441953dfbb42\n  Selecting\tsolver\tfluid\n  Selecting\tthermodynamics\tpackage\n  {\n  type\theRhoThermo;\n  mixture\tpureMixture;\n  transport\tconst;\n  thermo\teConst;\n  equationOfState\tBoussinesq;\n  specie\tspecie;\n  energy\tsensibleInternalEnergy;\n  }\n  Selecting\tturbulence\tmodel\ttype\tlaminar\n  Selecting\tlaminar\tstress\tmodel\tStokes\n  Selecting\tthermophysical\ttransport\ttype\tlaminar\n  Selecting\tlaminar\tthermophysical\ttransport\tmodel\tFourier\n  PIMPLE:\tOperating\tsolver\tin\tSIMPLE\tmode\n  ",
+        "expected_status": "PASS",
+        "expected_failure_class": null,
+        "actual_status": "PASS",
+        "actual_failure_class": null,
+        "test_result": "PASS",
+        "kind": "SYNTHETIC_PARSER_FIXTURE_NOT_CFD_EVIDENCE"
+      },
+      {
+        "id": "normal_runtime_lines",
+        "input": "Version: 13\nBuild : 13-441953dfbb42\nSelecting solver fluid\nSelecting thermodynamics package\n{\ntype heRhoThermo;\nmixture pureMixture;\ntransport const;\nthermo eConst;\nequationOfState Boussinesq;\nspecie specie;\nenergy sensibleInternalEnergy;\n}\nSelecting turbulence model type laminar\nSelecting laminar stress model Stokes\nSelecting thermophysical transport type laminar\nSelecting laminar thermophysical transport model Fourier\nPIMPLE: Operating solver in SIMPLE mode\n",
+        "expected_status": "PASS",
+        "expected_failure_class": null,
+        "actual_status": "PASS",
+        "actual_failure_class": null,
+        "test_result": "PASS",
+        "kind": "SYNTHETIC_PARSER_FIXTURE_NOT_CFD_EVIDENCE"
+      },
+      {
+        "id": "wrong_stress",
+        "input": "Version: 13\nBuild : 13-441953dfbb42\nSelecting solver fluid\nSelecting thermodynamics package\n{\ntype heRhoThermo;\nmixture pureMixture;\ntransport const;\nthermo eConst;\nequationOfState Boussinesq;\nspecie specie;\nenergy sensibleInternalEnergy;\n}\nSelecting turbulence model type laminar\nSelecting laminar stress model wrongStress\nSelecting thermophysical transport type laminar\nSelecting laminar thermophysical transport model Fourier\nPIMPLE: Operating solver in SIMPLE mode\n",
+        "expected_status": "FAIL",
+        "expected_failure_class": "RUNTIME_MODEL_MISMATCH",
+        "actual_status": "FAIL",
+        "actual_failure_class": "RUNTIME_MODEL_MISMATCH",
+        "test_result": "PASS",
+        "kind": "SYNTHETIC_PARSER_FIXTURE_NOT_CFD_EVIDENCE"
+      }
+    ]
+  },
+  "historical_v1_2_attempt_policy": {
+    "attempt_001": {
+      "status": "STOPPED_PRE_SOLVER_EVALUATOR_FALSE_POSITIVE",
+      "historical_artifacts": [
+        "results/routeA/Ra1e3_trio_report.md",
+        "results/routeA/Ra1e3_trio_report.json",
+        "results/routeA/Ra1e3_trio_matrix.csv",
+        "results/routeA/Ra1e3_routeA_vs_routeB.csv"
+      ],
+      "artifacts_unchanged": true,
+      "meaning": "Explanation of the preserved STOP; no PASS rewrite and no CFD result reclassification."
+    },
+    "next_attempt": {
+      "id": "attempt_003",
+      "status": "NOT_STARTED",
+      "batch_artifact_root": "results/routeA/attempts/attempt_003/",
+      "batch_filenames": [
+        "Ra1e3_trio_report.md",
+        "Ra1e3_trio_report.json",
+        "Ra1e3_trio_matrix.csv",
+        "Ra1e3_routeA_vs_routeB.csv"
+      ],
+      "historical_batch_paths_must_not_be_overwritten": true,
+      "case_ids": [
+        "A-Ra1e3-coarse",
+        "A-Ra1e3-medium",
+        "A-Ra1e3-fine"
+      ],
+      "case_artifact_root_unchanged": "results/routeA/cases/<formal case_id>/",
+      "formal_case_destinations_absent": false,
+      "requires_new_user_run_instruction": true,
+      "destination_state": {
+        "A-Ra1e3-coarse": "Existing preserved pre-primary case; reuse only after registered provenance and OQ-02 checks",
+        "A-Ra1e3-medium": "Absent; generate new in attempt_003",
+        "A-Ra1e3-fine": "Absent; generate new in attempt_003"
+      },
+      "coarse_reuse": {
+        "reusable": true,
+        "decision": "YES",
+        "reason": "Original generated inputs/template/Ra/Pr, mesh/checkMesh, clone dump/log and pre-primary seal match; formal case has time 0 only and primary never started; only runtime checker changes.",
+        "input_hashes_match": true,
+        "template_expansion_matches": true,
+        "Ra_actual_from_gravity_dictionary": "999.9999999999999910000000000",
+        "Pr_actual": "0.7099999999999999559800000000",
+        "Ra_Pr_relative_tolerance": "1e-10",
+        "mesh_hashes_match": true,
+        "checkMesh_evidence_intact": true,
+        "initialization_clone_evidence_intact": true,
+        "initialization_log_intact": true,
+        "pre_primary_stop_seal_intact": true,
+        "primary_never_started": true,
+        "primary_time_directories": [
+          "0"
+        ],
+        "no_evolved_primary_fields": true,
+        "physics_numerics_unchanged": true,
+        "OQ_02_status": "NOT_EVALUATED",
+        "OQ02_still_required_before_primary": true,
+        "initialization_clone_rerun_required": false,
+        "initialization_clone_rerun_reason": "Successful exit 0/End/health and unchanged constructor time-0 dump/log already exist; verify_initialization.py can read these without another clone solver run.",
+        "resume_sequence": [
+          "Verify effective v1.2, checker/analyzer/generator/template/caps and protected coarse provenance hashes",
+          "Apply canonical runtime_provenance.py to saved initialization log; PASS required",
+          "Run canonical verify_initialization.py on existing coarse case and existing clone, write NEW attempt_003 verification output; require PASS",
+          "Complete Gate A from preserved input/mesh evidence and current environment",
+          "Execute primary coarse 0 -> 3000 under unchanged contract; seal each segment before continuation",
+          "Only after coarse sealed: generate/run medium, then fine sequentially"
+        ],
+        "historical_case_manifest_policy": "Keep attempt_002 case/generated manifests immutable. Record v1.2 and attempt_003 provenance/reuse mapping in new attempt_003 manifests; do not rewrite old evidence.",
+        "medium_fine_policy": "New generation in attempt_003 only; no case generation this task."
+      },
+      "historical_coarse_case_status": "Preserve existing results/routeA/cases/A-Ra1e3-coarse/case_status.json as attempt_002 evidence; write attempt_003 progress/status in its new batch root. New metrics/segments may be added without modifying pre_primary_stop."
+    },
+    "attempt_002": {
+      "status": "STOPPED",
+      "stop_reason": "STOP_EVALUATOR_FAILURE_RUNTIME_EVIDENCE_COLLECTION",
+      "root": "results/routeA/attempts/attempt_002/",
+      "historical_runner_unchanged": true,
+      "reports_unchanged": true,
+      "primary_solver_runs": 0,
+      "coarse_generated": true
+    }
+  },
+  "historical_v1_2_registered_coarse_reuse": {
+    "reusable": true,
+    "decision": "YES",
+    "reason": "Original generated inputs/template/Ra/Pr, mesh/checkMesh, clone dump/log and pre-primary seal match; formal case has time 0 only and primary never started; only runtime checker changes.",
+    "input_hashes_match": true,
+    "template_expansion_matches": true,
+    "Ra_actual_from_gravity_dictionary": "999.9999999999999910000000000",
+    "Pr_actual": "0.7099999999999999559800000000",
+    "Ra_Pr_relative_tolerance": "1e-10",
+    "mesh_hashes_match": true,
+    "checkMesh_evidence_intact": true,
+    "initialization_clone_evidence_intact": true,
+    "initialization_log_intact": true,
+    "pre_primary_stop_seal_intact": true,
+    "primary_never_started": true,
+    "primary_time_directories": [
+      "0"
+    ],
+    "no_evolved_primary_fields": true,
+    "physics_numerics_unchanged": true,
+    "OQ_02_status": "NOT_EVALUATED",
+    "OQ02_still_required_before_primary": true,
+    "initialization_clone_rerun_required": false,
+    "initialization_clone_rerun_reason": "Successful exit 0/End/health and unchanged constructor time-0 dump/log already exist; verify_initialization.py can read these without another clone solver run.",
+    "resume_sequence": [
+      "Verify effective v1.2, checker/analyzer/generator/template/caps and protected coarse provenance hashes",
+      "Apply canonical runtime_provenance.py to saved initialization log; PASS required",
+      "Run canonical verify_initialization.py on existing coarse case and existing clone, write NEW attempt_003 verification output; require PASS",
+      "Complete Gate A from preserved input/mesh evidence and current environment",
+      "Execute primary coarse 0 -> 3000 under unchanged contract; seal each segment before continuation",
+      "Only after coarse sealed: generate/run medium, then fine sequentially"
+    ],
+    "historical_case_manifest_policy": "Keep attempt_002 case/generated manifests immutable. Record v1.2 and attempt_003 provenance/reuse mapping in new attempt_003 manifests; do not rewrite old evidence.",
+    "medium_fine_policy": "New generation in attempt_003 only; no case generation this task."
+  },
+  "post_fix_checkpoint_reassessment": {
+    "classification": "POST_FIX_REEVALUATION_OF_ATTEMPT_003_CHECKPOINT",
+    "formal_Gate_D": "PASS",
+    "computed": true,
+    "acceptable_for_next_execution_state": true,
+    "gate_D_status_path": "results/routeA/attempts/attempt_003/post_fix_reanalysis/gate_D_status.json",
+    "gate_D_status_sha256": "a9d09ad152777f2ac00ba634c79b17935c53d885b246f52b7ee179f3ec3b33ac",
+    "canonical_output_sha256": {
+      "results/routeA/attempts/attempt_003/post_fix_reanalysis/metrics.json": "edbf3582aac70a7f9c74509a35f3a42ea97c7f7575d4661986ed693b6a4ecd44",
+      "results/routeA/attempts/attempt_003/post_fix_reanalysis/local_nusselt.csv": "63bd530cec5d30a70e4e3849ad2809dd29b374b966b053383e95e7df6f272ca4",
+      "results/routeA/attempts/attempt_003/post_fix_reanalysis/section_nusselt.csv": "c4eabfc5452d7b14744f1fdfe749915096f5261411be9ce322d9595c00667823",
+      "results/routeA/attempts/attempt_003/post_fix_reanalysis/centreline_4097.csv": "edae7a77355a44d9df224efbd8ff3c2f13ff26faeff5f623611ffe836ee0a345",
+      "results/routeA/attempts/attempt_003/post_fix_reanalysis/convergence.csv": "2bae5e76a5a3a21702dc32f7db9cafd30d510b0c9c7a7aac09a077576e48bd09"
+    },
+    "historical_attempt_003_reclassified": false
+  },
+  "historical_v1_3_amendment": {
+    "id": "Route A Execution Contract Amendment 003",
+    "path": "docs/routeA_execution_contract_amendment_003.json",
+    "sha256": "c34d29178c7d6193f44efbfeb255855a8b82c62a7874201411a7de37fdbb92f7",
+    "parent": {
+      "version": "1.2",
+      "path": "docs/routeA_execution_contract_v1.2.json",
+      "sha256": "7db8d5b8217f009243cb884e291f3d7a09a699b4fe35073792cbaedb5bf7b7fe"
+    },
+    "snapshot_rule": "v1.0 + A001 + A002 + A003; unchanged scientific/numerical contract, analyzer order/key guard and necessary ownership/restart/version metadata."
+  },
+  "historical_v1_3_evaluator_change": {
+    "file": "Scripts/routeA/analyze_case.py",
+    "previous_sha256": "327761f2b20d86ef8a3a924c64e46bd63da7b11e7a88ba7d74ccfaf232ddbac9",
+    "new_sha256": "e1f5da10349b997d858cc04802a04366a668e6af4cf51367569e198993e8e0ac",
+    "evaluation_version": "routeA-paper-order-amendment-003",
+    "numerical_evaluation_version_unchanged": "routeA-gateD-contract-v1.0",
+    "behavior": {
+      "scope": "PAPER_COMPARISON_ORDER_ONLY",
+      "order": "Nu/local Nu -> unchanged 4097-point centreline extrema -> complete calculated dictionary -> key guard -> unchanged paper comparison",
+      "added_calculated_keys": {
+        "Umax": "umax",
+        "Umax_Z": "umax_loc",
+        "Wmax": "vmax",
+        "Wmax_X": "vmax_loc"
+      },
+      "key_guard": "require_paper_comparison_keys raises ValueError PAPER_COMPARISON_CALCULATED_KEY_MISSING with sorted missing names before comparison; not raw KeyError.",
+      "Nu_bar_1": "Unchanged special handling: no independent reference, error null, diagnostic calculated value retained.",
+      "paper_difference_and_dispatch": "Unchanged paper_difference() and existing key.endswith(_Z) dispatch; no position/scalar error-definition change.",
+      "unchanged_helpers": [
+        "paper_nusselt",
+        "local_quartic_extremum",
+        "sample_extrema",
+        "evaluate_gate_d_monitors",
+        "parse_residuals",
+        "classify_health_lines",
+        "paper_difference"
+      ],
+      "unrelated_AST_identical_after_order_key_guard_normalization": true
+    },
+    "physical_or_numerical_inputs_changed": false,
+    "historical_results_or_script_hashes_in_old_manifests_updated": false
+  },
+  "historical_v1_3_attempt_policy": {
+    "attempt_001": {
+      "status": "STOPPED_PRE_SOLVER_EVALUATOR_FALSE_POSITIVE",
+      "historical_artifacts": [
+        "results/routeA/Ra1e3_trio_report.md",
+        "results/routeA/Ra1e3_trio_report.json",
+        "results/routeA/Ra1e3_trio_matrix.csv",
+        "results/routeA/Ra1e3_routeA_vs_routeB.csv"
+      ],
+      "artifacts_unchanged": true,
+      "meaning": "Explanation of the preserved STOP; no PASS rewrite and no CFD result reclassification."
+    },
+    "next_attempt": {
+      "id": "attempt_005",
+      "status": "NOT_STARTED",
+      "batch_artifact_root": "results/routeA/attempts/attempt_005/",
+      "case_ids": [
+        "A-Ra1e4-coarse",
+        "A-Ra1e4-medium",
+        "A-Ra1e4-fine"
+      ],
+      "Ra_target": 10000,
+      "grids": [
+        [
+          40,
+          40,
+          1
+        ],
+        [
+          80,
+          80,
+          1
+        ],
+        [
+          160,
+          160,
+          1
+        ]
+      ],
+      "requires_new_user_run_instruction": true,
+      "formal_case_destinations_absent": true,
+      "destination_state": {
+        "A-Ra1e4-coarse": "Absent; generate new only in authorized Ra1e4 task",
+        "A-Ra1e4-medium": "Absent; generate new only in authorized Ra1e4 task",
+        "A-Ra1e4-fine": "Absent; generate new only in authorized Ra1e4 task"
+      },
+      "coarse_reuse": {
+        "allowed": false,
+        "reason": "Ra1e3 reuse policy is historical and does not authorize Ra1e4 reuse"
+      },
+      "batch_filenames": [
+        "Ra1e4_trio_report.md",
+        "Ra1e4_trio_report.json",
+        "Ra1e4_trio_matrix.csv",
+        "Ra1e4_routeA_vs_routeB.csv"
+      ],
+      "historical_batch_paths_must_not_be_overwritten": true
+    },
+    "attempt_002": {
+      "status": "STOPPED",
+      "stop_reason": "STOP_EVALUATOR_FAILURE_RUNTIME_EVIDENCE_COLLECTION",
+      "root": "results/routeA/attempts/attempt_002/",
+      "historical_runner_unchanged": true,
+      "reports_unchanged": true,
+      "primary_solver_runs": 0,
+      "coarse_generated": true
+    },
+    "attempt_003": {
+      "status": "STOPPED",
+      "root": "results/routeA/attempts/attempt_003/",
+      "stop_reason": "STOP_EVALUATOR_FAILURE_CANONICAL_ANALYZER_KEYERROR_UMAX",
+      "coarse_primary_checkpoint": 3000,
+      "historical_computed": false,
+      "historical_accepted": false,
+      "historical_Gate_D": "NOT_EVALUATED",
+      "reports_and_raw_seal_unchanged": true
+    },
+    "attempt_004": {
+      "status": "COMPLETE",
+      "root": "results/routeA/attempts/attempt_004/",
+      "accepted_case_count": 3,
+      "Gate_D": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "Gate_E_diagnostic": "PASS",
+      "Gate_F": "FAIL",
+      "needs_320": "YES",
+      "Gate_G": "PASS",
+      "historical_artifacts_unchanged": true,
+      "reanalysis_owner": "POSITION_SEMANTICS_REEVALUATION_OF_ACCEPTED_RA1E3_TRIO",
+      "reanalysis_is_separate_from_historical_execution": true
+    }
+  },
+  "paper_comparison_position_semantics": {
+    "scope": "PAPER_POSITION_CLASSIFICATION_ONLY",
+    "position_keys": [
+      "Umax_Z",
+      "Wmax_X",
+      "Nu_hot_local_max_Z",
+      "Nu_hot_local_min_Z"
+    ],
+    "classification": "key in POSITION_KEYS; explicit frozenset; suffix alone is not a position rule",
+    "position_payload": [
+      "calculated",
+      "reference",
+      "signed_position_difference",
+      "absolute_position_error",
+      "error (signed position difference)",
+      "error_legacy_semantics"
+    ],
+    "scalar_payload": [
+      "calculated",
+      "reference",
+      "signed_relative_difference",
+      "absolute_relative_error",
+      "error (signed relative difference)",
+      "error_legacy_semantics"
+    ],
+    "Wmax_X_relative_fields_absent": true,
+    "paper_difference_formula_unchanged": true,
+    "Nu_bar_1_special_handling_unchanged": true,
+    "unchanged_helpers": [
+      "paper_nusselt",
+      "local_quartic_extremum",
+      "sample_extrema",
+      "evaluate_gate_d_monitors",
+      "parse_residuals",
+      "classify_health_lines",
+      "paper_difference"
+    ]
+  },
+  "position_semantics_reassessment": {
+    "owner": "POSITION_SEMANTICS_REEVALUATION_OF_ACCEPTED_RA1E3_TRIO",
+    "status": "PASS",
+    "path": "results/routeA/attempts/attempt_004/position_semantics_reanalysis",
+    "check_path": "results/routeA/attempts/attempt_004/position_semantics_reanalysis/comparison_semantics_check.json",
+    "check_sha256": "bcd21e73cd7f39935ce2af379b269543b1a3458a08182acf6265128a463e93b8",
+    "all_12_QoIs_exactly_unchanged": true,
+    "all_other_metrics_exactly_unchanged": true,
+    "Wmax_X_payload_before_after": {
+      "calculated": 0.17822265625,
+      "reference": 0.178,
+      "signed_relative_difference": 0.0012508778089888116,
+      "absolute_relative_error": 0.0012508778089888116,
+      "error": 0.0012508778089888116,
+      "error_legacy_semantics": "signed relative difference; do not use for Gate judgement",
+      "after": {
+        "calculated": 0.17822265625,
+        "reference": 0.178,
+        "signed_position_difference": 0.00022265625000000844,
+        "absolute_position_error": 0.00022265625000000844,
+        "error": 0.00022265625000000844,
+        "error_legacy_semantics": "signed position difference; do not use for Gate judgement"
+      }
+    },
+    "Gate_D_unchanged": true,
+    "Gate_E_unchanged": true,
+    "Gate_F_unchanged": true,
+    "Gate_G_unchanged": true,
+    "Gate_D": [
+      "PASS",
+      "PASS",
+      "PASS"
+    ],
+    "Gate_E_diagnostic": "PASS",
+    "Gate_F": "FAIL",
+    "needs_320": "YES",
+    "Gate_G": "PASS",
+    "A_B_position_csv_consistency": "PASS",
+    "A_B_comparison_changed": false
+  },
+  "position_semantics_tests": {
+    "status": "PASS",
+    "count": 15,
+    "unit_command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=Scripts/routeA python3 -m unittest discover -s Scripts/routeA -p 'test_paper*.py' -v",
+    "log_path": "results/routeA/attempts/attempt_004/position_semantics_reanalysis/unit_tests.log",
+    "log_sha256": "501954ce793010515fbf53b7e105812929b593940550ba57436e60adf53e247f",
+    "seven_required_position_scalar_tests": "PASS",
+    "unknown_suffix_does_not_imply_position": "PASS",
+    "numerical_helper_regression": "PASS",
+    "numerical_helper_outputs_exactly_identical": true,
+    "unrelated_analyzer_AST_identical": true,
+    "prior_order_tests_preserved_except_obsolete_suffix_dispatch_expectation": true
+  },
+  "current_protected_evidence": {
+    "path": "results/routeA/attempts/attempt_004/position_semantics_reanalysis/protected_before_sha256.json",
+    "sha256": "8ca90ee6418776a1ebe9f1fb2f5b450d9f52f4636b2392b476119afadbe39c2b",
+    "hash_entry_count": 83200,
+    "before_after_status": "PASS",
+    "authorized_source_edits": [
+      "Scripts/routeA/analyze_case.py",
+      "Scripts/routeA/test_paper_comparison_order.py"
+    ],
+    "new_artifacts_only_in_addition_to_source_edits": true
+  },
+  "historical_v1_3_registered_coarse_reuse": {
+    "action": "SKIP_SOLVER_AND_ACCEPT_3000",
+    "checkpoint_iteration": 3000,
+    "reason": "Post-fix canonical metrics complete and all six formal Gate D booleans PASS under unchanged criteria.",
+    "owner": "POST_FIX_REEVALUATION_OF_ATTEMPT_003_CHECKPOINT",
+    "gate_D_status_path": "results/routeA/attempts/attempt_003/post_fix_reanalysis/gate_D_status.json",
+    "gate_D_status_sha256": "a9d09ad152777f2ac00ba634c79b17935c53d885b246f52b7ee179f3ec3b33ac",
+    "metrics_path": "results/routeA/attempts/attempt_003/post_fix_reanalysis/metrics.json",
+    "metrics_sha256": "edbf3582aac70a7f9c74509a35f3a42ea97c7f7575d4661986ed693b6a4ecd44",
+    "source_segment": "results/routeA/cases/A-Ra1e3-coarse/segments/end_3000/",
+    "source_segment_seal_sha256": "7578f6ae34865b17628bc7e941af89a72193be65317ab54c2354017fe441a245",
+    "native_field_sha256": {
+      "rho": "8b53f3aee8331419fa9589a544d217484233a258714159aad9901e6b2469187e",
+      "U": "5ec1b1c19eeb25726db0fea7ff292b3dedcac0622f83cd500e34b5c7bf89e346",
+      "phi": "d57b3a7471836d939c56d7dc968694066dbaddc1a63919b013a3044744d50f1d",
+      "T": "d067a9290b5ffa5ffb1053bb46cb7f66fd9af9732ddb1d6a767432554d76114c",
+      "wallHeatFlux": "95c659d1ca5284de6ce7e28ae1ec637c39335d1f38a36af0fdf34c0975fdb09b",
+      "p": "a9637bda9ffb6d1a4b9bf96fea15dc2d5aad64236073e600a91da473f273289b",
+      "p_rgh": "32fe3547657aa411d2f0f54932981d6509090d07355e6988110e047168ae48d0"
+    },
+    "primary_coarse_solver_rerun": false,
+    "coarse_continuation_required": false,
+    "next_case": "A-Ra1e3-medium",
+    "pre_attempt_004_checks": [
+      "Verify v1.3 effective digest and every current implementation/template/caps/reference hash",
+      "Verify original end_3000 seal, post-fix gate/metrics hashes and current native 3000 field/input/mesh hashes",
+      "Record coarse accepted checkpoint linkage in new attempt_004 root; keep historical attempt_003 STOP and end_3000 seal unchanged",
+      "Proceed to NEW medium, then NEW fine sequentially with canonical generation/mesh/initialization/runtime/OQ-02/Gate A steps"
+    ],
+    "historical_result_policy": "No rewriting attempt_003 report/matrix/comparison or historical end_3000 gate_D_status.json; record accepted reuse only in new execution state.",
+    "future_user_run_instruction_required": true
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "new_analyzer_sha256": "e6207e33ae2279e84786115ebfd912b170dcb23f220f1b1155314c723c54cfed",
+  "effective_contract_sha256": "2665b8a62211618ae531e7b8d42242e3d8f9ae469b95b634beab672c89b345d7",
+  "amendment_004_sha256": "803befbe8a0fd9a6f396b4f33dee70bbaa692036b9238ac259b8277b48340c64",
+  "parent_sha256": "227414aaff22a0f37bed234f6b26c0a296d18f592da641aa55f1c4a4538ff3f1",
+  "numeric_blocks_identical": [
+    "frozen_model",
+    "template_source",
+    "monitor",
+    "Gate_D",
+    "statuses",
+    "batch_stop_policy",
+    "Gate_F",
+    "Gate_G",
+    "continuity",
+    "energy_diagnostics",
+    "AB_comparison"
+  ],
+  "execution_identical_except_next_first_unit_metadata": true,
+  "protected_hash_entries": 83200
+}

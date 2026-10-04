@@ -1,0 +1,20 @@
+test_blank_Nu_bar_1_special_handling (test_paper_comparison_order.PaperComparisonOrderTests.test_blank_Nu_bar_1_special_handling) ... ok
+test_missing_Umax_controlled_failure (test_paper_comparison_order.PaperComparisonOrderTests.test_missing_Umax_controlled_failure) ... ok
+test_paper_difference_semantics (test_paper_comparison_order.PaperComparisonOrderTests.test_paper_difference_semantics) ... ok
+test_reference_key_coverage (test_paper_comparison_order.PaperComparisonOrderTests.test_reference_key_coverage) ... ok
+test_velocity_keys_available_before_comparison (test_paper_comparison_order.PaperComparisonOrderTests.test_velocity_keys_available_before_comparison) ... ok
+test_numerical_helper_outputs_unchanged (test_paper_position_semantics.NumericalHelperRegressionTests.test_numerical_helper_outputs_unchanged) ... ok
+test_only_classification_changed_in_analyzer_AST (test_paper_position_semantics.NumericalHelperRegressionTests.test_only_classification_changed_in_analyzer_AST) ... ok
+test_Nu_bar_cavity_scalar (test_paper_position_semantics.PaperPositionSemanticsTests.test_Nu_bar_cavity_scalar) ... ok
+test_Nu_hot_local_max_Z_position (test_paper_position_semantics.PaperPositionSemanticsTests.test_Nu_hot_local_max_Z_position) ... ok
+test_Nu_hot_local_min_Z_position (test_paper_position_semantics.PaperPositionSemanticsTests.test_Nu_hot_local_min_Z_position) ... ok
+test_Umax_Z_position (test_paper_position_semantics.PaperPositionSemanticsTests.test_Umax_Z_position) ... ok
+test_Umax_scalar (test_paper_position_semantics.PaperPositionSemanticsTests.test_Umax_scalar) ... ok
+test_Wmax_X_position (test_paper_position_semantics.PaperPositionSemanticsTests.test_Wmax_X_position) ... ok
+test_Wmax_scalar (test_paper_position_semantics.PaperPositionSemanticsTests.test_Wmax_scalar) ... ok
+test_other_scalars_and_suffix_is_not_classification (test_paper_position_semantics.PaperPositionSemanticsTests.test_other_scalars_and_suffix_is_not_classification) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.359s
+
+OK

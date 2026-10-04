@@ -1,0 +1,142 @@
+{
+  "schema": "routeA-execution-contract-amendment-v1",
+  "id": "Route A Execution Contract Amendment 004",
+  "date": "2026-10-04",
+  "timezone": "Asia/Tokyo",
+  "observed_HEAD": "922c45ff5b179eead8058045757f07d71cfb17fd",
+  "parent_contract": {
+    "version": "1.3",
+    "path": "docs/routeA_execution_contract_v1.3.json",
+    "sha256": "227414aaff22a0f37bed234f6b26c0a296d18f592da641aa55f1c4a4538ff3f1",
+    "unchanged": true
+  },
+  "effective_version": "1.4",
+  "effective_path": "docs/routeA_execution_contract_v1.4.json",
+  "issue_class": "PAPER_COMPARISON_POSITION_SEMANTICS_BUG",
+  "direct_cause": "canonical paper comparison classified position quantities using key.endswith(\"_Z\"), causing Wmax_X to receive scalar-relative semantics",
+  "affected_file": "Scripts/routeA/analyze_case.py",
+  "old_analyzer_sha256": "e1f5da10349b997d858cc04802a04366a668e6af4cf51367569e198993e8e0ac",
+  "new_analyzer_sha256": "e6207e33ae2279e84786115ebfd912b170dcb23f220f1b1155314c723c54cfed",
+  "exact_behavioral_change": {
+    "scope": "PAPER_POSITION_CLASSIFICATION_ONLY",
+    "position_keys": [
+      "Umax_Z",
+      "Wmax_X",
+      "Nu_hot_local_max_Z",
+      "Nu_hot_local_min_Z"
+    ],
+    "classification": "key in POSITION_KEYS; explicit frozenset; suffix alone is not a position rule",
+    "position_payload": [
+      "calculated",
+      "reference",
+      "signed_position_difference",
+      "absolute_position_error",
+      "error (signed position difference)",
+      "error_legacy_semantics"
+    ],
+    "scalar_payload": [
+      "calculated",
+      "reference",
+      "signed_relative_difference",
+      "absolute_relative_error",
+      "error (signed relative difference)",
+      "error_legacy_semantics"
+    ],
+    "Wmax_X_relative_fields_absent": true,
+    "paper_difference_formula_unchanged": true,
+    "Nu_bar_1_special_handling_unchanged": true,
+    "unchanged_helpers": [
+      "paper_nusselt",
+      "local_quartic_extremum",
+      "sample_extrema",
+      "evaluate_gate_d_monitors",
+      "parse_residuals",
+      "classify_health_lines",
+      "paper_difference"
+    ]
+  },
+  "unit_and_regression_tests": {
+    "status": "PASS",
+    "count": 15,
+    "unit_command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=Scripts/routeA python3 -m unittest discover -s Scripts/routeA -p 'test_paper*.py' -v",
+    "log_path": "results/routeA/attempts/attempt_004/position_semantics_reanalysis/unit_tests.log",
+    "log_sha256": "501954ce793010515fbf53b7e105812929b593940550ba57436e60adf53e247f",
+    "seven_required_position_scalar_tests": "PASS",
+    "unknown_suffix_does_not_imply_position": "PASS",
+    "numerical_helper_regression": "PASS",
+    "numerical_helper_outputs_exactly_identical": true,
+    "unrelated_analyzer_AST_identical": true,
+    "prior_order_tests_preserved_except_obsolete_suffix_dispatch_expectation": true
+  },
+  "read_only_reanalysis": {
+    "owner": "POSITION_SEMANTICS_REEVALUATION_OF_ACCEPTED_RA1E3_TRIO",
+    "status": "PASS",
+    "path": "results/routeA/attempts/attempt_004/position_semantics_reanalysis",
+    "check_path": "results/routeA/attempts/attempt_004/position_semantics_reanalysis/comparison_semantics_check.json",
+    "check_sha256": "bcd21e73cd7f39935ce2af379b269543b1a3458a08182acf6265128a463e93b8",
+    "all_12_QoIs_exactly_unchanged": true,
+    "all_other_metrics_exactly_unchanged": true,
+    "Wmax_X_payload_before_after": {
+      "calculated": 0.17822265625,
+      "reference": 0.178,
+      "signed_relative_difference": 0.0012508778089888116,
+      "absolute_relative_error": 0.0012508778089888116,
+      "error": 0.0012508778089888116,
+      "error_legacy_semantics": "signed relative difference; do not use for Gate judgement",
+      "after": {
+        "calculated": 0.17822265625,
+        "reference": 0.178,
+        "signed_position_difference": 0.00022265625000000844,
+        "absolute_position_error": 0.00022265625000000844,
+        "error": 0.00022265625000000844,
+        "error_legacy_semantics": "signed position difference; do not use for Gate judgement"
+      }
+    },
+    "Gate_D_unchanged": true,
+    "Gate_E_unchanged": true,
+    "Gate_F_unchanged": true,
+    "Gate_G_unchanged": true,
+    "Gate_D": [
+      "PASS",
+      "PASS",
+      "PASS"
+    ],
+    "Gate_E_diagnostic": "PASS",
+    "Gate_F": "FAIL",
+    "needs_320": "YES",
+    "Gate_G": "PASS",
+    "A_B_position_csv_consistency": "PASS",
+    "A_B_comparison_changed": false
+  },
+  "changes": {
+    "formal_criteria_changed": false,
+    "numerical_settings_changed": false,
+    "physical_model_changed": false,
+    "reference_data_changed": false,
+    "solver_results_changed": false,
+    "historical_statuses_changed": false,
+    "solver_executed": false,
+    "primary_solver_executed": false,
+    "continuation_executed": false,
+    "case_generated": false,
+    "mesh_generated": false,
+    "Route_B_modified": false
+  },
+  "protected_evidence": {
+    "path": "results/routeA/attempts/attempt_004/position_semantics_reanalysis/protected_before_sha256.json",
+    "sha256": "8ca90ee6418776a1ebe9f1fb2f5b450d9f52f4636b2392b476119afadbe39c2b",
+    "hash_entry_count": 83200,
+    "before_after_status": "PASS",
+    "authorized_source_edits": [
+      "Scripts/routeA/analyze_case.py",
+      "Scripts/routeA/test_paper_comparison_order.py"
+    ],
+    "new_artifacts_only_in_addition_to_source_edits": true
+  },
+  "user_authorization": {
+    "task": "FIX_ROUTE_A_PAPER_POSITION_SEMANTICS",
+    "attachment": "/home/mirai/.codex/attachments/2a7a53d9-ca02-4f29-88c6-13f9e8e42aac/貼り付けたテキスト.txt",
+    "attachment_sha256": "97c58260957112f1b12c895de8cff997bd63768d3d6f6f9b13ac3741826c1b39",
+    "explicit_scope": "Position classification fix, tests, solver-free accepted Ra1e3 reanalysis, Amendment 004/effective v1.4 and Ra1e4 readiness; no solver execution."
+  }
+}

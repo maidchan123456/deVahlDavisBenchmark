@@ -1,0 +1,5 @@
+Ra,Nu_bar_cavity,Nu_bar_half,Nu_bar_0,Nu_bar_1,Nu_hot_local_max,Nu_hot_local_max_Z,Nu_hot_local_min,Nu_hot_local_min_Z,Umax,Umax_Z,Wmax,Wmax_X,source_note
+1000,1.118,1.118,1.117,,1.505,0.092,0.692,1.000,3.649,0.813,3.697,0.178,"de Vahl Davis (1983), Table V; Nu_bar_1 is not independently tabulated"
+10000,2.243,2.243,2.238,,3.528,0.143,0.586,1.000,16.178,0.823,19.617,0.119,"de Vahl Davis (1983), Table V; Nu_bar_1 is not independently tabulated"
+100000,4.519,4.519,4.509,,7.717,0.081,0.729,1.000,34.73,0.855,68.59,0.066,"de Vahl Davis (1983), Table V; Nu_bar_1 is not independently tabulated"
+1000000,8.800,8.799,8.817,,17.925,0.0378,0.989,1.000,64.63,0.850,219.36,0.0379,"de Vahl Davis (1983), Table V; Nu_bar_1 is not independently tabulated"
