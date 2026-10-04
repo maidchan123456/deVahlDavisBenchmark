@@ -1,0 +1,51 @@
+{
+  "schema": "routeB-pressure-feasibility-preflight-v1",
+  "P12": "READY_TO_ATTEMPT_NOT_PREVIOUSLY_VERIFIED",
+  "source_hashes": {
+    "/home/mirai/OpenFOAM/OpenFOAM-6/src/OpenFOAM/matrices/lduMatrix/solvers/PCG/PCG.C": "93eb42c30d332c15ec177b65dd08c0a01080ae2f7c9b3bbef00a9bc5249d0dfd",
+    "/home/mirai/OpenFOAM/OpenFOAM-6/src/OpenFOAM/matrices/lduMatrix/lduMatrix/lduMatrixSolver.C": "95eda050d2718403b71ad92df5ed17440bff88928c8e2996a44b3da4a1824e03",
+    "/home/mirai/OpenFOAM/OpenFOAM-6/src/OpenFOAM/matrices/LduMatrix/LduMatrix/SolverPerformance.C": "a0fba77459beb9db12472eb96a00287662176077e70b18f9bd763ec051a0e3bc"
+  },
+  "source_evidence": [
+    "readControls reads scalar tolerance directly; no 1e-12 clamp/rejection",
+    "PCG compares normalized recursive finalResidual against absolute tolerance, relTol0 disables relative stopping",
+    "PCG checks singularity and maxIter10000 remains unchanged; these do not certify attainable accuracy",
+    "solver normFactor is state dependent, epsilon is not the solver tolerance"
+  ],
+  "CaseC_evidence_file": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/caseC_continuity_verification/verification_summary.json",
+  "CaseC_evidence_sha256": "af0b0485facd0bd63fe0c3cb6b435121774832802f6fd061bb682b41bdbb28e3",
+  "CaseC_limit": "Synthetic rounding levels and real write/read/evaluation discrepancies measured; tightest solver tolerance 1e-10 does not establish a plateau or universal floor.",
+  "prior_serialization_epsilon_error_max": 1.8497436349840201e-16,
+  "prior_n20_continuous_evidence": {
+    "R_recursive": {
+      "min": 2.48477924787481e-11,
+      "max": 9.998821395926885e-11
+    },
+    "R_true": {
+      "min": 2.506690335697431e-11,
+      "max": 1.0032503487193026e-10
+    },
+    "Np": {
+      "min": 2.2362043006664054e-07,
+      "max": 2.2362048756489822e-07
+    },
+    "Kp": {
+      "min": 4.359661901639192,
+      "max": 4.359663055298287
+    },
+    "abs_L1_norm_drift": {
+      "min": 3.6506803390569e-24,
+      "max": 1.2499683228789e-19
+    },
+    "mapping_defect_L1": {
+      "min": 2.3230980105951914e-19,
+      "max": 3.1108339592708087e-19
+    },
+    "linear_iterations": {
+      "min": 9.0,
+      "max": 23.0
+    }
+  },
+  "interpretation": "Source permits P12, but no direct prior1e-12 PCG test or certified floor. Norm drift/mapping discrepancies make true residual audit essential. Attempt only preregistered P12; no1e-11 substitute, no additional preflight solver call.",
+  "NOT_FEASIBLE_rule": "P12 pressure solve not converged, maxIter10000 exhaustion, singular/breakdown or stall; preserve and stop without restart or alternate tolerance."
+}

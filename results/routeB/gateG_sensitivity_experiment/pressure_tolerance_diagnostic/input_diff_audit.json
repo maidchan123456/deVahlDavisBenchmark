@@ -1,0 +1,103 @@
+{
+  "schema": "routeB-pressure-input-diff-audit-v1",
+  "sole_branch_input_difference": "system/fvSolution solvers.p_rgh.tolerance",
+  "branches": {
+    "P10": {
+      "tolerance": 1e-10,
+      "input_hashes": {
+        "constant/continuitySource": "e033e206610689c06c740c485941717c358f96e6defd32073192a4960562feb1",
+        "constant/g": "816f979fc6a2872318bacf9d457fbd71ba77ef2aa6b805441b3ed60749b115a7",
+        "constant/polyMesh/boundary": "61bfd283b1eb5d56ea685edf73cfbfcb43e9c979963d69128bbd86d969fb6fdd",
+        "constant/polyMesh/faces": "daa0e99501b78e74be07339ff825bd4badaacf24245c168f4a9ca22ae2c8cf19",
+        "constant/polyMesh/neighbour": "0ba2c70316ce02446aa52deaae61e66f10a0c6974e1237d70af6655b45946075",
+        "constant/polyMesh/owner": "f07eaca9b8e6a8c9d45bd54e99e3f28ff26f98c188551101c0ecb4456511daa7",
+        "constant/polyMesh/points": "31d7d14c0f7df4315d300560214f67bff995eab5361f394c3033699d82cbfb75",
+        "constant/radiationProperties": "014e49614153130f43bf1c374c6865e1736c373ad9ea0b889ae30c28743c6a9b",
+        "constant/transportProperties": "1ba2e0680a53761d832661218c5cb40fa2fc46085da75e051529e61758a0bc9d",
+        "constant/turbulenceProperties": "83ccd08a7cab4204a51cfd89ff8054145ad0548dbc823e3f1058ecc31ceff53a",
+        "system/blockMeshDict": "89c7c0e0e37dddb160c0e03d3e1df33862256186e55f8ed993d699bd3b8aff0c",
+        "system/controlDict": "2d836b72c72744c932f133e6084cc244854528a40e9f1ae7318cc9f8f0f4a7c3",
+        "system/fvSchemes": "fc82945a96f142b049b68c495183fb188d5aa68500527722e0816ee81ee71591",
+        "system/fvSolution": "94232dd78c33fc3f9ca941728dcef6d3fc11c6a299b1cfcde95117748e81594a"
+      },
+      "parent_hashes": {
+        "T": "ba8484010268a9dae6c869a4cc20fe28f16a47855a1b763fbee0d402201c28f3",
+        "U": "1e319f4661afed3992a6be31f954effd3b7a49582e5552380063da01995349fe",
+        "alphat": "e29fe1c6dddb9eb38423349801b4d71a8ae5f21aa25d800bc26798fbd46f12db",
+        "p": "9a08968b558df1d5d259c2642c6e722d8bfbefc5b18f7dac3fa22baeb20d3725",
+        "p_rgh": "f22af178a878ad88fca991483f8aac68f9af46171ee69332f80cfc41628a3dc3",
+        "phi": "b221f60d0bcd87a4f684f530cd619ed0c31ae1d21c02341e695ee14f5c7f6801",
+        "uniform/time": "906fbe54ab7952035b4fca38bf552537e5329585befa9faaa3e8834b5a930d5d"
+      },
+      "changed_input_files_vs_P10": []
+    },
+    "P8": {
+      "tolerance": 1e-08,
+      "input_hashes": {
+        "constant/continuitySource": "e033e206610689c06c740c485941717c358f96e6defd32073192a4960562feb1",
+        "constant/g": "816f979fc6a2872318bacf9d457fbd71ba77ef2aa6b805441b3ed60749b115a7",
+        "constant/polyMesh/boundary": "61bfd283b1eb5d56ea685edf73cfbfcb43e9c979963d69128bbd86d969fb6fdd",
+        "constant/polyMesh/faces": "daa0e99501b78e74be07339ff825bd4badaacf24245c168f4a9ca22ae2c8cf19",
+        "constant/polyMesh/neighbour": "0ba2c70316ce02446aa52deaae61e66f10a0c6974e1237d70af6655b45946075",
+        "constant/polyMesh/owner": "f07eaca9b8e6a8c9d45bd54e99e3f28ff26f98c188551101c0ecb4456511daa7",
+        "constant/polyMesh/points": "31d7d14c0f7df4315d300560214f67bff995eab5361f394c3033699d82cbfb75",
+        "constant/radiationProperties": "014e49614153130f43bf1c374c6865e1736c373ad9ea0b889ae30c28743c6a9b",
+        "constant/transportProperties": "1ba2e0680a53761d832661218c5cb40fa2fc46085da75e051529e61758a0bc9d",
+        "constant/turbulenceProperties": "83ccd08a7cab4204a51cfd89ff8054145ad0548dbc823e3f1058ecc31ceff53a",
+        "system/blockMeshDict": "89c7c0e0e37dddb160c0e03d3e1df33862256186e55f8ed993d699bd3b8aff0c",
+        "system/controlDict": "2d836b72c72744c932f133e6084cc244854528a40e9f1ae7318cc9f8f0f4a7c3",
+        "system/fvSchemes": "fc82945a96f142b049b68c495183fb188d5aa68500527722e0816ee81ee71591",
+        "system/fvSolution": "f515d68f40e718fa071e3664b7ddfd5031b375431bf5cf66eca34b38da43c4ab"
+      },
+      "parent_hashes": {
+        "T": "ba8484010268a9dae6c869a4cc20fe28f16a47855a1b763fbee0d402201c28f3",
+        "U": "1e319f4661afed3992a6be31f954effd3b7a49582e5552380063da01995349fe",
+        "alphat": "e29fe1c6dddb9eb38423349801b4d71a8ae5f21aa25d800bc26798fbd46f12db",
+        "p": "9a08968b558df1d5d259c2642c6e722d8bfbefc5b18f7dac3fa22baeb20d3725",
+        "p_rgh": "f22af178a878ad88fca991483f8aac68f9af46171ee69332f80cfc41628a3dc3",
+        "phi": "b221f60d0bcd87a4f684f530cd619ed0c31ae1d21c02341e695ee14f5c7f6801",
+        "uniform/time": "906fbe54ab7952035b4fca38bf552537e5329585befa9faaa3e8834b5a930d5d"
+      },
+      "changed_input_files_vs_P10": [
+        "system/fvSolution"
+      ]
+    },
+    "P12": {
+      "tolerance": 1e-12,
+      "input_hashes": {
+        "constant/continuitySource": "e033e206610689c06c740c485941717c358f96e6defd32073192a4960562feb1",
+        "constant/g": "816f979fc6a2872318bacf9d457fbd71ba77ef2aa6b805441b3ed60749b115a7",
+        "constant/polyMesh/boundary": "61bfd283b1eb5d56ea685edf73cfbfcb43e9c979963d69128bbd86d969fb6fdd",
+        "constant/polyMesh/faces": "daa0e99501b78e74be07339ff825bd4badaacf24245c168f4a9ca22ae2c8cf19",
+        "constant/polyMesh/neighbour": "0ba2c70316ce02446aa52deaae61e66f10a0c6974e1237d70af6655b45946075",
+        "constant/polyMesh/owner": "f07eaca9b8e6a8c9d45bd54e99e3f28ff26f98c188551101c0ecb4456511daa7",
+        "constant/polyMesh/points": "31d7d14c0f7df4315d300560214f67bff995eab5361f394c3033699d82cbfb75",
+        "constant/radiationProperties": "014e49614153130f43bf1c374c6865e1736c373ad9ea0b889ae30c28743c6a9b",
+        "constant/transportProperties": "1ba2e0680a53761d832661218c5cb40fa2fc46085da75e051529e61758a0bc9d",
+        "constant/turbulenceProperties": "83ccd08a7cab4204a51cfd89ff8054145ad0548dbc823e3f1058ecc31ceff53a",
+        "system/blockMeshDict": "89c7c0e0e37dddb160c0e03d3e1df33862256186e55f8ed993d699bd3b8aff0c",
+        "system/controlDict": "2d836b72c72744c932f133e6084cc244854528a40e9f1ae7318cc9f8f0f4a7c3",
+        "system/fvSchemes": "fc82945a96f142b049b68c495183fb188d5aa68500527722e0816ee81ee71591",
+        "system/fvSolution": "968eb7857fc5cab76651613a76b0f98b3ed92fb7961fac790dcf7192a8a4c178"
+      },
+      "parent_hashes": {
+        "T": "ba8484010268a9dae6c869a4cc20fe28f16a47855a1b763fbee0d402201c28f3",
+        "U": "1e319f4661afed3992a6be31f954effd3b7a49582e5552380063da01995349fe",
+        "alphat": "e29fe1c6dddb9eb38423349801b4d71a8ae5f21aa25d800bc26798fbd46f12db",
+        "p": "9a08968b558df1d5d259c2642c6e722d8bfbefc5b18f7dac3fa22baeb20d3725",
+        "p_rgh": "f22af178a878ad88fca991483f8aac68f9af46171ee69332f80cfc41628a3dc3",
+        "phi": "b221f60d0bcd87a4f684f530cd619ed0c31ae1d21c02341e695ee14f5c7f6801",
+        "uniform/time": "906fbe54ab7952035b4fca38bf552537e5329585befa9faaa3e8834b5a930d5d"
+      },
+      "changed_input_files_vs_P10": [
+        "system/fvSolution"
+      ]
+    }
+  },
+  "diffs_vs_P10": {
+    "P10": "",
+    "P8": "--- P10/system/fvSolution\n+++ P8/system/fvSolution\n@@ -1,7 +1,7 @@\n FoamFile { version 2.0; format ascii; class dictionary; object fvSolution; }\n solvers\n {\n- p_rgh { solver PCG; preconditioner DIC; tolerance 1e-10; relTol 0; maxIter 10000; }\n+ p_rgh { solver PCG; preconditioner DIC; tolerance 1e-08; relTol 0; maxIter 10000; }\n  U { solver smoothSolver; smoother symGaussSeidel; tolerance 1e-12; relTol 0; }\n  T { solver smoothSolver; smoother symGaussSeidel; tolerance 1e-12; relTol 0; }\n }\n",
+    "P12": "--- P10/system/fvSolution\n+++ P12/system/fvSolution\n@@ -1,7 +1,7 @@\n FoamFile { version 2.0; format ascii; class dictionary; object fvSolution; }\n solvers\n {\n- p_rgh { solver PCG; preconditioner DIC; tolerance 1e-10; relTol 0; maxIter 10000; }\n+ p_rgh { solver PCG; preconditioner DIC; tolerance 1e-12; relTol 0; maxIter 10000; }\n  U { solver smoothSolver; smoother symGaussSeidel; tolerance 1e-12; relTol 0; }\n  T { solver smoothSolver; smoother symGaussSeidel; tolerance 1e-12; relTol 0; }\n }\n"
+  },
+  "PASS": true
+}

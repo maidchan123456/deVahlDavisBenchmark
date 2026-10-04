@@ -1,0 +1,51 @@
+{
+  "historical_scatter": {
+    "QoI_max_range": {
+      "C_median": 1.0279040849545204e-07,
+      "R_median": 1.109338162606288e-07,
+      "historical_resolution_proxy": 8.143407765176758e-09
+    },
+    "U_change_20": {
+      "C_median": 8.911642338753907e-08,
+      "R_median": 8.956660248220278e-08,
+      "historical_resolution_proxy": 4.501790946637089e-10
+    },
+    "T_change_20": {
+      "C_median": 2.5178621854138328e-08,
+      "R_median": 2.7923363177251304e-08,
+      "historical_resolution_proxy": 2.744741323112976e-09
+    },
+    "U_window_max": {
+      "C_median": 3.940661090217647e-07,
+      "R_median": 2.531347056341707e-07,
+      "historical_resolution_proxy": 1.40931403387594e-07
+    },
+    "T_window_max": {
+      "C_median": 9.212726581608877e-08,
+      "R_median": 8.325548606080702e-08,
+      "historical_resolution_proxy": 8.87177975528175e-09
+    },
+    "heat_window_range": {
+      "C_median": 3.0358036371831004e-08,
+      "R_median": 3.6555116448269975e-08,
+      "historical_resolution_proxy": 6.197080076438971e-09
+    },
+    "epsilon_phi_mean": {
+      "C_median": 3.1210946362231323e-10,
+      "R_median": 3.1917927018548184e-10,
+      "historical_resolution_proxy": 7.069806563168613e-12
+    },
+    "epsilon_phi_max": {
+      "C_median": 2.0047448362395587e-09,
+      "R_median": 1.9712330387396517e-09,
+      "historical_resolution_proxy": 3.351179749990696e-11
+    },
+    "R_recursive": {
+      "historical_resolution_proxy": 0.0,
+      "note": "Native audit quantity, no certified residual-vector roundoff uncertainty claimed; true residual separately retained."
+    }
+  },
+  "source": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/gateG_sensitivity_experiment/restart_effect_diagnostic/branch_variation.csv",
+  "source_sha256": "b1c451f7aedd8d51aa9c3f6b03c345e0dba36f0a79e296bd4d87dd585582f675",
+  "scope": "Empirical prior restart-trajectory median shifts, not IID repeatability or confidence intervals."
+}

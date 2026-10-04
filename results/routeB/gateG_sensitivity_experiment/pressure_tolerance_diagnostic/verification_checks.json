@@ -1,0 +1,29 @@
+{
+  "validated_utc": "2026-10-04T01:56:50.494703+00:00",
+  "checks_passed": [
+    "three unique serial PIDs in preregisteredP10,P8,P12 order; common environment digest",
+    "exact iteration sequences12001\u201318000,P8/P10 and12001\u201312440,P12; zero normal process exits",
+    "common complete12000 tree/mesh/inputs verified against old provenance",
+    "branch input diff only p_rgh tolerance token; U/T/relaxation/native criteria unchanged",
+    "P10 four whole-file and payload hashes exactly reproduce old continuousC18000",
+    "P12 all440 native PCG solves converge at1e-12; no stall/breakdown/fatal",
+    "P12 native11 qualified samples12240\u201312440 and200-iteration confirmation; full201-iteration equation initial residual checks pass",
+    "P12 late15000\u201318000/end18000 values explicitly NOT_OBSERVED; no replacement interval/restart/alternative",
+    "P8/P10 each151 late samples and15 complete disjoint200-iteration blocks",
+    "main effect/monotonicity/primary-cause classifications remain INCONCLUSIVE under frozen missing-data rule",
+    "amendment003, registered methods, all existing preregistrations/results/source/binary unchanged",
+    "all requested CSV/JSON/4 figures and18 exact report sections present",
+    "no tracked diff; no git add/commit/push"
+  ],
+  "P12_confirmation_201_iterations_max_initial_residuals": {
+    "Ux": 4.752293693087322e-10,
+    "Uy": 5.348724230273533e-10,
+    "T": 5.046648796387257e-10
+  },
+  "P12_PCg_feasible_over_440_iterations": true,
+  "plots_visually_checked": [
+    "pressure_tolerance_variation.png"
+  ],
+  "diagnostic_completion": "INCONCLUSIVE_UNDER_REQUIRED_STOP",
+  "additional_solver_calls": 0
+}
