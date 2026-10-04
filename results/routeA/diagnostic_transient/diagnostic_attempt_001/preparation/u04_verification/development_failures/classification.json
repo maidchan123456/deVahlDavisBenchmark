@@ -1,0 +1,13 @@
+{
+  "classification": "DEVELOPMENT_TOOLING_FAILURES_NOT_CFD_ATTEMPTS",
+  "numerical_tuning": false,
+  "fixes": [
+    "Normalize only private copies before native diagonal residual; use stored native snapshot for fixture residual.",
+    "Link synthetic inline SHA against libcrypto and explicitly write JSON characters to avoid OpenFOAM stream overload.",
+    "Distinguish native oldTime value/history identity from mutable storage clock.",
+    "Permit actual zero prior deltaT only at pre-time cold-start stages.",
+    "Accept tuple event serialization in Python; correct payload nesting in end evaluator.",
+    "Read actual Cpv Internal field, retain operator effective previous interval; no policy changes."
+  ],
+  "final_fresh_build_and_verification": "PASS"
+}

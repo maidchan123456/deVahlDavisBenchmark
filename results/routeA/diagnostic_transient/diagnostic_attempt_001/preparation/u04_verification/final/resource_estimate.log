@@ -1,0 +1,39 @@
+{
+  "classification": "PLANNING_ESTIMATE_ONLY",
+  "frozen_contract_version": "1.1",
+  "U01_U03_changed": false,
+  "cell_count": 25600,
+  "internal_faces": 50880,
+  "active_boundary_faces": 640,
+  "records_per_physical_step": 1141,
+  "diagnostic_numeric_payload_Float64_equivalent_bytes_per_step": 9704376176.0,
+  "full_field_numeric_bytes_per_step": 2045440,
+  "series_planning_envelope": {
+    "0.5": {
+      "prospective_constant_h_s": 0.007097842672793382,
+      "planning_steps": 200061,
+      "numeric_payload_equivalent_bytes": 1941876414918576.0
+    },
+    "0.25": {
+      "prospective_constant_h_s": 0.003548921336396691,
+      "planning_steps": 400122,
+      "numeric_payload_equivalent_bytes": 3883752829837152.0
+    },
+    "0.125": {
+      "prospective_constant_h_s": 0.0017744606681983455,
+      "planning_steps": 800244,
+      "numeric_payload_equivalent_bytes": 7767505659674304.0
+    }
+  },
+  "primary_numeric_payload_equivalent_bytes": 5825629244755728.0,
+  "two_series_step_watchdog_numeric_equivalent_bytes": 3.8825686464e+16,
+  "available_filesystem_bytes": 796048769024,
+  "resource_feasibility_concern": true,
+  "resource_feasibility_review_required": true,
+  "limitations": [
+    "No CFD stepcount/runtime inferred. Prospective h scales are inherited acceptedsteady estimates, not actual adaptiveh.",
+    "Byte figure is uncompressed numerical-payload equivalent with actual native cells/faces projected from synthetic schema, not measured actualJSON size or a disk lowerbound. Field count conservative; strings/headers/precision/compression maychange bytes.",
+    "No changes to24outer,cadence,duration or diagnostic tolerance. Resource review must decide feasibility before RUN.",
+    "Synthetic timing/memory figures do not predict production runtime."
+  ]
+}

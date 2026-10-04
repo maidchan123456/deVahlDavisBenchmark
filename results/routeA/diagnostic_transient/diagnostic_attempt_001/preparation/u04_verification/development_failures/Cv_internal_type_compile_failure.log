@@ -1,0 +1,8 @@
+/tmp/routeA-u04-build-dev7/overlay/fluid/thermophysicalPredictor.C: In member function ‘virtual void Foam::solvers::routeADiagnosticFluid::thermophysicalPredictor()’:
+/tmp/routeA-u04-build-dev7/overlay/fluid/thermophysicalPredictor.C:42:55: error: invalid initialization of reference of type ‘const Foam::volScalarField&’ {aka ‘const Foam::GeometricField<double, Foam::volMesh, Foam::Field>&’} from expression of type ‘const Foam::GeometricField<double, Foam::volMesh, Foam::Field>::Internal’ {aka ‘const Foam::DimensionedField<double, Foam::volMesh>’}
+   42 | if (buoyancy.valid()) routeAU04::thermal(thermo_.Cpv()(), buoyancy->g);
+      |                                          ~~~~~~~~~~~~~^~
+In file included from /tmp/routeA-u04-build-dev7/overlay/fluid/thermophysicalPredictor.C:3:
+/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/v1_2/NativeStageObserver.H:49:14: note: in passing argument 1 of ‘void routeAU04::thermal(const Foam::volScalarField&, const Foam::dimensionedVector&)’
+   49 | void thermal(const volScalarField&,const dimensionedVector&);
+      |              ^~~~~~~~~~~~~~~~~~~~~

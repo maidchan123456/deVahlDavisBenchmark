@@ -1,0 +1,346 @@
+{
+  "status": "PASS",
+  "source_set_sha256": "57aacf0e9307d0810a89b6b118680e67b5e1d70214e209070197fa3709e12a58",
+  "instrumentation_sha256": "adb52dc1e68d638ff98f4ffebe4d51746e40f1abb873d71a758b86964ad8f3fc",
+  "native_driver_runs": {
+    "observed_1": {
+      "exit_code": 0,
+      "elapsed_s": 20.915767975035124,
+      "command": [
+        "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/u04_verification/final/build/synthetic_native_driver",
+        "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/u04_verification/final/tests/observed_1",
+        "574b83ed63e244e9fbb1307d1a463e1c92fade86a99375054d599b06b155d675",
+        "57aacf0e9307d0810a89b6b118680e67b5e1d70214e209070197fa3709e12a58",
+        "adb52dc1e68d638ff98f4ffebe4d51746e40f1abb873d71a758b86964ad8f3fc",
+        "on",
+        "none"
+      ],
+      "classification": "SYNTHETIC_EVALUATOR_TEST"
+    },
+    "observed_2": {
+      "exit_code": 0,
+      "elapsed_s": 21.043450117926113,
+      "command": [
+        "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/u04_verification/final/build/synthetic_native_driver",
+        "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/u04_verification/final/tests/observed_2",
+        "574b83ed63e244e9fbb1307d1a463e1c92fade86a99375054d599b06b155d675",
+        "57aacf0e9307d0810a89b6b118680e67b5e1d70214e209070197fa3709e12a58",
+        "adb52dc1e68d638ff98f4ffebe4d51746e40f1abb873d71a758b86964ad8f3fc",
+        "on",
+        "none"
+      ],
+      "classification": "SYNTHETIC_EVALUATOR_TEST"
+    },
+    "observer_off": {
+      "exit_code": 0,
+      "elapsed_s": 0.288577861036174,
+      "command": [
+        "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/u04_verification/final/build/synthetic_native_driver",
+        "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/u04_verification/final/tests/observer_off",
+        "574b83ed63e244e9fbb1307d1a463e1c92fade86a99375054d599b06b155d675",
+        "57aacf0e9307d0810a89b6b118680e67b5e1d70214e209070197fa3709e12a58",
+        "adb52dc1e68d638ff98f4ffebe4d51746e40f1abb873d71a758b86964ad8f3fc",
+        "off",
+        "none"
+      ],
+      "classification": "SYNTHETIC_EVALUATOR_TEST"
+    },
+    "stationary": {
+      "exit_code": 0,
+      "elapsed_s": 21.971151315025054,
+      "command": [
+        "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/u04_verification/final/build/synthetic_native_driver",
+        "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/u04_verification/final/tests/stationary",
+        "574b83ed63e244e9fbb1307d1a463e1c92fade86a99375054d599b06b155d675",
+        "57aacf0e9307d0810a89b6b118680e67b5e1d70214e209070197fa3709e12a58",
+        "adb52dc1e68d638ff98f4ffebe4d51746e40f1abb873d71a758b86964ad8f3fc",
+        "on",
+        "stationary"
+      ],
+      "classification": "SYNTHETIC_EVALUATOR_TEST"
+    },
+    "injected_missing": {
+      "exit_code": 2,
+      "elapsed_s": 0.14374295203015208,
+      "command": [
+        "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/u04_verification/final/build/synthetic_native_driver",
+        "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/u04_verification/final/tests/injected_missing",
+        "574b83ed63e244e9fbb1307d1a463e1c92fade86a99375054d599b06b155d675",
+        "57aacf0e9307d0810a89b6b118680e67b5e1d70214e209070197fa3709e12a58",
+        "adb52dc1e68d638ff98f4ffebe4d51746e40f1abb873d71a758b86964ad8f3fc",
+        "on",
+        "missing"
+      ],
+      "classification": "SYNTHETIC_EVALUATOR_TEST"
+    },
+    "injected_duplicate": {
+      "exit_code": 2,
+      "elapsed_s": 0.14442996901925653,
+      "command": [
+        "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/u04_verification/final/build/synthetic_native_driver",
+        "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/u04_verification/final/tests/injected_duplicate",
+        "574b83ed63e244e9fbb1307d1a463e1c92fade86a99375054d599b06b155d675",
+        "57aacf0e9307d0810a89b6b118680e67b5e1d70214e209070197fa3709e12a58",
+        "adb52dc1e68d638ff98f4ffebe4d51746e40f1abb873d71a758b86964ad8f3fc",
+        "on",
+        "duplicate"
+      ],
+      "classification": "SYNTHETIC_EVALUATOR_TEST"
+    },
+    "injected_nan": {
+      "exit_code": 2,
+      "elapsed_s": 0.12291380495298654,
+      "command": [
+        "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/u04_verification/final/build/synthetic_native_driver",
+        "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/u04_verification/final/tests/injected_nan",
+        "574b83ed63e244e9fbb1307d1a463e1c92fade86a99375054d599b06b155d675",
+        "57aacf0e9307d0810a89b6b118680e67b5e1d70214e209070197fa3709e12a58",
+        "adb52dc1e68d638ff98f4ffebe4d51746e40f1abb873d71a758b86964ad8f3fc",
+        "on",
+        "nan"
+      ],
+      "classification": "SYNTHETIC_EVALUATOR_TEST"
+    },
+    "injected_wrongdimensions": {
+      "exit_code": 2,
+      "elapsed_s": 0.15347951604053378,
+      "command": [
+        "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/u04_verification/final/build/synthetic_native_driver",
+        "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/u04_verification/final/tests/injected_wrongdimensions",
+        "574b83ed63e244e9fbb1307d1a463e1c92fade86a99375054d599b06b155d675",
+        "57aacf0e9307d0810a89b6b118680e67b5e1d70214e209070197fa3709e12a58",
+        "adb52dc1e68d638ff98f4ffebe4d51746e40f1abb873d71a758b86964ad8f3fc",
+        "on",
+        "wrongdimensions"
+      ],
+      "classification": "SYNTHETIC_EVALUATOR_TEST"
+    },
+    "injected_wrongsource": {
+      "exit_code": 2,
+      "elapsed_s": 0.022091303020715714,
+      "command": [
+        "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/u04_verification/final/build/synthetic_native_driver",
+        "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/u04_verification/final/tests/injected_wrongsource",
+        "574b83ed63e244e9fbb1307d1a463e1c92fade86a99375054d599b06b155d675",
+        "0000000000000000000000000000000000000000000000000000000000000000",
+        "adb52dc1e68d638ff98f4ffebe4d51746e40f1abb873d71a758b86964ad8f3fc",
+        "on",
+        "wrongsource"
+      ],
+      "classification": "SYNTHETIC_EVALUATOR_TEST"
+    }
+  },
+  "native_replay": {
+    "status": "PASS",
+    "records": 1152,
+    "matrix_replays": 715,
+    "max_matrix_replay_defect": 6.217248937900877e-15,
+    "max_stored_arithmetic_allowance": 1.0184130315356815e-11,
+    "mass_term_identities": 49,
+    "energy_term_identities": 24,
+    "reference_identities": 48,
+    "rho_sync_identities": 1,
+    "variable_step_polynomial_checks": 3,
+    "isolated_energy_checks": 4,
+    "synchronization": [
+      {
+        "time_index": 2,
+        "M_before_postSolve": 3.03825,
+        "M_after_postSolve": 2.999940254869851,
+        "deltaM_postSolve": -0.038309745130149175,
+        "rho_s_minus_rho_T_before": [
+          0.011768127338229406,
+          0.013270808895959885
+        ],
+        "rho_s_minus_rho_T_after": [
+          0.0,
+          0.0
+        ],
+        "mass_C": {
+          "signed_global": -3.7643499428696714e-15,
+          "absolute_global": 4.187622471008012e-15,
+          "local_volume_L1": 1.3958741570026707e-15,
+          "local_Linf": 1.987993103469421e-15
+        },
+        "mass_end": {
+          "signed_global": -0.5107966017353258,
+          "absolute_global": 0.5107966017353258,
+          "local_volume_L1": 0.17026553391177526,
+          "local_Linf": 0.17694411861280046
+        },
+        "mass_sync_storage_change": -0.5107966017353223,
+        "energy_assembly": {
+          "signed_global": 0.0,
+          "absolute_global": 1.4210854715202004e-14,
+          "local_volume_L1": 4.736951571734001e-15,
+          "local_Linf": 7.105427357601002e-15
+        },
+        "energy_end": {
+          "signed_global": -3.0862920664260485,
+          "absolute_global": 3.0862920664260485,
+          "local_volume_L1": 1.0287640221420162,
+          "local_Linf": 1.0694072506688377
+        },
+        "energy_end_terms": {
+          "S_e": [
+            -1.2680632636224374,
+            -2.393544732702793
+          ],
+          "S_K": [
+            -0.0005005075654704226,
+            -0.001001165298173756
+          ],
+          "F_e": [
+            0.14114127144836658,
+            -0.10114127144836658
+          ],
+          "F_K": [
+            2.2999999999999997e-05,
+            -4.3e-05
+          ],
+          "W_p": [
+            -0.0001637316110725003,
+            0.00017675661107250033
+          ],
+          "H_out": [
+            0.1794856771386435,
+            0.35553893647126067
+          ],
+          "W_g": [
+            -0.0005999891235970624,
+            -0.001199975029324848
+          ],
+          "S_models": [
+            0.0,
+            0.0
+          ]
+        },
+        "pressure_relation_defect": [
+          -0.00011768127338229392,
+          -0.00013270808895960058
+        ],
+        "end_evaluation": "OFFLINE_REGISTERED_CONSTANT_PROPERTY_GOVERNING_STATE; no additional native assembly; separate from frozen assembly residual"
+      }
+    ],
+    "stage_sequence_sha256": "d7baea742da3b1a728e9e97dd9c804b52b85b37d4429bad7fdbf3ef9bf624d5e",
+    "classification": "SYNTHETIC_EVALUATOR_TEST",
+    "floor_scope": "SYNTHETIC_ONLY"
+  },
+  "non_invasiveness": "BITWISE",
+  "matrix_source_boundary_field_oldTime_time_solver_residual_fingerprints_identical": true,
+  "non_invasiveness_fingerprint": "f202573d2379a787929028b5bd45e2cfbbae59bf749ec0223982b18fe40af1de",
+  "repeatability": "BITWISE_RECORD_PAYLOAD_MANIFEST_AND_SUMMARY",
+  "failure_injections": [
+    {
+      "name": "missing",
+      "layer": "native_callback",
+      "status": "FAIL_CLOSED"
+    },
+    {
+      "name": "duplicate",
+      "layer": "native_callback",
+      "status": "FAIL_CLOSED"
+    },
+    {
+      "name": "nan",
+      "layer": "native_callback",
+      "status": "FAIL_CLOSED"
+    },
+    {
+      "name": "wrongdimensions",
+      "layer": "native_callback",
+      "status": "FAIL_CLOSED"
+    },
+    {
+      "name": "wrong_source",
+      "layer": "native_bootstrap",
+      "status": "FAIL_CLOSED"
+    },
+    {
+      "name": "wrong_epoch",
+      "layer": "offline_replay",
+      "status": "FAIL_CLOSED",
+      "reason": "EVALUATOR_FAILURE: OLDTIME_METADATA_EPOCH"
+    },
+    {
+      "name": "wrong_matrix_identity",
+      "layer": "offline_replay",
+      "status": "FAIL_CLOSED",
+      "reason": "EVALUATOR_FAILURE: MATRIX_METADATA_EPOCH"
+    },
+    {
+      "name": "wrong_units",
+      "layer": "offline_replay",
+      "status": "FAIL_CLOSED",
+      "reason": "EVALUATOR_FAILURE: WRONG_TERM_DIMENSIONS"
+    },
+    {
+      "name": "wrong_corrector_index",
+      "layer": "offline_replay",
+      "status": "FAIL_CLOSED",
+      "reason": "EVALUATOR_FAILURE: WRONG_CORRECTOR_INDEX"
+    },
+    {
+      "name": "wrong_time_index",
+      "layer": "offline_replay",
+      "status": "FAIL_CLOSED",
+      "reason": "EVALUATOR_FAILURE: WRONG_TIME_INDEX"
+    },
+    {
+      "name": "wrong_bc_epoch",
+      "layer": "offline_replay",
+      "status": "FAIL_CLOSED",
+      "reason": "EVALUATOR_FAILURE: BC_METADATA_EPOCH"
+    },
+    {
+      "name": "reordered",
+      "layer": "offline_replay",
+      "status": "FAIL_CLOSED",
+      "reason": "EVALUATOR_FAILURE: SEQUENCE_DUPLICATE_MISSING_REORDERED"
+    },
+    {
+      "name": "duplicate",
+      "layer": "offline_replay",
+      "status": "FAIL_CLOSED",
+      "reason": "EVALUATOR_FAILURE: SEQUENCE_DUPLICATE_MISSING_REORDERED"
+    },
+    {
+      "name": "missing",
+      "layer": "offline_replay",
+      "status": "FAIL_CLOSED",
+      "reason": "EVALUATOR_FAILURE: PARTIAL_OR_ORPHAN_PACKET"
+    },
+    {
+      "name": "wrong_guard",
+      "layer": "offline_replay",
+      "status": "FAIL_CLOSED",
+      "reason": "EVALUATOR_FAILURE: WRONG_AUTHORITY_HASH"
+    },
+    {
+      "name": "nan_payload",
+      "layer": "offline_replay",
+      "status": "FAIL_CLOSED",
+      "reason": "EVALUATOR_FAILURE: FILE_SHA256"
+    },
+    {
+      "name": "partial_packet",
+      "layer": "atomic_export",
+      "status": "FAIL_CLOSED",
+      "reason": "EVALUATOR_FAILURE: PARTIAL_OR_ORPHAN_PACKET"
+    },
+    {
+      "name": "missing_completion",
+      "layer": "atomic_export",
+      "status": "FAIL_CLOSED",
+      "reason": "[Errno 2] No such file or directory: '/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/u04_verification/final/tests/replay_injected_missing_completion/complete.json'"
+    }
+  ],
+  "failure_injection_count": 18,
+  "floor_scope": "SYNTHETIC_ONLY",
+  "observed_peak_child_rss_KiB_scope": "aggregate children maximum, not paired process-memory overhead",
+  "output_bytes": 19023111,
+  "peak_children_rss_KiB": 82612,
+  "production_solver_executed": false,
+  "diagnostic_transient_executed": false,
+  "synthetic_case_directory_exists": false
+}

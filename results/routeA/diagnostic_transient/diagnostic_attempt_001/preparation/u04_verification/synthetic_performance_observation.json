@@ -1,0 +1,10 @@
+{
+  "classification": "SYNTHETIC_EVALUATOR_TEST",
+  "observed_elapsed_s": 20.915767975035124,
+  "observer_off_elapsed_s": 0.288577861036174,
+  "elapsed_ratio": 72.47876846801243,
+  "raw_export_bytes_one_observed_stream": 19023111,
+  "aggregate_max_child_rss_KiB": 82612,
+  "memory_overhead_measured": false,
+  "runtime_overhead_scope": "Synthetic2cell,121native solves,1141physical-stage records; fsync/export overhead on this filesystem only. No production extrapolation."
+}

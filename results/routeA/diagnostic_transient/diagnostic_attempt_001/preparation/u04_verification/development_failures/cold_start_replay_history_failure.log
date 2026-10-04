@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/v1_2/verify_u04.py", line 95, in <module>
+    ap=argparse.ArgumentParser();ap.add_argument('build');ap.add_argument('output');a=ap.parse_args();verify(a.build,a.output)
+                                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/v1_2/verify_u04.py", line 35, in verify
+    replays[name]=replay.replay(output/name,PARENT_SHA,src,inst)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/v1_2/replay_evaluator.py", line 141, in replay
+    ledger.accept(r);events.append((m['time_index'],m['outer'],m['pressure'],stage))
+    ^^^^^^^^^^^^^^^^
+  File "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/v1_2/replay_evaluator.py", line 84, in accept
+    require(m['deltaT']>0 and m['previous_deltaT']>0,'TIME_STEP')
+  File "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/v1_2/replay_evaluator.py", line 7, in require
+    if not condition:raise EvaluatorFailure('EVALUATOR_FAILURE: '+message)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+replay_evaluator.EvaluatorFailure: EVALUATOR_FAILURE: TIME_STEP

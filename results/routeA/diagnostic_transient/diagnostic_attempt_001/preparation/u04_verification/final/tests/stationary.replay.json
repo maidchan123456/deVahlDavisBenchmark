@@ -1,0 +1,96 @@
+{
+  "status": "PASS",
+  "records": 1152,
+  "matrix_replays": 715,
+  "max_matrix_replay_defect": 1.2878587085651816e-14,
+  "max_stored_arithmetic_allowance": 1.0095231791259156e-11,
+  "mass_term_identities": 49,
+  "energy_term_identities": 24,
+  "reference_identities": 48,
+  "rho_sync_identities": 1,
+  "variable_step_polynomial_checks": 3,
+  "isolated_energy_checks": 4,
+  "synchronization": [
+    {
+      "time_index": 2,
+      "M_before_postSolve": 3.00075,
+      "M_after_postSolve": 2.999932668962971,
+      "deltaM_postSolve": -0.0008173310370288567,
+      "rho_s_minus_rho_T_before": [
+        -0.0007294302971280198,
+        0.0007733806670784382
+      ],
+      "rho_s_minus_rho_T_after": [
+        0.0,
+        0.0
+      ],
+      "mass_C": {
+        "signed_global": -2.1163626406917047e-16,
+        "absolute_global": 6.349087922075114e-16,
+        "local_volume_L1": 2.1163626406917047e-16,
+        "local_Linf": 2.1163626406917047e-16
+      },
+      "mass_end": {
+        "signed_global": -0.010897747160383487,
+        "absolute_global": 0.03034922175046503,
+        "local_volume_L1": 0.01011640725015501,
+        "local_Linf": 0.01031174222771213
+      },
+      "mass_sync_storage_change": -0.010897747160384753,
+      "energy_assembly": {
+        "signed_global": -2.1316282072803006e-14,
+        "absolute_global": 3.552713678800501e-14,
+        "local_volume_L1": 1.1842378929335004e-14,
+        "local_Linf": 1.4210854715202004e-14
+      },
+      "energy_end": {
+        "signed_global": -0.06597438177581222,
+        "absolute_global": 0.1835249165385017,
+        "local_volume_L1": 0.06117497217950057,
+        "local_Linf": 0.06237482457857848
+      },
+      "energy_end_terms": {
+        "S_e": [
+          -0.28646478264754194,
+          -0.4234678175141653
+        ],
+        "S_K": [
+          -0.0003339092850137537,
+          -0.0006679759840230699
+        ],
+        "F_e": [
+          0.14129040145644917,
+          -0.10129040145644917
+        ],
+        "F_K": [
+          2.2999999999999997e-05,
+          -4.3e-05
+        ],
+        "W_p": [
+          -0.00016248238320715785,
+          0.00017425738320715785
+        ],
+        "H_out": [
+          0.20382305258248015,
+          0.3993453164710739
+        ],
+        "W_g": [
+          -0.0005999876581782767,
+          -0.001199971943199506
+        ],
+        "S_models": [
+          0.0,
+          0.0
+        ]
+      },
+      "pressure_relation_defect": [
+        7.294302971279712e-06,
+        -7.73380667078681e-06
+      ],
+      "end_evaluation": "OFFLINE_REGISTERED_CONSTANT_PROPERTY_GOVERNING_STATE; no additional native assembly; separate from frozen assembly residual"
+    }
+  ],
+  "stage_sequence_sha256": "d7baea742da3b1a728e9e97dd9c804b52b85b37d4429bad7fdbf3ef9bf624d5e",
+  "classification": "SYNTHETIC_EVALUATOR_TEST",
+  "floor_scope": "SYNTHETIC_ONLY"
+}

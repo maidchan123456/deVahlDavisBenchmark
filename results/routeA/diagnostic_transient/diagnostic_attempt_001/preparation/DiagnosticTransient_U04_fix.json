@@ -1,0 +1,702 @@
+{
+  "task": "FIX_ROUTE_A_DIAGNOSTIC_TRANSIENT_STUDY_CONTRACT",
+  "scope": "U04_ONLY",
+  "status": {
+    "ROUTE_A_DIAGNOSTIC_TRANSIENT_CONTRACT_FIX": "COMPLETE",
+    "STUDY_OWNERSHIP": "DIAGNOSTIC_FIXED_GRID_TRANSIENT_CHARACTERIZATION",
+    "PARENT_DIAGNOSTIC_CONTRACT_VERSION": "1.1",
+    "PARENT_DIAGNOSTIC_CONTRACT_HASH_VERIFIED": "YES",
+    "PARENT_DIAGNOSTIC_CONTRACT_SHA256": "574b83ed63e244e9fbb1307d1a463e1c92fade86a99375054d599b06b155d675",
+    "U01_STATUS": "CLOSED",
+    "U02_STATUS": "CLOSED",
+    "U03_STATUS": "CLOSED",
+    "U01_U03_CHANGED": "NO",
+    "U04_STATUS": "CLOSED",
+    "HOOKS_CONNECTED": "YES",
+    "SOURCE_STAGE_BINDING_VERIFIED": "YES",
+    "OLDTIME_BINDING_VERIFIED": "YES",
+    "BC_EPOCH_BINDING_VERIFIED": "YES",
+    "ASSEMBLY_STAGE_CAPTURE": "YES",
+    "UNRELAXED_ENERGY_MATRIX_CAPTURED": "YES",
+    "MASS_STAGE_CAPTURED": "YES",
+    "RHO_SYNC_STAGES_CAPTURED": "YES",
+    "PRESSURE_REFERENCE_CAPTURED": "YES",
+    "TERM_EXPORT_IMPLEMENTED": "YES",
+    "EXPORT_REPLAY_PASS": "YES",
+    "STAGELEDGER_PASS": "YES",
+    "MASS_EVALUATOR_UNIT_TEST": "PASS",
+    "ENERGY_EVALUATOR_UNIT_TEST": "PASS",
+    "VARIABLE_STEP_BACKWARD_TEST": "PASS",
+    "FOURIER_OPERATOR_TEST": "PASS",
+    "PRESSURE_REFERENCE_TEST": "PASS",
+    "RHO_SYNC_TEST": "PASS",
+    "FAILURE_PROPAGATION_PASS": "YES",
+    "NON_INVASIVENESS_PASS": "YES",
+    "NON_INVASIVENESS_LEVEL": "BITWISE",
+    "REPEATABILITY_PASS": "YES",
+    "EVALUATOR_FLOOR_CHARACTERIZED": "YES",
+    "EVALUATOR_FLOOR_SCOPE": "SYNTHETIC_ONLY",
+    "SYNTHETIC_EVALUATOR_TESTS_EXECUTED": "YES",
+    "PRODUCTION_SOLVER_EXECUTED": "NO",
+    "CFD_TRANSIENT_EXECUTED": "NO",
+    "SOURCE_HASHES_FROZEN": "YES",
+    "INSTRUMENTATION_HASHES_FROZEN": "YES",
+    "DIAGNOSTIC_CONTRACT_CREATED": "YES",
+    "DIAGNOSTIC_CONTRACT_VERSION": "1.2",
+    "RESOURCE_PLANNING_ESTIMATE_CREATED": "YES",
+    "RESOURCE_FEASIBILITY_CONCERN": "YES",
+    "DIAGNOSTIC_TRANSIENT_SCIENTIFICALLY_ALLOWED": "YES",
+    "DIAGNOSTIC_TRANSIENT_TECHNICALLY_READY": "YES",
+    "FORMAL_GATE_J_CURRENTLY_ALLOWED": "NO",
+    "FORMAL_GATE_J_EXECUTED": "NO",
+    "FORMAL_GATE_J_PASS": "NOT_EVALUATED",
+    "GRID_INDEPENDENT_TRANSIENT_CLAIM_ALLOWED": "NO",
+    "BENCHMARK_CORE_PASS": "NO",
+    "ROUTE_A_CHARACTERIZED": "NO",
+    "DOWNSTREAM_TRANSIENT_READY": "NO",
+    "PARTICLE_COUPLING_READY": "NO",
+    "ALL_ROUTE_A_GATE_F": "FAIL",
+    "ALL_RA_NEEDS_320": "YES",
+    "CASE_GENERATED": "NO",
+    "MESH_GENERATED": "NO",
+    "INITIALIZATION_EXECUTED": "NO",
+    "DIAGNOSTIC_TRANSIENT_EXECUTED": "NO",
+    "GRID_320_EXECUTED": "NO",
+    "ROUTE_B_RERUN": "NO",
+    "FORMAL_CRITERIA_CHANGED": "NO",
+    "HISTORICAL_STATUS_CHANGED": "NO",
+    "NEXT_SINGLE_TASK": "REVIEW_ROUTE_A_DIAGNOSTIC_TRANSIENT_RESOURCE_FEASIBILITY",
+    "RECOMMENDED_REASONING_MODEL_FOR_NEXT_TASK": "gpt-6.1-sol / medium",
+    "USER_DECISION_REQUIRED": "YES",
+    "RESOURCE_FEASIBILITY_REVIEW_REQUIRED": "YES",
+    "DIAGNOSTIC_CONTRACT_SHA256": "7e95d4078433ff9e96527dd37430c2519cd1479ccc581e84f64bc94762af08dd"
+  },
+  "invariance": {
+    "status": "PASS",
+    "HEAD": "38349f12b33145514857178560f67355535b154a",
+    "parent_sha256": "574b83ed63e244e9fbb1307d1a463e1c92fade86a99375054d599b06b155d675",
+    "formal_v1_7_sha256": "fbc744e012f66b37b5d9409be961cb5a9410c3d75ac7e2f026b2acf118d3bb60",
+    "protected_file_count": 105,
+    "protected_native_source_count": 27,
+    "unchanged_parent_sections": [
+      "formal_authority",
+      "formal_status_preserved",
+      "purpose",
+      "physical_problem",
+      "governing_equations",
+      "initial_condition",
+      "spatial_discretization",
+      "temporal_discretization",
+      "series",
+      "dimensionless_time",
+      "QoIs",
+      "thermo_rho_synchronization",
+      "sampling",
+      "restart",
+      "evidence",
+      "STOP_conditions",
+      "no_auto_tuning",
+      "temporal_comparison",
+      "interpretation",
+      "transient_algorithm",
+      "inner_convergence",
+      "courant_control",
+      "duration",
+      "steady_arrival"
+    ],
+    "canonical_section_bytes_equal": true,
+    "mass_energy_hard_threshold_unchanged": true,
+    "diagnostic_definition_bytes_unchanged_except_U04_method_ready_flags": true,
+    "all_frozen_numerical_final_status_values_unchanged": true,
+    "no_tracked_diff": true,
+    "source_dependencies": 810,
+    "implementation_files": 26,
+    "binary_files": 6,
+    "linked_library_files": 41,
+    "source_library_binary_schema_replay_hashes_match": true
+  },
+  "verification": {
+    "status": "PASS",
+    "source_set_sha256": "57aacf0e9307d0810a89b6b118680e67b5e1d70214e209070197fa3709e12a58",
+    "instrumentation_sha256": "adb52dc1e68d638ff98f4ffebe4d51746e40f1abb873d71a758b86964ad8f3fc",
+    "native_driver_runs": {
+      "observed_1": {
+        "exit_code": 0,
+        "elapsed_s": 20.915767975035124,
+        "command": [
+          "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/u04_verification/final/build/synthetic_native_driver",
+          "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/u04_verification/final/tests/observed_1",
+          "574b83ed63e244e9fbb1307d1a463e1c92fade86a99375054d599b06b155d675",
+          "57aacf0e9307d0810a89b6b118680e67b5e1d70214e209070197fa3709e12a58",
+          "adb52dc1e68d638ff98f4ffebe4d51746e40f1abb873d71a758b86964ad8f3fc",
+          "on",
+          "none"
+        ],
+        "classification": "SYNTHETIC_EVALUATOR_TEST"
+      },
+      "observed_2": {
+        "exit_code": 0,
+        "elapsed_s": 21.043450117926113,
+        "command": [
+          "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/u04_verification/final/build/synthetic_native_driver",
+          "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/u04_verification/final/tests/observed_2",
+          "574b83ed63e244e9fbb1307d1a463e1c92fade86a99375054d599b06b155d675",
+          "57aacf0e9307d0810a89b6b118680e67b5e1d70214e209070197fa3709e12a58",
+          "adb52dc1e68d638ff98f4ffebe4d51746e40f1abb873d71a758b86964ad8f3fc",
+          "on",
+          "none"
+        ],
+        "classification": "SYNTHETIC_EVALUATOR_TEST"
+      },
+      "observer_off": {
+        "exit_code": 0,
+        "elapsed_s": 0.288577861036174,
+        "command": [
+          "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/u04_verification/final/build/synthetic_native_driver",
+          "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/u04_verification/final/tests/observer_off",
+          "574b83ed63e244e9fbb1307d1a463e1c92fade86a99375054d599b06b155d675",
+          "57aacf0e9307d0810a89b6b118680e67b5e1d70214e209070197fa3709e12a58",
+          "adb52dc1e68d638ff98f4ffebe4d51746e40f1abb873d71a758b86964ad8f3fc",
+          "off",
+          "none"
+        ],
+        "classification": "SYNTHETIC_EVALUATOR_TEST"
+      },
+      "stationary": {
+        "exit_code": 0,
+        "elapsed_s": 21.971151315025054,
+        "command": [
+          "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/u04_verification/final/build/synthetic_native_driver",
+          "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/u04_verification/final/tests/stationary",
+          "574b83ed63e244e9fbb1307d1a463e1c92fade86a99375054d599b06b155d675",
+          "57aacf0e9307d0810a89b6b118680e67b5e1d70214e209070197fa3709e12a58",
+          "adb52dc1e68d638ff98f4ffebe4d51746e40f1abb873d71a758b86964ad8f3fc",
+          "on",
+          "stationary"
+        ],
+        "classification": "SYNTHETIC_EVALUATOR_TEST"
+      },
+      "injected_missing": {
+        "exit_code": 2,
+        "elapsed_s": 0.14374295203015208,
+        "command": [
+          "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/u04_verification/final/build/synthetic_native_driver",
+          "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/u04_verification/final/tests/injected_missing",
+          "574b83ed63e244e9fbb1307d1a463e1c92fade86a99375054d599b06b155d675",
+          "57aacf0e9307d0810a89b6b118680e67b5e1d70214e209070197fa3709e12a58",
+          "adb52dc1e68d638ff98f4ffebe4d51746e40f1abb873d71a758b86964ad8f3fc",
+          "on",
+          "missing"
+        ],
+        "classification": "SYNTHETIC_EVALUATOR_TEST"
+      },
+      "injected_duplicate": {
+        "exit_code": 2,
+        "elapsed_s": 0.14442996901925653,
+        "command": [
+          "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/u04_verification/final/build/synthetic_native_driver",
+          "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/u04_verification/final/tests/injected_duplicate",
+          "574b83ed63e244e9fbb1307d1a463e1c92fade86a99375054d599b06b155d675",
+          "57aacf0e9307d0810a89b6b118680e67b5e1d70214e209070197fa3709e12a58",
+          "adb52dc1e68d638ff98f4ffebe4d51746e40f1abb873d71a758b86964ad8f3fc",
+          "on",
+          "duplicate"
+        ],
+        "classification": "SYNTHETIC_EVALUATOR_TEST"
+      },
+      "injected_nan": {
+        "exit_code": 2,
+        "elapsed_s": 0.12291380495298654,
+        "command": [
+          "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/u04_verification/final/build/synthetic_native_driver",
+          "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/u04_verification/final/tests/injected_nan",
+          "574b83ed63e244e9fbb1307d1a463e1c92fade86a99375054d599b06b155d675",
+          "57aacf0e9307d0810a89b6b118680e67b5e1d70214e209070197fa3709e12a58",
+          "adb52dc1e68d638ff98f4ffebe4d51746e40f1abb873d71a758b86964ad8f3fc",
+          "on",
+          "nan"
+        ],
+        "classification": "SYNTHETIC_EVALUATOR_TEST"
+      },
+      "injected_wrongdimensions": {
+        "exit_code": 2,
+        "elapsed_s": 0.15347951604053378,
+        "command": [
+          "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/u04_verification/final/build/synthetic_native_driver",
+          "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/u04_verification/final/tests/injected_wrongdimensions",
+          "574b83ed63e244e9fbb1307d1a463e1c92fade86a99375054d599b06b155d675",
+          "57aacf0e9307d0810a89b6b118680e67b5e1d70214e209070197fa3709e12a58",
+          "adb52dc1e68d638ff98f4ffebe4d51746e40f1abb873d71a758b86964ad8f3fc",
+          "on",
+          "wrongdimensions"
+        ],
+        "classification": "SYNTHETIC_EVALUATOR_TEST"
+      },
+      "injected_wrongsource": {
+        "exit_code": 2,
+        "elapsed_s": 0.022091303020715714,
+        "command": [
+          "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/u04_verification/final/build/synthetic_native_driver",
+          "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/u04_verification/final/tests/injected_wrongsource",
+          "574b83ed63e244e9fbb1307d1a463e1c92fade86a99375054d599b06b155d675",
+          "0000000000000000000000000000000000000000000000000000000000000000",
+          "adb52dc1e68d638ff98f4ffebe4d51746e40f1abb873d71a758b86964ad8f3fc",
+          "on",
+          "wrongsource"
+        ],
+        "classification": "SYNTHETIC_EVALUATOR_TEST"
+      }
+    },
+    "native_replay": {
+      "status": "PASS",
+      "records": 1152,
+      "matrix_replays": 715,
+      "max_matrix_replay_defect": 6.217248937900877e-15,
+      "max_stored_arithmetic_allowance": 1.0184130315356815e-11,
+      "mass_term_identities": 49,
+      "energy_term_identities": 24,
+      "reference_identities": 48,
+      "rho_sync_identities": 1,
+      "variable_step_polynomial_checks": 3,
+      "isolated_energy_checks": 4,
+      "synchronization": [
+        {
+          "time_index": 2,
+          "M_before_postSolve": 3.03825,
+          "M_after_postSolve": 2.999940254869851,
+          "deltaM_postSolve": -0.038309745130149175,
+          "rho_s_minus_rho_T_before": [
+            0.011768127338229406,
+            0.013270808895959885
+          ],
+          "rho_s_minus_rho_T_after": [
+            0.0,
+            0.0
+          ],
+          "mass_C": {
+            "signed_global": -3.7643499428696714e-15,
+            "absolute_global": 4.187622471008012e-15,
+            "local_volume_L1": 1.3958741570026707e-15,
+            "local_Linf": 1.987993103469421e-15
+          },
+          "mass_end": {
+            "signed_global": -0.5107966017353258,
+            "absolute_global": 0.5107966017353258,
+            "local_volume_L1": 0.17026553391177526,
+            "local_Linf": 0.17694411861280046
+          },
+          "mass_sync_storage_change": -0.5107966017353223,
+          "energy_assembly": {
+            "signed_global": 0.0,
+            "absolute_global": 1.4210854715202004e-14,
+            "local_volume_L1": 4.736951571734001e-15,
+            "local_Linf": 7.105427357601002e-15
+          },
+          "energy_end": {
+            "signed_global": -3.0862920664260485,
+            "absolute_global": 3.0862920664260485,
+            "local_volume_L1": 1.0287640221420162,
+            "local_Linf": 1.0694072506688377
+          },
+          "energy_end_terms": {
+            "S_e": [
+              -1.2680632636224374,
+              -2.393544732702793
+            ],
+            "S_K": [
+              -0.0005005075654704226,
+              -0.001001165298173756
+            ],
+            "F_e": [
+              0.14114127144836658,
+              -0.10114127144836658
+            ],
+            "F_K": [
+              2.2999999999999997e-05,
+              -4.3e-05
+            ],
+            "W_p": [
+              -0.0001637316110725003,
+              0.00017675661107250033
+            ],
+            "H_out": [
+              0.1794856771386435,
+              0.35553893647126067
+            ],
+            "W_g": [
+              -0.0005999891235970624,
+              -0.001199975029324848
+            ],
+            "S_models": [
+              0.0,
+              0.0
+            ]
+          },
+          "pressure_relation_defect": [
+            -0.00011768127338229392,
+            -0.00013270808895960058
+          ],
+          "end_evaluation": "OFFLINE_REGISTERED_CONSTANT_PROPERTY_GOVERNING_STATE; no additional native assembly; separate from frozen assembly residual"
+        }
+      ],
+      "stage_sequence_sha256": "d7baea742da3b1a728e9e97dd9c804b52b85b37d4429bad7fdbf3ef9bf624d5e",
+      "classification": "SYNTHETIC_EVALUATOR_TEST",
+      "floor_scope": "SYNTHETIC_ONLY"
+    },
+    "non_invasiveness": "BITWISE",
+    "matrix_source_boundary_field_oldTime_time_solver_residual_fingerprints_identical": true,
+    "non_invasiveness_fingerprint": "f202573d2379a787929028b5bd45e2cfbbae59bf749ec0223982b18fe40af1de",
+    "repeatability": "BITWISE_RECORD_PAYLOAD_MANIFEST_AND_SUMMARY",
+    "failure_injections": [
+      {
+        "name": "missing",
+        "layer": "native_callback",
+        "status": "FAIL_CLOSED"
+      },
+      {
+        "name": "duplicate",
+        "layer": "native_callback",
+        "status": "FAIL_CLOSED"
+      },
+      {
+        "name": "nan",
+        "layer": "native_callback",
+        "status": "FAIL_CLOSED"
+      },
+      {
+        "name": "wrongdimensions",
+        "layer": "native_callback",
+        "status": "FAIL_CLOSED"
+      },
+      {
+        "name": "wrong_source",
+        "layer": "native_bootstrap",
+        "status": "FAIL_CLOSED"
+      },
+      {
+        "name": "wrong_epoch",
+        "layer": "offline_replay",
+        "status": "FAIL_CLOSED",
+        "reason": "EVALUATOR_FAILURE: OLDTIME_METADATA_EPOCH"
+      },
+      {
+        "name": "wrong_matrix_identity",
+        "layer": "offline_replay",
+        "status": "FAIL_CLOSED",
+        "reason": "EVALUATOR_FAILURE: MATRIX_METADATA_EPOCH"
+      },
+      {
+        "name": "wrong_units",
+        "layer": "offline_replay",
+        "status": "FAIL_CLOSED",
+        "reason": "EVALUATOR_FAILURE: WRONG_TERM_DIMENSIONS"
+      },
+      {
+        "name": "wrong_corrector_index",
+        "layer": "offline_replay",
+        "status": "FAIL_CLOSED",
+        "reason": "EVALUATOR_FAILURE: WRONG_CORRECTOR_INDEX"
+      },
+      {
+        "name": "wrong_time_index",
+        "layer": "offline_replay",
+        "status": "FAIL_CLOSED",
+        "reason": "EVALUATOR_FAILURE: WRONG_TIME_INDEX"
+      },
+      {
+        "name": "wrong_bc_epoch",
+        "layer": "offline_replay",
+        "status": "FAIL_CLOSED",
+        "reason": "EVALUATOR_FAILURE: BC_METADATA_EPOCH"
+      },
+      {
+        "name": "reordered",
+        "layer": "offline_replay",
+        "status": "FAIL_CLOSED",
+        "reason": "EVALUATOR_FAILURE: SEQUENCE_DUPLICATE_MISSING_REORDERED"
+      },
+      {
+        "name": "duplicate",
+        "layer": "offline_replay",
+        "status": "FAIL_CLOSED",
+        "reason": "EVALUATOR_FAILURE: SEQUENCE_DUPLICATE_MISSING_REORDERED"
+      },
+      {
+        "name": "missing",
+        "layer": "offline_replay",
+        "status": "FAIL_CLOSED",
+        "reason": "EVALUATOR_FAILURE: PARTIAL_OR_ORPHAN_PACKET"
+      },
+      {
+        "name": "wrong_guard",
+        "layer": "offline_replay",
+        "status": "FAIL_CLOSED",
+        "reason": "EVALUATOR_FAILURE: WRONG_AUTHORITY_HASH"
+      },
+      {
+        "name": "nan_payload",
+        "layer": "offline_replay",
+        "status": "FAIL_CLOSED",
+        "reason": "EVALUATOR_FAILURE: FILE_SHA256"
+      },
+      {
+        "name": "partial_packet",
+        "layer": "atomic_export",
+        "status": "FAIL_CLOSED",
+        "reason": "EVALUATOR_FAILURE: PARTIAL_OR_ORPHAN_PACKET"
+      },
+      {
+        "name": "missing_completion",
+        "layer": "atomic_export",
+        "status": "FAIL_CLOSED",
+        "reason": "[Errno 2] No such file or directory: '/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/u04_verification/final/tests/replay_injected_missing_completion/complete.json'"
+      }
+    ],
+    "failure_injection_count": 18,
+    "floor_scope": "SYNTHETIC_ONLY",
+    "observed_peak_child_rss_KiB_scope": "aggregate children maximum, not paired process-memory overhead",
+    "output_bytes": 19023111,
+    "peak_children_rss_KiB": 82612,
+    "production_solver_executed": false,
+    "diagnostic_transient_executed": false,
+    "synthetic_case_directory_exists": false
+  },
+  "end_state_native_audit": {
+    "status": "PASS",
+    "classification": "SYNTHETIC_EVALUATOR_TEST",
+    "checks": 30,
+    "identities": [
+      {
+        "name": "end_S_e_versus_isolated_native",
+        "maximum_absolute_defect": 0.0,
+        "stored_arithmetic_allowance": 7.08177623742514e-12
+      },
+      {
+        "name": "end_H_out_versus_isolated_native",
+        "maximum_absolute_defect": 5.329070518200751e-15,
+        "stored_arithmetic_allowance": 2.613974273927838e-12
+      },
+      {
+        "name": "end_W_g_versus_isolated_native",
+        "maximum_absolute_defect": 0.0,
+        "stored_arithmetic_allowance": 5.315641978556373e-17
+      },
+      {
+        "name": "end_W_p_versus_isolated_native",
+        "maximum_absolute_defect": 0.0,
+        "stored_arithmetic_allowance": 1.0055275178119143e-17
+      },
+      {
+        "name": "end_F_e_versus_native_last_assembly",
+        "maximum_absolute_defect": 0.0,
+        "stored_arithmetic_allowance": 5.283937153455953e-12
+      },
+      {
+        "name": "end_F_K_versus_native_last_assembly",
+        "maximum_absolute_defect": 0.0,
+        "stored_arithmetic_allowance": 5.280495049355229e-12
+      },
+      {
+        "name": "native_S_K_old_product_1",
+        "maximum_absolute_defect": 0.0,
+        "stored_arithmetic_allowance": 2.5515589641145196e-15
+      },
+      {
+        "name": "native_S_K_old_product_2",
+        "maximum_absolute_defect": 0.0,
+        "stored_arithmetic_allowance": 2.5518573920635387e-15
+      },
+      {
+        "name": "native_S_K_old_product_3",
+        "maximum_absolute_defect": 0.0,
+        "stored_arithmetic_allowance": 2.5518573920635387e-15
+      },
+      {
+        "name": "native_S_K_old_product_4",
+        "maximum_absolute_defect": 0.0,
+        "stored_arithmetic_allowance": 2.5518573920635387e-15
+      },
+      {
+        "name": "native_S_K_old_product_5",
+        "maximum_absolute_defect": 0.0,
+        "stored_arithmetic_allowance": 2.5518573920635387e-15
+      },
+      {
+        "name": "native_S_K_old_product_6",
+        "maximum_absolute_defect": 0.0,
+        "stored_arithmetic_allowance": 2.5518573920635387e-15
+      },
+      {
+        "name": "native_S_K_old_product_7",
+        "maximum_absolute_defect": 0.0,
+        "stored_arithmetic_allowance": 2.5518573920635387e-15
+      },
+      {
+        "name": "native_S_K_old_product_8",
+        "maximum_absolute_defect": 0.0,
+        "stored_arithmetic_allowance": 2.5518573920635387e-15
+      },
+      {
+        "name": "native_S_K_old_product_9",
+        "maximum_absolute_defect": 0.0,
+        "stored_arithmetic_allowance": 2.5518573920635387e-15
+      },
+      {
+        "name": "native_S_K_old_product_10",
+        "maximum_absolute_defect": 0.0,
+        "stored_arithmetic_allowance": 2.5518573920635387e-15
+      },
+      {
+        "name": "native_S_K_old_product_11",
+        "maximum_absolute_defect": 0.0,
+        "stored_arithmetic_allowance": 2.5518573920635387e-15
+      },
+      {
+        "name": "native_S_K_old_product_12",
+        "maximum_absolute_defect": 0.0,
+        "stored_arithmetic_allowance": 2.5518573920635387e-15
+      },
+      {
+        "name": "native_S_K_old_product_13",
+        "maximum_absolute_defect": 0.0,
+        "stored_arithmetic_allowance": 2.5518573920635387e-15
+      },
+      {
+        "name": "native_S_K_old_product_14",
+        "maximum_absolute_defect": 0.0,
+        "stored_arithmetic_allowance": 2.5518573920635387e-15
+      },
+      {
+        "name": "native_S_K_old_product_15",
+        "maximum_absolute_defect": 0.0,
+        "stored_arithmetic_allowance": 2.5518573920635387e-15
+      },
+      {
+        "name": "native_S_K_old_product_16",
+        "maximum_absolute_defect": 0.0,
+        "stored_arithmetic_allowance": 2.5518573920635387e-15
+      },
+      {
+        "name": "native_S_K_old_product_17",
+        "maximum_absolute_defect": 0.0,
+        "stored_arithmetic_allowance": 2.5518573920635387e-15
+      },
+      {
+        "name": "native_S_K_old_product_18",
+        "maximum_absolute_defect": 0.0,
+        "stored_arithmetic_allowance": 2.5518573920635387e-15
+      },
+      {
+        "name": "native_S_K_old_product_19",
+        "maximum_absolute_defect": 0.0,
+        "stored_arithmetic_allowance": 2.5518573920635387e-15
+      },
+      {
+        "name": "native_S_K_old_product_20",
+        "maximum_absolute_defect": 0.0,
+        "stored_arithmetic_allowance": 2.5518573920635387e-15
+      },
+      {
+        "name": "native_S_K_old_product_21",
+        "maximum_absolute_defect": 0.0,
+        "stored_arithmetic_allowance": 2.5518573920635387e-15
+      },
+      {
+        "name": "native_S_K_old_product_22",
+        "maximum_absolute_defect": 0.0,
+        "stored_arithmetic_allowance": 2.5518573920635387e-15
+      },
+      {
+        "name": "native_S_K_old_product_23",
+        "maximum_absolute_defect": 0.0,
+        "stored_arithmetic_allowance": 2.5518573920635387e-15
+      },
+      {
+        "name": "native_S_K_old_product_24",
+        "maximum_absolute_defect": 0.0,
+        "stored_arithmetic_allowance": 2.5518573920635387e-15
+      }
+    ],
+    "end_energy_terms_verified_against_actual_native_export": [
+      "S_e",
+      "S_K(old-product path)",
+      "F_e",
+      "F_K",
+      "W_p",
+      "H_out",
+      "W_g"
+    ],
+    "source_sha256": "3f079fe46cbaa7c919ea2d335c093c76733c0044afc6d3199d6152a5a828e89f",
+    "no_native_reassembly": true,
+    "no_CFD": true,
+    "inherited_local_L1_normalization": "PASS"
+  },
+  "resource_planning_estimate": {
+    "classification": "PLANNING_ESTIMATE_ONLY",
+    "frozen_contract_version": "1.1",
+    "U01_U03_changed": false,
+    "cell_count": 25600,
+    "internal_faces": 50880,
+    "active_boundary_faces": 640,
+    "records_per_physical_step": 1141,
+    "diagnostic_numeric_payload_Float64_equivalent_bytes_per_step": 9704376176.0,
+    "full_field_numeric_bytes_per_step": 2045440,
+    "series_planning_envelope": {
+      "0.5": {
+        "prospective_constant_h_s": 0.007097842672793382,
+        "planning_steps": 200061,
+        "numeric_payload_equivalent_bytes": 1941876414918576.0
+      },
+      "0.25": {
+        "prospective_constant_h_s": 0.003548921336396691,
+        "planning_steps": 400122,
+        "numeric_payload_equivalent_bytes": 3883752829837152.0
+      },
+      "0.125": {
+        "prospective_constant_h_s": 0.0017744606681983455,
+        "planning_steps": 800244,
+        "numeric_payload_equivalent_bytes": 7767505659674304.0
+      }
+    },
+    "primary_numeric_payload_equivalent_bytes": 5825629244755728.0,
+    "two_series_step_watchdog_numeric_equivalent_bytes": 3.8825686464e+16,
+    "available_filesystem_bytes": 796048769024,
+    "resource_feasibility_concern": true,
+    "resource_feasibility_review_required": true,
+    "limitations": [
+      "No CFD stepcount/runtime inferred. Prospective h scales are inherited acceptedsteady estimates, not actual adaptiveh.",
+      "Byte figure is uncompressed numerical-payload equivalent with actual native cells/faces projected from synthetic schema, not measured actualJSON size or a disk lowerbound. Field count conservative; strings/headers/precision/compression maychange bytes.",
+      "No changes to24outer,cadence,duration or diagnostic tolerance. Resource review must decide feasibility before RUN.",
+      "Synthetic timing/memory figures do not predict production runtime."
+    ]
+  },
+  "synthetic_performance": {
+    "classification": "SYNTHETIC_EVALUATOR_TEST",
+    "observed_elapsed_s": 20.915767975035124,
+    "observer_off_elapsed_s": 0.288577861036174,
+    "elapsed_ratio": 72.47876846801243,
+    "raw_export_bytes_one_observed_stream": 19023111,
+    "aggregate_max_child_rss_KiB": 82612,
+    "memory_overhead_measured": false,
+    "runtime_overhead_scope": "Synthetic2cell,121native solves,1141physical-stage records; fsync/export overhead on this filesystem only. No production extrapolation."
+  },
+  "contracts": {
+    "parent_path": "docs/routeA_diagnostic_transient_contract_v1.1.json",
+    "parent_sha256": "574b83ed63e244e9fbb1307d1a463e1c92fade86a99375054d599b06b155d675",
+    "new_path": "docs/routeA_diagnostic_transient_contract_v1.2.json",
+    "new_sha256": "7e95d4078433ff9e96527dd37430c2519cd1479ccc581e84f64bc94762af08dd"
+  },
+  "source_binding_evidence": "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/u04_verification/source_stage_binding.json",
+  "build_provenance": "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/u04_verification/final/build/build_provenance.json",
+  "authoritative_verification_directory": "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/u04_verification/final",
+  "earlier_evidence": "u04_verification/build and tests are the earlier pre-finalization verification; final/ is authoritative and incorporates registered L1 mean normalization. Earlier streams/binaries preserved.",
+  "limitations": [
+    "No production/native module CFD execution. Hook source connection proved by exact token erasure, compiled native clone and template-provider linkage, and synthetic native callback invocation.",
+    "Serial/non-coupled fixed model only; captured identity mismatch/unsupported cases stop. No restart/interruption recovery.",
+    "No physical conservation claim or measured actual CFD evaluator floor. Hard thresholds remain DIAGNOSTIC_ONLY_WITH_REGISTERED_INTERPRETATION.",
+    "End defect is pure offline native-coefficient reconstruction under frozen constant-property/static/Gauss-linear/unchanged thermal BC/affine-reference guard; it is distinct from last solved assembly residual.",
+    "Resource feasibility is materially unresolved. No automatic CFD/case/mesh/initialization or numerical redesign; next task is resource review."
+  ],
+  "forbidden_actions_executed": [],
+  "git_add_commit_push_executed": false
+}

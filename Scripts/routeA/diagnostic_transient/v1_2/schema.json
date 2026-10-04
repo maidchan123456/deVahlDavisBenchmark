@@ -1,0 +1,59 @@
+{
+  "schema": "routeA_native_stage/1.2",
+  "classification": [
+    "SYNTHETIC_EVALUATOR_TEST",
+    "DIAGNOSTIC_OBSERVATION"
+  ],
+  "precision": "IEEE double roundtrip via17 significant digits; signed zero retained",
+  "record": [
+    "metadata",
+    "sequence",
+    "payload",
+    "payload_sha256"
+  ],
+  "metadata": [
+    "study_guard_sha256",
+    "source_set_sha256",
+    "instrumentation_sha256",
+    "case_identity",
+    "classification",
+    "time_index",
+    "physical_time",
+    "deltaT",
+    "previous_deltaT",
+    "outer",
+    "pressure",
+    "nonOrthogonal",
+    "energy_solve",
+    "rho_solve",
+    "stage",
+    "field_epochs",
+    "oldTime_ids",
+    "bc_epochs",
+    "matrix_epochs"
+  ],
+  "atomicity": "exclusive temp write,fsync,atomic no-overwrite hardlink publish,unlinktemp,directoryfsync,fsyncedmanifest commit; completionmanifest required; partial/orphan record invalidates stream",
+  "matrix": [
+    "has_diag",
+    "diag",
+    "upper",
+    "lower",
+    "source",
+    "internal/boundarycoefficients",
+    "addressing",
+    "dimensions",
+    "psi identity/current-old-oldold values",
+    "assembly BC flags",
+    "matrix_epoch",
+    "native_lhs_minus_rhs",
+    "stored arithmetic bound"
+  ],
+  "field_history": "Only existing native history is copied. Original oldTime() is never called by observer. Private copy traversal prevents rollover and preserves copied original indexes/content. Native null/missing history is explicit via counts.",
+  "nonorthogonal_index": "1 normal pressure solve for nNonOrthogonalCorrectors0; no additional correction",
+  "term_capture": "unordered expression evaluation permitted within a single native assembly; unique exact registered term set required before matrix assembly",
+  "error": "EVALUATOR_FAILURE/EVALUATOR_STAGE_IDENTITY_FAILURE; no completion,repair,record dropping or continuation",
+  "oldTime_storage_clock": "Native oldTime.timeIndex() may advance tocurrent after native oldTime() without changing old values. Record raw index/object_epoch and level/value hash separately. Represented index/time is derived only when current field hasstored history andindex>=0; startup virtual/missing history isnull.",
+  "pre_time_history": "Native previous_deltaT may be0 before first time_start; no invented prior interval. Require positive actual deltaT0 from time_start onwards.",
+  "end_evaluation": "Offline coefficient/old-product replay only for frozen static mesh, constant Cv/kappa, Gauss linear, unchanged temperature/energy boundary values and affine thermodynamic reference. Different fields/geometry invalidate; no second native assembly.",
+  "thermal_context": "Read-only Cpv internal cells and g at native energy assembly; S_K pre-operator existing history count + actual native effective deltaT0 (great fallback) exported."
+}

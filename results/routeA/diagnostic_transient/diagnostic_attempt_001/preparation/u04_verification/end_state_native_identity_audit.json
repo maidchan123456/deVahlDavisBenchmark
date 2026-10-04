@@ -1,0 +1,170 @@
+{
+  "status": "PASS",
+  "classification": "SYNTHETIC_EVALUATOR_TEST",
+  "checks": 30,
+  "identities": [
+    {
+      "name": "end_S_e_versus_isolated_native",
+      "maximum_absolute_defect": 0.0,
+      "stored_arithmetic_allowance": 7.08177623742514e-12
+    },
+    {
+      "name": "end_H_out_versus_isolated_native",
+      "maximum_absolute_defect": 5.329070518200751e-15,
+      "stored_arithmetic_allowance": 2.613974273927838e-12
+    },
+    {
+      "name": "end_W_g_versus_isolated_native",
+      "maximum_absolute_defect": 0.0,
+      "stored_arithmetic_allowance": 5.315641978556373e-17
+    },
+    {
+      "name": "end_W_p_versus_isolated_native",
+      "maximum_absolute_defect": 0.0,
+      "stored_arithmetic_allowance": 1.0055275178119143e-17
+    },
+    {
+      "name": "end_F_e_versus_native_last_assembly",
+      "maximum_absolute_defect": 0.0,
+      "stored_arithmetic_allowance": 5.283937153455953e-12
+    },
+    {
+      "name": "end_F_K_versus_native_last_assembly",
+      "maximum_absolute_defect": 0.0,
+      "stored_arithmetic_allowance": 5.280495049355229e-12
+    },
+    {
+      "name": "native_S_K_old_product_1",
+      "maximum_absolute_defect": 0.0,
+      "stored_arithmetic_allowance": 2.5515589641145196e-15
+    },
+    {
+      "name": "native_S_K_old_product_2",
+      "maximum_absolute_defect": 0.0,
+      "stored_arithmetic_allowance": 2.5518573920635387e-15
+    },
+    {
+      "name": "native_S_K_old_product_3",
+      "maximum_absolute_defect": 0.0,
+      "stored_arithmetic_allowance": 2.5518573920635387e-15
+    },
+    {
+      "name": "native_S_K_old_product_4",
+      "maximum_absolute_defect": 0.0,
+      "stored_arithmetic_allowance": 2.5518573920635387e-15
+    },
+    {
+      "name": "native_S_K_old_product_5",
+      "maximum_absolute_defect": 0.0,
+      "stored_arithmetic_allowance": 2.5518573920635387e-15
+    },
+    {
+      "name": "native_S_K_old_product_6",
+      "maximum_absolute_defect": 0.0,
+      "stored_arithmetic_allowance": 2.5518573920635387e-15
+    },
+    {
+      "name": "native_S_K_old_product_7",
+      "maximum_absolute_defect": 0.0,
+      "stored_arithmetic_allowance": 2.5518573920635387e-15
+    },
+    {
+      "name": "native_S_K_old_product_8",
+      "maximum_absolute_defect": 0.0,
+      "stored_arithmetic_allowance": 2.5518573920635387e-15
+    },
+    {
+      "name": "native_S_K_old_product_9",
+      "maximum_absolute_defect": 0.0,
+      "stored_arithmetic_allowance": 2.5518573920635387e-15
+    },
+    {
+      "name": "native_S_K_old_product_10",
+      "maximum_absolute_defect": 0.0,
+      "stored_arithmetic_allowance": 2.5518573920635387e-15
+    },
+    {
+      "name": "native_S_K_old_product_11",
+      "maximum_absolute_defect": 0.0,
+      "stored_arithmetic_allowance": 2.5518573920635387e-15
+    },
+    {
+      "name": "native_S_K_old_product_12",
+      "maximum_absolute_defect": 0.0,
+      "stored_arithmetic_allowance": 2.5518573920635387e-15
+    },
+    {
+      "name": "native_S_K_old_product_13",
+      "maximum_absolute_defect": 0.0,
+      "stored_arithmetic_allowance": 2.5518573920635387e-15
+    },
+    {
+      "name": "native_S_K_old_product_14",
+      "maximum_absolute_defect": 0.0,
+      "stored_arithmetic_allowance": 2.5518573920635387e-15
+    },
+    {
+      "name": "native_S_K_old_product_15",
+      "maximum_absolute_defect": 0.0,
+      "stored_arithmetic_allowance": 2.5518573920635387e-15
+    },
+    {
+      "name": "native_S_K_old_product_16",
+      "maximum_absolute_defect": 0.0,
+      "stored_arithmetic_allowance": 2.5518573920635387e-15
+    },
+    {
+      "name": "native_S_K_old_product_17",
+      "maximum_absolute_defect": 0.0,
+      "stored_arithmetic_allowance": 2.5518573920635387e-15
+    },
+    {
+      "name": "native_S_K_old_product_18",
+      "maximum_absolute_defect": 0.0,
+      "stored_arithmetic_allowance": 2.5518573920635387e-15
+    },
+    {
+      "name": "native_S_K_old_product_19",
+      "maximum_absolute_defect": 0.0,
+      "stored_arithmetic_allowance": 2.5518573920635387e-15
+    },
+    {
+      "name": "native_S_K_old_product_20",
+      "maximum_absolute_defect": 0.0,
+      "stored_arithmetic_allowance": 2.5518573920635387e-15
+    },
+    {
+      "name": "native_S_K_old_product_21",
+      "maximum_absolute_defect": 0.0,
+      "stored_arithmetic_allowance": 2.5518573920635387e-15
+    },
+    {
+      "name": "native_S_K_old_product_22",
+      "maximum_absolute_defect": 0.0,
+      "stored_arithmetic_allowance": 2.5518573920635387e-15
+    },
+    {
+      "name": "native_S_K_old_product_23",
+      "maximum_absolute_defect": 0.0,
+      "stored_arithmetic_allowance": 2.5518573920635387e-15
+    },
+    {
+      "name": "native_S_K_old_product_24",
+      "maximum_absolute_defect": 0.0,
+      "stored_arithmetic_allowance": 2.5518573920635387e-15
+    }
+  ],
+  "end_energy_terms_verified_against_actual_native_export": [
+    "S_e",
+    "S_K(old-product path)",
+    "F_e",
+    "F_K",
+    "W_p",
+    "H_out",
+    "W_g"
+  ],
+  "source_sha256": "3f079fe46cbaa7c919ea2d335c093c76733c0044afc6d3199d6152a5a828e89f",
+  "no_native_reassembly": true,
+  "no_CFD": true,
+  "inherited_local_L1_normalization": "PASS"
+}

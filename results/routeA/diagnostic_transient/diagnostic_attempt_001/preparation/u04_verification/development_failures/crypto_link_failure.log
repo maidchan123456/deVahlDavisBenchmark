@@ -1,0 +1,26 @@
+{"overlay_sources": 13, "native_tokens_restored_after_erasure": true}
+COMPILED NativeStageObserver.C
+COMPILED fluidThermoThermophysicalTransportModels.C
+COMPILED correctDensity.C
+COMPILED moveMesh.C
+COMPILED correctPressure.C
+COMPILED setRDeltaT.C
+COMPILED momentumPredictor.C
+COMPILED routeADiagnosticIsothermalFluid.C
+COMPILED routeADiagnosticFluid.C
+COMPILED correctBuoyantPressure.C
+COMPILED foamRunDiagnostic.C
+COMPILED setDeltaT.C
+COMPILED thermophysicalPredictor.C
+COMPILED synthetic_native_driver.C
+Traceback (most recent call last):
+  File "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/v1_2/build_u04.py", line 69, in <module>
+    if __name__=='__main__':build(sys.argv[1])
+                            ^^^^^^^^^^^^^^^^^^
+  File "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/v1_2/build_u04.py", line 55, in build
+    driver=link('synthetic_native_driver',[objects[str(HERE/'synthetic_native_driver.C')]],['-lrouteAU04Observer'],shared=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/v1_2/build_u04.py", line 48, in link
+    if r.returncode:raise RuntimeError('LINK_FAILED '+name)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: LINK_FAILED synthetic_native_driver

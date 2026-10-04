@@ -1,0 +1,373 @@
+{
+  "status": "PASS",
+  "parent_stage_plan_sha256": "26b8e6f688a9c15fa99c8efe3f1f970d7f64a404e7ff8e51a02fb27bd936eba1",
+  "original_sites": 14,
+  "entries": [
+    {
+      "source": "/opt/openfoam13/applications/solvers/foamRun/foamRun.C",
+      "function": "main",
+      "anchor": "solver::New(solverName, mesh)",
+      "lines": [
+        109
+      ],
+      "sha256": "5c1e6e34c4bd253f5cc4665a8672f21b6ded2c7a5e391c67419f7586a7b5de91",
+      "stages": [
+        "constructor_complete"
+      ],
+      "payload": [
+        "time0 cold/EOS/p/p_rgh/phi/mesh identities"
+      ],
+      "hook_implemented": true,
+      "authority_version": "1.1",
+      "binding_verification": "GENERATED_NATIVE_TOKEN_ERASURE_AND_COMPILED_SOURCE_CONNECTION",
+      "scope": "Native source hook connected; synthetic native callbacks executed, actual CFD module not executed"
+    },
+    {
+      "source": "/opt/openfoam13/applications/solvers/foamRun/foamRun.C",
+      "function": "main",
+      "anchor": "solver.preSolve();",
+      "lines": [
+        124
+      ],
+      "sha256": "5c1e6e34c4bd253f5cc4665a8672f21b6ded2c7a5e391c67419f7586a7b5de91",
+      "stages": [
+        "preSolve_before",
+        "preSolve_after"
+      ],
+      "payload": [
+        "previous-state controller Co, step epoch"
+      ],
+      "hook_implemented": true,
+      "authority_version": "1.1",
+      "binding_verification": "GENERATED_NATIVE_TOKEN_ERASURE_AND_COMPILED_SOURCE_CONNECTION",
+      "scope": "Native source hook connected; synthetic native callbacks executed, actual CFD module not executed"
+    },
+    {
+      "source": "/opt/openfoam13/applications/solvers/foamRun/foamRun.C",
+      "function": "main",
+      "anchor": "adjustDeltaT(runTime, solver);",
+      "lines": [
+        127
+      ],
+      "sha256": "5c1e6e34c4bd253f5cc4665a8672f21b6ded2c7a5e391c67419f7586a7b5de91",
+      "stages": [
+        "controller_complete"
+      ],
+      "payload": [
+        "old/new deltaT, control Co, native caps"
+      ],
+      "hook_implemented": true,
+      "authority_version": "1.1",
+      "binding_verification": "GENERATED_NATIVE_TOKEN_ERASURE_AND_COMPILED_SOURCE_CONNECTION",
+      "scope": "Native source hook connected; synthetic native callbacks executed, actual CFD module not executed"
+    },
+    {
+      "source": "/opt/openfoam13/applications/solvers/foamRun/foamRun.C",
+      "function": "main",
+      "anchor": "solver.prePredictor();",
+      "lines": [
+        147
+      ],
+      "sha256": "5c1e6e34c4bd253f5cc4665a8672f21b6ded2c7a5e391c67419f7586a7b5de91",
+      "stages": [
+        "outer_start",
+        "density_predictor_complete"
+      ],
+      "payload": [
+        "outer index and complete state after first-outer density predictor"
+      ],
+      "hook_implemented": true,
+      "authority_version": "1.1",
+      "binding_verification": "GENERATED_NATIVE_TOKEN_ERASURE_AND_COMPILED_SOURCE_CONNECTION",
+      "scope": "Native source hook connected; synthetic native callbacks executed, actual CFD module not executed"
+    },
+    {
+      "source": "/opt/openfoam13/applications/modules/isothermalFluid/correctDensity.C",
+      "function": "correctDensity",
+      "anchor": "fvm::ddt(rho)",
+      "lines": [
+        37
+      ],
+      "sha256": "15c8711fc833fa32ac800b15cdbb5f4d638d9bfa16a2b387596408a232993227",
+      "stages": [
+        "density_matrix_assembly"
+      ],
+      "payload": [
+        "deep unmodified matrix + native rho history, frozen phi and boundary flux"
+      ],
+      "hook_implemented": true,
+      "authority_version": "1.1",
+      "binding_verification": "GENERATED_NATIVE_TOKEN_ERASURE_AND_COMPILED_SOURCE_CONNECTION",
+      "scope": "Native source hook connected; synthetic native callbacks executed, actual CFD module not executed"
+    },
+    {
+      "source": "/opt/openfoam13/applications/modules/isothermalFluid/correctDensity.C",
+      "function": "correctDensity",
+      "anchor": ".solve();",
+      "lines": [
+        44
+      ],
+      "sha256": "15c8711fc833fa32ac800b15cdbb5f4d638d9bfa16a2b387596408a232993227",
+      "stages": [
+        "before_correctDensity",
+        "after_correctDensity"
+      ],
+      "payload": [
+        "rho_s/rho_T/phi, mass C balance using original history, solverPerformance"
+      ],
+      "hook_implemented": true,
+      "authority_version": "1.1",
+      "binding_verification": "GENERATED_NATIVE_TOKEN_ERASURE_AND_COMPILED_SOURCE_CONNECTION",
+      "scope": "Native source hook connected; synthetic native callbacks executed, actual CFD module not executed"
+    },
+    {
+      "source": "/opt/openfoam13/applications/modules/fluid/thermophysicalPredictor.C",
+      "function": "thermophysicalPredictor",
+      "anchor": "EEqn.relax();",
+      "lines": [
+        55
+      ],
+      "sha256": "b3271ffca3d544eec49c79cf220ade3013204a5de959a9d887a4f46a64223be9",
+      "stages": [
+        "energy_unrelaxed_assembly"
+      ],
+      "payload": [
+        "matrix diagonal/upper/lower/source/boundary coefficients; rho/e/K/U/p/T/phi + native old products; frozen Fourier reference; epoch/hash"
+      ],
+      "hook_implemented": true,
+      "authority_version": "1.1",
+      "binding_verification": "GENERATED_NATIVE_TOKEN_ERASURE_AND_COMPILED_SOURCE_CONNECTION",
+      "scope": "Native source hook connected; synthetic native callbacks executed, actual CFD module not executed"
+    },
+    {
+      "source": "/opt/openfoam13/applications/modules/fluid/thermophysicalPredictor.C",
+      "function": "thermophysicalPredictor",
+      "anchor": "EEqn.solve();",
+      "lines": [
+        59
+      ],
+      "sha256": "b3271ffca3d544eec49c79cf220ade3013204a5de959a9d887a4f46a64223be9",
+      "stages": [
+        "energy_after_solve"
+      ],
+      "payload": [
+        "evaluate frozen unrelaxed matrix on post-solve e BEFORE thermo.correct or later BC refresh; linear status"
+      ],
+      "hook_implemented": true,
+      "authority_version": "1.1",
+      "binding_verification": "GENERATED_NATIVE_TOKEN_ERASURE_AND_COMPILED_SOURCE_CONNECTION",
+      "scope": "Native source hook connected; synthetic native callbacks executed, actual CFD module not executed"
+    },
+    {
+      "source": "/opt/openfoam13/applications/modules/fluid/thermophysicalPredictor.C",
+      "function": "thermophysicalPredictor",
+      "anchor": "thermo_.correct();",
+      "lines": [
+        63
+      ],
+      "sha256": "b3271ffca3d544eec49c79cf220ade3013204a5de959a9d887a4f46a64223be9",
+      "stages": [
+        "before_thermo_correct",
+        "after_thermo_correct"
+      ],
+      "payload": [
+        "rho_s/rho_T/e/T and synchronization differences"
+      ],
+      "hook_implemented": true,
+      "authority_version": "1.1",
+      "binding_verification": "GENERATED_NATIVE_TOKEN_ERASURE_AND_COMPILED_SOURCE_CONNECTION",
+      "scope": "Native source hook connected; synthetic native callbacks executed, actual CFD module not executed"
+    },
+    {
+      "source": "/opt/openfoam13/applications/modules/isothermalFluid/correctBuoyantPressure.C",
+      "function": "correctBuoyantPressure",
+      "anchor": "rho = thermo.rho();",
+      "lines": [
+        55,
+        237,
+        271
+      ],
+      "sha256": "c6524988fa021329821055747369c30720240e005aa0eef322cbeb3a12ef3bb7",
+      "stages": [
+        "before_pressure_EOS_copy",
+        "after_pressure_EOS_copy"
+      ],
+      "payload": [
+        "rho epoch differences; first occurrence transient entry; distinguish other conditional occurrences"
+      ],
+      "hook_implemented": true,
+      "authority_version": "1.1",
+      "binding_verification": "GENERATED_NATIVE_TOKEN_ERASURE_AND_COMPILED_SOURCE_CONNECTION",
+      "scope": "Native source hook connected; synthetic native callbacks executed, actual CFD module not executed"
+    },
+    {
+      "source": "/opt/openfoam13/applications/modules/isothermalFluid/correctBuoyantPressure.C",
+      "function": "correctBuoyantPressure",
+      "anchor": "p_rghEqn.setReference",
+      "lines": [
+        157,
+        195
+      ],
+      "sha256": "c6524988fa021329821055747369c30720240e005aa0eef322cbeb3a12ef3bb7",
+      "stages": [
+        "pressure_pre_reference",
+        "pressure_post_reference"
+      ],
+      "payload": [
+        "registered non-transonic occurrence only; copy pre-reference matrix, reference-cell diagonal/source increment, referenced matrix and solution"
+      ],
+      "hook_implemented": true,
+      "authority_version": "1.1",
+      "binding_verification": "GENERATED_NATIVE_TOKEN_ERASURE_AND_COMPILED_SOURCE_CONNECTION",
+      "scope": "Native source hook connected; synthetic native callbacks executed, actual CFD module not executed"
+    },
+    {
+      "source": "/opt/openfoam13/applications/modules/isothermalFluid/correctBuoyantPressure.C",
+      "function": "correctBuoyantPressure",
+      "anchor": "continuityErrors();",
+      "lines": [
+        243
+      ],
+      "sha256": "c6524988fa021329821055747369c30720240e005aa0eef322cbeb3a12ef3bb7",
+      "stages": [
+        "pressure_C_complete"
+      ],
+      "payload": [
+        "C rho/phi/p/U/K/thermo; native transient log and C residual distinct"
+      ],
+      "hook_implemented": true,
+      "authority_version": "1.1",
+      "binding_verification": "GENERATED_NATIVE_TOKEN_ERASURE_AND_COMPILED_SOURCE_CONNECTION",
+      "scope": "Native source hook connected; synthetic native callbacks executed, actual CFD module not executed"
+    },
+    {
+      "source": "/opt/openfoam13/applications/modules/isothermalFluid/isothermalFluid.C",
+      "function": "postSolve",
+      "anchor": "rho_ = thermo.rho();",
+      "lines": [
+        393
+      ],
+      "sha256": "b1f6631e889b2c83d6468c2d631a106d35d75f5e2bd75e85518d8569e250cf59",
+      "stages": [
+        "before_postSolve_EOS_copy",
+        "after_postSolve_EOS_copy"
+      ],
+      "payload": [
+        "C/end rho and mass, unchanged phi, EOS jump, pressure relation defect"
+      ],
+      "hook_implemented": true,
+      "authority_version": "1.1",
+      "binding_verification": "GENERATED_NATIVE_TOKEN_ERASURE_AND_COMPILED_SOURCE_CONNECTION",
+      "scope": "Native source hook connected; synthetic native callbacks executed, actual CFD module not executed"
+    },
+    {
+      "source": "/opt/openfoam13/applications/solvers/foamRun/foamRun.C",
+      "function": "main",
+      "anchor": "solver.postSolve();",
+      "lines": [
+        191
+      ],
+      "sha256": "5c1e6e34c4bd253f5cc4665a8672f21b6ded2c7a5e391c67419f7586a7b5de91",
+      "stages": [
+        "postSolve_complete"
+      ],
+      "payload": [
+        "end-state mass/energy term reconstruction, raw history row and arrival evaluator"
+      ],
+      "hook_implemented": true,
+      "authority_version": "1.1",
+      "binding_verification": "GENERATED_NATIVE_TOKEN_ERASURE_AND_COMPILED_SOURCE_CONNECTION",
+      "scope": "Native source hook connected; synthetic native callbacks executed, actual CFD module not executed"
+    },
+    {
+      "source": "/opt/openfoam13/src/OpenFOAM/fields/OldTimeField/OldTimeField.C",
+      "sha256": "b8e44404ad705f24cc98f6e9a9b4285cbbf2138f00a285b345dee7e86e5a48d5",
+      "anchors": {
+        "storeOldTimes()": [
+          257,
+          353
+        ],
+        "oldTime() const": [
+          322
+        ]
+      },
+      "native_fact": true
+    },
+    {
+      "source": "/opt/openfoam13/src/finiteVolume/fvMatrices/fvMatrix/fvMatrix.C",
+      "sha256": "ccc320e987c1c825a73f65b6ef84bd434afc0453ecd16dbda4d347edde2cef2e",
+      "anchors": {
+        "residual() const": []
+      },
+      "native_fact": true
+    },
+    {
+      "source": "/opt/openfoam13/src/finiteVolume/finiteVolume/ddtSchemes/backwardDdtScheme/backwardDdtScheme.C",
+      "sha256": "e1cb8572ea6aa1054f9d44d4bdbba19aabbad33bbd27897310a1210f5ec33310",
+      "anchors": {
+        "deltaT0_(const GeoField& vf)": [
+          59
+        ],
+        "fvmDdt": [
+          416,
+          467,
+          518,
+          572
+        ],
+        "fvcDdt": [
+          76,
+          139,
+          203,
+          268,
+          336,
+          642,
+          660,
+          678,
+          696,
+          712,
+          747,
+          775,
+          811,
+          846,
+          867,
+          892,
+          922,
+          954,
+          984
+        ]
+      },
+      "native_fact": true
+    },
+    {
+      "source": "/opt/openfoam13/src/ThermophysicalTransportModels/fluid/laminar/Fourier/Fourier.C",
+      "sha256": "55ec6259efb0a7046ff0099632a049875899f7d7948c1bec5a74aaf861d8f256",
+      "anchors": {
+        "divq": [
+          133
+        ],
+        "fvc::laplacian": [
+          140
+        ],
+        "fvm::laplacianCorrection": [
+          141
+        ]
+      },
+      "native_fact": true
+    },
+    {
+      "source": "/opt/openfoam13/src/finiteVolume/fvMesh/fvPatches/constraint/empty/emptyFvPatch.C",
+      "sha256": "e3b0a85eb5320e263490f1fda0384a8def02a6f651d0ff0dd03b63a963aa8a4c",
+      "anchors": {
+        "faceCells() const": [
+          59
+        ]
+      },
+      "native_fact": true
+    }
+  ],
+  "native_source_files_frozen": 810,
+  "source_set_sha256": "57aacf0e9307d0810a89b6b118680e67b5e1d70214e209070197fa3709e12a58",
+  "instrumentation_sha256": "adb52dc1e68d638ff98f4ffebe4d51746e40f1abb873d71a758b86964ad8f3fc",
+  "actual_CFD_module_execution": false,
+  "authoritative_build": "final/build/build_provenance.json"
+}

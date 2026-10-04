@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/v1_2/verify_u04.py", line 95, in <module>
+    ap=argparse.ArgumentParser();ap.add_argument('build');ap.add_argument('output');a=ap.parse_args();verify(a.build,a.output)
+                                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/v1_2/verify_u04.py", line 35, in verify
+    replays[name]=replay.replay(output/name,PARENT_SHA,src,inst)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/v1_2/replay_evaluator.py", line 233, in replay
+    end_mass=mass_end(last_mass,after)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/v1_2/replay_evaluator.py", line 252, in mass_end
+    matrix=dict(saved['terms']['D_B_rho']['payload']['matrix']);matrix['psi']=state['rho']
+                ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+KeyError: 'payload'
