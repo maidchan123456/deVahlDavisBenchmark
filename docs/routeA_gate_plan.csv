@@ -1,0 +1,12 @@
+gate,purpose,required,now,matrix,defer,formal,l1,l2,l3
+"A","版・入力・mesh・OQ-02・Ra/Pr・provenance","true","既存minimal PASS参照、実行契約準備","全12case個別判定","不可","Hard","Hard","Hard","Hard"
+"B","v13 governing-model audit","true","既存ROUTE_A_AUDIT_PASS引用、再監査なし","監査したsolver/modelの一致確認","不可","Hard","Hard","Hard","Hard"
+"C","Ra0解析解・Nu符号/規格化","true","A-COND PASSを維持","同一後処理を維持、再solver不要","完了済み","Hard","Hard","Hard","Hard"
+"D","健全性・定常性・残差・熱傾向","true","DETAIL_UNRESOLVEDを解決","全12case、H baseline/sensitivity","判定手順は不可","Hard","Hard健全性/定常性、残差単独FAILは限定評価","Hard baseline、Bのfloor解釈は転用不可","Hard baseline"
+"E","Table V実用比較","true","定義を固定","全量報告、fineで既存1%/位置0.01照合","L1後へ延期不可","A steady Diagnostic、JではHard","Diagnostic・報告必須","JでHard","JでHard"
+"F","3grid・fine-medium・p/GCI","true","追加320なし方針","各Ra/各QoI判定","320追加のみ延期可能","Hard","判定必須、FAILは制限付き非blocking","未解決は主張範囲/ユーザー判断、formal前提は未達","主張範囲/ユーザー判断、formal前提は未達"
+"G","熱/断面・質量/体積・対称性","true","演算子とscope固定、B研究再開なし","fine formal、全grid native診断","高度研究のみ延期可能","Hard","判定必須、有限の制限付き非blocking","JでAのG基準Hard、保存異常は延期不可","fluid-only保存Hard"
+"H","固定Ra/Pr、小パラメータ感度","true","計画のみ","12case後の別1case、baselineはRa1e6 fine","matrix後まで、連成前必須","実施報告必須、下流Hard","実施/報告Hard、0.2%PASSはDiagnostic","Hard PASS","Hard PASS"
+"I","局所Nu・場・極値位置","true","既存方法を固定","各case診断、fine図","L1報告まで不可","Diagnostic","Diagnostic・報告必須","Diagnostic","Diagnostic"
+"J","非定常・dt/Co依存・定常極限・保存","true","計画のみ","steady matrix外","steady/H後、粒子運動前必須","DOWNSTREAM_TRANSIENT_READY Hard","不要","Hard PASS","Hard PASS"
+"K","manifest・履歴・比較・再現可能性","true","実行契約と既存証拠を保存","各case即時保護、最後に集約","不可","Hard","Hard","Hard","Hard"

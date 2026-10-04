@@ -1,0 +1,918 @@
+{
+  "schema": "routeA-pre-full-matrix-plan-v1",
+  "date": "2026-10-04",
+  "timezone": "Asia/Tokyo",
+  "review_only": true,
+  "baseline_HEAD": "1961e87718071bafe4ebf74c7508fdd23ae503c5",
+  "observed_HEAD": "1961e87718071bafe4ebf74c7508fdd23ae503c5",
+  "initial_untracked_preserve": [
+    "cases/routeA/Ra0_medium/",
+    "cases/routeA/Ra1e4_coarse/",
+    "verification/"
+  ],
+  "authorization": {
+    "solver": false,
+    "mesh_generation": false,
+    "case_generation": false,
+    "scripts": false,
+    "source_audit": false,
+    "git_add_commit_push": false,
+    "allowed_outputs": [
+      "docs/routeA_pre_full_matrix_review.md",
+      "docs/routeA_execution_plan.json",
+      "docs/routeA_gate_plan.csv"
+    ]
+  },
+  "reviewed_input_sha256": {
+    "docs/openfoam_design.md": "eef1e94311e5221e3402d4ba9d1969706e0da04e304cf0b89ce5d3dfd3070b10",
+    "docs/routeA_implementation.md": "068d17f6b0e1aee42dc72fed432256948fe2dff19aff17e7a413a4b74bb6f44a",
+    "docs/benchmark_spec.md": "f4436fd4fa8184052b05555b70d9382f7c82b9647aa46e13b126d6796e6d9496",
+    "docs/acceptance_criteria.md": "2fe82dba1644621a7e57ddc11c4ea5ba5007db50122fbd0c0179f5af5ac38db4",
+    "results/routeA/minimal_test_summary.csv": "d38663b2e9d28c42367465cae8edb26d1587c2888b95930d7a7ad1cf414aa636",
+    "results/routeA/run_manifest.json": "a0819e0e8c0fa5bb8bc3d7719249637e15be8ffe5cd8ba3a81d5884242a50ea7",
+    "results/routeA/cases/A-COND/metrics.json": "2c5ef51ca78cf95adfad95cb1009133bff160ed2a6d526505e637cca68fd5d31",
+    "results/routeA/cases/A-SMOKE/metrics.json": "ddc7f4a666194fb4bc06d4735f0ba89a02e27ce751cdeea370bb5e34e43541dd",
+    "results/routeB/routeB_final_verification_review.md": "db5c3005e4d3efd67065eac0008d1cc69cd46f80ad08297a15c4ba3dddffec8e",
+    "results/routeB/routeB_master_matrix.csv": "87c92615cae0bf4e65e8ebcbe0544513ce514c7aed79c417f8fbd28e70c16517"
+  },
+  "formal_documents": {
+    "benchmark_spec_version": "1.4",
+    "acceptance_criteria_version": "1.4",
+    "thresholds_changed": false
+  },
+  "interpretation": {
+    "B_vs_paper": "classical Boussinesq verification",
+    "A_vs_B": "model/formulation characterization with numerical and operator uncertainties",
+    "A_vs_paper": "practical benchmark comparison; discrepancy is not solely numerical error"
+  },
+  "evidence": {
+    "A-COND": {
+      "status": "PASS",
+      "scope": "minimal Gate A/C only",
+      "Ra": 0,
+      "grid": [
+        80,
+        80,
+        1
+      ],
+      "iterations": 3000,
+      "normal_exit": true,
+      "Gate_A_minimal": "PASS",
+      "Gate_C": "PASS",
+      "Nu_bar_cavity": 1,
+      "Nu_bar_0": 1.0000393924781292,
+      "Nu_bar_half": 0.9999606321545684,
+      "Nu_bar_1": 1.0000394040508809,
+      "max_dimensionless_velocity": 0,
+      "max_theta_analytic_error": 0.000006328335507510552
+    },
+    "A-SMOKE": {
+      "status": "PASS",
+      "scope": "minimal smoke only; NOT formal matrix evidence",
+      "Ra": 10000,
+      "grid": [
+        40,
+        40,
+        1
+      ],
+      "iterations": 3000,
+      "normal_exit": true,
+      "Gate_A_minimal": "PASS",
+      "formal_matrix_accepted": false,
+      "Nu_bar_cavity": 2.2599546294035275,
+      "Nu_bar_0": 2.257421422257835,
+      "Nu_bar_half": 2.258514696997335,
+      "Nu_bar_1": 2.2574214718534904,
+      "Umax": 16.121335096250803,
+      "Umax_Z": 0.8125,
+      "Wmax": 19.597333463027827,
+      "Wmax_X": 0.112548828125,
+      "epsilon_m_native": 2.833183637313924e-11,
+      "epsilon_v_reconstructed": 0.004365086407283662
+    },
+    "Route_B": {
+      "computed": 12,
+      "accepted": 9,
+      "accepted_Ra": [
+        1000,
+        10000,
+        100000
+      ],
+      "Ra1e6": "computed, Gate D FAIL, accepted NO, diagnostic comparison only",
+      "BENCHMARK_CORE_PASS": "NOT_EVALUATED; not granted",
+      "formal_completion": false,
+      "closure_recommendation": "COMPLETE_WITH_DOCUMENTED_LIMITATIONS"
+    }
+  },
+  "matrix": {
+    "required": true,
+    "case_count": 12,
+    "scientific_reason": "four Ra regimes and three grids distinguish Ra-dependent formulation differences from spatial-discretization/sampling effects",
+    "cases": [
+      {
+        "case_id": "A-Ra1e3-coarse",
+        "Ra_target": 1000,
+        "grid": [
+          40,
+          40,
+          1
+        ],
+        "grid_label": "coarse",
+        "execution_order": 1,
+        "formal_status": "NOT_RUN",
+        "reuse_smoke_allowed": false,
+        "iteration_cap": null
+      },
+      {
+        "case_id": "A-Ra1e3-medium",
+        "Ra_target": 1000,
+        "grid": [
+          80,
+          80,
+          1
+        ],
+        "grid_label": "medium",
+        "execution_order": 2,
+        "formal_status": "NOT_RUN",
+        "reuse_smoke_allowed": false,
+        "iteration_cap": null
+      },
+      {
+        "case_id": "A-Ra1e3-fine",
+        "Ra_target": 1000,
+        "grid": [
+          160,
+          160,
+          1
+        ],
+        "grid_label": "fine",
+        "execution_order": 3,
+        "formal_status": "NOT_RUN",
+        "reuse_smoke_allowed": false,
+        "iteration_cap": null
+      },
+      {
+        "case_id": "A-Ra1e4-coarse",
+        "Ra_target": 10000,
+        "grid": [
+          40,
+          40,
+          1
+        ],
+        "grid_label": "coarse",
+        "execution_order": 4,
+        "formal_status": "NOT_RUN",
+        "reuse_smoke_allowed": false,
+        "iteration_cap": null
+      },
+      {
+        "case_id": "A-Ra1e4-medium",
+        "Ra_target": 10000,
+        "grid": [
+          80,
+          80,
+          1
+        ],
+        "grid_label": "medium",
+        "execution_order": 5,
+        "formal_status": "NOT_RUN",
+        "reuse_smoke_allowed": false,
+        "iteration_cap": null
+      },
+      {
+        "case_id": "A-Ra1e4-fine",
+        "Ra_target": 10000,
+        "grid": [
+          160,
+          160,
+          1
+        ],
+        "grid_label": "fine",
+        "execution_order": 6,
+        "formal_status": "NOT_RUN",
+        "reuse_smoke_allowed": false,
+        "iteration_cap": null
+      },
+      {
+        "case_id": "A-Ra1e5-coarse",
+        "Ra_target": 100000,
+        "grid": [
+          40,
+          40,
+          1
+        ],
+        "grid_label": "coarse",
+        "execution_order": 7,
+        "formal_status": "NOT_RUN",
+        "reuse_smoke_allowed": false,
+        "iteration_cap": null
+      },
+      {
+        "case_id": "A-Ra1e5-medium",
+        "Ra_target": 100000,
+        "grid": [
+          80,
+          80,
+          1
+        ],
+        "grid_label": "medium",
+        "execution_order": 8,
+        "formal_status": "NOT_RUN",
+        "reuse_smoke_allowed": false,
+        "iteration_cap": null
+      },
+      {
+        "case_id": "A-Ra1e5-fine",
+        "Ra_target": 100000,
+        "grid": [
+          160,
+          160,
+          1
+        ],
+        "grid_label": "fine",
+        "execution_order": 9,
+        "formal_status": "NOT_RUN",
+        "reuse_smoke_allowed": false,
+        "iteration_cap": null
+      },
+      {
+        "case_id": "A-Ra1e6-coarse",
+        "Ra_target": 1000000,
+        "grid": [
+          40,
+          40,
+          1
+        ],
+        "grid_label": "coarse",
+        "execution_order": 10,
+        "formal_status": "NOT_RUN",
+        "reuse_smoke_allowed": false,
+        "iteration_cap": null
+      },
+      {
+        "case_id": "A-Ra1e6-medium",
+        "Ra_target": 1000000,
+        "grid": [
+          80,
+          80,
+          1
+        ],
+        "grid_label": "medium",
+        "execution_order": 11,
+        "formal_status": "NOT_RUN",
+        "reuse_smoke_allowed": false,
+        "iteration_cap": null
+      },
+      {
+        "case_id": "A-Ra1e6-fine",
+        "Ra_target": 1000000,
+        "grid": [
+          160,
+          160,
+          1
+        ],
+        "grid_label": "fine",
+        "execution_order": 12,
+        "formal_status": "NOT_RUN",
+        "reuse_smoke_allowed": false,
+        "iteration_cap": null
+      }
+    ],
+    "first_solver_unit": [
+      "A-Ra1e3-coarse",
+      "A-Ra1e3-medium",
+      "A-Ra1e3-fine"
+    ],
+    "batch_size": 3,
+    "concurrent_solver_runs": 1,
+    "initial_fields": "U=0,T=T0, cell rho=rho0; audited OQ-02 cell/patch pressure seeds",
+    "automatic_warm_start": false,
+    "automatic_case_promotion": false,
+    "normal_Gate_fail_continue_to_next_case": true,
+    "maximum_primary_run_attempts": 12,
+    "automatic_retry": false,
+    "automatic_iteration_extension": false,
+    "execution_start_allowed": false,
+    "start_blockers": [
+      "Gate D formal monitor/trend detail unresolved",
+      "per-case iteration caps not preregistered",
+      "comparison operator and symmetry definitions need execution-contract confirmation",
+      "user has not authorized solver runs"
+    ]
+  },
+  "frozen_model": {
+    "distribution": "OpenFOAM Foundation",
+    "version": "13",
+    "historical_build": "13-441953dfbb42",
+    "solver": "foamRun + solver fluid",
+    "algorithm": "PIMPLE dictionary, steady SIMPLE mode, nOuterCorrectors=1",
+    "thermo": "heRhoThermo/pureMixture/const/eConst/Boussinesq/specie/sensibleInternalEnergy",
+    "momentum": "laminar Stokes",
+    "thermal": "laminar Fourier",
+    "sources": "none: turbulence/radiation/MRF/fvModels/fvConstraints/particles",
+    "time_scheme": "steadyState",
+    "spatial_schemes": "Gauss linear; Gauss linear orthogonal; linear interpolation; orthogonal snGrad",
+    "linear_tolerance": 1e-10,
+    "relTol": 0,
+    "relaxation": {
+      "p_rgh": 0.3,
+      "U": 0.5,
+      "e": 0.7
+    },
+    "nCorrectors": 2,
+    "nNonOrthogonalCorrectors": 0,
+    "residualControl": false,
+    "rho0": 1,
+    "beta": 0.001,
+    "mu": 0.00001,
+    "Pr": 0.71,
+    "Cv": 1000,
+    "L": 0.1,
+    "W": 0.001,
+    "T0": 300,
+    "Th": 300.5,
+    "Tc": 299.5,
+    "Ra_generation": "g=Ra*nu0*alpha0/(beta*DeltaT*L^3); do not use rounded displayed g"
+  },
+  "gate_plan": [
+    {
+      "gate": "A",
+      "purpose": "版・入力・mesh・OQ-02・Ra/Pr・provenance",
+      "required": true,
+      "now": "既存minimal PASS参照、実行契約準備",
+      "matrix": "全12case個別判定",
+      "defer": "不可",
+      "formal": "Hard",
+      "l1": "Hard",
+      "l2": "Hard",
+      "l3": "Hard"
+    },
+    {
+      "gate": "B",
+      "purpose": "v13 governing-model audit",
+      "required": true,
+      "now": "既存ROUTE_A_AUDIT_PASS引用、再監査なし",
+      "matrix": "監査したsolver/modelの一致確認",
+      "defer": "不可",
+      "formal": "Hard",
+      "l1": "Hard",
+      "l2": "Hard",
+      "l3": "Hard"
+    },
+    {
+      "gate": "C",
+      "purpose": "Ra0解析解・Nu符号/規格化",
+      "required": true,
+      "now": "A-COND PASSを維持",
+      "matrix": "同一後処理を維持、再solver不要",
+      "defer": "完了済み",
+      "formal": "Hard",
+      "l1": "Hard",
+      "l2": "Hard",
+      "l3": "Hard"
+    },
+    {
+      "gate": "D",
+      "purpose": "健全性・定常性・残差・熱傾向",
+      "required": true,
+      "now": "DETAIL_UNRESOLVEDを解決",
+      "matrix": "全12case、H baseline/sensitivity",
+      "defer": "判定手順は不可",
+      "formal": "Hard",
+      "l1": "Hard健全性/定常性、残差単独FAILは限定評価",
+      "l2": "Hard baseline、Bのfloor解釈は転用不可",
+      "l3": "Hard baseline"
+    },
+    {
+      "gate": "E",
+      "purpose": "Table V実用比較",
+      "required": true,
+      "now": "定義を固定",
+      "matrix": "全量報告、fineで既存1%/位置0.01照合",
+      "defer": "L1後へ延期不可",
+      "formal": "A steady Diagnostic、JではHard",
+      "l1": "Diagnostic・報告必須",
+      "l2": "JでHard",
+      "l3": "JでHard"
+    },
+    {
+      "gate": "F",
+      "purpose": "3grid・fine-medium・p/GCI",
+      "required": true,
+      "now": "追加320なし方針",
+      "matrix": "各Ra/各QoI判定",
+      "defer": "320追加のみ延期可能",
+      "formal": "Hard",
+      "l1": "判定必須、FAILは制限付き非blocking",
+      "l2": "未解決は主張範囲/ユーザー判断、formal前提は未達",
+      "l3": "主張範囲/ユーザー判断、formal前提は未達"
+    },
+    {
+      "gate": "G",
+      "purpose": "熱/断面・質量/体積・対称性",
+      "required": true,
+      "now": "演算子とscope固定、B研究再開なし",
+      "matrix": "fine formal、全grid native診断",
+      "defer": "高度研究のみ延期可能",
+      "formal": "Hard",
+      "l1": "判定必須、有限の制限付き非blocking",
+      "l2": "JでAのG基準Hard、保存異常は延期不可",
+      "l3": "fluid-only保存Hard"
+    },
+    {
+      "gate": "H",
+      "purpose": "固定Ra/Pr、小パラメータ感度",
+      "required": true,
+      "now": "計画のみ",
+      "matrix": "12case後の別1case、baselineはRa1e6 fine",
+      "defer": "matrix後まで、連成前必須",
+      "formal": "実施報告必須、下流Hard",
+      "l1": "実施/報告Hard、0.2%PASSはDiagnostic",
+      "l2": "Hard PASS",
+      "l3": "Hard PASS"
+    },
+    {
+      "gate": "I",
+      "purpose": "局所Nu・場・極値位置",
+      "required": true,
+      "now": "既存方法を固定",
+      "matrix": "各case診断、fine図",
+      "defer": "L1報告まで不可",
+      "formal": "Diagnostic",
+      "l1": "Diagnostic・報告必須",
+      "l2": "Diagnostic",
+      "l3": "Diagnostic"
+    },
+    {
+      "gate": "J",
+      "purpose": "非定常・dt/Co依存・定常極限・保存",
+      "required": true,
+      "now": "計画のみ",
+      "matrix": "steady matrix外",
+      "defer": "steady/H後、粒子運動前必須",
+      "formal": "DOWNSTREAM_TRANSIENT_READY Hard",
+      "l1": "不要",
+      "l2": "Hard PASS",
+      "l3": "Hard PASS"
+    },
+    {
+      "gate": "K",
+      "purpose": "manifest・履歴・比較・再現可能性",
+      "required": true,
+      "now": "実行契約と既存証拠を保存",
+      "matrix": "各case即時保護、最後に集約",
+      "defer": "不可",
+      "formal": "Hard",
+      "l1": "Hard",
+      "l2": "Hard",
+      "l3": "Hard"
+    }
+  ],
+  "Gate_D": {
+    "readiness": "DETAIL_UNRESOLVED",
+    "unresolved_label": "ROUTE_A_GATE_D_DETAIL_UNRESOLVED",
+    "known": {
+      "velocity_residual": "all active U components, reported normalized initial residuals",
+      "energy_residual": "e, not directly solved T",
+      "pressure_residual": "p_rgh, not Route B kinematic p",
+      "residual_target": 1e-7,
+      "window_iterations": 200,
+      "Rwin_limit": 0.0005,
+      "Rwin_hard_QoIs": [
+        "Nu_bar_0",
+        "Umax",
+        "Wmax"
+      ],
+      "Rwin_scales": {
+        "Nu_bar_0": 1,
+        "Umax": 1,
+        "Wmax": 1
+      },
+      "additional_QoI": "Nu_bar_half diagnostic",
+      "heat_trend": "not increasing in same final window",
+      "density": "solver/thermo rho agreement, positive/finite rho, EOS and native mass diagnostics; no new density residual threshold"
+    },
+    "unresolved": [
+      "legacy Nu / wall-pair trace does not establish exact Nu_bar_0 trace identity",
+      "deterministic whole-window heat-trend evaluator and output precision treatment not established by minimal start/end evidence"
+    ],
+    "policy": "freeze evaluator before any primary run; do not infer PASS or adopt Route B residual-floor exemption"
+  },
+  "inherited_thresholds": {
+    "Gate_A_Ra_Pr_relative": 1e-10,
+    "Gate_F_fine_medium_relative": 0.01,
+    "Gate_F_GCI_Nu": 0.015,
+    "Gate_F_GCI_velocity": 0.02,
+    "Gate_G_heat": 0.002,
+    "Gate_G_section": 0.005,
+    "Gate_G_epsilon_m": 0.000001,
+    "Gate_G_epsilon_v": 0.002,
+    "Gate_G_symmetry": 0.002,
+    "Gate_H_relative": 0.002,
+    "Gate_I_local_Nu": 0.03,
+    "Gate_I_position": 0.02,
+    "Gate_J_time_step_relative": 0.005,
+    "Gate_E_reference_relative": 0.01,
+    "Gate_E_position": 0.01
+  },
+  "comparison": {
+    "scalar_definition": "D_AB=abs(Q_A-Q_B)/abs(Q_B) for nonzero B; signed differences separately",
+    "position_definition": "absolute coordinate difference in [0,1]",
+    "zero_baseline_policy": "relative difference null with ABSOLUTE_ONLY status; freeze existing scale if relative normalization is needed before execution",
+    "hard_AB_threshold": null,
+    "join_keys": [
+      "Ra_actual",
+      "grid",
+      "QoI_definition",
+      "sampling_method",
+      "postprocessing_version"
+    ],
+    "QoIs": [
+      "Nu_bar_cavity",
+      "Nu_bar_0",
+      "Nu_bar_half",
+      "Nu_bar_1",
+      "Umax",
+      "Umax_Z",
+      "Wmax",
+      "Wmax_X",
+      "Nu_hot_local_max",
+      "Nu_hot_local_max_Z",
+      "Nu_hot_local_min",
+      "Nu_hot_local_min_Z",
+      "heat_conservation_physical",
+      "paper_section_conservation",
+      "native_continuity",
+      "reconstructed_U_divergence",
+      "temperature_symmetry",
+      "velocity_symmetry"
+    ],
+    "primary_Nu": "cell-volume U*theta quadrature plus imposed-wall conductive integral 1",
+    "secondary_Nu": "all-face-plane trapezoid; method difference diagnostic",
+    "velocity_sampling": "exact centrelines, linear interpolation, 4097 points including no-slip endpoints",
+    "monitor_velocity_sampling": "legacy 257 points / every 10 iterations; distinguish from final 4097-point QoIs",
+    "local_Nu": "raw faces and fixed five-point quartic/endpoint extrapolation separately",
+    "operator_difference": "A section uses reconstructed U_f; B section uses native corrected volume phi; identical continuum QoI but distinct discrete operators",
+    "native_flux_units": {
+      "A": "mass kg/s",
+      "B": "volume m3/s"
+    },
+    "unaligned_operator_comparison_allowed": false,
+    "canonical_B_rows": "only accepted YES for accepted comparisons; Ra1e6 labelled diagnostic B baseline",
+    "missing_B_master_columns": "Nu_half/Nu_1/positions/local Nu/section histories not fully in master CSV; obtain existing canonical outputs read-only in future, never invent/recompute B formal statuses"
+  },
+  "policies": {
+    "F": {
+      "workflow": "NON_BLOCKING_WITH_DOCUMENTED_LIMITATION",
+      "formal": "Hard unchanged; FAIL/needs_320 maintained",
+      "nonmonotonic": "record per-QoI convergence type; undefined p/GCI null, not zero",
+      "automatic_320": false,
+      "defer": "320 remains required to claim full formal F; schedule deferred",
+      "limitation": "no grid-independent A-B model-difference claim when spatial uncertainty unresolved"
+    },
+    "G": {
+      "workflow": "NON_BLOCKING_WITH_DOCUMENTED_LIMITATION",
+      "formal": "Hard unchanged; compute fine results, missing evidence NOT_EVALUATED",
+      "on_failure": [
+        "preserve formal FAIL by failed component",
+        "save native mass flux and physical heat diagnostics",
+        "bounded cause categories: model, discretization, iteration, postprocessing",
+        "continue finite normal matrix runs; no automatic investigation"
+      ],
+      "automatic_threshold_research": false,
+      "automatic_microcases": false,
+      "automatic_tolerance_search": false,
+      "native_diagnostic_replaces_formal_failure": false,
+      "coupling_guard": "Gate J requires A Gate G PASS; native conservation failure/unknown blocks transient/coupling readiness"
+    },
+    "stop": [
+      "environment mismatch",
+      "input mismatch",
+      "wrong solver",
+      "wrong physics",
+      "mesh error",
+      "NaN/Inf",
+      "fatal",
+      "solver divergence",
+      "evidence corruption",
+      "missing prerequisite execution contract"
+    ],
+    "continue": [
+      "finite normal run with Gate D threshold FAIL",
+      "Gate E discrepancy",
+      "Gate F nonmonotonic",
+      "Gate G formal diagnostic failure"
+    ],
+    "divergence_rule": "solver reports divergence or loses finite/admissible state; residual plateau/finite stationary threshold miss alone is not divergence",
+    "partial_result_protection": "unique planned primary case IDs; protect canonical smoke/conduction; seal inputs/fields/logs/metrics hashes per case; aggregate only after case artifacts exist; preserve completed cases on batch stop",
+    "no_posthoc_tuning": [
+      "save formal result",
+      "classify failure",
+      "user decision",
+      "separate bounded diagnostic task; new ID if authorized"
+    ],
+    "automated_changes_forbidden": [
+      "solver tolerances",
+      "relaxation",
+      "schemes",
+      "Gate thresholds",
+      "retry",
+      "iteration extension",
+      "320 grid",
+      "warm start"
+    ]
+  },
+  "H": {
+    "required": true,
+    "phase": "after matrix",
+    "Ra": 1000000,
+    "grid": [
+      160,
+      160,
+      1
+    ],
+    "baseline_beta_DeltaT": 0.001,
+    "sensitivity_beta_DeltaT": 0.0001,
+    "beta_multiplier": 0.1,
+    "g_multiplier": 10,
+    "Ra_Pr_fixed": true,
+    "additional_primary_runs": 1,
+    "baseline_source": "formal A-Ra1e6-fine; no smoke reuse",
+    "comparison": [
+      "Nu_bar_cavity",
+      "Umax",
+      "Wmax"
+    ],
+    "relative_limit": 0.002,
+    "volume_divergence_rule": "decrease or not worsen",
+    "save_conservation": true,
+    "steady_level": "execution/report required; FAIL documented",
+    "transient_level": "PASS required",
+    "proves_A_equals_B": false,
+    "automatic_energy_budget_or_gauge_studies": false
+  },
+  "J": {
+    "required_before_moving_particle": true,
+    "phase": "after steady characterization and H PASS",
+    "solver": "same audited v13 fluid, transient PISO/PIMPLE algorithm to be frozen before separate J task",
+    "Ra": 1000000,
+    "grid": [
+      160,
+      160,
+      1
+    ],
+    "initial": "U=0,T=T0, audited pressure and density relation",
+    "time_scheme": "backward",
+    "Co_series": [
+      0.5,
+      0.25
+    ],
+    "conditional_Co": 0.125,
+    "conditional_Co_trigger": "QoI difference exceeds existing 0.5%; separately preregister/authorize additional run",
+    "minimum_primary_runs": 2,
+    "finest_pair_relative_limit": 0.005,
+    "reference_relative_limit": 0.01,
+    "reference_position_limit": 0.01,
+    "requires_A_G_PASS": true,
+    "requires_dimensionless_time_history": true,
+    "compare_steady_baseline": true,
+    "mass_energy_evidence": [
+      "rho continuity including ddt(rho)",
+      "solver rho versus EOS rho",
+      "total mass history in closed cavity",
+      "wall heat plus energy storage/work balance; do not use steady two-wall equality as whole transient conservation"
+    ],
+    "no_new_thresholds": true,
+    "unresolved_mass_energy_tolerances": "retain UNKNOWN unless justified/frozen; never infer transient conservation from small div(phi) alone"
+  },
+  "completion_levels": [
+    {
+      "name": "ROUTE_A_STEADY_CHARACTERIZED",
+      "kind": "proposed workflow milestone, not ROUTE_A_CHARACTERIZED",
+      "status": "NOT_ACHIEVED",
+      "requires": [
+        "A/B/C",
+        "12 computed rows and D classification",
+        "finite stationary primary QoIs and nonincreasing heat imbalance for steady claims",
+        "residual-only D FAIL may be documented after A-specific evidence, excluded from accepted rows",
+        "E practical and AB comparisons, Bpaper separated",
+        "F/G evaluated with explicit limitations",
+        "H executed/reported",
+        "I/K complete"
+      ],
+      "does_not_require": [
+        "E steady 1% PASS",
+        "H 0.2% PASS",
+        "automatic 320",
+        "all formal F/G PASS"
+      ],
+      "blocks": [
+        "unsafe/nonfinite data",
+        "unknown provenance/operator mismatch",
+        "unsteady results used as steady claims",
+        "no usable steady evidence in intended downstream condition"
+      ]
+    },
+    {
+      "name": "ROUTE_A_TRANSIENT_READY",
+      "kind": "proposed workflow milestone, not DOWNSTREAM_TRANSIENT_READY",
+      "status": "NOT_ACHIEVED",
+      "requires": [
+        "Level1",
+        "usable fluid-only Ra1e6 fine steady baseline with A-specific convergence evidence",
+        "H PASS",
+        "all J checks PASS including E practical and A G",
+        "mass/energy consistency including transient storage and EOS synchronization",
+        "K"
+      ],
+      "formal_precondition_conflict": "formal J sequence requires BENCHMARK_CORE_PASS and ROUTE_A_CHARACTERIZED, currently unmet; user decision needed before executing J under a limitation-based research sequence"
+    },
+    {
+      "name": "COUPLING_READY",
+      "kind": "fluid-side prerequisites only; not particle solver verification",
+      "status": "NOT_ACHIEVED",
+      "requires": [
+        "Level2",
+        "dt-sensitive fluid-only baseline matching intended coupling conditions",
+        "fluid-only mass/energy evidence",
+        "limitations do not undermine intended force/heat-transfer claims",
+        "future user authorization for coupling"
+      ],
+      "excluded": "particle solver / Chrono / CFDEM / forces/contact/FSI design"
+    }
+  ],
+  "formal_status_logic_preserved": {
+    "BENCHMARK_CORE_PASS": "Route B all Hard only; currently not granted",
+    "ROUTE_A_CHARACTERIZED": "BENCHMARK_CORE_PASS AND A_A/B_A/C_A/D_A/F_A/G_A/K_A AND 3 comparisons AND H executed/reported",
+    "DOWNSTREAM_TRANSIENT_READY": "ROUTE_A_CHARACTERIZED AND H PASS AND J_A PASS",
+    "workflow_labels_do_not_grant_formal_status": true
+  },
+  "priorities": [
+    {
+      "priority": "P0",
+      "items": [
+        "execution contract closure",
+        "matrix plan/start authorization",
+        "12 steady primary cases in sequential trios",
+        "per-case A/D/K plus I/G diagnostics"
+      ]
+    },
+    {
+      "priority": "P1",
+      "items": [
+        "aggregate D/E/F/G/I/K and 3 comparisons",
+        "H single sensitivity and report",
+        "Level1 review and documented limitations"
+      ]
+    },
+    {
+      "priority": "P2",
+      "items": [
+        "H PASS before J",
+        "J two transient series and conditionally third",
+        "transient mass/energy and usable fluid-only baseline",
+        "formal prerequisites versus workflow decision before J/coupling"
+      ]
+    },
+    {
+      "priority": "P3",
+      "items": [
+        "320 follow-up",
+        "advanced G research",
+        "extra tolerance/relaxation/gauge/energy-term studies"
+      ]
+    }
+  ],
+  "roadmap": [
+    {
+      "phase": "A0",
+      "objective": "already completed: source-audit conclusions and minimal A/C/smoke",
+      "solver_runs": "historical A-COND and canonical A-SMOKE; zero now",
+      "gates": [
+        "A minimal",
+        "B",
+        "C",
+        "D smoke"
+      ],
+      "completion": "minimal PASS only, not formal matrix",
+      "relative_cost": "LOW"
+    },
+    {
+      "phase": "A1",
+      "objective": "next: freeze exact execution/evaluation contract",
+      "solver_runs": 0,
+      "gates": [
+        "A",
+        "B",
+        "D detail",
+        "K",
+        "comparison/G operator definition"
+      ],
+      "completion": "D READY YES, monitor/trend/caps/outputs frozen; user decides workflow policy; solver still not authorized in this task",
+      "relative_cost": "LOW"
+    },
+    {
+      "phase": "A2",
+      "objective": "steady 4Ra x 3grid characterization",
+      "solver_runs": 12,
+      "gates": [
+        "A",
+        "D",
+        "E diagnostic",
+        "F",
+        "G",
+        "I",
+        "K"
+      ],
+      "completion": "12 protected results and per-Ra review; formal failures retained; comparison scope explicit",
+      "relative_cost": "HIGH"
+    },
+    {
+      "phase": "A3",
+      "objective": "H model-characterization sensitivity and Level1 closure",
+      "solver_runs": "1 sensitivity, baseline from A2",
+      "gates": [
+        "A",
+        "D",
+        "H",
+        "K"
+      ],
+      "completion": "H executed/reported and Level1 conditions; H FAIL blocks Level2, not automatic studies",
+      "relative_cost": "HIGH"
+    },
+    {
+      "phase": "A4",
+      "objective": "transient verification and fluid-side coupling readiness",
+      "solver_runs": "2 Co series; conditional 1 only on existing J trigger and separate authorization",
+      "gates": [
+        "H PASS",
+        "J",
+        "A/G/K baseline"
+      ],
+      "completion": "Level2 then fluid-side Level3 conditions; formal prerequisites checked separately",
+      "relative_cost": "HIGH"
+    }
+  ],
+  "next_single_task": {
+    "id": "FREEZE_ROUTE_A_EXECUTION_CONTRACT",
+    "solver_allowed": false,
+    "mesh_generation_allowed": false,
+    "case_creation_allowed": false,
+    "new_scripts_allowed": false,
+    "objective": "use bounded existing Route A monitor/summary definitions to freeze Nu_bar_0 trace, heat-trend evaluator, residual mapping, iteration caps, G/symmetry normalization, output/provenance map and A-B operator alignment before execution",
+    "output": "update the same three review documents only; no CFD inputs/results changes",
+    "success": "D ready YES or explicitly unresolved with exact missing information; no threshold invention; no automatic solver launch",
+    "future_first_solver_unit": "Ra1e3 40/80/160 sequential trio only; no full 12 batch",
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "high",
+    "model_choice_kind": "task-specific recommendation, not a measured repository evaluation",
+    "model_source": "https://developers.openai.com/api/docs/guides/latest-model"
+  },
+  "user_decision": {
+    "required": true,
+    "decisions": [
+      "adopt limitation-based workflow milestones while preserving formal Gate/status logic",
+      "authorize future solver execution separately after contract closure",
+      "before J/coupling, decide whether to satisfy formal B-core/A-characterized prerequisites or explicitly adopt a separate research workflow; no silent exemption"
+    ],
+    "current_review_requires_approval": false
+  },
+  "out_of_scope": [
+    "Project Chrono implementation",
+    "CFDEM comparison",
+    "particle drag",
+    "non-spherical particles",
+    "deformable leaf",
+    "FSI",
+    "contact",
+    "tea-leaf geometry",
+    "new microcases",
+    "Gate G threshold research",
+    "full OpenFOAM source audit"
+  ],
+  "final_status": {
+    "ROUTE_A_PREFLIGHT_REVIEW": "COMPLETE",
+    "A_COND_STATUS": "PASS",
+    "A_SMOKE_STATUS": "PASS",
+    "ROUTE_A_FULL_MATRIX_REQUIRED": "YES",
+    "ROUTE_A_FULL_MATRIX_CASE_COUNT": 12,
+    "ROUTE_A_STEADY_CHARACTERIZATION_REQUIRED": "YES",
+    "GATE_H_REQUIRED": "YES",
+    "GATE_J_REQUIRED_BEFORE_PARTICLE_COUPLING": "YES",
+    "ROUTE_A_GATE_D_READY": "DETAIL_UNRESOLVED",
+    "ROUTE_A_GATE_F_POLICY": "NON_BLOCKING_WITH_DOCUMENTED_LIMITATION",
+    "ROUTE_A_GATE_G_POLICY": "NON_BLOCKING_WITH_DOCUMENTED_LIMITATION",
+    "AUTOMATIC_320_RUN_ALLOWED": "NO",
+    "AUTOMATIC_SOLVER_TUNING_ALLOWED": "NO",
+    "ROUTE_B_GATE_G_INVESTIGATION_REOPENED": "NO",
+    "SOLVER_EXECUTED": "NO",
+    "CASE_CREATED": "NO",
+    "FORMAL_CRITERIA_CHANGED": "NO",
+    "PARTICLE_COUPLING_WORK_STARTED": "NO",
+    "ROUTE_A_STEADY_COMPLETION_TARGET": "A/B/C; 12 steady cases evaluated; steady health; D/F/G limitations disclosed; 3 comparisons; H reported; I/K complete (workflow milestone only)",
+    "ROUTE_A_TRANSIENT_COMPLETION_TARGET": "Level1 + usable Ra1e6 fine baseline + H PASS + J PASS + fluid-only mass/energy evidence; formal prerequisites remain separate",
+    "NEXT_SINGLE_TASK": "FREEZE_ROUTE_A_EXECUTION_CONTRACT",
+    "RECOMMENDED_REASONING_MODEL_FOR_NEXT_TASK": "gpt-6.1-sol / high",
+    "USER_DECISION_REQUIRED": "YES"
+  }
+}
