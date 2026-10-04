@@ -1,0 +1,377 @@
+{
+  "attempt": "003",
+  "case_id": "A-Ra1e3-coarse",
+  "segment_start": 0,
+  "end_iteration": 3000,
+  "contract_version": "1.2",
+  "contract_sha256": "7db8d5b8217f009243cb884e291f3d7a09a699b4fe35073792cbaedb5bf7b7fe",
+  "amendment_chain": [
+    {
+      "id": "Route A Execution Contract Amendment 001",
+      "path": "docs/routeA_execution_contract_amendment_001.json",
+      "sha256": "63769f59ab7e5ed49115120e4c34326795fc40a8413d07e6086446af3be2b352",
+      "parent": {
+        "version": "1.0",
+        "path": "docs/routeA_execution_contract.json",
+        "sha256": "33eb082f77f00b2330003ba8bafcb0438a24d7ec6b0bf456625741bfae63c936"
+      },
+      "snapshot_rule": "Full v1.0 snapshot plus Amendment 001; only classifier implementation and necessary version/artifact/attempt metadata differ."
+    },
+    {
+      "id": "Route A Execution Contract Amendment 002",
+      "path": "docs/routeA_execution_contract_amendment_002.json",
+      "sha256": "a8b2d80647f491d0ee06e434604b5d9a49d2d8e7ce7b622cfa19548e5f1a56eb",
+      "parent": {
+        "version": "1.1",
+        "path": "docs/routeA_execution_contract_v1.1.json",
+        "sha256": "dbd70320ceb3f20e4455c5d67d24b3dae40d2616a832438b23faa99c6b0b892b"
+      },
+      "snapshot_rule": "v1.0 + Amendment 001 + Amendment 002; unchanged numerical contract, canonical runtime checker added plus necessary metadata/reuse policy."
+    }
+  ],
+  "analyzer_sha256": "327761f2b20d86ef8a3a924c64e46bd63da7b11e7a88ba7d74ccfaf232ddbac9",
+  "runtime_checker_sha256": "5055345c7e64758a4f902c81219e2dda2e5b9cdec22c3f22fc8297bbc1bb9e5a",
+  "input_sha256": {
+    "0/T": "2aa0b82fdbef9ea1d970d3135fdfeebb4253a2d69a3b0c5f69601e802af17a6a",
+    "0/U": "2d73c61cd16ca22f804a03a09a7cb9381881d1e5a2e679cbc8b589511bda42c6",
+    "0/p": "41e3a5699ddd3645d9e4fb1a2ac946faa4d22699abd588e85654eff0c24220bf",
+    "0/p_rgh": "7a474b49f9e53d8a275c7a8b37e18d9069e44f9fb0640bcbef816b5364efe1b1",
+    "constant/g": "5e58b612dd032115f3a833149e363c16f5b349499d4ed7fc0a73bfb1e53b58f9",
+    "constant/hRef": "b3cfc4ab0c5b5266283096fd98687c65930df337dedbeb34b67a5288c9946976",
+    "constant/momentumTransport": "3bfe7027873405f63753c0cec85e91c6069dafe94228154189d5b6616233200e",
+    "constant/pRef": "13e8b23d9a316804a134ea8abb6d385f120d64f3dc89ea40b3dcbf09956e8df1",
+    "constant/physicalProperties": "baea2c76140ca1481c1d0dc064e4fba44076f666de79f6162dfd5cfff4b440b4",
+    "constant/thermophysicalTransport": "9c550714c97c8fd84bbd68d80558826ba76a028d521e6cafbe15c1b20cd0d08e",
+    "system/blockMeshDict": "1c0e4a3490ae9174109bf13adc340cdd49546ffe30661e99a85d0e1b9f238a24",
+    "system/controlDict": "c52927780325527833971f84ab73559afc5584391039c1911f2ba90adbce0c75",
+    "system/fvSchemes": "1a5031f97e7a7f2cb086f9119f6ca19b8e79ce128a454bfdb4af57f08944ed56",
+    "system/fvSolution": "2b577ea3dd1ceefd0dfee70af1996559b02a3a9ba46d83ff765bc8d49acc2846"
+  },
+  "mesh_sha256": {
+    "constant/polyMesh/faces": "02755d4d3332dee0f0b35dc3d25a8c3ddf75ba22d56d0ae3412420a838b8fec5",
+    "constant/polyMesh/points": "4c00994d7420ef3b16b793d3ce0411cb5ac89389ea250e406b2721b58f530d48",
+    "constant/polyMesh/boundary": "a4c9b55db3dfe0a793ee5418fd2f0061b1f13cf01967533aa539d5d8124872db",
+    "constant/polyMesh/neighbour": "3aab481becfcf967cb1978ab60ecaa06fb869a9ba3c15588e33d9e9479b1bb99",
+    "constant/polyMesh/owner": "5a7769f8ce38aa6b8606281e79332486fb1642ddc996dbdbee47ccb7c2167699"
+  },
+  "controlDict_sha256": "c52927780325527833971f84ab73559afc5584391039c1911f2ba90adbce0c75",
+  "permitted_control_diff": {},
+  "process": {
+    "argv": [
+      "foamRun",
+      "-case",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/A-Ra1e3-coarse"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 7.002450704574585,
+    "log": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/A-Ra1e3-coarse/log.foamRun.segment_3000",
+    "log_sha256": "03393058f87f579c7fe8142f23e5f49e094a54225de884a8d0f65555d9219402"
+  },
+  "health": {
+    "exit_code": 0,
+    "standalone_End": true,
+    "flags": {
+      "fatal": false,
+      "fpe": false,
+      "nonfinite": false
+    },
+    "normal_banner_present": true,
+    "normal_banner_misclassified_as_FPE": false,
+    "explicit_divergence_evidence": [],
+    "runtime_selection_lines": [
+      "Build  : 13-441953dfbb42",
+      "Selecting solver fluid",
+      "Selecting thermodynamics package",
+      "Selecting turbulence model type laminar",
+      "Selecting laminar stress model Stokes",
+      "Selecting thermophysical transport type laminar",
+      "Selecting laminar thermophysical transport model Fourier",
+      "PIMPLE: Operating solver in SIMPLE mode"
+    ],
+    "normal_exit": true,
+    "no_fatal_or_nan": true
+  },
+  "runtime_provenance": {
+    "status": "PASS",
+    "failure_class": null,
+    "missing": [],
+    "mismatches": [],
+    "expected": {
+      "version": "13",
+      "build": "13-441953dfbb42",
+      "solver": "fluid",
+      "thermo.type": "heRhoThermo",
+      "thermo.mixture": "pureMixture",
+      "thermo.transport": "const",
+      "thermo.thermo": "eConst",
+      "thermo.equationOfState": "Boussinesq",
+      "thermo.specie": "specie",
+      "thermo.energy": "sensibleInternalEnergy",
+      "momentum_regime": "laminar",
+      "stress_model": "Stokes",
+      "thermal_regime": "laminar",
+      "thermal_model": "Fourier",
+      "algorithm": "SIMPLE"
+    },
+    "actual": {
+      "version": "13",
+      "build": "13-441953dfbb42",
+      "solver": "fluid",
+      "thermo.type": "heRhoThermo",
+      "thermo.mixture": "pureMixture",
+      "thermo.transport": "const",
+      "thermo.thermo": "eConst",
+      "thermo.equationOfState": "Boussinesq",
+      "thermo.specie": "specie",
+      "thermo.energy": "sensibleInternalEnergy",
+      "momentum_regime": "laminar",
+      "stress_model": "Stokes",
+      "thermal_regime": "laminar",
+      "thermal_model": "Fourier",
+      "algorithm": "SIMPLE"
+    },
+    "evidence": {
+      "selections": {
+        "version": [
+          {
+            "value": "13",
+            "line": 5
+          }
+        ],
+        "build": [
+          {
+            "value": "13-441953dfbb42",
+            "line": 8
+          }
+        ],
+        "solver": [
+          {
+            "value": "fluid",
+            "line": 26
+          }
+        ],
+        "momentum_regime": [
+          {
+            "value": "laminar",
+            "line": 38
+          }
+        ],
+        "stress_model": [
+          {
+            "value": "Stokes",
+            "line": 39
+          }
+        ],
+        "thermal_regime": [
+          {
+            "value": "laminar",
+            "line": 42
+          }
+        ],
+        "thermal_model": [
+          {
+            "value": "Fourier",
+            "line": 43
+          }
+        ],
+        "algorithm": [
+          {
+            "value": "SIMPLE",
+            "line": 49
+          }
+        ]
+      },
+      "thermo_blocks": [
+        {
+          "start_line": 28,
+          "end_line": 36,
+          "entries": {
+            "type": {
+              "value": "heRhoThermo",
+              "line": 29
+            },
+            "mixture": {
+              "value": "pureMixture",
+              "line": 30
+            },
+            "transport": {
+              "value": "const",
+              "line": 31
+            },
+            "thermo": {
+              "value": "eConst",
+              "line": 32
+            },
+            "equationOfState": {
+              "value": "Boussinesq",
+              "line": 33
+            },
+            "specie": {
+              "value": "specie",
+              "line": 34
+            },
+            "energy": {
+              "value": "sensibleInternalEnergy",
+              "line": 35
+            }
+          },
+          "duplicates": [],
+          "complete": true
+        }
+      ]
+    },
+    "source": "Actual OpenFOAM runtime log; no fallback to input dictionary or generator manifest",
+    "input_provenance_checked": false,
+    "health_or_Gate_D_checked": false,
+    "log": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/cases/A-Ra1e3-coarse/segments/end_3000/solver.log",
+    "contract": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/docs/routeA_execution_contract_v1.2.json",
+    "log_read_scope": "first 120 lines only"
+  },
+  "gate_A": "PASS",
+  "OQ_02": "PASS",
+  "final_field_validation": {
+    "all_required_fields_finite": true,
+    "rho_positive": true,
+    "field_ranges": {
+      "T": [
+        299.5086236438922,
+        300.4913753673476
+      ],
+      "U": [
+        -0.000520392535938749,
+        0.0005205557950564817
+      ],
+      "rho": [
+        0.9995086246326523,
+        1.000491376356108
+      ],
+      "p": [
+        -0.0139094037872832,
+        -0.0001737683147892132
+      ],
+      "p_rgh": [
+        -4.605450105982187e-06,
+        5.779801659048969e-06
+      ],
+      "phi": [
+        -1.299112531907586e-09,
+        1.298764958395859e-09
+      ]
+    },
+    "EOS_proxy_max_absolute_difference": 6.661338147750939e-16,
+    "EOS_proxy_max_relative_difference": 6.661171391269864e-16,
+    "independent_thermo_rho_dump": "NOT_AVAILABLE",
+    "field_sha256": {
+      "rho": "8b53f3aee8331419fa9589a544d217484233a258714159aad9901e6b2469187e",
+      "U": "5ec1b1c19eeb25726db0fea7ff292b3dedcac0622f83cd500e34b5c7bf89e346",
+      "phi": "d57b3a7471836d939c56d7dc968694066dbaddc1a63919b013a3044744d50f1d",
+      "T": "d067a9290b5ffa5ffb1053bb46cb7f66fd9af9732ddb1d6a767432554d76114c",
+      "wallHeatFlux": "95c659d1ca5284de6ce7e28ae1ec637c39335d1f38a36af0fdf34c0975fdb09b",
+      "p": "a9637bda9ffb6d1a4b9bf96fea15dc2d5aad64236073e600a91da473f273289b",
+      "p_rgh": "32fe3547657aa411d2f0f54932981d6509090d07355e6988110e047168ae48d0"
+    }
+  },
+  "checkpoint_completed": 3000,
+  "computed": false,
+  "accepted": false,
+  "status": "EVALUATOR_FAILURE",
+  "Gate_D": {
+    "status": "NOT_EVALUATED",
+    "evaluator_status": "FAIL",
+    "evaluator_failure": "STOP_EVALUATOR_FAILURE_CANONICAL_ANALYZER_KEYERROR_UMAX",
+    "computed": false,
+    "accepted": false,
+    "booleans": {
+      "NORMAL_EXIT": true,
+      "NO_FATAL_OR_NAN": true,
+      "INPUT_PROVENANCE_PASS": true,
+      "QOI_RWIN_PASS": null,
+      "RESIDUAL_PASS": null,
+      "HEAT_TREND_PASS": null
+    },
+    "failure_components": [],
+    "diagnostic_numerical_components": {
+      "contract_version": "1.0",
+      "window_start_iteration": 2801,
+      "window_end_iteration": 3000,
+      "window_inclusive": true,
+      "Nu_samples": 200,
+      "velocity_samples": 20,
+      "velocity_sample_iterations": [
+        2810,
+        2820,
+        2830,
+        2840,
+        2850,
+        2860,
+        2870,
+        2880,
+        2890,
+        2900,
+        2910,
+        2920,
+        2930,
+        2940,
+        2950,
+        2960,
+        2970,
+        2980,
+        2990,
+        3000
+      ],
+      "Rwin": {
+        "Nu_bar_0": 0.0,
+        "Umax": 3.7963777915442344e-10,
+        "Wmax": 3.8057085179798307e-10
+      },
+      "Nu_monitor": "hot-wall Q/(k*DeltaT*W), not the hot/cold pair average",
+      "Nu_bar_0_last": 1.118612129992016,
+      "Nu_bar_1_last": 1.118612176105435,
+      "heat_imbalance_start": 4.12237780273708e-08,
+      "heat_imbalance_end": 4.12237780273708e-08,
+      "heat_trend_method": "OLS exact rational arithmetic on original decimal Q tokens",
+      "heat_slope_per_iteration_display": 0.0,
+      "heat_slope_sign_exact": 0,
+      "heat_trend_pass": true,
+      "residual_fields": [
+        "Ux",
+        "Uy",
+        "e",
+        "p_rgh"
+      ],
+      "final_initial_residuals": {
+        "Ux": 5.794631978111069e-13,
+        "Uy": 1.741000695055185e-12,
+        "e": 5.728142082739951e-11,
+        "p_rgh": 1.177069303012431e-10
+      },
+      "residual_pass": true,
+      "qoi_rwin_pass": true,
+      "numerical_checks_pass": true,
+      "formal_Gate_D_requires_external_execution_and_provenance_flags": true
+    },
+    "note": "Frozen helper diagnostic components are not formal acceptance after canonical analyzer failure."
+  },
+  "evaluator_failure": {
+    "reason": "STOP_EVALUATOR_FAILURE_CANONICAL_ANALYZER_KEYERROR_UMAX",
+    "direct_cause": "Canonical analyze_case.py main creates calculated with Nu/local Nu keys only, then indexes calculated[key] for every paper reference key. Reference includes Umax; velocity quantities are computed later, causing KeyError at line 348.",
+    "analyzer_path": "Scripts/routeA/analyze_case.py",
+    "analyzer_line": 348,
+    "analyzer_sha256": "327761f2b20d86ef8a3a924c64e46bd63da7b11e7a88ba7d74ccfaf232ddbac9",
+    "reference_path": "reference/de_vahl_davis_table_v.csv",
+    "reference_sha256": "96952fa9ca283b4fa75645b7cbcf3abf400765e56888667d1dfa9ef46a6b5466",
+    "traceback": "Traceback (most recent call last):\n  File \"/tmp/routeA_attempt003_runner.py\", line 198, in <module>\n    try:a.main()\n        ^^^^^^^^\n  File \"/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/analyze_case.py\", line 348, in main\n    key: paper_difference(calculated[key], value, key.endswith(\"_Z\"))\n                          ~~~~~~~~~~^^^^^\nKeyError: 'Umax'\n",
+    "primary_checkpoint_preserved": true,
+    "primary_solver_retry_or_continuation_performed": false,
+    "analyzer_modified": false,
+    "medium_or_fine_started": false,
+    "formal_metrics_missing": true,
+    "computed_policy": "NO because required canonical metrics/result evaluation did not complete; actual primary checkpoint 3000 and finite raw fields are separately retained.",
+    "numerical_components": "Read-only frozen helper diagnostics pass; not promoted to formal Gate D after evaluator failure."
+  },
+  "diagnostic_field_sha256": {
+    "div(phi)": "990c35dbdd06f33e61b1735f0609b455733296bffac31b1b1a09900bba77163d",
+    "div(U)": "852659ad596d878b3ff52d2dfc679c9f11e710d6b72a19a48e564c9826a3d20a"
+  },
+  "final_seal_kind": "Immutable completed primary checkpoint and evaluator-failure evidence; no canonical metrics.json generated"
+}

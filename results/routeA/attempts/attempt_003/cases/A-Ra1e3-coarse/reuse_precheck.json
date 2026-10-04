@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "inputs_mesh_clone_seal_match": true,
+  "no_primary_fields": true,
+  "coarse_clone_rerun": false,
+  "original_stop_seal_manifest_sha256": "fef0096f44efe483e352f92aa8d442c25d1664082a6b22d6ab68d9fc7557879a"
+}

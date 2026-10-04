@@ -1,0 +1,77 @@
+{
+  "status": "NOT_EVALUATED",
+  "evaluator_status": "FAIL",
+  "evaluator_failure": "STOP_EVALUATOR_FAILURE_CANONICAL_ANALYZER_KEYERROR_UMAX",
+  "computed": false,
+  "accepted": false,
+  "booleans": {
+    "NORMAL_EXIT": true,
+    "NO_FATAL_OR_NAN": true,
+    "INPUT_PROVENANCE_PASS": true,
+    "QOI_RWIN_PASS": null,
+    "RESIDUAL_PASS": null,
+    "HEAT_TREND_PASS": null
+  },
+  "failure_components": [],
+  "diagnostic_numerical_components": {
+    "contract_version": "1.0",
+    "window_start_iteration": 2801,
+    "window_end_iteration": 3000,
+    "window_inclusive": true,
+    "Nu_samples": 200,
+    "velocity_samples": 20,
+    "velocity_sample_iterations": [
+      2810,
+      2820,
+      2830,
+      2840,
+      2850,
+      2860,
+      2870,
+      2880,
+      2890,
+      2900,
+      2910,
+      2920,
+      2930,
+      2940,
+      2950,
+      2960,
+      2970,
+      2980,
+      2990,
+      3000
+    ],
+    "Rwin": {
+      "Nu_bar_0": 0.0,
+      "Umax": 3.7963777915442344e-10,
+      "Wmax": 3.8057085179798307e-10
+    },
+    "Nu_monitor": "hot-wall Q/(k*DeltaT*W), not the hot/cold pair average",
+    "Nu_bar_0_last": 1.118612129992016,
+    "Nu_bar_1_last": 1.118612176105435,
+    "heat_imbalance_start": 4.12237780273708e-08,
+    "heat_imbalance_end": 4.12237780273708e-08,
+    "heat_trend_method": "OLS exact rational arithmetic on original decimal Q tokens",
+    "heat_slope_per_iteration_display": 0.0,
+    "heat_slope_sign_exact": 0,
+    "heat_trend_pass": true,
+    "residual_fields": [
+      "Ux",
+      "Uy",
+      "e",
+      "p_rgh"
+    ],
+    "final_initial_residuals": {
+      "Ux": 5.794631978111069e-13,
+      "Uy": 1.741000695055185e-12,
+      "e": 5.728142082739951e-11,
+      "p_rgh": 1.177069303012431e-10
+    },
+    "residual_pass": true,
+    "qoi_rwin_pass": true,
+    "numerical_checks_pass": true,
+    "formal_Gate_D_requires_external_execution_and_provenance_flags": true
+  },
+  "note": "Frozen helper diagnostic components are not formal acceptance after canonical analyzer failure."
+}

@@ -1,0 +1,41 @@
+{
+  "case_id": "A-Ra1e3-coarse",
+  "route": "A",
+  "attempt": "003",
+  "grid": [
+    40,
+    40,
+    1
+  ],
+  "Ra_target": 1000,
+  "Ra_actual": 1000.0,
+  "Pr_actual": 0.71,
+  "case_reused": true,
+  "primary_solver_executed": true,
+  "primary_checkpoint_obtained": true,
+  "computed": false,
+  "accepted": false,
+  "final_iteration": 3000,
+  "Gate_A": "PASS",
+  "runtime_provenance": "PASS",
+  "OQ02": "PASS",
+  "Gate_D": "NOT_EVALUATED",
+  "Gate_D_failure_components": [],
+  "status": "EVALUATOR_FAILURE_AFTER_PRIMARY_CHECKPOINT",
+  "stop_reason": "STOP_EVALUATOR_FAILURE_CANONICAL_ANALYZER_KEYERROR_UMAX",
+  "formal_QoIs": null,
+  "diagnostic_QoIs": {
+    "Nu_bar_cavity": 1.1188551731765783,
+    "Nu_bar_0": 1.1186121299928118,
+    "Nu_bar_half": 1.1187379103862058,
+    "Nu_bar_1": 1.1186121761045342,
+    "Umax": 3.648078448097432,
+    "Umax_Z": 0.8125,
+    "Wmax": 3.6895371613052887,
+    "Wmax_X": 0.18750000000000003,
+    "Nu_hot_local_max": 1.5105634801272254,
+    "Nu_hot_local_max_Z": 0.0885784103380344,
+    "Nu_hot_local_min": 0.6898370868998405,
+    "Nu_hot_local_min_Z": 1.0
+  }
+}

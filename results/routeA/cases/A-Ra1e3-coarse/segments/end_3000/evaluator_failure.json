@@ -1,0 +1,17 @@
+{
+  "reason": "STOP_EVALUATOR_FAILURE_CANONICAL_ANALYZER_KEYERROR_UMAX",
+  "direct_cause": "Canonical analyze_case.py main creates calculated with Nu/local Nu keys only, then indexes calculated[key] for every paper reference key. Reference includes Umax; velocity quantities are computed later, causing KeyError at line 348.",
+  "analyzer_path": "Scripts/routeA/analyze_case.py",
+  "analyzer_line": 348,
+  "analyzer_sha256": "327761f2b20d86ef8a3a924c64e46bd63da7b11e7a88ba7d74ccfaf232ddbac9",
+  "reference_path": "reference/de_vahl_davis_table_v.csv",
+  "reference_sha256": "96952fa9ca283b4fa75645b7cbcf3abf400765e56888667d1dfa9ef46a6b5466",
+  "traceback": "Traceback (most recent call last):\n  File \"/tmp/routeA_attempt003_runner.py\", line 198, in <module>\n    try:a.main()\n        ^^^^^^^^\n  File \"/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/analyze_case.py\", line 348, in main\n    key: paper_difference(calculated[key], value, key.endswith(\"_Z\"))\n                          ~~~~~~~~~~^^^^^\nKeyError: 'Umax'\n",
+  "primary_checkpoint_preserved": true,
+  "primary_solver_retry_or_continuation_performed": false,
+  "analyzer_modified": false,
+  "medium_or_fine_started": false,
+  "formal_metrics_missing": true,
+  "computed_policy": "NO because required canonical metrics/result evaluation did not complete; actual primary checkpoint 3000 and finite raw fields are separately retained.",
+  "numerical_components": "Read-only frozen helper diagnostics pass; not promoted to formal Gate D after evaluator failure."
+}
