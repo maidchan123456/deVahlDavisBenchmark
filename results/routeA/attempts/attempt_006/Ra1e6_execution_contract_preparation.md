@@ -1,0 +1,87 @@
+# PRE_RA1E6_EXECUTION_CONTRACT_PREPARATION
+
+Preparation COMPLETE。
+
+Effective JSON SHA-256 `c0cdf8d6a08c6190ceff49535c1d44b4050a92373a3faa06cc1e49b9b3b7fe59`。parent v1.5 `c33efe4aa81ce0644fd709fe944563e93c7ee2f08304161000784f6418e159c1`。Amendment006 `2877be4048f8e76283528baf9da16831683fad8ed850c339da82cdf9e096a7e0`。HEAD `7100150d4c96a782cb9d258879bdea8a953cd0b1`。
+
+親v1.5、全implementation/template/reference/caps、Amendments001–005、既存start guard、accepted Ra1e3–Ra1e5 native場/mesh/segment sealsを照合PASS。
+
+Ra1e5 attempt006はcoarse3000/medium3000/fine12000でaccepted3/3、D all PASS、E diagnostic PASS、F FAIL/Wmax非単調/p・GCI未定義/needs_320 YES、G PASS、AB coverage COMPLETE。steady trio complete YES/characterized NOを保持。Gate F/G非blocking policyのまま科学的進行可能。
+
+Route B Ra1e6は3格子ともfinal30000、computed YES、Gate D FAIL、accepted NO。canonical metrics、computed final field/mesh/log hashes、master/manifestとpost-matrix reviewをread-only照合。レビューliteralはA_KEEP_ORIGINAL（KEEP_ORIGINALと同義）、formal Gate D変更NO/acceptance変更NO/additional solver required NO。
+
+Ra1e6 A–B比較はDIAGNOSTIC_ONLY_UNACCEPTED_B_BASELINE。Aがacceptedでもformal accepted AB comparison NO。B失敗はA Gate D/E/F/Gへ伝播させない。A fine acceptedならpaper/Gate E診断とGate Gを独立評価、A3格子accepted時だけformal Gate F。B再実行/延長/acceptance変更は禁止。
+
+これは既存AB_comparisonの「Ra1e6はunaccepted diagnostic B baseline」ルールをexecution/comparison ownershipへ反映するmetadata clarification。AB_comparison subtree、Hard threshold=null、全physical/numerical/Gate基準はv1.5と完全一致。新しいacceptance policy、post-hoc例外、positive heat toleranceは追加しない。
+
+v1.6はv1.0+Amendments001–006のfull snapshot。current_execution_guard=v1.6。Ra1000000/Pr0.71、A-Ra1e6-coarse→medium→fine、40²×1/80²×1/160²×1、concurrency1。attempt007はNOT_STARTED、directory未作成。formal case destinationは全ABSENT。
+
+initial3000、+3000 continuation、cap30000/checkpoints3000..30000を維持。Dは既存6boolean AND、Rwin≤5e-4/final inclusive200、Initial residual Ux/Uy/e/p_rgh≤1e-7、exact rational OLS slope≤0。normal finite FAILならcapまで継続、capFAILはcomputed YES/accepted NOで終了。automatic retry/tuning/320/post-cap extensionなし。
+
+開始前guardはv1.6外部digest、parent/amendments001–006、immutable history/seals、attempt006 report/group、Bcomputed/unaccepted evidenceを再照合。Baccepted YESへの変化はhistorical rewriteの可能性としてSTOP/review。unexpected Aformal/attempt007 destinationもSTOP/review。
+
+AのPASSは物理的優位/Bの誤りを証明しない。両方FAILでも原因同一・physical unsteadiness・solver defect等を断定しない。科学的進行可能とformal success保証は別。
+
+今回はsolver/initialization clone/continuation/case/mesh生成を一切実行していない。旧attempts/contracts/statuses/scripts/reference/templatesは変更していない。
+
+NEXT_SINGLE_TASK=RUN_ROUTE_A_RA1E6_TRIO。RA1E6_TRIO_TECHNICALLY_READY=YES。実行には別user run指示が必要。推奨gpt-6.1-sol / medium。
+
+保護対象10067ファイルの前後hash一致。original attempt006 sealは47 entries、solver segments6件を保持。git add/commit/push未実行。
+
+```text
+ROUTE_A_RA1E6_EXECUTION_CONTRACT_PREPARATION=COMPLETE
+PARENT_EFFECTIVE_CONTRACT_VERSION=1.5
+PARENT_EFFECTIVE_CONTRACT_HASH_VERIFIED=YES
+PARENT_EFFECTIVE_CONTRACT_SHA256=c33efe4aa81ce0644fd709fe944563e93c7ee2f08304161000784f6418e159c1
+RA1E5_ATTEMPT_006_VERIFIED=YES
+RA1E5_FORMAL_EXECUTION_COMPLETE=YES
+RA1E5_ACCEPTED_CASE_COUNT=3
+RA1E5_GATE_D=PASS_ALL
+RA1E5_GATE_E_DIAGNOSTIC=PASS
+RA1E5_GATE_F=FAIL
+RA1E5_NEEDS_320=YES
+RA1E5_GATE_G=PASS
+NEXT_FORMAL_RA=1000000
+NEXT_FORMAL_CASES=A-Ra1e6-coarse,A-Ra1e6-medium,A-Ra1e6-fine
+NEXT_GRID_SEQUENCE=40x40x1,80x80x1,160x160x1
+NEXT_ATTEMPT_ID=007
+ROUTE_B_RA1E6_COMPUTED_BASELINE_COUNT=3
+ROUTE_B_RA1E6_ACCEPTED_BASELINE_COUNT=0
+B_RA1E6_COARSE_COMPUTED=YES
+B_RA1E6_COARSE_ACCEPTED=NO
+B_RA1E6_MEDIUM_COMPUTED=YES
+B_RA1E6_MEDIUM_ACCEPTED=NO
+B_RA1E6_FINE_COMPUTED=YES
+B_RA1E6_FINE_ACCEPTED=NO
+RA1E6_AB_COMPARISON_POLICY=DIAGNOSTIC_ONLY_UNACCEPTED_B_BASELINE
+FORMAL_ACCEPTED_AB_COMPARISON_AVAILABLE=NO
+B_GATE_D_FAILURE_PROPAGATES_TO_A=NO
+ROUTE_B_RA1E6_SOLVER_RERUN_REQUIRED=NO
+CONTRACT_AMENDMENT_006_CREATED=YES
+AMENDMENT_006_SCOPE=NEXT_FORMAL_EXECUTION_UNIT_AND_RA1E6_B_BASELINE_CLASSIFICATION
+EFFECTIVE_CONTRACT_VERSION=1.6
+EFFECTIVE_CONTRACT_SHA256=c0cdf8d6a08c6190ceff49535c1d44b4050a92373a3faa06cc1e49b9b3b7fe59
+ANALYZER_SHA256=e6207e33ae2279e84786115ebfd912b170dcb23f220f1b1155314c723c54cfed
+RUNTIME_CHECKER_SHA256=5055345c7e64758a4f902c81219e2dda2e5b9cdec22c3f22fc8297bbc1bb9e5a
+IMPLEMENTATION_HASHES_CHANGED=NO
+TEMPLATE_HASHES_CHANGED=NO
+FORMAL_CRITERIA_CHANGED=NO
+NUMERICAL_SETTINGS_CHANGED=NO
+PHYSICAL_MODEL_CHANGED=NO
+REFERENCE_DATA_CHANGED=NO
+AB_HARD_THRESHOLD_ADDED=NO
+POSITION_SEMANTICS_CHANGED=NO
+ITERATION_POLICY_CHANGED=NO
+POST_HOC_RA1E6_ACCEPTANCE_RULE_ADDED=NO
+ROUTE_A_SOLVER_EXECUTED=NO
+ROUTE_B_SOLVER_EXECUTED=NO
+CONTINUATION_EXECUTED=NO
+CASE_GENERATED=NO
+MESH_GENERATED=NO
+INITIALIZATION_CLONE_EXECUTED=NO
+RA1E6_TRIO_SCIENTIFICALLY_ALLOWED=YES
+RA1E6_TRIO_TECHNICALLY_READY=YES
+NEXT_SINGLE_TASK=RUN_ROUTE_A_RA1E6_TRIO
+RECOMMENDED_REASONING_MODEL_FOR_NEXT_TASK=gpt-6.1-sol / medium
+USER_DECISION_REQUIRED=YES
+```

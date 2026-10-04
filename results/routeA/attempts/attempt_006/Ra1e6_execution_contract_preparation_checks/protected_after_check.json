@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "protected_file_count": 10067,
+  "mismatches": [],
+  "before_manifest_sha256": "deb80d74bf22e55f7aa1722f718487790773a7de5aa87080ceebbff5e2b81c8d",
+  "historical_attempts001_006_and_native_fields_unchanged": true,
+  "RouteB_Ra1e6_statuses_unchanged": true,
+  "scripts_templates_reference_old_contracts_amendments_unchanged": true
+}

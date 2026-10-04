@@ -1,0 +1,399 @@
+{
+  "status": "PASS",
+  "scientific_subtrees_identical": [
+    "frozen_model",
+    "template_source",
+    "implementation_sha256",
+    "monitor",
+    "Gate_D",
+    "statuses",
+    "batch_stop_policy",
+    "Gate_F",
+    "Gate_G",
+    "continuity",
+    "energy_diagnostics",
+    "AB_comparison",
+    "iteration_caps_csv",
+    "paper_comparison_position_semantics",
+    "runtime_provenance_checker"
+  ],
+  "all_execution_settings_except_first_unit_identical": true,
+  "case_generation_nonmetadata_identical": true,
+  "other_existing_subtrees_identical": true,
+  "changed_metadata_keys": [
+    "version",
+    "baseline_HEAD",
+    "observed_HEAD",
+    "contract_hash",
+    "supersedes",
+    "execution",
+    "case_generation",
+    "next_single_task",
+    "final_status",
+    "amendment",
+    "attempt_policy",
+    "amendment_chain",
+    "current_protected_evidence",
+    "current_execution_guard",
+    "parent_effective_contract",
+    "accepted_history_start_guard",
+    "start_guard_hashes",
+    "historical_v1_5_amendment",
+    "historical_v1_5_attempt_policy",
+    "historical_v1_5_final_status",
+    "Ra1e5_formal_result_linkage",
+    "RouteB_Ra1e6_computed_unaccepted_evidence",
+    "Ra1e6_AB_comparison_classification",
+    "historical_v1_5_start_guard_hashes",
+    "historical_v1_5_protected_evidence"
+  ],
+  "amendment_chain_length": 6,
+  "accepted_A_history_count": 9,
+  "attempt006_original_seal_artifact_count": 47,
+  "B_computed_count": 3,
+  "B_accepted_count": 0,
+  "B_status_guard": "Each computed YES, accepted NO, D FAIL, final30000; accepted YES -> STOP/review",
+  "destination_state": {
+    "A-Ra1e6-coarse": "ABSENT",
+    "A-Ra1e6-medium": "ABSENT",
+    "A-Ra1e6-fine": "ABSENT"
+  },
+  "attempt007_directory_created": false,
+  "hash_checks": [
+    {
+      "category": "parent v1.5 and frozen implementation/template/reference/caps",
+      "status": "PASS",
+      "file_count": 23
+    },
+    {
+      "category": "Route A Execution Contract Amendment 001",
+      "status": "PASS",
+      "file_count": 1
+    },
+    {
+      "category": "Route A Execution Contract Amendment 001",
+      "status": "PASS",
+      "file_count": 1
+    },
+    {
+      "category": "Route A Execution Contract Amendment 002",
+      "status": "PASS",
+      "file_count": 1
+    },
+    {
+      "category": "Route A Execution Contract Amendment 002",
+      "status": "PASS",
+      "file_count": 1
+    },
+    {
+      "category": "Route A Execution Contract Amendment 003",
+      "status": "PASS",
+      "file_count": 1
+    },
+    {
+      "category": "Route A Execution Contract Amendment 003",
+      "status": "PASS",
+      "file_count": 1
+    },
+    {
+      "category": "Route A Execution Contract Amendment 004",
+      "status": "PASS",
+      "file_count": 1
+    },
+    {
+      "category": "Route A Execution Contract Amendment 004",
+      "status": "PASS",
+      "file_count": 1
+    },
+    {
+      "category": "Route A Execution Contract Amendment 005",
+      "status": "PASS",
+      "file_count": 1
+    },
+    {
+      "category": "Route A Execution Contract Amendment 005",
+      "status": "PASS",
+      "file_count": 1
+    },
+    {
+      "category": "inherited start guards",
+      "status": "PASS",
+      "file_count": 1434
+    },
+    {
+      "category": "attempt006 original 47-artifact seal",
+      "status": "PASS",
+      "file_count": 47
+    },
+    {
+      "category": "attempt006 historical baseline",
+      "status": "PASS",
+      "file_count": 9356
+    },
+    {
+      "category": "A-Ra1e3-coarse segment end_3000",
+      "status": "PASS",
+      "file_count": 59
+    },
+    {
+      "category": "A-Ra1e3-coarse accepted final fields",
+      "status": "PASS",
+      "file_count": 7
+    },
+    {
+      "category": "A-Ra1e3-coarse accepted mesh",
+      "status": "PASS",
+      "file_count": 5
+    },
+    {
+      "category": "A-Ra1e3-medium segment end_3000",
+      "status": "PASS",
+      "file_count": 62
+    },
+    {
+      "category": "A-Ra1e3-medium segment end_6000",
+      "status": "PASS",
+      "file_count": 62
+    },
+    {
+      "category": "A-Ra1e3-medium accepted final fields",
+      "status": "PASS",
+      "file_count": 7
+    },
+    {
+      "category": "A-Ra1e3-medium accepted mesh",
+      "status": "PASS",
+      "file_count": 5
+    },
+    {
+      "category": "A-Ra1e3-fine segment end_15000",
+      "status": "PASS",
+      "file_count": 68
+    },
+    {
+      "category": "A-Ra1e3-fine segment end_3000",
+      "status": "PASS",
+      "file_count": 68
+    },
+    {
+      "category": "A-Ra1e3-fine segment end_18000",
+      "status": "PASS",
+      "file_count": 68
+    },
+    {
+      "category": "A-Ra1e3-fine segment end_9000",
+      "status": "PASS",
+      "file_count": 68
+    },
+    {
+      "category": "A-Ra1e3-fine segment end_12000",
+      "status": "PASS",
+      "file_count": 68
+    },
+    {
+      "category": "A-Ra1e3-fine segment end_6000",
+      "status": "PASS",
+      "file_count": 68
+    },
+    {
+      "category": "A-Ra1e3-fine accepted final fields",
+      "status": "PASS",
+      "file_count": 7
+    },
+    {
+      "category": "A-Ra1e3-fine accepted mesh",
+      "status": "PASS",
+      "file_count": 5
+    },
+    {
+      "category": "A-Ra1e4-coarse segment end_3000",
+      "status": "PASS",
+      "file_count": 62
+    },
+    {
+      "category": "A-Ra1e4-coarse accepted final fields",
+      "status": "PASS",
+      "file_count": 7
+    },
+    {
+      "category": "A-Ra1e4-coarse accepted mesh",
+      "status": "PASS",
+      "file_count": 5
+    },
+    {
+      "category": "A-Ra1e4-medium segment end_3000",
+      "status": "PASS",
+      "file_count": 62
+    },
+    {
+      "category": "A-Ra1e4-medium segment end_6000",
+      "status": "PASS",
+      "file_count": 62
+    },
+    {
+      "category": "A-Ra1e4-medium accepted final fields",
+      "status": "PASS",
+      "file_count": 7
+    },
+    {
+      "category": "A-Ra1e4-medium accepted mesh",
+      "status": "PASS",
+      "file_count": 5
+    },
+    {
+      "category": "A-Ra1e4-fine segment end_15000",
+      "status": "PASS",
+      "file_count": 68
+    },
+    {
+      "category": "A-Ra1e4-fine segment end_3000",
+      "status": "PASS",
+      "file_count": 68
+    },
+    {
+      "category": "A-Ra1e4-fine segment end_9000",
+      "status": "PASS",
+      "file_count": 68
+    },
+    {
+      "category": "A-Ra1e4-fine segment end_12000",
+      "status": "PASS",
+      "file_count": 68
+    },
+    {
+      "category": "A-Ra1e4-fine segment end_6000",
+      "status": "PASS",
+      "file_count": 68
+    },
+    {
+      "category": "A-Ra1e4-fine accepted final fields",
+      "status": "PASS",
+      "file_count": 7
+    },
+    {
+      "category": "A-Ra1e4-fine accepted mesh",
+      "status": "PASS",
+      "file_count": 5
+    },
+    {
+      "category": "A-Ra1e5-coarse segment end_3000",
+      "status": "PASS",
+      "file_count": 62
+    },
+    {
+      "category": "A-Ra1e5-coarse accepted final fields",
+      "status": "PASS",
+      "file_count": 7
+    },
+    {
+      "category": "A-Ra1e5-coarse accepted mesh",
+      "status": "PASS",
+      "file_count": 5
+    },
+    {
+      "category": "A-Ra1e5-medium segment end_3000",
+      "status": "PASS",
+      "file_count": 62
+    },
+    {
+      "category": "A-Ra1e5-medium accepted final fields",
+      "status": "PASS",
+      "file_count": 7
+    },
+    {
+      "category": "A-Ra1e5-medium accepted mesh",
+      "status": "PASS",
+      "file_count": 5
+    },
+    {
+      "category": "A-Ra1e5-fine segment end_3000",
+      "status": "PASS",
+      "file_count": 68
+    },
+    {
+      "category": "A-Ra1e5-fine segment end_9000",
+      "status": "PASS",
+      "file_count": 68
+    },
+    {
+      "category": "A-Ra1e5-fine segment end_12000",
+      "status": "PASS",
+      "file_count": 68
+    },
+    {
+      "category": "A-Ra1e5-fine segment end_6000",
+      "status": "PASS",
+      "file_count": 68
+    },
+    {
+      "category": "A-Ra1e5-fine accepted final fields",
+      "status": "PASS",
+      "file_count": 7
+    },
+    {
+      "category": "A-Ra1e5-fine accepted mesh",
+      "status": "PASS",
+      "file_count": 5
+    },
+    {
+      "category": "B-Ra1e6-coarse computed canonical metrics",
+      "status": "PASS",
+      "file_count": 1
+    },
+    {
+      "category": "B-Ra1e6-coarse computed final fields, explicitly unaccepted",
+      "status": "PASS",
+      "file_count": 6
+    },
+    {
+      "category": "B-Ra1e6-coarse stored mesh",
+      "status": "PASS",
+      "file_count": 5
+    },
+    {
+      "category": "B-Ra1e6-coarse stored logs",
+      "status": "PASS",
+      "file_count": 25
+    },
+    {
+      "category": "B-Ra1e6-medium computed canonical metrics",
+      "status": "PASS",
+      "file_count": 1
+    },
+    {
+      "category": "B-Ra1e6-medium computed final fields, explicitly unaccepted",
+      "status": "PASS",
+      "file_count": 6
+    },
+    {
+      "category": "B-Ra1e6-medium stored mesh",
+      "status": "PASS",
+      "file_count": 5
+    },
+    {
+      "category": "B-Ra1e6-medium stored logs",
+      "status": "PASS",
+      "file_count": 25
+    },
+    {
+      "category": "B-Ra1e6-fine computed canonical metrics",
+      "status": "PASS",
+      "file_count": 1
+    },
+    {
+      "category": "B-Ra1e6-fine computed final fields, explicitly unaccepted",
+      "status": "PASS",
+      "file_count": 6
+    },
+    {
+      "category": "B-Ra1e6-fine stored mesh",
+      "status": "PASS",
+      "file_count": 5
+    },
+    {
+      "category": "B-Ra1e6-fine stored logs",
+      "status": "PASS",
+      "file_count": 25
+    }
+  ]
+}

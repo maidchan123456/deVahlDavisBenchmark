@@ -1,0 +1,953 @@
+{
+  "schema": "routeA-Ra1e6-execution-contract-preparation-v1",
+  "owner": "PRE_RA1E6_EXECUTION_CONTRACT_PREPARATION",
+  "task": "PREPARE_ROUTE_A_RA1E6_EXECUTION_CONTRACT",
+  "date": "2026-10-04",
+  "HEAD": "7100150d4c96a782cb9d258879bdea8a953cd0b1",
+  "final_status": {
+    "ROUTE_A_RA1E6_EXECUTION_CONTRACT_PREPARATION": "COMPLETE",
+    "PARENT_EFFECTIVE_CONTRACT_VERSION": "1.5",
+    "PARENT_EFFECTIVE_CONTRACT_HASH_VERIFIED": "YES",
+    "PARENT_EFFECTIVE_CONTRACT_SHA256": "c33efe4aa81ce0644fd709fe944563e93c7ee2f08304161000784f6418e159c1",
+    "RA1E5_ATTEMPT_006_VERIFIED": "YES",
+    "RA1E5_FORMAL_EXECUTION_COMPLETE": "YES",
+    "RA1E5_ACCEPTED_CASE_COUNT": 3,
+    "RA1E5_GATE_D": "PASS_ALL",
+    "RA1E5_GATE_E_DIAGNOSTIC": "PASS",
+    "RA1E5_GATE_F": "FAIL",
+    "RA1E5_NEEDS_320": "YES",
+    "RA1E5_GATE_G": "PASS",
+    "NEXT_FORMAL_RA": 1000000,
+    "NEXT_FORMAL_CASES": "A-Ra1e6-coarse,A-Ra1e6-medium,A-Ra1e6-fine",
+    "NEXT_GRID_SEQUENCE": "40x40x1,80x80x1,160x160x1",
+    "NEXT_ATTEMPT_ID": "007",
+    "ROUTE_B_RA1E6_COMPUTED_BASELINE_COUNT": 3,
+    "ROUTE_B_RA1E6_ACCEPTED_BASELINE_COUNT": 0,
+    "B_RA1E6_COARSE_COMPUTED": "YES",
+    "B_RA1E6_COARSE_ACCEPTED": "NO",
+    "B_RA1E6_MEDIUM_COMPUTED": "YES",
+    "B_RA1E6_MEDIUM_ACCEPTED": "NO",
+    "B_RA1E6_FINE_COMPUTED": "YES",
+    "B_RA1E6_FINE_ACCEPTED": "NO",
+    "RA1E6_AB_COMPARISON_POLICY": "DIAGNOSTIC_ONLY_UNACCEPTED_B_BASELINE",
+    "FORMAL_ACCEPTED_AB_COMPARISON_AVAILABLE": "NO",
+    "B_GATE_D_FAILURE_PROPAGATES_TO_A": "NO",
+    "ROUTE_B_RA1E6_SOLVER_RERUN_REQUIRED": "NO",
+    "CONTRACT_AMENDMENT_006_CREATED": "YES",
+    "AMENDMENT_006_SCOPE": "NEXT_FORMAL_EXECUTION_UNIT_AND_RA1E6_B_BASELINE_CLASSIFICATION",
+    "EFFECTIVE_CONTRACT_VERSION": "1.6",
+    "EFFECTIVE_CONTRACT_SHA256": "c0cdf8d6a08c6190ceff49535c1d44b4050a92373a3faa06cc1e49b9b3b7fe59",
+    "ANALYZER_SHA256": "e6207e33ae2279e84786115ebfd912b170dcb23f220f1b1155314c723c54cfed",
+    "RUNTIME_CHECKER_SHA256": "5055345c7e64758a4f902c81219e2dda2e5b9cdec22c3f22fc8297bbc1bb9e5a",
+    "IMPLEMENTATION_HASHES_CHANGED": "NO",
+    "TEMPLATE_HASHES_CHANGED": "NO",
+    "FORMAL_CRITERIA_CHANGED": "NO",
+    "NUMERICAL_SETTINGS_CHANGED": "NO",
+    "PHYSICAL_MODEL_CHANGED": "NO",
+    "REFERENCE_DATA_CHANGED": "NO",
+    "AB_HARD_THRESHOLD_ADDED": "NO",
+    "POSITION_SEMANTICS_CHANGED": "NO",
+    "ITERATION_POLICY_CHANGED": "NO",
+    "POST_HOC_RA1E6_ACCEPTANCE_RULE_ADDED": "NO",
+    "ROUTE_A_SOLVER_EXECUTED": "NO",
+    "ROUTE_B_SOLVER_EXECUTED": "NO",
+    "CONTINUATION_EXECUTED": "NO",
+    "CASE_GENERATED": "NO",
+    "MESH_GENERATED": "NO",
+    "INITIALIZATION_CLONE_EXECUTED": "NO",
+    "RA1E6_TRIO_SCIENTIFICALLY_ALLOWED": "YES",
+    "RA1E6_TRIO_TECHNICALLY_READY": "YES",
+    "NEXT_SINGLE_TASK": "RUN_ROUTE_A_RA1E6_TRIO",
+    "RECOMMENDED_REASONING_MODEL_FOR_NEXT_TASK": "gpt-6.1-sol / medium",
+    "USER_DECISION_REQUIRED": "YES"
+  },
+  "parent": {
+    "version": "1.5",
+    "path": "docs/routeA_execution_contract_v1.5.json",
+    "sha256": "c33efe4aa81ce0644fd709fe944563e93c7ee2f08304161000784f6418e159c1"
+  },
+  "Ra1e5_result_linkage": {
+    "owner": "HISTORICAL_FORMAL_RA1E5_ATTEMPT_006",
+    "artifacts": {
+      "results/routeA/attempts/attempt_006/Ra1e5_trio_report.md": "0f0d2c143eb135f6b0c0f606c44a2a667514829f6dbd939c5c0965fc1548394e",
+      "results/routeA/attempts/attempt_006/Ra1e5_trio_report.json": "bda0b3558b935ed07db1d2fab9d79466c3c48e922807157c7f087197af00d88c",
+      "results/routeA/attempts/attempt_006/Ra1e5_group_evaluation.json": "6af46450936c86a3efac3976456272a1d3a47d322c096cf5c520dd81fa12824e",
+      "results/routeA/attempts/attempt_006/Ra1e5_trio_matrix.csv": "b53b3768e70edb4dfa411947f75c759d0294ea281de95c7cac1fd85d8da4f221",
+      "results/routeA/attempts/attempt_006/Ra1e5_routeA_vs_routeB.csv": "f9788b1353f12dd1f0548a9259e51b24ab40b693d648e9576843807ed72b9093",
+      "results/routeA/attempts/attempt_006/attempt_sealed_sha256.json": "845976e6f63ec4cf630a6821cf54846753855e2e4201e4781be163a4bca16a21",
+      "results/routeA/attempts/attempt_006/final_verification.json": "016ceef4014228748e8c4d2e3fd6c5d7161b08d571c348415ce05fb4b16bd2ec"
+    },
+    "verified_status": {
+      "ROUTE_A_RA1E5_ATTEMPT": "006",
+      "ROUTE_A_RA1E5_TRIO": "COMPLETE",
+      "RA1E5_ACCEPTED_CASE_COUNT": "3",
+      "RA1E5_GATE_E_DIAGNOSTIC": "PASS",
+      "RA1E5_GATE_F": "FAIL",
+      "RA1E5_NEEDS_320": "YES",
+      "RA1E5_GATE_G": "PASS",
+      "ROUTE_A_VS_ROUTE_B_COMPARISON": "COMPLETE",
+      "RA1E5_STEADY_TRIO_COMPLETE": "YES",
+      "RA1E5_STEADY_TRIO_CHARACTERIZED": "NO",
+      "RA1E6_TRIO_SCIENTIFICALLY_ALLOWED": "YES",
+      "RA1E6_EXECUTION_CONTRACT_UPDATE_REQUIRED": "YES"
+    },
+    "Gate_D": "PASS_ALL",
+    "accepted_case_final_iterations": [
+      3000,
+      3000,
+      12000
+    ],
+    "Gate_F_unresolved": {
+      "values_coarse_medium_fine": [
+        68.8736929513016,
+        68.57077663709082,
+        68.65520970326538
+      ],
+      "convergence_type": "NON_MONOTONIC_OR_UNDEFINED",
+      "monotonic": false,
+      "fine_medium_relative_difference": 0.0012298129528625253,
+      "p_obs": null,
+      "GCI_fine": null,
+      "needs_320": true,
+      "status": "FAIL"
+    },
+    "historical_results_modified": false
+  },
+  "accepted_A_history": [
+    {
+      "case_id": "A-Ra1e3-coarse",
+      "accepted": true,
+      "Gate_D": "PASS",
+      "final_iteration": 3000,
+      "report_path": "results/routeA/attempts/attempt_004/Ra1e3_trio_report.json",
+      "final_segment_manifest": "results/routeA/cases/A-Ra1e3-coarse/segments/end_3000/segment_manifest.json",
+      "sha256": "0077a5817996d0540c2a6c9892e3ed67ef331a3bf695d448d860b63b21aae70f"
+    },
+    {
+      "case_id": "A-Ra1e3-medium",
+      "accepted": true,
+      "Gate_D": "PASS",
+      "final_iteration": 6000,
+      "report_path": "results/routeA/attempts/attempt_004/Ra1e3_trio_report.json",
+      "final_segment_manifest": "results/routeA/cases/A-Ra1e3-medium/segments/end_6000/segment_manifest.json",
+      "sha256": "29036ecbbd741abf731ea1ec7806947487a9eceb2d22bddf48eb8c2b5fffa50a"
+    },
+    {
+      "case_id": "A-Ra1e3-fine",
+      "accepted": true,
+      "Gate_D": "PASS",
+      "final_iteration": 18000,
+      "report_path": "results/routeA/attempts/attempt_004/Ra1e3_trio_report.json",
+      "final_segment_manifest": "results/routeA/cases/A-Ra1e3-fine/segments/end_18000/segment_manifest.json",
+      "sha256": "a9104d8ae7c61fadaf9bef9e33329e0a220e2c7a12be48fa217ee44e07c68337"
+    },
+    {
+      "case_id": "A-Ra1e4-coarse",
+      "accepted": true,
+      "Gate_D": "PASS",
+      "final_iteration": 3000,
+      "report_path": "results/routeA/attempts/attempt_005/Ra1e4_trio_report.json",
+      "final_segment_manifest": "results/routeA/cases/A-Ra1e4-coarse/segments/end_3000/segment_manifest.json",
+      "sha256": "2d225c1231eeb7d3676ce53689f938a6855a7f923c2ffd1929840474c7dbc92e"
+    },
+    {
+      "case_id": "A-Ra1e4-medium",
+      "accepted": true,
+      "Gate_D": "PASS",
+      "final_iteration": 6000,
+      "report_path": "results/routeA/attempts/attempt_005/Ra1e4_trio_report.json",
+      "final_segment_manifest": "results/routeA/cases/A-Ra1e4-medium/segments/end_6000/segment_manifest.json",
+      "sha256": "badc01cce33212c980f322e1a34583fdef1ec8c14891cb061c2e951b1751acb3"
+    },
+    {
+      "case_id": "A-Ra1e4-fine",
+      "accepted": true,
+      "Gate_D": "PASS",
+      "final_iteration": 15000,
+      "report_path": "results/routeA/attempts/attempt_005/Ra1e4_trio_report.json",
+      "final_segment_manifest": "results/routeA/cases/A-Ra1e4-fine/segments/end_15000/segment_manifest.json",
+      "sha256": "4add80508f352420c77b6860532b9bbee14afa601366636c938c64d92aa9625e"
+    },
+    {
+      "case_id": "A-Ra1e5-coarse",
+      "accepted": true,
+      "Gate_D": "PASS",
+      "final_iteration": 3000,
+      "report_path": "results/routeA/attempts/attempt_006/Ra1e5_trio_report.json",
+      "final_segment_manifest": "results/routeA/cases/A-Ra1e5-coarse/segments/end_3000/segment_manifest.json",
+      "sha256": "d2bb2920dbaf7e603e891300d1bb0b8a8b3c9c03f38b0204b9ba27ddf47a3948"
+    },
+    {
+      "case_id": "A-Ra1e5-medium",
+      "accepted": true,
+      "Gate_D": "PASS",
+      "final_iteration": 3000,
+      "report_path": "results/routeA/attempts/attempt_006/Ra1e5_trio_report.json",
+      "final_segment_manifest": "results/routeA/cases/A-Ra1e5-medium/segments/end_3000/segment_manifest.json",
+      "sha256": "ac6e1e85be8cc5f45d38b659de9744e8c748f9b38dfad76c6c4fa3d79b90c0e2"
+    },
+    {
+      "case_id": "A-Ra1e5-fine",
+      "accepted": true,
+      "Gate_D": "PASS",
+      "final_iteration": 12000,
+      "report_path": "results/routeA/attempts/attempt_006/Ra1e5_trio_report.json",
+      "final_segment_manifest": "results/routeA/cases/A-Ra1e5-fine/segments/end_12000/segment_manifest.json",
+      "sha256": "dba404c4326fdc7aca53a94ce205dfb5dc3813120749677290855a649222e37d"
+    }
+  ],
+  "RouteB_Ra1e6_evidence": {
+    "computed_baseline_count": 3,
+    "accepted_baseline_count": 0,
+    "rows": [
+      {
+        "case_id": "B-Ra1e6-coarse",
+        "source_case_id": "B-Ra1e6-coarse",
+        "Ra_actual": 1000000,
+        "Pr_actual": 0.71,
+        "grid": [
+          40,
+          40,
+          1
+        ],
+        "final_iteration": 30000,
+        "computed": "YES",
+        "accepted": "NO",
+        "Gate_D": "FAIL",
+        "Gate_D_checks": {
+          "normal_exit": true,
+          "finite_execution": true,
+          "window": true,
+          "samples": true,
+          "QoI": true,
+          "residuals": false,
+          "heat_trend": false
+        },
+        "metrics_path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/cases/B-Ra1e6-coarse/metrics.json",
+        "metrics_sha256": "c0032cbf2938197e866ac23368ef95475f174e31e780770a3b1f207fbe8e49f2",
+        "computed_field_hash_root": "/home/mirai/OpenFOAM/mirai-6/run/deVahlDavisBenchmark",
+        "computed_final_field_sha256": {
+          "cases/routeB/Ra1e6_coarse/30000/U": "b20f295a9fa932e754f21e7e89e2568c57de6d54b149554c6dc8cd5f89fb8bc1",
+          "cases/routeB/Ra1e6_coarse/30000/alphat": "5da6e72e8ed03c4d1f449e9057d7d7f6e838c0a5e159a7401d31530337a4eacc",
+          "cases/routeB/Ra1e6_coarse/30000/phi": "6af94951d8ee3f4e772c798ab3642580bb44b20d3420f581b51a09b04c52729c",
+          "cases/routeB/Ra1e6_coarse/30000/T": "73cbc15886c130419fd0d07a25f3ba40c6a8b77b54df11eb66b94aa6f4fa0979",
+          "cases/routeB/Ra1e6_coarse/30000/p": "96ff5dd4d48cac411796efd20e2a8b659992f7a66ba51784de01243da5e5db50",
+          "cases/routeB/Ra1e6_coarse/30000/p_rgh": "a445e7f5448f32c96869e3e7ec200ace5dc6c233b4f0a2dcc60da679b0a81367"
+        },
+        "mesh_sha256": {
+          "constant/polyMesh/faces": "14ebb88083f45f9b20e1a654410e477aad3d9b334bcc28fc151e1417a97b2fe2",
+          "constant/polyMesh/points": "608ba95f30ca4ad10cdef9dd8e233b138759a8bf922220c85771d2c806c001b9",
+          "constant/polyMesh/boundary": "05b5bac4e06222719db7405b4e37ddfc52738afe54896b7e525fe7175b7f3bfd",
+          "constant/polyMesh/neighbour": "d2e5e7ec4cbfbb9e6969b8a8af580d55fe70a9f21e784e882ca6fa1d32f9165c",
+          "constant/polyMesh/owner": "8beef1f197482b84bffa5490200b2299fd94b74ce7bc3d62ec0e1fac8057cbd2"
+        },
+        "log_sha256": {
+          "log.buoyantBoussinesqSimpleFoam.initial0-3000": "a5e571a18b76fd736cee82d44edaace99ab4470d5d4cb59e1cfc4e1fa9dbcca3",
+          "log.analyze_case.6000": "dff8d0e2df3c1fbeb7b159ad60d8a2d8302cd865802b10c1744ddb2420397ec1",
+          "log.buoyantBoussinesqSimpleFoam.continuation21000-24000": "e31b60f8428e3e467285e799c5dd19a79a8547e96f7a82b87eaf354d810ebf5d",
+          "log.buoyantBoussinesqSimpleFoam": "26968e6acea98a6fd438e9e958e0e18f2143dbd84cadd02fa39a947f867ddc48",
+          "log.blockMesh": "f5ea9f7195fece20817844baf9e9d4b0f971b19e2606ab0fc650f2d9eced558f",
+          "log.analyze_case.30000": "c0032cbf2938197e866ac23368ef95475f174e31e780770a3b1f207fbe8e49f2",
+          "log.buoyantBoussinesqSimpleFoam.continuation27000-30000": "5bc29dfa492eae0fa29b192108fadfa5c762f1e2a58fde37deb01de653ba34e1",
+          "log.analyze_case.24000": "bbf5b3ff1e0af7b7dedaaa8bebde212a3475cb386a2b816f6a1416b4280562bd",
+          "log.analyze_case.9000": "c9703f4fa2e8b87f6c3e907265e84178c7a1520d13c82000ae118a3b2bc6d19c",
+          "log.buoyantBoussinesqSimpleFoam.continuation6000-9000": "6a87bc55d1eaaa02befd98866b890dbe7f64e59c4f2fcab88477bcf68e121b89",
+          "log.checkMesh": "af516855d82c89b040b77c279d4fe80926de37a9e91523074e2727c6f96a4c96",
+          "log.buoyantBoussinesqSimpleFoam.continuation15000-18000": "81efef1b59af29c90eb3d240e535cb7020a6b9d928decf4882b367a9b51e09e4",
+          "log.full_matrix_runner": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "log.analyze_case.27000": "45ca20fd038e13d59deada11488070d113bba61f2ab0657b4ebf1d08432e3ce6",
+          "log.buoyantBoussinesqSimpleFoam.continuation12000-15000": "ed4447a31bb74f98d129d179709a73e7d0dc8a6fc34116c351f35a2d939848c2",
+          "log.analyze_case.15000": "94d1086be97af1301b175505a6d7b54cf20121caadcb95b330ce6dbb9ea9b204",
+          "log.buoyantBoussinesqSimpleFoam.continuation9000-12000": "110f6d4564e27593a01c7020d2b203a44a8b7481eb07d83378d65f62d33dc04c",
+          "log.analyze_case.18000": "7f21682886f6f43176653aa97d190eb16d2ba599508c6071eca702594ddecb76",
+          "log.buoyantBoussinesqSimpleFoam.continuation24000-27000": "45cb1c91ff208a20bde89156d11c8c5d6a69f0e5c49f81cf9ff0e66bbac9bc4c",
+          "log.analyze_case": "2551538e5324def9ab64b8e810cd59344b1478cbb3662fca7aac8045e6e5f07e",
+          "log.analyze_case.21000": "7cf3fc483df26ea1a336d3fb26e51a80560547fa40bacc06f0df56fbcbd638c2",
+          "log.buoyantBoussinesqSimpleFoam.continuation18000-21000": "7ccf00d8c171e19a28369eb58058e24ad970225d47244bafa03f9605b931ecab",
+          "log.analyze_case.12000": "e3548583e5d1c1e3d2043db7e0afb0f885fdb8f471ce24ed0805e479614e5db7",
+          "log.environment": "5cf9a48f0b9040d141d4b2e522f118c0c98b479a8f9da6cd2cb9de01ec7e250b",
+          "log.buoyantBoussinesqSimpleFoam.continuation3000-6000": "c378c8ec84b7f71b6b4026187c4a2f561c842147401115a43908888c36e223d8"
+        },
+        "comparison_ownership": "DIAGNOSTIC_ONLY_UNACCEPTED_B_BASELINE"
+      },
+      {
+        "case_id": "B-Ra1e6-medium",
+        "source_case_id": "B-Ra1e6-medium",
+        "Ra_actual": 1000000,
+        "Pr_actual": 0.71,
+        "grid": [
+          80,
+          80,
+          1
+        ],
+        "final_iteration": 30000,
+        "computed": "YES",
+        "accepted": "NO",
+        "Gate_D": "FAIL",
+        "Gate_D_checks": {
+          "normal_exit": true,
+          "finite_execution": true,
+          "window": true,
+          "samples": true,
+          "QoI": true,
+          "residuals": false,
+          "heat_trend": false
+        },
+        "metrics_path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/cases/B-Ra1e6-medium/metrics.json",
+        "metrics_sha256": "c6f560e95a9f10b0597ca85f31a69eb000699192f3cdf7df9ba50484ed67f419",
+        "computed_field_hash_root": "/home/mirai/OpenFOAM/mirai-6/run/deVahlDavisBenchmark",
+        "computed_final_field_sha256": {
+          "cases/routeB/Ra1e6_medium/30000/U": "b70d94118ac0c797b88fda3245eb91b12b3eba7330d088826a0a4b44f7d10613",
+          "cases/routeB/Ra1e6_medium/30000/alphat": "5da6e72e8ed03c4d1f449e9057d7d7f6e838c0a5e159a7401d31530337a4eacc",
+          "cases/routeB/Ra1e6_medium/30000/phi": "23971428836ee5959ce85001196f4dd9075a1009ad6b5afa54b774cb7770e884",
+          "cases/routeB/Ra1e6_medium/30000/T": "ad5b92c640cd7ef28c5be59881b64ec9a874a940de54d54b1d63b3f6e5e83303",
+          "cases/routeB/Ra1e6_medium/30000/p": "eecfdf3679c8065edfb3195a91b9699b457794334bfd4426456353088fd1fcd2",
+          "cases/routeB/Ra1e6_medium/30000/p_rgh": "bb714d8e05ead63766d2deee4fc81ca3a843baafc9d4a2f59101b15856035477"
+        },
+        "mesh_sha256": {
+          "constant/polyMesh/faces": "222f0f628d837dd323241b71c390ca0aefc76b1d7b7385c44cf5306a3db62f71",
+          "constant/polyMesh/points": "e36c10eb472aa593a4e07573c03bb9cf55c132e8389dad196948b84dc837f9e0",
+          "constant/polyMesh/boundary": "68c5e8ba4c1443ecc36e819382e3e98ecde6c2e2d27282ca3e2fa120e24bb345",
+          "constant/polyMesh/neighbour": "bc86f1fcb3fccf51dec58e0ef685f31be4c8f847b3afc603d1ce8bfc51675307",
+          "constant/polyMesh/owner": "5fb5f126983674baa67ff2cb813d3a13493f1e8ae59b4a03da4200e6f423a987"
+        },
+        "log_sha256": {
+          "log.buoyantBoussinesqSimpleFoam.initial0-3000": "76dba57fc3ef5bab379ef05e000eff065600f09c5ff97646745941dd208f6c08",
+          "log.analyze_case.6000": "2fffdde37e6a52969decfc3091e20c05fb33490aeac2d0429abd1ba10f3fa296",
+          "log.buoyantBoussinesqSimpleFoam.continuation21000-24000": "f0082bec0526e6f8b02c0cca98f2c5c84ab582bd998280779e4bdc416fd29287",
+          "log.buoyantBoussinesqSimpleFoam": "16b5a09455d1a492d26e6738ec42c55f21e82388d2466296275bb494875e2f23",
+          "log.blockMesh": "8f1702172d7772b4ce8ab33f87a6fe0131e9b198f446ad913ba3867788d4de19",
+          "log.analyze_case.30000": "c6f560e95a9f10b0597ca85f31a69eb000699192f3cdf7df9ba50484ed67f419",
+          "log.buoyantBoussinesqSimpleFoam.continuation27000-30000": "520224ec5355250a0dd9fa7011a78216c5ed1b037be97d054b2f0d0ef14fec91",
+          "log.analyze_case.24000": "6a0a107a5608c34336bc73fbe808f1fc532a60620f553391fbbc5192dc488b19",
+          "log.analyze_case.9000": "0f12d79043971e088659ae8679d54cd87d0fc9a220daa76bb9976d47b0102176",
+          "log.buoyantBoussinesqSimpleFoam.continuation6000-9000": "654009f61cb56078017a0e2205c3bde0ccf016db8e015e993ac4c9250803d81a",
+          "log.checkMesh": "8fd59f6737121222b73a8a82db051663ebddbee3fde3231f1d57fb2a25a53c3e",
+          "log.buoyantBoussinesqSimpleFoam.continuation15000-18000": "13dfc2ff483ce8c117cbff6597dd0535254a1b4d1322801e7d5555bc983121dc",
+          "log.full_matrix_runner": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "log.analyze_case.27000": "e586a52c0699336d7d7c6b0dd67a342d8404b408aa03b717b0d4547b0365abaa",
+          "log.buoyantBoussinesqSimpleFoam.continuation12000-15000": "7ee1081afc1722c95715b1ad6241958d42fcc67272b300d7628d65ee6adab5c5",
+          "log.analyze_case.15000": "db199cb9d1a042bcf4898fa83f6d5aa3fc0086a45fb8f6720ea2cb211bf6ad75",
+          "log.buoyantBoussinesqSimpleFoam.continuation9000-12000": "f65973f58f3d7f59f3647218291f8bde4467f81a1c1de8c3c9adb0ab3150ac04",
+          "log.analyze_case.18000": "2e6f9a2e3bf533105358621c31a486ff3bf47e5d7207a15e6cf89589161fdcd3",
+          "log.buoyantBoussinesqSimpleFoam.continuation24000-27000": "185d7458b7b96dc0583cf414edcb4cc798137fc4a4292380edad1f41bfd65223",
+          "log.analyze_case": "6ab98b4c0711e546dd38f1d417db002cbafd4149dff5eee2486935d7cc0e7c81",
+          "log.analyze_case.21000": "1b4731d37fd17b6b3d643bab2db4d411e18dc307c674679c3c16edc2988b4f82",
+          "log.buoyantBoussinesqSimpleFoam.continuation18000-21000": "33b36263867ec4f412ac17a155bb41af825d529d2dd4350a31cfbd39c36cc8cb",
+          "log.analyze_case.12000": "821ec4bdb0b99cd0f9e3cd048ed4d8b0678bbadde64278befa6615130e6cf967",
+          "log.environment": "037941629726ad5c16816f406fee8870bc762d0a0f617dec249d7c28de32158a",
+          "log.buoyantBoussinesqSimpleFoam.continuation3000-6000": "9d4eeae3cf5828259691f5aa0e70f74d9b5717bbcbafe2300d66079e70e3e852"
+        },
+        "comparison_ownership": "DIAGNOSTIC_ONLY_UNACCEPTED_B_BASELINE"
+      },
+      {
+        "case_id": "B-Ra1e6-fine",
+        "source_case_id": "B-Ra1e6-fine",
+        "Ra_actual": 1000000,
+        "Pr_actual": 0.71,
+        "grid": [
+          160,
+          160,
+          1
+        ],
+        "final_iteration": 30000,
+        "computed": "YES",
+        "accepted": "NO",
+        "Gate_D": "FAIL",
+        "Gate_D_checks": {
+          "normal_exit": true,
+          "finite_execution": true,
+          "window": true,
+          "samples": true,
+          "QoI": true,
+          "residuals": false,
+          "heat_trend": true
+        },
+        "metrics_path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/cases/B-Ra1e6-fine/metrics.json",
+        "metrics_sha256": "2f548586e65d35c50e7cc7a26a784c0b26e132369b99f0d527edc4fc03df574d",
+        "computed_field_hash_root": "/home/mirai/OpenFOAM/mirai-6/run/deVahlDavisBenchmark",
+        "computed_final_field_sha256": {
+          "cases/routeB/Ra1e6_fine/30000/U": "28779599e5a66c342c440ea3df5ff1eded0215bf062f810a1d4579e7ce73d207",
+          "cases/routeB/Ra1e6_fine/30000/alphat": "5da6e72e8ed03c4d1f449e9057d7d7f6e838c0a5e159a7401d31530337a4eacc",
+          "cases/routeB/Ra1e6_fine/30000/phi": "376d4413c80044c7acfe818eddfb7c4bfea4bc2f369128b41faa244daf184440",
+          "cases/routeB/Ra1e6_fine/30000/T": "d5436297085929031a09943120d0692cbdcb18e769dc75568c57a4d3d34b4db1",
+          "cases/routeB/Ra1e6_fine/30000/p": "85b442448dd9a165195c2ba5c322ecf03e755b40aea0a646fefc542415662f79",
+          "cases/routeB/Ra1e6_fine/30000/p_rgh": "50b660a63a57cac847fb03ed7df2186345ef68ce92a78746ccb2ca395c9ab7cb"
+        },
+        "mesh_sha256": {
+          "constant/polyMesh/faces": "cc83d432b2f6e5bc59786b4d29703220ab4615cccc64e45478d7d160ba1a86a4",
+          "constant/polyMesh/points": "0dc6d8f2bb286d4a5c71d1e7613f971b6ea84bc6aef6c9c7193b50ffde6da78d",
+          "constant/polyMesh/boundary": "8edf8a0cd7b922cc9fec8dda9d14f937a961d02478cf50a79d324025a4f471c7",
+          "constant/polyMesh/neighbour": "1efe776acf18f1efd60f48fe4d473a755c42f8730e362e7510476b5413231db1",
+          "constant/polyMesh/owner": "2591161faec40a988ae34c6c8204439fa37c63f64d51ce0bcc702b58a9f054b8"
+        },
+        "log_sha256": {
+          "log.buoyantBoussinesqSimpleFoam.initial0-3000": "06c41df766211935cbbd1fc7685d14e10f25369405423f31781ecf46173b07cf",
+          "log.analyze_case.6000": "67f5df450762c908608a29fac28ff04ee4f0e6330495778a55f3104c557d80a5",
+          "log.buoyantBoussinesqSimpleFoam.continuation21000-24000": "030358eb1a1d6dc1d0ccd01538e834086dd6055ea5b050d1314c4ac150d7eb55",
+          "log.buoyantBoussinesqSimpleFoam": "a2b95dc21171401c8f675c4544fb7fd5a746b72644b311b950d8f01b15a61a4f",
+          "log.blockMesh": "c7fe12e23fa94d47eca8fb7472403ceb6fc2478cd6ddd08d5bab3a184f260d1e",
+          "log.analyze_case.30000": "2f548586e65d35c50e7cc7a26a784c0b26e132369b99f0d527edc4fc03df574d",
+          "log.buoyantBoussinesqSimpleFoam.continuation27000-30000": "37320ebec1a513b8e81b8bb753a1de72bf1b8e79e4497f95575b2a16d89fbb3e",
+          "log.analyze_case.24000": "ddebeb847d6ede6e34e5f916d116cd9661b48ec2bb1caca8d906e43700df6f72",
+          "log.analyze_case.9000": "46a57861979fbbdbbaf806bedd7338a46e72d1010f32f5639e9f06092d6e1506",
+          "log.buoyantBoussinesqSimpleFoam.continuation6000-9000": "927d3a86d08c5fd9902ae2bdf3bb64deb565a72e5edf66acc926b55787603114",
+          "log.checkMesh": "2b889451438fece30775f0eb32303fcde15deab343f2eac9f66d475ab25a94ae",
+          "log.buoyantBoussinesqSimpleFoam.continuation15000-18000": "ef69f6cfcb3f01c24abfafd2fdbe7a47b54f75e4a8fec599c68b1286ce7aedc7",
+          "log.full_matrix_runner": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "log.analyze_case.27000": "db97f1a46fb4da6fd2bcbd4371b4fc53a8a97b0583ad2fcae0e797933e42b7c0",
+          "log.buoyantBoussinesqSimpleFoam.continuation12000-15000": "f76dbf6fc021dd1428a37939f1c425fdc51c237cb102e7d938cfb9b762c6136c",
+          "log.analyze_case.15000": "7962b1e71b2f3017f950d6bd1ee07b7fed2bfc39633a94ef94652dec41205096",
+          "log.buoyantBoussinesqSimpleFoam.continuation9000-12000": "11f1bb5d2b2440d81624ca91f986ab963e1864e56d7dd6e4f87d8cb42995d003",
+          "log.analyze_case.18000": "6fb62eebc2812ef6c9ebc7024f75850c643216a16ea5164493c117483a138693",
+          "log.buoyantBoussinesqSimpleFoam.continuation24000-27000": "9d406425d8905df2847c7ffb42021478b82355023aef05edac6c9bc853b83aa4",
+          "log.analyze_case": "deade5cfa5958a5b1bb5b5ae5dc235dd476b21cfdbf214700733730365fb91e8",
+          "log.analyze_case.21000": "fa993f741b8259a322d90779a626743752a8416882291069ebde6360540719cc",
+          "log.buoyantBoussinesqSimpleFoam.continuation18000-21000": "1af19023cd0b09466d896f8cc1533cf55051ebe063ba3af9d0a3d09ea90d8245",
+          "log.analyze_case.12000": "7eef641d8d4c1cceb8cf5db0cbb119f87afd48bbcecc76a39a6f1a19758b6303",
+          "log.environment": "aec4b86279567b0c3db97fb1b4b24ab2cfe0e84cf28eb6faf34e3c2c1c168bdf",
+          "log.buoyantBoussinesqSimpleFoam.continuation3000-6000": "202fdd4687badd619371dbd07bc8141a29dbe22cea41bd2b1e6dd7aa697137d3"
+        },
+        "comparison_ownership": "DIAGNOSTIC_ONLY_UNACCEPTED_B_BASELINE"
+      }
+    ],
+    "historical_evidence": {
+      "results/routeB/full_matrix_manifest.json": "9ae1f681f98469e891983aa02acead90de0c56d795c033a47fbcc1ce3a92fd27",
+      "results/routeB/routeB_master_matrix.csv": "87c92615cae0bf4e65e8ebcbe0544513ce514c7aed79c417f8fbd28e70c16517",
+      "results/routeB/Ra1e6_post_matrix_gateD_review.json": "1c8e8ea2c3f8dc58b42a4954c80642f8cd00f8cdc549b80c592851e04d86daac"
+    },
+    "historical_review_status": {
+      "RA1E6_THREE_GRID_REVIEW": "COMPLETE",
+      "RESIDUAL_MECHANISM": "PLATEAU_OR_OSCILLATORY_FLOOR_LIKELY",
+      "QOI_STATIONARITY_SUPPORT": "STRONG",
+      "HEAT_BALANCE_SUPPORT": "MODERATE",
+      "CONTINUITY_SUPPORT": "STRONG",
+      "GRID_TREND_SUPPORT": "MODERATE",
+      "REFERENCE_AGREEMENT_SUPPORT": "STRONG",
+      "ORIGINAL_GATE_D_RA1E6": "FAIL",
+      "RECOMMENDED_POLICY": "A_KEEP_ORIGINAL",
+      "POST_HOC_AMENDMENT": "NO",
+      "NEW_NUMERICAL_THRESHOLD_REQUIRED": "NO",
+      "FORMAL_GATE_D_CHANGED": "NO",
+      "ACCEPTED_STATUS_CHANGED": "NO",
+      "SOLVER_EXECUTED": "NO",
+      "ADDITIONAL_RA1E6_SOLVER_RUN_REQUIRED": "NO",
+      "NEXT_ACTION": "KEEP_ORIGINAL_GATE_D",
+      "USER_DECISION_REQUIRED": "YES"
+    },
+    "recommended_policy_normalized": "KEEP_ORIGINAL (repository literal A_KEEP_ORIGINAL)",
+    "formal_status_rewritten": false,
+    "additional_solver_run_required": false,
+    "read_only": true
+  },
+  "Ra1e6_AB_classification": {
+    "label": "DIAGNOSTIC_ONLY_UNACCEPTED_B_BASELINE",
+    "scope": "RA1E6_COMPARISON_OWNERSHIP_CLARIFICATION_ONLY",
+    "existing_rule_authority": {
+      "canonical_B_rows": "only accepted YES for accepted comparisons; Ra1e6 labelled diagnostic B baseline",
+      "canonical_B": "accepted YES rows for accepted comparison; Ra1e6 unaccepted explicitly diagnostic only; read existing missing columns only, never rewrite B"
+    },
+    "B_computed": "YES",
+    "B_accepted": "NO",
+    "formal_accepted_AB_comparison_available": false,
+    "B_Gate_D_failure_propagates_to_A": false,
+    "A_Gate_D": "Apply unchanged independent six-boolean criteria; B failure is not A failure.",
+    "A_Gate_E": "Paper practical benchmark comparison remains independent of B acceptance; fine A accepted required.",
+    "A_Gate_F": "Formal grid convergence only when all three A grids are accepted; otherwise NOT_EVALUATED, unaccepted A trends diagnostic only.",
+    "A_Gate_G": "Formal only for accepted A fine; otherwise NOT_EVALUATED with optional separately labelled diagnostic.",
+    "future_comparison_rows_required_metadata": [
+      "A_computed",
+      "A_accepted",
+      "A_Gate_D",
+      "B_computed=YES",
+      "B_accepted=NO",
+      "B_Gate_D=FAIL",
+      "B_final_iteration=30000",
+      "comparison_ownership=DIAGNOSTIC_ONLY_UNACCEPTED_B_BASELINE",
+      "diagnostic_only=true",
+      "FORMAL_ACCEPTED_A_B_COMPARISON=NO",
+      "operator/unit/sampling/postprocessing metadata and source hashes"
+    ],
+    "scalar_position_operators": "Use unchanged parent AB_comparison formulas and explicit POSITION_KEYS, but label every Ra1e6 A–B value diagnostic only even if A accepted.",
+    "incompatible_operators": "NOT_LIKE_FOR_LIKE: native mass A vs volume B phi, reconstructed A section vs corrected B volume phi. No direct Hard comparison.",
+    "missing": "NOT_EVALUATED; never invent/estimate missing evidence.",
+    "hard_AB_threshold": null,
+    "criteria_changed": false,
+    "no_post_hoc_Ra1e6_exception": true,
+    "B_solver_rerun_or_extension_allowed": false,
+    "interpretation_limit": "An A PASS does not prove A physically superior or B wrong; both FAIL does not prove identical mechanism, physical unsteadiness, residual floor or solver defect.",
+    "A_B_Ra1e6_results_precomputed": false
+  },
+  "amendment": {
+    "id": "Route A Execution Contract Amendment 006",
+    "path": "docs/routeA_execution_contract_amendment_006.json",
+    "sha256": "2877be4048f8e76283528baf9da16831683fad8ed850c339da82cdf9e096a7e0",
+    "parent": {
+      "version": "1.5",
+      "path": "docs/routeA_execution_contract_v1.5.json",
+      "sha256": "c33efe4aa81ce0644fd709fe944563e93c7ee2f08304161000784f6418e159c1"
+    },
+    "snapshot_rule": "Full v1.0 + Amendments 001–006. Advance next formal unit to Ra1e6/attempt007 and clarify unaccepted B diagnostic comparison ownership only. Scientific/numerical/AB acceptance criteria unchanged."
+  },
+  "effective_contract": {
+    "path": "docs/routeA_execution_contract_v1.6.json",
+    "sha256": "c0cdf8d6a08c6190ceff49535c1d44b4050a92373a3faa06cc1e49b9b3b7fe59"
+  },
+  "attempt007": {
+    "id": "attempt_007",
+    "attempt_id": "007",
+    "status": "NOT_STARTED",
+    "batch_artifact_root": "results/routeA/attempts/attempt_007/",
+    "case_ids": [
+      "A-Ra1e6-coarse",
+      "A-Ra1e6-medium",
+      "A-Ra1e6-fine"
+    ],
+    "Ra_target": 1000000,
+    "Pr_target": 0.71,
+    "grids": [
+      [
+        40,
+        40,
+        1
+      ],
+      [
+        80,
+        80,
+        1
+      ],
+      [
+        160,
+        160,
+        1
+      ]
+    ],
+    "requires_new_user_run_instruction": true,
+    "formal_case_destinations_absent": true,
+    "destination_state": {
+      "A-Ra1e6-coarse": "Absent; generate new only in separately authorized Ra1e6 execution",
+      "A-Ra1e6-medium": "Absent; generate new only in separately authorized Ra1e6 execution",
+      "A-Ra1e6-fine": "Absent; generate new only in separately authorized Ra1e6 execution"
+    },
+    "coarse_reuse": {
+      "allowed": false,
+      "reason": "All Ra1e6 cases must be NEW canonical generation; no smoke or historical field promotion."
+    },
+    "batch_filenames": [
+      "Ra1e6_trio_report.md",
+      "Ra1e6_trio_report.json",
+      "Ra1e6_trio_matrix.csv",
+      "Ra1e6_routeA_vs_routeB.csv"
+    ],
+    "historical_batch_paths_must_not_be_overwritten": true
+  },
+  "snapshot_validation": {
+    "status": "PASS",
+    "scientific_subtrees_identical": [
+      "frozen_model",
+      "template_source",
+      "implementation_sha256",
+      "monitor",
+      "Gate_D",
+      "statuses",
+      "batch_stop_policy",
+      "Gate_F",
+      "Gate_G",
+      "continuity",
+      "energy_diagnostics",
+      "AB_comparison",
+      "iteration_caps_csv",
+      "paper_comparison_position_semantics",
+      "runtime_provenance_checker"
+    ],
+    "all_execution_settings_except_first_unit_identical": true,
+    "case_generation_nonmetadata_identical": true,
+    "other_existing_subtrees_identical": true,
+    "changed_metadata_keys": [
+      "version",
+      "baseline_HEAD",
+      "observed_HEAD",
+      "contract_hash",
+      "supersedes",
+      "execution",
+      "case_generation",
+      "next_single_task",
+      "final_status",
+      "amendment",
+      "attempt_policy",
+      "amendment_chain",
+      "current_protected_evidence",
+      "current_execution_guard",
+      "parent_effective_contract",
+      "accepted_history_start_guard",
+      "start_guard_hashes",
+      "historical_v1_5_amendment",
+      "historical_v1_5_attempt_policy",
+      "historical_v1_5_final_status",
+      "Ra1e5_formal_result_linkage",
+      "RouteB_Ra1e6_computed_unaccepted_evidence",
+      "Ra1e6_AB_comparison_classification",
+      "historical_v1_5_start_guard_hashes",
+      "historical_v1_5_protected_evidence"
+    ],
+    "amendment_chain_length": 6,
+    "accepted_A_history_count": 9,
+    "attempt006_original_seal_artifact_count": 47,
+    "B_computed_count": 3,
+    "B_accepted_count": 0,
+    "B_status_guard": "Each computed YES, accepted NO, D FAIL, final30000; accepted YES -> STOP/review",
+    "destination_state": {
+      "A-Ra1e6-coarse": "ABSENT",
+      "A-Ra1e6-medium": "ABSENT",
+      "A-Ra1e6-fine": "ABSENT"
+    },
+    "attempt007_directory_created": false,
+    "hash_checks": [
+      {
+        "category": "parent v1.5 and frozen implementation/template/reference/caps",
+        "status": "PASS",
+        "file_count": 23
+      },
+      {
+        "category": "Route A Execution Contract Amendment 001",
+        "status": "PASS",
+        "file_count": 1
+      },
+      {
+        "category": "Route A Execution Contract Amendment 001",
+        "status": "PASS",
+        "file_count": 1
+      },
+      {
+        "category": "Route A Execution Contract Amendment 002",
+        "status": "PASS",
+        "file_count": 1
+      },
+      {
+        "category": "Route A Execution Contract Amendment 002",
+        "status": "PASS",
+        "file_count": 1
+      },
+      {
+        "category": "Route A Execution Contract Amendment 003",
+        "status": "PASS",
+        "file_count": 1
+      },
+      {
+        "category": "Route A Execution Contract Amendment 003",
+        "status": "PASS",
+        "file_count": 1
+      },
+      {
+        "category": "Route A Execution Contract Amendment 004",
+        "status": "PASS",
+        "file_count": 1
+      },
+      {
+        "category": "Route A Execution Contract Amendment 004",
+        "status": "PASS",
+        "file_count": 1
+      },
+      {
+        "category": "Route A Execution Contract Amendment 005",
+        "status": "PASS",
+        "file_count": 1
+      },
+      {
+        "category": "Route A Execution Contract Amendment 005",
+        "status": "PASS",
+        "file_count": 1
+      },
+      {
+        "category": "inherited start guards",
+        "status": "PASS",
+        "file_count": 1434
+      },
+      {
+        "category": "attempt006 original 47-artifact seal",
+        "status": "PASS",
+        "file_count": 47
+      },
+      {
+        "category": "attempt006 historical baseline",
+        "status": "PASS",
+        "file_count": 9356
+      },
+      {
+        "category": "A-Ra1e3-coarse segment end_3000",
+        "status": "PASS",
+        "file_count": 59
+      },
+      {
+        "category": "A-Ra1e3-coarse accepted final fields",
+        "status": "PASS",
+        "file_count": 7
+      },
+      {
+        "category": "A-Ra1e3-coarse accepted mesh",
+        "status": "PASS",
+        "file_count": 5
+      },
+      {
+        "category": "A-Ra1e3-medium segment end_3000",
+        "status": "PASS",
+        "file_count": 62
+      },
+      {
+        "category": "A-Ra1e3-medium segment end_6000",
+        "status": "PASS",
+        "file_count": 62
+      },
+      {
+        "category": "A-Ra1e3-medium accepted final fields",
+        "status": "PASS",
+        "file_count": 7
+      },
+      {
+        "category": "A-Ra1e3-medium accepted mesh",
+        "status": "PASS",
+        "file_count": 5
+      },
+      {
+        "category": "A-Ra1e3-fine segment end_15000",
+        "status": "PASS",
+        "file_count": 68
+      },
+      {
+        "category": "A-Ra1e3-fine segment end_3000",
+        "status": "PASS",
+        "file_count": 68
+      },
+      {
+        "category": "A-Ra1e3-fine segment end_18000",
+        "status": "PASS",
+        "file_count": 68
+      },
+      {
+        "category": "A-Ra1e3-fine segment end_9000",
+        "status": "PASS",
+        "file_count": 68
+      },
+      {
+        "category": "A-Ra1e3-fine segment end_12000",
+        "status": "PASS",
+        "file_count": 68
+      },
+      {
+        "category": "A-Ra1e3-fine segment end_6000",
+        "status": "PASS",
+        "file_count": 68
+      },
+      {
+        "category": "A-Ra1e3-fine accepted final fields",
+        "status": "PASS",
+        "file_count": 7
+      },
+      {
+        "category": "A-Ra1e3-fine accepted mesh",
+        "status": "PASS",
+        "file_count": 5
+      },
+      {
+        "category": "A-Ra1e4-coarse segment end_3000",
+        "status": "PASS",
+        "file_count": 62
+      },
+      {
+        "category": "A-Ra1e4-coarse accepted final fields",
+        "status": "PASS",
+        "file_count": 7
+      },
+      {
+        "category": "A-Ra1e4-coarse accepted mesh",
+        "status": "PASS",
+        "file_count": 5
+      },
+      {
+        "category": "A-Ra1e4-medium segment end_3000",
+        "status": "PASS",
+        "file_count": 62
+      },
+      {
+        "category": "A-Ra1e4-medium segment end_6000",
+        "status": "PASS",
+        "file_count": 62
+      },
+      {
+        "category": "A-Ra1e4-medium accepted final fields",
+        "status": "PASS",
+        "file_count": 7
+      },
+      {
+        "category": "A-Ra1e4-medium accepted mesh",
+        "status": "PASS",
+        "file_count": 5
+      },
+      {
+        "category": "A-Ra1e4-fine segment end_15000",
+        "status": "PASS",
+        "file_count": 68
+      },
+      {
+        "category": "A-Ra1e4-fine segment end_3000",
+        "status": "PASS",
+        "file_count": 68
+      },
+      {
+        "category": "A-Ra1e4-fine segment end_9000",
+        "status": "PASS",
+        "file_count": 68
+      },
+      {
+        "category": "A-Ra1e4-fine segment end_12000",
+        "status": "PASS",
+        "file_count": 68
+      },
+      {
+        "category": "A-Ra1e4-fine segment end_6000",
+        "status": "PASS",
+        "file_count": 68
+      },
+      {
+        "category": "A-Ra1e4-fine accepted final fields",
+        "status": "PASS",
+        "file_count": 7
+      },
+      {
+        "category": "A-Ra1e4-fine accepted mesh",
+        "status": "PASS",
+        "file_count": 5
+      },
+      {
+        "category": "A-Ra1e5-coarse segment end_3000",
+        "status": "PASS",
+        "file_count": 62
+      },
+      {
+        "category": "A-Ra1e5-coarse accepted final fields",
+        "status": "PASS",
+        "file_count": 7
+      },
+      {
+        "category": "A-Ra1e5-coarse accepted mesh",
+        "status": "PASS",
+        "file_count": 5
+      },
+      {
+        "category": "A-Ra1e5-medium segment end_3000",
+        "status": "PASS",
+        "file_count": 62
+      },
+      {
+        "category": "A-Ra1e5-medium accepted final fields",
+        "status": "PASS",
+        "file_count": 7
+      },
+      {
+        "category": "A-Ra1e5-medium accepted mesh",
+        "status": "PASS",
+        "file_count": 5
+      },
+      {
+        "category": "A-Ra1e5-fine segment end_3000",
+        "status": "PASS",
+        "file_count": 68
+      },
+      {
+        "category": "A-Ra1e5-fine segment end_9000",
+        "status": "PASS",
+        "file_count": 68
+      },
+      {
+        "category": "A-Ra1e5-fine segment end_12000",
+        "status": "PASS",
+        "file_count": 68
+      },
+      {
+        "category": "A-Ra1e5-fine segment end_6000",
+        "status": "PASS",
+        "file_count": 68
+      },
+      {
+        "category": "A-Ra1e5-fine accepted final fields",
+        "status": "PASS",
+        "file_count": 7
+      },
+      {
+        "category": "A-Ra1e5-fine accepted mesh",
+        "status": "PASS",
+        "file_count": 5
+      },
+      {
+        "category": "B-Ra1e6-coarse computed canonical metrics",
+        "status": "PASS",
+        "file_count": 1
+      },
+      {
+        "category": "B-Ra1e6-coarse computed final fields, explicitly unaccepted",
+        "status": "PASS",
+        "file_count": 6
+      },
+      {
+        "category": "B-Ra1e6-coarse stored mesh",
+        "status": "PASS",
+        "file_count": 5
+      },
+      {
+        "category": "B-Ra1e6-coarse stored logs",
+        "status": "PASS",
+        "file_count": 25
+      },
+      {
+        "category": "B-Ra1e6-medium computed canonical metrics",
+        "status": "PASS",
+        "file_count": 1
+      },
+      {
+        "category": "B-Ra1e6-medium computed final fields, explicitly unaccepted",
+        "status": "PASS",
+        "file_count": 6
+      },
+      {
+        "category": "B-Ra1e6-medium stored mesh",
+        "status": "PASS",
+        "file_count": 5
+      },
+      {
+        "category": "B-Ra1e6-medium stored logs",
+        "status": "PASS",
+        "file_count": 25
+      },
+      {
+        "category": "B-Ra1e6-fine computed canonical metrics",
+        "status": "PASS",
+        "file_count": 1
+      },
+      {
+        "category": "B-Ra1e6-fine computed final fields, explicitly unaccepted",
+        "status": "PASS",
+        "file_count": 6
+      },
+      {
+        "category": "B-Ra1e6-fine stored mesh",
+        "status": "PASS",
+        "file_count": 5
+      },
+      {
+        "category": "B-Ra1e6-fine stored logs",
+        "status": "PASS",
+        "file_count": 25
+      }
+    ]
+  },
+  "protected_evidence": {
+    "status": "PASS",
+    "protected_file_count": 10067,
+    "mismatches": [],
+    "before_manifest_sha256": "deb80d74bf22e55f7aa1722f718487790773a7de5aa87080ceebbff5e2b81c8d",
+    "historical_attempts001_006_and_native_fields_unchanged": true,
+    "RouteB_Ra1e6_statuses_unchanged": true,
+    "scripts_templates_reference_old_contracts_amendments_unchanged": true
+  },
+  "git_add_commit_push_performed": false
+}
