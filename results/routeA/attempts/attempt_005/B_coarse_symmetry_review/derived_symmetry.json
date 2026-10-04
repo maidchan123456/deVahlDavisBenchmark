@@ -1,0 +1,31 @@
+{
+  "owner": "DERIVED_DIAGNOSTIC_FROM_EXISTING_ACCEPTED_B_FIELDS",
+  "formal_B_Gate_metric": false,
+  "solver_executed": false,
+  "native_results_modified": false,
+  "source_provenance": "accepted_B_provenance.json",
+  "frozen_operator_contract": "existing design §13.2: 180-degree matched uniform cells, theta(X,Z)+theta(1-X,1-Z)-1; U(X,Z)+U(1-X,1-Z). Volume L2 divided by max(volume RMS of theta or dimensionless velocity,1e-12); existing 0.2% criterion unchanged",
+  "helper_source_path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/attempts/attempt_005/group_evaluation.py",
+  "helper_source_sha256": "5f7c7f6bc6b6d844618073f856645d71e7aeb3c0b78403c2e0f2c55a3735ce9a",
+  "helper_function_sha256": "998e098aee1a18c333e138f948262c414f75557b1b6ea92ee0d7709435493c74",
+  "helper_source": "def symmetry(case,iteration,manifest):\n    nx,ny,nz=manifest['grid'];n=nx*ny*nz;props=manifest['properties'];L=manifest['geometry_m']['L']\n    T=read_scalar(case/str(iteration)/'T',n).reshape(ny,nx)\n    U=read_vector(case/str(iteration)/'U',n).reshape(ny,nx,3)[:,:,:2]*L/props['alpha0_m2_s']\n    theta=(T-props['Tc_K'])/props['DeltaT_K']\n    defect_T=theta+theta[::-1,::-1]-1\n    defect_U=U+U[::-1,::-1,:]\n    return {'theta_L2_relative':float(np.sqrt(np.mean(defect_T**2))/max(np.sqrt(np.mean(theta**2)),1e-12)),\n            'velocity_L2_relative':float(np.sqrt(np.mean(np.sum(defect_U**2,axis=2)))/max(np.sqrt(np.mean(np.sum(U**2,axis=2))),1e-12)),\n            'method':'Frozen 180-degree paired uniform cells, constant cell-volume weights; RMS defect / max(RMS theta or dimensionless in-plane velocity,1e-12).'}",
+  "parser_sha256": "c16f33a63a42b213c7089011c5e8d74862160ee1588de656ec5e55bcfdd22d7c",
+  "canonical_B_operator_path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeB/analyze_case.py",
+  "canonical_B_operator_sha256": "5b8a503e559f9243109527b5aefe7ed6a86485ac6c21948a35da05871e90414f",
+  "uniform_cell_pairing": "Frozen blockMesh 40x40x1, simpleGrading(1 1 1), checkMesh hash/1600 cells/constant volumes, canonical row-major field reshape; reverse both active axes",
+  "normalization_equivalence": "A floor 1e-12 on dimensionless velocity, B floor 1e-30 on physical velocity. Both inactive here; uniform scaling cancels. No new operator/threshold.",
+  "theta_RMS": 0.5648877860198668,
+  "physical_velocity_RMS_m_s": 0.00160668996000759,
+  "frozen_A_operator_result": {
+    "theta_L2_relative": 4.698632878379736e-10,
+    "velocity_L2_relative": 3.7722791370251563e-10,
+    "method": "Frozen 180-degree paired uniform cells, constant cell-volume weights; RMS defect / max(RMS theta or dimensionless in-plane velocity,1e-12)."
+  },
+  "canonical_B_expression_crosscheck": {
+    "theta_L2_relative": 4.698632878379736e-10,
+    "velocity_L2_relative": 3.7722791226302393e-10
+  },
+  "velocity_crosscheck_absolute_roundoff_difference": 1.439491703514727e-18,
+  "roundoff_check_note": "Absolute floating-point consistency check only (8 machine eps); no new formal diagnostic or AB threshold. Relative discrepancy is amplified by near cancellation in a ~1e-10 defect.",
+  "diagnostic_use_only": true
+}

@@ -1,0 +1,256 @@
+{
+  "classification": "PROVEN_ACCEPTED",
+  "formal_mapping": "B-Ra1e4-coarse -> B-SMOKE",
+  "accepted_master_row": {
+    "case_id": "B-Ra1e4-coarse",
+    "source_case_id": "B-SMOKE",
+    "Ra": "10000",
+    "grid": "40x40x1",
+    "final_iteration": "3000",
+    "computed": "YES",
+    "Gate_D": "PASS",
+    "accepted": "YES",
+    "Nu_bar_cavity": "2.259326039868519",
+    "Nu_bar_0": "2.257421662232673",
+    "Umax": "16.118437458362845",
+    "Wmax": "19.5952224755579",
+    "TableV_Nu_bar_cavity_absolute_relative_error_pct": "0.7278662446954522",
+    "TableV_Umax_absolute_relative_error_pct": "0.3681699940484369",
+    "TableV_Wmax_absolute_relative_error_pct": "0.1110135313355792",
+    "residual_status": "ORIGINAL_RESIDUAL_CRITERION_PASS",
+    "max_final_initial_residual": "1.227881200125584e-08",
+    "Gate_E_status": "NOT_APPLICABLE",
+    "Gate_F_status_Ra_scope": "FAIL",
+    "needs_320_Ra_scope": "YES",
+    "Gate_G_formal_status": "NOT_APPLICABLE",
+    "Gate_G_diagnostic_status": "RECORDED_PARTIAL; SYMMETRY_UNKNOWN",
+    "epsilon_phi": "4.298418092921215e-11",
+    "epsilon_v": "0.004305422275437945",
+    "epsilon_m": "0.004305422275437945",
+    "temperature_symmetry": "UNKNOWN",
+    "velocity_symmetry": "UNKNOWN"
+  },
+  "final_iteration": 3000,
+  "Ra_actual": 10000,
+  "grid": [
+    40,
+    40,
+    1
+  ],
+  "case_path": "/home/mirai/OpenFOAM/mirai-6/run/deVahlDavisBenchmark/cases/routeB/Ra1e4_coarse",
+  "full_matrix_manifest_sha256": "9ae1f681f98469e891983aa02acead90de0c56d795c033a47fbcc1ce3a92fd27",
+  "historical_manifest_sha256": "1be667177f66b5e26cb0d341d12dc1dfc6ee48e130b20d5b63a060a0e531811f",
+  "accepted_hash_seal": {
+    "cases/routeB/Ra1e4_coarse/3000/T": "d2a0be4d4556885e2c360252abc0ef703ae3c44610d80c81c3bc18166d67928d",
+    "cases/routeB/Ra1e4_coarse/3000/U": "38f7321b3d5b7420c5ffd7291bc4f1955e2046996f7ea72036f881e52a7c188d",
+    "cases/routeB/Ra1e4_coarse/3000/phi": "19e679c9ed625aa8cb0a85faf0c9b250e4443bb6b2986db436777fd3de65f8a0",
+    "cases/routeB/Ra1e4_coarse/3000/p": "0f75648d4a35c53e699cfe64d224216cf9b3e4412bd888d9b6d2c8a71958ad75",
+    "cases/routeB/Ra1e4_coarse/3000/p_rgh": "618f2b1212f37328f5470d2be087edd272249eb869822cd1b8e78eb242de7d5e",
+    "cases/routeB/Ra1e4_coarse/3000/alphat": "207664da8b570eb683e0fb9defa54aee68890dd925c5f9cba69593f24e09925f"
+  },
+  "mesh_sha256": {
+    "constant/polyMesh/boundary": "05b5bac4e06222719db7405b4e37ddfc52738afe54896b7e525fe7175b7f3bfd",
+    "constant/polyMesh/faces": "14ebb88083f45f9b20e1a654410e477aad3d9b334bcc28fc151e1417a97b2fe2",
+    "constant/polyMesh/neighbour": "d2e5e7ec4cbfbb9e6969b8a8af580d55fe70a9f21e784e882ca6fa1d32f9165c",
+    "constant/polyMesh/owner": "8beef1f197482b84bffa5490200b2299fd94b74ce7bc3d62ec0e1fac8057cbd2",
+    "constant/polyMesh/points": "608ba95f30ca4ad10cdef9dd8e233b138759a8bf922220c85771d2c806c001b9"
+  },
+  "log_sha256": {
+    "log.blockMesh": "f6db6d81baf4c84a9f10bc1ec1e66c473041c3dd03aba1808a5bdc94614e5e4d",
+    "log.buoyantBoussinesqSimpleFoam": "41cf3869119aecd4dc52a13a9fa112d37e3cb293a5ea7cadfa1c790c1cee4963",
+    "log.checkMesh": "5a5a264c77e913a98040c3379d4b2ffccca769e477464aacf6ccdff90b4505d5",
+    "log.environment": "3facdc4bae985d2945e79881f95df05fa6c6be5241da3f541d3866b8085f355c"
+  },
+  "mesh_evidence": {
+    "cell_count": 1600,
+    "patch_faces": {
+      "hotWall": 40,
+      "coldWall": 40,
+      "bottomWall": 40,
+      "topWall": 40,
+      "front": 1600,
+      "back": 1600
+    },
+    "geometric_and_solution_directions": [
+      1,
+      1,
+      0
+    ],
+    "max_non_orthogonality_deg": 0.0,
+    "checkMesh": "Mesh OK"
+  },
+  "log_checks": "Foundation 6 build 6-af7d7f427be7, exact case path, Time=3000, End; all stored log hashes match",
+  "seal_interpretation": "Existing accepted field hashes in full_matrix_manifest and historical run_manifest are the final-state hash seal; no standalone segment seal is required or fabricated for this historical v6 run.",
+  "checks": [
+    {
+      "category": "effective contract and implementations/templates/reference",
+      "count": 22,
+      "status": "PASS"
+    },
+    {
+      "category": "original attempt 005 seal",
+      "count": 48,
+      "status": "PASS"
+    },
+    {
+      "category": "A-Ra1e4-coarse accepted metrics",
+      "count": 1,
+      "status": "PASS"
+    },
+    {
+      "category": "segment seal /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/cases/A-Ra1e4-coarse/segments/end_3000",
+      "count": 1,
+      "status": "PASS"
+    },
+    {
+      "category": "segment artifacts /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/cases/A-Ra1e4-coarse/segments/end_3000",
+      "count": 62,
+      "status": "PASS"
+    },
+    {
+      "category": "A-Ra1e4-coarse accepted native final fields",
+      "count": 7,
+      "status": "PASS"
+    },
+    {
+      "category": "A-Ra1e4-coarse mesh",
+      "count": 5,
+      "status": "PASS"
+    },
+    {
+      "category": "A-Ra1e4-medium accepted metrics",
+      "count": 1,
+      "status": "PASS"
+    },
+    {
+      "category": "segment seal /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/cases/A-Ra1e4-medium/segments/end_3000",
+      "count": 1,
+      "status": "PASS"
+    },
+    {
+      "category": "segment artifacts /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/cases/A-Ra1e4-medium/segments/end_3000",
+      "count": 62,
+      "status": "PASS"
+    },
+    {
+      "category": "segment seal /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/cases/A-Ra1e4-medium/segments/end_6000",
+      "count": 1,
+      "status": "PASS"
+    },
+    {
+      "category": "segment artifacts /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/cases/A-Ra1e4-medium/segments/end_6000",
+      "count": 62,
+      "status": "PASS"
+    },
+    {
+      "category": "A-Ra1e4-medium accepted native final fields",
+      "count": 7,
+      "status": "PASS"
+    },
+    {
+      "category": "A-Ra1e4-medium mesh",
+      "count": 5,
+      "status": "PASS"
+    },
+    {
+      "category": "A-Ra1e4-fine accepted metrics",
+      "count": 1,
+      "status": "PASS"
+    },
+    {
+      "category": "segment seal /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/cases/A-Ra1e4-fine/segments/end_3000",
+      "count": 1,
+      "status": "PASS"
+    },
+    {
+      "category": "segment artifacts /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/cases/A-Ra1e4-fine/segments/end_3000",
+      "count": 68,
+      "status": "PASS"
+    },
+    {
+      "category": "segment seal /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/cases/A-Ra1e4-fine/segments/end_6000",
+      "count": 1,
+      "status": "PASS"
+    },
+    {
+      "category": "segment artifacts /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/cases/A-Ra1e4-fine/segments/end_6000",
+      "count": 68,
+      "status": "PASS"
+    },
+    {
+      "category": "segment seal /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/cases/A-Ra1e4-fine/segments/end_9000",
+      "count": 1,
+      "status": "PASS"
+    },
+    {
+      "category": "segment artifacts /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/cases/A-Ra1e4-fine/segments/end_9000",
+      "count": 68,
+      "status": "PASS"
+    },
+    {
+      "category": "segment seal /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/cases/A-Ra1e4-fine/segments/end_12000",
+      "count": 1,
+      "status": "PASS"
+    },
+    {
+      "category": "segment artifacts /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/cases/A-Ra1e4-fine/segments/end_12000",
+      "count": 68,
+      "status": "PASS"
+    },
+    {
+      "category": "segment seal /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/cases/A-Ra1e4-fine/segments/end_15000",
+      "count": 1,
+      "status": "PASS"
+    },
+    {
+      "category": "segment artifacts /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/cases/A-Ra1e4-fine/segments/end_15000",
+      "count": 68,
+      "status": "PASS"
+    },
+    {
+      "category": "A-Ra1e4-fine accepted native final fields",
+      "count": 7,
+      "status": "PASS"
+    },
+    {
+      "category": "A-Ra1e4-fine mesh",
+      "count": 5,
+      "status": "PASS"
+    },
+    {
+      "category": "B accepted final fields",
+      "count": 6,
+      "status": "PASS"
+    },
+    {
+      "category": "B accepted mesh",
+      "count": 5,
+      "status": "PASS"
+    },
+    {
+      "category": "B accepted logs/environment",
+      "count": 4,
+      "status": "PASS"
+    },
+    {
+      "category": "B accepted inputs",
+      "count": 12,
+      "status": "PASS"
+    },
+    {
+      "category": "B-Ra1e4-coarse canonical metrics",
+      "count": 1,
+      "status": "PASS"
+    },
+    {
+      "category": "B-Ra1e4-medium canonical metrics",
+      "count": 1,
+      "status": "PASS"
+    },
+    {
+      "category": "B-Ra1e4-fine canonical metrics",
+      "count": 1,
+      "status": "PASS"
+    }
+  ]
+}
