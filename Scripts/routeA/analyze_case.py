@@ -8,6 +8,7 @@ import csv
 import json
 import math
 import re
+from fractions import Fraction
 from pathlib import Path
 
 import matplotlib
@@ -21,17 +22,20 @@ ROOT = Path(__file__).resolve().parents[2]
 PAPER_REFERENCE = ROOT / "reference/de_vahl_davis_table_v.csv"
 
 
-def read_wall_heat(path: Path) -> dict[float, dict[str, dict[str, float]]]:
-    data: dict[float, dict[str, dict[str, float]]] = {}
+def read_wall_heat(path: Path) -> dict[float, dict[str, dict[str, float | str]]]:
+    data: dict[float, dict[str, dict[str, float | str]]] = {}
     with path.open() as stream:
         for line in stream:
             if not line.strip() or line.startswith("#"):
                 continue
             cols = line.split()
             t = float(cols[0])
+            if cols[1] in data.get(t, {}):
+                raise ValueError("Duplicate wall sample: select one restart segment")
             data.setdefault(t, {})[cols[1]] = {
                 "min": float(cols[2]), "max": float(cols[3]),
                 "Q": float(cols[4]), "q": float(cols[5]),
+                "Q_decimal_token": cols[4],
             }
     return data
 
@@ -48,24 +52,117 @@ def sample_extrema(case: Path, t: float, alpha0: float, L: float) -> tuple[float
 
 
 def parse_residuals(log: Path) -> dict[int, dict[str, float]]:
+    with log.open() as stream:
+        return parse_residual_lines(stream)
+
+
+def parse_residual_lines(lines) -> dict[int, dict[str, float]]:
+    """Extract Initial and Final separately; max over correctors per iteration."""
     current = None
     rows: dict[int, dict[str, float]] = {}
     time_re = re.compile(r"^Time = ([0-9.eE+-]+)s")
     solve_re = re.compile(r"Solving for ([^,]+), Initial residual = ([^,]+), Final residual = ([^,]+)")
-    for line in log.read_text().splitlines():
+    for line in lines:
         m = time_re.match(line)
         if m:
-            current = int(round(float(m.group(1))))
-            rows.setdefault(current, {})
+            value = float(m.group(1))
+            if not math.isfinite(value) or not value.is_integer():
+                raise ValueError("Gate D requires integer steady iteration labels")
+            current = int(value)
+            if current in rows:
+                raise ValueError("Duplicate iteration: do not merge restart logs silently")
+            rows[current] = {}
             continue
         m = solve_re.search(line)
         if m and current is not None:
             field = m.group(1)
             initial = float(m.group(2))
             final = float(m.group(3))
+            if not math.isfinite(initial) or not math.isfinite(final):
+                raise ValueError("Nonfinite solver residual")
             rows[current][f"{field}_initial"] = max(initial, rows[current].get(f"{field}_initial", 0.0))
             rows[current][f"{field}_final"] = max(final, rows[current].get(f"{field}_final", 0.0))
     return rows
+
+
+def evaluate_gate_d_monitors(wall, velocity_by_iteration, residuals,
+                             end_iteration: int, conduction_heat_rate) -> dict:
+    """Contract v1.0 numerical checks only; no case/result writes or solver calls.
+
+    Heat slope uses exact rationals of the original decimal Q tokens. Its sign
+    never depends on a rounded float regression or a positive tolerance.
+    Execution/provenance/field-validity flags remain the caller's responsibility.
+    """
+    if end_iteration < 200 or end_iteration % 10:
+        raise ValueError("Endpoint must cover 200 iterations and end on cadence 10")
+    start = end_iteration - 199
+    times = list(range(start, end_iteration + 1))
+    sample_times = [t for t in times if t % 10 == 0]
+    if any(t not in wall for t in times):
+        raise ValueError("Incomplete 200-sample wall window")
+    if set(velocity_by_iteration) != set(sample_times):
+        raise ValueError("Expected exactly 20 velocity samples on cadence 10")
+    if any(t not in residuals for t in times):
+        raise ValueError("Incomplete residual window")
+    scale = Fraction(str(conduction_heat_rate))
+    if scale <= 0:
+        raise ValueError("Invalid conduction heat rate")
+    hot, cold, heat = [], [], []
+    for t in times:
+        tokens = [wall[t][patch]["Q_decimal_token"] for patch in ("hotWall", "coldWall")]
+        if any(not re.fullmatch(r"[+-]?\d\.\d{16,}[eE][+-]?\d+", token)
+               for token in tokens):
+            raise ValueError("HEAT_TREND_EVALUATOR_UNRESOLVED: insufficient source precision")
+        h, c = map(Fraction, tokens)
+        if h <= 0 or c >= 0:
+            raise ValueError("Wall heat sign/normalization invalid")
+        hot.append(h / scale)
+        cold.append(-c / scale)
+        heat.append(2 * abs(h + c) / (h - c))
+
+    def rwin(values):
+        values = [Fraction(str(v)) for v in values]
+        mean = sum(values) / len(values)
+        return (max(values) - min(values)) / max(abs(mean), Fraction(1))
+
+    ranges = {"Nu_bar_0": rwin(hot)}
+    for i, name in enumerate(("Umax", "Wmax")):
+        ranges[name] = rwin([velocity_by_iteration[t][i] for t in sample_times])
+    xmean = Fraction(sum(times), len(times))
+    ymean = sum(heat) / len(heat)
+    numerator = sum((Fraction(t) - xmean) * (h - ymean)
+                    for t, h in zip(times, heat))
+    denominator = sum((Fraction(t) - xmean) ** 2 for t in times)
+    slope = numerator / denominator
+    fields = ("Ux", "Uy", "e", "p_rgh")
+    for t in times:
+        for field in fields:
+            value = residuals[t].get(field + "_initial")
+            if value is None or not math.isfinite(value) or value < 0:
+                raise ValueError(f"Missing/invalid {field} initial residual at {t}")
+    final = {field: residuals[end_iteration][field + "_initial"] for field in fields}
+    residual_pass = all(value <= 1e-7 for value in final.values())
+    qoi_pass = all(value <= Fraction("5e-4") for value in ranges.values())
+    return {
+        "contract_version": "1.0",
+        "window_start_iteration": start, "window_end_iteration": end_iteration,
+        "window_inclusive": True, "Nu_samples": len(times),
+        "velocity_samples": len(sample_times),
+        "velocity_sample_iterations": sample_times,
+        "Rwin": {key: float(value) for key, value in ranges.items()},
+        "Nu_monitor": "hot-wall Q/(k*DeltaT*W), not the hot/cold pair average",
+        "Nu_bar_0_last": float(hot[-1]), "Nu_bar_1_last": float(cold[-1]),
+        "heat_imbalance_start": float(heat[0]),
+        "heat_imbalance_end": float(heat[-1]),
+        "heat_trend_method": "OLS exact rational arithmetic on original decimal Q tokens",
+        "heat_slope_per_iteration_display": float(slope),
+        "heat_slope_sign_exact": (slope > 0) - (slope < 0),
+        "heat_trend_pass": slope <= 0,
+        "residual_fields": list(fields), "final_initial_residuals": final,
+        "residual_pass": residual_pass, "qoi_rwin_pass": qoi_pass,
+        "numerical_checks_pass": qoi_pass and residual_pass and slope <= 0,
+        "formal_Gate_D_requires_external_execution_and_provenance_flags": True,
+    }
 
 
 def relative_range(values: np.ndarray, scale: float) -> float:
@@ -171,8 +268,13 @@ def paper_nusselt(T: np.ndarray, U: np.ndarray, nx: int, ny: int, L: float,
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("case")
+    parser.add_argument("--segment-start", type=int, default=0,
+                        help="Restart segment start; wall monitor directory (default: 0)")
+    parser.add_argument("--solver-log", type=Path,
+                        help="Immutable log for this segment (default: CASE/log.foamRun)")
     args = parser.parse_args()
     case = Path(args.case).resolve()
+    solver_log = args.solver_log or case / "log.foamRun"
     manifest = json.loads((case / "case_manifest.json").read_text())
     case_id = manifest["case_id"]
     nx, ny, nz = manifest["grid"]
@@ -202,7 +304,8 @@ def main() -> None:
     nu_hot_a1 = float(nu_hot_local.mean())
     nu_cold_a1 = float(nu_cold_local.mean())
 
-    wall_file = case / "postProcessing/wallHeatFluxMonitor/0/wallHeatFlux.dat"
+    wall_file = (case / "postProcessing/wallHeatFluxMonitor"
+                 / str(args.segment_start) / "wallHeatFlux.dat")
     wall = read_wall_heat(wall_file)
     final_wall = wall[max(wall)]
     q_hot = final_wall["hotWall"]["Q"]
@@ -257,8 +360,10 @@ def main() -> None:
     theta = (T - tc) / dT
     theta_error = float(np.max(np.abs(theta - (1 - X / L))))
 
-    residuals = parse_residuals(case / "log.foamRun")
+    residuals = parse_residuals(solver_log)
     end_iter = int(round(final_t))
+    if end_iter - args.segment_start < 200:
+        raise ValueError("Do not evaluate a Gate D window across restart segments")
     final_res = residuals[end_iter]
     final_initial_residuals = {
         "Ux": final_res.get("Ux_initial", math.nan),
@@ -314,6 +419,10 @@ def main() -> None:
         "heat_imbalance_start": float(heat_series[0]),
         "heat_imbalance_end": float(heat_series[-1]),
     }
+    gate_d_monitors = evaluate_gate_d_monitors(
+        wall, {int(t): values for t, values in zip(sample_times, sampled_extrema)},
+        residuals, end_iter, k * dT * W,
+    )
 
     div_mass_mean = None
     div_volume_mean = None
@@ -351,7 +460,7 @@ def main() -> None:
     conv_path = result_dir / "convergence.csv"
     with conv_path.open("w", newline="") as stream:
         fields = ["case_id", "iteration", "Ux_initial", "Uy_initial", "e_initial", "p_rgh_initial",
-                  "Nu_bar_0", "Nu_bar_half", "Nu_bar_cavity", "Nu_bar_1",
+                  "Nu_bar_0", "Nu_bar_0_path1_snapshot", "Nu_bar_half", "Nu_bar_cavity", "Nu_bar_1",
                   "Nu_hot_path2", "Nu_cold_path2", "heat_imbalance", "Umax_monitor", "Wmax_monitor", "Vmax_monitor_legacy_alias"]
         writer = csv.DictWriter(stream, fieldnames=fields, lineterminator="\n")
         writer.writeheader()
@@ -363,11 +472,11 @@ def main() -> None:
                 h = wall[float(iteration)]
                 nh = h["hotWall"]["Q"] / (k * dT * W)
                 nc = -h["coldWall"]["Q"] / (k * dT * W)
-                row.update(Nu_hot_path2=nh, Nu_cold_path2=nc,
+                row.update(Nu_bar_0=nh, Nu_hot_path2=nh, Nu_cold_path2=nc,
                            heat_imbalance=abs(nh-nc)/((nh+nc)/2))
             if iteration in paper_window:
                 pn = paper_window[iteration]
-                row.update(Nu_bar_0=pn["Nu_bar_0"], Nu_bar_half=pn["Nu_bar_half"],
+                row.update(Nu_bar_0_path1_snapshot=pn["Nu_bar_0"], Nu_bar_half=pn["Nu_bar_half"],
                            Nu_bar_cavity=pn["Nu_bar_cavity"], Nu_bar_1=pn["Nu_bar_1"])
             if iteration in sample_map:
                 row["Umax_monitor"], row["Wmax_monitor"] = sample_map[iteration]
@@ -421,14 +530,15 @@ def main() -> None:
         "density_range_kg_m3": [float(rho.min()), float(rho.max())],
         "final_initial_residuals": final_initial_residuals,
         "Rwin": rwin,
+        "Gate_D_monitor_evaluation": gate_d_monitors,
         "divergence": {
             "mean_abs_mass_divergence_kg_m3_s": div_mass_mean,
             "mean_abs_volume_divergence_1_s": div_volume_mean,
             "epsilon_m": epsilon_m, "epsilon_v": epsilon_v,
             "definitions": "mass: volume mean |fvc::div(phi)| using solver mass flux; volume: volume mean |fvc::div(U)| using Gauss linear; normalized per acceptance_criteria 9.2",
         },
-        "normal_exit": "End" in (case / "log.foamRun").read_text(),
-        "fatal_or_nan": bool(re.search(r"FOAM FATAL (?:ERROR|IO ERROR)|Floating point exception \(core dumped\)|\bnan\b|\binf\b", (case / "log.foamRun").read_text(), re.I)),
+        "normal_exit": bool(re.search(r"^End\s*$", solver_log.read_text(), re.M)),
+        "fatal_or_nan": bool(re.search(r"FOAM FATAL (?:ERROR|IO ERROR)|Floating point exception|\bnan\b|\binf\b", solver_log.read_text(), re.I)),
     }
     (result_dir / "metrics.json").write_text(json.dumps(result, indent=2) + "\n")
 

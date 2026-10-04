@@ -1,0 +1,803 @@
+{
+  "schema": "routeA-execution-contract-v1",
+  "version": "1.0",
+  "date": "2026-10-04",
+  "timezone": "Asia/Tokyo",
+  "frozen_before_solver": true,
+  "baseline_HEAD": "d4624b29030521f10b24a59bf6a7af528533bd8c",
+  "observed_HEAD": "d4624b29030521f10b24a59bf6a7af528533bd8c",
+  "scope": "formal single-phase steady Route A matrix execution/evaluation only",
+  "authority": {
+    "solver_executed": false,
+    "case_created": false,
+    "mesh_generated": false,
+    "solver_authorized_in_this_task": false,
+    "first_trio_technically_ready": true,
+    "user_decision_required_to_run": true,
+    "formal_criteria_changed": false
+  },
+  "contract_hash": {
+    "algorithm": "SHA-256",
+    "authoritative_file": "docs/routeA_execution_contract.json",
+    "expected_digest_location": "docs/routeA_execution_contract.md; external to hashed JSON to avoid self-reference",
+    "start_guard": "before any case generation/mesh/solver, hash this JSON and compare to the frozen digest; also verify implementation and template hashes",
+    "amendment": "no in-place post-result edits; separate amendment with reason/date/user authorization and new version/hash"
+  },
+  "supersedes": {
+    "documents": [
+      "docs/routeA_pre_full_matrix_review.md",
+      "docs/routeA_execution_plan.json",
+      "docs/routeA_gate_plan.csv"
+    ],
+    "only": "historical D unresolved detail and execution scheduling; this newer contract fixes D and explicitly permits preregistered continuation within cap",
+    "preserves": [
+      "all formal thresholds/status logic",
+      "F/G nonblocking matrix collection with documented limitations",
+      "no automatic tuning/retry/320/post-cap extension",
+      "A-SMOKE remains smoke; existing accepted status unchanged"
+    ]
+  },
+  "frozen_model": {
+    "distribution": "OpenFOAM Foundation",
+    "version": "13",
+    "historical_build": "13-441953dfbb42",
+    "solver": "foamRun + solver fluid",
+    "algorithm": "PIMPLE dictionary, steady SIMPLE mode, nOuterCorrectors=1",
+    "thermo": "heRhoThermo/pureMixture/const/eConst/Boussinesq/specie/sensibleInternalEnergy",
+    "momentum": "laminar Stokes",
+    "thermal": "laminar Fourier",
+    "sources": "none: turbulence/radiation/MRF/fvModels/fvConstraints/particles",
+    "time_scheme": "steadyState",
+    "spatial_schemes": "Gauss linear; Gauss linear orthogonal; linear interpolation; orthogonal snGrad",
+    "linear_tolerance": 1e-10,
+    "relTol": 0,
+    "relaxation": {
+      "p_rgh": 0.3,
+      "U": 0.5,
+      "e": 0.7
+    },
+    "nCorrectors": 2,
+    "nNonOrthogonalCorrectors": 0,
+    "residualControl": false,
+    "rho0": 1,
+    "beta": 0.001,
+    "mu": 0.00001,
+    "Pr": 0.71,
+    "Cv": 1000,
+    "L": 0.1,
+    "W": 0.001,
+    "T0": 300,
+    "Th": 300.5,
+    "Tc": 299.5,
+    "Ra_generation": "g=Ra*nu0*alpha0/(beta*DeltaT*L^3); do not use rounded displayed g"
+  },
+  "template_source": {
+    "root": "cases/routeA/template",
+    "numerical_model_consistency": "PASS against template and both existing minimal cases",
+    "laminar_Stokes": "runtime-selected Stokes from existing implementation audit; dictionary simulationType laminar; do not add a new stress-model entry",
+    "unchanged_template_sha256": {
+      "cases/routeA/template/0/T": "2aa0b82fdbef9ea1d970d3135fdfeebb4253a2d69a3b0c5f69601e802af17a6a",
+      "cases/routeA/template/0/U": "2d73c61cd16ca22f804a03a09a7cb9381881d1e5a2e679cbc8b589511bda42c6",
+      "cases/routeA/template/0/p_rgh": "7a474b49f9e53d8a275c7a8b37e18d9069e44f9fb0640bcbef816b5364efe1b1",
+      "cases/routeA/template/constant/g": "0e4479e7ccc140bb8ffb1481b66d73a0abb584e0b29358e250aca18bcc6b4875",
+      "cases/routeA/template/constant/hRef": "b3cfc4ab0c5b5266283096fd98687c65930df337dedbeb34b67a5288c9946976",
+      "cases/routeA/template/constant/momentumTransport": "3bfe7027873405f63753c0cec85e91c6069dafe94228154189d5b6616233200e",
+      "cases/routeA/template/constant/pRef": "13e8b23d9a316804a134ea8abb6d385f120d64f3dc89ea40b3dcbf09956e8df1",
+      "cases/routeA/template/constant/physicalProperties": "baea2c76140ca1481c1d0dc064e4fba44076f666de79f6162dfd5cfff4b440b4",
+      "cases/routeA/template/constant/thermophysicalTransport": "9c550714c97c8fd84bbd68d80558826ba76a028d521e6cafbe15c1b20cd0d08e",
+      "cases/routeA/template/system/blockMeshDict": "d54bad73935c633caf7108c1ff79c0104875782e6e4f18b2a4613ecbea213570",
+      "cases/routeA/template/system/controlDict": "4b645f36b693062f150656bb4372b64529e0bf0d43b4a0699ed221748b49ff99",
+      "cases/routeA/template/system/fvSchemes": "1a5031f97e7a7f2cb086f9119f6ca19b8e79ce128a454bfdb4af57f08944ed56",
+      "cases/routeA/template/system/fvSolution": "0ca7859d7381120990bea32fabce561b547b7665c0b8badbd87d4aac1733d15b"
+    }
+  },
+  "implementation_sha256": {
+    "Scripts/routeA/analyze_case.py": "f63d2d958bdc48ed21519dbb0a87daf0f5f4fc99ba8c84b18290809d0dcd9783",
+    "Scripts/routeA/generate_case.py": "0b4d6fabc7e648e29a8e511cf47088d569c68eda5ce7a46bba6a1fdac72e6075",
+    "Scripts/routeA/run_case.sh": "aa48c216f883675b4eca4987b3bda178a26bcc039660c0ae6be42e49e03877e6",
+    "Scripts/routeA/foam_fields.py": "c16f33a63a42b213c7089011c5e8d74862160ee1588de656ec5e55bcfdd22d7c",
+    "Scripts/routeA/prepare_initialization_check.py": "1c49d819ede6699dcc3336b06448cda277b66acd26bb19c46166538c79d72dc8",
+    "Scripts/routeA/verify_initialization.py": "d9b050b803b17d2ae8533c5132130c525599aff80e2fc297b161dd23f46d6e58",
+    "reference/de_vahl_davis_table_v.csv": "96952fa9ca283b4fa75645b7cbcf3abf400765e56888667d1dfa9ef46a6b5466"
+  },
+  "evaluator_change": {
+    "file": "Scripts/routeA/analyze_case.py",
+    "previous_sha256": "6f1413b0b056f7c731f3c9e9df2cc921149706a7a2e2ab1b5fd0dafba85b1f57",
+    "new_sha256": "f63d2d958bdc48ed21519dbb0a87daf0f5f4fc99ba8c84b18290809d0dcd9783",
+    "evaluation_version": "routeA-gateD-contract-v1.0",
+    "purpose": [
+      "hot-only formal Nu_bar_0 Rwin, legacy pair average retained as legacy",
+      "exact OLS heat-slope sign from original decimal Q tokens",
+      "reusable residual parser with initial/final/corrector distinction and duplicate/nonfinite rejection",
+      "formal monitor Nu_bar_0 column every iteration; separate path1 snapshot column",
+      "segment-start and solver-log arguments for preregistered continuation"
+    ],
+    "physical_or_numerical_inputs_changed": false,
+    "historical_results_or_script_hashes_in_old_manifests_updated": false
+  },
+  "execution": {
+    "initial_iterations": 3000,
+    "continuation_increment": 3000,
+    "iteration_cap_rule": "all 12 primary cases: 30000 absolute iterations from time 0",
+    "iteration_caps": {
+      "A-Ra1e3-coarse": 30000,
+      "A-Ra1e3-medium": 30000,
+      "A-Ra1e3-fine": 30000,
+      "A-Ra1e4-coarse": 30000,
+      "A-Ra1e4-medium": 30000,
+      "A-Ra1e4-fine": 30000,
+      "A-Ra1e5-coarse": 30000,
+      "A-Ra1e5-medium": 30000,
+      "A-Ra1e5-fine": 30000,
+      "A-Ra1e6-coarse": 30000,
+      "A-Ra1e6-medium": 30000,
+      "A-Ra1e6-fine": 30000
+    },
+    "checkpoints": [
+      3000,
+      6000,
+      9000,
+      12000,
+      15000,
+      18000,
+      21000,
+      24000,
+      27000,
+      30000
+    ],
+    "reason": "simple common budget; 3000 matches minimal cases and divides monitor/write cadences; 30000 accommodates B fine 18000-21000 experience but guarantees neither A convergence nor Gate PASS",
+    "maximum_segments_per_case": 10,
+    "automatic_continuation_within_cap": true,
+    "automatic_retry": false,
+    "automatic_tuning": false,
+    "automatic_320": false,
+    "post_cap_extension": false,
+    "continuation_rule": "after each sealed normal finite segment: Gate D PASS -> accepted and finish case; Gate D FAIL and end<cap -> same-case restart +3000; Gate D FAIL at cap -> CONVERGENCE_NOT_REACHED, computed YES accepted NO, continue next case",
+    "continuation_allowed_failures": [
+      "residual threshold miss",
+      "Rwin threshold miss",
+      "positive heat slope in a finite normal result"
+    ],
+    "continuation_not_allowed": [
+      "evaluator error/ambiguity",
+      "incomplete or corrupted evidence",
+      "fatal/nonfinite/divergence",
+      "environment/model/input/mesh mismatch"
+    ],
+    "state": "single primary solution path, no cold restart/re-generation after an unsuccessful checkpoint",
+    "first_segment_controls": {
+      "startFrom": "startTime",
+      "startTime": 0,
+      "endTime": 3000,
+      "deltaT": 1
+    },
+    "continuation_controls": {
+      "startFrom": "latestTime",
+      "endTime": "previous_checkpoint+3000",
+      "deltaT": 1,
+      "startTime": "keep existing 0, ignored by latestTime"
+    },
+    "permitted_between_segment_control_keys": [
+      "startFrom",
+      "endTime"
+    ],
+    "edit_while_solver_running": false,
+    "input_hash_rule": "initial case_manifest immutable; archive a per-segment controlDict hash and exact two-key planned diff; every other input/model/mesh hash must remain unchanged",
+    "restart_state_guard": "latestTime must equal previous sealed checkpoint; previous fields/mesh/hash must match; initialize/OQ-02 at initial state only, not p_rgh=0 at evolved restart",
+    "first_unit": [
+      "A-Ra1e3-coarse",
+      "A-Ra1e3-medium",
+      "A-Ra1e3-fine"
+    ],
+    "case_order": [
+      "A-Ra1e3-coarse",
+      "A-Ra1e3-medium",
+      "A-Ra1e3-fine",
+      "A-Ra1e4-coarse",
+      "A-Ra1e4-medium",
+      "A-Ra1e4-fine",
+      "A-Ra1e5-coarse",
+      "A-Ra1e5-medium",
+      "A-Ra1e5-fine",
+      "A-Ra1e6-coarse",
+      "A-Ra1e6-medium",
+      "A-Ra1e6-fine"
+    ],
+    "concurrent_solver_runs": 1,
+    "parallel_allowed": false,
+    "stop_early_inside_segment": false,
+    "residualControl": false
+  },
+  "monitor": {
+    "window_iterations": 200,
+    "window_end": "last completed sealed checkpoint N",
+    "window_start": "N-199",
+    "inclusive": true,
+    "sampling_intervals": {
+      "Nu_bar_0": 1,
+      "heat_imbalance": 1,
+      "residuals": 1,
+      "Umax": 10,
+      "Wmax": 10
+    },
+    "min_samples": {
+      "Nu_bar_0": 200,
+      "heat_imbalance": 200,
+      "residuals": 200,
+      "Umax": 20,
+      "Wmax": 20
+    },
+    "expected_wall_iterations": "all integers N-199,...,N",
+    "expected_velocity_iterations": "multiples of 10 inside inclusive window: N-190,...,N",
+    "field_write_interval": 100,
+    "velocity_monitor_points": 257,
+    "velocity_final_report_points": 4097,
+    "velocity_monitor_interpolation": "existing sets cellPointFace on exact X=0.5 / Z=0.5 lines; max U_x on vertical.xy, max U_y on horizontal.xy; convert by L/alpha0",
+    "velocity_final_interpolation": "existing analysis: two bracketing cell rows/columns to exact centreline, then 4097 points including no-slip endpoints",
+    "new_sampling_cadence": false,
+    "restart_window": "never crosses segments; minimum 200 fresh iterations; scheduled increments are 3000, so final window is entirely in latest segment; do not interpolate missing samples or merge duplicate restart iterations",
+    "source_selection": {
+      "wall": "CASE/postProcessing/wallHeatFluxMonitor/<segment_start>/wallHeatFlux.dat",
+      "velocity": "CASE/postProcessing/centrelineMonitor/<absolute_iteration>/{vertical,horizontal}.xy",
+      "residuals": "immutable log of the selected segment",
+      "duplicate_samples": "STOP, no silent overwrite/averaging"
+    }
+  },
+  "Gate_D": {
+    "status": "READY",
+    "boolean_logic": "NORMAL_EXIT AND NO_FATAL_OR_NAN AND INPUT_PROVENANCE_PASS AND QOI_RWIN_PASS AND RESIDUAL_PASS AND HEAT_TREND_PASS",
+    "NORMAL_EXIT": "actual process exit_code=0 AND standalone ^End line for the selected segment",
+    "NO_FATAL_OR_NAN": "no fatal/FPE/nonfinite/divergence evidence during entire selected segment; final T,U,e(if stored),rho,p,p_rgh,phi and monitor values finite; missing mandatory fields or safety checks -> evaluator/provenance failure, STOP",
+    "INPUT_PROVENANCE_PASS": "actual env/model/BC/properties/gravity/grid/input hashes match frozen generated/per-segment manifests; Gate A mesh/OQ-02 evidence intact",
+    "QOI_RWIN_PASS": {
+      "QoIs": [
+        "Nu_bar_0",
+        "Umax",
+        "Wmax"
+      ],
+      "formula": "(max-min)/max(abs(mean),1)",
+      "limit": 0.0005,
+      "all_individually": true
+    },
+    "RESIDUAL_PASS": {
+      "fields": [
+        "Ux",
+        "Uy",
+        "e",
+        "p_rgh"
+      ],
+      "kind": "normalized Initial residual",
+      "limit": 1e-7,
+      "active_velocity": "Ux,Uy (physical vertical is OpenFOAM y, paper Z); Uz inactive in 2D empty mesh",
+      "iteration": "final checkpoint N only",
+      "within_iteration": "maximum Initial residual among every solve/corrector for each field; NOT the final linear-solver residual",
+      "parser": "parse_residual_lines; parse_residuals streams segment file through the same parser",
+      "final_linear_residuals": "record separately for diagnostics, never substitute for Initial"
+    },
+    "density": {
+      "new_residual_threshold": false,
+      "save": [
+        "finite/positive rho",
+        "EOS rho0*(1-beta*(T-T0)) from stored T",
+        "max absolute/relative solver rho minus EOS rho",
+        "T/rho range",
+        "native corrected mass flux continuity diagnostics"
+      ],
+      "thermo_rho_rule": "EOS-derived thermo density is the available comparison proxy; do not claim an independent thermo-rho registry dump was stored; unavailable independent evidence explicitly NOT_AVAILABLE",
+      "any_new_density_tolerance": false
+    },
+    "Nu_monitor_identity": {
+      "status": "CONFIRMED",
+      "formal_definition": "Nu_bar_0 = Q_hot/(k*DeltaT*W) = L/(DeltaT*A_hot) integral_hot dT/dn dA on uniform orthogonal wall",
+      "Q_hot_sign": "positive into fluid, official wallHeatFlux=-q",
+      "area": "A_hot=L*W; Q is area integral, not area-mean q or volume mean",
+      "wall_convection": "no-slip wall, normal convective flux zero; paper Nu_bar_0 at X=0 is conductive only",
+      "legacy_pair_average": "(Q_hot-Q_cold)/(2*k*DeltaT*W) retained only as legacy diagnostic, never formal Hard monitor",
+      "path1": "temperature/orthogonal wall-gradient snapshot remains independent primary final-value path; gate monitor uses calibrated official path2",
+      "normalization_precision": "same generated property values and k*DeltaT*W as canonical implementation, supplied via str(float) to rational monitor arithmetic"
+    },
+    "HEAT_TREND_PASS": {
+      "input": "original 17-significant-digit Q_hot/Q_cold decimal tokens from physical wallHeatFlux",
+      "formula": "epsilon_Q=2*abs(Q_hot+Q_cold)/(Q_hot-Q_cold) = abs(Nu_hot-Nu_cold)/((Nu_hot+Nu_cold)/2), with Q_hot>0,Q_cold<0",
+      "independent_variable": "absolute integer iteration",
+      "samples": 200,
+      "sampling_interval": 1,
+      "window": "same inclusive [N-199,N] window as Rwin",
+      "method": "ordinary least squares, intercept included; slope=sum((i-mean(i))*(epsilon-mean(epsilon)))/sum((i-mean(i))^2)",
+      "arithmetic": "Python Fraction from original decimal Q tokens; exact rational normalization, centering, accumulation and sign",
+      "pass_rule": "slope <= 0",
+      "fail_rule": "slope > 0",
+      "positive_tolerance": null,
+      "source_precision": "scientific tokens with >=16 digits after decimal; existing .16e has 17 significant digits; controlDict writePrecision 16 unchanged",
+      "display": "float slope is display only; heat_slope_sign_exact governs PASS/FAIL, including underflow-to-zero display",
+      "ambiguity": "missing/duplicate samples, nonfinite/low-precision Q, bad sign or parser error -> HEAT_TREND_EVALUATOR_UNRESOLVED / EVALUATOR_FAILURE and STOP; never use endpoints only or a positive epsilon"
+    }
+  },
+  "statuses": {
+    "COMPUTED": "normal finite solver exit and field/metrics/provenance artifacts saved; result need not satisfy Gate D numerical thresholds",
+    "ACCEPTED": "COMPUTED AND formal Gate D PASS; applies per row, not global benchmark PASS",
+    "at_cap_failure": "CONVERGENCE_NOT_REACHED, computed YES accepted NO",
+    "evaluator_failure": "UNRESOLVED/EVALUATOR_FAILURE, batch STOP; not an ordinary Gate D FAIL",
+    "Gate_E_F_G_evaluation": "unaccepted data remain diagnostic; do not promote downstream formal accepted-only assessments"
+  },
+  "batch_stop_policy": {
+    "STOP": [
+      "environment/build/version mismatch",
+      "wrong solver/physics",
+      "input/model/hash mismatch beyond registered between-segment control keys",
+      "Ra/Pr mismatch",
+      "mesh/OQ-02 error",
+      "NaN/Inf/FPE/fatal/divergence",
+      "corrupted previous evidence",
+      "evaluator failure/ambiguity/missing cadence/low heat precision"
+    ],
+    "CONTINUE": [
+      "finite normal formal Gate D FAIL: preregistered continuation until cap, then next case",
+      "steady Gate E mismatch",
+      "Gate F non-monotonic/FAIL",
+      "Gate G formal FAIL",
+      "local Nu diagnostic mismatch"
+    ],
+    "divergence": "divergence notification or loss of finite/admissible state; stationary residual floor or positive finite heat slope alone is a threshold miss, not automatically divergence",
+    "failure_tuning_rule": "save result and category, then separate user-decision diagnostic task; no automatic changes"
+  },
+  "Gate_F": {
+    "blocking": false,
+    "policy": "NON_BLOCKING_WITH_DOCUMENTED_LIMITATION",
+    "formal_hard_criteria_preserved": true,
+    "nonmonotonic": "retain FAIL/needs_320 YES and null p/GCI; if upstream unaccepted, retain NOT_EVALUATED and diagnostic-only trend",
+    "automatic_320": false
+  },
+  "Gate_G": {
+    "blocking": false,
+    "policy": "NON_BLOCKING_WITH_DOCUMENTED_LIMITATION",
+    "formal_hard_criteria_preserved": true,
+    "save": [
+      "formal component statuses",
+      "native mass phi diagnostic",
+      "reconstructed U divergence",
+      "physical wall heat balance",
+      "paper section Nu",
+      "temperature/velocity symmetry",
+      "bounded cause category"
+    ],
+    "forbidden": [
+      "threshold study",
+      "microcase",
+      "tolerance study",
+      "methodology redesign",
+      "Route B G investigation reopening"
+    ]
+  },
+  "continuity": {
+    "native_mass_flux": {
+      "field": "phi",
+      "unit": "kg/s",
+      "name": "A_native_mass_phi",
+      "divergence_name": "A_native_mass_phi_mean_abs_div_kg_m3_s",
+      "operator": "corrected phi face balance / cell volume, same fvc::div(phi) diagnostic as minimal implementation",
+      "normalization": "epsilon_mass_phi_A=L*volume_mean(abs(div(phi)))/(rho0*max|u|)",
+      "legacy_alias": "epsilon_m; retain with explicit operator metadata"
+    },
+    "reconstructed_volume": {
+      "name": "A_reconstructed_U_divergence",
+      "field": "fvc::div(U)",
+      "unit": "1/s",
+      "operator": "Gauss linear from cell-centred U, physical no-slip walls, empty faces contribute zero, volume weighting V_i/sum(V)",
+      "normalization": "epsilon_volume_reconstructed_U_A=L*volume_mean(abs(div(U)))/max|u|",
+      "legacy_alias": "epsilon_v; retain with explicit operator metadata"
+    },
+    "mass_versus_volume": "separate operators and units; never copy B epsilon_phi name; no new phi/rhof operator study",
+    "zero_velocity": "Ra0 uses Gate C absolute velocity criterion; relative divergence indicators null",
+    "symmetry": "existing design §13.2: 180-degree matched uniform cells, theta(X,Z)+theta(1-X,1-Z)-1; U(X,Z)+U(1-X,1-Z). Volume L2 divided by max(volume RMS of theta or dimensionless velocity,1e-12); existing 0.2% criterion unchanged"
+  },
+  "energy_diagnostics": {
+    "save": [
+      "Q_hot [W],Q_cold [W],Nu_hot,Nu_cold,epsilon_Q history",
+      "e Initial/Final residual history",
+      "final T/rho/e(if stored) ranges",
+      "rho-EOS discrepancy and availability metadata",
+      "native mass continuity"
+    ],
+    "new_hard_threshold": false,
+    "full_energy_budget_status": "NOT_EVALUATED by wall imbalance alone; do not infer total transient energy conservation",
+    "Gate_J_handoff": "reuse raw fluxes, fields and provenance; J must include energy storage/work, EOS resynchronization and closed-cavity total mass; no energy-term study added here"
+  },
+  "AB_comparison": {
+    "scalar_definition": "D_AB=abs(Q_A-Q_B)/abs(Q_B) for nonzero B; signed differences separately",
+    "position_definition": "absolute coordinate difference in [0,1]",
+    "zero_baseline_policy": "relative difference null with ABSOLUTE_ONLY status; freeze existing scale if relative normalization is needed before execution",
+    "hard_AB_threshold": null,
+    "join_keys": [
+      "Ra_actual",
+      "grid",
+      "QoI_definition",
+      "sampling_method",
+      "postprocessing_version"
+    ],
+    "QoIs": [
+      "Nu_bar_cavity",
+      "Nu_bar_0",
+      "Nu_bar_half",
+      "Nu_bar_1",
+      "Umax",
+      "Umax_Z",
+      "Wmax",
+      "Wmax_X",
+      "Nu_hot_local_max",
+      "Nu_hot_local_max_Z",
+      "Nu_hot_local_min",
+      "Nu_hot_local_min_Z",
+      "heat_conservation_physical",
+      "paper_section_conservation",
+      "native_continuity",
+      "reconstructed_U_divergence",
+      "temperature_symmetry",
+      "velocity_symmetry"
+    ],
+    "primary_Nu": "cell-volume U*theta quadrature plus imposed-wall conductive integral 1",
+    "secondary_Nu": "all-face-plane trapezoid; method difference diagnostic",
+    "velocity_sampling": "exact centrelines, linear interpolation, 4097 points including no-slip endpoints",
+    "monitor_velocity_sampling": "legacy 257 points / every 10 iterations; distinguish from final 4097-point QoIs",
+    "local_Nu": "raw faces and fixed five-point quartic/endpoint extrapolation separately",
+    "operator_difference": "A section uses reconstructed U_f; B section uses native corrected volume phi; identical continuum QoI but distinct discrete operators",
+    "native_flux_units": {
+      "A": "mass kg/s",
+      "B": "volume m3/s"
+    },
+    "unaligned_operator_comparison_allowed": false,
+    "canonical_B_rows": "only accepted YES for accepted comparisons; Ra1e6 labelled diagnostic B baseline",
+    "missing_B_master_columns": "Nu_half/Nu_1/positions/local Nu/section histories not fully in master CSV; obtain existing canonical outputs read-only in future, never invent/recompute B formal statuses",
+    "postprocessing_version": "dvd-nusselt-post-v2.1 for unchanged final QoI definitions; gate_D_evaluation_version stored separately",
+    "operator_rule": "LIKE_FOR_LIKE=NO for different operator/unit/sampling definitions; direct Hard comparison prohibited; retain native diagnostic interpretations and no AB Hard threshold",
+    "native_mass_A_vs_native_volume_B": "LIKE_FOR_LIKE=NO",
+    "section_A_reconstructed_U_vs_B_native_phi": "LIKE_FOR_LIKE=NO",
+    "missing_or_near_zero_B": "relative difference null/ABSOLUTE_ONLY; no new near-zero threshold; if denominator distinguishability is unresolved set comparison NOT_EVALUATED rather than invent cutoff",
+    "positions": "absolute coordinate differences; signed differences separate",
+    "scalar_gap": "abs(A-B)/abs(B) for matched nonzero comparable B",
+    "canonical_B": "accepted YES rows for accepted comparison; Ra1e6 unaccepted explicitly diagnostic only; read existing missing columns only, never rewrite B"
+  },
+  "case_generation": {
+    "execute_now": false,
+    "generator": "Scripts/routeA/generate_case.py unchanged",
+    "invocation": "--case-id A-SMOKE --name <formal case_id> --nx N --ny N --ra Ra --end-time 3000; allocate a NEW distinct case from canonical generator, never reuse A-SMOKE fields",
+    "metadata_mapping": "generator CLI accepts only minimal role IDs. Before any mesh/solver, preserve raw generator manifest as generated_manifest_original.json, relabel NEW case_manifest.case_id to the planned formal ID, record generator_role=A-SMOKE, contract version/hash, and source generator hash. Metadata only: no generated OpenFOAM input changed. Initial input_sha256 dictionary remains authoritative.",
+    "formal_case_directory": "cases/routeA/<formal case_id>",
+    "reject": "existing destination, unexpected Ra/grid/role/model, missing or mismatched generated hashes",
+    "initial_state": "U=0,T=T0; cell p=rho0*gh+pRef; physical walls p=rho(T_patch)*gh+pRef; constructor p_rgh=0 checked separately",
+    "initialization": "existing prepare_initialization_check.py isolated clone plus existing verify_initialization.py, all cells and 4 physical walls; after generated mesh and BEFORE first primary solve; existing 1-iteration initialization method, no new microcase",
+    "initial_auxiliary_runs": "one existing constructor-check clone per new case, only in future authorized execution task; not a matrix accepted row",
+    "run_case_sh": "do not use as a blind batch/continuation runner: it regenerates mesh and does not interpose explicit initialization verification; future task executes its canonical steps separately with hash/verify guards",
+    "analysis_command": "PYTHONDONTWRITEBYTECODE=1 python3 Scripts/routeA/analyze_case.py CASE --segment-start S --solver-log IMMUTABLE_SEGMENT_LOG",
+    "continuation_no_generation": "no generator/blockMesh/initialization clone on continuation; restart sealed latestTime only"
+  },
+  "artifacts": {
+    "root": "results/routeA/cases/<formal case_id>/",
+    "immutable_segment_directory": "segments/end_<N>/; seal after EVERY segment, before continuation or next case",
+    "per_segment": [
+      "initial/per-segment manifest and contract hash",
+      "actual process exit_code and all-run health scan flags",
+      "input/mesh/log/field hashes and OQ-02 link",
+      "metrics.json incl Gate_D_monitor_evaluation",
+      "convergence.csv with hot-only Nu_bar_0 every iteration and path1 snapshot separately",
+      "raw Q tokens / wall monitor and selected 20 centreline files",
+      "residual parser output Initial/Final separate",
+      "gate_D_status.json with every boolean/failure reason",
+      "computed/accepted/status",
+      "like-for-like comparison or explicitly NOT_EVALUATED missing-baseline status"
+    ],
+    "implementation": "existing analyzer writes current working result files; immediately snapshot them plus raw source/provenance into immutable segment directory before restarting. Complete/seal prior segment before overwriting working outputs.",
+    "current_case_status": "updated atomically only after a segment directory and checksums are sealed; latest accepted checkpoint or cap failure; aggregate case status after each case, never wait for entire trio",
+    "partial": "STOPPED/PARTIAL retained; completed/sealed segments never deleted, averaged or reclassified; raw generator and historical minimal evidence protected",
+    "recorded_phi_unit": "mass kg/s; all quantity/operator/sampling/version metadata included",
+    "no_placeholder_values": "missing metric/comparison is null with reason, never zero/PASS"
+  },
+  "dry_validation": {
+    "status": "PASS",
+    "solver_executed": false,
+    "canonical_status_changed": false,
+    "cases": [
+      {
+        "case_id": "A-COND",
+        "status": "PASS",
+        "kind": "EVALUATOR_DRY_VALIDATION_ONLY",
+        "normal_End_in_bounded_tail": true,
+        "process_exit": "historical canonical normal_exit; no new process",
+        "source_precision": "original scientific Q tokens: 16 digits after decimal, 17 significant digits",
+        "log_read": "tail -n 4000 only",
+        "numerical_component_evaluation": {
+          "contract_version": "1.0",
+          "window_start_iteration": 2801,
+          "window_end_iteration": 3000,
+          "window_inclusive": true,
+          "Nu_samples": 200,
+          "velocity_samples": 20,
+          "velocity_sample_iterations": [
+            2810,
+            2820,
+            2830,
+            2840,
+            2850,
+            2860,
+            2870,
+            2880,
+            2890,
+            2900,
+            2910,
+            2920,
+            2930,
+            2940,
+            2950,
+            2960,
+            2970,
+            2980,
+            2990,
+            3000
+          ],
+          "Rwin": {
+            "Nu_bar_0": 0.0000414523647999737,
+            "Umax": 0,
+            "Wmax": 0
+          },
+          "Nu_monitor": "hot-wall Q/(k*DeltaT*W), not the hot/cold pair average",
+          "Nu_bar_0_last": 1.0000393924785846,
+          "Nu_bar_1_last": 1.0000394040507548,
+          "heat_imbalance_start": 1.988084454707075e-8,
+          "heat_imbalance_end": 1.1571714388533838e-8,
+          "heat_trend_method": "OLS exact rational arithmetic on original decimal Q tokens",
+          "heat_slope_per_iteration_display": -4.798122872674821e-11,
+          "heat_slope_sign_exact": -1,
+          "heat_trend_pass": true,
+          "residual_fields": [
+            "Ux",
+            "Uy",
+            "e",
+            "p_rgh"
+          ],
+          "final_initial_residuals": {
+            "Ux": 0,
+            "Uy": 0,
+            "e": 2.707670649296052e-8,
+            "p_rgh": 0
+          },
+          "residual_pass": true,
+          "qoi_rwin_pass": true,
+          "numerical_checks_pass": true,
+          "formal_Gate_D_requires_external_execution_and_provenance_flags": true
+        },
+        "canonical_accepted_status_modified": false,
+        "Nu_identity_checks": [
+          {
+            "iteration": 2900,
+            "Nu_bar_0_path1": 1.0000565352087278,
+            "Nu_hot_path2": 1.0000565352079325,
+            "absolute_difference": 7.953637748414621e-13
+          },
+          {
+            "iteration": 3000,
+            "Nu_bar_0_path1": 1.0000393924781292,
+            "Nu_hot_path2": 1.0000393924785846,
+            "absolute_difference": 4.554134847012392e-13
+          }
+        ]
+      },
+      {
+        "case_id": "A-SMOKE",
+        "status": "PASS",
+        "kind": "EVALUATOR_DRY_VALIDATION_ONLY",
+        "normal_End_in_bounded_tail": true,
+        "process_exit": "historical canonical normal_exit; no new process",
+        "source_precision": "original scientific Q tokens: 16 digits after decimal, 17 significant digits",
+        "log_read": "tail -n 4000 only",
+        "numerical_component_evaluation": {
+          "contract_version": "1.0",
+          "window_start_iteration": 2801,
+          "window_end_iteration": 3000,
+          "window_inclusive": true,
+          "Nu_samples": 200,
+          "velocity_samples": 20,
+          "velocity_sample_iterations": [
+            2810,
+            2820,
+            2830,
+            2840,
+            2850,
+            2860,
+            2870,
+            2880,
+            2890,
+            2900,
+            2910,
+            2920,
+            2930,
+            2940,
+            2950,
+            2960,
+            2970,
+            2980,
+            2990,
+            3000
+          ],
+          "Rwin": {
+            "Nu_bar_0": 0,
+            "Umax": 2.7851601453678632e-11,
+            "Wmax": 1.9417961051279377e-11
+          },
+          "Nu_monitor": "hot-wall Q/(k*DeltaT*W), not the hot/cold pair average",
+          "Nu_bar_0_last": 2.257421422257267,
+          "Nu_bar_1_last": 2.257421471853702,
+          "heat_imbalance_start": 2.1970392334445196e-8,
+          "heat_imbalance_end": 2.1970392334445196e-8,
+          "heat_trend_method": "OLS exact rational arithmetic on original decimal Q tokens",
+          "heat_slope_per_iteration_display": 0,
+          "heat_slope_sign_exact": 0,
+          "heat_trend_pass": true,
+          "residual_fields": [
+            "Ux",
+            "Uy",
+            "e",
+            "p_rgh"
+          ],
+          "final_initial_residuals": {
+            "Ux": 4.732429668539095e-12,
+            "Uy": 4.29159538576274e-12,
+            "e": 9.655208094965825e-11,
+            "p_rgh": 1.171047483620124e-10
+          },
+          "residual_pass": true,
+          "qoi_rwin_pass": true,
+          "numerical_checks_pass": true,
+          "formal_Gate_D_requires_external_execution_and_provenance_flags": true
+        },
+        "canonical_accepted_status_modified": false,
+        "Nu_identity_checks": [
+          {
+            "iteration": 2900,
+            "Nu_bar_0_path1": 2.257421422257835,
+            "Nu_hot_path2": 2.2574214222572673,
+            "absolute_difference": 5.6754601018838e-13
+          },
+          {
+            "iteration": 3000,
+            "Nu_bar_0_path1": 2.257421422257835,
+            "Nu_hot_path2": 2.2574214222572673,
+            "absolute_difference": 5.6754601018838e-13
+          }
+        ]
+      }
+    ],
+    "finite_fixture_validation": "PASS: positive/zero/negative slope; hot-only trace; Initial vs Final and max correctors; missing cadence, low precision, duplicate restart rejection. In-memory evaluator data, no CFD case.",
+    "limitation": "dry validation confirms evaluator operation on archived inputs, not formal matrix acceptance or process exit-code re-measurement"
+  },
+  "protected_evidence_before_sha256": {
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra0_medium/0/T": "2aa0b82fdbef9ea1d970d3135fdfeebb4253a2d69a3b0c5f69601e802af17a6a",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra0_medium/0/U": "2d73c61cd16ca22f804a03a09a7cb9381881d1e5a2e679cbc8b589511bda42c6",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra0_medium/0/p": "9eebe9b84e3481683de6aeb5a31daae9c5f3643ae2af59413d20fd61322a6d5c",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra0_medium/0/p_rgh": "7a474b49f9e53d8a275c7a8b37e18d9069e44f9fb0640bcbef816b5364efe1b1",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra0_medium/case_manifest.json": "02544916a3dafc9185de653f44e9e037d9df6afc26de3a67e0afacbe19ec4143",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra0_medium/constant/g": "f7f3f4657f00db57f6f94a876d2516232f22bd722af3443768d826991154e518",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra0_medium/constant/hRef": "b3cfc4ab0c5b5266283096fd98687c65930df337dedbeb34b67a5288c9946976",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra0_medium/constant/momentumTransport": "3bfe7027873405f63753c0cec85e91c6069dafe94228154189d5b6616233200e",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra0_medium/constant/pRef": "13e8b23d9a316804a134ea8abb6d385f120d64f3dc89ea40b3dcbf09956e8df1",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra0_medium/constant/physicalProperties": "baea2c76140ca1481c1d0dc064e4fba44076f666de79f6162dfd5cfff4b440b4",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra0_medium/constant/thermophysicalTransport": "9c550714c97c8fd84bbd68d80558826ba76a028d521e6cafbe15c1b20cd0d08e",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra0_medium/postProcessing/wallHeatFluxMonitor/0/wallHeatFlux.dat": "7fef95e8b0da7f481befc2c3b08f605bd4a946fd51d3337e96f43185d8abc5c1",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra0_medium/system/blockMeshDict": "34a4c6b65b61e9d6291c14e768092a8434024bb742532654eab3bf37772f7233",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra0_medium/system/controlDict": "c52927780325527833971f84ab73559afc5584391039c1911f2ba90adbce0c75",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra0_medium/system/fvSchemes": "36b7cfc0936d4bcc43cf3aa360058eecf4f4a336c7bb97e2a34e2ad0f42301a4",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra0_medium/system/fvSolution": "5d1a4c4895b75a7c74c270323d65fbdf5e8be8bc61f62602ffdba4a03854d8e2",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra1e4_coarse/0/T": "2aa0b82fdbef9ea1d970d3135fdfeebb4253a2d69a3b0c5f69601e802af17a6a",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra1e4_coarse/0/U": "2d73c61cd16ca22f804a03a09a7cb9381881d1e5a2e679cbc8b589511bda42c6",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra1e4_coarse/0/p": "6861b329f8faa7f7592b9ffe56a405d181faf4617cd65f93d56d9d054eeaf2df",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra1e4_coarse/0/p_rgh": "7a474b49f9e53d8a275c7a8b37e18d9069e44f9fb0640bcbef816b5364efe1b1",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra1e4_coarse/case_manifest.json": "24078ac9adffec0e7b265c8506e655855b3dcfe5f3fc642af93c681c8e71c7db",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra1e4_coarse/constant/g": "eae51b92c06223e3e9f6be7df3a57da2b12556fae0047d5ecdf0ecf297c64604",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra1e4_coarse/constant/hRef": "b3cfc4ab0c5b5266283096fd98687c65930df337dedbeb34b67a5288c9946976",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra1e4_coarse/constant/momentumTransport": "3bfe7027873405f63753c0cec85e91c6069dafe94228154189d5b6616233200e",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra1e4_coarse/constant/pRef": "13e8b23d9a316804a134ea8abb6d385f120d64f3dc89ea40b3dcbf09956e8df1",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra1e4_coarse/constant/physicalProperties": "baea2c76140ca1481c1d0dc064e4fba44076f666de79f6162dfd5cfff4b440b4",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra1e4_coarse/constant/thermophysicalTransport": "9c550714c97c8fd84bbd68d80558826ba76a028d521e6cafbe15c1b20cd0d08e",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra1e4_coarse/postProcessing/wallHeatFluxMonitor/0/wallHeatFlux.dat": "dfe4a43d7ec3fd766a91681e51a8b43fde784d5f719bd34f635a93a87976efb8",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra1e4_coarse/system/blockMeshDict": "1c0e4a3490ae9174109bf13adc340cdd49546ffe30661e99a85d0e1b9f238a24",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra1e4_coarse/system/controlDict": "c52927780325527833971f84ab73559afc5584391039c1911f2ba90adbce0c75",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra1e4_coarse/system/fvSchemes": "1a5031f97e7a7f2cb086f9119f6ca19b8e79ce128a454bfdb4af57f08944ed56",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/Ra1e4_coarse/system/fvSolution": "2b577ea3dd1ceefd0dfee70af1996559b02a3a9ba46d83ff765bc8d49acc2846",
+    "Scripts/routeA/finalize_results.py": "12cff103b631424adb7edb8c9b9ddb77e6d37be45cbff3e5f2246b87f15f8c93",
+    "Scripts/routeA/foam_fields.py": "c16f33a63a42b213c7089011c5e8d74862160ee1588de656ec5e55bcfdd22d7c",
+    "Scripts/routeA/generate_case.py": "0b4d6fabc7e648e29a8e511cf47088d569c68eda5ce7a46bba6a1fdac72e6075",
+    "Scripts/routeA/prepare_initialization_check.py": "1c49d819ede6699dcc3336b06448cda277b66acd26bb19c46166538c79d72dc8",
+    "Scripts/routeA/run_case.sh": "aa48c216f883675b4eca4987b3bda178a26bcc039660c0ae6be42e49e03877e6",
+    "Scripts/routeA/verify_initialization.py": "d9b050b803b17d2ae8533c5132130c525599aff80e2fc297b161dd23f46d6e58",
+    "cases/routeA/Ra0_medium/3000/T": "2e741a41e02ff1619648e5656bcfb56b78942cc2c596e21698269390a873c3c0",
+    "cases/routeA/Ra0_medium/3000/U": "ef5a5cce30dba8a2c4a0e5b79c4a21e2d7fbb1f44d6030c6f3a7e7349da9f5f7",
+    "cases/routeA/Ra0_medium/3000/p": "bb2b273f73882d8449f86261b94b53ddee3a6b79758cc185cf1a8977c1ea2e4b",
+    "cases/routeA/Ra0_medium/3000/p_rgh": "ea49c1dfff26a97ab0fc3645b0df87b4b050201863aeb9e588f6a2fc7e1f47cf",
+    "cases/routeA/Ra0_medium/3000/phi": "0e49751ae51a645772446377c3ff7b94a487a2e03b616313344e83b3515a014d",
+    "cases/routeA/Ra0_medium/3000/rho": "a3dbabe5cdede18107a9616d82cba897e78c6cbcbac82932a0b7bcec927999dc",
+    "cases/routeA/Ra1e4_coarse/3000/T": "9f2178b93c87750cad65cafa3a8a30308a8c3ec1d0b93523a020e28329f9b1e6",
+    "cases/routeA/Ra1e4_coarse/3000/U": "9271f87baf8dcdc563a66174a56a34efc7f52b96e50c03188ea01b5b77c074ba",
+    "cases/routeA/Ra1e4_coarse/3000/p": "fe148485b16677cc4e669fcd7fbf8c83d86ae2ec74315123dae25d448181653d",
+    "cases/routeA/Ra1e4_coarse/3000/p_rgh": "8fa0a28e7b6bca4e8c36c510d7260ddfbcf0180e5ca4a0423263b1e619d2ea10",
+    "cases/routeA/Ra1e4_coarse/3000/phi": "274d157440fcda8683e6b343aaf24273ca02bc3cb151ac18a582a57d2c0baea2",
+    "cases/routeA/Ra1e4_coarse/3000/rho": "5e0138ed427750abf759075d4614497b7a4853fa8b733674249c398d47e0147e",
+    "cases/routeA/template/0/T": "2aa0b82fdbef9ea1d970d3135fdfeebb4253a2d69a3b0c5f69601e802af17a6a",
+    "cases/routeA/template/0/U": "2d73c61cd16ca22f804a03a09a7cb9381881d1e5a2e679cbc8b589511bda42c6",
+    "cases/routeA/template/0/p_rgh": "7a474b49f9e53d8a275c7a8b37e18d9069e44f9fb0640bcbef816b5364efe1b1",
+    "cases/routeA/template/constant/g": "0e4479e7ccc140bb8ffb1481b66d73a0abb584e0b29358e250aca18bcc6b4875",
+    "cases/routeA/template/constant/hRef": "b3cfc4ab0c5b5266283096fd98687c65930df337dedbeb34b67a5288c9946976",
+    "cases/routeA/template/constant/momentumTransport": "3bfe7027873405f63753c0cec85e91c6069dafe94228154189d5b6616233200e",
+    "cases/routeA/template/constant/pRef": "13e8b23d9a316804a134ea8abb6d385f120d64f3dc89ea40b3dcbf09956e8df1",
+    "cases/routeA/template/constant/physicalProperties": "baea2c76140ca1481c1d0dc064e4fba44076f666de79f6162dfd5cfff4b440b4",
+    "cases/routeA/template/constant/thermophysicalTransport": "9c550714c97c8fd84bbd68d80558826ba76a028d521e6cafbe15c1b20cd0d08e",
+    "cases/routeA/template/system/blockMeshDict": "d54bad73935c633caf7108c1ff79c0104875782e6e4f18b2a4613ecbea213570",
+    "cases/routeA/template/system/controlDict": "4b645f36b693062f150656bb4372b64529e0bf0d43b4a0699ed221748b49ff99",
+    "cases/routeA/template/system/fvSchemes": "1a5031f97e7a7f2cb086f9119f6ca19b8e79ce128a454bfdb4af57f08944ed56",
+    "cases/routeA/template/system/fvSolution": "0ca7859d7381120990bea32fabce561b547b7665c0b8badbd87d4aac1733d15b",
+    "docs/acceptance_criteria.md": "2fe82dba1644621a7e57ddc11c4ea5ba5007db50122fbd0c0179f5af5ac38db4",
+    "docs/benchmark_spec.md": "f4436fd4fa8184052b05555b70d9382f7c82b9647aa46e13b126d6796e6d9496",
+    "docs/openfoam_design.md": "eef1e94311e5221e3402d4ba9d1969706e0da04e304cf0b89ce5d3dfd3070b10",
+    "docs/routeA_execution_plan.json": "20958f2cd5461bad0781a2d4ada1fd9df39e66e2ef955694862a1b82dd121b86",
+    "docs/routeA_gate_plan.csv": "63c6d03b710ac3028ade9d9f9ff9cbe919dce44459823abb24c6e8a28d5aafcf",
+    "docs/routeA_implementation.md": "068d17f6b0e1aee42dc72fed432256948fe2dff19aff17e7a413a4b74bb6f44a",
+    "docs/routeA_pre_full_matrix_review.md": "0ceac629a9fd98d85b0d882eb523410237be84ae005acfb34033a8c71ade557e",
+    "results/routeA/cases/A-COND/convergence.csv": "4a78cacb8a15cc0b033374b5344993a343677d55f6dd67ebe1ee64e5a8fb7272",
+    "results/routeA/cases/A-COND/metrics.json": "2c5ef51ca78cf95adfad95cb1009133bff160ed2a6d526505e637cca68fd5d31",
+    "results/routeA/cases/A-SMOKE/convergence.csv": "e6e76ffce587d4eda5270388010b35de6d56bcbbb7906a2956b108459904eafa",
+    "results/routeA/cases/A-SMOKE/metrics.json": "ddc7f4a666194fb4bc06d4735f0ba89a02e27ce751cdeea370bb5e34e43541dd",
+    "results/routeA/minimal_test_summary.csv": "d38663b2e9d28c42367465cae8edb26d1587c2888b95930d7a7ad1cf414aa636",
+    "results/routeA/run_manifest.json": "a0819e0e8c0fa5bb8bc3d7719249637e15be8ffe5cd8ba3a81d5884242a50ea7",
+    "results/routeB/routeB_final_verification_review.md": "db5c3005e4d3efd67065eac0008d1cc69cd46f80ad08297a15c4ba3dddffec8e",
+    "results/routeB/routeB_master_matrix.csv": "87c92615cae0bf4e65e8ebcbe0544513ce514c7aed79c417f8fbd28e70c16517"
+  },
+  "iteration_caps_csv": {
+    "path": "docs/routeA_iteration_caps.csv",
+    "sha256": "fc6b85ea6c0216650222597ec1cee267aac911736459d05905d8fb9440e64484"
+  },
+  "next_single_task": {
+    "id": "RUN_ROUTE_A_RA1E3_TRIO",
+    "case_ids": [
+      "A-Ra1e3-coarse",
+      "A-Ra1e3-medium",
+      "A-Ra1e3-fine"
+    ],
+    "sequential": true,
+    "requires_user_run_instruction": true,
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "medium"
+  },
+  "final_status": {
+    "ROUTE_A_EXECUTION_CONTRACT": "FROZEN",
+    "ROUTE_A_EXECUTION_CONTRACT_VERSION": "1.0",
+    "ROUTE_A_GATE_D_READY": "YES",
+    "GATE_D_QOI_MONITOR_IDENTITY": "CONFIRMED",
+    "GATE_D_RESIDUAL_FIELDS": "Ux,Uy,e,p_rgh",
+    "GATE_D_RESIDUAL_LIMIT": "1e-7",
+    "GATE_D_RWIN_QOIS": "Nu_bar_0,Umax,Wmax",
+    "GATE_D_RWIN_LIMIT": "5e-4",
+    "GATE_D_WINDOW_ITERATIONS": 200,
+    "GATE_D_SAMPLING_INTERVAL": 1,
+    "GATE_D_HEAT_TREND_EVALUATOR": "FROZEN",
+    "GATE_D_HEAT_TREND_RULE": "SLOPE_LE_ZERO",
+    "INITIAL_ITERATIONS": 3000,
+    "CONTINUATION_INCREMENT": 3000,
+    "ITERATION_CAP_POLICY": "FROZEN",
+    "AUTOMATIC_CONTINUATION_WITHIN_CAP": "YES",
+    "POST_CAP_EXTENSION_ALLOWED": "NO",
+    "AUTOMATIC_RETRY": "NO",
+    "AUTOMATIC_SOLVER_TUNING": "NO",
+    "AUTOMATIC_320": "NO",
+    "GATE_F_BLOCKS_MATRIX": "NO",
+    "GATE_G_BLOCKS_MATRIX": "NO",
+    "COMPUTED_ACCEPTED_SEPARATED": "YES",
+    "A_B_OPERATOR_COMPATIBILITY_RULE": "FROZEN",
+    "EVALUATOR_DRY_VALIDATION": "PASS",
+    "SOLVER_EXECUTED": "NO",
+    "CASE_CREATED": "NO",
+    "FORMAL_CRITERIA_CHANGED": "NO",
+    "FIRST_SOLVER_UNIT": "A-Ra1e3-coarse,A-Ra1e3-medium,A-Ra1e3-fine",
+    "FIRST_SOLVER_UNIT_TECHNICALLY_READY": "YES",
+    "NEXT_SINGLE_TASK": "RUN_ROUTE_A_RA1E3_TRIO",
+    "RECOMMENDED_REASONING_MODEL_FOR_NEXT_TASK": "gpt-6.1-sol / medium",
+    "USER_DECISION_REQUIRED": "YES"
+  }
+}
