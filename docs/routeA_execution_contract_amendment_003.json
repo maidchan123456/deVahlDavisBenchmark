@@ -1,0 +1,291 @@
+{
+  "schema": "routeA-execution-contract-amendment-v1",
+  "id": "Route A Execution Contract Amendment 003",
+  "date": "2026-10-04",
+  "timezone": "Asia/Tokyo",
+  "observed_HEAD": "f96aa2f7945ed84c8517baf084c18f0a22fd18f7",
+  "parent_contract": {
+    "version": "1.2",
+    "path": "docs/routeA_execution_contract_v1.2.json",
+    "sha256": "7db8d5b8217f009243cb884e291f3d7a09a699b4fe35073792cbaedb5bf7b7fe",
+    "unchanged": true
+  },
+  "effective_version": "1.3",
+  "effective_path": "docs/routeA_execution_contract_v1.3.json",
+  "issue_class": "CANONICAL_ANALYZER_EVALUATION_ORDER_BUG",
+  "direct_cause": "paper comparisonが4097点centreline extremaの計算前にreferenceのUmax等を参照した。",
+  "affected_file": "Scripts/routeA/analyze_case.py",
+  "old_analyzer_sha256": "327761f2b20d86ef8a3a924c64e46bd63da7b11e7a88ba7d74ccfaf232ddbac9",
+  "new_analyzer_sha256": "e1f5da10349b997d858cc04802a04366a668e6af4cf51367569e198993e8e0ac",
+  "exact_behavioral_change": {
+    "scope": "PAPER_COMPARISON_ORDER_ONLY",
+    "order": "Nu/local Nu -> unchanged 4097-point centreline extrema -> complete calculated dictionary -> key guard -> unchanged paper comparison",
+    "added_calculated_keys": {
+      "Umax": "umax",
+      "Umax_Z": "umax_loc",
+      "Wmax": "vmax",
+      "Wmax_X": "vmax_loc"
+    },
+    "key_guard": "require_paper_comparison_keys raises ValueError PAPER_COMPARISON_CALCULATED_KEY_MISSING with sorted missing names before comparison; not raw KeyError.",
+    "Nu_bar_1": "Unchanged special handling: no independent reference, error null, diagnostic calculated value retained.",
+    "paper_difference_and_dispatch": "Unchanged paper_difference() and existing key.endswith(_Z) dispatch; no position/scalar error-definition change.",
+    "unchanged_helpers": [
+      "paper_nusselt",
+      "local_quartic_extremum",
+      "sample_extrema",
+      "evaluate_gate_d_monitors",
+      "parse_residuals",
+      "classify_health_lines",
+      "paper_difference"
+    ],
+    "unrelated_AST_identical_after_order_key_guard_normalization": true
+  },
+  "tests_and_reanalysis": {
+    "status": "PASS",
+    "canonical_execution_exit_code": 0,
+    "canonical_outputs": [
+      "results/routeA/attempts/attempt_003/post_fix_reanalysis/metrics.json",
+      "results/routeA/attempts/attempt_003/post_fix_reanalysis/local_nusselt.csv",
+      "results/routeA/attempts/attempt_003/post_fix_reanalysis/section_nusselt.csv",
+      "results/routeA/attempts/attempt_003/post_fix_reanalysis/centreline_4097.csv",
+      "results/routeA/attempts/attempt_003/post_fix_reanalysis/convergence.csv"
+    ],
+    "canonical_output_sha256": {
+      "results/routeA/attempts/attempt_003/post_fix_reanalysis/metrics.json": "edbf3582aac70a7f9c74509a35f3a42ea97c7f7575d4661986ed693b6a4ecd44",
+      "results/routeA/attempts/attempt_003/post_fix_reanalysis/local_nusselt.csv": "63bd530cec5d30a70e4e3849ad2809dd29b374b966b053383e95e7df6f272ca4",
+      "results/routeA/attempts/attempt_003/post_fix_reanalysis/section_nusselt.csv": "c4eabfc5452d7b14744f1fdfe749915096f5261411be9ce322d9595c00667823",
+      "results/routeA/attempts/attempt_003/post_fix_reanalysis/centreline_4097.csv": "edae7a77355a44d9df224efbd8ff3c2f13ff26faeff5f623611ffe836ee0a345",
+      "results/routeA/attempts/attempt_003/post_fix_reanalysis/convergence.csv": "2bae5e76a5a3a21702dc32f7db9cafd30d510b0c9c7a7aac09a077576e48bd09"
+    },
+    "QoIs": {
+      "Nu_bar_cavity": 1.1188551731765783,
+      "Nu_bar_0": 1.1186121299928118,
+      "Nu_bar_half": 1.1187379103862058,
+      "Nu_bar_1": 1.1186121761045342,
+      "Umax": 3.648078448097432,
+      "Umax_Z": 0.8125,
+      "Wmax": 3.6895371613052887,
+      "Wmax_X": 0.18750000000000003,
+      "Nu_hot_local_max": 1.5105634801272252,
+      "Nu_hot_local_max_Z": 0.08857841033803805,
+      "Nu_hot_local_min": 0.6898370868998362,
+      "Nu_hot_local_min_Z": 1.0
+    },
+    "diagnostic_cross_check": {
+      "status": "PASS",
+      "main_eight_QoIs_exact_float_match": true,
+      "maximum_absolute_difference": 4.218847493575595e-15,
+      "differences": {
+        "Nu_bar_cavity": 0.0,
+        "Nu_bar_0": 0.0,
+        "Nu_bar_half": 0.0,
+        "Nu_bar_1": 0.0,
+        "Umax": 0.0,
+        "Umax_Z": 0.0,
+        "Wmax": 0.0,
+        "Wmax_X": 0.0,
+        "Nu_hot_local_max": 2.220446049250313e-16,
+        "Nu_hot_local_max_Z": 3.649858193455202e-15,
+        "Nu_hot_local_min": 4.218847493575595e-15,
+        "Nu_hot_local_min_Z": 0.0
+      },
+      "roundoff_check": "64*machine epsilon*max(1,abs(diagnostic)); verification only, no scientific threshold or Gate D change",
+      "keys": [
+        "Nu_bar_cavity",
+        "Nu_bar_0",
+        "Nu_bar_half",
+        "Nu_bar_1",
+        "Umax",
+        "Umax_Z",
+        "Wmax",
+        "Wmax_X",
+        "Nu_hot_local_max",
+        "Nu_hot_local_max_Z",
+        "Nu_hot_local_min",
+        "Nu_hot_local_min_Z"
+      ]
+    },
+    "paper_comparison_complete": true,
+    "paper_comparison_keys": [
+      "Nu_bar_cavity",
+      "Nu_bar_half",
+      "Nu_bar_0",
+      "Nu_hot_local_max",
+      "Nu_hot_local_max_Z",
+      "Nu_hot_local_min",
+      "Nu_hot_local_min_Z",
+      "Umax",
+      "Umax_Z",
+      "Wmax",
+      "Wmax_X",
+      "Nu_bar_1"
+    ],
+    "formal_Gate_D": {
+      "classification": "POST_FIX_REEVALUATION_OF_ATTEMPT_003_CHECKPOINT",
+      "status": "PASS",
+      "checkpoint_iteration": 3000,
+      "booleans": {
+        "NORMAL_EXIT": true,
+        "NO_FATAL_OR_NAN": true,
+        "INPUT_PROVENANCE_PASS": true,
+        "QOI_RWIN_PASS": true,
+        "RESIDUAL_PASS": true,
+        "HEAT_TREND_PASS": true
+      },
+      "failure_components": [],
+      "computed": true,
+      "accepted_for_next_execution_state": true,
+      "existing_attempt_003_status_reclassified": false,
+      "solver_executed": false,
+      "numerical_evaluation": {
+        "contract_version": "1.0",
+        "window_start_iteration": 2801,
+        "window_end_iteration": 3000,
+        "window_inclusive": true,
+        "Nu_samples": 200,
+        "velocity_samples": 20,
+        "velocity_sample_iterations": [
+          2810,
+          2820,
+          2830,
+          2840,
+          2850,
+          2860,
+          2870,
+          2880,
+          2890,
+          2900,
+          2910,
+          2920,
+          2930,
+          2940,
+          2950,
+          2960,
+          2970,
+          2980,
+          2990,
+          3000
+        ],
+        "Rwin": {
+          "Nu_bar_0": 0.0,
+          "Umax": 3.7963777915442344e-10,
+          "Wmax": 3.8057085179798307e-10
+        },
+        "Nu_monitor": "hot-wall Q/(k*DeltaT*W), not the hot/cold pair average",
+        "Nu_bar_0_last": 1.118612129992016,
+        "Nu_bar_1_last": 1.118612176105435,
+        "heat_imbalance_start": 4.12237780273708e-08,
+        "heat_imbalance_end": 4.12237780273708e-08,
+        "heat_trend_method": "OLS exact rational arithmetic on original decimal Q tokens",
+        "heat_slope_per_iteration_display": 0.0,
+        "heat_slope_sign_exact": 0,
+        "heat_trend_pass": true,
+        "residual_fields": [
+          "Ux",
+          "Uy",
+          "e",
+          "p_rgh"
+        ],
+        "final_initial_residuals": {
+          "Ux": 5.794631978111069e-13,
+          "Uy": 1.741000695055185e-12,
+          "e": 5.728142082739951e-11,
+          "p_rgh": 1.177069303012431e-10
+        },
+        "residual_pass": true,
+        "qoi_rwin_pass": true,
+        "numerical_checks_pass": true,
+        "formal_Gate_D_requires_external_execution_and_provenance_flags": true
+      },
+      "metrics_sha256": "edbf3582aac70a7f9c74509a35f3a42ea97c7f7575d4661986ed693b6a4ecd44",
+      "original_segment_manifest_sha256": "0077a5817996d0540c2a6c9892e3ed67ef331a3bf695d448d860b63b21aae70f",
+      "original_segment_seal_sha256": "7578f6ae34865b17628bc7e941af89a72193be65317ab54c2354017fe441a245",
+      "analysis_contract_version": "1.3 (Amendment 003; identical numerical criteria to v1.2)",
+      "effective_digest_location": "docs/routeA_execution_contract_v1.3.md; external reference to avoid artifact/contract hash cycle",
+      "runtime_provenance_sha256": "99d5ca0b2a6b2095a9cc258a1c12ae8c2c1d8bf6d2f76b975979e4b595ced310",
+      "provenance_basis": "Sealed actual process/health/runtime/Gate A/OQ-02 + unchanged native input/mesh/field hashes + successful byte-identical patched canonical analyzer."
+    },
+    "gate_D_status_path": "results/routeA/attempts/attempt_003/post_fix_reanalysis/gate_D_status.json",
+    "gate_D_status_sha256": "a9d09ad152777f2ac00ba634c79b17935c53d885b246f52b7ee179f3ec3b33ac",
+    "numerical_helper_regression": {
+      "status": "PASS",
+      "functions": [
+        "paper_nusselt",
+        "local_quartic_extremum",
+        "sample_extrema",
+        "evaluate_gate_d_monitors",
+        "parse_residuals",
+        "classify_health_lines",
+        "paper_difference"
+      ],
+      "old_new_outputs_identical": true,
+      "non_order_AST_identical": true
+    },
+    "unit_tests": {
+      "status": "PASS",
+      "count": 5,
+      "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=Scripts/routeA python3 -m unittest discover -s Scripts/routeA -p test_paper_comparison_order.py -v"
+    },
+    "protected_hashes_unchanged": true,
+    "protected_hash_entry_count": 7060
+  },
+  "changes": {
+    "formal_criteria_changed": false,
+    "numerical_settings_changed": false,
+    "physical_model_changed": false,
+    "reference_data_changed": false,
+    "solver_result_changed": false,
+    "solver_executed_in_amendment_task": false,
+    "primary_solver_executed": false,
+    "continuation_executed": false,
+    "medium_case_created": false,
+    "fine_case_created": false,
+    "existing_attempt_statuses_reclassified": false,
+    "runtime_checker_changed": false,
+    "Route_B_modified": false
+  },
+  "protected_evidence": {
+    "path": "results/routeA/attempts/attempt_003/post_fix_reanalysis/protected_before_sha256.json",
+    "sha256": "df8c2c3bba1dd5b666a3bf91e475822d3a129c9c8eb38509b4ef8623652e2fb9",
+    "hash_entry_count": 7060,
+    "before_after_status": "PASS",
+    "exception": "Only canonical analyzer source changes; its old/new SHA are recorded separately."
+  },
+  "attempt_004_coarse_policy": {
+    "action": "SKIP_SOLVER_AND_ACCEPT_3000",
+    "checkpoint_iteration": 3000,
+    "reason": "Post-fix canonical metrics complete and all six formal Gate D booleans PASS under unchanged criteria.",
+    "owner": "POST_FIX_REEVALUATION_OF_ATTEMPT_003_CHECKPOINT",
+    "gate_D_status_path": "results/routeA/attempts/attempt_003/post_fix_reanalysis/gate_D_status.json",
+    "gate_D_status_sha256": "a9d09ad152777f2ac00ba634c79b17935c53d885b246f52b7ee179f3ec3b33ac",
+    "metrics_path": "results/routeA/attempts/attempt_003/post_fix_reanalysis/metrics.json",
+    "metrics_sha256": "edbf3582aac70a7f9c74509a35f3a42ea97c7f7575d4661986ed693b6a4ecd44",
+    "source_segment": "results/routeA/cases/A-Ra1e3-coarse/segments/end_3000/",
+    "source_segment_seal_sha256": "7578f6ae34865b17628bc7e941af89a72193be65317ab54c2354017fe441a245",
+    "native_field_sha256": {
+      "rho": "8b53f3aee8331419fa9589a544d217484233a258714159aad9901e6b2469187e",
+      "U": "5ec1b1c19eeb25726db0fea7ff292b3dedcac0622f83cd500e34b5c7bf89e346",
+      "phi": "d57b3a7471836d939c56d7dc968694066dbaddc1a63919b013a3044744d50f1d",
+      "T": "d067a9290b5ffa5ffb1053bb46cb7f66fd9af9732ddb1d6a767432554d76114c",
+      "wallHeatFlux": "95c659d1ca5284de6ce7e28ae1ec637c39335d1f38a36af0fdf34c0975fdb09b",
+      "p": "a9637bda9ffb6d1a4b9bf96fea15dc2d5aad64236073e600a91da473f273289b",
+      "p_rgh": "32fe3547657aa411d2f0f54932981d6509090d07355e6988110e047168ae48d0"
+    },
+    "primary_coarse_solver_rerun": false,
+    "coarse_continuation_required": false,
+    "next_case": "A-Ra1e3-medium",
+    "pre_attempt_004_checks": [
+      "Verify v1.3 effective digest and every current implementation/template/caps/reference hash",
+      "Verify original end_3000 seal, post-fix gate/metrics hashes and current native 3000 field/input/mesh hashes",
+      "Record coarse accepted checkpoint linkage in new attempt_004 root; keep historical attempt_003 STOP and end_3000 seal unchanged",
+      "Proceed to NEW medium, then NEW fine sequentially with canonical generation/mesh/initialization/runtime/OQ-02/Gate A steps"
+    ],
+    "historical_result_policy": "No rewriting attempt_003 report/matrix/comparison or historical end_3000 gate_D_status.json; record accepted reuse only in new execution state.",
+    "future_user_run_instruction_required": true
+  },
+  "user_authorization": {
+    "path": "/home/mirai/.codex/attachments/7e4556da-ffa7-4087-b3a4-637c43247e5f/貼り付けたテキスト.txt",
+    "instruction": "FIX_ROUTE_A_EXECUTION_ISSUE authorizes order/key guard fix, fixtures, sealed checkpoint canonical reanalysis, separate formal reevaluation, Amendment 003/v1.3 and attempt_004 policy; prohibits solver/continuation/new medium/fine."
+  },
+  "effective_digest_location": "docs/routeA_execution_contract_v1.3.md; external to JSON"
+}
