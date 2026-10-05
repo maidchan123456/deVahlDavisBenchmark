@@ -1,0 +1,10 @@
+Bottleneck,Severity,Evidence,Mitigation requiring contract change?,Production ranking
+diagnostic canonical/packet/object work,HIGH,full state every 1144 callbacks/step; target shape Python subtotal 1.2e+03s/step,Separate implementation qualification/revision; no changes made,"leading candidate, not proven full-pipeline dominance"
+U03 arrival-window repeated history validation,HIGH,101/201/401 nodes ~quadratic timings;15001 aborted;planning30k/60k/120k history nodes,Any optimization needs separate semantic-preservation qualification,candidate spike bottleneck
+pressure solves,HIGH,"48calls/step;baseline pressure mean114–227iterations/call, U/e means~1–3",No fixed24/linear changes here; future MPI/U01 studies only,likely core-solver leader; per-component timing absent
+momentum/energy/density/thermo/assembly,UNKNOWN,24U+24e+49rho;no isolated real cost measurements,Bounded timing qualification first,UNRESOLVED
+JSON IPC,HIGH,synchronous ACK after evaluator/retention;~7.4MB shape packet;socket-only transfer much smaller than canonical/packing,Transport revision would need separate review,serialization/backend work exceeds bare socket in shape test
+memory,UNKNOWN,bounded packed rings/bundles but pre-encoding objects and selected spikes unmeasured,Target-size resource qualification first,UNRESOLVED
+I/O throughput,UNKNOWN,9GiB audit /512MiB bundle /16MiB field caps;only3x16MiB measured,No persistence/cadence changes;bounded burst qualification,UNRESOLVED sustained throughput
+fsync latency,MEDIUM,3file/directory/manifest fsync per publication;small fixture ~milliseconds,No durability changes here,small-file sample available;long-tail unresolved
+continuous-run operational risk,HIGH,even core-only proxy primary runs days;shape stress runs years;single continuous process/no resume,Uptime/process-supervision plan;checkpoint restart would require a revision,feasibility qualification blocker

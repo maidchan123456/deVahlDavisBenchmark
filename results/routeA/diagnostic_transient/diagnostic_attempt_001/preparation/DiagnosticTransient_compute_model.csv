@@ -1,0 +1,14 @@
+Component,Evidence source,Cost estimate,Confidence
+CFD momentum/energy/pressure group,7 historical SIMPLE segments; 3 baseline segments for numerical proxy,0.85–9.2 s/physical-step proxy,LOW; relaxed 1e-10 SIMPLE differs from unrelaxed 1e-12 PIMPLE
+rho49/thermo/assembly/field update,native OpenFOAM source graph; historical aggregate timing,UNRESOLVED separately; included only as uncertainty in core proxy,LOW
+native observer/object/string construction,NativeStageObserver meshState/emit; tiny OFF/ON,UNRESOLVED at target size; not included in Python subtotal,LOW
+mass/energy matrix replay,actual replay_matrix on manufactured 25600-cell/50880-face matrix,0.0834 s/call; >= 1475 graph calls/step plus matrix_action/end work,MEDIUM primitive; LOW total-step extrapolation
+canonical payload/state identities,"actual online_evaluator.canonical, representative target-size state/payload",0.215 / 0.309 s/state / payload; 1144 callbacks/step,MEDIUM shape-only; LOW production
+primary QoI and 4097 extrema,actual primary_evidence.primary on 160x160 synthetic arrays,0.0459 s/call; 24 outer_end + time_end and startup calls,MEDIUM primitive
+U01 terminal certificate,actual Live.outer_certificate; stationary shared manufactured arrays,0.0972 s/certificate,"MEDIUM primitive, no production RSS claim"
+U03 arrival windows,"frozen arrival_candidate, 101/201/401 nodes; 15001-node attempt aborted",quadratic history scan; target-node latency UNRESOLVED; supplemental scenario table,HIGH source complexity; LOW projected timing
+JSON decode / Python encode,representative target-shape 7.4MB JSON,0.0554 / 0.0941 s/callback,MEDIUM primitive; native encoder UNRESOLVED
+AF_UNIX IPC ACK,16MiB socketpair transfer with reader thread; no backend work,0.00504 s/16MiB,MEDIUM primitive; production ACK includes all synchronous processing
+binary packing,actual packed.encode on target-shape payload,0.353 s/3679649 B packet,MEDIUM primitive; static sharing changes real packet size
+SHA256,16MiB allocation + hashlib; canonical generation timed separately,0.00895 s/16MiB incl allocation,MEDIUM primitive; native SHA code not isolated
+logging / selected audit / fields / fsync,"retention caps, actual publish/rotation code, 3x16MiB fsynced writes",average/burst models below; sustained multi-GiB latency UNRESOLVED,LOW sustained workload

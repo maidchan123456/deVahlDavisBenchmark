@@ -1,0 +1,129 @@
+{
+  "classification": "SYNTHETIC_ONLY_FOUR_CELL_ONE_STEP_WITH_AUXILIARY_FIXTURES",
+  "driver_sha256": "58d7c67c9b63ef071ccbf6e2c32ffdf4d1c330151ce673eb9c3ae3a19a509225",
+  "observer_sha256": "c6d89ab1f34761f881743adfee279cc65cd73a4bd67c1550c27e8a4ae5bf4c4a",
+  "historical_fixture_authority": "v1.1 guard/v1.2 definitions; not canonical production v1.5 run",
+  "RSS_scope": "GNU time maximum single-process RSS in process tree; not simultaneous native+backend sum",
+  "trials": [
+    {
+      "trial": 0,
+      "mode": "off",
+      "wall_seconds": 0.3663363369414583,
+      "cpu_user_seconds": 0.31,
+      "cpu_system_seconds": 0.02,
+      "max_process_rss_KiB": 87496.0,
+      "load_average_before": [
+        0.00439453125,
+        0.03515625,
+        0.02587890625
+      ],
+      "host_busy_fraction": 0.03981797497155859
+    },
+    {
+      "trial": 0,
+      "mode": "on",
+      "wall_seconds": 22.328719564015046,
+      "cpu_user_seconds": 18.78,
+      "cpu_system_seconds": 3.08,
+      "max_process_rss_KiB": 88028.0,
+      "load_average_before": [
+        0.00439453125,
+        0.03515625,
+        0.02587890625
+      ],
+      "host_busy_fraction": 0.04155383322439066,
+      "events": 1152,
+      "steps": 1,
+      "persisted_bytes": 29036329,
+      "artifacts": 17,
+      "linear_record_count": 169,
+      "linear_records_by_field": {
+        "Ux": 24,
+        "rho": 49,
+        "Uy": 24,
+        "p_rgh": 48,
+        "e": 24
+      }
+    },
+    {
+      "trial": 1,
+      "mode": "on",
+      "wall_seconds": 22.26968833594583,
+      "cpu_user_seconds": 18.85,
+      "cpu_system_seconds": 3.02,
+      "max_process_rss_KiB": 88180.0,
+      "load_average_before": [
+        0.4970703125,
+        0.14697265625,
+        0.0634765625
+      ],
+      "host_busy_fraction": 0.04208476860865662,
+      "events": 1152,
+      "steps": 1,
+      "persisted_bytes": 29036329,
+      "artifacts": 17,
+      "linear_record_count": 169,
+      "linear_records_by_field": {
+        "Ux": 24,
+        "rho": 49,
+        "Uy": 24,
+        "p_rgh": 48,
+        "e": 24
+      }
+    },
+    {
+      "trial": 1,
+      "mode": "off",
+      "wall_seconds": 0.3647940179798752,
+      "cpu_user_seconds": 0.3,
+      "cpu_system_seconds": 0.01,
+      "max_process_rss_KiB": 87612.0,
+      "load_average_before": [
+        0.66943359375,
+        0.21728515625,
+        0.09033203125
+      ],
+      "host_busy_fraction": 0.03767123287671237
+    },
+    {
+      "trial": 2,
+      "mode": "off",
+      "wall_seconds": 0.3651115819811821,
+      "cpu_user_seconds": 0.29,
+      "cpu_system_seconds": 0.01,
+      "max_process_rss_KiB": 87540.0,
+      "load_average_before": [
+        0.66943359375,
+        0.21728515625,
+        0.09033203125
+      ],
+      "host_busy_fraction": 0.0365296803652968
+    },
+    {
+      "trial": 2,
+      "mode": "on",
+      "wall_seconds": 21.523232138948515,
+      "cpu_user_seconds": 18.2,
+      "cpu_system_seconds": 2.93,
+      "max_process_rss_KiB": 87684.0,
+      "load_average_before": [
+        0.66943359375,
+        0.21728515625,
+        0.09033203125
+      ],
+      "host_busy_fraction": 0.04158757215356601,
+      "events": 1152,
+      "steps": 1,
+      "persisted_bytes": 29036329,
+      "artifacts": 17,
+      "linear_record_count": 169,
+      "linear_records_by_field": {
+        "Ux": 24,
+        "rho": 49,
+        "Uy": 24,
+        "p_rgh": 48,
+        "e": 24
+      }
+    }
+  ]
+}

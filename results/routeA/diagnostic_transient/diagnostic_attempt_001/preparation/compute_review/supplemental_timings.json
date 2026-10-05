@@ -1,0 +1,92 @@
+{
+  "classification": "SYNTHETIC_ONLY",
+  "limitations": "Shared stationary U01 objects; manufactured constant U03 histories. Socket transfer excludes encoding/evaluator/persistence. Not production memory, epochs or arrival.",
+  "large_history_attempt": {
+    "nodes": 15001,
+    "status": "ABORTED_NOT_COMPLETED",
+    "elapsed_lower_bound_seconds": 37,
+    "reason": "Stopped this review-owned Python-only primitive benchmark to keep work bounded; no CFD process was interrupted"
+  },
+  "timings": [
+    {
+      "component": "U01_terminal_certificate_25600",
+      "seconds": [
+        0.10064479010179639,
+        0.09721707901917398,
+        0.09295483201276511
+      ],
+      "median": 0.09721707901917398,
+      "min": 0.09295483201276511,
+      "max": 0.10064479010179639,
+      "load_average": [
+        0.2314453125,
+        0.20751953125,
+        0.115234375
+      ]
+    },
+    {
+      "component": "AF_UNIX_16MiB_ACK_no_backend_work",
+      "seconds": [
+        0.005893934052437544,
+        0.005040448042564094,
+        0.004586803028360009
+      ],
+      "median": 0.005040448042564094,
+      "min": 0.004586803028360009,
+      "max": 0.005893934052437544,
+      "load_average": [
+        0.2314453125,
+        0.20751953125,
+        0.115234375
+      ]
+    },
+    {
+      "component": "U03_three_windows_101_nodes",
+      "seconds": [
+        0.01217985397670418,
+        0.011580310063436627,
+        0.011544854030944407
+      ],
+      "median": 0.011580310063436627,
+      "min": 0.011544854030944407,
+      "max": 0.01217985397670418,
+      "load_average": [
+        0.2314453125,
+        0.20751953125,
+        0.115234375
+      ]
+    },
+    {
+      "component": "U03_three_windows_201_nodes",
+      "seconds": [
+        0.040952184004709125,
+        0.04007040895521641,
+        0.04032708390150219
+      ],
+      "median": 0.04032708390150219,
+      "min": 0.04007040895521641,
+      "max": 0.040952184004709125,
+      "load_average": [
+        0.2314453125,
+        0.20751953125,
+        0.115234375
+      ]
+    },
+    {
+      "component": "U03_three_windows_401_nodes",
+      "seconds": [
+        0.15504361898638308,
+        0.15195860899984837,
+        0.15559915790800005
+      ],
+      "median": 0.15504361898638308,
+      "min": 0.15195860899984837,
+      "max": 0.15559915790800005,
+      "load_average": [
+        0.2314453125,
+        0.20751953125,
+        0.115234375
+      ]
+    }
+  ]
+}

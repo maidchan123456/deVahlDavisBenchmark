@@ -1,0 +1,18 @@
+Component,Scaling,Estimated bytes,Evidence
+current registered scalar/vector fields,O(Ncells),2252800,8 scalar + U3 components in meshState; lower numerical storage only; excludes other OpenFOAM objects
+surface phi and address arrays,O(Nfaces),1228800,actual boundary mesh; excludes patch metadata and C++ allocation
+rho/e/K oldTime numeric histories,O(Ncells x 2 levels),1228800,meshState exports existing histories; actual histories can differ by field
+one sparse scalar matrix basic arrays,O(Ncells+NinternalFaces),1630720,diag/source/upper/lower + int32 addresses; excludes psi/BC/action/replay copies
+last5 outer primitive states,O(5 x Ncells),36864000,"Live retains U3+T+p_rgh+rho+rhoThermo; Python float/list planning estimate, no tiny-RSS scaling"
+recent16 stage packed ring,bounded 16 x stage cap,536870912,Writer default ring1GiB but max16 x 32MiB stage enforces effective512MiB
+selected bundle retained,bounded,536870912,BUNDLE_CAP; publication joins/prefix can temporarily allocate additional512MiB–1GiB
+receipt chunk retained,bounded,67108864,chunk quota; join/prefix can add128MiB transient allocations
+primary scalar chunk retained,bounded,16777216,Live rows_bytes quota; joining duplicates current chunk
+transient stage encoder buffer,bounded packed bytes only,33554432,STAGE_CAP is after encoding; constructing Python/C++ JSON objects is additional
+field snapshot/final packet buffer,bounded packed bytes only,16777216,FIELD_CAP; pre-encoded field copies and final/current simultaneous copies additional
+JSON IPC and Python evaluator state,O(fields/matrices x Ncells/Nfaces),UNRESOLVED,"Python lists/floats, C++ Json maps, term packets, canonical strings and deep snapshots coexist; not bounded by packed-byte cap alone"
+arrival history Co0.25 planning,O(Nsteps in last0.3 window),17286048,"9 deques; source trims old nodes, scalar history remains on disk; adaptive dt can increase count"
+native/runtime baseline + temporary assembly/thermo,O(Ncells/Nfaces) + O(1),UNRESOLVED,native process peak AS/RSS on target grid not measured
+target-shape primitive process high-water RSS,measured synthetic process only,631939072,"617128KiB includes imports, synthetic lists/matrix and sequential serialization allocations; not production peak"
+native/backend AS limits,per process virtual ceiling,8589934592,"8GiB each; limits are failure guard, not fit proof; combined16GiB without swap assumption"
+minimum host available memory,host preflight,25769803776,Current MemAvailable 63353577472 B; passes host check but not process AS qualification

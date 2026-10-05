@@ -1,0 +1,8 @@
+Evidence class,Frequency,Bytes/write planning cap,Total bytes Co0p5 maximum cap,Estimated I/O burden
+compact receipts,64 physical steps,14446080,45157769688,3 fsync/publication + metadata hash;64MiB chunk cap
+primary rows,64 steps,4194304,13111197696,max64KiB/row;actual rows smaller;3 fsync/publication
+complete solver log,4MiB rotation,4194304,13111197696,ordered full logs;3 fsync/publication;source-derived budget64KiB/step
+selected full raw audit,<=7/series,9663676416,67645734912,"spool plus streaming hash; additional spool fsync;9GiB storage burst, not9GiB resident allocation"
+selected bundle,<=56/series,536870912,30064771072,join retained records and atomic publish;temporary memory spike distinct from spool
+R2 field snapshots,<=505/series,16777216,8472494080,inherited initial/startup/development/arrival/final schedule;per-write field buffer cap
+fixed provenance/static,once/series,1073741824,1073741824,static blobs and retained inputs/source/manifests;not bulk throughput proof

@@ -1,0 +1,286 @@
+{
+  "classification": "SYNTHETIC_ONLY_NON_CFD_TARGET_SIZE_ARRAY_MICROBENCHMARK",
+  "Ncells": 25600,
+  "Ninternal_faces": 50880,
+  "patch_values_omitted": true,
+  "limitations": "Not valid production state epochs/BCs/whole callback graph. Field counts/history vary by stage. No native C++ packet-building timing; no Krylov solve. No direct tiny RSS scaling.",
+  "baseline_RSS_KiB": 617128,
+  "payload_JSON_bytes": 7404983,
+  "timings": [
+    {
+      "component": "primary_QoI_4097_points",
+      "seconds": [
+        0.05140606209170073,
+        0.04588627000339329,
+        0.03829246503300965
+      ],
+      "min": 0.03829246503300965,
+      "median": 0.04588627000339329,
+      "max": 0.05140606209170073,
+      "output_bytes": null,
+      "load_average": [
+        [
+          0.5830078125,
+          0.2431640625,
+          0.1025390625
+        ],
+        [
+          0.5830078125,
+          0.2431640625,
+          0.1025390625
+        ],
+        [
+          0.5830078125,
+          0.2431640625,
+          0.1025390625
+        ]
+      ],
+      "scope": "SYNTHETIC_TARGET_SIZE_DATA_SHAPE_ONLY"
+    },
+    {
+      "component": "canonical_state_string",
+      "seconds": [
+        0.2212848790222779,
+        0.21404539595823735,
+        0.21454333199653774
+      ],
+      "min": 0.21404539595823735,
+      "median": 0.21454333199653774,
+      "max": 0.2212848790222779,
+      "output_bytes": 7486670,
+      "load_average": [
+        [
+          0.5830078125,
+          0.2431640625,
+          0.1025390625
+        ],
+        [
+          0.5830078125,
+          0.2431640625,
+          0.1025390625
+        ],
+        [
+          0.5830078125,
+          0.2431640625,
+          0.1025390625
+        ]
+      ],
+      "scope": "SYNTHETIC_TARGET_SIZE_DATA_SHAPE_ONLY"
+    },
+    {
+      "component": "canonical_payload_string",
+      "seconds": [
+        0.30877696501556784,
+        0.3088632019935176,
+        0.3062363819917664
+      ],
+      "min": 0.3062363819917664,
+      "median": 0.30877696501556784,
+      "max": 0.3088632019935176,
+      "output_bytes": 8615029,
+      "load_average": [
+        [
+          0.5830078125,
+          0.2431640625,
+          0.1025390625
+        ],
+        [
+          0.5830078125,
+          0.2431640625,
+          0.1025390625
+        ],
+        [
+          0.5830078125,
+          0.2431640625,
+          0.1025390625
+        ]
+      ],
+      "scope": "SYNTHETIC_TARGET_SIZE_DATA_SHAPE_ONLY"
+    },
+    {
+      "component": "JSON_encode_payload",
+      "seconds": [
+        0.09408129006624222,
+        0.0939719210145995,
+        0.09837411402259022
+      ],
+      "min": 0.0939719210145995,
+      "median": 0.09408129006624222,
+      "max": 0.09837411402259022,
+      "output_bytes": 7404983,
+      "load_average": [
+        [
+          0.61669921875,
+          0.255859375,
+          0.107421875
+        ],
+        [
+          0.61669921875,
+          0.255859375,
+          0.107421875
+        ],
+        [
+          0.61669921875,
+          0.255859375,
+          0.107421875
+        ]
+      ],
+      "scope": "SYNTHETIC_TARGET_SIZE_DATA_SHAPE_ONLY"
+    },
+    {
+      "component": "JSON_decode_payload",
+      "seconds": [
+        0.05545431491918862,
+        0.054600963019765913,
+        0.055384110077284276
+      ],
+      "min": 0.054600963019765913,
+      "median": 0.055384110077284276,
+      "max": 0.05545431491918862,
+      "output_bytes": null,
+      "load_average": [
+        [
+          0.61669921875,
+          0.255859375,
+          0.107421875
+        ],
+        [
+          0.61669921875,
+          0.255859375,
+          0.107421875
+        ],
+        [
+          0.61669921875,
+          0.255859375,
+          0.107421875
+        ]
+      ],
+      "scope": "SYNTHETIC_TARGET_SIZE_DATA_SHAPE_ONLY"
+    },
+    {
+      "component": "binary_pack_payload",
+      "seconds": [
+        0.35583699389826506,
+        0.3512744689360261,
+        0.3529668420087546
+      ],
+      "min": 0.3512744689360261,
+      "median": 0.3529668420087546,
+      "max": 0.35583699389826506,
+      "output_bytes": 3679649,
+      "load_average": [
+        [
+          0.61669921875,
+          0.255859375,
+          0.107421875
+        ],
+        [
+          0.61669921875,
+          0.255859375,
+          0.107421875
+        ],
+        [
+          0.61669921875,
+          0.255859375,
+          0.107421875
+        ]
+      ],
+      "scope": "SYNTHETIC_TARGET_SIZE_DATA_SHAPE_ONLY"
+    },
+    {
+      "component": "matrix_replay_including_epoch_hash",
+      "seconds": [
+        0.08409815095365047,
+        0.08338920399546623,
+        0.08183939708396792
+      ],
+      "min": 0.08183939708396792,
+      "median": 0.08338920399546623,
+      "max": 0.08409815095365047,
+      "output_bytes": null,
+      "load_average": [
+        [
+          0.61669921875,
+          0.255859375,
+          0.107421875
+        ],
+        [
+          0.61669921875,
+          0.255859375,
+          0.107421875
+        ],
+        [
+          0.61669921875,
+          0.255859375,
+          0.107421875
+        ]
+      ],
+      "scope": "SYNTHETIC_TARGET_SIZE_DATA_SHAPE_ONLY"
+    },
+    {
+      "component": "SHA256_16MiB",
+      "seconds": [
+        0.00902262597810477,
+        0.008806859026663005,
+        0.008948892005719244
+      ],
+      "min": 0.008806859026663005,
+      "median": 0.008948892005719244,
+      "max": 0.00902262597810477,
+      "output_bytes": 64,
+      "load_average": [
+        [
+          0.61669921875,
+          0.255859375,
+          0.107421875
+        ],
+        [
+          0.61669921875,
+          0.255859375,
+          0.107421875
+        ],
+        [
+          0.61669921875,
+          0.255859375,
+          0.107421875
+        ]
+      ],
+      "scope": "SYNTHETIC_TARGET_SIZE_DATA_SHAPE_ONLY"
+    }
+  ],
+  "io_trials": [
+    {
+      "bytes": 16777216,
+      "write_seconds": 0.0044704400934278965,
+      "file_fsync_seconds": 0.010314241982996464,
+      "total_with_directory_fsync_seconds": 0.014829742023721337,
+      "load_average": [
+        0.61669921875,
+        0.255859375,
+        0.107421875
+      ]
+    },
+    {
+      "bytes": 16777216,
+      "write_seconds": 0.004292767960578203,
+      "file_fsync_seconds": 0.007627297076396644,
+      "total_with_directory_fsync_seconds": 0.011954852961935103,
+      "load_average": [
+        0.61669921875,
+        0.255859375,
+        0.107421875
+      ]
+    },
+    {
+      "bytes": 16777216,
+      "write_seconds": 0.006322335102595389,
+      "file_fsync_seconds": 0.007901433971710503,
+      "total_with_directory_fsync_seconds": 0.014249021071009338,
+      "load_average": [
+        0.61669921875,
+        0.255859375,
+        0.107421875
+      ]
+    }
+  ]
+}

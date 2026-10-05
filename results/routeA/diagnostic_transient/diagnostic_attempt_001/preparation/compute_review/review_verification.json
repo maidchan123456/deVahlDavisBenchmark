@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "checks": {
+    "authority_and_v1_4_sources_unchanged": true,
+    "all_input_hashes_match": true,
+    "all_nine_runtime_scenarios_present": true,
+    "count_products_correct": true,
+    "3_native_ON_3_OFF_measurements": true,
+    "resource_authorization_remains_blocked": true,
+    "all_scope_changes_NO": true,
+    "zero_tracked_diff": true,
+    "v1_5_md_sidecar_match_HEAD": true,
+    "DiagnosticTransient_compute_model.csv_nonempty": true,
+    "DiagnosticTransient_runtime_scenarios.csv_nonempty": true,
+    "DiagnosticTransient_memory_model.csv_nonempty": true,
+    "DiagnosticTransient_io_model.csv_nonempty": true,
+    "DiagnosticTransient_bottleneck_ranking.csv_nonempty": true,
+    "no_production_pilot_transient": true
+  }
+}
