@@ -1,0 +1,119 @@
+{
+  "B1": {
+    "evidence_SHA256": "8b34d63456fe1a97e39179353d16d328409f7281cc763193a5eb8f2f00c2f556",
+    "evidence_path": "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_closure_suite_verified.json",
+    "production_persistence_changed": false,
+    "scratch_accounting": {
+      "archive_copy_buffer_bound": 67108864,
+      "manifest_trace_reserve_bytes": 402653184,
+      "maximum_retained_bytes": 11425284096,
+      "maximum_simultaneous_bytes": 12700352512,
+      "maximum_temporary_bytes": 1191182336,
+      "partial_stop_reserve_bytes": 16777216,
+      "production_policy_changed": false,
+      "production_startup_full_audit_slots": 3,
+      "recurring_repeat_context": "AFTER_THREE_STARTUP_SLOTS_FIRST_SELECTED_TARGET",
+      "registered_scratch_bytes": 12884901888,
+      "sharing_required": "EXACT_SELECTED_BUNDLE_CONTENT_IDENTITY_VERIFIED_AT_EACH_COMMIT",
+      "startup_audit_sample_count": 1,
+      "startup_cost_not_hidden": true,
+      "startup_projection_multiplicity": 3,
+      "within_budget": true
+    },
+    "source_view_rule": "startup final bundle bytes address exact records inside the retained full audit; recurring identical bundle bytes share immutable CAS content after real writes",
+    "startup_sample_multiplicity": 3,
+    "status": "PASS",
+    "tests": [
+      "test_B1_schedule_unchanged_checkpoint",
+      "test_B1_startup_bundle_exact_view_of_full_audit",
+      "test_B1_tiny_whole_Q1_campaign"
+    ],
+    "tiny_whole_Q1": [
+      {
+        "STOP_reason": null,
+        "actual_authorization_created": false,
+        "all_artifact_SHA_readback_verified": true,
+        "logical_trials": 7,
+        "no_orphans": true,
+        "physical_files_final": 18,
+        "physical_files_peak_sampled": 49,
+        "scratch_peak_sampled_bytes": 53374976,
+        "stage": "Q1",
+        "status": "COMPLETE_REQUIRES_RESOURCE_REVIEW",
+        "traces_parseable": true
+      }
+    ]
+  },
+  "B2": {
+    "evidence_SHA256": "8b34d63456fe1a97e39179353d16d328409f7281cc763193a5eb8f2f00c2f556",
+    "evidence_path": "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_closure_suite_verified.json",
+    "file_layout": {
+      "active_workspace_files_max": 48,
+      "adopted_event_blobs_max": 2,
+      "index_files": 1,
+      "logical_trials": 66,
+      "no_purge": true,
+      "partial_publish_files": 2,
+      "physical_chunks_max": 64,
+      "registered_files_limit": 256,
+      "representation_migration_after_verified_commit": true,
+      "reserved_stop_bytes": 16777216,
+      "reserved_stop_files": 8,
+      "stage": "Q2",
+      "stage_control_files_max": 24,
+      "worst_case_physical_files": 149
+    },
+    "purge": false,
+    "repetition_or_budget_changed": false,
+    "status": "PASS",
+    "tests": [
+      "test_B2_hundreds_logical_trials_bounded_chunks",
+      "test_B2_tail_crash_and_truncated_uncommitted_chunk",
+      "test_B2_static_layout_and_full_Q2_runtime"
+    ],
+    "tiny_whole_Q2": [
+      {
+        "STOP_reason": null,
+        "actual_authorization_created": false,
+        "all_artifact_SHA_readback_verified": true,
+        "logical_trials": 66,
+        "no_orphans": true,
+        "physical_files_final": 23,
+        "physical_files_peak_sampled": 47,
+        "scratch_peak_sampled_bytes": 17305600,
+        "stage": "Q2",
+        "status": "COMPLETE_REQUIRES_RESOURCE_REVIEW",
+        "traces_parseable": true
+      }
+    ]
+  },
+  "B3": {
+    "evidence_SHA256": "8b34d63456fe1a97e39179353d16d328409f7281cc763193a5eb8f2f00c2f556",
+    "evidence_path": "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_closure_suite_verified.json",
+    "status": "PASS",
+    "tests": [
+      "test_B3_compact_receipt_exact_production_row",
+      "test_B3_Writer_static_aliasing_and_changed_blob_rejection",
+      "test_B3_span_children_exclusive_and_ACK_overlap_rule",
+      "test_B3_registered_repeatability_and_missing_host",
+      "test_tiny_primitive_and_memory_events"
+    ]
+  },
+  "B4": {
+    "evidence_SHA256": "8b34d63456fe1a97e39179353d16d328409f7281cc763193a5eb8f2f00c2f556",
+    "evidence_path": "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_closure_suite_verified.json",
+    "status": "PASS",
+    "tests": [
+      "test_B4_no_overwrite_double_finalization",
+      "test_B4_positive_stage_and_immutable_readback",
+      "test_B4_malformed_and_tampered_receipt",
+      "test_B4_nested_SIGTERM_ignore_no_orphans",
+      "test_B4_trial_timeout_retains_completed_and_partial",
+      "test_B4_trial_and_stage_watchdog_crash",
+      "test_B4_STOP_publish_race_retains_committed_and_partial",
+      "test_B4_quota_and_file_reserve",
+      "test_B4_worker_and_backend_crashes",
+      "test_readiness_is_all_or_nothing_and_never_authorizes"
+    ]
+  }
+}

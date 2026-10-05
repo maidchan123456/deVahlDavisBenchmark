@@ -1,0 +1,18 @@
+test_B4_positive_stage_and_immutable_readback (test_closure.ClosureTests.test_B4_positive_stage_and_immutable_readback) ... FAIL
+
+======================================================================
+FAIL: test_B4_positive_stage_and_immutable_readback (test_closure.ClosureTests.test_B4_positive_stage_and_immutable_readback)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/timing_qualification/measurement/test_closure.py", line 83, in test_B4_positive_stage_and_immutable_readback
+    r,rows=self.stage(self.req()*3);self.assertEqual(r['status'],'COMPLETE_REQUIRES_RESOURCE_REVIEW');self.assertEqual(len(rows),3)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'STOPPED' != 'COMPLETE_REQUIRES_RESOURCE_REVIEW'
+- STOPPED
++ COMPLETE_REQUIRES_RESOURCE_REVIEW
+
+
+----------------------------------------------------------------------
+Ran 1 test in 5.219s
+
+FAILED (failures=1)

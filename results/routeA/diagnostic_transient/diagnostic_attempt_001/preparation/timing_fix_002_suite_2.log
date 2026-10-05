@@ -1,0 +1,50 @@
+test_B1_schedule_unchanged_checkpoint (test_closure.ClosureTests.test_B1_schedule_unchanged_checkpoint) ... ok
+test_B1_tiny_whole_Q1_campaign (test_closure.ClosureTests.test_B1_tiny_whole_Q1_campaign) ... ok
+test_B2_hundreds_logical_trials_bounded_chunks (test_closure.ClosureTests.test_B2_hundreds_logical_trials_bounded_chunks) ... ok
+test_B2_static_layout_and_full_Q2_runtime (test_closure.ClosureTests.test_B2_static_layout_and_full_Q2_runtime) ... ok
+test_B2_tail_crash_and_truncated_uncommitted_chunk (test_closure.ClosureTests.test_B2_tail_crash_and_truncated_uncommitted_chunk) ... ok
+test_B3_Writer_static_aliasing_and_changed_blob_rejection (test_closure.ClosureTests.test_B3_Writer_static_aliasing_and_changed_blob_rejection) ... ok
+test_B3_compact_receipt_exact_production_row (test_closure.ClosureTests.test_B3_compact_receipt_exact_production_row) ... ok
+test_B3_registered_repeatability_and_missing_host (test_closure.ClosureTests.test_B3_registered_repeatability_and_missing_host) ... ok
+test_B3_span_children_exclusive_and_ACK_overlap_rule (test_closure.ClosureTests.test_B3_span_children_exclusive_and_ACK_overlap_rule) ... ok
+test_B4_STOP_publish_race_retains_committed_and_partial (test_closure.ClosureTests.test_B4_STOP_publish_race_retains_committed_and_partial) ... ok
+test_B4_malformed_and_tampered_receipt (test_closure.ClosureTests.test_B4_malformed_and_tampered_receipt) ... ok
+test_B4_nested_SIGTERM_ignore_no_orphans (test_closure.ClosureTests.test_B4_nested_SIGTERM_ignore_no_orphans) ... ok
+test_B4_no_overwrite_double_finalization (test_closure.ClosureTests.test_B4_no_overwrite_double_finalization) ... ok
+test_B4_positive_stage_and_immutable_readback (test_closure.ClosureTests.test_B4_positive_stage_and_immutable_readback) ... ok
+test_B4_quota_and_file_reserve (test_closure.ClosureTests.test_B4_quota_and_file_reserve) ... ok
+test_B4_trial_and_stage_watchdog_crash (test_closure.ClosureTests.test_B4_trial_and_stage_watchdog_crash) ... ok
+test_B4_trial_timeout_retains_completed_and_partial (test_closure.ClosureTests.test_B4_trial_timeout_retains_completed_and_partial) ... ok
+test_B4_worker_and_backend_crashes (test_closure.ClosureTests.test_B4_worker_and_backend_crashes) ... ok
+test_readiness_is_all_or_nothing_and_never_authorizes (test_closure.ClosureTests.test_readiness_is_all_or_nothing_and_never_authorizes) ... ok
+test_authority_and_frozen_plan (test_preparation.Tests.test_authority_and_frozen_plan) ... ok
+test_callback_matrix_graph_valid (test_preparation.Tests.test_callback_matrix_graph_valid) ... ok
+test_child_group_escape_fail_closed (test_preparation.Tests.test_child_group_escape_fail_closed) ... ok
+test_disk_guard_safe_override (test_preparation.Tests.test_disk_guard_safe_override) ... ok
+test_file_count_guard (test_preparation.Tests.test_file_count_guard) ... ok
+test_fit_excludes_censored (test_preparation.Tests.test_fit_excludes_censored) ... ok
+test_memory_guard_safe_override (test_preparation.Tests.test_memory_guard_safe_override) ... ok
+test_missing_authorization_and_no_actual_receipt (test_preparation.Tests.test_missing_authorization_and_no_actual_receipt) ... ok
+test_native_adapter_has_no_solver_or_time_api (test_preparation.Tests.test_native_adapter_has_no_solver_or_time_api) ... ok
+test_native_direct_missing_permission_fails_closed (test_preparation.Tests.test_native_direct_missing_permission_fails_closed) ... ok
+test_normal_child_and_trace (test_preparation.Tests.test_normal_child_and_trace) ... ok
+test_off_retains_fixture_framework (test_preparation.Tests.test_off_retains_fixture_framework) ... ok
+test_path_traversal_symlink_and_production_namespace (test_preparation.Tests.test_path_traversal_symlink_and_production_namespace) ... ok
+test_q1_cfd_and_q3_escalation (test_preparation.Tests.test_q1_cfd_and_q3_escalation) ... ok
+test_receipt_immutable_and_hash (test_preparation.Tests.test_receipt_immutable_and_hash) ... ok
+test_stage_receipt_tampering_fails_closed (test_preparation.Tests.test_stage_receipt_tampering_fails_closed) ... ok
+test_supervisor_crash_fail_closed (test_preparation.Tests.test_supervisor_crash_fail_closed) ... ok
+test_target_pipeline_without_permission_fails_before_launch (test_preparation.Tests.test_target_pipeline_without_permission_fails_before_launch) ... ok
+test_target_shape_only_no_timing (test_preparation.Tests.test_target_shape_only_no_timing) ... ok
+test_tiny_U03_and_IO (test_preparation.Tests.test_tiny_U03_and_IO) ... ok
+test_tiny_full_native_backend_end_to_end (test_preparation.Tests.test_tiny_full_native_backend_end_to_end) ... ok
+test_tiny_primitive_and_memory_events (test_preparation.Tests.test_tiny_primitive_and_memory_events) ... ok
+test_wall_timeout_and_group_kill (test_preparation.Tests.test_wall_timeout_and_group_kill) ... ok
+test_wrong_authority_hash_fails (test_preparation.Tests.test_wrong_authority_hash_fails) ... ok
+test_wrong_callback_and_matrix_graph_fail (test_preparation.Tests.test_wrong_callback_and_matrix_graph_fail) ... ok
+test_wrong_topology_fails (test_preparation.Tests.test_wrong_topology_fails) ... ok
+
+----------------------------------------------------------------------
+Ran 45 tests in 281.104s
+
+OK

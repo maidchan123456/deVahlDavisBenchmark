@@ -1,0 +1,53 @@
+{
+  "STOP_reserve_files": 8,
+  "archive_chunk_bytes": 67108864,
+  "index_record_limit_bytes": 262144,
+  "logical_trial_address": [
+    "trial_id",
+    "ordinal",
+    "offset",
+    "length",
+    "SHA256",
+    "status",
+    "metadata",
+    "previous_record_hash"
+  ],
+  "migration": "lossless post-trial representation change after fsync/readback; measured writes were executed",
+  "normal_sidechannel_credit_bytes": 4194304,
+  "normal_sidechannel_credit_files": 8,
+  "registered_budget_unchanged": true,
+  "stages": {
+    "Q1": {
+      "active_workspace_files_max": 48,
+      "adopted_event_blobs_max": 1,
+      "index_files": 1,
+      "logical_trials": 7,
+      "no_purge": true,
+      "partial_publish_files": 2,
+      "physical_chunks_max": 27,
+      "registered_files_limit": 256,
+      "representation_migration_after_verified_commit": true,
+      "reserved_stop_bytes": 16777216,
+      "reserved_stop_files": 8,
+      "stage": "Q1",
+      "stage_control_files_max": 24,
+      "worst_case_physical_files": 111
+    },
+    "Q2": {
+      "active_workspace_files_max": 48,
+      "adopted_event_blobs_max": 2,
+      "index_files": 1,
+      "logical_trials": 66,
+      "no_purge": true,
+      "partial_publish_files": 2,
+      "physical_chunks_max": 64,
+      "registered_files_limit": 256,
+      "representation_migration_after_verified_commit": true,
+      "reserved_stop_bytes": 16777216,
+      "reserved_stop_files": 8,
+      "stage": "Q2",
+      "stage_control_files_max": 24,
+      "worst_case_physical_files": 149
+    }
+  }
+}

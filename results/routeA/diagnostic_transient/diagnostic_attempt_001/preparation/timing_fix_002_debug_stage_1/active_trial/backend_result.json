@@ -1,0 +1,214 @@
+{
+  "U01_primary_steps": 0,
+  "bytes_IPC_received": 637,
+  "callback_class_bytes": {
+    "compact_scalar_receipt": {
+      "JSON_bytes": {
+        "count": 1,
+        "max": 637,
+        "median": 637,
+        "min": 637
+      },
+      "packed_bytes": {
+        "count": 1,
+        "max": 152,
+        "median": 152,
+        "min": 152
+      }
+    }
+  },
+  "callbacks_including_constructor": 1,
+  "context_kind": "RECURRING_STEP_EQUIVALENT",
+  "evaluator_summary": null,
+  "matrix_packets": 0,
+  "memory_events": [],
+  "rows": [
+    {
+      "IPC_bytes": 637,
+      "JSON_bytes": 637,
+      "class": "compact_scalar_receipt",
+      "logical_bytes": 152,
+      "native_state_present": false,
+      "packed_bytes": 152,
+      "retained_bytes": 311,
+      "stage": "compact_scalar_receipt"
+    }
+  ],
+  "schedule": {
+    "bundle_count": 0,
+    "full": true,
+    "full_count": 3,
+    "selected": false,
+    "step": 3
+  },
+  "scientific_claim": false,
+  "span_tree": {
+    "clock": "perf_counter/CLOCK_MONOTONIC",
+    "cross_process_rule": "native send-to-ACK includes backend processing; never add backend spans to ACK wall",
+    "exclusive_rule": "subtract direct same-process children only",
+    "nodes": [
+      {
+        "exclusive_seconds": 1.6930578040191904,
+        "id": 0,
+        "inclusive_seconds": 1.6930578040191904,
+        "name": "backend_receive",
+        "parent_id": null,
+        "payload_class": "compact_scalar_receipt",
+        "start": 640087.733557948
+      },
+      {
+        "exclusive_seconds": 2.7103000320494175e-05,
+        "id": 1,
+        "inclusive_seconds": 2.7103000320494175e-05,
+        "name": "JSON_decode",
+        "parent_id": null,
+        "payload_class": "compact_scalar_receipt",
+        "start": 640089.426638563
+      },
+      {
+        "exclusive_seconds": 0.00046602124348282814,
+        "id": 2,
+        "inclusive_seconds": 0.018858133000321686,
+        "name": "isolated_callback",
+        "parent_id": null,
+        "payload_class": "compact_scalar_receipt",
+        "start": 640089.4266775
+      },
+      {
+        "exclusive_seconds": 6.227055564522743e-06,
+        "id": 3,
+        "inclusive_seconds": 4.7159031964838505e-05,
+        "name": "canonicalization",
+        "parent_id": 2,
+        "payload_class": "compact_scalar_receipt",
+        "start": 640089.426693123
+      },
+      {
+        "exclusive_seconds": 4.093197640031576e-05,
+        "id": 4,
+        "inclusive_seconds": 4.093197640031576e-05,
+        "name": "canonical",
+        "parent_id": 3,
+        "payload_class": "compact_scalar_receipt",
+        "start": 640089.426696744
+      },
+      {
+        "exclusive_seconds": 1.1927913874387741e-05,
+        "id": 5,
+        "inclusive_seconds": 1.1927913874387741e-05,
+        "name": "sha",
+        "parent_id": 2,
+        "payload_class": "compact_scalar_receipt",
+        "start": 640089.426744853
+      },
+      {
+        "exclusive_seconds": 2.0699924789369106e-05,
+        "id": 6,
+        "inclusive_seconds": 2.0699924789369106e-05,
+        "name": "compact_receipt_packing",
+        "parent_id": 2,
+        "payload_class": "compact_scalar_receipt",
+        "start": 640089.426760312
+      },
+      {
+        "exclusive_seconds": 1.7759157344698906e-06,
+        "id": 7,
+        "inclusive_seconds": 1.7759157344698906e-06,
+        "name": "sha",
+        "parent_id": 2,
+        "payload_class": "compact_scalar_receipt",
+        "start": 640089.426783703
+      },
+      {
+        "exclusive_seconds": 0.018310548970475793,
+        "id": 8,
+        "inclusive_seconds": 0.018310548970475793,
+        "name": "persistence_write_fsync_manifest",
+        "parent_id": 2,
+        "payload_class": "compact_scalar_receipt",
+        "start": 640089.427208291
+      },
+      {
+        "exclusive_seconds": 1.72910513356328e-05,
+        "id": 9,
+        "inclusive_seconds": 1.72910513356328e-05,
+        "name": "ACK_send",
+        "parent_id": null,
+        "payload_class": "compact_scalar_receipt",
+        "start": 640089.445546053
+      },
+      {
+        "exclusive_seconds": 0.0002177519490942359,
+        "id": 10,
+        "inclusive_seconds": 0.0002177519490942359,
+        "name": "backend_receive",
+        "parent_id": null,
+        "payload_class": "compact_scalar_receipt",
+        "start": 640089.445570881
+      }
+    ],
+    "per_class": {
+      "compact_scalar_receipt": {
+        "ACK_send": {
+          "count": 1,
+          "exclusive_seconds": 1.72910513356328e-05,
+          "inclusive_seconds": 1.72910513356328e-05
+        },
+        "JSON_decode": {
+          "count": 1,
+          "exclusive_seconds": 2.7103000320494175e-05,
+          "inclusive_seconds": 2.7103000320494175e-05
+        },
+        "backend_receive": {
+          "count": 2,
+          "exclusive_seconds": 1.6932755559682846,
+          "inclusive_seconds": 1.6932755559682846
+        },
+        "canonical": {
+          "count": 1,
+          "exclusive_seconds": 4.093197640031576e-05,
+          "inclusive_seconds": 4.093197640031576e-05
+        },
+        "canonicalization": {
+          "count": 1,
+          "exclusive_seconds": 6.227055564522743e-06,
+          "inclusive_seconds": 4.7159031964838505e-05
+        },
+        "compact_receipt_packing": {
+          "count": 1,
+          "exclusive_seconds": 2.0699924789369106e-05,
+          "inclusive_seconds": 2.0699924789369106e-05
+        },
+        "isolated_callback": {
+          "count": 1,
+          "exclusive_seconds": 0.00046602124348282814,
+          "inclusive_seconds": 0.018858133000321686
+        },
+        "persistence_write_fsync_manifest": {
+          "count": 1,
+          "exclusive_seconds": 0.018310548970475793,
+          "inclusive_seconds": 0.018310548970475793
+        },
+        "sha": {
+          "count": 2,
+          "exclusive_seconds": 1.3703829608857632e-05,
+          "inclusive_seconds": 1.3703829608857632e-05
+        }
+      }
+    }
+  },
+  "spans_seconds_inclusive": {
+    "ACK_send": 1.72910513356328e-05,
+    "JSON_decode": 2.7103000320494175e-05,
+    "backend_receive": 1.6932755559682846,
+    "canonical": 4.093197640031576e-05,
+    "canonicalization": 4.7159031964838505e-05,
+    "compact_receipt_packing": 2.0699924789369106e-05,
+    "isolated_callback": 0.018858133000321686,
+    "persistence_write_fsync_manifest": 0.018310548970475793,
+    "sha": 1.3703829608857632e-05
+  },
+  "status": "COMPLETE_ISOLATED_PRIMITIVE_NOT_STEP",
+  "writer_bytes": 311,
+  "writer_fsyncs": 3
+}

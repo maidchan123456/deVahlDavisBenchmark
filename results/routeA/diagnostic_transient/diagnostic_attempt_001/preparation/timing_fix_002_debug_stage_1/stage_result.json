@@ -1,0 +1,44 @@
+{
+  "Q1_accounting": null,
+  "Q3_authorized": false,
+  "STOP_reason": "[Errno 2] No such file or directory: '/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/timing_fix_002_debug_stage_1/archive/data_0000.bin'",
+  "U03_fit": {
+    "censored": [],
+    "completed_sizes": [],
+    "reason": "insufficient completed sizes/repeats",
+    "status": "UNRESOLVED"
+  },
+  "actual_authorization_created": false,
+  "completed_repeats": 0,
+  "cost_classes": {
+    "campaign_startup": [],
+    "finalization": "native FINISH span and backend finalization parent tree overlap",
+    "full_startup_audit": "startup Writer.accept inclusive spans + stream_hash_commit_fsync; no additive ACK",
+    "per_trial_setup": "worker_summary.setup_completed_monotonic minus watchdog start; includes authority/process setup",
+    "recurring_step_equivalent": "native callback spans excluding constructor; full external wall retained separately",
+    "selected_audit": "backend class persistence_write_fsync_manifest spans at bundle publication",
+    "startup_audit_projection_multiplicity": 3
+  },
+  "execution_authorized": false,
+  "file_layout": {
+    "active_workspace_files_max": 48,
+    "index_files": 1,
+    "logical_trials": 66,
+    "no_purge": true,
+    "partial_publish_files": 2,
+    "physical_chunks_max": 64,
+    "registered_files_limit": 256,
+    "representation_migration_after_verified_commit": true,
+    "reserved_stop_bytes": 16777216,
+    "reserved_stop_files": 8,
+    "stage": "Q2",
+    "stage_control_files_max": 24,
+    "worst_case_physical_files": 147
+  },
+  "resource_feasibility": "UNRESOLVED",
+  "stability": {},
+  "stage": "Q2",
+  "status": "STOPPED",
+  "trials": [],
+  "wall_seconds": 4.271748587023467
+}

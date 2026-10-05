@@ -1,0 +1,12 @@
+{
+  "backend_AS_max_bytes": 8589934592,
+  "backend_RSS_max_bytes": 8589934592,
+  "combined_RSS_max_bytes": 17179869184,
+  "files_max": 256,
+  "host_MemAvailable_min_bytes": 25769803776,
+  "native_AS_max_bytes": 8589934592,
+  "native_RSS_max_bytes": 8589934592,
+  "scratch_bytes": 4294967296,
+  "single_trial_wall_seconds": 30,
+  "stage_wall_seconds": 420
+}

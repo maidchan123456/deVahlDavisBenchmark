@@ -1,0 +1,20 @@
+{
+  "command": [
+    "/usr/bin/g++",
+    "-std=c++14",
+    "-O2",
+    "-DROUTE_A_PERMISSION_HELPER=\"/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/timing_qualification/measurement/native_permission.py\"",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/timing_qualification/measurement/native_adapter.C",
+    "/usr/lib/x86_64-linux-gnu/libcrypto.so.3",
+    "-o",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/timing_harness_build_v5/native_adapter"
+  ],
+  "compiler_realpath": "/usr/bin/x86_64-linux-gnu-g++-13",
+  "compiler_SHA256": "1353e9bdd29a7295c7226bf6c63abccce056d8cac31f112e5cdbecc3f28c2769",
+  "compiler_version": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+  "source_SHA256": "5d4f960f76fc5c0ce9cbc8ba48ab160d6545c55779aa5b2d41321d50068ff62a",
+  "serializer_SHA256": "af0e2078a78c8e732edc67efa5f559c0808b519e1960b246c49580bf8de8b1ee",
+  "binary_SHA256": "2cf93a5e025ca6c4288aa193cd1f235ef362ba1d4db4df949812f63d1e1fd34d",
+  "classification": "RESOURCE_QUALIFICATION_FIXTURE_ONLY",
+  "CFD_linkage": false
+}

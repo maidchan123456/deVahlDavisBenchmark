@@ -1,0 +1,3 @@
+stage,logical_trials,worst_case_physical_files,reserved_stop_files,physical_chunks_max,adopted_event_blobs_max,registered_files_limit
+Q1,7,111,8,27,1,256
+Q2,66,149,8,64,2,256

@@ -1,0 +1,121 @@
+{
+  "Q1_accounting": {
+    "archive_copy_buffer_bound": 67108864,
+    "manifest_trace_reserve_bytes": 134217728,
+    "maximum_retained_bytes": 11156848640,
+    "maximum_simultaneous_bytes": 12431917056,
+    "maximum_temporary_bytes": 1191182336,
+    "partial_stop_reserve_bytes": 16777216,
+    "production_policy_changed": false,
+    "production_startup_full_audit_slots": 3,
+    "recurring_repeat_context": "AFTER_THREE_STARTUP_SLOTS_FIRST_SELECTED_TARGET",
+    "registered_scratch_bytes": 12884901888,
+    "sharing_required": "EXACT_SELECTED_BUNDLE_CONTENT_IDENTITY_VERIFIED_AT_EACH_COMMIT",
+    "startup_audit_sample_count": 1,
+    "startup_cost_not_hidden": true,
+    "startup_projection_multiplicity": 3,
+    "within_budget": true
+  },
+  "Q3_authorized": false,
+  "STOP_reason": "STOP_WORKER_EXIT",
+  "actual_authorization_created": false,
+  "completed_repeats": 0,
+  "cost_classes": {
+    "campaign_startup": [
+      "000_startup"
+    ],
+    "finalization": "native FINISH span and backend finalization parent tree overlap",
+    "full_startup_audit": "startup Writer.accept inclusive spans + stream_hash_commit_fsync; no additive ACK",
+    "per_trial_setup": "worker_summary.setup_completed_monotonic minus watchdog start; includes authority/process setup",
+    "recurring_step_equivalent": "native callback spans excluding constructor; full external wall retained separately",
+    "selected_audit": "backend class persistence_write_fsync_manifest spans at bundle publication",
+    "startup_audit_projection_multiplicity": 3
+  },
+  "execution_authorized": false,
+  "file_layout": {
+    "active_workspace_files_max": 48,
+    "index_files": 1,
+    "logical_trials": 7,
+    "no_purge": true,
+    "partial_publish_files": 2,
+    "physical_chunks_max": 23,
+    "registered_files_limit": 256,
+    "representation_migration_after_verified_commit": true,
+    "reserved_stop_bytes": 16777216,
+    "reserved_stop_files": 8,
+    "stage": "Q1",
+    "stage_control_files_max": 24,
+    "worst_case_physical_files": 106
+  },
+  "resource_feasibility": "UNRESOLVED",
+  "stability": {},
+  "stage": "Q1",
+  "status": "STOPPED",
+  "trials": [
+    {
+      "STOP_reason": "STOP_WORKER_EXIT",
+      "archive_index": {
+        "artifacts": 25,
+        "index_length": 7125,
+        "index_offset": 0,
+        "record_hash": "9c23ab9c3e083b3850961eb5a64e20016a779718dc4ed67e4e32556359800bde",
+        "sha256": "ffe5287d9840ce4df4c1a1a4b77cf66b6540b8f16e0b05f321eadbe02a2b19d1",
+        "status": "STOPPED",
+        "trial_id": "000_startup"
+      },
+      "completed_repeats": 0,
+      "disk": {
+        "disk_free": 793580371968,
+        "file_count": 35,
+        "free_inodes": 59454188,
+        "scratch_bytes": 5328896
+      },
+      "end_monotonic": 640271.435720872,
+      "exit_code": 1,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.19318181818181818,
+        "other_CPU_method": "delta host busy minus tracked process tick deltas; conservative for short-lived/missing process attribution",
+        "reasons": [
+          "other CPU busy exceeds registered10percent"
+        ],
+        "status": "UNRESOLVED"
+      },
+      "partial_output_retained": true,
+      "peak_RSS_bytes": {
+        "all_processes_simultaneous": 172838912,
+        "backend": 66859008,
+        "combined_simultaneous": 73707520,
+        "native": 10203136
+      },
+      "remaining_live_pids": [],
+      "request": {
+        "context_kind": "STARTUP_ONE_TIME",
+        "cost_class": "STARTUP_ONE_TIME",
+        "kind": "pipeline",
+        "mode": "ON",
+        "phase": "startup"
+      },
+      "resource_trace_SHA256": "cbf44c96aa234e4b361b15da8564e76e29c2fdcaf21cff2043d5dd3ef94a5b8e",
+      "sample_valid": false,
+      "samples": 157,
+      "signal": null,
+      "stage": "Q1",
+      "start_monotonic": 640265.628965589,
+      "status": "STOPPED",
+      "sum_individual_native_backend_peaks_upper_bound": 77062144,
+      "trace_samples": 157,
+      "tracked_pids": [
+        437383,
+        437384,
+        437385,
+        437386,
+        437387
+      ],
+      "trial_id": "000_startup",
+      "wall_seconds": 5.806755754980259,
+      "worker": null
+    }
+  ],
+  "wall_seconds": 7.549269727081992
+}

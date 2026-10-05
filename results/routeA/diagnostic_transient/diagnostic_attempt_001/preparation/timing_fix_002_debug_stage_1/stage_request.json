@@ -1,0 +1,36 @@
+{
+  "auth": null,
+  "prior": {
+    "Q0_status": "PASS",
+    "Q1_status": "PASS"
+  },
+  "stage": "Q2",
+  "test_fault": null,
+  "test_requests": [
+    {
+      "context_kind": "RECURRING_STEP_EQUIVALENT",
+      "kind": "pipeline",
+      "mode": "ON",
+      "phase": "primitives",
+      "purpose": "primitive",
+      "sample_class": "scalar"
+    },
+    {
+      "context_kind": "RECURRING_STEP_EQUIVALENT",
+      "kind": "pipeline",
+      "mode": "ON",
+      "phase": "primitives",
+      "purpose": "primitive",
+      "sample_class": "scalar"
+    },
+    {
+      "context_kind": "RECURRING_STEP_EQUIVALENT",
+      "kind": "pipeline",
+      "mode": "ON",
+      "phase": "primitives",
+      "purpose": "primitive",
+      "sample_class": "scalar"
+    }
+  ],
+  "tiny": true
+}

@@ -52,30 +52,24 @@ def io_trial(out,budget,tiny=False):
   atomic(out,'worker_result.json',result,budget);return result
  finally:os.fsync=original
 
-def memory_event(out,budget,event,packet,tiny=False,packed_records=None,live=None):
- cfg=plan();need(event in cfg['memory_events'],'STOP_UNREGISTERED_MEMORY_EVENT');root=out/'memory';root.mkdir();writer=Writer(root);raw=encode(packet);values=[]
- # Native packet remains resident while the receiver exercises the actual codec
- # and writer methods; pipeline supervisor tracks native/backend concurrently.
+def memory_event(out,budget,event,packet,tiny=False,packed_records=None,live=None,writer=None):
+ cfg=plan();need(event in cfg['memory_events'] or event=='chunk publication','STOP_UNREGISTERED_MEMORY_EVENT')
+ need(writer is not None,'STOP_ACTUAL_WRITER_REQUIRED');values=[];before={'ring_bytes':writer.ring_bytes,'ring_records':len(writer.ring),'bundle_bytes':writer.bundle_bytes,'receipt_bytes':writer.rows_bytes}
  if event=='rolling buffer full including join/transient copy':
-  values=packed_records or [raw]*16;writer.ring.extend(values);writer.ring_bytes=sum(map(len,values));joined=b''.join(values)
+  values=list(writer.ring);joined=b''.join(values);need(len(values)==16,'STOP_RING_SHAPE');need(len(joined)==writer.ring_bytes,'STOP_RING_ACCOUNTING')
  elif event=='selected512MiB bundle':
-  values=packed_records or [raw];from persistence import BUNDLE_CAP
-  need(sum(map(len,values))<=BUNDLE_CAP,'STOP_BUNDLE_CAP');before_write(out,budget,sum(map(len,values))+8192,3);writer.audit(values,'selected_fixture.bin','selected_audit')
- elif event=='field16MiB snapshot':
-  before_write(out,budget,len(raw)+8192,3);writer.snapshot(packet['payload']['native_state_epoch'],'field_fixture.bin')
+  values=writer.bundle;writer.audit(values,'selected_fixture.bin','selected_audit')
+ elif event=='field16MiB snapshot':writer.snapshot(packet['payload']['native_state_epoch'],'field_fixture.bin')
  elif event=='full raw audit preparation as streaming path':
-  import struct
-  values=packed_records or [raw];writer.full_spool=(root/'full_audit.scratch').open('xb');writer.full_spool.write(b'RAB13\0')
-  for chunk in values:before_write(out,budget,len(chunk)+8,0);writer.full_spool.write(struct.pack('<Q',len(chunk))+chunk)
-  writer.full_spool.flush();os.fsync(writer.full_spool.fileno());writer.full_spool.close();writer.full_spool=None;writer.publish_spool('audit_fixture.bin','full_audit')
+  need((writer.root/'full_2.bin').exists() and (writer.root/'full_2.bin').stat().st_size>6,'STOP_STREAM_WRITER_NOT_EXERCISED')
  elif event=='U01 last5 states':
-  values=list(live.outer) if live else [];need(len(values)==5,'STOP_U01_LAST5_SHAPE')
+  values=list(live.outer);need(len(values)==5,'STOP_U01_LAST5_SHAPE')
   from fixture import graph
-  live.outer_count=cfg['frozen_switches']['nOuterCorrectors']
-  live.linear=[dict(x,initial=0.,final=0.,iterations=0) for r in graph() for x in r['live_binding'].get('linear',[])];live.outer_certificate()
+  live.outer_count=cfg['frozen_switches']['nOuterCorrectors'];live.linear=[dict(x,initial=0.,final=0.,iterations=0) for r in graph() for x in r['live_binding'].get('linear',[])];live.outer_certificate()
  elif event=='U03 history evaluation':
   from worker import u03
-  return u03(out,budget,4 if tiny else cfg['Q2_U03']['node_counts'][0],tiny,result_name='memory_U03_result.json')
- else:values=[raw]
- atomic(out,'memory_event_result.json',{'status':'COMPLETE','event':event,'packed_bytes':len(raw),'retained_copy_bytes':sum(len(v) if isinstance(v,bytes) else len(encode(list(v) if isinstance(v,tuple) else v)) for v in values),'event_size_scope':'ACTUAL_TARGET_PACKET_SIZE_NOT_THEORETICAL_MAX_CAP','full_9GiB_stream_coverage':False,'classification':'TINY_SELF_TEST_ONLY' if tiny else 'RESOURCE_QUALIFICATION_FIXTURE_ONLY'},budget)
- return values
+  u03(out,budget,4 if tiny else cfg['Q2_U03']['node_counts'][0],tiny,result_name='memory_U03_result.json')
+ elif event=='chunk publication':writer.chunk()
+ else:need(writer.events>0,'STOP_NO_COMPACT_CALLBACK')
+ result={'status':'COMPLETE','event':event,'Writer_binding':'FROZEN_SHARE_ACCEPT_RING_BUNDLE_ROWS_SNAPSHOT_STREAM_CHUNK','before':before,'after':{'ring_bytes':writer.ring_bytes,'ring_records':len(writer.ring),'bundle_bytes':writer.bundle_bytes,'receipt_bytes':writer.rows_bytes},'retained_bytes':writer.written_bytes,'static_objects':len(writer.immutable),'ring_ownership':'fresh immutable packed bytes; bounded deque16; original static values referenced by Writer.immutable','last5_ownership':'Live outer deque references field arrays; no deep-copy replacement','GUARD_LIMIT':{'ring':writer.ring_cap,'stage':writer.stage_cap},'ACCOUNTING_UPPER_BOUND':{'rolling_bytes':min(writer.ring_cap,16*writer.stage_cap)},'MEASURED_PEAK':'EXTERNAL_WATCHDOG_EVENT_INTERVAL','event_size_scope':'ACTUAL_PACKET_SHAPES; CAP_COVERAGE_REQUIRES_REVIEW','full_9GiB_stream_coverage':False,'classification':'TINY_SELF_TEST_ONLY' if tiny else 'RESOURCE_QUALIFICATION_FIXTURE_ONLY'}
+ atomic(out,'memory_event_result.json',result,budget);return result

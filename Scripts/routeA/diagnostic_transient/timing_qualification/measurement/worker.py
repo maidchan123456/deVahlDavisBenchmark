@@ -17,13 +17,21 @@ if __name__=='__main__':
  resource.setrlimit(resource.RLIMIT_AS,(budget['native_AS_max_bytes'],)*2)
  if request.get('tiny'):
   need(request.get('classification')=='TINY_SELF_TEST_ONLY','STOP_TINY_SCOPE')
+  if request.get('stage_receipt'):
+   from campaign import verify_test_receipt
+   verify_test_receipt(request['stage_receipt'])
+  fault=request.get('fault')
+  if fault in ('worker_crash','timeout'):
+   if fault=='worker_crash':os._exit(73)
+   time.sleep(5)
+  if fault in ('backend_crash','nested_ignore','writer_race'):os.environ['ROUTE_A_TINY_INJECT']=fault
  else:
   # Internal requests are only valid with an immutable stage receipt AND the
   # explicit authorization file independently revalidated in this child.
   from runner import verify_stage_execution
   verify_stage_execution(request['stage_receipt'],request['authorization_file'])
  kind=request['kind'];tiny=request.get('tiny',False)
- if kind=='pipeline':run(out,request['mode'],budget,tiny,request.get('purpose','full'),request.get('sample_class'),request.get('event'),request.get('stage_receipt'),request.get('authorization_file'))
+ if kind=='pipeline':run(out,request['mode'],budget,tiny,request.get('purpose','full'),request.get('sample_class'),request.get('event'),request.get('stage_receipt'),request.get('authorization_file'),request.get('context_kind'))
  elif kind=='u03':u03(out,budget,request['N'],tiny)
  elif kind=='io':
   from io_memory import io_trial

@@ -1,0 +1,40 @@
+{
+  "binding": "frozen Writer.share/accept/ring/bundle/rows/snapshot/publish_spool/chunk and frozen Live outer certificate",
+  "events": [
+    "normal compact event",
+    "rolling buffer full including join/transient copy",
+    "selected512MiB bundle",
+    "field16MiB snapshot",
+    "full raw audit preparation as streaming path",
+    "U01 last5 states",
+    "U03 history evaluation",
+    "chunk publication"
+  ],
+  "missing_interval_samples": "UNRESOLVED; not a measured peak or feasibility PASS",
+  "ownership": {
+    "bundle": "original selected packed bytes and actual audit join",
+    "full_audit": "original streaming spool; at most32MiB packet, no9GiB memory allocation",
+    "last5": "Live deque references fields and QoI, no replacement by repeated bytes",
+    "ring": "fresh packed bytes and original16-record/1GiB bounded deque",
+    "static_objects": "first exact values held by reference; SHA-addressed immutable blob references in packed packets"
+  },
+  "peak_kinds": [
+    "GUARD_LIMIT",
+    "MEASURED_PEAK",
+    "ACCOUNTING_UPPER_BOUND"
+  ],
+  "scope": "MODEL_SCHEMA_AND_TINY_FIDELITY_ONLY",
+  "target_measured_values": null,
+  "tiny_tests": [
+    "test_B3_compact_receipt_exact_production_row",
+    "test_B3_Writer_static_aliasing_and_changed_blob_rejection",
+    "test_B3_span_children_exclusive_and_ACK_overlap_rule",
+    "test_B3_registered_repeatability_and_missing_host",
+    "test_tiny_primitive_and_memory_events"
+  ],
+  "trace": [
+    "event before",
+    "max native/backend/concurrent RSS in event interval",
+    "event after"
+  ]
+}

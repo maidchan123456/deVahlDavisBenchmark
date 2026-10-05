@@ -1,0 +1,47 @@
+{
+  "classes": [
+    {
+      "class": "compact_scalar_receipt",
+      "field_state_included": false,
+      "packing": "<II schemaId/valueCount +32-byte metadata ID +32-byte payload ID +little-endian doubles",
+      "schema": "frozen receipt_bytes, native JSON plus exact RAC13 scalar row"
+    },
+    {
+      "class": "field_state_payload",
+      "packing": "Writer.share then original encode",
+      "schema": "native_state_epoch with fields/BC/oldTimes"
+    },
+    {
+      "class": "scalar_ldu_matrix_payload",
+      "replay": "original replay_matrix",
+      "schema": "original scalar LDU arrays and matrix epochs"
+    },
+    {
+      "class": "explicit_term_payload",
+      "replay": "finite/canonical checks and original explicit arrays",
+      "schema": "integrated_cells/operator dimensions and original state"
+    },
+    {
+      "class": "controller_payload",
+      "schema": "full original controller state; separate from compact receipt"
+    },
+    {
+      "class": "selected_bundle_payload",
+      "packing": "original Writer.accept bundle and Writer.audit; no IPC shortcut",
+      "schema": "native selected density predictor/terminal outer records; RAB13 container"
+    }
+  ],
+  "counters": [
+    "logical content bytes before sharing",
+    "serialized JSON bytes",
+    "IPC bytes including framing",
+    "packed bytes",
+    "incremental retained bytes",
+    "cumulative retained bytes",
+    "post-trial CAS references"
+  ],
+  "fixture_numeric_limitation": "constant/zero resource values exercise schema and code paths; resulting performance is fixture-dependent, not real CFD cost evidence",
+  "logical_content_definition": "RAC13 row bytes for compact; numeric8/UTF8 keys and strings/bool1/null0 for other classes",
+  "measurement_scope": "manufactured resource-only numeric patterns; no actual target measurements",
+  "repeat_count": 3
+}

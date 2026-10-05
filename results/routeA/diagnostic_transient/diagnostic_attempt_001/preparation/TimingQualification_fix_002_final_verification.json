@@ -1,0 +1,115 @@
+{
+  "HEAD": "dd45aaf57462f5e1b73468a4d6db08c422c66f3f",
+  "active_harness_verification": "PASS",
+  "actual_measurements_executed": false,
+  "artifact_SHA256": {
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_timing_qualification_preparation_fix_002.json": "2060c381dada7460fdfef560ec675ebb239762c68d8d483598c48ee6cb92fd41",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_timing_qualification_preparation_fix_002.md": "bfaa794b192a4b6416cf3934942216da5ef6fe3ae75f69af24b97e8ff40b838b",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_blocker_closure.json": "94449ef421853998ebcea7aa100b3b2dc5e9b91d342f4343d039693a0879a5b3",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_closure_suite_verified.json": "8b34d63456fe1a97e39179353d16d328409f7281cc763193a5eb8f2f00c2f556",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_file_layout.csv": "83cdeac4d21c5a6d48d07d298ec39817bea09d3fc821000b07f4dfcd6c857baa",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_file_layout.json": "515cb0a973b1590ab5d78669f3ce30872ab783aa4ece8fd6209d0fdf34bd9684",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_harness_manifest_v2.json": "d4702d8d72583158413c98de639e996a3c4adb9248abb6751bf8948025cc92b4",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_measurement_readiness_v2.json": "4bda1aa03b9539debf6670bc0b6b776f3553bf379bf9106bb884a8d9d696c3c5",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_memory_event_model.json": "dc08231799f0f349e7e77fc902682d17eaf56ee7761d18e4531d99fc46417378",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_payload_classes.json": "96fcced49740f96d5b3ad0acd78baa71ea9f360944f5bd1ece00e208b132adc9",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_span_tree.json": "db58459689bbfa836a05e0ba97b86cd238bfac981be677ba3c9b7993d99f8e7a",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_whole_stage_tests.json": "c7c880f1178ca5d92676b2cc8a92f01233ad385727d4e924f79fe1d2a5837ca7",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/timing_fix_002_suite_verified.log": "e36790c9500995d5b1e1a49dda7edcc396d29b10db14362e3a78cca1bf667f28"
+  },
+  "authority": {
+    "COMPLETE_EXECUTION_CONFIGURATION_FROZEN": "NO",
+    "EXECUTION_AUTHORIZED": "NO",
+    "RESOURCE_READINESS": "NO",
+    "RUNTIME_AUTHORITY_COMPATIBILITY": "PASS",
+    "canonical_authority": {
+      "path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/docs/routeA_diagnostic_transient_contract_v1.5.json",
+      "sha256": "06c71945289ffe419b784843f7aab2fea66c44d28c9dba46d828bbd24837e27d",
+      "version": "1.5"
+    },
+    "current_execution_guard": "DIAGNOSTIC_TRANSIENT_RESOURCE_QUALIFICATION_PENDING_NO_RUN_AUTHORIZATION",
+    "formal_authority": {
+      "path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/docs/routeA_execution_contract_v1.7.json",
+      "sha256": "fbc744e012f66b37b5d9409be961cb5a9410c3d75ac7e2f026b2acf118d3bb60",
+      "version": "1.7"
+    },
+    "implementation_generation": "v1.4",
+    "manifest_sha256": "703a4e11a1d15af5aecdf7a0e1059cc2f0d3cd92605a2e06f1601ee6c8870d11",
+    "mapping_input_HEAD": "90183094936266183e1e1fb4487f0f0a512c512b",
+    "native_and_library_identities_verified": 851,
+    "production_run_authorized": false,
+    "qualification_execution_authorized": false,
+    "qualification_permissions": {
+      "PRODUCTION": {
+        "CFD_solve": true,
+        "authorization_scope": "PRODUCTION_CFD",
+        "execution_implemented": false,
+        "production_namespace": true,
+        "resource_ready_required": true,
+        "stage_prerequisites": "stage-specific pinned plan and prior stage PASS",
+        "time_advance": true
+      },
+      "Q0": {
+        "CFD_solve": false,
+        "authorization_scope": "RUNTIME_AUTHORITY_COMPATIBILITY_FIX",
+        "execution_implemented": false,
+        "production_namespace": false,
+        "resource_ready_required": false,
+        "stage_prerequisites": "stage-specific pinned plan and prior stage PASS",
+        "time_advance": false
+      },
+      "Q1": {
+        "CFD_solve": false,
+        "authorization_scope": "NONCFD_TIMING_QUALIFICATION",
+        "execution_implemented": false,
+        "production_namespace": false,
+        "resource_ready_required": false,
+        "stage_prerequisites": "stage-specific pinned plan and prior stage PASS",
+        "time_advance": false
+      },
+      "Q2": {
+        "CFD_solve": false,
+        "authorization_scope": "NONCFD_TIMING_QUALIFICATION",
+        "execution_implemented": false,
+        "production_namespace": false,
+        "resource_ready_required": false,
+        "stage_prerequisites": "stage-specific pinned plan and prior stage PASS",
+        "time_advance": false
+      },
+      "Q3": {
+        "CFD_solve": true,
+        "authorization_scope": "Q3_BOUNDED_CFD_TIMING_QUALIFICATION",
+        "execution_implemented": false,
+        "production_namespace": false,
+        "resource_ready_required": false,
+        "stage_prerequisites": "Q0-Q2 PASS + memory/IO PASS + practical budget/risk + separate auth",
+        "time_advance": true
+      }
+    },
+    "repository_files_verified": 91,
+    "resource_ready": false,
+    "rule_id": "EXACT_V15_MACHINE_METADATA_TO_FROZEN_V14_RESOURCE_RUNTIME",
+    "schema": "routeA_runtime_authority_receipt/1.0",
+    "semantic_diff_leaves_verified": 134,
+    "semantic_report_errata": [
+      {
+        "canonical_after": "2026-10-05T22:12:28.543211+09:00",
+        "path": "/prepared_at",
+        "report_after": "2026-10-05T22:15:07.015846+09:00",
+        "scope": "EXACT_PROVENANCE_TIMESTAMP_ONLY_NO_SCIENTIFIC_DIFFERENCE"
+      }
+    ],
+    "timestamp_UTC": "2026-10-05T18:03:44.778856+00:00"
+  },
+  "git_add_commit_push_executed": false,
+  "git_diff_stat": " .../timing_qualification/measurement/README.md     | 139 +++++++++-------\n .../timing_qualification/measurement/analysis.py   |  51 +++++-\n .../timing_qualification/measurement/backend.py    | 183 ++++++++++++++-------\n .../timing_qualification/measurement/common.py     |  32 +++-\n .../timing_qualification/measurement/fixture.py    |  16 +-\n .../timing_qualification/measurement/io_memory.py  |  34 ++--\n .../measurement/native_adapter.C                   |   8 +-\n .../timing_qualification/measurement/pipeline.py   |  32 ++--\n .../timing_qualification/measurement/runner.py     |  59 ++-----\n .../timing_qualification/measurement/watchdog.py   |  30 +++-\n .../timing_qualification/measurement/worker.py     |  10 +-\n 11 files changed, 363 insertions(+), 231 deletions(-)\n",
+  "git_status_short": " M Scripts/routeA/diagnostic_transient/timing_qualification/measurement/README.md\n M Scripts/routeA/diagnostic_transient/timing_qualification/measurement/analysis.py\n M Scripts/routeA/diagnostic_transient/timing_qualification/measurement/backend.py\n M Scripts/routeA/diagnostic_transient/timing_qualification/measurement/common.py\n M Scripts/routeA/diagnostic_transient/timing_qualification/measurement/fixture.py\n M Scripts/routeA/diagnostic_transient/timing_qualification/measurement/io_memory.py\n M Scripts/routeA/diagnostic_transient/timing_qualification/measurement/native_adapter.C\n M Scripts/routeA/diagnostic_transient/timing_qualification/measurement/pipeline.py\n M Scripts/routeA/diagnostic_transient/timing_qualification/measurement/runner.py\n M Scripts/routeA/diagnostic_transient/timing_qualification/measurement/watchdog.py\n M Scripts/routeA/diagnostic_transient/timing_qualification/measurement/worker.py\n?? Scripts/routeA/diagnostic_transient/timing_qualification/measurement/archive.py\n?? Scripts/routeA/diagnostic_transient/timing_qualification/measurement/campaign.py\n?? Scripts/routeA/diagnostic_transient/timing_qualification/measurement/readiness.py\n?? Scripts/routeA/diagnostic_transient/timing_qualification/measurement/report_closure.py\n?? Scripts/routeA/diagnostic_transient/timing_qualification/measurement/run_closure_suite.py\n?? Scripts/routeA/diagnostic_transient/timing_qualification/measurement/schedule.py\n?? Scripts/routeA/diagnostic_transient/timing_qualification/measurement/spans.py\n?? Scripts/routeA/diagnostic_transient/timing_qualification/measurement/test_closure.py\n?? cases/routeA/A-H-Ra1e6-fine-beta1e-4/\n?? cases/routeA/A-Ra1e3-coarse/\n?? cases/routeA/A-Ra1e3-fine/\n?? cases/routeA/A-Ra1e3-medium/\n?? cases/routeA/A-Ra1e4-coarse/\n?? cases/routeA/A-Ra1e4-fine/\n?? cases/routeA/A-Ra1e4-medium/\n?? cases/routeA/A-Ra1e5-coarse/\n?? cases/routeA/A-Ra1e5-fine/\n?? cases/routeA/A-Ra1e5-medium/\n?? cases/routeA/A-Ra1e6-coarse/\n?? cases/routeA/A-Ra1e6-fine/\n?? cases/routeA/A-Ra1e6-medium/\n?? cases/routeA/Ra0_medium/\n?? cases/routeA/Ra1e4_coarse/\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_timing_qualification_preparation_fix_002.json\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_timing_qualification_preparation_fix_002.md\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_blocker_closure.json\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_closure_suite_2.json\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_closure_suite_final.json\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_closure_suite_verified.json\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_file_layout.csv\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_file_layout.json\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_fix_002_start_guard.json\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_harness_manifest_v2.json\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_measurement_readiness_v2.json\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_memory_event_model.json\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_payload_classes.json\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_span_tree.json\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_whole_stage_tests.json\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/timing_fix_002_Q1_test_v2.log\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/timing_fix_002_Q2_test_v2.log\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/timing_fix_002_binding_test.log\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/timing_fix_002_debug_stage_1/\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/timing_fix_002_debug_startup_1/\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/timing_fix_002_positive_test.log\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/timing_fix_002_positive_test_v2.log\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/timing_fix_002_suite_1.log\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/timing_fix_002_suite_2.log\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/timing_fix_002_suite_final.log\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/timing_fix_002_suite_verified.log\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/timing_harness_build_v5/\n",
+  "machine_derived_readiness": {
+    "Q1": true,
+    "Q2": true
+  },
+  "old_reports_unchanged": true,
+  "only_qualification_code_tracked_changes": true,
+  "real_authorization_created": false,
+  "syntax_and_whitespace": "PASS"
+}

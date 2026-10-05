@@ -1,10 +1,11 @@
 """Independent supervisor process: plan-based guards and process-group termination."""
 import ctypes,json,os,resource,signal,subprocess,sys,time
 from pathlib import Path
-from common import HERE,atomic,host,footprint,need,load
+from common import HERE,atomic,host,footprint,need,load,before_write,quota_context
 
 
 def heartbeat(path):
+ if quota_context(path.parent):before_write(path.parent,None,128,1,emergency=True)
  tmp=path.with_name(path.name+'.partial');tmp.write_text(str(time.monotonic()));os.replace(tmp,path)
 
 def parent_death(cap):
@@ -68,6 +69,8 @@ def alive(pid):
 def run(command,out,budget,trial_wall,interval=.02,disk_interval=.1,test_injection=None,allow_nested=False):
  ctypes.CDLL(None).prctl(36,1,0,0,0) # reap orphaned qualification descendants
  start=time.monotonic();deadline=start+min(trial_wall,budget['stage_wall_seconds']);last_disk=-float('inf');last_seen={};roles={};tracked=set();reason=None;peaks={'native':0,'backend':0,'combined_simultaneous':0,'all_processes_simultaneous':0};samples=0;proc=None
+ if quota_context(out):before_write(out,None,4096,2)
+ monitor=Path(quota_context(out)['root']) if quota_context(out) else out
  trace=(out/'resource_trace.jsonl').open('x');log=(out/'worker.log').open('xb')
  try:
   proc=subprocess.Popen(command,start_new_session=True,stdout=log,stderr=log,preexec_fn=lambda:parent_death(budget['native_AS_max_bytes']),env=dict(os.environ,PYTHONDONTWRITEBYTECODE='1',OPENBLAS_NUM_THREADS='1'))
@@ -78,11 +81,14 @@ def run(command,out,budget,trial_wall,interval=.02,disk_interval=.1,test_injecti
    try:
     rolefiles=list(out.rglob('roles.json')) if allow_nested else [out/'roles.json']
     for rolefile in rolefiles:
-     if rolefile.exists():roles.update(load(rolefile))
+     try:
+      if rolefile.exists():roles.update(load(rolefile))
+     except FileNotFoundError:pass
     tree=descendants(proc.pid);tracked|=set(tree);allowed_groups={proc.pid}
     if allow_nested:
      for groupfile in out.rglob('process_group.json'):
-      group=load(groupfile)
+      try:group=load(groupfile)
+      except FileNotFoundError:continue
       if group['supervisor_pid'] in tree:allowed_groups.add(group['pgid'])
     snapshot=host();rss={'native':0,'backend':0,'driver':0}
     for pid,row in tree.items():
@@ -105,18 +111,19 @@ def run(command,out,budget,trial_wall,interval=.02,disk_interval=.1,test_injecti
     if sum(row['VmSize'] for row in tree.values())>budget['native_AS_max_bytes']+budget['backend_AS_max_bytes']:reason='STOP_MEMORY_GUARD'
     if sum(rss.values())>budget['combined_RSS_max_bytes'] or snapshot['MemAvailable']<budget['host_MemAvailable_min_bytes']:reason='STOP_MEMORY_GUARD'
     if now-last_disk>=disk_interval:
-     size,count=footprint(out);v=os.statvfs(out);last_seen={'disk_free':v.f_bavail*v.f_frsize,'file_count':count,'scratch_bytes':size,'free_inodes':v.f_favail};last_disk=now
+     size,count=footprint(monitor);v=os.statvfs(monitor);last_seen={'disk_free':v.f_bavail*v.f_frsize,'file_count':count,'scratch_bytes':size,'free_inodes':v.f_favail};last_disk=now
      if size>budget['scratch_bytes'] or count>budget['files_max']:reason='STOP_STORAGE_GUARD'
      if last_seen['disk_free']<=max(0,budget['scratch_bytes']-size)+max(32*2**30,int(.1*last_seen['disk_free'])):reason='STOP_DISK_FREE_GUARD'
     row={'timestamp_monotonic':now,'supervisor_pid':os.getpid(),'processes':list(tree.values()),'host':snapshot,**last_seen,'native_plus_backend_RSS':rss['native']+rss['backend']}
     raw=json.dumps(row,allow_nan=False)+'\n'
     # Trace reserves count against the same qualification quota.
     if last_seen.get('scratch_bytes',0)+len(raw)>budget['scratch_bytes']:reason='STOP_STORAGE_GUARD'
+    if quota_context(out):before_write(out,None,len(raw.encode()),0)
     trace.write(raw);trace.flush();samples+=1
     heartbeat(out/'watchdog.heartbeat')
     if (out/'runner.heartbeat').exists() and now-float((out/'runner.heartbeat').read_text())>1.:reason='STOP_RUNNER_HEARTBEAT'
    except BaseException as error:
-    reason='STOP_WATCHDOG_FAILURE';last_seen['watchdog_error']=repr(error)
+    reason='STOP_STORAGE_GUARD' if 'STOP_STORAGE_GUARD' in str(error) else 'STOP_WATCHDOG_FAILURE';last_seen['watchdog_error']=repr(error)
    if now>=deadline:reason='STOP_WALL_TIME'
    if reason:terminate_group(proc.pid,tracked,pulse=lambda:heartbeat(out/'watchdog.heartbeat'));break
    if proc.poll() is not None:
@@ -132,7 +139,7 @@ def run(command,out,budget,trial_wall,interval=.02,disk_interval=.1,test_injecti
    except ChildProcessError:break
   result={'status':'CENSORED' if reason=='STOP_WALL_TIME' else 'STOPPED' if reason else 'COMPLETE','STOP_reason':reason,'exit_code':code,'signal':-code if code<0 else None,'start_monotonic':start,'end_monotonic':time.monotonic(),'wall_seconds':time.monotonic()-start,'samples':samples,'peak_RSS_bytes':peaks,'sum_individual_native_backend_peaks_upper_bound':peaks['native']+peaks['backend'],'tracked_pids':sorted(tracked),'remaining_live_pids':[pid for pid in tracked if alive(pid)],'completed_repeats':0 if reason else 1,'partial_output_retained':True,'sample_valid':reason is None,'disk':last_seen}
   need(not result['remaining_live_pids'],'STOP_ORPHAN_CLEANUP_FAILED')
-  atomic(out,'trial_result.json',result);return result
+  atomic(out,'trial_result.json',result,emergency=True);return result
  finally:
   if proc and proc.poll() is None:terminate_group(proc.pid,tracked);proc.wait()
   trace.flush();os.fsync(trace.fileno());trace.close();log.close()
@@ -141,7 +148,7 @@ def launch(request,out):
  """Coordinator monitors supervisor itself; no authorization is granted here."""
  ctypes.CDLL(None).prctl(36,1,0,0,0)
  requestfile=out/'supervisor_request.json';atomic(out,requestfile.name,request)
- p=subprocess.Popen([sys.executable,'-B',str(HERE/'watchdog.py'),str(requestfile)],env=dict(os.environ,PYTHONDONTWRITEBYTECODE='1'),stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+ p=subprocess.Popen([sys.executable,'-B',str(HERE/'watchdog.py'),str(requestfile)],env=dict(os.environ,PYTHONDONTWRITEBYTECODE='1'),stdout=subprocess.PIPE,stderr=subprocess.PIPE,preexec_fn=lambda:parent_death(request['budget']['native_AS_max_bytes']))
  start=time.monotonic();failure=None
  while p.poll() is None:
   heartbeat(out/'runner.heartbeat')
@@ -152,9 +159,14 @@ def launch(request,out):
  stdout,stderr=p.communicate(timeout=2)
  if p.returncode or failure or not (out/'trial_result.json').exists():
   pg=load(out/'process_group.json') if (out/'process_group.json').exists() else None
-  if pg:terminate_group(pg['pgid'],descendants(pg['measurement_root_pid']))
+  groups=[]
+  for path in out.rglob('process_group.json'):
+   try:groups.append(load(path))
+   except (OSError,ValueError):pass
+  for group in reversed(groups):terminate_group(group['pgid'],descendants(group['measurement_root_pid']))
+  if pg and pg not in groups:terminate_group(pg['pgid'],descendants(pg['measurement_root_pid']))
   result={'status':'STOPPED','STOP_reason':'STOP_WATCHDOG_FAILURE','sample_valid':False,'partial_output_retained':True,'supervisor_exit':p.returncode,'stderr':stderr.decode(errors='replace')}
-  atomic(out,'supervisor_failure.json',result);return result
+  atomic(out,'supervisor_failure.json',result,emergency=True);return result
  return load(out/'trial_result.json')
 
 if __name__=='__main__':

@@ -1,0 +1,394 @@
+{
+  "HEAD": "dd45aaf57462f5e1b73468a4d6db08c422c66f3f",
+  "actual_Q1_Q2_campaigns_executed": false,
+  "attempt": "002",
+  "authority_receipt": {
+    "COMPLETE_EXECUTION_CONFIGURATION_FROZEN": "NO",
+    "EXECUTION_AUTHORIZED": "NO",
+    "RESOURCE_READINESS": "NO",
+    "RUNTIME_AUTHORITY_COMPATIBILITY": "PASS",
+    "canonical_authority": {
+      "path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/docs/routeA_diagnostic_transient_contract_v1.5.json",
+      "sha256": "06c71945289ffe419b784843f7aab2fea66c44d28c9dba46d828bbd24837e27d",
+      "version": "1.5"
+    },
+    "current_execution_guard": "DIAGNOSTIC_TRANSIENT_RESOURCE_QUALIFICATION_PENDING_NO_RUN_AUTHORIZATION",
+    "formal_authority": {
+      "path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/docs/routeA_execution_contract_v1.7.json",
+      "sha256": "fbc744e012f66b37b5d9409be961cb5a9410c3d75ac7e2f026b2acf118d3bb60",
+      "version": "1.7"
+    },
+    "implementation_generation": "v1.4",
+    "manifest_sha256": "703a4e11a1d15af5aecdf7a0e1059cc2f0d3cd92605a2e06f1601ee6c8870d11",
+    "mapping_input_HEAD": "90183094936266183e1e1fb4487f0f0a512c512b",
+    "native_and_library_identities_verified": 851,
+    "production_run_authorized": false,
+    "qualification_execution_authorized": false,
+    "qualification_permissions": {
+      "PRODUCTION": {
+        "CFD_solve": true,
+        "authorization_scope": "PRODUCTION_CFD",
+        "execution_implemented": false,
+        "production_namespace": true,
+        "resource_ready_required": true,
+        "stage_prerequisites": "stage-specific pinned plan and prior stage PASS",
+        "time_advance": true
+      },
+      "Q0": {
+        "CFD_solve": false,
+        "authorization_scope": "RUNTIME_AUTHORITY_COMPATIBILITY_FIX",
+        "execution_implemented": false,
+        "production_namespace": false,
+        "resource_ready_required": false,
+        "stage_prerequisites": "stage-specific pinned plan and prior stage PASS",
+        "time_advance": false
+      },
+      "Q1": {
+        "CFD_solve": false,
+        "authorization_scope": "NONCFD_TIMING_QUALIFICATION",
+        "execution_implemented": false,
+        "production_namespace": false,
+        "resource_ready_required": false,
+        "stage_prerequisites": "stage-specific pinned plan and prior stage PASS",
+        "time_advance": false
+      },
+      "Q2": {
+        "CFD_solve": false,
+        "authorization_scope": "NONCFD_TIMING_QUALIFICATION",
+        "execution_implemented": false,
+        "production_namespace": false,
+        "resource_ready_required": false,
+        "stage_prerequisites": "stage-specific pinned plan and prior stage PASS",
+        "time_advance": false
+      },
+      "Q3": {
+        "CFD_solve": true,
+        "authorization_scope": "Q3_BOUNDED_CFD_TIMING_QUALIFICATION",
+        "execution_implemented": false,
+        "production_namespace": false,
+        "resource_ready_required": false,
+        "stage_prerequisites": "Q0-Q2 PASS + memory/IO PASS + practical budget/risk + separate auth",
+        "time_advance": true
+      }
+    },
+    "repository_files_verified": 91,
+    "resource_ready": false,
+    "rule_id": "EXACT_V15_MACHINE_METADATA_TO_FROZEN_V14_RESOURCE_RUNTIME",
+    "schema": "routeA_runtime_authority_receipt/1.0",
+    "semantic_diff_leaves_verified": 134,
+    "semantic_report_errata": [
+      {
+        "canonical_after": "2026-10-05T22:12:28.543211+09:00",
+        "path": "/prepared_at",
+        "report_after": "2026-10-05T22:15:07.015846+09:00",
+        "scope": "EXACT_PROVENANCE_TIMESTAMP_ONLY_NO_SCIENTIFIC_DIFFERENCE"
+      }
+    ],
+    "timestamp_UTC": "2026-10-05T18:02:37.462726+00:00"
+  },
+  "blockers": {
+    "B1": {
+      "evidence_SHA256": "8b34d63456fe1a97e39179353d16d328409f7281cc763193a5eb8f2f00c2f556",
+      "evidence_path": "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_closure_suite_verified.json",
+      "production_persistence_changed": false,
+      "scratch_accounting": {
+        "archive_copy_buffer_bound": 67108864,
+        "manifest_trace_reserve_bytes": 402653184,
+        "maximum_retained_bytes": 11425284096,
+        "maximum_simultaneous_bytes": 12700352512,
+        "maximum_temporary_bytes": 1191182336,
+        "partial_stop_reserve_bytes": 16777216,
+        "production_policy_changed": false,
+        "production_startup_full_audit_slots": 3,
+        "recurring_repeat_context": "AFTER_THREE_STARTUP_SLOTS_FIRST_SELECTED_TARGET",
+        "registered_scratch_bytes": 12884901888,
+        "sharing_required": "EXACT_SELECTED_BUNDLE_CONTENT_IDENTITY_VERIFIED_AT_EACH_COMMIT",
+        "startup_audit_sample_count": 1,
+        "startup_cost_not_hidden": true,
+        "startup_projection_multiplicity": 3,
+        "within_budget": true
+      },
+      "source_view_rule": "startup final bundle bytes address exact records inside the retained full audit; recurring identical bundle bytes share immutable CAS content after real writes",
+      "startup_sample_multiplicity": 3,
+      "status": "PASS",
+      "tests": [
+        "test_B1_schedule_unchanged_checkpoint",
+        "test_B1_startup_bundle_exact_view_of_full_audit",
+        "test_B1_tiny_whole_Q1_campaign"
+      ],
+      "tiny_whole_Q1": [
+        {
+          "STOP_reason": null,
+          "actual_authorization_created": false,
+          "all_artifact_SHA_readback_verified": true,
+          "logical_trials": 7,
+          "no_orphans": true,
+          "physical_files_final": 18,
+          "physical_files_peak_sampled": 49,
+          "scratch_peak_sampled_bytes": 53374976,
+          "stage": "Q1",
+          "status": "COMPLETE_REQUIRES_RESOURCE_REVIEW",
+          "traces_parseable": true
+        }
+      ]
+    },
+    "B2": {
+      "evidence_SHA256": "8b34d63456fe1a97e39179353d16d328409f7281cc763193a5eb8f2f00c2f556",
+      "evidence_path": "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_closure_suite_verified.json",
+      "file_layout": {
+        "active_workspace_files_max": 48,
+        "adopted_event_blobs_max": 2,
+        "index_files": 1,
+        "logical_trials": 66,
+        "no_purge": true,
+        "partial_publish_files": 2,
+        "physical_chunks_max": 64,
+        "registered_files_limit": 256,
+        "representation_migration_after_verified_commit": true,
+        "reserved_stop_bytes": 16777216,
+        "reserved_stop_files": 8,
+        "stage": "Q2",
+        "stage_control_files_max": 24,
+        "worst_case_physical_files": 149
+      },
+      "purge": false,
+      "repetition_or_budget_changed": false,
+      "status": "PASS",
+      "tests": [
+        "test_B2_hundreds_logical_trials_bounded_chunks",
+        "test_B2_tail_crash_and_truncated_uncommitted_chunk",
+        "test_B2_static_layout_and_full_Q2_runtime"
+      ],
+      "tiny_whole_Q2": [
+        {
+          "STOP_reason": null,
+          "actual_authorization_created": false,
+          "all_artifact_SHA_readback_verified": true,
+          "logical_trials": 66,
+          "no_orphans": true,
+          "physical_files_final": 23,
+          "physical_files_peak_sampled": 47,
+          "scratch_peak_sampled_bytes": 17305600,
+          "stage": "Q2",
+          "status": "COMPLETE_REQUIRES_RESOURCE_REVIEW",
+          "traces_parseable": true
+        }
+      ]
+    },
+    "B3": {
+      "evidence_SHA256": "8b34d63456fe1a97e39179353d16d328409f7281cc763193a5eb8f2f00c2f556",
+      "evidence_path": "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_closure_suite_verified.json",
+      "status": "PASS",
+      "tests": [
+        "test_B3_compact_receipt_exact_production_row",
+        "test_B3_Writer_static_aliasing_and_changed_blob_rejection",
+        "test_B3_span_children_exclusive_and_ACK_overlap_rule",
+        "test_B3_registered_repeatability_and_missing_host",
+        "test_tiny_primitive_and_memory_events"
+      ]
+    },
+    "B4": {
+      "evidence_SHA256": "8b34d63456fe1a97e39179353d16d328409f7281cc763193a5eb8f2f00c2f556",
+      "evidence_path": "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_closure_suite_verified.json",
+      "status": "PASS",
+      "tests": [
+        "test_B4_no_overwrite_double_finalization",
+        "test_B4_positive_stage_and_immutable_readback",
+        "test_B4_malformed_and_tampered_receipt",
+        "test_B4_nested_SIGTERM_ignore_no_orphans",
+        "test_B4_trial_timeout_retains_completed_and_partial",
+        "test_B4_trial_and_stage_watchdog_crash",
+        "test_B4_STOP_publish_race_retains_committed_and_partial",
+        "test_B4_quota_and_file_reserve",
+        "test_B4_worker_and_backend_crashes",
+        "test_readiness_is_all_or_nothing_and_never_authorizes"
+      ]
+    }
+  },
+  "generated_UTC": "2026-10-05T18:02:37.543550+00:00",
+  "measurement_ready": {
+    "Q1": true,
+    "Q2": true
+  },
+  "required_final_status": {
+    "ALL_RA_NEEDS_320": "YES",
+    "ALL_ROUTE_A_GATE_F": "FAIL",
+    "B1_12GIB_SCRATCH_RECONCILED": "YES",
+    "B1_PRODUCTION_PERSISTENCE_UNCHANGED": "YES",
+    "B1_Q1_STARTUP_AUDIT_SCHEDULE": "PASS",
+    "B1_RECURRING_COST_SEPARATED": "YES",
+    "B1_STARTUP_COST_SEPARATED": "YES",
+    "B2_ALL_LOGICAL_TRIALS_RETAINED": "YES",
+    "B2_FILE_BUDGET_CHANGED": "NO",
+    "B2_PURGE_REQUIRED": "NO",
+    "B2_Q2_FILE_LAYOUT": "PASS",
+    "B2_STAGE_FILE_LIMIT": "256",
+    "B2_STOP_EVIDENCE_RESERVE_INCLUDED": "YES",
+    "B2_WORST_CASE_FILE_COUNT": "149",
+    "B3_ACK_DOUBLE_COUNT_PREVENTED": "YES",
+    "B3_HOST_STABILITY_RULES_IMPLEMENTED": "YES",
+    "B3_PAYLOAD_CLASSES_SEPARATED": "YES",
+    "B3_REPEATABILITY_RULES_IMPLEMENTED": "YES",
+    "B3_SCALAR_RECEIPT_FIDELITY": "PASS",
+    "B3_SPAN_HIERARCHY_IMPLEMENTED": "YES",
+    "B3_WRITER_MEMORY_BINDING": "PASS",
+    "B4_CRASH_SAFE_FINALIZATION": "PASS",
+    "B4_NESTED_PROCESS_SUPERVISION_TEST": "PASS",
+    "B4_NO_ORPHAN_PROCESS_TEST": "PASS",
+    "B4_PARTIAL_STOP_STAGE_TEST": "PASS",
+    "B4_POSITIVE_STAGE_TEST": "PASS",
+    "B4_QUOTA_RESERVED_STOP_PUBLICATION": "PASS",
+    "B4_WHOLE_STAGE_INTEGRATION": "PASS",
+    "BENCHMARK_CORE_PASS": "NO",
+    "CALLBACKS_PER_STEP_EQUIVALENT": "1144",
+    "CALLBACK_GRAPH_SUPPORTED": "YES",
+    "CANONICAL_AUTHORITY_HASH_VERIFIED": "YES",
+    "CANONICAL_DIAGNOSTIC_AUTHORITY_VERSION": "1.5",
+    "CAPACITY_ESTIMATES_CHANGED": "NO",
+    "CASE_GENERATED": "NO",
+    "CENSORED_TRIAL_POLICY_IMPLEMENTED": "YES",
+    "CFD_TRANSIENT_EXECUTED": "NO",
+    "COMPLETE_EXECUTION_CONFIGURATION_FROZEN": "NO",
+    "COMPUTE_FEASIBILITY": "UNRESOLVED",
+    "DIAGNOSTIC_TRANSIENT_RESOURCE_READY": "NO",
+    "DIAGNOSTIC_TRANSIENT_STORAGE_READY": "YES",
+    "DOWNSTREAM_TRANSIENT_READY": "NO",
+    "EXECUTION_AUTHORIZED": "NO",
+    "FORMAL_AUTHORITY_HASH_VERIFIED": "YES",
+    "FORMAL_CRITERIA_CHANGED": "NO",
+    "FORMAL_GATE_J_CURRENTLY_ALLOWED": "NO",
+    "FORMAL_GATE_J_EXECUTED": "NO",
+    "FORMAL_GATE_J_PASS": "NOT_EVALUATED",
+    "GRID_INDEPENDENT_TRANSIENT_CLAIM_ALLOWED": "NO",
+    "HISTORICAL_STATUS_CHANGED": "NO",
+    "INDEPENDENT_RESOURCE_WATCHDOG_PREPARED": "YES",
+    "INITIALIZATION_EXECUTED": "NO",
+    "IO_FEASIBILITY": "UNRESOLVED",
+    "IO_RUNNER_PREPARED": "YES",
+    "IPC_TIMING_RUNNER_PREPARED": "YES",
+    "LINEAR_SOLVER_POLICY_CHANGED": "NO",
+    "MATRIX_PACKETS_PER_STEP_EQUIVALENT": "701",
+    "MATRIX_PACKET_GRAPH_SUPPORTED": "YES",
+    "MEASUREMENT_READINESS_DERIVED_FROM_BLOCKERS": "YES",
+    "MEMORY_EVENT_RUNNER_PREPARED": "YES",
+    "MEMORY_FEASIBILITY": "UNRESOLVED",
+    "MESH_GENERATED": "NO",
+    "NEXT_SINGLE_TASK": "RUN_ROUTE_A_DIAGNOSTIC_TRANSIENT_NONCFD_TIMING_QUALIFICATION",
+    "N_OUTER_CORRECTORS_CHANGED": "NO",
+    "PARTIAL_EVIDENCE_PRESERVED": "YES",
+    "PARTICLE_COUPLING_READY": "NO",
+    "PERSISTENCE_POLICY_CHANGED": "NO",
+    "PILOT_CFD_EXECUTED": "NO",
+    "PROCESS_GROUP_SUPERVISION": "YES",
+    "PRODUCTION_SOLVER_EXECUTED": "NO",
+    "Q1_EXECUTED": "NO",
+    "Q1_MEASUREMENT_READY": "YES",
+    "Q1_MEASUREMENT_RUNNER_PREPARED": "YES",
+    "Q1_Q2_ACTUAL_MEASUREMENT_AUTHORIZED": "NO",
+    "Q1_Q2_CAN_ADVANCE_PHYSICAL_TIME": "NO",
+    "Q1_Q2_CAN_INVOKE_CFD": "NO",
+    "Q1_Q2_CAN_WRITE_PRODUCTION_NAMESPACE": "NO",
+    "Q2_EXECUTED": "NO",
+    "Q2_MEASUREMENT_READY": "YES",
+    "Q2_MEASUREMENT_RUNNER_PREPARED": "YES",
+    "Q3_EXECUTED": "NO",
+    "QUALIFICATION_MANIFEST_IMPLEMENTED": "YES",
+    "QUALIFICATION_NAMESPACE_ISOLATED": "YES",
+    "QUALIFICATION_STAGE_RECEIPT_IMPLEMENTED": "YES",
+    "RECOMMENDED_REASONING_MODEL_FOR_NEXT_TASK": "gpt-6.1-sol / high",
+    "RETENTION_POLICY_CHANGED": "NO",
+    "ROUTE_A_CHARACTERIZED": "NO",
+    "ROUTE_A_DIAGNOSTIC_TRANSIENT_TIMING_QUALIFICATION_PREPARATION_FIX": "COMPLETE",
+    "RUNTIME_AUTHORITY_COMPATIBILITY": "PASS",
+    "SEAL_PURGE_POLICY_CHANGED": "NO",
+    "TARGET_CELL_COUNT": "25600",
+    "TARGET_INTERNAL_FACE_COUNT": "50880",
+    "TARGET_SIZE_DIAGNOSTIC_HARNESS_PREPARED": "YES",
+    "TARGET_SIZE_NATIVE_ADAPTER_IMPLEMENTED": "YES",
+    "TARGET_TOPOLOGY_VALIDATED": "YES",
+    "TEMPORAL_POLICY_CHANGED": "NO",
+    "U01_CHANGED": "NO",
+    "U02_CHANGED": "NO",
+    "U03_CHANGED": "NO",
+    "U03_SCALING_RUNNER_PREPARED": "YES",
+    "U04_EQUATION_SEMANTICS_CHANGED": "NO",
+    "USER_DECISION_REQUIRED": "YES",
+    "WATCHDOG_OUT_OF_PROCESS": "YES"
+  },
+  "scientific_or_production_policy_changed": false,
+  "sections": [
+    {
+      "content": "B1-B4 PASS, derived Q1/Q2 measurement readiness YES. Only implementation preparation and tiny correctness/process/layout tests executed. Actual target measurements, Q3 and CFD remain unauthorized and unexecuted.",
+      "number": 1,
+      "title": "Result and scope"
+    },
+    {
+      "content": "Canonical diagnostic1.5 and formal1.7 SHA verified, runtime mapping PASS, 91 repository and851 native/library identities verified. v1_4, v1_5_runtime, registered plan/budgets, contracts and all previous reports remain unchanged. HEAD dd45aaf57462f5e1b73468a4d6db08c422c66f3f.",
+      "number": 2,
+      "title": "Frozen authority and history"
+    },
+    {
+      "content": "One full startup-audit sample has explicit production multiplicity3; three distinct startup states are not claimed measured. Six registered recurring repeats retain the OFF/ON/ON/OFF/OFF/ON order at the same checkpoint after three startup slots. Original Schedule.begin consumes the checkpoint slots and the first selected target; production policy is unchanged. Constructor, per-trial setup, recurring, selected, full startup and finalization costs have separate metrics.",
+      "number": 3,
+      "title": "B1 schedule and costs"
+    },
+    {
+      "content": "Original writes, hashes and fsync execute before storage migration. Full startup audit is adopted without a second full copy. Startup final bundle references exact source records in that audit. Recurring bundles must retain identical content identity across repeats; otherwise STOP. Bound 12700352512 bytes <= 12884901888 bytes, including retained data, current temporary files, archive buffer,384MiB trace/metadata allowance and16MiB STOP reserve. This is accounting, not a target measurement or altered capacity estimate.",
+      "number": 4,
+      "title": "B1 retention and scratch"
+    },
+    {
+      "content": "All66 Q2 logical trials remain individually addressable. Worst-case149 physical files including64 chunks,2 adopted complete/partial event blobs,1 index,48 workspace,24 controls,8 STOP reserve and2 partial publications. Limit remains256. Q1 worst-case111. Small archive chunks<=64MiB; individual chained index records<=256KiB.",
+      "number": 5,
+      "title": "B2 physical layout"
+    },
+    {
+      "content": "Trial ID/ordinal/index offset/length/SHA/status/metadata/hash chain are retained. Every artifact has byte segments and exact readback SHA. Workspace duplicate representations retire only after durable verified index commit. No logical evidence or committed bytes are purged. Uncommitted tails are invalid and cannot resume; corrupt committed data rejects. Hundreds-of-trials/random-readback/duplicate/order/truncated-tail tests pass.",
+      "number": 6,
+      "title": "B2 durable logical evidence"
+    },
+    {
+      "content": "Actual compact receipt schema and original scalar row are separated from full controller state. Six classes retain native serialization, IPC, decode, canonicalization, replay, packing/SHA and applicable persistence. Selected class transports registered selected records and runs original Writer.audit. Resource values remain manufactured constant/zero values; performance and compression are fixture-dependent, not real CFD cost evidence.",
+      "number": 7,
+      "title": "B3 payload fidelity"
+    },
+    {
+      "content": "Native construction/hash/serialization/send/ACK rows and backend class/path trees retain inclusive/exclusive durations and parent IDs. Completed backend trees are compacted by exact sums/counts, eliminating unbounded profiler record growth. ACK includes backend work; no double-counting. Logical content/JSON/IPC/packed/incremental-retained/cumulative-retained counters are distinct; percentile summaries are emitted.",
+      "number": 8,
+      "title": "B3 span hierarchy"
+    },
+    {
+      "content": "Events bind original share, accept, ring, bundle, field snapshot, raw spool, U01 last5, U03 and chunk publication. Static objects retain original references; ring contains fresh encoded bytes; last5 uses Live field references. Transient audit joins and actual chunk publication execute. Event before/peak/after are mapped to external traces. Missing intervals/cap coverage or theoretical bounds never become measured resource peaks.",
+      "number": 9,
+      "title": "B3 memory ownership"
+    },
+    {
+      "content": "Frozen minimum3 repeats, min/median/max/population CV, CV>.20, max:min>1.5, >10percent other CPU and missing host trace rules are integrated. Grouping is per actual class/event/N/mode; paired ON-minus-OFF metrics retain signed differences. CPU/governor/frequency/memory/disk evidence is emitted. LOW/missing evidence yields UNRESOLVED; no automatic extra repeat.",
+      "number": 10,
+      "title": "B3 repeat and host rules"
+    },
+    {
+      "content": "Authority -> test-only permission substitute -> sealed receipt -> stage supervisor -> nested trial groups -> Writer/archive/trace -> summary/manifest tested. Future target mode additionally requires the external exact-schema authorization, active harness hash, stage receipt/quota hash and prior-stage declarations. No actual authorization receipt is issued by tests.",
+      "number": 11,
+      "title": "B4 whole-stage execution"
+    },
+    {
+      "content": "Normal writes protect STOP and fixed side-channel credit. Both monitors enforce whole-stage root budgets; emergency summary/manifest can use reserve. Trial timeout, worker/backend/watchdog crash, nested SIGTERM ignore, near-byte/file quotas, malformed/tampered receipts and STOP during partial publication preserve earlier committed data. Finalization and output reuse are rejected on a second write. All children/sockets/writers close.",
+      "number": 12,
+      "title": "B4 STOP and finalization"
+    },
+    {
+      "content": "46 tests PASS: original26 regression plus B1-B4 closure tests. Sources were unchanged during the final suite and still match its SHA snapshot. All tests use four-cell/sub-kilobyte resource fixtures or harmless process children. Unit-test wall values are not reported as target performance.",
+      "number": 13,
+      "title": "Executed validation"
+    },
+    {
+      "content": "Machine-derived closure enables prepared Q1/Q2 interfaces only. Compute/memory/IO feasibility stays UNRESOLVED; diagnostic resource-ready and execution permission stay NO. Next single task: RUN_ROUTE_A_DIAGNOSTIC_TRANSIENT_NONCFD_TIMING_QUALIFICATION, with explicit future non-CFD permission; no automatic Q3.",
+      "number": 14,
+      "title": "Readiness and next task"
+    }
+  ],
+  "suite_SHA256": "8b34d63456fe1a97e39179353d16d328409f7281cc763193a5eb8f2f00c2f556",
+  "task": "FIX_ROUTE_A_DIAGNOSTIC_TRANSIENT_TIMING_QUALIFICATION_PREPARATION",
+  "tests_run": 46
+}

@@ -81,11 +81,13 @@ def state(topo,index=2):
  out.update(geometry={'owner':topo['owner'],'neighbour':topo['neighbour'],'linear_weights':[.5]*len(topo['owner'])},volumes=v,state_epoch='')
  return out
 
-def packets(topo,nodes=None):
+def packets(topo,nodes=None,context_kind=None):
  nodes=nodes or graph();n=topo['counts']['nCells'];s=state(topo);zero=[0.]*n;h=710./25600;k=.1;a=1+h/(h+k)
  for i,template in enumerate(nodes,1):
   m=copy.deepcopy(template['metadata']);stage=m['stage'];is_start=stage=='constructor_complete';current=state(topo,0) if is_start else s
-  m.update(time_index=0 if is_start else 2,physical_time=0. if is_start else .3,deltaT=h,previous_deltaT=k,classification='SYNTHETIC_EVALUATOR_TEST',case_identity='RESOURCE_QUALIFICATION_FIXTURE_ONLY',study_guard_sha256=sha(ROOT/'docs/routeA_diagnostic_transient_contract_v1.5.json'))
+  from schedule import recurring_time
+  sample_time=recurring_time() if context_kind=='RECURRING_STEP_EQUIVALENT' else .3
+  m.update(time_index=0 if is_start else 2,physical_time=0. if is_start else sample_time,deltaT=h,previous_deltaT=k,classification='SYNTHETIC_EVALUATOR_TEST',case_identity='RESOURCE_QUALIFICATION_FIXTURE_ONLY',study_guard_sha256=sha(ROOT/'docs/routeA_diagnostic_transient_contract_v1.5.json'))
   p={'native_state_epoch':current,'thermal_context':{'Cv':[2.]*n,'g':[0.,0.,0.]}}
   original=template['payload'];term=original.get('term','')
   if 'term' in original:p['term']=term
@@ -112,3 +114,13 @@ def packets(topo,nodes=None):
   if is_start:
    binding={'linear':[],'target_Co':.5,'adjustTimeStep':True,'maxDeltaT':710./25600,'centres':[[.025+.05*(j%2),.025+.05*(j//2),.0005] for j in range(n)] if n==4 else [[.1*(j%160+.5)/160,.1*(j//160+.5)/160,.0005] for j in range(n)],'Sf':[[0.,0.,0.] for _ in topo['owner']],'patch_geometry':[{'name':t['name'],'face_cells':t['face_cells'],'delta':[1.]*len(t['face_cells']),'Sf':[[0.,0.,0.] for _ in t['face_cells']]} for t in topo['patches']]}
   yield {'metadata':m,'payload':p,'sequence':i,'live_binding':binding,'payload_sha256':''}
+
+
+def compact_receipt(topo):
+ """Production receipt_bytes schema, without any field-state arrays."""
+ from persistence import receipt_bytes
+ r=graph()[3]
+ evidence={'metadata':r['metadata'],'payload_sha256':r['payload_sha256'],'matrix_metrics':{},'term_metrics':{},'synchronization':[],'sequence':1,'valid':True,'term_name':None}
+ compact=receipt_bytes(evidence)
+ compact['identity']=compact['identity'].hex();compact['payload']=compact['payload'].hex()
+ return {'resource_payload_class':'compact_scalar_receipt','fixture_cells':topo['counts']['nCells'],'metadata':{'classification':'SYNTHETIC_EVALUATOR_TEST','case_identity':'RESOURCE_QUALIFICATION_FIXTURE_ONLY','stage':'compact_scalar_receipt'},'payload':compact,'sequence':1,'payload_sha256':''}

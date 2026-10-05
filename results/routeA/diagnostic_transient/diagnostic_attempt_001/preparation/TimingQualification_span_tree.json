@@ -1,0 +1,42 @@
+{
+  "ACK_rule": "ACK includes receiver work: do not add ACK wall to backend spans",
+  "backend_tree": {
+    "callback_persistence_live": [
+      "writer_accept",
+      "primary_QoI",
+      "U01_certificate"
+    ],
+    "evaluator_callback": [
+      "backend_receive",
+      "JSON_decode",
+      "canonical",
+      "sha",
+      "replay_matrix"
+    ],
+    "finalization": [
+      "stream_hash_commit_fsync",
+      "persistence_write_fsync_manifest"
+    ],
+    "writer_accept": [
+      "packing",
+      "packed_SHA",
+      "persistence_write_fsync_manifest"
+    ]
+  },
+  "clock": "CLOCK_MONOTONIC/perf_counter",
+  "cross_process_exclusive": "not inferred by subtracting unsynchronized process intervals",
+  "native_tree": {
+    "native_callback": [
+      "construction",
+      "hash",
+      "serialization",
+      "send_to_ACK"
+    ],
+    "send_to_ACK": [
+      "socket_send",
+      "ACK_wait"
+    ]
+  },
+  "representation": "exact accumulated class/path tree with counts, parent IDs, inclusive/exclusive seconds; native callback rows remain individually recorded",
+  "telemetry": "logical-byte counting and profiler spans are named overhead; timing perturbation remains a limitation for future projection"
+}

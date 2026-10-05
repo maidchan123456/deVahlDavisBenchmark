@@ -1,0 +1,19 @@
+{
+  "auth": null,
+  "prior": {
+    "Q0_status": "PASS",
+    "Q1_status": "PASS"
+  },
+  "stage": "Q1",
+  "test_fault": null,
+  "test_requests": [
+    {
+      "context_kind": "STARTUP_ONE_TIME",
+      "cost_class": "STARTUP_ONE_TIME",
+      "kind": "pipeline",
+      "mode": "ON",
+      "phase": "startup"
+    }
+  ],
+  "tiny": true
+}

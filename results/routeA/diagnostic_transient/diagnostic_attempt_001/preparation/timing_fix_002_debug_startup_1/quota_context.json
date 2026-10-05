@@ -1,0 +1,17 @@
+{
+  "budget": {
+    "backend_AS_max_bytes": 8589934592,
+    "backend_RSS_max_bytes": 8589934592,
+    "combined_RSS_max_bytes": 17179869184,
+    "files_max": 256,
+    "host_MemAvailable_min_bytes": 25769803776,
+    "native_AS_max_bytes": 8589934592,
+    "native_RSS_max_bytes": 8589934592,
+    "scratch_bytes": 12884901888,
+    "single_trial_wall_seconds": 30,
+    "stage_wall_seconds": 300
+  },
+  "root": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/timing_fix_002_debug_startup_1",
+  "stop_reserve_bytes": 16777216,
+  "stop_reserve_files": 8
+}

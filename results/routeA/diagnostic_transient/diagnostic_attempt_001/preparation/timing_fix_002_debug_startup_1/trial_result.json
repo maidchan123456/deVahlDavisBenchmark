@@ -1,0 +1,36 @@
+{
+  "STOP_reason": null,
+  "completed_repeats": 1,
+  "disk": {
+    "disk_free": 793580371968,
+    "file_count": 15,
+    "free_inodes": 59454202,
+    "scratch_bytes": 5296128
+  },
+  "end_monotonic": 640271.938303821,
+  "exit_code": 0,
+  "partial_output_retained": true,
+  "peak_RSS_bytes": {
+    "all_processes_simultaneous": 245329920,
+    "backend": 62476288,
+    "combined_simultaneous": 72679424,
+    "native": 10203136
+  },
+  "remaining_live_pids": [],
+  "sample_valid": true,
+  "samples": 205,
+  "signal": null,
+  "start_monotonic": 640264.323304729,
+  "status": "COMPLETE",
+  "sum_individual_native_backend_peaks_upper_bound": 72679424,
+  "tracked_pids": [
+    437375,
+    437382,
+    437383,
+    437384,
+    437385,
+    437386,
+    437387
+  ],
+  "wall_seconds": 7.614999431069009
+}
