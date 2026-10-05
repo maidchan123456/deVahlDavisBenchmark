@@ -1,0 +1,6 @@
+mode,CFD_solve,time_advance,production_namespace,resource_ready_required,authorization_scope,execution_implemented,stage_prerequisites
+Q0,False,False,False,False,RUNTIME_AUTHORITY_COMPATIBILITY_FIX,False,stage-specific pinned plan and prior stage PASS
+Q1,False,False,False,False,NONCFD_TIMING_QUALIFICATION,False,stage-specific pinned plan and prior stage PASS
+Q2,False,False,False,False,NONCFD_TIMING_QUALIFICATION,False,stage-specific pinned plan and prior stage PASS
+Q3,True,True,False,False,Q3_BOUNDED_CFD_TIMING_QUALIFICATION,False,Q0-Q2 PASS + memory/IO PASS + practical budget/risk + separate auth
+PRODUCTION,True,True,True,True,PRODUCTION_CFD,False,stage-specific pinned plan and prior stage PASS

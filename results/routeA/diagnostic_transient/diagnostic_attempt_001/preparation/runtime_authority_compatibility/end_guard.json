@@ -1,0 +1,15 @@
+{
+  "HEAD": "90183094936266183e1e1fb4487f0f0a512c512b",
+  "HEAD_unchanged": true,
+  "tracked_diff_empty": true,
+  "git_diff_check": "PASS",
+  "protected_repository_files_unchanged": 91,
+  "native_library_realpath_and_hash_unchanged": 851,
+  "v14_exact_file_set_unchanged": true,
+  "v15_md_and_sidecar_unchanged": true,
+  "canonical_and_formal_hash_verified": true,
+  "runtime_compatibility": "PASS",
+  "execution_authorized": false,
+  "solver_or_benchmark_executed": false,
+  "git_status_short": "?? Scripts/routeA/diagnostic_transient/v1_5_runtime/\n?? cases/routeA/A-H-Ra1e6-fine-beta1e-4/\n?? cases/routeA/A-Ra1e3-coarse/\n?? cases/routeA/A-Ra1e3-fine/\n?? cases/routeA/A-Ra1e3-medium/\n?? cases/routeA/A-Ra1e4-coarse/\n?? cases/routeA/A-Ra1e4-fine/\n?? cases/routeA/A-Ra1e4-medium/\n?? cases/routeA/A-Ra1e5-coarse/\n?? cases/routeA/A-Ra1e5-fine/\n?? cases/routeA/A-Ra1e5-medium/\n?? cases/routeA/A-Ra1e6-coarse/\n?? cases/routeA/A-Ra1e6-fine/\n?? cases/routeA/A-Ra1e6-medium/\n?? cases/routeA/Ra0_medium/\n?? cases/routeA/Ra1e4_coarse/\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_qualification_permission_matrix.csv\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_runtime_authority_compatibility_fix.json\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_runtime_authority_compatibility_fix.md\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_runtime_compatibility_matrix.csv\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_runtime_negative_tests.csv\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/runtime_authority_compatibility/\n"
+}
