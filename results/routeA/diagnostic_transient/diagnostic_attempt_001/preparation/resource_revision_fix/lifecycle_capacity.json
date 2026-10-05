@@ -1,0 +1,94 @@
+{
+  "classification": "PLANNING_CAPS_NOT_PRODUCTION_MEASUREMENT",
+  "free_bytes_at_start": 795726016512,
+  "series": {
+    "0.5": {
+      "Co": 0.5,
+      "steps_planning_only": 200061,
+      "permanent_bytes": 178636906968,
+      "working_peak_bytes": 195816776152,
+      "reclaimable_upper_bound_bytes": 17179869184,
+      "reclaimable_actual_bytes": "MEASURE_SEALED_ALLOWLIST; not a guaranteed16GiB reclaim",
+      "file_bound": 10074,
+      "parts": {
+        "receipts_and_primary": 58268967384,
+        "full_raw_audits": 67645734912,
+        "selected_bundles": 30064771072,
+        "field_snapshots": 8472494080,
+        "complete_solver_logs": 13111197696,
+        "fixed_provenance_and_static": 1073741824
+      },
+      "retention_bytes": {
+        "R0": 72453906904,
+        "R1": 97710505984,
+        "R2": 8472494080,
+        "R3_R4_shared_cap": 17179869184
+      }
+    },
+    "0.25": {
+      "Co": 0.25,
+      "steps_planning_only": 400122,
+      "permanent_bytes": 250017072048,
+      "working_peak_bytes": 267196941232,
+      "reclaimable_upper_bound_bytes": 17179869184,
+      "reclaimable_actual_bytes": "MEASURE_SEALED_ALLOWLIST; not a guaranteed16GiB reclaim",
+      "file_bound": 19452,
+      "parts": {
+        "receipts_and_primary": 116537934768,
+        "full_raw_audits": 67645734912,
+        "selected_bundles": 30064771072,
+        "field_snapshots": 8472494080,
+        "complete_solver_logs": 26222395392,
+        "fixed_provenance_and_static": 1073741824
+      },
+      "retention_bytes": {
+        "R0": 143834071984,
+        "R1": 97710505984,
+        "R2": 8472494080,
+        "R3_R4_shared_cap": 17179869184
+      }
+    },
+    "0.125": {
+      "Co": 0.125,
+      "steps_planning_only": 800244,
+      "permanent_bytes": 392777402208,
+      "working_peak_bytes": 409957271392,
+      "reclaimable_upper_bound_bytes": 17179869184,
+      "reclaimable_actual_bytes": "MEASURE_SEALED_ALLOWLIST; not a guaranteed16GiB reclaim",
+      "file_bound": 38208,
+      "parts": {
+        "receipts_and_primary": 233075869536,
+        "full_raw_audits": 67645734912,
+        "selected_bundles": 30064771072,
+        "field_snapshots": 8472494080,
+        "complete_solver_logs": 52444790784,
+        "fixed_provenance_and_static": 1073741824
+      },
+      "retention_bytes": {
+        "R0": 286594402144,
+        "R1": 97710505984,
+        "R2": 8472494080,
+        "R3_R4_shared_cap": 17179869184
+      }
+    }
+  },
+  "primary_permanent_bytes": 428653979016,
+  "sequential_primary_peak_bytes": 445833848200,
+  "sequential_primary_peak_fraction_of_free": 0.560285624635319,
+  "Co0125_post_purge_peak_bytes": 838611250408,
+  "Co0125_post_purge_peak_fraction_of_free": 1.0538944724768256,
+  "three_series_models": {
+    "A_all_unpurged_upper_bound": 872970988776,
+    "B_Co05_purged_upper_bound": 855791119592,
+    "C_both_purged_upper_bound": 838611250408
+  },
+  "safety_policy": "per-series current free > current peak + existing permanent (additional conservative reserve) + max32GiB,10percent current free; free already excludes existing footprint, do not double-count in actual peak totals",
+  "scratch_policy": "All R3 validation copies + R4 spools/replay share16GiB; nonselected raw is evaluated then discarded online and has no on-disk reclaim credit",
+  "R2_policy": "Inherited selection schedule including505 upper-bound snapshots, initial/final and64 trigger reserve remain permanent; arrival crossing capture included in reserve",
+  "primary_scalar_cap_bytes_per_step": 65536,
+  "old_candidate_primary_scalar_reserve_bytes_per_step": 8192,
+  "projection_note": "Old394GB was main TWO-series total, not one-series permanent. New64KiB row cap explicitly includes169 linear component records + U01/U03/scalars. R1 selected audits were re-summed, never marked deletable. Live context adds small residual metadata; full/bundle caps have slack above old6.53GB/.331GB projections. Static geometry context covered by1GiB fixed reserve.",
+  "storage_feasibility_primary": "FEASIBLE_UNDER_PLANNING_CAPS",
+  "storage_feasibility_Co0125": "INFEASIBLE_AT_TSTAR2_ON_CURRENT_DISK_EVEN_AFTER_PRIOR_PURGE",
+  "production_measurement_unresolved": true
+}

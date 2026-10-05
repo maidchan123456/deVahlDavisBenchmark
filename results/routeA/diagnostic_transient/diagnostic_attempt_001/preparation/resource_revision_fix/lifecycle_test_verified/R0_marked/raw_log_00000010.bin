@@ -1,0 +1,12 @@
+= 0, No Iterations 0
+diagonal:  Solving for Uz, Initial residual = 0, Final residual = 0, No Iterations 0
+DILUPBiCGStab:  Solving for e, Initial residual = 4.74652e-13, Final residual = 4.74652e-13, No Iterations 0
+DICPCG:  Solving for p_rgh, Initial residual = 1.02151e-16, Final residual = 1.02151e-16, No Iterations 0
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for p_rgh, Initial residual = 1.02151e-16, Final residual = 1.02151e-16, No Iterations 0
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+diagonal:  Solving for Ux, Initial residual = 0, Final residual = 0, No Iterations 0
+diagonal:  Solving for Uy, Initial residual = 0, Final residual = 0, No Iterations 0
+diagonal:  Solving for Uz, Initial residual = 0, Final residual = 0, No Iterations 0
+DILUPBiCGStab:  Solving for e, Initial residual = 4.74652e-13, Final residual = 4.74652e-13, No Iterations 0
+DICPCG:  Solving for p_rgh, Initial residual = 1.02151e-16, F

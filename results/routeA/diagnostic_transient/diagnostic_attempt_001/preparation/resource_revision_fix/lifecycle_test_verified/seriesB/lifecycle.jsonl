@@ -1,0 +1,3 @@
+{"chain":"bd9648f7e5a74ff711011bcc58ae67bbdae7c939b4f6f62fc812fdfee6decbef","previous":"0000000000000000000000000000000000000000000000000000000000000000","state":"RUNNING","timestamp_UTC":"2026-10-05T12:40:14Z"}
+{"chain":"024c81468dd14421ecad2d783bf8aff8c95ba4b49b4bc5d6f4f4abe17daad6f7","previous":"bd9648f7e5a74ff711011bcc58ae67bbdae7c939b4f6f62fc812fdfee6decbef","state":"VALIDATING","timestamp_UTC":"2026-10-05T12:40:14Z"}
+{"chain":"dd0621f8aaf25ef0552da5fe0cf823a25f75dcdc9309d34849f7bfb0dfc22b23","previous":"024c81468dd14421ecad2d783bf8aff8c95ba4b49b4bc5d6f4f4abe17daad6f7","seal_id":"64d1b69a609f10a56226a4dbc0d84f700d7a37afe4cf3287ec79025c8625b12a","state":"SEALED","timestamp_UTC":"2026-10-05T12:40:16Z"}

@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "scope": "NEW_SYNTHETIC_FIXTURES_ONLY",
+  "series_seal_test": "PASS",
+  "synthetic_purge_test": "PASS",
+  "post_purge_core_integrity": "PASS",
+  "post_purge_final_analysis_reproducible": true,
+  "post_purge_selected59_replay": "PASS",
+  "cross_series_comparison_after_purge": "PASS",
+  "comparison": {
+    "relative_differences": {
+      "Nu_bar_cavity": 0.0,
+      "Umax": 0.0,
+      "Wmax": 0.0
+    },
+    "C3_trigger": false,
+    "C3_policy": "STOP_SEPARATE_RESOURCE_REVIEW_RECHECK_AND_EXPLICIT_AUTHORIZATION",
+    "only_R0_used": true
+  },
+  "bytes_reclaimed": 3276800,
+  "seal_id": "9f56ca447cb1b856e56596ab69d02062b6d13b8ba5ea4085d4bfbbb482189ccd",
+  "immutable_seal_after_purge": true,
+  "production_data_purged": false,
+  "historical_data_purged": false,
+  "limitations": "The native fixture is one manufactured step; the frozen U03 window test is a separate constant scalar fixture, never a production arrival claim."
+}

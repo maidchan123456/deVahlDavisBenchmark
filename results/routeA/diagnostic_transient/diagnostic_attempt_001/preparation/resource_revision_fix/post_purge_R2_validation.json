@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "scope": "Independent retained R2 state + R0 native geometry reload; no purged data",
+  "values": {
+    "Nu_bar_cavity": 1.0,
+    "Nu_bar_0": 1190.0199690103234,
+    "Umax": 0.0,
+    "Umax_Z": 0.0,
+    "Wmax": 142.0,
+    "Wmax_X": 0.250244140625
+  }
+}

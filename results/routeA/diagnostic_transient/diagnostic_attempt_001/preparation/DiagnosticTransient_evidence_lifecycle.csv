@@ -1,0 +1,6 @@
+state,entry_rule,purge_allowed
+RUNNING,Registered preflight and pinned new series; collect every required callback,NO
+VALIDATING,Native run complete; validate all required artifacts,NO
+SEALED,All required checks PASS; immutable seal published,NO
+PURGE_ELIGIBLE,Valid seal and hash/allowlist dry-run,ONLY_WITH_EXPLICIT_USER_AUTHORIZATION
+PURGED,Exact unlink allowlist complete; retained integrity and journal verify,COMPLETED_NO_AUTO_RESUME

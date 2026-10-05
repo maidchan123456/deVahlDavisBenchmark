@@ -1,0 +1,27 @@
+{
+  "allowlist_only": true,
+  "valid_seal_required": true,
+  "dry_run_required": true,
+  "explicit_user_authorization_required": true,
+  "never_delete_classes": [
+    "R0",
+    "R1",
+    "R2"
+  ],
+  "eligible_classes": [
+    "R3",
+    "R4"
+  ],
+  "shared_temp_cap_bytes": 17179869184,
+  "no_recursive_directory_deletion": true,
+  "no_auto_purge_on_capacity_failure": true,
+  "no_auto_resume_interrupted_purge": true,
+  "journal_permanent": true,
+  "registered_roots": [
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/series/<case>",
+    "preparation/resource_revision_fix/lifecycle_test*/<fixture>"
+  ],
+  "current_scope": "Only newly created synthetic fixture deletion authorized",
+  "deleted_hash_limit": "Integrity evidence only; payload unavailable",
+  "bitwise_rerun_guaranteed": false
+}

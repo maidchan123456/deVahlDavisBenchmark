@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "classification": "MANUFACTURED_POLICY_AND_BINDING_UNIT_TEST_NOT_CFD",
+  "anomaly_branches_observed": [
+    "ARRIVAL_CANDIDATE_TRANSITION",
+    "ARRIVAL_CONFIRMED",
+    "CONTROLLER_ANOMALY",
+    "DIAGNOSTIC_RELATIVE_CHANGE_energy_balance_residual_end",
+    "DIAGNOSTIC_RELATIVE_CHANGE_mass_balance_residual",
+    "DIAGNOSTIC_RELATIVE_CHANGE_rho_sync_Linf",
+    "LINEAR_FAILURE",
+    "U01_FAILURE",
+    "U01_NEAR_FAILURE",
+    "UNEXPECTED_ACHIEVED_CO"
+  ],
+  "arrival_selected_fields": 2,
+  "native_sample_reduction_reused": true,
+  "near_failure_certificate": "PASS_CONTRACTING_BELOW_FROZEN_LIMIT",
+  "nonuniform_U03_policy": "PASS",
+  "frozen_U02_controller": "PASS",
+  "no_physical_threshold_added": true
+}

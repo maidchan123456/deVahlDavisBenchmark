@@ -1,0 +1,206 @@
+{
+  "status": "PASS",
+  "scope": "NEW_SYNTHETIC_FIXTURES_ONLY",
+  "series_seal_test": "PASS",
+  "synthetic_purge_test": "PASS",
+  "post_purge_core_integrity": "PASS",
+  "post_purge_final_analysis_reproducible": true,
+  "post_purge_selected59_replay": "PASS",
+  "cross_series_comparison_after_purge": "PASS",
+  "comparison": {
+    "relative_differences": {
+      "Nu_bar_cavity": 0.0,
+      "Umax": 0.0,
+      "Wmax": 0.0
+    },
+    "C3_trigger": false,
+    "C3_policy": "STOP_SEPARATE_RESOURCE_REVIEW_RECHECK_AND_EXPLICIT_AUTHORIZATION",
+    "only_R0_used": true
+  },
+  "bytes_reclaimed": 3276800,
+  "retained_evidence": [
+    "anomaly_001.bin",
+    "anomaly_001.json",
+    "arrival_result.json",
+    "chunk_0000000001_0000001152.bin",
+    "complete.json",
+    "evaluator_summary.json",
+    "final_bundle.bin",
+    "final_fields.bin",
+    "final_statistics.json",
+    "full_2.bin",
+    "immutable_1837a5264a013b398f4308136dae5dec6bb463ea0a432dba00a16eda5e0035d4.bin",
+    "immutable_246c6cc1da820f428db319fbdbfc5172a4188fa22f43502eea768b7f4089831a.bin",
+    "immutable_c7170ba6fd883634f7fe3470d223cc822c075fe5cc4a75b420ab76e6dc1b9c82.bin",
+    "immutable_d3e1090c42a4fba023c4d82152240eff5f02621c9b1f5b3d2acf891a0f90a94e.bin",
+    "immutable_eb30793c7cda9c96d44f37b1ac2ce2c946af9273a66a5f0a1a2dbad25f940bbf.bin",
+    "immutable_f7fec3f07dee0f48d83e4ed7f66c05e642242c4d30b27105d49c09aa4a7a2595.bin",
+    "initial_state.bin",
+    "live_geometry.bin",
+    "manifest.jsonl",
+    "native_build_provenance.json",
+    "primary_000001.jsonl",
+    "provenance.json",
+    "raw_log_00000001.bin",
+    "raw_log_00000002.bin",
+    "raw_log_00000003.bin",
+    "raw_log_00000004.bin",
+    "raw_log_00000005.bin",
+    "raw_log_00000006.bin",
+    "raw_log_00000007.bin",
+    "raw_log_00000008.bin",
+    "raw_log_00000009.bin",
+    "raw_log_00000010.bin",
+    "raw_log_00000011.bin",
+    "raw_log_00000012.bin",
+    "raw_log_00000013.bin",
+    "raw_log_00000014.bin",
+    "raw_log_00000015.bin",
+    "raw_log_00000016.bin",
+    "raw_log_00000017.bin",
+    "raw_log_00000018.bin",
+    "raw_log_completion.json",
+    "raw_log_manifest.jsonl",
+    "synthetic_arrival_fixture.json",
+    "validation.json"
+  ],
+  "seal_id": "9f56ca447cb1b856e56596ab69d02062b6d13b8ba5ea4085d4bfbbb482189ccd",
+  "immutable_seal_after_purge": true,
+  "failure_injections": [
+    {
+      "test": "missing_user_authorization",
+      "status": "FAIL_CLOSED",
+      "reason": "USER_AUTHORIZATION_REQUIRED"
+    },
+    {
+      "test": "missing_seal",
+      "status": "FAIL_CLOSED",
+      "reason": "[Errno 2] No such file or directory: 'series_seal_manifest.json'"
+    },
+    {
+      "test": "invalid_seal_hash",
+      "status": "FAIL_CLOSED",
+      "reason": "INVALID_SEAL_HASH"
+    },
+    {
+      "test": "unknown_file",
+      "status": "FAIL_CLOSED",
+      "reason": "UNKNOWN_FILE"
+    },
+    {
+      "test": "R0_marked",
+      "status": "FAIL_CLOSED",
+      "reason": "PURGE_MANIFEST_MISMATCH"
+    },
+    {
+      "test": "R1_marked",
+      "status": "FAIL_CLOSED",
+      "reason": "PURGE_MANIFEST_MISMATCH"
+    },
+    {
+      "test": "symlink_escape",
+      "status": "FAIL_CLOSED",
+      "reason": "[Errno 40] Too many levels of symbolic links: 'validation_copy_1.bin'"
+    },
+    {
+      "test": "parent_traversal",
+      "status": "FAIL_CLOSED",
+      "reason": "PURGE_MANIFEST_MISMATCH"
+    },
+    {
+      "test": "changed_after_seal",
+      "status": "FAIL_CLOSED",
+      "reason": "SEALED_FILE_CHANGED"
+    },
+    {
+      "test": "partial_purge",
+      "status": "FAIL_CLOSED",
+      "reason": "[Errno 2] No such file or directory: 'validation_copy_1.bin'"
+    },
+    {
+      "test": "injected_interrupt",
+      "status": "FAIL_CLOSED",
+      "reason": "INJECTED_INTERRUPT; manual recovery required, no automatic resume"
+    },
+    {
+      "test": "interrupted_purge",
+      "status": "FAIL_CLOSED",
+      "reason": "PARTIAL_OR_INTERRUPTED_PURGE"
+    },
+    {
+      "test": "interrupted_no_auto_resume",
+      "status": "FAIL_CLOSED",
+      "reason": "PARTIAL_OR_INTERRUPTED_PURGE"
+    },
+    {
+      "test": "missing_validation",
+      "status": "FAIL_CLOSED",
+      "reason": "VALIDATION_FAILED"
+    },
+    {
+      "test": "R2_marked",
+      "status": "FAIL_CLOSED",
+      "reason": "PURGE_MANIFEST_MISMATCH"
+    },
+    {
+      "test": "changed_after_dry_run",
+      "status": "FAIL_CLOSED",
+      "reason": "SEALED_FILE_CHANGED"
+    },
+    {
+      "test": "outside_registered_allowed_root",
+      "status": "FAIL_CLOSED",
+      "reason": "OUTSIDE_REGISTERED_ALLOWED_ROOT"
+    },
+    {
+      "test": "path_../x",
+      "status": "FAIL_CLOSED",
+      "reason": "UNSAFE_PATH"
+    },
+    {
+      "test": "path_a/b",
+      "status": "FAIL_CLOSED",
+      "reason": "UNSAFE_PATH"
+    },
+    {
+      "test": "path_..",
+      "status": "FAIL_CLOSED",
+      "reason": "UNSAFE_PATH"
+    },
+    {
+      "test": "path_/etc/passwd",
+      "status": "FAIL_CLOSED",
+      "reason": "UNSAFE_PATH"
+    },
+    {
+      "test": "R0_incorrectly_classified_R3_at_seal",
+      "status": "FAIL_CLOSED",
+      "reason": "RETENTION_CLASS_VIOLATION_primary_000001.jsonl"
+    },
+    {
+      "test": "R1_incorrectly_classified_R3_at_seal",
+      "status": "FAIL_CLOSED",
+      "reason": "RETENTION_CLASS_VIOLATION_final_bundle.bin"
+    },
+    {
+      "test": "R2_incorrectly_classified_R3_at_seal",
+      "status": "FAIL_CLOSED",
+      "reason": "RETENTION_CLASS_VIOLATION_final_fields.bin"
+    }
+  ],
+  "production_data_purged": false,
+  "historical_data_purged": false,
+  "limitations": "The native fixture is one manufactured step; the frozen U03 window test is a separate constant scalar fixture, never a production arrival claim.",
+  "independent_final_primary_from_retained_R2": {
+    "status": "PASS",
+    "scope": "Independent retained R2 state + R0 native geometry reload; no purged data",
+    "values": {
+      "Nu_bar_cavity": 1.0,
+      "Nu_bar_0": 1190.0199690103234,
+      "Umax": 0.0,
+      "Umax_Z": 0.0,
+      "Wmax": 142.0,
+      "Wmax_X": 0.250244140625
+    }
+  }
+}

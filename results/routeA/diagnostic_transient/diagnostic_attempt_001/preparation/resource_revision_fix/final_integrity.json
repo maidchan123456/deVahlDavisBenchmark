@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "protected_files_unchanged": true,
+  "invariants": {
+    "formal_authority": true,
+    "formal_status_preserved": true,
+    "physical_problem": true,
+    "governing_equations": true,
+    "transient_algorithm": true,
+    "initial_condition": true,
+    "spatial_discretization": true,
+    "temporal_discretization": true,
+    "courant_control": true,
+    "series": true,
+    "inner_convergence": true,
+    "dimensionless_time": true,
+    "duration": true,
+    "steady_arrival": true,
+    "QoIs": true,
+    "mass_diagnostic": true,
+    "energy_diagnostic": true,
+    "thermo_rho_synchronization": true,
+    "restart": true,
+    "no_auto_tuning": true,
+    "temporal_comparison": true,
+    "interpretation": true
+  },
+  "contract_sha256": "c58096f1b6422003c16884e7b8d3c0bb828d9ea797ae59fca9605229af597a82",
+  "HEAD_known_unchanged": true
+}

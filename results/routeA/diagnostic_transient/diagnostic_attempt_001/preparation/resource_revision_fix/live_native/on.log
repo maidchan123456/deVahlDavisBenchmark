@@ -1,0 +1,39 @@
+I/O    : uncollated
+Traceback (most recent call last):
+  File "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/v1_4/server.py", line 41, in serve
+    if live:live.accept(current[0],receipt)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/v1_4/live_collector.py", line 88, in accept
+    q=self.qoi(s);self.mass0=q['total_mass'];self.previous_mass=q['total_mass'];self.initial_values=q
+      ^^^^^^^^^^^
+  File "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/v1_4/live_collector.py", line 54, in qoi
+    def qoi(self,state):return primary(state,self.geometry['centres'],self.physical)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/v1_4/primary_evidence.py", line 13, in primary
+    xs=np.unique(points[:,0]);ys=np.unique(points[:,1]);nx=len(xs);ny=len(ys);need(nx*ny==len(T) and nx>=2 and ny>=2,'PRIMARY_RECTANGULAR_GRID')
+                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/v1_4/packed.py", line 6, in need
+    if not ok:raise EvidenceFailure('EVIDENCE_FAILURE: '+reason)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+packed.EvidenceFailure: EVIDENCE_FAILURE: PRIMARY_RECTANGULAR_GRID
+EVALUATOR_FAILURE: P1_EVALUATOR_OR_EVIDENCE_FAILURE
+Traceback (most recent call last):
+  File "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/v1_4/server.py", line 49, in <module>
+    if __name__=='__main__':serve(int(sys.argv[1]),*sys.argv[2:])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/v1_4/server.py", line 41, in serve
+    if live:live.accept(current[0],receipt)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/v1_4/live_collector.py", line 88, in accept
+    q=self.qoi(s);self.mass0=q['total_mass'];self.previous_mass=q['total_mass'];self.initial_values=q
+      ^^^^^^^^^^^
+  File "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/v1_4/live_collector.py", line 54, in qoi
+    def qoi(self,state):return primary(state,self.geometry['centres'],self.physical)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/v1_4/primary_evidence.py", line 13, in primary
+    xs=np.unique(points[:,0]);ys=np.unique(points[:,1]);nx=len(xs);ny=len(ys);need(nx*ny==len(T) and nx>=2 and ny>=2,'PRIMARY_RECTANGULAR_GRID')
+                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/v1_4/packed.py", line 6, in need
+    if not ok:raise EvidenceFailure('EVIDENCE_FAILURE: '+reason)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+packed.EvidenceFailure: EVIDENCE_FAILURE: PRIMARY_RECTANGULAR_GRID

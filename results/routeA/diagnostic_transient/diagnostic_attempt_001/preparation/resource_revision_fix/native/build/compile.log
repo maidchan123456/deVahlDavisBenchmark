@@ -1,0 +1,24 @@
+/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/v1_4/NativeStageObserver.C: In function ‘routeAU04::Json routeAU04::liveBinding(const Foam::fvMesh&, const std::string&)’:
+/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/v1_4/NativeStageObserver.C:89:13: error: no matching function for call to ‘Foam::Residuals<double>::found(std::string&) const’
+   89 |   if(r.found(field)){const auto& list=r[field];if(!list.empty()){
+      |      ~~~~~~~^~~~~~~
+In file included from /opt/openfoam13/src/OpenFOAM/lnInclude/Residuals.H:147,
+                 from /opt/openfoam13/src/finiteVolume/lnInclude/fvMatrixSolve.C:28,
+                 from /opt/openfoam13/src/finiteVolume/lnInclude/fvMatrix.C:2600,
+                 from /opt/openfoam13/src/finiteVolume/lnInclude/fvMatrix.H:1200,
+                 from /opt/openfoam13/src/finiteVolume/lnInclude/fvScalarMatrix.H:38,
+                 from /opt/openfoam13/src/finiteVolume/lnInclude/fvMatrices.H:40,
+                 from /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/v1_4/../v1_1/NativeMatrixObserver.H:6,
+                 from /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/v1_4/NativeStageObserver.H:3,
+                 from /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/v1_4/NativeStageObserver.C:1:
+/opt/openfoam13/src/OpenFOAM/lnInclude/Residuals.C:62:6: note: candidate: ‘static bool Foam::Residuals<Type>::found(const Foam::polyMesh&, const Foam::word&) [with Type = double]’
+   62 | bool Foam::Residuals<Type>::found(const polyMesh& mesh, const word& fieldName)
+      |      ^~~~
+/opt/openfoam13/src/OpenFOAM/lnInclude/Residuals.C:62:6: note:   candidate expects 2 arguments, 1 provided
+/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/v1_4/NativeStageObserver.C:95:13: error: no matching function for call to ‘Foam::Residuals<Foam::Vector<double> >::found(const char [2]) const’
+   95 |   if(r.found("U")){const auto& list=r["U"];if(!list.empty()){
+      |      ~~~~~~~^~~~~
+/opt/openfoam13/src/OpenFOAM/lnInclude/Residuals.C:62:6: note: candidate: ‘static bool Foam::Residuals<Type>::found(const Foam::polyMesh&, const Foam::word&) [with Type = Foam::Vector<double>]’
+   62 | bool Foam::Residuals<Type>::found(const polyMesh& mesh, const word& fieldName)
+      |      ^~~~
+/opt/openfoam13/src/OpenFOAM/lnInclude/Residuals.C:62:6: note:   candidate expects 2 arguments, 1 provided

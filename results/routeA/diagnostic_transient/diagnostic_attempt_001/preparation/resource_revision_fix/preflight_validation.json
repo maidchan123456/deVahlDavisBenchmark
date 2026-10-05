@@ -1,0 +1,66 @@
+{
+  "status": "PASS",
+  "classification": "READ_ONLY_PREFLIGHT_BINDING_TEST_NO_CFD",
+  "provenance_fixture_not_future_case_configuration": true,
+  "read_only_prepare": true,
+  "actual_free_bytes": 793795174400,
+  "actual_free_inodes": 59456113,
+  "actual_RAM_available_bytes": 63292493824,
+  "Co05_planned_peak": 195816776152,
+  "safety_bytes": 79379517440,
+  "run_blocked_resource_ready_NO": true,
+  "failure_injections": [
+    {
+      "test": "resource_ready_NO_blocks_run",
+      "status": "FAIL_CLOSED",
+      "reason": "EVIDENCE_FAILURE: RESOURCE_READY_NO_NO_EXECUTION"
+    },
+    {
+      "test": "hash_mismatch",
+      "status": "FAIL_CLOSED",
+      "reason": "EVIDENCE_FAILURE: PREFLIGHT_HASH_source"
+    },
+    {
+      "test": "wrong_series_identity",
+      "status": "FAIL_CLOSED",
+      "reason": "EVIDENCE_FAILURE: SERIES_IDENTITY_MISMATCH"
+    },
+    {
+      "test": "unregistered_working_peak",
+      "status": "FAIL_CLOSED",
+      "reason": "EVIDENCE_FAILURE: UNREGISTERED_STORAGE_MODEL"
+    },
+    {
+      "test": "unmeasured_previous_footprint",
+      "status": "FAIL_CLOSED",
+      "reason": "EVIDENCE_FAILURE: EXISTING_PERMANENT_FOOTPRINT_NOT_MEASURED"
+    },
+    {
+      "test": "missing_prior_Co05_seal",
+      "status": "FAIL_CLOSED",
+      "reason": "EVIDENCE_FAILURE: SEQUENTIAL_PREVIOUS_SERIES_MISSING"
+    },
+    {
+      "test": "missing_pinned_observer",
+      "status": "FAIL_CLOSED",
+      "reason": "EVIDENCE_FAILURE: PINNED_OBSERVER_LIBRARY_MISSING"
+    },
+    {
+      "test": "free_disk",
+      "status": "FAIL_CLOSED",
+      "reason": "EVIDENCE_FAILURE: RESOURCE_PREFLIGHT_STORAGE"
+    },
+    {
+      "test": "free_inodes",
+      "status": "FAIL_CLOSED",
+      "reason": "EVIDENCE_FAILURE: RESOURCE_PREFLIGHT_INODES"
+    },
+    {
+      "test": "C3_stop_before_execution",
+      "status": "FAIL_CLOSED",
+      "reason": "EVIDENCE_FAILURE: STOP_CO0125_RESOURCE_REVIEW_AND_EXPLICIT_AUTHORIZATION_REQUIRED"
+    }
+  ],
+  "case_created": false,
+  "production_solver_executed": false
+}
