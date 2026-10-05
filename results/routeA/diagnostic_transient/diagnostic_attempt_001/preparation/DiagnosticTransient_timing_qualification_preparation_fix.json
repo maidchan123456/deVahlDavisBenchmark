@@ -1,0 +1,351 @@
+{
+  "HEAD": "8135eec17dab5c66082bb25b9e3509ee2cc39ac9",
+  "actual_authorization_receipt_created": false,
+  "authority_receipt": {
+    "COMPLETE_EXECUTION_CONFIGURATION_FROZEN": "NO",
+    "EXECUTION_AUTHORIZED": "NO",
+    "RESOURCE_READINESS": "NO",
+    "RUNTIME_AUTHORITY_COMPATIBILITY": "PASS",
+    "canonical_authority": {
+      "path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/docs/routeA_diagnostic_transient_contract_v1.5.json",
+      "sha256": "06c71945289ffe419b784843f7aab2fea66c44d28c9dba46d828bbd24837e27d",
+      "version": "1.5"
+    },
+    "current_execution_guard": "DIAGNOSTIC_TRANSIENT_RESOURCE_QUALIFICATION_PENDING_NO_RUN_AUTHORIZATION",
+    "formal_authority": {
+      "path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/docs/routeA_execution_contract_v1.7.json",
+      "sha256": "fbc744e012f66b37b5d9409be961cb5a9410c3d75ac7e2f026b2acf118d3bb60",
+      "version": "1.7"
+    },
+    "implementation_generation": "v1.4",
+    "manifest_sha256": "703a4e11a1d15af5aecdf7a0e1059cc2f0d3cd92605a2e06f1601ee6c8870d11",
+    "mapping_input_HEAD": "90183094936266183e1e1fb4487f0f0a512c512b",
+    "native_and_library_identities_verified": 851,
+    "production_run_authorized": false,
+    "qualification_execution_authorized": false,
+    "qualification_permissions": {
+      "PRODUCTION": {
+        "CFD_solve": true,
+        "authorization_scope": "PRODUCTION_CFD",
+        "execution_implemented": false,
+        "production_namespace": true,
+        "resource_ready_required": true,
+        "stage_prerequisites": "stage-specific pinned plan and prior stage PASS",
+        "time_advance": true
+      },
+      "Q0": {
+        "CFD_solve": false,
+        "authorization_scope": "RUNTIME_AUTHORITY_COMPATIBILITY_FIX",
+        "execution_implemented": false,
+        "production_namespace": false,
+        "resource_ready_required": false,
+        "stage_prerequisites": "stage-specific pinned plan and prior stage PASS",
+        "time_advance": false
+      },
+      "Q1": {
+        "CFD_solve": false,
+        "authorization_scope": "NONCFD_TIMING_QUALIFICATION",
+        "execution_implemented": false,
+        "production_namespace": false,
+        "resource_ready_required": false,
+        "stage_prerequisites": "stage-specific pinned plan and prior stage PASS",
+        "time_advance": false
+      },
+      "Q2": {
+        "CFD_solve": false,
+        "authorization_scope": "NONCFD_TIMING_QUALIFICATION",
+        "execution_implemented": false,
+        "production_namespace": false,
+        "resource_ready_required": false,
+        "stage_prerequisites": "stage-specific pinned plan and prior stage PASS",
+        "time_advance": false
+      },
+      "Q3": {
+        "CFD_solve": true,
+        "authorization_scope": "Q3_BOUNDED_CFD_TIMING_QUALIFICATION",
+        "execution_implemented": false,
+        "production_namespace": false,
+        "resource_ready_required": false,
+        "stage_prerequisites": "Q0-Q2 PASS + memory/IO PASS + practical budget/risk + separate auth",
+        "time_advance": true
+      }
+    },
+    "repository_files_verified": 91,
+    "resource_ready": false,
+    "rule_id": "EXACT_V15_MACHINE_METADATA_TO_FROZEN_V14_RESOURCE_RUNTIME",
+    "schema": "routeA_runtime_authority_receipt/1.0",
+    "semantic_diff_leaves_verified": 134,
+    "semantic_report_errata": [
+      {
+        "canonical_after": "2026-10-05T22:12:28.543211+09:00",
+        "path": "/prepared_at",
+        "report_after": "2026-10-05T22:15:07.015846+09:00",
+        "scope": "EXACT_PROVENANCE_TIMESTAMP_ONLY_NO_SCIENTIFIC_DIFFERENCE"
+      }
+    ],
+    "timestamp_UTC": "2026-10-05T16:54:34.463573+00:00"
+  },
+  "blockers": [
+    {
+      "id": "B1",
+      "issue": "Recurring measurement resets the frozen Writer to startup full-audit schedule. Startup cost separation and selected-audit binding are incomplete; retaining all three ON full audits has not been reconciled with 12GiB stage scratch. No target measurement exists to resolve size uncertainty.",
+      "resolution": "Bind resource-only schedule context and constructor timing explicitly; preserve production policy; validate selected/full retention and all repeats inside the fixed budget using tiny fixtures.",
+      "stage": "Q1"
+    },
+    {
+      "id": "B2",
+      "issue": "Per-trial file layout cannot finish registered U03, primitive and memory repeats under 256 files without prohibited cleanup.",
+      "resolution": "Use a stage append ledger/trace with immutable trial indexes and bounded publication overhead. Do not raise the budget or purge evidence.",
+      "stage": "Q2",
+      "static_evidence": {
+        "IO_trials": 3,
+        "U03_files_lower_bound": 231,
+        "U03_plus_primitives_lower_bound": 486,
+        "U03_trials": 21,
+        "files_per_U03_trial_lower_bound": 11,
+        "memory_trials": 21,
+        "primitive_files_lower_bound_each": 17,
+        "primitive_trials": 15,
+        "stage_files_limit": 256
+      }
+    },
+    {
+      "id": "B3",
+      "issue": "Scalar primitive currently uses full controller-state payload rather than a separate compact receipt; spans are primarily aggregate. Isolated memory packing does not yet reproduce all Writer.share/ring accounting. Registered repeat and host stability decisions are not integrated into stage output.",
+      "resolution": "Complete small receipt/primitive classes, per-class exclusive/inclusive span accounting and actual Writer memory-event binding; consume frozen repeatability/host rules.",
+      "stage": "Q2"
+    },
+    {
+      "id": "B4",
+      "issue": "Whole-stage positive receipt, nested supervision and quota-reserved STOP publication have not been tested end to end. Current tests establish per-trial behavior, immutable publication and negative permission checks.",
+      "resolution": "Add tiny whole-stage tests using a test-only validator substitute, with no real authorization receipt and no target campaign.",
+      "stage": "Q1/Q2"
+    }
+  ],
+  "generated_UTC": "2026-10-05T16:54:35.800626+00:00",
+  "original_files_changed": false,
+  "required_final_status": {
+    "ALL_RA_NEEDS_320": "YES",
+    "ALL_ROUTE_A_GATE_F": "FAIL",
+    "BACKEND_RSS_MONITOR_IMPLEMENTED": "YES",
+    "BENCHMARK_CORE_PASS": "NO",
+    "CALLBACKS_PER_STEP_EQUIVALENT": "1144",
+    "CALLBACK_GRAPH_SUPPORTED": "YES",
+    "CANONICAL_AUTHORITY_HASH_VERIFIED": "YES",
+    "CANONICAL_DIAGNOSTIC_AUTHORITY_SHA256": "06c71945289ffe419b784843f7aab2fea66c44d28c9dba46d828bbd24837e27d",
+    "CANONICAL_DIAGNOSTIC_AUTHORITY_VERSION": "1.5",
+    "CAPACITY_ESTIMATES_CHANGED": "NO",
+    "CASE_GENERATED": "NO",
+    "CENSORED_TRIAL_POLICY_IMPLEMENTED": "YES",
+    "CFD_TRANSIENT_EXECUTED": "NO",
+    "COMBINED_RSS_MONITOR_IMPLEMENTED": "YES",
+    "COMPLETE_EXECUTION_CONFIGURATION_FROZEN": "NO",
+    "COMPUTE_FEASIBILITY": "UNRESOLVED",
+    "DIAGNOSTIC_TRANSIENT_RESOURCE_READY": "NO",
+    "DIAGNOSTIC_TRANSIENT_STORAGE_READY": "YES",
+    "DISK_FREE_MONITOR_IMPLEMENTED": "YES",
+    "DISK_GUARD_TEST": "PASS",
+    "DOWNSTREAM_TRANSIENT_READY": "NO",
+    "EXECUTION_AUTHORIZED": "NO",
+    "FILE_COUNT_GUARD_TEST": "PASS",
+    "FILE_COUNT_MONITOR_IMPLEMENTED": "YES",
+    "FORMAL_AUTHORITY_HASH_VERIFIED": "YES",
+    "FORMAL_AUTHORITY_SHA256": "fbc744e012f66b37b5d9409be961cb5a9410c3d75ac7e2f026b2acf118d3bb60",
+    "FORMAL_AUTHORITY_VERSION": "1.7",
+    "FORMAL_CRITERIA_CHANGED": "NO",
+    "FORMAL_GATE_J_CURRENTLY_ALLOWED": "NO",
+    "FORMAL_GATE_J_EXECUTED": "NO",
+    "FORMAL_GATE_J_PASS": "NOT_EVALUATED",
+    "GRID_INDEPENDENT_TRANSIENT_CLAIM_ALLOWED": "NO",
+    "HISTORICAL_STATUS_CHANGED": "NO",
+    "HOST_MEMORY_MONITOR_IMPLEMENTED": "YES",
+    "INDEPENDENT_RESOURCE_WATCHDOG_PREPARED": "YES",
+    "INITIALIZATION_EXECUTED": "NO",
+    "IO_FEASIBILITY": "UNRESOLVED",
+    "IO_RUNNER_PREPARED": "YES",
+    "IPC_TIMING_RUNNER_PREPARED": "NO",
+    "LINEAR_SOLVER_POLICY_CHANGED": "NO",
+    "LOADAVG_MONITOR_IMPLEMENTED": "YES",
+    "MATRIX_PACKETS_PER_STEP_EQUIVALENT": "701",
+    "MATRIX_PACKET_GRAPH_SUPPORTED": "YES",
+    "MEMORY_EVENT_RUNNER_PREPARED": "NO",
+    "MEMORY_FEASIBILITY": "UNRESOLVED",
+    "MEMORY_GUARD_TEST": "PASS",
+    "MESH_GENERATED": "NO",
+    "NATIVE_RSS_MONITOR_IMPLEMENTED": "YES",
+    "NEXT_SINGLE_TASK": "FIX_ROUTE_A_DIAGNOSTIC_TRANSIENT_TIMING_QUALIFICATION_PREPARATION",
+    "N_OUTER_CORRECTORS_CHANGED": "NO",
+    "PARTIAL_EVIDENCE_PRESERVED": "YES",
+    "PARTICLE_COUPLING_READY": "NO",
+    "PATH_TRAVERSAL_TEST": "PASS",
+    "PERSISTENCE_POLICY_CHANGED": "NO",
+    "PILOT_CFD_EXECUTED": "NO",
+    "PRIVILEGE_ESCALATION_TEST": "PASS",
+    "PROCESS_GROUP_KILL_TEST": "PASS",
+    "PROCESS_GROUP_SUPERVISION": "YES",
+    "PROCESS_IO_MONITOR_IMPLEMENTED": "YES",
+    "PRODUCTION_SOLVER_EXECUTED": "NO",
+    "Q1_EXECUTED": "NO",
+    "Q1_MEASUREMENT_READY": "NO",
+    "Q1_MEASUREMENT_RUNNER_PREPARED": "NO",
+    "Q1_Q2_ACTUAL_MEASUREMENT_AUTHORIZED": "NO",
+    "Q1_Q2_CAN_ADVANCE_PHYSICAL_TIME": "NO",
+    "Q1_Q2_CAN_INVOKE_CFD": "NO",
+    "Q1_Q2_CAN_WRITE_PRODUCTION_NAMESPACE": "NO",
+    "Q2_EXECUTED": "NO",
+    "Q2_MEASUREMENT_READY": "NO",
+    "Q2_MEASUREMENT_RUNNER_PREPARED": "NO",
+    "Q3_EXECUTED": "NO",
+    "QUALIFICATION_MANIFEST_IMPLEMENTED": "YES",
+    "QUALIFICATION_NAMESPACE_ISOLATED": "YES",
+    "QUALIFICATION_STAGE_RECEIPT_IMPLEMENTED": "YES",
+    "RECOMMENDED_REASONING_MODEL_FOR_NEXT_TASK": "gpt-6.1-sol / medium",
+    "RETENTION_POLICY_CHANGED": "NO",
+    "ROUTE_A_CHARACTERIZED": "NO",
+    "ROUTE_A_DIAGNOSTIC_TRANSIENT_TIMING_QUALIFICATION_PREPARATION_FIX": "INCOMPLETE",
+    "RUNTIME_AUTHORITY_COMPATIBILITY": "PASS",
+    "SEAL_PURGE_POLICY_CHANGED": "NO",
+    "SYMLINK_ESCAPE_TEST": "PASS",
+    "TARGET_CELL_COUNT": "25600",
+    "TARGET_INTERNAL_FACE_COUNT": "50880",
+    "TARGET_SIZE_DIAGNOSTIC_HARNESS_PREPARED": "NO",
+    "TARGET_SIZE_NATIVE_ADAPTER_IMPLEMENTED": "YES",
+    "TARGET_TOPOLOGY_VALIDATED": "YES",
+    "TEMPORAL_POLICY_CHANGED": "NO",
+    "U01_CHANGED": "NO",
+    "U02_CHANGED": "NO",
+    "U03_CHANGED": "NO",
+    "U03_SCALING_RUNNER_PREPARED": "YES",
+    "U04_EQUATION_SEMANTICS_CHANGED": "NO",
+    "USER_DECISION_REQUIRED": "YES",
+    "VMSIZE_AS_MONITOR_IMPLEMENTED": "YES",
+    "WALL_TIMEOUT_TEST": "PASS",
+    "WALL_TIME_GUARD_IMPLEMENTED": "YES",
+    "WATCHDOG_FAILURE_FAILS_CLOSED": "YES",
+    "WATCHDOG_OUT_OF_PROCESS": "YES"
+  },
+  "sections": [
+    {
+      "content": "INCOMPLETE. Native adapter and independent per-trial watchdog are implemented and tiny tests pass. Both stage readiness flags remain NO; future execution is explicitly denied.",
+      "number": 1,
+      "title": "Executive summary"
+    },
+    {
+      "content": "Canonical v1.5 and formal v1.7 SHA verified. Runtime compatibility PASS, 91 repository pins and 851 native/library identities verified. Previous runtime artifact hashes also match; HEAD remains 8135eec17dab5c66082bb25b9e3509ee2cc39ac9.",
+      "number": 2,
+      "title": "Authority verification"
+    },
+    {
+      "content": "Original target adapter was absent and watchdog interface-only. This new namespace supplies code and tests; the old frozen plan and runtime mapping are unchanged.",
+      "number": 3,
+      "title": "Existing preparation blockers"
+    },
+    {
+      "content": "Read-only mesh and stored graph -> manufactured Python fixture -> original C++ Json representation/serializer -> AF_UNIX -> frozen evaluator/Live/Writer. OFF retains preparation/parsing/graph traversal. No CFD command or time API is used.",
+      "number": 4,
+      "title": "New harness architecture"
+    },
+    {
+      "content": "Read-only existing A-Ra1e6-fine mesh: 25600 cells, 50880 internal faces, 102720 total faces, 640 active boundary faces and 51200 empty faces. Four 160-face wall patches and two 25600-face empty patches. Empty field-patch arrays contain zero values, as the native schema requires.",
+      "number": 5,
+      "title": "Target-size topology adapter"
+    },
+    {
+      "content": "rho/rhoFluidThermo:rho,U,T,e,p,p_rgh,phi,K,gh have target shapes. Constant resource-only values, synthetic volumes/centres/thermal context and zero explicit terms have no physical interpretation. Old histories for rho/e/K have 0/1/2 levels at synthetic indices 0/1/2. b=Apsi and native original hashes/epochs are regenerated; no time is advanced.",
+      "number": 6,
+      "title": "Target-size fixture generation"
+    },
+    {
+      "content": "Registered 42 stage/term classes map to 1144 recurring callbacks (1141 physical +3 controller), with 701 scalar matrix packets; one constructor is excluded. Matrix slots and explicit terms remain class-specific. Vector U field and 169 manufactured scalar solve records are represented; the registered graph has no U vector-matrix callback.",
+      "number": 7,
+      "title": "Callback/matrix graph mapping"
+    },
+    {
+      "content": "Every public target worker requires an external future authorization, sealed stage receipt, frozen authority verifier and permission validator. The direct native executable calls a fixed permission helper. Harness manifest readiness=false blocks both stages before execution. No actual authorization receipt was issued.",
+      "number": 8,
+      "title": "Qualification authority integration"
+    },
+    {
+      "content": "Separate process samples /proc RSS, VmSize, HWM, CPU ticks, IO and host state around 20ms. Disk/files/statvfs sampling around100ms. Trace overhead and uncertainty are disclosed; missed peaks or invalid samples cannot establish feasibility.",
+      "number": 9,
+      "title": "Independent watchdog"
+    },
+    {
+      "content": "Dedicated groups, registered nested groups, PPid tracking, subreaper and parent-death SIGKILL. TERM grace <=1s then KILL; cleanup pulses keep watchdog heartbeat alive. Escape and supervisor-crash tests pass. Whole-stage nested integration remains B4.",
+      "number": 10,
+      "title": "Process-group supervision"
+    },
+    {
+      "content": "Plan-based native/backend AS and RSS 8GiB, combined RSS16GiB, host MemAvailable24GiB. RLIMIT_AS plus sampled VmSize; aggregate process limits conservative. Simultaneous max(native+backend) is separate from sum of individual peaks. Tests use small limits, never8GiB allocation.",
+      "number": 11,
+      "title": "Memory/AS monitoring"
+    },
+    {
+      "content": "Frozen per-stage scratch/file/inode/free-space guards; before-write checks plus independent monitoring, logical/allocated bytes, symlink rejection. No purge. Overall file layout and STOP-publication reserves are not qualified; B2/B4 prevent READY.",
+      "number": 12,
+      "title": "Disk/file monitoring"
+    },
+    {
+      "content": "Plan supplies stage/trial budgets. Q1 order OFF/ON/ON/OFF/OFF/ON. Q2 U03 trial15s/suite120s; whole Q2 420s. External supervisor enforces deadlines; no in-process-only timeout or retry.",
+      "number": 13,
+      "title": "Wall-time enforcement"
+    },
+    {
+      "content": "STOP retains immutable receipt and trace/log/result/manifest where generated, exit/signal and stop reason; watchdog failure invalidates the sample. Timeout is CENSORED, excluded from fit, and stops larger U03 N. Small tests inspect retained partial artifacts before temporary-test cleanup; no real qualification evidence was created.",
+      "number": 14,
+      "title": "Partial/censored evidence"
+    },
+    {
+      "content": "Implemented fixed native/backend runner, graph assertions, original full processing, native/time-v CPU/RSS and class byte summaries. Startup/full-audit schedule and bounded repeat retention remain B1; Q1_MEASUREMENT_READY=NO.",
+      "number": 15,
+      "title": "Q1 runner readiness"
+    },
+    {
+      "content": "Frozen arrival_candidate algorithm for N100..6400 and three repeats, eight histories/all three windows. Completed-only fit requires three sizes/three repeats, records local slopes/residuals and LOW_CONFIDENCE projection. Tiny N4 only was executed. Whole Q2 remains NO because B2-B4.",
+      "number": 16,
+      "title": "Q2/U03 runner readiness"
+    },
+    {
+      "content": "Native parse/hash/serialization/ACK and backend decode/canonical/replay/pack/SHA/publish/QoI/U01 spans implemented. ACK is inclusive. Seven memory-event tiny paths and bounded nonsparse IO with real file/directory fsync and readback tested. Memory-event sizes are actual packets, not theoretical maxima. Full9GiB is streamed, never allocated or claimed qualified. Small scalar/per-class and memory sharing remain B3.",
+      "number": 17,
+      "title": "IPC/memory/I/O runner readiness"
+    },
+    {
+      "content": "Production series and external/traversal/symlink paths rejected, unknown mode and Q1-to-Q3 escalation rejected. Source case is read-only. Authorization schema accepts no external execution command. Fresh output and immutable publication prevent historical overwrite.",
+      "number": 18,
+      "title": "Namespace/permission safety"
+    },
+    {
+      "content": "26 unittest checks passed, including full four-cell native/backend graph. After startup-history correction, focused full native/backend test passed again. These are correctness/process tests only; no timing values are reported as target performance.",
+      "number": 19,
+      "title": "Positive tests"
+    },
+    {
+      "content": "Wrong authority/topology/callback/matrix counts, missing/tampered permission/receipt, direct native missing permission, prohibited execution inputs/namespace/path/escalation, wall/memory/disk/file limits, group escape and watchdog crash all reject/stop as expected.",
+      "number": 20,
+      "title": "Negative tests"
+    },
+    {
+      "content": "Both Q1/Q2 readiness flags are NO. New harness manifest enforces this independently of future external permission. No automatic Q3 or production decision; resource feasibility remains UNRESOLVED.",
+      "number": 21,
+      "title": "Measurement-readiness decision"
+    },
+    {
+      "content": "B1 schedule/startup/scratch reconciliation; B2 bounded file layout; B3 complete scalar/class/memory/stability accounting; B4 tiny whole-stage positive/partial/quota-reserve integration.",
+      "number": 22,
+      "title": "Remaining blockers"
+    },
+    {
+      "content": "FIX_ROUTE_A_DIAGNOSTIC_TRANSIENT_TIMING_QUALIFICATION_PREPARATION. Do not start RUN_ROUTE_A_DIAGNOSTIC_TRANSIENT_NONCFD_TIMING_QUALIFICATION until these blockers are closed. Q3 and production remain unauthorized.",
+      "number": 23,
+      "title": "Exact next task"
+    }
+  ],
+  "task": "FIX_ROUTE_A_DIAGNOSTIC_TRANSIENT_TIMING_QUALIFICATION_PREPARATION",
+  "tests": {
+    "campaign_values": null,
+    "log_SHA256": "1b95bb2f469ffe302e961e9d24327b06577cae4b73880f036b6d6c78eb45db81",
+    "passed": 26,
+    "startup_history_focused_test_SHA256": "23d4935b1b5782f5faf14b6dbbdc3de8bd81b7c1b65853e4c329491b5d6225dc"
+  }
+}

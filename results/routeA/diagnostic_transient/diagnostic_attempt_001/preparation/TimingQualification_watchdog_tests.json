@@ -1,0 +1,16 @@
+{
+  "no_large_allocation": true,
+  "small_override_only": true,
+  "status": "PASS_PER_TRIAL_TINY_ONLY",
+  "test_log_SHA256": "1b95bb2f469ffe302e961e9d24327b06577cae4b73880f036b6d6c78eb45db81",
+  "tests": [
+    "test_child_group_escape_fail_closed",
+    "test_disk_guard_safe_override",
+    "test_file_count_guard",
+    "test_memory_guard_safe_override",
+    "test_normal_child_and_trace",
+    "test_supervisor_crash_fail_closed",
+    "test_wall_timeout_and_group_kill"
+  ],
+  "whole_stage_end_to_end": "NOT_VERIFIED"
+}

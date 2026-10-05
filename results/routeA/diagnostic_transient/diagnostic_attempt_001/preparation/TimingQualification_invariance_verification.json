@@ -1,0 +1,118 @@
+{
+  "HEAD": "8135eec17dab5c66082bb25b9e3509ee2cc39ac9",
+  "authority_receipt": {
+    "COMPLETE_EXECUTION_CONFIGURATION_FROZEN": "NO",
+    "EXECUTION_AUTHORIZED": "NO",
+    "RESOURCE_READINESS": "NO",
+    "RUNTIME_AUTHORITY_COMPATIBILITY": "PASS",
+    "canonical_authority": {
+      "path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/docs/routeA_diagnostic_transient_contract_v1.5.json",
+      "sha256": "06c71945289ffe419b784843f7aab2fea66c44d28c9dba46d828bbd24837e27d",
+      "version": "1.5"
+    },
+    "current_execution_guard": "DIAGNOSTIC_TRANSIENT_RESOURCE_QUALIFICATION_PENDING_NO_RUN_AUTHORIZATION",
+    "formal_authority": {
+      "path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/docs/routeA_execution_contract_v1.7.json",
+      "sha256": "fbc744e012f66b37b5d9409be961cb5a9410c3d75ac7e2f026b2acf118d3bb60",
+      "version": "1.7"
+    },
+    "implementation_generation": "v1.4",
+    "manifest_sha256": "703a4e11a1d15af5aecdf7a0e1059cc2f0d3cd92605a2e06f1601ee6c8870d11",
+    "mapping_input_HEAD": "90183094936266183e1e1fb4487f0f0a512c512b",
+    "native_and_library_identities_verified": 851,
+    "production_run_authorized": false,
+    "qualification_execution_authorized": false,
+    "qualification_permissions": {
+      "PRODUCTION": {
+        "CFD_solve": true,
+        "authorization_scope": "PRODUCTION_CFD",
+        "execution_implemented": false,
+        "production_namespace": true,
+        "resource_ready_required": true,
+        "stage_prerequisites": "stage-specific pinned plan and prior stage PASS",
+        "time_advance": true
+      },
+      "Q0": {
+        "CFD_solve": false,
+        "authorization_scope": "RUNTIME_AUTHORITY_COMPATIBILITY_FIX",
+        "execution_implemented": false,
+        "production_namespace": false,
+        "resource_ready_required": false,
+        "stage_prerequisites": "stage-specific pinned plan and prior stage PASS",
+        "time_advance": false
+      },
+      "Q1": {
+        "CFD_solve": false,
+        "authorization_scope": "NONCFD_TIMING_QUALIFICATION",
+        "execution_implemented": false,
+        "production_namespace": false,
+        "resource_ready_required": false,
+        "stage_prerequisites": "stage-specific pinned plan and prior stage PASS",
+        "time_advance": false
+      },
+      "Q2": {
+        "CFD_solve": false,
+        "authorization_scope": "NONCFD_TIMING_QUALIFICATION",
+        "execution_implemented": false,
+        "production_namespace": false,
+        "resource_ready_required": false,
+        "stage_prerequisites": "stage-specific pinned plan and prior stage PASS",
+        "time_advance": false
+      },
+      "Q3": {
+        "CFD_solve": true,
+        "authorization_scope": "Q3_BOUNDED_CFD_TIMING_QUALIFICATION",
+        "execution_implemented": false,
+        "production_namespace": false,
+        "resource_ready_required": false,
+        "stage_prerequisites": "Q0-Q2 PASS + memory/IO PASS + practical budget/risk + separate auth",
+        "time_advance": true
+      }
+    },
+    "repository_files_verified": 91,
+    "resource_ready": false,
+    "rule_id": "EXACT_V15_MACHINE_METADATA_TO_FROZEN_V14_RESOURCE_RUNTIME",
+    "schema": "routeA_runtime_authority_receipt/1.0",
+    "semantic_diff_leaves_verified": 134,
+    "semantic_report_errata": [
+      {
+        "canonical_after": "2026-10-05T22:12:28.543211+09:00",
+        "path": "/prepared_at",
+        "report_after": "2026-10-05T22:15:07.015846+09:00",
+        "scope": "EXACT_PROVENANCE_TIMESTAMP_ONLY_NO_SCIENTIFIC_DIFFERENCE"
+      }
+    ],
+    "timestamp_UTC": "2026-10-05T16:54:34.463573+00:00"
+  },
+  "git_add_commit_push_executed": false,
+  "initial_known_HEAD": "8135eec17dab5c66082bb25b9e3509ee2cc39ac9",
+  "mesh_SHA256": {
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/A-Ra1e6-fine/constant/polyMesh/boundary": "07cc9b62820911e4536eab8b7b3d74e4cba8301ae886017defd2598f495f6c82",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/A-Ra1e6-fine/constant/polyMesh/faces": "ac195415a58b99183d674e0884e34b1c39303e9a6e2077d2064c78837a106c53",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/A-Ra1e6-fine/constant/polyMesh/neighbour": "04263cff8323ef8660b4bee13cf40bf9808c5390ca61b2c15272ce58d1abfead",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/A-Ra1e6-fine/constant/polyMesh/owner": "afe5e635bc106f92b4d403e25a5736ea43747404104ac5ea640c319ba516a81b",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/A-Ra1e6-fine/constant/polyMesh/points": "61ffe73184d836dba64e3f0ae36308862e37ce32464959b0fbbd59cb12be8e8b"
+  },
+  "new_case_created": false,
+  "runtime_artifact_SHA256": {
+    "Scripts/routeA/diagnostic_transient/v1_5_runtime/README.md": "27b89b173b2ef5c14c4e8d36d878339c318b8bc3f3c9e7d31bd33e7e79e4390f",
+    "Scripts/routeA/diagnostic_transient/v1_5_runtime/authority.py": "3855c7adb225c72144f4ef0f03a65356f502d82e058f36d79091e88fa30361b3",
+    "Scripts/routeA/diagnostic_transient/v1_5_runtime/pins.py": "7671bab5d22c1678f4cc79ab5da733a395dee2948c410889689c097590bbdb10",
+    "Scripts/routeA/diagnostic_transient/v1_5_runtime/production.py": "13c834f440a4e75854c3b1cd667f80e6e1f6642d316c00ffa08306a014efaff2",
+    "Scripts/routeA/diagnostic_transient/v1_5_runtime/qualification.py": "9f5d70a30a2e9fb06a0bbaf0a15fe222bf1bbf8fc55b65cf6a258475616cfdd2",
+    "Scripts/routeA/diagnostic_transient/v1_5_runtime/runtime_authority_manifest.json": "703a4e11a1d15af5aecdf7a0e1059cc2f0d3cd92605a2e06f1601ee6c8870d11",
+    "Scripts/routeA/diagnostic_transient/v1_5_runtime/test_runtime_authority.py": "cbb824dc35aa206ee25db35c8960feb9c0c03a342744df714a6121dc567dce35",
+    "Scripts/routeA/diagnostic_transient/v1_5_runtime/verify_runtime_authority.py": "79a2d86396e3abdf2d13ae6d6e3dcb4e7fc8dc378e36efa4720e2788cd446d88",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_qualification_permission_matrix.csv": "b70a6b21ced84a6961d78aa78b935dfed9346d6c3717b4cea0d9e6203a643c41",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_runtime_authority_compatibility_fix.json": "3fa51007b720a780902f3fecb4784f222be47833ce42130ec84d920311f9d868",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_runtime_authority_compatibility_fix.md": "e8c162e369bdb69b8df1e94bb7a1a669cfb48bdd3b560eece76bf41d53c2bd7d",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_runtime_compatibility_matrix.csv": "7ac32185f83b605222a36a7c7999a6e9fe1005f90737c3f5e9380d07629903cc",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_runtime_negative_tests.csv": "50c9a6c38e31c47ebc67c6bb6663b956b8b7f208b660320c0818f66ac1a0e22a",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_runtime_scenarios.csv": "ebb9f705de4381c8c8ecb805ab633820c333bac0bbaa20132b6dd858c4b357f5",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_runtime_sensitivity.csv": "8fd54e3b3b3f250d22db0feef26758d6ceda8aeb82be543dd96f60a751fd69c5",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/runtime_authority_compatibility/end_guard.json": "572841ff2fb01e9dc2fd3e69582cd8f74d969ecb96881a8732df16412c8d277a",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/runtime_authority_compatibility/runtime_authority_receipt.json": "a39a0181d1c61de34bdfca0861d01f0df9f4e9cd89be3c9e2e07bc6d9255cded",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/runtime_authority_compatibility/start_guard.json": "473da4a562c4514da76055f690f2fef5c3f78d013b2d706240181ef2e1275e75"
+  },
+  "tracked_diff_empty": true
+}

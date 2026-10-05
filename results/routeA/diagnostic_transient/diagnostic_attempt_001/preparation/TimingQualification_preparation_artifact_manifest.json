@@ -1,0 +1,16 @@
+{
+  "artifact_SHA256": {
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_timing_qualification_preparation_fix.json": "d7bd93b5d9c4b82df0b0eb0df1a9b08bbfa13fa7436d5c05d4f7b6276ae14fcc",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_timing_qualification_preparation_fix.md": "a1d9b85f9efb0d0e486bf6265efc92de041f69d0dbefe9371c09ec1411db514a",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_fixture_validation.json": "6cedbac60c731049b893e97ca20c1989644cd0b6844af5d616159fd30d6693ef",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_harness_manifest.json": "79c9cc6cd784b15539610561888551b54117da4faa77d3b15c04dd13dcc2b2b2",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_invariance_verification.json": "b0b7665901cf7d95a2a768386824768334b50aad236781de89cf5bc982ea8f53",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_measurement_readiness.json": "3b017a328865d2de1172045a16541de7ca32f60415a1a5ae6d100d7d98a56161",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_negative_tests.csv": "506902e5e98816eaa8dd18fdb8c0d25e8a7246a890e2b9985f1c8ae39ce3c950",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_watchdog_tests.json": "17ff11a2bc521c91a5c0a71d1d427d83ba8d31c9c7351c349234ca3643e7b2e6",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/timing_preparation_fixture_history_test.log": "23d4935b1b5782f5faf14b6dbbdc3de8bd81b7c1b65853e4c329491b5d6225dc",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/timing_preparation_tests_final.log": "56c2a123e231d11c3851836f95308b3ddc009e8dbca3a30d4d9b68992a500d85",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/timing_preparation_tests_verified.log": "1b95bb2f469ffe302e961e9d24327b06577cae4b73880f036b6d6c78eb45db81"
+  },
+  "scope": "PREPARATION_ONLY_NO_MEASUREMENTS"
+}

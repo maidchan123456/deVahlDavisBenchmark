@@ -1,0 +1,85 @@
+{
+  "CFD_linkage": false,
+  "actual_execution_authorized": false,
+  "artifact_SHA256": {
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/A-Ra1e6-fine/constant/polyMesh/boundary": "07cc9b62820911e4536eab8b7b3d74e4cba8301ae886017defd2598f495f6c82",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/A-Ra1e6-fine/constant/polyMesh/faces": "ac195415a58b99183d674e0884e34b1c39303e9a6e2077d2064c78837a106c53",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/A-Ra1e6-fine/constant/polyMesh/neighbour": "04263cff8323ef8660b4bee13cf40bf9808c5390ca61b2c15272ce58d1abfead",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/A-Ra1e6-fine/constant/polyMesh/owner": "afe5e635bc106f92b4d403e25a5736ea43747404104ac5ea640c319ba516a81b",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/A-Ra1e6-fine/constant/polyMesh/points": "61ffe73184d836dba64e3f0ae36308862e37ce32464959b0fbbd59cb12be8e8b",
+    "/lib64/ld-linux-x86-64.so.2": "c20a2dc8917c755f02b94049356320fe1f62ac7d9f8994731f807d9df39302da",
+    "/usr/bin/python3": "e50d468e8b0adfb05733f5b87b3cff34829c4a8c1aea50c865aa8bdfe4bb150f",
+    "/usr/bin/time": "3b11dec50514a8473e9f6efa7a34d584d0657538c09988f61b72d38ad4991a10",
+    "/usr/lib/x86_64-linux-gnu/libc.so.6": "3a15d66867d83762c7f2f1e37359cb8f6c5743edb369c65285cb0b1c4f7498bf",
+    "/usr/lib/x86_64-linux-gnu/libcrypto.so.3": "6866ed711dab8927e1bf82bf1cd30e828bdfc34f3cc1e83b1c9eb01ce6c37d9a",
+    "/usr/lib/x86_64-linux-gnu/libgcc_s.so.1": "d93224d2b0dab4247598be683adca02f5cf00586f99c187579cd7e92058fb7cb",
+    "/usr/lib/x86_64-linux-gnu/libm.so.6": "fce00b6f25f459cf4ae0b7fae4257909a1a8a86f9149e7c029a5d617baf1ccd0",
+    "/usr/lib/x86_64-linux-gnu/libstdc++.so.6": "1fd75fe70354a416d75aef22bcae68c47bd25d20e2d0568c30b1a9838cf62f11",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/compute_review/native_0_on/full_2.bin": "21dd526283ef22520852bffdee38b1548027dfb869582009ec4bf13f9d2f7b63",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/timing_harness_build_v4/build.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/timing_harness_build_v4/build_receipt.json": "b63267cb0f3bbac1fc232bfc03207d319b978afa972bc58606cf5390c6b672bd",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/timing_harness_build_v4/native_adapter": "721f60bae8788eaa123da423aeeaac7e342e0c13b242c336327b51abf6156c2b"
+  },
+  "blockers": [
+    {
+      "id": "B1",
+      "issue": "Recurring measurement resets the frozen Writer to startup full-audit schedule. Startup cost separation and selected-audit binding are incomplete; retaining all three ON full audits has not been reconciled with 12GiB stage scratch. No target measurement exists to resolve size uncertainty.",
+      "resolution": "Bind resource-only schedule context and constructor timing explicitly; preserve production policy; validate selected/full retention and all repeats inside the fixed budget using tiny fixtures.",
+      "stage": "Q1"
+    },
+    {
+      "id": "B2",
+      "issue": "Per-trial file layout cannot finish registered U03, primitive and memory repeats under 256 files without prohibited cleanup.",
+      "resolution": "Use a stage append ledger/trace with immutable trial indexes and bounded publication overhead. Do not raise the budget or purge evidence.",
+      "stage": "Q2",
+      "static_evidence": {
+        "IO_trials": 3,
+        "U03_files_lower_bound": 231,
+        "U03_plus_primitives_lower_bound": 486,
+        "U03_trials": 21,
+        "files_per_U03_trial_lower_bound": 11,
+        "memory_trials": 21,
+        "primitive_files_lower_bound_each": 17,
+        "primitive_trials": 15,
+        "stage_files_limit": 256
+      }
+    },
+    {
+      "id": "B3",
+      "issue": "Scalar primitive currently uses full controller-state payload rather than a separate compact receipt; spans are primarily aggregate. Isolated memory packing does not yet reproduce all Writer.share/ring accounting. Registered repeat and host stability decisions are not integrated into stage output.",
+      "resolution": "Complete small receipt/primitive classes, per-class exclusive/inclusive span accounting and actual Writer memory-event binding; consume frozen repeatability/host rules.",
+      "stage": "Q2"
+    },
+    {
+      "id": "B4",
+      "issue": "Whole-stage positive receipt, nested supervision and quota-reserved STOP publication have not been tested end to end. Current tests establish per-trial behavior, immutable publication and negative permission checks.",
+      "resolution": "Add tiny whole-stage tests using a test-only validator substitute, with no real authorization receipt and no target campaign.",
+      "stage": "Q1/Q2"
+    }
+  ],
+  "canonical_SHA256": "06c71945289ffe419b784843f7aab2fea66c44d28c9dba46d828bbd24837e27d",
+  "measurement_ready": {
+    "Q1": false,
+    "Q2": false
+  },
+  "plan_SHA256": "79c065a9d21900f57daefe3cd8caec980dec203344ab59c995738eb59339dfe9",
+  "schema": "nonCFD_timing_harness/1",
+  "source_SHA256": {
+    "Scripts/routeA/diagnostic_transient/timing_qualification/measurement/README.md": "0cf00d58188037a4ac7cb91e026fee0dd5f4d6e895b0428bd2213c7093766162",
+    "Scripts/routeA/diagnostic_transient/timing_qualification/measurement/analysis.py": "d9e1c3949fd82e060ddcf535910570dba026e3358b47ae9f1e6c08da95bb2716",
+    "Scripts/routeA/diagnostic_transient/timing_qualification/measurement/backend.py": "d4570c010d633df30cd358a518c6c5f3c567b9c7979337bda10d05152a43c52e",
+    "Scripts/routeA/diagnostic_transient/timing_qualification/measurement/build_native.py": "ec9755a3e15137bf38ea15f40a8c97d31edbdf47a83d32ff3c614116626b219c",
+    "Scripts/routeA/diagnostic_transient/timing_qualification/measurement/common.py": "074275f83fc3e361580039b1dd13d3668a43c92ae3c13c23959419b0e14245a1",
+    "Scripts/routeA/diagnostic_transient/timing_qualification/measurement/fixture.py": "98e645f822e22f3ea5f38e232fae66704dd0f9e61f93b2192b0cd2c928f1cf55",
+    "Scripts/routeA/diagnostic_transient/timing_qualification/measurement/io_memory.py": "56b0ebb0f618dafb52f94a94d863f6bf0c9788ae9c2afc49fc1502607bdf3444",
+    "Scripts/routeA/diagnostic_transient/timing_qualification/measurement/native_adapter.C": "fb00cdd69fbbf05cc117506027337d5aa45c904156c8e81adf02db03b1d8b586",
+    "Scripts/routeA/diagnostic_transient/timing_qualification/measurement/native_permission.py": "85cb179e8348da4cff5c632545431c12c93fb5e40948b7dfa8f76ccd34e3857f",
+    "Scripts/routeA/diagnostic_transient/timing_qualification/measurement/pipeline.py": "9312ee4cad6110eeafaf8f22b68285c7c66abd57d2123165e9248b293efefed1",
+    "Scripts/routeA/diagnostic_transient/timing_qualification/measurement/report_preparation.py": "2adc1cb335e53f87fe16daa1079731334501035fe11d563d51a112e2f7d2958a",
+    "Scripts/routeA/diagnostic_transient/timing_qualification/measurement/runner.py": "41af1213f257b406f220a222eefc387b30a47b10efd6434d1f1919ad7eb24b01",
+    "Scripts/routeA/diagnostic_transient/timing_qualification/measurement/test_preparation.py": "9b817658068cb43d14ccd21e8b738a89ac5b203f45975801790d2366a7ad7cb9",
+    "Scripts/routeA/diagnostic_transient/timing_qualification/measurement/tiny_child.py": "0beca3c4e9d42d34c6f3c318da9c19a3ba01f8141aa52e3314004fb7d24bb9a0",
+    "Scripts/routeA/diagnostic_transient/timing_qualification/measurement/watchdog.py": "844aaf92e485acb811977389e366e715b758231435b086e22f47af02ac70f75b",
+    "Scripts/routeA/diagnostic_transient/timing_qualification/measurement/worker.py": "6f3d01a24bc18292cab6112df0e7920c4d9a88044a4376e9d17f6d320075d104"
+  }
+}
