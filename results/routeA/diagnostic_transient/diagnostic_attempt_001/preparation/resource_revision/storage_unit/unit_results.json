@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "classification": "PERSISTENCE_UNIT_TEST_NOT_CFD_RESULT",
+  "checks": [
+    "64-step chunk then1-step terminal chunk, recent16 anomaly flush and full scratch streaming PASS",
+    "resource guard Co=0.125 free=1000000000000 inodes=10000 FAIL_CLOSED",
+    "resource guard Co=0.5 free=1 inodes=10000 FAIL_CLOSED",
+    "resource guard Co=0.5 free=1000000000000 inodes=1 FAIL_CLOSED",
+    "lossless byte log rotation/order/hash manifest PASS",
+    "unqualified production primary binding STOP PASS",
+    "max t*2 schedule7full/40periodic bundles/441base fields per series PASS"
+  ],
+  "peak_ring_bytes": 9167,
+  "chunk_steps": 64
+}

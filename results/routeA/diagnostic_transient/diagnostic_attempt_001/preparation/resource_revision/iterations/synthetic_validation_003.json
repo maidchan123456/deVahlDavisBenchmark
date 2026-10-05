@@ -1,0 +1,130 @@
+{
+  "status": "PASS",
+  "classification": "SYNTHETIC_RESOURCE_PIPELINE_TEST_NOT_CFD_RESULT",
+  "runs": {
+    "old_P0": {
+      "seconds": 21.085959202959202,
+      "exit_code": 0,
+      "classification": "SYNTHETIC_RESOURCE_PIPELINE_TEST_NOT_CFD_RESULT"
+    },
+    "new_P1": {
+      "seconds": 19.71521037002094,
+      "exit_code": 0,
+      "classification": "SYNTHETIC_RESOURCE_PIPELINE_TEST_NOT_CFD_RESULT"
+    },
+    "new_P1_repeat": {
+      "seconds": 18.673345066956244,
+      "exit_code": 0,
+      "classification": "SYNTHETIC_RESOURCE_PIPELINE_TEST_NOT_CFD_RESULT"
+    },
+    "observer_off": {
+      "seconds": 0.26964077295269817,
+      "exit_code": 0,
+      "classification": "SYNTHETIC_RESOURCE_PIPELINE_TEST_NOT_CFD_RESULT"
+    }
+  },
+  "old": {
+    "bytes": 19023111,
+    "files": 1154,
+    "fsync_calls": 3458
+  },
+  "new": {
+    "bytes": 27494695,
+    "files": 13,
+    "fsync_calls": 35
+  },
+  "reduction_factor": 0.6918829614221944,
+  "online_reduction_equivalence": "BITWISE",
+  "selected_raw_replay": "PASS",
+  "non_invasiveness": "BITWISE",
+  "repeatability": "PASS",
+  "all_stage_count": 1152,
+  "parent_summary_equivalence": "BITWISE",
+  "failure_injections": [
+    {
+      "test": "wrong_epoch",
+      "status": "FAIL_CLOSED",
+      "reason": "EVALUATOR_FAILURE: OLDTIME_METADATA_EPOCH"
+    },
+    {
+      "test": "duplicate_step",
+      "status": "FAIL_CLOSED",
+      "reason": "EVALUATOR_FAILURE: SEQUENCE_DUPLICATE_MISSING_REORDERED"
+    },
+    {
+      "test": "missing_step",
+      "status": "FAIL_CLOSED",
+      "reason": "EVALUATOR_FAILURE: SEQUENCE_DUPLICATE_MISSING_REORDERED"
+    },
+    {
+      "test": "NaN",
+      "status": "FAIL_CLOSED",
+      "reason": "EVALUATOR_FAILURE: NONFINITE_PAYLOAD"
+    },
+    {
+      "test": "wrong_native_schema",
+      "status": "FAIL_CLOSED",
+      "reason": "EVALUATOR_FAILURE: SCHEMA"
+    },
+    {
+      "test": "truncated_binary",
+      "status": "FAIL_CLOSED",
+      "reason": "EVIDENCE_FAILURE: DATA_LENGTH_HASH"
+    },
+    {
+      "test": "wrong_hash",
+      "status": "FAIL_CLOSED",
+      "reason": "EVIDENCE_FAILURE: DATA_LENGTH_HASH"
+    },
+    {
+      "test": "wrong_schema",
+      "status": "FAIL_CLOSED",
+      "reason": "EVIDENCE_FAILURE: SCHEMA_ENDIAN"
+    },
+    {
+      "test": "wrong_endian",
+      "status": "FAIL_CLOSED",
+      "reason": "EVIDENCE_FAILURE: SCHEMA_ENDIAN"
+    },
+    {
+      "test": "wrong_shape",
+      "status": "FAIL_CLOSED",
+      "reason": "EVIDENCE_FAILURE: ARRAY_SHAPE_LENGTH"
+    },
+    {
+      "test": "missing_chunk",
+      "status": "FAIL_CLOSED",
+      "reason": "[Errno 2] No such file or directory: '/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/resource_revision/tests/missing_chunk/chunk_0000000001_0"
+    },
+    {
+      "test": "bad_manifest",
+      "status": "FAIL_CLOSED",
+      "reason": "EVIDENCE_FAILURE: BAD_MANIFEST_COMPLETION"
+    },
+    {
+      "test": "partial_commit",
+      "status": "FAIL_CLOSED",
+      "reason": "EVIDENCE_FAILURE: PARTIAL_OR_ORPHAN_COMMIT"
+    },
+    {
+      "test": "scratch_stage_quota",
+      "status": "FAIL_CLOSED",
+      "reason": "EVIDENCE_FAILURE: STAGE_MEMORY_QUOTA"
+    },
+    {
+      "test": "mandatory_field_failure",
+      "status": "FAIL_CLOSED",
+      "reason": "EVIDENCE_FAILURE: NONFINITE"
+    },
+    {
+      "test": "native_ack_failure_propagation",
+      "status": "FAIL_CLOSED"
+    }
+  ],
+  "source_set_sha256": "57aacf0e9307d0810a89b6b118680e67b5e1d70214e209070197fa3709e12a58",
+  "native_semantic_instrumentation_sha256": "adb52dc1e68d638ff98f4ffebe4d51746e40f1abb873d71a758b86964ad8f3fc",
+  "peak_child_RSS_KiB": 288768,
+  "not_production_speedup": true,
+  "production_solver_executed": false,
+  "case_generated": false
+}

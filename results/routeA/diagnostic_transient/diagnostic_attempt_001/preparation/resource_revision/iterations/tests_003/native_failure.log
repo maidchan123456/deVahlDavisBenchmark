@@ -1,0 +1,36 @@
+I/O    : uncollated
+EVALUATOR_FAILURE: TERM_DIMENSION_FAILURE
+Traceback (most recent call last):
+  File "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/v1_3/server.py", line 26, in serve
+    try:receipt=next(gen)
+                ^^^^^^^^^
+  File "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/v1_3/online_evaluator.py", line 129, in evaluate
+    for r in records:
+  File "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/v1_3/server.py", line 19, in records
+    if not raw or not raw.endswith(b'\n'):raise ValueError('EVALUATOR_FAILURE: TRANSPORT_TRUNCATED')
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: EVALUATOR_FAILURE: TRANSPORT_TRUNCATED
+Traceback (most recent call last):
+  File "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/v1_3/server.py", line 26, in serve
+    try:receipt=next(gen)
+                ^^^^^^^^^
+  File "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/v1_3/online_evaluator.py", line 129, in evaluate
+    for r in records:
+  File "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/v1_3/server.py", line 19, in records
+    if not raw or not raw.endswith(b'\n'):raise ValueError('EVALUATOR_FAILURE: TRANSPORT_TRUNCATED')
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: EVALUATOR_FAILURE: TRANSPORT_TRUNCATED
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/v1_3/server.py", line 36, in <module>
+    if __name__=='__main__':serve(int(sys.argv[1]),*sys.argv[2:])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/v1_3/server.py", line 34, in serve
+    stream.write(b'FAIL\n');raise
+    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 725, in write
+    return self._sock.send(b)
+           ^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
