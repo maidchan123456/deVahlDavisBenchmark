@@ -1,0 +1,11 @@
+category,name,legacy_numeric_bytes_per_record_mean,records_per_step,legacy_numeric_bytes_per_step,primary_steps,legacy_primary_bytes,legacy_fraction,corrected_numeric_bytes_per_step,corrected_primary_bytes,reencoded_synthetic_fragment_json_bytes,legacy_exclusions
+A,Primary scalar histories,0,0,0,600183,0,0.0,0,0,0,"A production scalar series,J logs,I string hashes/manifests are absent from numerical baseline; metadata strings excluded; corrected arrays still not actual JSON."
+B,Full CFD field snapshots,2045440.0,1,2045440,600183,1227638315520,0.00021073059474650374,2045440,1227638315520,0,
+C,Outer-iteration field/state copies,2799944.329535495,1141,3194736480.0,600183,1917426524775840.0,0.32913638067543016,3709029640.0,2226096536424120.0,4942560,
+D,Pressure-corrector fields/matrices,8031348.571428572,672,5397066240.0,600183,3239227407121920.0,0.5560304768858909,5826892032.0,3497201540441856.0,7561778,
+E,Mass total matrix payload,2803680.0,98,274760640.0,600183,164906665197120.0,0.028307099245213747,274760640.0,164906665197120.0,291376,
+F,Energy total matrix payload,3577600.0,72,257587200.0,600183,154599458457600.0,0.02653781282026684,257587200.0,154599458457600.0,189712,
+G,Term-separated payload,1260804.4173913044,460,579970032.0,600183,348088153715856.0,0.059751168344468086,579970032.0,348088153715856.0,441887,
+H,StageLedger metadata,224.0,1141,255584,600183,153397171872,2.6331433983734755e-05,255584,153397171872,4371589,"A production scalar series,J logs,I string hashes/manifests are absent from numerical baseline; metadata strings excluded; corrected arrays still not actual JSON."
+I,Hash/manifest/provenance,0.0,1141,0,600183,0,0.0,0,0,75306,"A production scalar series,J logs,I string hashes/manifests are absent from numerical baseline; metadata strings excluded; corrected arrays still not actual JSON."
+J,Raw solver logs,0,0,0,600183,0,0.0,0,0,0,"A production scalar series,J logs,I string hashes/manifests are absent from numerical baseline; metadata strings excluded; corrected arrays still not actual JSON."

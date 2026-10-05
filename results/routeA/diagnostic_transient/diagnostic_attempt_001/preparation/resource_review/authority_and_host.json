@@ -1,0 +1,259 @@
+{
+  "client_timestamp": "2026-10-05T18:53:06+09:00",
+  "known_HEAD": "4986b1a4fbf3219aebfbc7938665c0b74680a2ed",
+  "actual_HEAD": "98b65be92d6f5109b13ff18584eeaedb2d45ec0b",
+  "known_HEAD_is_ancestor": true,
+  "HEAD_difference_explained": "Subsequent visualization commit; required diagnostic/formal contract hashes unchanged.",
+  "contract_hashes": {
+    "docs/routeA_diagnostic_transient_contract_v1.2.json": "7e95d4078433ff9e96527dd37430c2519cd1479ccc581e84f64bc94762af08dd",
+    "docs/routeA_execution_contract_v1.7.json": "fbc744e012f66b37b5d9409be961cb5a9410c3d75ac7e2f026b2acf118d3bb60"
+  },
+  "protected_code_and_contract_sha256": {
+    "Scripts/routeA/diagnostic_transient/v1_1/NativeMatrixObserver.H": "f2fd88408ed4d20525c8825fbcd0fc54393876860ca84164b18f2708d674392c",
+    "Scripts/routeA/diagnostic_transient/v1_1/TestNativeMatrixObserver.C": "fa7f8a9968caf25f6e3e9fe83fa261b4e4969507d748bd92e59c39b316a08c73",
+    "Scripts/routeA/diagnostic_transient/v1_1/contract_policy.py": "e452f6fb5d225f0ecac7ef94bbdb661ffa601f3f813ae5ab56a97b1007a529b2",
+    "Scripts/routeA/diagnostic_transient/v1_1/instrumentation_stage_plan.json": "26b8e6f688a9c15fa99c8efe3f1f970d7f64a404e7ff8e51a02fb27bd936eba1",
+    "Scripts/routeA/diagnostic_transient/v1_1/run_unit_verification.sh": "6a16bf0f6fc103df0af5fe142375e87de909a8798b449769e2ce874bff24e16e",
+    "Scripts/routeA/diagnostic_transient/v1_1/test_contract_policy.py": "7eb08efa0a89bbc8469abd3d193fc6987045f75b53d1f9b8faacb90066900659",
+    "Scripts/routeA/diagnostic_transient/v1_1/verify_stage_plan.py": "ae3d46cec8fbf3b1335ee4af2be61e58eef62691c1c5bcda6ebe4ff57150590b",
+    "Scripts/routeA/diagnostic_transient/v1_2/DiagnosticJson.H": "af0e2078a78c8e732edc67efa5f559c0808b519e1960b246c49580bf8de8b1ee",
+    "Scripts/routeA/diagnostic_transient/v1_2/NativeStageObserver.C": "d745d08364c1aeb71d7536fd53aa68d810335a17c0cf700b4682a152028291ba",
+    "Scripts/routeA/diagnostic_transient/v1_2/NativeStageObserver.H": "5dac264c79a14492a4657acea9b8c14f99108115dc4a3b94881c462e00a24dd4",
+    "Scripts/routeA/diagnostic_transient/v1_2/README.md": "2002b8e8319531c7e53281a16eed27ebb25909c0273bcf3e932c4af8939a06ba",
+    "Scripts/routeA/diagnostic_transient/v1_2/build_u04.py": "1b94efbb06ac35dcdaabef62146843a81dbeac926ef765ee75c51958512e8ee7",
+    "Scripts/routeA/diagnostic_transient/v1_2/generate_overlay.py": "a8fdcfc4e7acbb14140b6622c6ac4f5e84e8cbcfb3afab037c1423252cc72a0b",
+    "Scripts/routeA/diagnostic_transient/v1_2/overlay/Fourier/Fourier.C": "acf713d77d983bd31e36171e31d8a24696e9c365208d5a2c8e825ea5235eb62e",
+    "Scripts/routeA/diagnostic_transient/v1_2/overlay/Fourier/Fourier.H": "3d0a53b924bc028ea774147456ee8b06580a93dd8488a90ac040425f4198cb82",
+    "Scripts/routeA/diagnostic_transient/v1_2/overlay/driver/foamRunDiagnostic.C": "58352b8ad135b8e34d267abe716f90a5150959dcf3636f456c3bfb69637ea4e6",
+    "Scripts/routeA/diagnostic_transient/v1_2/overlay/fluid/routeADiagnosticFluid.C": "b5867da371a49fd416491d9bf2ed7c78896da0d7479675270b8e6c0c3afb948f",
+    "Scripts/routeA/diagnostic_transient/v1_2/overlay/fluid/routeADiagnosticFluid.H": "0cbc91d6271228229d02918cc8a91de1e81ae17b71d5e4c686a68f30b39d7cef",
+    "Scripts/routeA/diagnostic_transient/v1_2/overlay/fluid/thermophysicalPredictor.C": "1ee40dedc620c2537c4a906b13e248c298ce58c0d1bd8df747883bb6ba9ce646",
+    "Scripts/routeA/diagnostic_transient/v1_2/overlay/isothermalFluid/correctBuoyantPressure.C": "8ae53ba8c4978104b3ef8e41ae10147bcb2121f6bec3bd75982bd7e918e9fcf4",
+    "Scripts/routeA/diagnostic_transient/v1_2/overlay/isothermalFluid/correctDensity.C": "7a8d7eb42efa04f265e4d04872107ab0662acf063e41eb8f30f2f9d2cb650c0c",
+    "Scripts/routeA/diagnostic_transient/v1_2/overlay/isothermalFluid/correctPressure.C": "6a76f02425acd9b7c1043755ed5d5580e9846d9f5087ddf0b94eb7838fd5217a",
+    "Scripts/routeA/diagnostic_transient/v1_2/overlay/isothermalFluid/momentumPredictor.C": "b17318c0a7607f37eed06b8ecba85dcf96317cd793c6a2de23503ebc8574abcc",
+    "Scripts/routeA/diagnostic_transient/v1_2/overlay/isothermalFluid/moveMesh.C": "803cda51e89b8e005ec9776303c191b5b5a16c5838c824558057f1b38f86d6e1",
+    "Scripts/routeA/diagnostic_transient/v1_2/overlay/isothermalFluid/routeADiagnosticIsothermalFluid.C": "c8c8f697239ba4d72347585987fac8d8d0dce89a5dce93c187d02d79486c8679",
+    "Scripts/routeA/diagnostic_transient/v1_2/overlay/isothermalFluid/routeADiagnosticIsothermalFluid.H": "d47495bf37c33f9d418d0f8303a973116401f2797cd89184478167ccac5d8dbd",
+    "Scripts/routeA/diagnostic_transient/v1_2/overlay/isothermalFluid/setRDeltaT.C": "7df939cbd12db47d41d1c2cf1e57217c83305f9d72feabf26b6bbfee178fc017",
+    "Scripts/routeA/diagnostic_transient/v1_2/overlay/overlay_manifest.json": "4240de710ebe7d3cd2ea3712b9c92a9943310bc15256ca9c2769638c525081ff",
+    "Scripts/routeA/diagnostic_transient/v1_2/replay_evaluator.py": "ccc9ab23b48c4192235444ce179fe91e347841169354c2b9fbf81027f9a96cab",
+    "Scripts/routeA/diagnostic_transient/v1_2/resource_estimator.py": "b03845257b8380a0e7f0fa02c50e6269389640a16e510d6bc4949a145f2b0648",
+    "Scripts/routeA/diagnostic_transient/v1_2/run_u04_verification.sh": "b077b652c080fbf7d34f44ac736722ddc3f15b399b88069daeb9e7a04748cb2f",
+    "Scripts/routeA/diagnostic_transient/v1_2/schema.json": "380d09127b221ef7388ab6ccbb10ee9eb30bfb4234c93ca61e98af077006da04",
+    "Scripts/routeA/diagnostic_transient/v1_2/synthetic_native_driver.C": "e2840a3ece077caa2de02b9417fe147e233043d8a58245c04f3c197dbda8f725",
+    "Scripts/routeA/diagnostic_transient/v1_2/verify_u04.py": "2da04edf2e5179ee7050aac779beda623258af5a71a1868f55c9a0ed37b47a8b",
+    "docs/routeA_diagnostic_transient_contract_v1.2.json": "7e95d4078433ff9e96527dd37430c2519cd1479ccc581e84f64bc94762af08dd",
+    "docs/routeA_execution_contract_v1.7.json": "fbc744e012f66b37b5d9409be961cb5a9410c3d75ac7e2f026b2acf118d3bb60",
+    "docs/routeA_diagnostic_transient_contract_v1.0.md": "0340366eb938308007ecee9dbd0c0475bb97df22a4dc560e87ae472c87b4cc15",
+    "docs/routeA_diagnostic_transient_contract_v1.1.json": "574b83ed63e244e9fbb1307d1a463e1c92fade86a99375054d599b06b155d675",
+    "docs/routeA_diagnostic_transient_contract_v1.2.md": "6b8974287f2fbd9b4d8104131803e8523bfc9d37c157f1515265c95affae356d",
+    "docs/routeA_diagnostic_transient_contract_v1.0.json": "3ea8c134b1c0468a455c8d090eb3b47dae510b06a9886eedbaa5f79aed8e152f",
+    "docs/routeA_diagnostic_transient_contract_v1.2.sha256": "e41fc4c3fa5c3e52c1b9cfa148f88d103191322401bf0200436f550dbedc1e4e",
+    "docs/routeA_diagnostic_transient_contract_v1.1.md": "9b59a858c85f68e43a9b0afee135947756aa4dec7a01b75a2818e8160bbc10b8",
+    "docs/routeA_diagnostic_transient_contract_v1.1.sha256": "82bb3dd7788337a3b35ef5da160ac3581fa540aea8436997433fb107b8a54c91",
+    "docs/routeA_diagnostic_transient_contract_v1.0.sha256": "ae6df74a1867951995352e78ec6bedb07add15d78551f4e588c14b0af8de706f",
+    "docs/routeA_execution_contract_v1.7.md": "38ba19ba8db21f05d7a11e011e979f3126d2abcad4e1dc48a9d532c1cfb5fd47"
+  },
+  "start_git_status": "?? Scripts/routeA/resource_review/\n?? cases/routeA/A-H-Ra1e6-fine-beta1e-4/\n?? cases/routeA/A-Ra1e3-coarse/\n?? cases/routeA/A-Ra1e3-fine/\n?? cases/routeA/A-Ra1e3-medium/\n?? cases/routeA/A-Ra1e4-coarse/\n?? cases/routeA/A-Ra1e4-fine/\n?? cases/routeA/A-Ra1e4-medium/\n?? cases/routeA/A-Ra1e5-coarse/\n?? cases/routeA/A-Ra1e5-fine/\n?? cases/routeA/A-Ra1e5-medium/\n?? cases/routeA/A-Ra1e6-coarse/\n?? cases/routeA/A-Ra1e6-fine/\n?? cases/routeA/A-Ra1e6-medium/\n?? cases/routeA/Ra0_medium/\n?? cases/routeA/Ra1e4_coarse/\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/resource_review/\n",
+  "filesystem": {
+    "block_size": 4096,
+    "total_bytes": 1005867986944,
+    "free_user_bytes": 796351639552,
+    "free_all_bytes": 847522410496,
+    "total_inodes": 62447616,
+    "free_inodes": 59458653,
+    "df_h": "Filesystem      Size  Used Avail Use% Mounted on\n/dev/nvme0n1p2  937G  148G  742G  17% /\n",
+    "df_B1": "Filesystem         1B-blocks         Used    Available Use% Mounted on\n/dev/nvme0n1p2 1005867986944 158345576448 796351639552  17% /\n",
+    "df_i": "Filesystem       Inodes   IUsed    IFree IUse% Mounted on\n/dev/nvme0n1p2 62447616 2988963 59458653    5% /\n"
+  },
+  "hardware_lscpu": {
+    "lscpu": [
+      {
+        "field": "Architecture:",
+        "data": "x86_64"
+      },
+      {
+        "field": "CPU op-mode(s):",
+        "data": "32-bit, 64-bit"
+      },
+      {
+        "field": "Address sizes:",
+        "data": "52 bits physical, 57 bits virtual"
+      },
+      {
+        "field": "Byte Order:",
+        "data": "Little Endian"
+      },
+      {
+        "field": "CPU(s):",
+        "data": "24"
+      },
+      {
+        "field": "On-line CPU(s) list:",
+        "data": "0-23"
+      },
+      {
+        "field": "Vendor ID:",
+        "data": "GenuineIntel"
+      },
+      {
+        "field": "Model name:",
+        "data": "Intel(R) Xeon(R) w5-2545"
+      },
+      {
+        "field": "CPU family:",
+        "data": "6"
+      },
+      {
+        "field": "Model:",
+        "data": "143"
+      },
+      {
+        "field": "Thread(s) per core:",
+        "data": "2"
+      },
+      {
+        "field": "Core(s) per socket:",
+        "data": "12"
+      },
+      {
+        "field": "Socket(s):",
+        "data": "1"
+      },
+      {
+        "field": "Stepping:",
+        "data": "8"
+      },
+      {
+        "field": "CPU(s) scaling MHz:",
+        "data": "26%"
+      },
+      {
+        "field": "CPU max MHz:",
+        "data": "4700.0000"
+      },
+      {
+        "field": "CPU min MHz:",
+        "data": "800.0000"
+      },
+      {
+        "field": "BogoMIPS:",
+        "data": "7008.00"
+      },
+      {
+        "field": "Flags:",
+        "data": "fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cat_l2 cdp_l3 intel_ppin cdp_l2 ssbd mba ibrs ibpb stibp ibrs_enhanced tpr_shadow flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid cqm rdt_a avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb intel_pt avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local split_lock_detect user_shstk avx_vnni avx512_bf16 wbnoinvd dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req vnmi avx512vbmi umip pku ospke waitpkg avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq la57 rdpid bus_lock_detect cldemote movdiri movdir64b enqcmd fsrm md_clear serialize tsxldtrk pconfig arch_lbr ibt amx_bf16 avx512_fp16 amx_tile amx_int8 flush_l1d arch_capabilities"
+      },
+      {
+        "field": "Virtualization:",
+        "data": "VT-x"
+      },
+      {
+        "field": "L1d cache:",
+        "data": "576 KiB (12 instances)"
+      },
+      {
+        "field": "L1i cache:",
+        "data": "384 KiB (12 instances)"
+      },
+      {
+        "field": "L2 cache:",
+        "data": "24 MiB (12 instances)"
+      },
+      {
+        "field": "L3 cache:",
+        "data": "30 MiB (1 instance)"
+      },
+      {
+        "field": "NUMA node(s):",
+        "data": "1"
+      },
+      {
+        "field": "NUMA node0 CPU(s):",
+        "data": "0-23"
+      },
+      {
+        "field": "Vulnerability Gather data sampling:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Ghostwrite:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Indirect target selection:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Itlb multihit:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability L1tf:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Mds:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Meltdown:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Mmio stale data:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Old microcode:",
+        "data": "Vulnerable"
+      },
+      {
+        "field": "Vulnerability Reg file data sampling:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Retbleed:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Spec rstack overflow:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Spec store bypass:",
+        "data": "Mitigation; Speculative Store Bypass disabled via prctl"
+      },
+      {
+        "field": "Vulnerability Spectre v1:",
+        "data": "Mitigation; usercopy/swapgs barriers and __user pointer sanitization"
+      },
+      {
+        "field": "Vulnerability Spectre v2:",
+        "data": "Mitigation; Enhanced / Automatic IBRS; IBPB conditional; PBRSB-eIBRS SW sequence; BHI BHI_DIS_S"
+      },
+      {
+        "field": "Vulnerability Srbds:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Tsa:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Tsx async abort:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Vmscape:",
+        "data": "Mitigation; IBPB before exit to userspace"
+      }
+    ]
+  },
+  "affinity_logical_cpus": 24,
+  "proc_meminfo": "MemTotal:       65058016 kB\nMemFree:         1960524 kB\nMemAvailable:   61827772 kB\nBuffers:         3381272 kB\nCached:         51385336 kB\nSwapCached:           16 kB\nActive:          1291496 kB\nInactive:       54619060 kB\nActive(anon):     574628 kB\nInactive(anon):   640352 kB\nActive(file):     716868 kB\nInactive(file): 53978708 kB\nUnevictable:       27260 kB\nMlocked:           11852 kB\nSwapTotal:       8388604 kB\nSwapFree:        8388588 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:              1616 kB\nWriteback:             0 kB\nAnonPages:       1172504 kB\nMapped:           844308 kB\nShmem:             59052 kB\nKReclaimable:    5879840 kB\nSlab:            6778336 kB\nSReclaimable:    5879840 kB\nSUnreclaim:       898496 kB\nKernelStack:       17120 kB\nPageTables:        25704 kB\nSecPageTables:     10652 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    40917612 kB\nCommitted_AS:    7581032 kB\nVmallocTotal:   13743895347199 kB\nVmallocUsed:       56516 kB\nVmallocChunk:          0 kB\nPercpu:            69024 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:   1867776 kB\nFilePmdMapped:    268288 kB\nCmaTotal:              0 kB\nCmaFree:          180516 kB\nUnaccepted:            0 kB\nBalloon:               0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:      262728 kB\nDirectMap2M:     5242880 kB\nDirectMap1G:    61865984 kB\n",
+  "cgroup_memory_max": null,
+  "cgroup_cpu_max": null,
+  "solver_executed": false
+}

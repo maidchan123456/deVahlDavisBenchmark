@@ -1,0 +1,12 @@
+claim,P0,P1,P2,condition
+primary Co sensitivity,YES,YES,YES,After proposed online/encoder/sparse-replay validation; every relevant scalar/norm/decision saved. Figures only at retained actual times; no independent all-step raw reassembly.
+registered arrival decisions,YES,YES,YES,After proposed online/encoder/sparse-replay validation; every relevant scalar/norm/decision saved. Figures only at retained actual times; no independent all-step raw reassembly.
+global mass behavior,YES,YES,YES,After proposed online/encoder/sparse-replay validation; every relevant scalar/norm/decision saved. Figures only at retained actual times; no independent all-step raw reassembly.
+global energy behavior,YES,YES,YES,After proposed online/encoder/sparse-replay validation; every relevant scalar/norm/decision saved. Figures only at retained actual times; no independent all-step raw reassembly.
+rho synchronization,YES,YES,YES,After proposed online/encoder/sparse-replay validation; every relevant scalar/norm/decision saved. Figures only at retained actual times; no independent all-step raw reassembly.
+selected evaluator audit,YES,CONDITIONAL,CONDITIONAL,After proposed online/encoder/sparse-replay validation; every relevant scalar/norm/decision saved. Figures only at retained actual times; no independent all-step raw reassembly.
+thesis transient figures,YES,PARTIAL,PARTIAL,After proposed online/encoder/sparse-replay validation; every relevant scalar/norm/decision saved. Figures only at retained actual times; no independent all-step raw reassembly.
+all final scalar conclusions from retained histories,YES,YES,YES,After proposed online/encoder/sparse-replay validation; every relevant scalar/norm/decision saved. Figures only at retained actual times; no independent all-step raw reassembly.
+independent offline replay of every native assembly,YES,NO,NO,Not a primary claim of this study; particle readiness remains NO even for P0.
+arbitrary post-hoc field-based QoIs at every step,YES,NO,NO,Not a primary claim of this study; particle readiness remains NO even for P0.
+dense flow history suitable for particle forcing,PARTIAL,NO,NO,Not a primary claim of this study; particle readiness remains NO even for P0.

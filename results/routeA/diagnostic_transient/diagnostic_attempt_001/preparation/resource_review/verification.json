@@ -1,0 +1,21 @@
+{
+  "result": "PASS",
+  "verification_time": "2026-10-05T19:12:15.990923+09:00",
+  "checks": [
+    "exclusive category accounting",
+    "scenario step and native solve counts",
+    "policy component totals and budget limits",
+    "status and 21-section report consistency",
+    "all required evidence columns classified",
+    "frozen source/contract SHA unchanged",
+    "all 1152 existing healthy-stream manifest hashes valid",
+    "existing field/log hashes unchanged",
+    "HEAD unchanged; tracked/index diffs empty; no v1.3 created"
+  ],
+  "protected_files_checked": 45,
+  "existing_input_files_hashed": 1234,
+  "free_user_bytes_at_end": 796350341120,
+  "free_inodes_at_end": 59458638,
+  "no_solver_executed": true,
+  "notes": "Read-only verification of saved artifacts; no native U04 driver or replay solver invocation. Report free storage remains the timestamped accounting capture."
+}

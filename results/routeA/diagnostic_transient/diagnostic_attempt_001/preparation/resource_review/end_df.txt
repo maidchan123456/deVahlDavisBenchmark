@@ -1,0 +1,4 @@
+Filesystem         1B-blocks         Used    Available Use% Mounted on
+/dev/nvme0n1p2 1005867986944 158346874880 796350341120  17% /
+Filesystem       Inodes   IUsed    IFree IUse% Mounted on
+/dev/nvme0n1p2 62447616 2988978 59458638    5% /

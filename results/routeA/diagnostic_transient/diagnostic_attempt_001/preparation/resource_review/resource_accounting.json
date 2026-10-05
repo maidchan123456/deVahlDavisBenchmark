@@ -1,0 +1,1606 @@
+{
+  "classification": "PLANNING_ESTIMATE_ONLY",
+  "authority": {
+    "client_timestamp": "2026-10-05T18:53:06+09:00",
+    "known_HEAD": "4986b1a4fbf3219aebfbc7938665c0b74680a2ed",
+    "actual_HEAD": "98b65be92d6f5109b13ff18584eeaedb2d45ec0b",
+    "known_HEAD_is_ancestor": true,
+    "HEAD_difference_explained": "Subsequent visualization commit; required diagnostic/formal contract hashes unchanged.",
+    "contract_hashes": {
+      "docs/routeA_diagnostic_transient_contract_v1.2.json": "7e95d4078433ff9e96527dd37430c2519cd1479ccc581e84f64bc94762af08dd",
+      "docs/routeA_execution_contract_v1.7.json": "fbc744e012f66b37b5d9409be961cb5a9410c3d75ac7e2f026b2acf118d3bb60"
+    },
+    "protected_code_and_contract_sha256": {
+      "Scripts/routeA/diagnostic_transient/v1_1/NativeMatrixObserver.H": "f2fd88408ed4d20525c8825fbcd0fc54393876860ca84164b18f2708d674392c",
+      "Scripts/routeA/diagnostic_transient/v1_1/TestNativeMatrixObserver.C": "fa7f8a9968caf25f6e3e9fe83fa261b4e4969507d748bd92e59c39b316a08c73",
+      "Scripts/routeA/diagnostic_transient/v1_1/contract_policy.py": "e452f6fb5d225f0ecac7ef94bbdb661ffa601f3f813ae5ab56a97b1007a529b2",
+      "Scripts/routeA/diagnostic_transient/v1_1/instrumentation_stage_plan.json": "26b8e6f688a9c15fa99c8efe3f1f970d7f64a404e7ff8e51a02fb27bd936eba1",
+      "Scripts/routeA/diagnostic_transient/v1_1/run_unit_verification.sh": "6a16bf0f6fc103df0af5fe142375e87de909a8798b449769e2ce874bff24e16e",
+      "Scripts/routeA/diagnostic_transient/v1_1/test_contract_policy.py": "7eb08efa0a89bbc8469abd3d193fc6987045f75b53d1f9b8faacb90066900659",
+      "Scripts/routeA/diagnostic_transient/v1_1/verify_stage_plan.py": "ae3d46cec8fbf3b1335ee4af2be61e58eef62691c1c5bcda6ebe4ff57150590b",
+      "Scripts/routeA/diagnostic_transient/v1_2/DiagnosticJson.H": "af0e2078a78c8e732edc67efa5f559c0808b519e1960b246c49580bf8de8b1ee",
+      "Scripts/routeA/diagnostic_transient/v1_2/NativeStageObserver.C": "d745d08364c1aeb71d7536fd53aa68d810335a17c0cf700b4682a152028291ba",
+      "Scripts/routeA/diagnostic_transient/v1_2/NativeStageObserver.H": "5dac264c79a14492a4657acea9b8c14f99108115dc4a3b94881c462e00a24dd4",
+      "Scripts/routeA/diagnostic_transient/v1_2/README.md": "2002b8e8319531c7e53281a16eed27ebb25909c0273bcf3e932c4af8939a06ba",
+      "Scripts/routeA/diagnostic_transient/v1_2/build_u04.py": "1b94efbb06ac35dcdaabef62146843a81dbeac926ef765ee75c51958512e8ee7",
+      "Scripts/routeA/diagnostic_transient/v1_2/generate_overlay.py": "a8fdcfc4e7acbb14140b6622c6ac4f5e84e8cbcfb3afab037c1423252cc72a0b",
+      "Scripts/routeA/diagnostic_transient/v1_2/overlay/Fourier/Fourier.C": "acf713d77d983bd31e36171e31d8a24696e9c365208d5a2c8e825ea5235eb62e",
+      "Scripts/routeA/diagnostic_transient/v1_2/overlay/Fourier/Fourier.H": "3d0a53b924bc028ea774147456ee8b06580a93dd8488a90ac040425f4198cb82",
+      "Scripts/routeA/diagnostic_transient/v1_2/overlay/driver/foamRunDiagnostic.C": "58352b8ad135b8e34d267abe716f90a5150959dcf3636f456c3bfb69637ea4e6",
+      "Scripts/routeA/diagnostic_transient/v1_2/overlay/fluid/routeADiagnosticFluid.C": "b5867da371a49fd416491d9bf2ed7c78896da0d7479675270b8e6c0c3afb948f",
+      "Scripts/routeA/diagnostic_transient/v1_2/overlay/fluid/routeADiagnosticFluid.H": "0cbc91d6271228229d02918cc8a91de1e81ae17b71d5e4c686a68f30b39d7cef",
+      "Scripts/routeA/diagnostic_transient/v1_2/overlay/fluid/thermophysicalPredictor.C": "1ee40dedc620c2537c4a906b13e248c298ce58c0d1bd8df747883bb6ba9ce646",
+      "Scripts/routeA/diagnostic_transient/v1_2/overlay/isothermalFluid/correctBuoyantPressure.C": "8ae53ba8c4978104b3ef8e41ae10147bcb2121f6bec3bd75982bd7e918e9fcf4",
+      "Scripts/routeA/diagnostic_transient/v1_2/overlay/isothermalFluid/correctDensity.C": "7a8d7eb42efa04f265e4d04872107ab0662acf063e41eb8f30f2f9d2cb650c0c",
+      "Scripts/routeA/diagnostic_transient/v1_2/overlay/isothermalFluid/correctPressure.C": "6a76f02425acd9b7c1043755ed5d5580e9846d9f5087ddf0b94eb7838fd5217a",
+      "Scripts/routeA/diagnostic_transient/v1_2/overlay/isothermalFluid/momentumPredictor.C": "b17318c0a7607f37eed06b8ecba85dcf96317cd793c6a2de23503ebc8574abcc",
+      "Scripts/routeA/diagnostic_transient/v1_2/overlay/isothermalFluid/moveMesh.C": "803cda51e89b8e005ec9776303c191b5b5a16c5838c824558057f1b38f86d6e1",
+      "Scripts/routeA/diagnostic_transient/v1_2/overlay/isothermalFluid/routeADiagnosticIsothermalFluid.C": "c8c8f697239ba4d72347585987fac8d8d0dce89a5dce93c187d02d79486c8679",
+      "Scripts/routeA/diagnostic_transient/v1_2/overlay/isothermalFluid/routeADiagnosticIsothermalFluid.H": "d47495bf37c33f9d418d0f8303a973116401f2797cd89184478167ccac5d8dbd",
+      "Scripts/routeA/diagnostic_transient/v1_2/overlay/isothermalFluid/setRDeltaT.C": "7df939cbd12db47d41d1c2cf1e57217c83305f9d72feabf26b6bbfee178fc017",
+      "Scripts/routeA/diagnostic_transient/v1_2/overlay/overlay_manifest.json": "4240de710ebe7d3cd2ea3712b9c92a9943310bc15256ca9c2769638c525081ff",
+      "Scripts/routeA/diagnostic_transient/v1_2/replay_evaluator.py": "ccc9ab23b48c4192235444ce179fe91e347841169354c2b9fbf81027f9a96cab",
+      "Scripts/routeA/diagnostic_transient/v1_2/resource_estimator.py": "b03845257b8380a0e7f0fa02c50e6269389640a16e510d6bc4949a145f2b0648",
+      "Scripts/routeA/diagnostic_transient/v1_2/run_u04_verification.sh": "b077b652c080fbf7d34f44ac736722ddc3f15b399b88069daeb9e7a04748cb2f",
+      "Scripts/routeA/diagnostic_transient/v1_2/schema.json": "380d09127b221ef7388ab6ccbb10ee9eb30bfb4234c93ca61e98af077006da04",
+      "Scripts/routeA/diagnostic_transient/v1_2/synthetic_native_driver.C": "e2840a3ece077caa2de02b9417fe147e233043d8a58245c04f3c197dbda8f725",
+      "Scripts/routeA/diagnostic_transient/v1_2/verify_u04.py": "2da04edf2e5179ee7050aac779beda623258af5a71a1868f55c9a0ed37b47a8b",
+      "docs/routeA_diagnostic_transient_contract_v1.2.json": "7e95d4078433ff9e96527dd37430c2519cd1479ccc581e84f64bc94762af08dd",
+      "docs/routeA_execution_contract_v1.7.json": "fbc744e012f66b37b5d9409be961cb5a9410c3d75ac7e2f026b2acf118d3bb60",
+      "docs/routeA_diagnostic_transient_contract_v1.0.md": "0340366eb938308007ecee9dbd0c0475bb97df22a4dc560e87ae472c87b4cc15",
+      "docs/routeA_diagnostic_transient_contract_v1.1.json": "574b83ed63e244e9fbb1307d1a463e1c92fade86a99375054d599b06b155d675",
+      "docs/routeA_diagnostic_transient_contract_v1.2.md": "6b8974287f2fbd9b4d8104131803e8523bfc9d37c157f1515265c95affae356d",
+      "docs/routeA_diagnostic_transient_contract_v1.0.json": "3ea8c134b1c0468a455c8d090eb3b47dae510b06a9886eedbaa5f79aed8e152f",
+      "docs/routeA_diagnostic_transient_contract_v1.2.sha256": "e41fc4c3fa5c3e52c1b9cfa148f88d103191322401bf0200436f550dbedc1e4e",
+      "docs/routeA_diagnostic_transient_contract_v1.1.md": "9b59a858c85f68e43a9b0afee135947756aa4dec7a01b75a2818e8160bbc10b8",
+      "docs/routeA_diagnostic_transient_contract_v1.1.sha256": "82bb3dd7788337a3b35ef5da160ac3581fa540aea8436997433fb107b8a54c91",
+      "docs/routeA_diagnostic_transient_contract_v1.0.sha256": "ae6df74a1867951995352e78ec6bedb07add15d78551f4e588c14b0af8de706f",
+      "docs/routeA_execution_contract_v1.7.md": "38ba19ba8db21f05d7a11e011e979f3126d2abcad4e1dc48a9d532c1cfb5fd47"
+    },
+    "start_git_status": "?? Scripts/routeA/resource_review/\n?? cases/routeA/A-H-Ra1e6-fine-beta1e-4/\n?? cases/routeA/A-Ra1e3-coarse/\n?? cases/routeA/A-Ra1e3-fine/\n?? cases/routeA/A-Ra1e3-medium/\n?? cases/routeA/A-Ra1e4-coarse/\n?? cases/routeA/A-Ra1e4-fine/\n?? cases/routeA/A-Ra1e4-medium/\n?? cases/routeA/A-Ra1e5-coarse/\n?? cases/routeA/A-Ra1e5-fine/\n?? cases/routeA/A-Ra1e5-medium/\n?? cases/routeA/A-Ra1e6-coarse/\n?? cases/routeA/A-Ra1e6-fine/\n?? cases/routeA/A-Ra1e6-medium/\n?? cases/routeA/Ra0_medium/\n?? cases/routeA/Ra1e4_coarse/\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/resource_review/\n",
+    "filesystem": {
+      "block_size": 4096,
+      "total_bytes": 1005867986944,
+      "free_user_bytes": 796351639552,
+      "free_all_bytes": 847522410496,
+      "total_inodes": 62447616,
+      "free_inodes": 59458653,
+      "df_h": "Filesystem      Size  Used Avail Use% Mounted on\n/dev/nvme0n1p2  937G  148G  742G  17% /\n",
+      "df_B1": "Filesystem         1B-blocks         Used    Available Use% Mounted on\n/dev/nvme0n1p2 1005867986944 158345576448 796351639552  17% /\n",
+      "df_i": "Filesystem       Inodes   IUsed    IFree IUse% Mounted on\n/dev/nvme0n1p2 62447616 2988963 59458653    5% /\n"
+    },
+    "hardware_lscpu": {
+      "lscpu": [
+        {
+          "field": "Architecture:",
+          "data": "x86_64"
+        },
+        {
+          "field": "CPU op-mode(s):",
+          "data": "32-bit, 64-bit"
+        },
+        {
+          "field": "Address sizes:",
+          "data": "52 bits physical, 57 bits virtual"
+        },
+        {
+          "field": "Byte Order:",
+          "data": "Little Endian"
+        },
+        {
+          "field": "CPU(s):",
+          "data": "24"
+        },
+        {
+          "field": "On-line CPU(s) list:",
+          "data": "0-23"
+        },
+        {
+          "field": "Vendor ID:",
+          "data": "GenuineIntel"
+        },
+        {
+          "field": "Model name:",
+          "data": "Intel(R) Xeon(R) w5-2545"
+        },
+        {
+          "field": "CPU family:",
+          "data": "6"
+        },
+        {
+          "field": "Model:",
+          "data": "143"
+        },
+        {
+          "field": "Thread(s) per core:",
+          "data": "2"
+        },
+        {
+          "field": "Core(s) per socket:",
+          "data": "12"
+        },
+        {
+          "field": "Socket(s):",
+          "data": "1"
+        },
+        {
+          "field": "Stepping:",
+          "data": "8"
+        },
+        {
+          "field": "CPU(s) scaling MHz:",
+          "data": "26%"
+        },
+        {
+          "field": "CPU max MHz:",
+          "data": "4700.0000"
+        },
+        {
+          "field": "CPU min MHz:",
+          "data": "800.0000"
+        },
+        {
+          "field": "BogoMIPS:",
+          "data": "7008.00"
+        },
+        {
+          "field": "Flags:",
+          "data": "fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cat_l2 cdp_l3 intel_ppin cdp_l2 ssbd mba ibrs ibpb stibp ibrs_enhanced tpr_shadow flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid cqm rdt_a avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb intel_pt avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local split_lock_detect user_shstk avx_vnni avx512_bf16 wbnoinvd dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req vnmi avx512vbmi umip pku ospke waitpkg avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq la57 rdpid bus_lock_detect cldemote movdiri movdir64b enqcmd fsrm md_clear serialize tsxldtrk pconfig arch_lbr ibt amx_bf16 avx512_fp16 amx_tile amx_int8 flush_l1d arch_capabilities"
+        },
+        {
+          "field": "Virtualization:",
+          "data": "VT-x"
+        },
+        {
+          "field": "L1d cache:",
+          "data": "576 KiB (12 instances)"
+        },
+        {
+          "field": "L1i cache:",
+          "data": "384 KiB (12 instances)"
+        },
+        {
+          "field": "L2 cache:",
+          "data": "24 MiB (12 instances)"
+        },
+        {
+          "field": "L3 cache:",
+          "data": "30 MiB (1 instance)"
+        },
+        {
+          "field": "NUMA node(s):",
+          "data": "1"
+        },
+        {
+          "field": "NUMA node0 CPU(s):",
+          "data": "0-23"
+        },
+        {
+          "field": "Vulnerability Gather data sampling:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Ghostwrite:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Indirect target selection:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Itlb multihit:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability L1tf:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Mds:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Meltdown:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Mmio stale data:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Old microcode:",
+          "data": "Vulnerable"
+        },
+        {
+          "field": "Vulnerability Reg file data sampling:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Retbleed:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Spec rstack overflow:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Spec store bypass:",
+          "data": "Mitigation; Speculative Store Bypass disabled via prctl"
+        },
+        {
+          "field": "Vulnerability Spectre v1:",
+          "data": "Mitigation; usercopy/swapgs barriers and __user pointer sanitization"
+        },
+        {
+          "field": "Vulnerability Spectre v2:",
+          "data": "Mitigation; Enhanced / Automatic IBRS; IBPB conditional; PBRSB-eIBRS SW sequence; BHI BHI_DIS_S"
+        },
+        {
+          "field": "Vulnerability Srbds:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Tsa:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Tsx async abort:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Vmscape:",
+          "data": "Mitigation; IBPB before exit to userspace"
+        }
+      ]
+    },
+    "affinity_logical_cpus": 24,
+    "proc_meminfo": "MemTotal:       65058016 kB\nMemFree:         1960524 kB\nMemAvailable:   61827772 kB\nBuffers:         3381272 kB\nCached:         51385336 kB\nSwapCached:           16 kB\nActive:          1291496 kB\nInactive:       54619060 kB\nActive(anon):     574628 kB\nInactive(anon):   640352 kB\nActive(file):     716868 kB\nInactive(file): 53978708 kB\nUnevictable:       27260 kB\nMlocked:           11852 kB\nSwapTotal:       8388604 kB\nSwapFree:        8388588 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:              1616 kB\nWriteback:             0 kB\nAnonPages:       1172504 kB\nMapped:           844308 kB\nShmem:             59052 kB\nKReclaimable:    5879840 kB\nSlab:            6778336 kB\nSReclaimable:    5879840 kB\nSUnreclaim:       898496 kB\nKernelStack:       17120 kB\nPageTables:        25704 kB\nSecPageTables:     10652 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    40917612 kB\nCommitted_AS:    7581032 kB\nVmallocTotal:   13743895347199 kB\nVmallocUsed:       56516 kB\nVmallocChunk:          0 kB\nPercpu:            69024 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:   1867776 kB\nFilePmdMapped:    268288 kB\nCmaTotal:              0 kB\nCmaFree:          180516 kB\nUnaccepted:            0 kB\nBalloon:               0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:      262728 kB\nDirectMap2M:     5242880 kB\nDirectMap1G:    61865984 kB\n",
+    "cgroup_memory_max": null,
+    "cgroup_cpu_max": null,
+    "solver_executed": false
+  },
+  "literal_original_projection": {
+    "classification": "PLANNING_ESTIMATE_ONLY",
+    "frozen_contract_version": "1.1",
+    "U01_U03_changed": false,
+    "cell_count": 25600,
+    "internal_faces": 50880,
+    "active_boundary_faces": 640,
+    "records_per_physical_step": 1141,
+    "diagnostic_numeric_payload_Float64_equivalent_bytes_per_step": 9704376176.0,
+    "full_field_numeric_bytes_per_step": 2045440,
+    "series_planning_envelope": {
+      "0.5": {
+        "prospective_constant_h_s": 0.007097842672793382,
+        "planning_steps": 200061,
+        "numeric_payload_equivalent_bytes": 1941876414918576.0
+      },
+      "0.25": {
+        "prospective_constant_h_s": 0.003548921336396691,
+        "planning_steps": 400122,
+        "numeric_payload_equivalent_bytes": 3883752829837152.0
+      },
+      "0.125": {
+        "prospective_constant_h_s": 0.0017744606681983455,
+        "planning_steps": 800244,
+        "numeric_payload_equivalent_bytes": 7767505659674304.0
+      }
+    },
+    "primary_numeric_payload_equivalent_bytes": 5825629244755728.0,
+    "two_series_step_watchdog_numeric_equivalent_bytes": 3.8825686464e+16,
+    "available_filesystem_bytes": 796048769024,
+    "resource_feasibility_concern": true,
+    "resource_feasibility_review_required": true,
+    "limitations": [
+      "No CFD stepcount/runtime inferred. Prospective h scales are inherited acceptedsteady estimates, not actual adaptiveh.",
+      "Byte figure is uncompressed numerical-payload equivalent with actual native cells/faces projected from synthetic schema, not measured actualJSON size or a disk lowerbound. Field count conservative; strings/headers/precision/compression maychange bytes.",
+      "No changes to24outer,cadence,duration or diagnostic tolerance. Resource review must decide feasibility before RUN.",
+      "Synthetic timing/memory figures do not predict production runtime."
+    ]
+  },
+  "original_projection_reconstructed_bytes": 5825629244755728.0,
+  "legacy_per_step_bytes": 9706421616.0,
+  "corrected_per_step_numeric_bytes": 10650540568.0,
+  "correction_explanation": "Old estimator did not scale thermal_context.Cv cell arrays or geometry.linear_weights internal-face arrays; audit corrects these shapes without editing v1.2/source/evidence. Strings/logs/JSON overhead still separate, not measured production size.",
+  "corrected_primary_numeric_equivalent_bytes": 6392273389723944.0,
+  "breakdown": [
+    {
+      "category": "A",
+      "name": "Primary scalar histories",
+      "legacy_numeric_bytes_per_record_mean": 0,
+      "records_per_step": 0,
+      "legacy_numeric_bytes_per_step": 0,
+      "primary_steps": 600183,
+      "legacy_primary_bytes": 0,
+      "legacy_fraction": 0.0,
+      "corrected_numeric_bytes_per_step": 0,
+      "corrected_primary_bytes": 0,
+      "reencoded_synthetic_fragment_json_bytes": 0,
+      "legacy_exclusions": "A production scalar series,J logs,I string hashes/manifests are absent from numerical baseline; metadata strings excluded; corrected arrays still not actual JSON."
+    },
+    {
+      "category": "B",
+      "name": "Full CFD field snapshots",
+      "legacy_numeric_bytes_per_record_mean": 2045440.0,
+      "records_per_step": 1,
+      "legacy_numeric_bytes_per_step": 2045440,
+      "primary_steps": 600183,
+      "legacy_primary_bytes": 1227638315520,
+      "legacy_fraction": 0.00021073059474650374,
+      "corrected_numeric_bytes_per_step": 2045440,
+      "corrected_primary_bytes": 1227638315520,
+      "reencoded_synthetic_fragment_json_bytes": 0,
+      "legacy_exclusions": ""
+    },
+    {
+      "category": "C",
+      "name": "Outer-iteration field/state copies",
+      "legacy_numeric_bytes_per_record_mean": 2799944.329535495,
+      "records_per_step": 1141,
+      "legacy_numeric_bytes_per_step": 3194736480.0,
+      "primary_steps": 600183,
+      "legacy_primary_bytes": 1917426524775840.0,
+      "legacy_fraction": 0.32913638067543016,
+      "corrected_numeric_bytes_per_step": 3709029640.0,
+      "corrected_primary_bytes": 2226096536424120.0,
+      "reencoded_synthetic_fragment_json_bytes": 4942560,
+      "legacy_exclusions": ""
+    },
+    {
+      "category": "D",
+      "name": "Pressure-corrector fields/matrices",
+      "legacy_numeric_bytes_per_record_mean": 8031348.571428572,
+      "records_per_step": 672,
+      "legacy_numeric_bytes_per_step": 5397066240.0,
+      "primary_steps": 600183,
+      "legacy_primary_bytes": 3239227407121920.0,
+      "legacy_fraction": 0.5560304768858909,
+      "corrected_numeric_bytes_per_step": 5826892032.0,
+      "corrected_primary_bytes": 3497201540441856.0,
+      "reencoded_synthetic_fragment_json_bytes": 7561778,
+      "legacy_exclusions": ""
+    },
+    {
+      "category": "E",
+      "name": "Mass total matrix payload",
+      "legacy_numeric_bytes_per_record_mean": 2803680.0,
+      "records_per_step": 98,
+      "legacy_numeric_bytes_per_step": 274760640.0,
+      "primary_steps": 600183,
+      "legacy_primary_bytes": 164906665197120.0,
+      "legacy_fraction": 0.028307099245213747,
+      "corrected_numeric_bytes_per_step": 274760640.0,
+      "corrected_primary_bytes": 164906665197120.0,
+      "reencoded_synthetic_fragment_json_bytes": 291376,
+      "legacy_exclusions": ""
+    },
+    {
+      "category": "F",
+      "name": "Energy total matrix payload",
+      "legacy_numeric_bytes_per_record_mean": 3577600.0,
+      "records_per_step": 72,
+      "legacy_numeric_bytes_per_step": 257587200.0,
+      "primary_steps": 600183,
+      "legacy_primary_bytes": 154599458457600.0,
+      "legacy_fraction": 0.02653781282026684,
+      "corrected_numeric_bytes_per_step": 257587200.0,
+      "corrected_primary_bytes": 154599458457600.0,
+      "reencoded_synthetic_fragment_json_bytes": 189712,
+      "legacy_exclusions": ""
+    },
+    {
+      "category": "G",
+      "name": "Term-separated payload",
+      "legacy_numeric_bytes_per_record_mean": 1260804.4173913044,
+      "records_per_step": 460,
+      "legacy_numeric_bytes_per_step": 579970032.0,
+      "primary_steps": 600183,
+      "legacy_primary_bytes": 348088153715856.0,
+      "legacy_fraction": 0.059751168344468086,
+      "corrected_numeric_bytes_per_step": 579970032.0,
+      "corrected_primary_bytes": 348088153715856.0,
+      "reencoded_synthetic_fragment_json_bytes": 441887,
+      "legacy_exclusions": ""
+    },
+    {
+      "category": "H",
+      "name": "StageLedger metadata",
+      "legacy_numeric_bytes_per_record_mean": 224.0,
+      "records_per_step": 1141,
+      "legacy_numeric_bytes_per_step": 255584,
+      "primary_steps": 600183,
+      "legacy_primary_bytes": 153397171872,
+      "legacy_fraction": 2.6331433983734755e-05,
+      "corrected_numeric_bytes_per_step": 255584,
+      "corrected_primary_bytes": 153397171872,
+      "reencoded_synthetic_fragment_json_bytes": 4371589,
+      "legacy_exclusions": "A production scalar series,J logs,I string hashes/manifests are absent from numerical baseline; metadata strings excluded; corrected arrays still not actual JSON."
+    },
+    {
+      "category": "I",
+      "name": "Hash/manifest/provenance",
+      "legacy_numeric_bytes_per_record_mean": 0.0,
+      "records_per_step": 1141,
+      "legacy_numeric_bytes_per_step": 0,
+      "primary_steps": 600183,
+      "legacy_primary_bytes": 0,
+      "legacy_fraction": 0.0,
+      "corrected_numeric_bytes_per_step": 0,
+      "corrected_primary_bytes": 0,
+      "reencoded_synthetic_fragment_json_bytes": 75306,
+      "legacy_exclusions": "A production scalar series,J logs,I string hashes/manifests are absent from numerical baseline; metadata strings excluded; corrected arrays still not actual JSON."
+    },
+    {
+      "category": "J",
+      "name": "Raw solver logs",
+      "legacy_numeric_bytes_per_record_mean": 0,
+      "records_per_step": 0,
+      "legacy_numeric_bytes_per_step": 0,
+      "primary_steps": 600183,
+      "legacy_primary_bytes": 0,
+      "legacy_fraction": 0.0,
+      "corrected_numeric_bytes_per_step": 0,
+      "corrected_primary_bytes": 0,
+      "reencoded_synthetic_fragment_json_bytes": 0,
+      "legacy_exclusions": "A production scalar series,J logs,I string hashes/manifests are absent from numerical baseline; metadata strings excluded; corrected arrays still not actual JSON."
+    }
+  ],
+  "ranked_contributors": [
+    {
+      "category": "D",
+      "name": "Pressure-corrector fields/matrices",
+      "legacy_numeric_bytes_per_record_mean": 8031348.571428572,
+      "records_per_step": 672,
+      "legacy_numeric_bytes_per_step": 5397066240.0,
+      "primary_steps": 600183,
+      "legacy_primary_bytes": 3239227407121920.0,
+      "legacy_fraction": 0.5560304768858909,
+      "corrected_numeric_bytes_per_step": 5826892032.0,
+      "corrected_primary_bytes": 3497201540441856.0,
+      "reencoded_synthetic_fragment_json_bytes": 7561778,
+      "legacy_exclusions": ""
+    },
+    {
+      "category": "C",
+      "name": "Outer-iteration field/state copies",
+      "legacy_numeric_bytes_per_record_mean": 2799944.329535495,
+      "records_per_step": 1141,
+      "legacy_numeric_bytes_per_step": 3194736480.0,
+      "primary_steps": 600183,
+      "legacy_primary_bytes": 1917426524775840.0,
+      "legacy_fraction": 0.32913638067543016,
+      "corrected_numeric_bytes_per_step": 3709029640.0,
+      "corrected_primary_bytes": 2226096536424120.0,
+      "reencoded_synthetic_fragment_json_bytes": 4942560,
+      "legacy_exclusions": ""
+    },
+    {
+      "category": "G",
+      "name": "Term-separated payload",
+      "legacy_numeric_bytes_per_record_mean": 1260804.4173913044,
+      "records_per_step": 460,
+      "legacy_numeric_bytes_per_step": 579970032.0,
+      "primary_steps": 600183,
+      "legacy_primary_bytes": 348088153715856.0,
+      "legacy_fraction": 0.059751168344468086,
+      "corrected_numeric_bytes_per_step": 579970032.0,
+      "corrected_primary_bytes": 348088153715856.0,
+      "reencoded_synthetic_fragment_json_bytes": 441887,
+      "legacy_exclusions": ""
+    },
+    {
+      "category": "E",
+      "name": "Mass total matrix payload",
+      "legacy_numeric_bytes_per_record_mean": 2803680.0,
+      "records_per_step": 98,
+      "legacy_numeric_bytes_per_step": 274760640.0,
+      "primary_steps": 600183,
+      "legacy_primary_bytes": 164906665197120.0,
+      "legacy_fraction": 0.028307099245213747,
+      "corrected_numeric_bytes_per_step": 274760640.0,
+      "corrected_primary_bytes": 164906665197120.0,
+      "reencoded_synthetic_fragment_json_bytes": 291376,
+      "legacy_exclusions": ""
+    },
+    {
+      "category": "F",
+      "name": "Energy total matrix payload",
+      "legacy_numeric_bytes_per_record_mean": 3577600.0,
+      "records_per_step": 72,
+      "legacy_numeric_bytes_per_step": 257587200.0,
+      "primary_steps": 600183,
+      "legacy_primary_bytes": 154599458457600.0,
+      "legacy_fraction": 0.02653781282026684,
+      "corrected_numeric_bytes_per_step": 257587200.0,
+      "corrected_primary_bytes": 154599458457600.0,
+      "reencoded_synthetic_fragment_json_bytes": 189712,
+      "legacy_exclusions": ""
+    },
+    {
+      "category": "B",
+      "name": "Full CFD field snapshots",
+      "legacy_numeric_bytes_per_record_mean": 2045440.0,
+      "records_per_step": 1,
+      "legacy_numeric_bytes_per_step": 2045440,
+      "primary_steps": 600183,
+      "legacy_primary_bytes": 1227638315520,
+      "legacy_fraction": 0.00021073059474650374,
+      "corrected_numeric_bytes_per_step": 2045440,
+      "corrected_primary_bytes": 1227638315520,
+      "reencoded_synthetic_fragment_json_bytes": 0,
+      "legacy_exclusions": ""
+    },
+    {
+      "category": "H",
+      "name": "StageLedger metadata",
+      "legacy_numeric_bytes_per_record_mean": 224.0,
+      "records_per_step": 1141,
+      "legacy_numeric_bytes_per_step": 255584,
+      "primary_steps": 600183,
+      "legacy_primary_bytes": 153397171872,
+      "legacy_fraction": 2.6331433983734755e-05,
+      "corrected_numeric_bytes_per_step": 255584,
+      "corrected_primary_bytes": 153397171872,
+      "reencoded_synthetic_fragment_json_bytes": 4371589,
+      "legacy_exclusions": "A production scalar series,J logs,I string hashes/manifests are absent from numerical baseline; metadata strings excluded; corrected arrays still not actual JSON."
+    },
+    {
+      "category": "A",
+      "name": "Primary scalar histories",
+      "legacy_numeric_bytes_per_record_mean": 0,
+      "records_per_step": 0,
+      "legacy_numeric_bytes_per_step": 0,
+      "primary_steps": 600183,
+      "legacy_primary_bytes": 0,
+      "legacy_fraction": 0.0,
+      "corrected_numeric_bytes_per_step": 0,
+      "corrected_primary_bytes": 0,
+      "reencoded_synthetic_fragment_json_bytes": 0,
+      "legacy_exclusions": "A production scalar series,J logs,I string hashes/manifests are absent from numerical baseline; metadata strings excluded; corrected arrays still not actual JSON."
+    },
+    {
+      "category": "I",
+      "name": "Hash/manifest/provenance",
+      "legacy_numeric_bytes_per_record_mean": 0.0,
+      "records_per_step": 1141,
+      "legacy_numeric_bytes_per_step": 0,
+      "primary_steps": 600183,
+      "legacy_primary_bytes": 0,
+      "legacy_fraction": 0.0,
+      "corrected_numeric_bytes_per_step": 0,
+      "corrected_primary_bytes": 0,
+      "reencoded_synthetic_fragment_json_bytes": 75306,
+      "legacy_exclusions": "A production scalar series,J logs,I string hashes/manifests are absent from numerical baseline; metadata strings excluded; corrected arrays still not actual JSON."
+    },
+    {
+      "category": "J",
+      "name": "Raw solver logs",
+      "legacy_numeric_bytes_per_record_mean": 0,
+      "records_per_step": 0,
+      "legacy_numeric_bytes_per_step": 0,
+      "primary_steps": 600183,
+      "legacy_primary_bytes": 0,
+      "legacy_fraction": 0.0,
+      "corrected_numeric_bytes_per_step": 0,
+      "corrected_primary_bytes": 0,
+      "reencoded_synthetic_fragment_json_bytes": 0,
+      "legacy_exclusions": "A production scalar series,J logs,I string hashes/manifests are absent from numerical baseline; metadata strings excluded; corrected arrays still not actual JSON."
+    }
+  ],
+  "pareto": {
+    "1": 0.5560304768858909,
+    "3": 0.9449180259057892,
+    "5": 0.9997629379712698
+  },
+  "exact_duplicate_state_blocks": {
+    "records": 610,
+    "legacy_bytes_per_step": 2803862560.0,
+    "corrected_bytes_per_step": 3052152080.0,
+    "scope": "Exact repeated payload.state or root meshState versus native_state_epoch in existing synthetic packets. Shape scaling only; no speculative cross-step equality."
+  },
+  "actual_fields": [
+    {
+      "time_directory": "cases/routeA/A-Ra1e6-fine/3000",
+      "iteration_not_physical_transient_time": 3000,
+      "du_sb_bytes": 5708277,
+      "file_content_bytes": 5708277,
+      "base_U_T_p_p_rgh_rho_phi_bytes": 4523506,
+      "files": [
+        {
+          "path": "cases/routeA/A-Ra1e6-fine/3000/rho",
+          "bytes": 477934,
+          "sha256": "49fef97c4915da29d0a9373472f8be0978ac686ccdd9c68d4634348483433b20"
+        },
+        {
+          "path": "cases/routeA/A-Ra1e6-fine/3000/U",
+          "bytes": 1368016,
+          "sha256": "6f6d9b8c7df044f4bccc150e54f453f5bcf7e32ad17520e3ef42aff755aa4308"
+        },
+        {
+          "path": "cases/routeA/A-Ra1e6-fine/3000/phi",
+          "bytes": 1142021,
+          "sha256": "e8a55ff14acfb40d81ac80281129bdadb6613c7d6996169959b40ba595271f37"
+        },
+        {
+          "path": "cases/routeA/A-Ra1e6-fine/3000/T",
+          "bytes": 459140,
+          "sha256": "287b4d972cf81f14005ea37ca30c45ad9f011a06a4a24fdefa23ea3998e9b6b1"
+        },
+        {
+          "path": "cases/routeA/A-Ra1e6-fine/3000/div(phi)",
+          "bytes": 589020,
+          "sha256": "e1b837771f7b738c89e4a9ae5aac0d8dd2e6980413d8ec534bd931daf91ffc48"
+        },
+        {
+          "path": "cases/routeA/A-Ra1e6-fine/3000/wallHeatFlux",
+          "bytes": 7302,
+          "sha256": "c99924eeb96084a839b5135db526a69512510ad7188df4b8fb230d599f1f96a4"
+        },
+        {
+          "path": "cases/routeA/A-Ra1e6-fine/3000/div(U)",
+          "bytes": 587646,
+          "sha256": "bfd24f2dda8249b914f3fa4181b87fa4d1f8b04b13a5e95a67455f683c2b49bf"
+        },
+        {
+          "path": "cases/routeA/A-Ra1e6-fine/3000/p",
+          "bytes": 499244,
+          "sha256": "4dd3276dc4b58a27bf9c4afedd9cffeb15a1d666c69d773272e9616b982bc91e"
+        },
+        {
+          "path": "cases/routeA/A-Ra1e6-fine/3000/p_rgh",
+          "bytes": 577151,
+          "sha256": "40801125f607037ed4ba51d3729efa44c41db511d31a8172b6305271878ba3b3"
+        },
+        {
+          "path": "cases/routeA/A-Ra1e6-fine/3000/uniform/time",
+          "bytes": 803,
+          "sha256": "01cf56460afc13f8a056690bf5ee4dcbab8f5e9b69171679368b631e65737c2b"
+        }
+      ],
+      "format": "actual existing steady ASCII writePrecision16, not future binary transient measurement",
+      "complete_directory_includes": "base fields plus postProcess div(U),div(phi),wallHeatFlux"
+    },
+    {
+      "time_directory": "cases/routeA/A-Ra1e6-fine/6000",
+      "iteration_not_physical_transient_time": 6000,
+      "du_sb_bytes": 5708483,
+      "file_content_bytes": 5708483,
+      "base_U_T_p_p_rgh_rho_phi_bytes": 4523638,
+      "files": [
+        {
+          "path": "cases/routeA/A-Ra1e6-fine/6000/rho",
+          "bytes": 477966,
+          "sha256": "9f44a3a347f99dfd26c7f31091e2ac97e8865aa8134a1e3877f9b1171359ce3e"
+        },
+        {
+          "path": "cases/routeA/A-Ra1e6-fine/6000/U",
+          "bytes": 1367940,
+          "sha256": "38c87c0192b6c1cf588d0d87802caa4d000704ae7a9926195407b3f7b3306ce7"
+        },
+        {
+          "path": "cases/routeA/A-Ra1e6-fine/6000/phi",
+          "bytes": 1142112,
+          "sha256": "c0f2d6c7a33f8998a0811f90a34ce55db5def48c845461b9fd0e1af92facec1e"
+        },
+        {
+          "path": "cases/routeA/A-Ra1e6-fine/6000/T",
+          "bytes": 459197,
+          "sha256": "87c394d7c2c446027309689700d21055a258120857982c5335656fabe48b871f"
+        },
+        {
+          "path": "cases/routeA/A-Ra1e6-fine/6000/div(phi)",
+          "bytes": 588997,
+          "sha256": "95bd0c366c9735155310a4b116785b5eb8a803aee5e4486344a31e995cacbef6"
+        },
+        {
+          "path": "cases/routeA/A-Ra1e6-fine/6000/wallHeatFlux",
+          "bytes": 7318,
+          "sha256": "fd8869ade72568f878f25d2b30e190d1f20d6c0dfaf56570730fc1b441c72d2f"
+        },
+        {
+          "path": "cases/routeA/A-Ra1e6-fine/6000/div(U)",
+          "bytes": 587727,
+          "sha256": "1a1256eff022cbe85f51c560ebb2022302a7cabd95ff2828d0ac88947bad14ad"
+        },
+        {
+          "path": "cases/routeA/A-Ra1e6-fine/6000/p",
+          "bytes": 499235,
+          "sha256": "a67fb1472c04fe1705b1d72c48ed4604d0792e0857d02f3ceb4a00e008a8cbd7"
+        },
+        {
+          "path": "cases/routeA/A-Ra1e6-fine/6000/p_rgh",
+          "bytes": 577188,
+          "sha256": "050be2a535bb27d3ee53823698e9dedfe328fc199f4173e12941005c3dcccbd1"
+        },
+        {
+          "path": "cases/routeA/A-Ra1e6-fine/6000/uniform/time",
+          "bytes": 803,
+          "sha256": "d2d1873079392c096e00c832e53bccd3a2d98d647d919c36aeb3bc8c1d5f8f3b"
+        }
+      ],
+      "format": "actual existing steady ASCII writePrecision16, not future binary transient measurement",
+      "complete_directory_includes": "base fields plus postProcess div(U),div(phi),wallHeatFlux"
+    },
+    {
+      "time_directory": "cases/routeA/A-Ra1e6-fine/9000",
+      "iteration_not_physical_transient_time": 9000,
+      "du_sb_bytes": 5709592,
+      "file_content_bytes": 5709592,
+      "base_U_T_p_p_rgh_rho_phi_bytes": 4523930,
+      "files": [
+        {
+          "path": "cases/routeA/A-Ra1e6-fine/9000/rho",
+          "bytes": 477973,
+          "sha256": "29cae24933e34ac39903427a5e2a9f1ce3386c4f3b902ceb00ce1b1e65c321da"
+        },
+        {
+          "path": "cases/routeA/A-Ra1e6-fine/9000/U",
+          "bytes": 1368186,
+          "sha256": "e60556f46a162f41d628682e68dee60238285a75640686bcc9950df5fec05ca2"
+        },
+        {
+          "path": "cases/routeA/A-Ra1e6-fine/9000/phi",
+          "bytes": 1142190,
+          "sha256": "057ea797878e0751b38780b5e6441912435680c90aa9fb6f5fea2b85395a5f69"
+        },
+        {
+          "path": "cases/routeA/A-Ra1e6-fine/9000/T",
+          "bytes": 459138,
+          "sha256": "c1ab0135369f9ad223193681ac0385b873ce655f0680b866965e592b7b3f22b0"
+        },
+        {
+          "path": "cases/routeA/A-Ra1e6-fine/9000/div(phi)",
+          "bytes": 589831,
+          "sha256": "d062476cf71b20952f186fc114f2c602aadbc66b4b65cd96f916f037bfc2198b"
+        },
+        {
+          "path": "cases/routeA/A-Ra1e6-fine/9000/wallHeatFlux",
+          "bytes": 7324,
+          "sha256": "b50fb54343b1435c2bab9bc76216b071dabda5be087794fcedf4e1983f3863a9"
+        },
+        {
+          "path": "cases/routeA/A-Ra1e6-fine/9000/div(U)",
+          "bytes": 587704,
+          "sha256": "2d3ca8e49b159ba9f7101dff981d31cb3cbb9f7bc3741c2dea6c2c12b54d699e"
+        },
+        {
+          "path": "cases/routeA/A-Ra1e6-fine/9000/p",
+          "bytes": 499219,
+          "sha256": "76f7bf7b1c5a14e0136c04dfda9d99146815f6f86c8930592309cf8a537b7613"
+        },
+        {
+          "path": "cases/routeA/A-Ra1e6-fine/9000/p_rgh",
+          "bytes": 577224,
+          "sha256": "16ae93cd94d53af9378fec4ee3e60b28e66ba453b1238ffbef52aa5e8118ddbf"
+        },
+        {
+          "path": "cases/routeA/A-Ra1e6-fine/9000/uniform/time",
+          "bytes": 803,
+          "sha256": "b6c13c82705fac99609ac7038208244078d998669e5f971a8f8211e15972317f"
+        }
+      ],
+      "format": "actual existing steady ASCII writePrecision16, not future binary transient measurement",
+      "complete_directory_includes": "base fields plus postProcess div(U),div(phi),wallHeatFlux"
+    }
+  ],
+  "steady_log_evidence": [
+    {
+      "path": "cases/routeA/A-Ra1e6-fine/log.foamRun.segment_3000",
+      "sha256": "4cce49518cce96ac2037b74171fe40522f61cb37ec1bc6a6746a7e703656210e",
+      "bytes": 2802442,
+      "iterations": 3000,
+      "first_iteration": 1.0,
+      "last_iteration": 3000.0,
+      "ExecutionTime_s": 383.435447,
+      "ClockTime_s": 384.0,
+      "ClockTime_s_per_SIMPLE_iteration": 0.128,
+      "bytes_per_iteration": 934.1473333333333,
+      "classification": "ROUGH_PLANNING_SCALE_ONLY"
+    },
+    {
+      "path": "cases/routeA/A-Ra1e6-fine/log.foamRun.segment_6000",
+      "sha256": "8206db3b75bab053b2db40a4cbc8d889ad759c8e5fc192b8415caf5ede1b4e9c",
+      "bytes": 2808939,
+      "iterations": 3000,
+      "first_iteration": 3001.0,
+      "last_iteration": 6000.0,
+      "ExecutionTime_s": 307.574671,
+      "ClockTime_s": 307.0,
+      "ClockTime_s_per_SIMPLE_iteration": 0.10233333333333333,
+      "bytes_per_iteration": 936.313,
+      "classification": "ROUGH_PLANNING_SCALE_ONLY"
+    },
+    {
+      "path": "cases/routeA/A-Ra1e6-fine/log.foamRun.segment_9000",
+      "sha256": "44c1a078a2e6043df81b0acf6d6771e6e50e1b8eac281de2b73f4e0f3705d2b0",
+      "bytes": 2807288,
+      "iterations": 3000,
+      "first_iteration": 6001.0,
+      "last_iteration": 9000.0,
+      "ExecutionTime_s": 211.407231,
+      "ClockTime_s": 212.0,
+      "ClockTime_s_per_SIMPLE_iteration": 0.07066666666666667,
+      "bytes_per_iteration": 935.7626666666666,
+      "classification": "ROUGH_PLANNING_SCALE_ONLY"
+    }
+  ],
+  "step_solve_scenarios": [
+    {
+      "scenario": "B_EARLIEST_ALLOWED_ARRIVAL",
+      "t_star": 0.5,
+      "physical_time_s": 355.0,
+      "series": [
+        {
+          "Co": "0.5",
+          "h_s": 0.007097842672793382,
+          "planning_steps": 50016,
+          "solve_counts": {
+            "U_vector_calls": 1200384,
+            "U_scalar_component_calls_2D": 2400768,
+            "e_calls": 1200384,
+            "p_calls": 2400768,
+            "rho_diagonal_calls": 2450784,
+            "all_native_fv_solve_calls": 7252320,
+            "scalar_component_total_2D": 8452704
+          },
+          "baseline_storage_bytes": 485476383545856.0,
+          "conditional_series": false
+        },
+        {
+          "Co": "0.25",
+          "h_s": 0.003548921336396691,
+          "planning_steps": 100031,
+          "solve_counts": {
+            "U_vector_calls": 2400744,
+            "U_scalar_component_calls_2D": 4801488,
+            "e_calls": 2400744,
+            "p_calls": 4801488,
+            "rho_diagonal_calls": 4901519,
+            "all_native_fv_solve_calls": 14504495,
+            "scalar_component_total_2D": 16905239
+          },
+          "baseline_storage_bytes": 970943060670096.0,
+          "conditional_series": false
+        },
+        {
+          "Co": "0.125",
+          "h_s": 0.0017744606681983455,
+          "planning_steps": 200061,
+          "solve_counts": {
+            "U_vector_calls": 4801464,
+            "U_scalar_component_calls_2D": 9602928,
+            "e_calls": 4801464,
+            "p_calls": 9602928,
+            "rho_diagonal_calls": 9802989,
+            "all_native_fv_solve_calls": 29008845,
+            "scalar_component_total_2D": 33810309
+          },
+          "baseline_storage_bytes": 1941876414918576.0,
+          "conditional_series": true
+        }
+      ],
+      "primary_planning_steps": 150047,
+      "runtime_sensitivity": [
+        {
+          "assumed_seconds_per_complete_physical_step": 0.1,
+          "primary_seconds": 15004.7,
+          "primary_days": 0.17366550925925928,
+          "classification": "PLANNING_SENSITIVITY_NOT_MEASURED_RUNTIME"
+        },
+        {
+          "assumed_seconds_per_complete_physical_step": 1.0,
+          "primary_seconds": 150047.0,
+          "primary_days": 1.7366550925925925,
+          "classification": "PLANNING_SENSITIVITY_NOT_MEASURED_RUNTIME"
+        },
+        {
+          "assumed_seconds_per_complete_physical_step": 10.0,
+          "primary_seconds": 1500470.0,
+          "primary_days": 17.366550925925925,
+          "classification": "PLANNING_SENSITIVITY_NOT_MEASURED_RUNTIME"
+        }
+      ],
+      "steady_24x_scale_only": [
+        {
+          "reference_SIMPLE_s": 0.128,
+          "primary_days_at_24x_steady_scale": 5.335004444444444
+        },
+        {
+          "reference_SIMPLE_s": 0.10233333333333333,
+          "primary_days_at_24x_steady_scale": 4.265224907407407
+        },
+        {
+          "reference_SIMPLE_s": 0.07066666666666667,
+          "primary_days_at_24x_steady_scale": 2.945367037037037
+        }
+      ],
+      "arrival_prediction": false
+    },
+    {
+      "scenario": "C_INTERMEDIATE_SCENARIO",
+      "t_star": 1.0,
+      "physical_time_s": 710.0,
+      "series": [
+        {
+          "Co": "0.5",
+          "h_s": 0.007097842672793382,
+          "planning_steps": 100031,
+          "solve_counts": {
+            "U_vector_calls": 2400744,
+            "U_scalar_component_calls_2D": 4801488,
+            "e_calls": 2400744,
+            "p_calls": 4801488,
+            "rho_diagonal_calls": 4901519,
+            "all_native_fv_solve_calls": 14504495,
+            "scalar_component_total_2D": 16905239
+          },
+          "baseline_storage_bytes": 970943060670096.0,
+          "conditional_series": false
+        },
+        {
+          "Co": "0.25",
+          "h_s": 0.003548921336396691,
+          "planning_steps": 200061,
+          "solve_counts": {
+            "U_vector_calls": 4801464,
+            "U_scalar_component_calls_2D": 9602928,
+            "e_calls": 4801464,
+            "p_calls": 9602928,
+            "rho_diagonal_calls": 9802989,
+            "all_native_fv_solve_calls": 29008845,
+            "scalar_component_total_2D": 33810309
+          },
+          "baseline_storage_bytes": 1941876414918576.0,
+          "conditional_series": false
+        },
+        {
+          "Co": "0.125",
+          "h_s": 0.0017744606681983455,
+          "planning_steps": 400122,
+          "solve_counts": {
+            "U_vector_calls": 9602928,
+            "U_scalar_component_calls_2D": 19205856,
+            "e_calls": 9602928,
+            "p_calls": 19205856,
+            "rho_diagonal_calls": 19605978,
+            "all_native_fv_solve_calls": 58017690,
+            "scalar_component_total_2D": 67620618
+          },
+          "baseline_storage_bytes": 3883752829837152.0,
+          "conditional_series": true
+        }
+      ],
+      "primary_planning_steps": 300092,
+      "runtime_sensitivity": [
+        {
+          "assumed_seconds_per_complete_physical_step": 0.1,
+          "primary_seconds": 30009.2,
+          "primary_days": 0.3473287037037037,
+          "classification": "PLANNING_SENSITIVITY_NOT_MEASURED_RUNTIME"
+        },
+        {
+          "assumed_seconds_per_complete_physical_step": 1.0,
+          "primary_seconds": 300092.0,
+          "primary_days": 3.473287037037037,
+          "classification": "PLANNING_SENSITIVITY_NOT_MEASURED_RUNTIME"
+        },
+        {
+          "assumed_seconds_per_complete_physical_step": 10.0,
+          "primary_seconds": 3000920.0,
+          "primary_days": 34.73287037037037,
+          "classification": "PLANNING_SENSITIVITY_NOT_MEASURED_RUNTIME"
+        }
+      ],
+      "steady_24x_scale_only": [
+        {
+          "reference_SIMPLE_s": 0.128,
+          "primary_days_at_24x_steady_scale": 10.669937777777779
+        },
+        {
+          "reference_SIMPLE_s": 0.10233333333333333,
+          "primary_days_at_24x_steady_scale": 8.530392962962962
+        },
+        {
+          "reference_SIMPLE_s": 0.07066666666666667,
+          "primary_days_at_24x_steady_scale": 5.890694814814815
+        }
+      ],
+      "arrival_prediction": false
+    },
+    {
+      "scenario": "A_MAX_DURATION_SCENARIO",
+      "t_star": 2.0,
+      "physical_time_s": 1420.0,
+      "series": [
+        {
+          "Co": "0.5",
+          "h_s": 0.007097842672793382,
+          "planning_steps": 200061,
+          "solve_counts": {
+            "U_vector_calls": 4801464,
+            "U_scalar_component_calls_2D": 9602928,
+            "e_calls": 4801464,
+            "p_calls": 9602928,
+            "rho_diagonal_calls": 9802989,
+            "all_native_fv_solve_calls": 29008845,
+            "scalar_component_total_2D": 33810309
+          },
+          "baseline_storage_bytes": 1941876414918576.0,
+          "conditional_series": false
+        },
+        {
+          "Co": "0.25",
+          "h_s": 0.003548921336396691,
+          "planning_steps": 400122,
+          "solve_counts": {
+            "U_vector_calls": 9602928,
+            "U_scalar_component_calls_2D": 19205856,
+            "e_calls": 9602928,
+            "p_calls": 19205856,
+            "rho_diagonal_calls": 19605978,
+            "all_native_fv_solve_calls": 58017690,
+            "scalar_component_total_2D": 67620618
+          },
+          "baseline_storage_bytes": 3883752829837152.0,
+          "conditional_series": false
+        },
+        {
+          "Co": "0.125",
+          "h_s": 0.0017744606681983455,
+          "planning_steps": 800244,
+          "solve_counts": {
+            "U_vector_calls": 19205856,
+            "U_scalar_component_calls_2D": 38411712,
+            "e_calls": 19205856,
+            "p_calls": 38411712,
+            "rho_diagonal_calls": 39211956,
+            "all_native_fv_solve_calls": 116035380,
+            "scalar_component_total_2D": 135241236
+          },
+          "baseline_storage_bytes": 7767505659674304.0,
+          "conditional_series": true
+        }
+      ],
+      "primary_planning_steps": 600183,
+      "runtime_sensitivity": [
+        {
+          "assumed_seconds_per_complete_physical_step": 0.1,
+          "primary_seconds": 60018.3,
+          "primary_days": 0.6946562500000001,
+          "classification": "PLANNING_SENSITIVITY_NOT_MEASURED_RUNTIME"
+        },
+        {
+          "assumed_seconds_per_complete_physical_step": 1.0,
+          "primary_seconds": 600183.0,
+          "primary_days": 6.9465625,
+          "classification": "PLANNING_SENSITIVITY_NOT_MEASURED_RUNTIME"
+        },
+        {
+          "assumed_seconds_per_complete_physical_step": 10.0,
+          "primary_seconds": 6001830.0,
+          "primary_days": 69.465625,
+          "classification": "PLANNING_SENSITIVITY_NOT_MEASURED_RUNTIME"
+        }
+      ],
+      "steady_24x_scale_only": [
+        {
+          "reference_SIMPLE_s": 0.128,
+          "primary_days_at_24x_steady_scale": 21.33984
+        },
+        {
+          "reference_SIMPLE_s": 0.10233333333333333,
+          "primary_days_at_24x_steady_scale": 17.0607575
+        },
+        {
+          "reference_SIMPLE_s": 0.07066666666666667,
+          "primary_days_at_24x_steady_scale": 11.78137
+        }
+      ],
+      "arrival_prediction": false
+    }
+  ],
+  "synthetic_IO": {
+    "on_s": 20.915767975035124,
+    "off_s": 0.288577861036174,
+    "ratio": 72.47876846801243,
+    "records": 1152,
+    "physical_records": 1141,
+    "raw_bytes": 19023111,
+    "mean_bytes_per_record": 16513.1171875,
+    "fsync_per_record": 3,
+    "fsync_per_physical_step": 3423,
+    "physical_record_publications_primary_max_duration": 684808803,
+    "record_fsync_calls_primary_max_duration": 2054426409,
+    "timing_extrapolation_to_production": false,
+    "stages": {
+      "time_start": {
+        "records": 1,
+        "actual_bytes": 17192,
+        "legacy_numeric_bytes": 9193216.0,
+        "corrected_numeric_bytes": 10007280.0
+      },
+      "outer_start": {
+        "records": 24,
+        "actual_bytes": 448102,
+        "legacy_numeric_bytes": 220640680.0,
+        "corrected_numeric_bytes": 244888248.0
+      },
+      "before_correctDensity": {
+        "records": 49,
+        "actual_bytes": 906591,
+        "legacy_numeric_bytes": 450474880.0,
+        "corrected_numeric_bytes": 500193648.0
+      },
+      "term_capture": {
+        "records": 387,
+        "actual_bytes": 4854483,
+        "legacy_numeric_bytes": 2279701440.0,
+        "corrected_numeric_bytes": 2515859880.0
+      },
+      "mass_unrelaxed_assembly": {
+        "records": 49,
+        "actual_bytes": 1005488,
+        "legacy_numeric_bytes": 542061760.0,
+        "corrected_numeric_bytes": 591780528.0
+      },
+      "mass_after_solve": {
+        "records": 49,
+        "actual_bytes": 1137007,
+        "legacy_numeric_bytes": 663754240.0,
+        "corrected_numeric_bytes": 713473008.0
+      },
+      "after_correctDensity": {
+        "records": 49,
+        "actual_bytes": 916828,
+        "legacy_numeric_bytes": 450474880.0,
+        "corrected_numeric_bytes": 500193648.0
+      },
+      "density_predictor_complete": {
+        "records": 24,
+        "actual_bytes": 448859,
+        "legacy_numeric_bytes": 220640680.0,
+        "corrected_numeric_bytes": 244888248.0
+      },
+      "energy_begin": {
+        "records": 24,
+        "actual_bytes": 448524,
+        "legacy_numeric_bytes": 220640680.0,
+        "corrected_numeric_bytes": 244888248.0
+      },
+      "energy_unrelaxed_assembly": {
+        "records": 24,
+        "actual_bytes": 498514,
+        "legacy_numeric_bytes": 285037632.0,
+        "corrected_numeric_bytes": 309489984.0
+      },
+      "energy_after_relax": {
+        "records": 24,
+        "actual_bytes": 498346,
+        "legacy_numeric_bytes": 285037632.0,
+        "corrected_numeric_bytes": 309489984.0
+      },
+      "energy_after_solve": {
+        "records": 24,
+        "actual_bytes": 563377,
+        "legacy_numeric_bytes": 398586432.0,
+        "corrected_numeric_bytes": 423038784.0
+      },
+      "before_thermo_correct": {
+        "records": 24,
+        "actual_bytes": 448848,
+        "legacy_numeric_bytes": 220640832.0,
+        "corrected_numeric_bytes": 245093184.0
+      },
+      "after_thermo_correct": {
+        "records": 24,
+        "actual_bytes": 448958,
+        "legacy_numeric_bytes": 220640832.0,
+        "corrected_numeric_bytes": 245093184.0
+      },
+      "pressure_start": {
+        "records": 48,
+        "actual_bytes": 898529,
+        "legacy_numeric_bytes": 441281664.0,
+        "corrected_numeric_bytes": 490186368.0
+      },
+      "before_pressure_EOS_copy": {
+        "records": 48,
+        "actual_bytes": 899009,
+        "legacy_numeric_bytes": 441281664.0,
+        "corrected_numeric_bytes": 490186368.0
+      },
+      "after_pressure_EOS_copy": {
+        "records": 48,
+        "actual_bytes": 888941,
+        "legacy_numeric_bytes": 441281664.0,
+        "corrected_numeric_bytes": 490186368.0
+      },
+      "pressure_pre_reference": {
+        "records": 48,
+        "actual_bytes": 607223,
+        "legacy_numeric_bytes": 329283456.0,
+        "corrected_numeric_bytes": 358650624.0
+      },
+      "pressure_post_reference": {
+        "records": 48,
+        "actual_bytes": 606425,
+        "legacy_numeric_bytes": 329283456.0,
+        "corrected_numeric_bytes": 358650624.0
+      },
+      "pressure_solved": {
+        "records": 48,
+        "actual_bytes": 743878,
+        "legacy_numeric_bytes": 546549120.0,
+        "corrected_numeric_bytes": 575916288.0
+      },
+      "native_continuity_report": {
+        "records": 48,
+        "actual_bytes": 899421,
+        "legacy_numeric_bytes": 441281664.0,
+        "corrected_numeric_bytes": 490186368.0
+      },
+      "outer_end": {
+        "records": 24,
+        "actual_bytes": 449596,
+        "legacy_numeric_bytes": 220640832.0,
+        "corrected_numeric_bytes": 245093184.0
+      },
+      "before_postSolve": {
+        "records": 1,
+        "actual_bytes": 18742,
+        "legacy_numeric_bytes": 9193368.0,
+        "corrected_numeric_bytes": 10212216.0
+      },
+      "before_postSolve_EOS_copy": {
+        "records": 1,
+        "actual_bytes": 18751,
+        "legacy_numeric_bytes": 9193368.0,
+        "corrected_numeric_bytes": 10212216.0
+      },
+      "after_postSolve_EOS_copy": {
+        "records": 1,
+        "actual_bytes": 18544,
+        "legacy_numeric_bytes": 9193368.0,
+        "corrected_numeric_bytes": 10212216.0
+      },
+      "after_postSolve": {
+        "records": 1,
+        "actual_bytes": 18535,
+        "legacy_numeric_bytes": 9193368.0,
+        "corrected_numeric_bytes": 10212216.0
+      },
+      "time_end": {
+        "records": 1,
+        "actual_bytes": 18528,
+        "legacy_numeric_bytes": 9193368.0,
+        "corrected_numeric_bytes": 10212216.0
+      }
+    },
+    "per_outer1_24_actual_bytes": {
+      "1": 861315,
+      "2": 771851,
+      "3": 771878,
+      "4": 771878,
+      "5": 771901,
+      "6": 771925,
+      "7": 771925,
+      "8": 771925,
+      "9": 771925,
+      "10": 772017,
+      "11": 772019,
+      "12": 772019,
+      "13": 772019,
+      "14": 772019,
+      "15": 772019,
+      "16": 772019,
+      "17": 772019,
+      "18": 772019,
+      "19": 772019,
+      "20": 772019,
+      "21": 772019,
+      "22": 772066,
+      "23": 772066,
+      "24": 865166
+    }
+  },
+  "memory": {
+    "measured_host_total_bytes": 66619408384,
+    "measured_host_available_bytes": 63311638528,
+    "synthetic_peak_RSS_KiB": 82612,
+    "synthetic_memory_not_scaled_as_whole_process": true,
+    "largest_corrected_record_numeric_bytes": 17626616.0,
+    "largest_record_stage": "energy_after_solve",
+    "full_step_numeric_bytes": 10648495128.0,
+    "selected_bundle_numeric_bytes": 554717880.0,
+    "ring_1_2_4_full_step_packed_bytes": {
+      "1": 10648495128.0,
+      "2": 21296990256.0,
+      "4": 42593980512.0
+    },
+    "full_step_JSON_value_object_estimate_16x_32x_bytes": [
+      170375922048.0,
+      340751844096.0
+    ],
+    "JSON_factor_basis": "DiagnosticJson Json contains enum/double/bool/string/vector/map even for every scalar; typical128-byte object versus8-byte double and vector capacity slack. ABI estimate, not measured target RSS.",
+    "candidate_ring": "One final-outer+initial-density bundle <=1GiB, plus16 recent stage payloads at the measured schema peak; packed buffers, not JSON trees. No promise of complete previous-step replay for anomalies.",
+    "candidate_bundle_plus_16_stages_bytes": 1355767680.0,
+    "candidate_total_RSS_budget_bytes": 8589934592,
+    "current_target_case_peak_RSS": "UNMEASURED",
+    "parallel_support": "NOT_VALIDATED; observer rejects coupled patches, global state serial, no per-rank protocol"
+  },
+  "selected_bundle_records": 59,
+  "packed_caps": {
+    "full_audit_step_bytes": 12884901888,
+    "selected_outer_bundle_bytes": 1073741824,
+    "field_snapshot_bytes": 16777216,
+    "fixed_provenance_bytes": 1073741824,
+    "rationale": "Uncompressed lossless packed-array budget caps, not measured production sizes. Full-step/bundle caps exceed corrected numeric projection; field cap exceeds largest existing complete ASCII directory. Explicit future quota STOP if exceeded; no silent retention reduction."
+  },
+  "policy_scenarios": [
+    {
+      "policy": "P0_CURRENT_MAXIMAL",
+      "scenario": "B_EARLIEST_ALLOWED_ARRIVAL",
+      "t_star": 0.5,
+      "primary_bytes": 1456419444215952.0,
+      "fraction_of_free": 1828.8647525548931,
+      "field_snapshots": 150047,
+      "raw_matrix_replay": "all1141physical-stage records, all matrices at all steps",
+      "raw_audit_steps": 150047,
+      "physical_stage_records": 171203627,
+      "format": "historical Float64-equivalent numeric projection only; actual JSON/hash/log overhead excluded",
+      "feasible_as_is": false
+    },
+    {
+      "policy": "P1_CONSERVATIVE_REDUCED",
+      "scenario": "B_EARLIEST_ALLOWED_ARRIVAL",
+      "t_star": 0.5,
+      "primary_bytes": 185995382272,
+      "fraction_of_free": 0.2335593637713041,
+      "parts": {
+        "every_step_scalar_norm_ledger_log_bytes": 19129191936,
+        "full_step_audit_bytes": 103079215104,
+        "selected_outer_bundle_bytes": 55834574848,
+        "field_snapshot_bytes": 6878658560,
+        "fixed_provenance_bytes": 1073741824
+      },
+      "step_byte_budget": {
+        "A_primary": 8192,
+        "C_outer": 24576,
+        "D_pressure": 24576,
+        "H_ledger_commit": 4096,
+        "I_manifest": 512,
+        "J_log": 65536
+      },
+      "field_snapshots": 410,
+      "full_raw_audit_steps": 8,
+      "selected_raw_bundles": 52,
+      "retained_raw_record_slots": 12196,
+      "matrix_replay_coverage_full_steps_fraction": 5.3316627456730225e-05,
+      "physical_stage_online_checks": "all1141 events per step; persisted outer/pressure/step receipts with folded stage commitments; selected full payloads",
+      "format": "proposed lossless packed arrays + metadata; no compression assumed",
+      "condition": "Not current exporter; needs v1.3 namespace/implementation/replay/online checks requalification. All caps planning, not actual target-case measurements.",
+      "feasible_as_is": false,
+      "within_proposed_50_percent_capacity_budget": true
+    },
+    {
+      "policy": "P2_AGGRESSIVE_DEFENSIBLE",
+      "scenario": "B_EARLIEST_ALLOWED_ARRIVAL",
+      "t_star": 0.5,
+      "primary_bytes": 97595664128,
+      "fraction_of_free": 0.12255347924304388,
+      "parts": {
+        "every_step_scalar_norm_ledger_log_bytes": 14481336064,
+        "full_step_audit_bytes": 51539607552,
+        "selected_outer_bundle_bytes": 27917287424,
+        "field_snapshot_bytes": 2583691264,
+        "fixed_provenance_bytes": 1073741824
+      },
+      "step_byte_budget": {
+        "A_primary": 4096,
+        "C_outer": 12288,
+        "D_pressure": 12288,
+        "H_ledger_commit": 2048,
+        "I_manifest": 256,
+        "J_log": 65536
+      },
+      "field_snapshots": 154,
+      "full_raw_audit_steps": 4,
+      "selected_raw_bundles": 26,
+      "retained_raw_record_slots": 6098,
+      "matrix_replay_coverage_full_steps_fraction": 2.6658313728365113e-05,
+      "physical_stage_online_checks": "all1141 events per step; persisted outer/pressure/step receipts with folded stage commitments; selected full payloads",
+      "format": "proposed lossless packed arrays + metadata; no compression assumed",
+      "condition": "Not current exporter; needs v1.3 namespace/implementation/replay/online checks requalification. All caps planning, not actual target-case measurements.",
+      "feasible_as_is": false,
+      "within_proposed_50_percent_capacity_budget": true
+    },
+    {
+      "policy": "P0_CURRENT_MAXIMAL",
+      "scenario": "C_INTERMEDIATE_SCENARIO",
+      "t_star": 1.0,
+      "primary_bytes": 2912819475588672.0,
+      "fraction_of_free": 3657.705127884616,
+      "field_snapshots": 300092,
+      "raw_matrix_replay": "all1141physical-stage records, all matrices at all steps",
+      "raw_audit_steps": 300092,
+      "physical_stage_records": 342404972,
+      "format": "historical Float64-equivalent numeric projection only; actual JSON/hash/log overhead excluded",
+      "feasible_as_is": false
+    },
+    {
+      "policy": "P1_CONSERVATIVE_REDUCED",
+      "scenario": "C_INTERMEDIATE_SCENARIO",
+      "t_star": 1.0,
+      "primary_bytes": 255724402688,
+      "fraction_of_free": 0.3211199550387838,
+      "parts": {
+        "every_step_scalar_norm_ledger_log_bytes": 38258128896,
+        "full_step_audit_bytes": 128849018880,
+        "selected_outer_bundle_bytes": 77309411328,
+        "field_snapshot_bytes": 10234101760,
+        "fixed_provenance_bytes": 1073741824
+      },
+      "step_byte_budget": {
+        "A_primary": 8192,
+        "C_outer": 24576,
+        "D_pressure": 24576,
+        "H_ledger_commit": 4096,
+        "I_manifest": 512,
+        "J_log": 65536
+      },
+      "field_snapshots": 610,
+      "full_raw_audit_steps": 10,
+      "selected_raw_bundles": 72,
+      "retained_raw_record_slots": 15658,
+      "matrix_replay_coverage_full_steps_fraction": 3.332311424496488e-05,
+      "physical_stage_online_checks": "all1141 events per step; persisted outer/pressure/step receipts with folded stage commitments; selected full payloads",
+      "format": "proposed lossless packed arrays + metadata; no compression assumed",
+      "condition": "Not current exporter; needs v1.3 namespace/implementation/replay/online checks requalification. All caps planning, not actual target-case measurements.",
+      "feasible_as_is": false,
+      "within_proposed_50_percent_capacity_budget": true
+    },
+    {
+      "policy": "P2_AGGRESSIVE_DEFENSIBLE",
+      "scenario": "C_INTERMEDIATE_SCENARIO",
+      "t_star": 1.0,
+      "primary_bytes": 123653086208,
+      "fraction_of_free": 0.1552744793462885,
+      "parts": {
+        "every_step_scalar_norm_ledger_log_bytes": 28962479104,
+        "full_step_audit_bytes": 51539607552,
+        "selected_outer_bundle_bytes": 38654705664,
+        "field_snapshot_bytes": 3422552064,
+        "fixed_provenance_bytes": 1073741824
+      },
+      "step_byte_budget": {
+        "A_primary": 4096,
+        "C_outer": 12288,
+        "D_pressure": 12288,
+        "H_ledger_commit": 2048,
+        "I_manifest": 256,
+        "J_log": 65536
+      },
+      "field_snapshots": 204,
+      "full_raw_audit_steps": 4,
+      "selected_raw_bundles": 36,
+      "retained_raw_record_slots": 6688,
+      "matrix_replay_coverage_full_steps_fraction": 1.3329245697985951e-05,
+      "physical_stage_online_checks": "all1141 events per step; persisted outer/pressure/step receipts with folded stage commitments; selected full payloads",
+      "format": "proposed lossless packed arrays + metadata; no compression assumed",
+      "condition": "Not current exporter; needs v1.3 namespace/implementation/replay/online checks requalification. All caps planning, not actual target-case measurements.",
+      "feasible_as_is": false,
+      "within_proposed_50_percent_capacity_budget": true
+    },
+    {
+      "policy": "P0_CURRENT_MAXIMAL",
+      "scenario": "A_MAX_DURATION_SCENARIO",
+      "t_star": 2.0,
+      "primary_bytes": 5825629244755728.0,
+      "fraction_of_free": 7315.398067156648,
+      "field_snapshots": 600183,
+      "raw_matrix_replay": "all1141physical-stage records, all matrices at all steps",
+      "raw_audit_steps": 600183,
+      "physical_stage_records": 684808803,
+      "format": "historical Float64-equivalent numeric projection only; actual JSON/hash/log overhead excluded",
+      "feasible_as_is": false
+    },
+    {
+      "policy": "P1_CONSERVATIVE_REDUCED",
+      "scenario": "A_MAX_DURATION_SCENARIO",
+      "t_star": 2.0,
+      "primary_bytes": 395182571008,
+      "fraction_of_free": 0.49624129766382613,
+      "parts": {
+        "every_step_scalar_norm_ledger_log_bytes": 76516130304,
+        "full_step_audit_bytes": 180388626432,
+        "selected_outer_bundle_bytes": 120259084288,
+        "field_snapshot_bytes": 16944988160,
+        "fixed_provenance_bytes": 1073741824
+      },
+      "step_byte_budget": {
+        "A_primary": 8192,
+        "C_outer": 24576,
+        "D_pressure": 24576,
+        "H_ledger_commit": 4096,
+        "I_manifest": 512,
+        "J_log": 65536
+      },
+      "field_snapshots": 1010,
+      "full_raw_audit_steps": 14,
+      "selected_raw_bundles": 112,
+      "retained_raw_record_slots": 22582,
+      "matrix_replay_coverage_full_steps_fraction": 2.3326218836588173e-05,
+      "physical_stage_online_checks": "all1141 events per step; persisted outer/pressure/step receipts with folded stage commitments; selected full payloads",
+      "format": "proposed lossless packed arrays + metadata; no compression assumed",
+      "condition": "Not current exporter; needs v1.3 namespace/implementation/replay/online checks requalification. All caps planning, not actual target-case measurements.",
+      "feasible_as_is": false,
+      "within_proposed_50_percent_capacity_budget": true
+    },
+    {
+      "policy": "P2_AGGRESSIVE_DEFENSIBLE",
+      "scenario": "A_MAX_DURATION_SCENARIO",
+      "t_star": 2.0,
+      "primary_bytes": 201537830656,
+      "fraction_of_free": 0.25307643087088794,
+      "parts": {
+        "every_step_scalar_norm_ledger_log_bytes": 57924861696,
+        "full_step_audit_bytes": 77309411328,
+        "selected_outer_bundle_bytes": 60129542144,
+        "field_snapshot_bytes": 5100273664,
+        "fixed_provenance_bytes": 1073741824
+      },
+      "step_byte_budget": {
+        "A_primary": 4096,
+        "C_outer": 12288,
+        "D_pressure": 12288,
+        "H_ledger_commit": 2048,
+        "I_manifest": 256,
+        "J_log": 65536
+      },
+      "field_snapshots": 304,
+      "full_raw_audit_steps": 6,
+      "selected_raw_bundles": 56,
+      "retained_raw_record_slots": 10150,
+      "matrix_replay_coverage_full_steps_fraction": 9.99695092996636e-06,
+      "physical_stage_online_checks": "all1141 events per step; persisted outer/pressure/step receipts with folded stage commitments; selected full payloads",
+      "format": "proposed lossless packed arrays + metadata; no compression assumed",
+      "condition": "Not current exporter; needs v1.3 namespace/implementation/replay/online checks requalification. All caps planning, not actual target-case measurements.",
+      "feasible_as_is": false,
+      "within_proposed_50_percent_capacity_budget": true
+    }
+  ],
+  "compression_samples": [
+    {
+      "sample": "actual_complete_9000_directory",
+      "input_bytes": 5709592,
+      "gzip6_bytes": 2283581,
+      "gzip_fraction": 0.3999551981998013,
+      "gzip_elapsed_s": 0.21240265399683267,
+      "scope": "EXISTING_SAMPLE_ONLY_NOT_PRODUCTION_RATIO",
+      "uncompressed_sha256": "9c808f5637c4fbb30cc340c9f7ec4e4ddb8772a95359334dcdc799237bf4ebf1",
+      "zstd3_bytes": 2404943,
+      "zstd_fraction": 0.42121100772174264,
+      "zstd_elapsed_s": 0.04089234792627394
+    },
+    {
+      "sample": "existing_U04_complete_synthetic_stream",
+      "input_bytes": 19023111,
+      "gzip6_bytes": 417730,
+      "gzip_fraction": 0.021959079143258956,
+      "gzip_elapsed_s": 0.05881799606140703,
+      "scope": "EXISTING_SAMPLE_ONLY_NOT_PRODUCTION_RATIO",
+      "uncompressed_sha256": "7a06e1d00a83dabed54a98141d8541d58e060a779fbb6af514546541ad9e9024",
+      "zstd3_bytes": 110786,
+      "zstd_fraction": 0.005823758269612157,
+      "zstd_elapsed_s": 0.016702794935554266
+    }
+  ],
+  "budget_candidates": {
+    "50_percent_free_bytes": 398175819776.0,
+    "70_percent_free_bytes": 557446147686.4,
+    "proposal_not_adopted": "50% candidate ceiling leaves ~0.40TB for OS/other studies/temp/anomalies; selected conservative packed policy only just meets it, so uncertainties remain material.70% is comparison-only and not adopted."
+  },
+  "source_script_sha256": "c45ede3b5849c14ab8536453829c9ed91d9e6dc0c867f04df743dd3af7cb2c4d",
+  "no_solver_execution": true,
+  "no_contract_modification": true
+}
