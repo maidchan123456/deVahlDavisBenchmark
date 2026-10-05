@@ -1,0 +1,5 @@
+stage,purpose,prerequisite,execute_now,stage_wall_s,trial_wall_s,scratch_bytes,files_max,measurement_status
+Q0,authority/runtime/tooling preflight,read-only authority; no execution,NO_MEASUREMENT,30,30,16777216,64,REQUIRES_FIX
+Q1,target-size diagnostic-only 1144mix ON/OFF,Q0PASS adapter/watchdog acceptance explicitNONCFD authorization,NO_MEASUREMENT,300,30,12884901888,256,NOT_MEASURED_BLOCKED_BY_Q0
+Q2,primitives U03 simultaneous memory real IO,Q1PASS explicitNONCFD authorization,NO_MEASUREMENT,420,30,4294967296,256,NOT_MEASURED_BLOCKED_BY_Q0
+Q3,separately authorized whole CFD step ON/OFF,Q0-Q2PASS budget/risk separateQ3 authorization,NO_MEASUREMENT,120,30,17179869184,256,NOT_MEASURED_BLOCKED_BY_Q0

@@ -1,0 +1,11 @@
+condition,next_task,Q3_allowed,reason
+Q0 compatibility REQUIRES_FIX,FIX_ROUTE_A_DIAGNOSTIC_TRANSIENT_RUNTIME_AUTHORITY_COMPATIBILITY,NO,current next task; reissue protocol pins after reviewed fix
+target adapter/guards not prepared or any invalid evidence,FIX_ROUTE_A_DIAGNOSTIC_TRANSIENT_TIMING_QUALIFICATION_PREPARATION,NO,complete adapter and watchdog; no target measurements inferred
+Q0 PASS and harness acceptance and explicit nonCFD task authorized,RUN_ROUTE_A_DIAGNOSTIC_TRANSIENT_NONCFD_TIMING_QUALIFICATION,NO,Q1 then Q2 only
+diagnostic HIGH_RISK or clearly impractical,REVIEW_ROUTE_A_DIAGNOSTIC_TRANSIENT_COMPUTE_REVISION_OPTIONS,NO,months/years projection is architecture risk; no arbitrary seven-day rejection
+U03 measured dominant / revision required,PREPARE_ROUTE_A_DIAGNOSTIC_TRANSIENT_U03_COMPUTE_REVISION,NO,equivalence review required; current algorithm unchanged
+serialization/backend dominates,PREPARE_ROUTE_A_DIAGNOSTIC_TRANSIENT_DIAGNOSTIC_COMPUTE_REVISION,NO,separate semantic preservation review
+"Q0-Q2 PASS with practical cost, proven guards, accepted budget/risk",REQUEST_SEPARATE_Q3_BOUNDED_TIMING_AUTHORIZATION,SEPARATE_AUTH_ONLY,qualification PASS is never run authorization
+Q3 core dominates,REVIEW_MPI_QUALIFICATION_VS_U01_OUTER_POLICY_INFORMATION_VALUE,NO_PRODUCTION,MPI support NOT_VALIDATED; outer remains24
+compute/memory/IO QUALIFIED_FEASIBLE after adequate evidence,PREPARE_ROUTE_A_DIAGNOSTIC_TRANSIENT_EXECUTION_AUTHORIZATION,NO_PRODUCTION,production authorization remains separate
+"marginal, unstable, censored, missing storage/memory evidence",USER_RESOURCE_BUDGET_AND_TARGETED_QUALIFICATION_REVIEW,NO,UNRESOLVED or MARGINAL; no automatic additional repeat

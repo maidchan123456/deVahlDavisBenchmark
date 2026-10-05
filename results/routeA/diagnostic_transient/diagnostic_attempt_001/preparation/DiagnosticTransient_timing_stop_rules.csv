@@ -1,0 +1,16 @@
+stage,code,trigger,action
+ALL,STOP_DIAGNOSTIC_AUTHORITY_MISMATCH,any canonical diagnostic/formal/review/source hash differs,preserve evidence; fix authority; no later stage
+ALL,STOP_CURRENT_RUNTIME_REQUIRES_FIX,launcher version 1.4 pin rejects v1.5 or qualification namespace unsupported,runtime authority compatibility fix; no fallback to v1.4 authority
+ALL,STOP_AUTHORIZATION_SCOPE,no explicit task authorization for requested measurement stage,remain NOT_MEASURED; no execution
+ALL,STOP_RESOURCE_GUARD,AS/RSS/combined RSS cap reached or MemAvailable <24GiB,terminate process group; memory unresolved/infeasible if directly observed
+ALL,STOP_STORAGE_GUARD,next write would exceed bytes/file quota or free-space/inode reserve,prevent write; preserve partial; no auto purge
+ALL,STOP_STAGE_OR_TRIAL_WALL,first wall deadline reached,kill group including backend; record censored lower bound; no auto retry
+Q1,STOP_FIXTURE_INVALID,"shape, epoch, boundary, history, matrix/source/graph mismatch; adapter absent",no cost qualification from invalid target fixture
+Q1,STOP_INCOMPLETE_STEP_MIX,cannot complete 1144 callback equivalent within 30s,lower bound/risk only; no step estimate from elapsed/count ratio; no Q3
+Q1/Q2,STOP_NONFINITE_OR_ACCOUNTING,"NaN timing/data; mismatched IPC bytes, hashes, replay, receipts",UNRESOLVED; fix qualification tooling
+Q2,STOP_U03_BENCHMARK_LIMIT,15s trial or 120s suite reached,stop larger N; save lower-N fit and censored observation; no Q3
+Q2,STOP_U03_COMPUTE_REVISION,measured scaling plus source reasoning imply dominant prohibitive history cost,prepare U03 compute revision; no algorithm change here
+Q2,STOP_IO_EVIDENCE_INSUFFICIENT,publication/hash/manifest fails or cached test cannot bound required storage event,UNRESOLVED; no Q3
+Q3,STOP_Q0_Q2_NOT_PASS,"any earlier stage, memory or IO not PASS; HIGH_RISK/U03 revision/budget unknown",no CFD launch
+Q3,STOP_NONINVASIVENESS,paired physical-state comparisons differ under frozen expectations,preserve difference; no physical conclusion or production
+Q3,STOP_STEP_CAP,2 complete steps per trial or 8 across 4 trials,normal bounded completion; independent wall cap still applies

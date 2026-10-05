@@ -1,0 +1,60 @@
+[
+  {
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "Scripts/routeA/diagnostic_transient/timing_qualification/protocol.py"
+    ],
+    "exit_code": 0,
+    "stdout": "{\n  \"plan_valid\": true,\n  \"errors\": [],\n  \"current_runtime_compatibility\": \"REQUIRES_FIX\",\n  \"measurement_stages_executed\": [],\n  \"execution_authorized\": false\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "Scripts/routeA/diagnostic_transient/timing_qualification/u03_scaling.py"
+    ],
+    "exit_code": 0,
+    "stdout": "{\n  \"mode\": \"DRY_RUN\",\n  \"stage\": \"Q2_U03\",\n  \"node_counts\": [\n    100,\n    200,\n    400,\n    800,\n    1600,\n    3200,\n    6400\n  ],\n  \"repeats\": 3,\n  \"single_trial_wall_seconds\": 15,\n  \"suite_wall_seconds\": 120,\n  \"execution_authorized\": false,\n  \"current_Q0_status\": \"REQUIRES_FIX\"\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "Scripts/routeA/diagnostic_transient/timing_qualification",
+      "-p",
+      "test_protocol.py",
+      "-v"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "test_budget_and_frozen_policy_mutations (test_protocol.QualificationTests.test_budget_and_frozen_policy_mutations) ... ok\ntest_current_gate_cannot_be_overridden_by_receipt (test_protocol.QualificationTests.test_current_gate_cannot_be_overridden_by_receipt) ... ok\ntest_duplicate_authority_keys (test_protocol.QualificationTests.test_duplicate_authority_keys) ... ok\ntest_four_node_fixture_exercises_all_three_windows (test_protocol.QualificationTests.test_four_node_fixture_exercises_all_three_windows) ... ok\ntest_future_gate_fail_closed (test_protocol.QualificationTests.test_future_gate_fail_closed) ... ok\ntest_q3_risk_and_budget_gates (test_protocol.QualificationTests.test_q3_risk_and_budget_gates) ... ok\ntest_registered_plan (test_protocol.QualificationTests.test_registered_plan) ... ok\ntest_u03_timeout_stops_before_larger_sizes (test_protocol.QualificationTests.test_u03_timeout_stops_before_larger_sizes) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.165s\n\nOK\n"
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "protected_authority_sources_unchanged": true,
+    "protected_file_count": 42,
+    "HEAD_unchanged": true,
+    "tracked_diff_empty": true,
+    "callback_frequency": 1144,
+    "matrix_packets": 701,
+    "stage_wall_total_seconds": 870,
+    "target_measurements_executed": false,
+    "unit_scope": "pure gates + four-node synthetic sanity + mocked timeout; no target benchmark/CFD"
+  }
+]

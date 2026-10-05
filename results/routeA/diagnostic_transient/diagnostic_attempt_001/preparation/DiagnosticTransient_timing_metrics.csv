@@ -1,0 +1,22 @@
+metric,unit,method,scope,current_value
+wall,s,CLOCK_MONOTONIC and external timeout,startup/callback/stage/step/selected audit,NOT_MEASURED_THIS_TASK
+CPU_user_system,s,getrusage or time-v native/backend separately,process and per-equivalent delta,NOT_MEASURED_THIS_TASK
+native_JSON_construction,s,native monotonic spans around existing serializer; separate instrumented adapter,per callback class,NOT_MEASURED_THIS_TASK
+IPC_ACK_wait,s,send start through ACK receive; payload and ACK bytes counted independently,"per callback; includes backend processing, not additive to decode",NOT_MEASURED_THIS_TASK
+backend_decode,s,monotonic span around unchanged JSON decoder,per callback,NOT_MEASURED_THIS_TASK
+canonicalization,s,unchanged canonical functions with spans,per callback class,NOT_MEASURED_THIS_TASK
+matrix_replay,s,unchanged replay; at least1475 calls/equivalent verified,scalar/vector/explicit term separately,NOT_MEASURED_THIS_TASK
+packing,s,unchanged packed codec,stage / selected audit,NOT_MEASURED_THIS_TASK
+SHA,s,existing hash calls incl canonical and readback,in-memory/file separately,NOT_MEASURED_THIS_TASK
+primary_QoI,s,unchanged primary evaluator,per registered event,NOT_MEASURED_THIS_TASK
+U01_certificate,s,unchanged certificate and last5 states,per outer/end/event,NOT_MEASURED_THIS_TASK
+persistence_log_fsync,s,unchanged publish/manifest/rotate spans,normal/selected/full event,NOT_MEASURED_THIS_TASK
+RSS,bytes,proc status every20ms native/backend + time-v each,max_t sum; sum individual maxima only conservative upper bound,NOT_MEASURED_THIS_TASK
+VmSize_AS,bytes,proc status20ms plus enforced RLIMIT_AS,per process; missing samples unresolved,NOT_MEASURED_THIS_TASK
+byte_counters,bytes,native sent/ACK; serialized/packed; logical file sizes; proc io write_bytes/read_bytes,per callback class / step / event,NOT_MEASURED_THIS_TASK
+counts,count,ledger callbacks/solve records/replay/fields/history,1144/145/169; constructor separate,NOT_MEASURED_THIS_TASK
+host_load,mixed,loadavg/proc stat/MemAvailable/statvfs/pidstat/iostat,before/during/after each trial,NOT_MEASURED_THIS_TASK
+fsync_latency,s,file and directory fsync monotonic deltas,report each plus min/median/max,NOT_MEASURED_THIS_TASK
+hash_read_latency,s,1MiB streaming SHA read,cold-uncontrolled / warm separately,NOT_MEASURED_THIS_TASK
+linear_iterations,iterations/solve,native runtime logs exact equations and 145fv mapping,Q3 only,NOT_MEASURED_THIS_TASK
+U03_scaling,"s,N,p",aN^p OLS log fit to medians with adjacent slopes and residuals,completed sizes only; censored points never fit as equal time,NOT_MEASURED_THIS_TASK
