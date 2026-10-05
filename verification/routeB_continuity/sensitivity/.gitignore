@@ -1,0 +1,5 @@
+runs/
+auditSolver/bin/
+auditSolver/Make/linux*/
+__pycache__/
+*.log

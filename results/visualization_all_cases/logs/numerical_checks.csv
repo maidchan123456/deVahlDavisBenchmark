@@ -1,0 +1,1586 @@
+case_id,quantity,max_absolute_difference,rtol,atol,status
+A-Ra1e3-coarse,saved cell ordering X/Z,1.3877787807814457e-17,5e-12,5e-10,PASS
+A-Ra1e3-coarse,saved thickness coordinate,0.0,5e-12,5e-10,PASS
+A-Ra1e3-coarse,temperature_range_K,0.0,5e-12,5e-12,PASS
+A-Ra1e3-coarse,max_dimensionless_velocity,0.0,5e-12,5e-12,PASS
+A-Ra1e3-coarse,Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e3-coarse,Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e3-coarse,Umax_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e3-coarse,Wmax_X,0.0,5e-12,5e-12,PASS
+A-Ra1e3-coarse,density_range_kg_m3,0.0,5e-12,5e-12,PASS
+A-Ra1e3-coarse,rho(T) EOS,6.661338147750939e-16,5e-12,5e-12,PASS
+A-Ra1e3-coarse,Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e3-coarse,Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e3-coarse,Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e3-coarse,Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e3-coarse,Nu_bar_cavity_from_section_trapezoid,0.0,5e-12,5e-12,PASS
+A-Ra1e3-coarse,Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e3-coarse,Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e3-coarse,Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e3-coarse,Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e3-coarse,centreline_4097.csv:coordinate,0.0,5e-12,5e-12,PASS
+A-Ra1e3-coarse,centreline_4097.csv:U_at_X0.5,3.1086244689504383e-15,5e-12,5e-12,PASS
+A-Ra1e3-coarse,centreline_4097.csv:W_at_Z0.5,3.552713678800501e-15,5e-12,5e-12,PASS
+A-Ra1e3-coarse,section_nusselt.csv:X,0.0,5e-12,5e-12,PASS
+A-Ra1e3-coarse,section_nusselt.csv:Nu_bar_X,0.0,5e-12,5e-12,PASS
+A-Ra1e3-coarse,local_nusselt.csv:Z,1.1102230246251565e-16,5e-12,5e-12,PASS
+A-Ra1e3-coarse,local_nusselt.csv:Nu_hot_path1,0.0,5e-12,5e-12,PASS
+A-Ra1e3-coarse,local_nusselt.csv:Nu_cold_path1,0.0,5e-12,5e-12,PASS
+A-Ra1e3-coarse,matrix authority:Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e3-coarse,matrix authority:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e3-coarse,matrix authority:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e3-coarse,matrix authority:Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e3-coarse,matrix authority:Umax_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e3-coarse,matrix authority:Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e3-coarse,matrix authority:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e3-coarse,matrix authority:Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e3-coarse,matrix authority:Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e3-coarse,matrix authority:Wmax_X,0.0,5e-12,5e-12,PASS
+A-Ra1e3-medium,saved cell ordering X/Z,2.7755575615628914e-17,5e-12,5e-10,PASS
+A-Ra1e3-medium,saved thickness coordinate,1.0842021724855044e-19,5e-12,5e-10,PASS
+A-Ra1e3-medium,temperature_range_K,0.0,5e-12,5e-12,PASS
+A-Ra1e3-medium,max_dimensionless_velocity,8.881784197001252e-16,5e-12,5e-12,PASS
+A-Ra1e3-medium,Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e3-medium,Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e3-medium,Umax_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e3-medium,Wmax_X,0.0,5e-12,5e-12,PASS
+A-Ra1e3-medium,density_range_kg_m3,0.0,5e-12,5e-12,PASS
+A-Ra1e3-medium,rho(T) EOS,6.661338147750939e-16,5e-12,5e-12,PASS
+A-Ra1e3-medium,Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e3-medium,Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e3-medium,Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e3-medium,Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e3-medium,Nu_bar_cavity_from_section_trapezoid,0.0,5e-12,5e-12,PASS
+A-Ra1e3-medium,Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e3-medium,Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e3-medium,Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e3-medium,Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e3-medium,centreline_4097.csv:coordinate,0.0,5e-12,5e-12,PASS
+A-Ra1e3-medium,centreline_4097.csv:U_at_X0.5,3.9968028886505635e-15,5e-12,5e-12,PASS
+A-Ra1e3-medium,centreline_4097.csv:W_at_Z0.5,4.440892098500626e-15,5e-12,5e-12,PASS
+A-Ra1e3-medium,section_nusselt.csv:X,0.0,5e-12,5e-12,PASS
+A-Ra1e3-medium,section_nusselt.csv:Nu_bar_X,0.0,5e-12,5e-12,PASS
+A-Ra1e3-medium,local_nusselt.csv:Z,1.1102230246251565e-16,5e-12,5e-12,PASS
+A-Ra1e3-medium,local_nusselt.csv:Nu_hot_path1,0.0,5e-12,5e-12,PASS
+A-Ra1e3-medium,local_nusselt.csv:Nu_cold_path1,0.0,5e-12,5e-12,PASS
+A-Ra1e3-medium,matrix authority:Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e3-medium,matrix authority:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e3-medium,matrix authority:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e3-medium,matrix authority:Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e3-medium,matrix authority:Umax_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e3-medium,matrix authority:Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e3-medium,matrix authority:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e3-medium,matrix authority:Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e3-medium,matrix authority:Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e3-medium,matrix authority:Wmax_X,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,saved cell ordering X/Z,2.7755575615628914e-17,5e-12,5e-10,PASS
+A-Ra1e3-fine,saved thickness coordinate,1.0842021724855044e-19,5e-12,5e-10,PASS
+A-Ra1e3-fine,temperature_range_K,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,max_dimensionless_velocity,4.440892098500626e-16,5e-12,5e-12,PASS
+A-Ra1e3-fine,Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,Umax_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,Wmax_X,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,density_range_kg_m3,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,rho(T) EOS,6.661338147750939e-16,5e-12,5e-12,PASS
+A-Ra1e3-fine,Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,Nu_bar_cavity_from_section_trapezoid,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,centreline_4097.csv:coordinate,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,centreline_4097.csv:U_at_X0.5,6.2727600891321345e-15,5e-12,5e-12,PASS
+A-Ra1e3-fine,centreline_4097.csv:W_at_Z0.5,6.661338147750939e-15,5e-12,5e-12,PASS
+A-Ra1e3-fine,section_nusselt.csv:X,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,section_nusselt.csv:Nu_bar_X,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,local_nusselt.csv:Z,1.1102230246251565e-16,5e-12,5e-12,PASS
+A-Ra1e3-fine,local_nusselt.csv:Nu_hot_path1,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,local_nusselt.csv:Nu_cold_path1,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,matrix authority:Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,matrix authority:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,matrix authority:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,matrix authority:Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,matrix authority:Umax_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,matrix authority:Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,matrix authority:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,matrix authority:Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,matrix authority:Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,matrix authority:Wmax_X,0.0,5e-12,5e-12,PASS
+A-Ra1e4-coarse,saved cell ordering X/Z,1.3877787807814457e-17,5e-12,5e-10,PASS
+A-Ra1e4-coarse,saved thickness coordinate,0.0,5e-12,5e-10,PASS
+A-Ra1e4-coarse,temperature_range_K,0.0,5e-12,5e-12,PASS
+A-Ra1e4-coarse,max_dimensionless_velocity,0.0,5e-12,5e-12,PASS
+A-Ra1e4-coarse,Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e4-coarse,Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e4-coarse,Umax_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e4-coarse,Wmax_X,0.0,5e-12,5e-12,PASS
+A-Ra1e4-coarse,density_range_kg_m3,0.0,5e-12,5e-12,PASS
+A-Ra1e4-coarse,rho(T) EOS,6.661338147750939e-16,5e-12,5e-12,PASS
+A-Ra1e4-coarse,Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e4-coarse,Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e4-coarse,Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e4-coarse,Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e4-coarse,Nu_bar_cavity_from_section_trapezoid,0.0,5e-12,5e-12,PASS
+A-Ra1e4-coarse,Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e4-coarse,Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e4-coarse,Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e4-coarse,Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e4-coarse,centreline_4097.csv:coordinate,0.0,5e-12,5e-12,PASS
+A-Ra1e4-coarse,centreline_4097.csv:U_at_X0.5,1.5987211554602254e-14,5e-12,5e-12,PASS
+A-Ra1e4-coarse,centreline_4097.csv:W_at_Z0.5,1.7763568394002505e-14,5e-12,5e-12,PASS
+A-Ra1e4-coarse,section_nusselt.csv:X,0.0,5e-12,5e-12,PASS
+A-Ra1e4-coarse,section_nusselt.csv:Nu_bar_X,0.0,5e-12,5e-12,PASS
+A-Ra1e4-coarse,local_nusselt.csv:Z,1.1102230246251565e-16,5e-12,5e-12,PASS
+A-Ra1e4-coarse,local_nusselt.csv:Nu_hot_path1,0.0,5e-12,5e-12,PASS
+A-Ra1e4-coarse,local_nusselt.csv:Nu_cold_path1,0.0,5e-12,5e-12,PASS
+A-Ra1e4-coarse,matrix authority:Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e4-coarse,matrix authority:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e4-coarse,matrix authority:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e4-coarse,matrix authority:Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e4-coarse,matrix authority:Umax_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e4-coarse,matrix authority:Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e4-coarse,matrix authority:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e4-coarse,matrix authority:Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e4-coarse,matrix authority:Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e4-coarse,matrix authority:Wmax_X,0.0,5e-12,5e-12,PASS
+A-Ra1e4-medium,saved cell ordering X/Z,2.7755575615628914e-17,5e-12,5e-10,PASS
+A-Ra1e4-medium,saved thickness coordinate,1.0842021724855044e-19,5e-12,5e-10,PASS
+A-Ra1e4-medium,temperature_range_K,0.0,5e-12,5e-12,PASS
+A-Ra1e4-medium,max_dimensionless_velocity,3.552713678800501e-15,5e-12,5e-12,PASS
+A-Ra1e4-medium,Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e4-medium,Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e4-medium,Umax_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e4-medium,Wmax_X,0.0,5e-12,5e-12,PASS
+A-Ra1e4-medium,density_range_kg_m3,0.0,5e-12,5e-12,PASS
+A-Ra1e4-medium,rho(T) EOS,6.661338147750939e-16,5e-12,5e-12,PASS
+A-Ra1e4-medium,Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e4-medium,Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e4-medium,Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e4-medium,Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e4-medium,Nu_bar_cavity_from_section_trapezoid,0.0,5e-12,5e-12,PASS
+A-Ra1e4-medium,Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e4-medium,Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e4-medium,Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e4-medium,Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e4-medium,centreline_4097.csv:coordinate,0.0,5e-12,5e-12,PASS
+A-Ra1e4-medium,centreline_4097.csv:U_at_X0.5,1.9539925233402755e-14,5e-12,5e-12,PASS
+A-Ra1e4-medium,centreline_4097.csv:W_at_Z0.5,2.4868995751603507e-14,5e-12,5e-12,PASS
+A-Ra1e4-medium,section_nusselt.csv:X,0.0,5e-12,5e-12,PASS
+A-Ra1e4-medium,section_nusselt.csv:Nu_bar_X,0.0,5e-12,5e-12,PASS
+A-Ra1e4-medium,local_nusselt.csv:Z,1.1102230246251565e-16,5e-12,5e-12,PASS
+A-Ra1e4-medium,local_nusselt.csv:Nu_hot_path1,0.0,5e-12,5e-12,PASS
+A-Ra1e4-medium,local_nusselt.csv:Nu_cold_path1,0.0,5e-12,5e-12,PASS
+A-Ra1e4-medium,matrix authority:Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e4-medium,matrix authority:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e4-medium,matrix authority:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e4-medium,matrix authority:Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e4-medium,matrix authority:Umax_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e4-medium,matrix authority:Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e4-medium,matrix authority:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e4-medium,matrix authority:Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e4-medium,matrix authority:Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e4-medium,matrix authority:Wmax_X,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,saved cell ordering X/Z,2.7755575615628914e-17,5e-12,5e-10,PASS
+A-Ra1e4-fine,saved thickness coordinate,1.0842021724855044e-19,5e-12,5e-10,PASS
+A-Ra1e4-fine,temperature_range_K,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,max_dimensionless_velocity,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,Umax_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,Wmax_X,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,density_range_kg_m3,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,rho(T) EOS,6.661338147750939e-16,5e-12,5e-12,PASS
+A-Ra1e4-fine,Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,Nu_bar_cavity_from_section_trapezoid,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,centreline_4097.csv:coordinate,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,centreline_4097.csv:U_at_X0.5,2.8199664825478976e-14,5e-12,5e-12,PASS
+A-Ra1e4-fine,centreline_4097.csv:W_at_Z0.5,5.10702591327572e-14,5e-12,5e-12,PASS
+A-Ra1e4-fine,section_nusselt.csv:X,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,section_nusselt.csv:Nu_bar_X,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,local_nusselt.csv:Z,1.1102230246251565e-16,5e-12,5e-12,PASS
+A-Ra1e4-fine,local_nusselt.csv:Nu_hot_path1,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,local_nusselt.csv:Nu_cold_path1,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,matrix authority:Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,matrix authority:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,matrix authority:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,matrix authority:Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,matrix authority:Umax_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,matrix authority:Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,matrix authority:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,matrix authority:Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,matrix authority:Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,matrix authority:Wmax_X,0.0,5e-12,5e-12,PASS
+A-Ra1e5-coarse,saved cell ordering X/Z,1.3877787807814457e-17,5e-12,5e-10,PASS
+A-Ra1e5-coarse,saved thickness coordinate,0.0,5e-12,5e-10,PASS
+A-Ra1e5-coarse,temperature_range_K,0.0,5e-12,5e-12,PASS
+A-Ra1e5-coarse,max_dimensionless_velocity,0.0,5e-12,5e-12,PASS
+A-Ra1e5-coarse,Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e5-coarse,Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e5-coarse,Umax_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e5-coarse,Wmax_X,0.0,5e-12,5e-12,PASS
+A-Ra1e5-coarse,density_range_kg_m3,0.0,5e-12,5e-12,PASS
+A-Ra1e5-coarse,rho(T) EOS,6.661338147750939e-16,5e-12,5e-12,PASS
+A-Ra1e5-coarse,Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e5-coarse,Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e5-coarse,Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e5-coarse,Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e5-coarse,Nu_bar_cavity_from_section_trapezoid,0.0,5e-12,5e-12,PASS
+A-Ra1e5-coarse,Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e5-coarse,Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e5-coarse,Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e5-coarse,Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e5-coarse,centreline_4097.csv:coordinate,0.0,5e-12,5e-12,PASS
+A-Ra1e5-coarse,centreline_4097.csv:U_at_X0.5,3.197442310920451e-14,5e-12,5e-12,PASS
+A-Ra1e5-coarse,centreline_4097.csv:W_at_Z0.5,7.815970093361102e-14,5e-12,5e-12,PASS
+A-Ra1e5-coarse,section_nusselt.csv:X,0.0,5e-12,5e-12,PASS
+A-Ra1e5-coarse,section_nusselt.csv:Nu_bar_X,0.0,5e-12,5e-12,PASS
+A-Ra1e5-coarse,local_nusselt.csv:Z,1.1102230246251565e-16,5e-12,5e-12,PASS
+A-Ra1e5-coarse,local_nusselt.csv:Nu_hot_path1,0.0,5e-12,5e-12,PASS
+A-Ra1e5-coarse,local_nusselt.csv:Nu_cold_path1,0.0,5e-12,5e-12,PASS
+A-Ra1e5-coarse,matrix authority:Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e5-coarse,matrix authority:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e5-coarse,matrix authority:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e5-coarse,matrix authority:Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e5-coarse,matrix authority:Umax_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e5-coarse,matrix authority:Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e5-coarse,matrix authority:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e5-coarse,matrix authority:Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e5-coarse,matrix authority:Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e5-coarse,matrix authority:Wmax_X,0.0,5e-12,5e-12,PASS
+A-Ra1e5-medium,saved cell ordering X/Z,2.7755575615628914e-17,5e-12,5e-10,PASS
+A-Ra1e5-medium,saved thickness coordinate,1.0842021724855044e-19,5e-12,5e-10,PASS
+A-Ra1e5-medium,temperature_range_K,0.0,5e-12,5e-12,PASS
+A-Ra1e5-medium,max_dimensionless_velocity,1.4210854715202004e-14,5e-12,5e-12,PASS
+A-Ra1e5-medium,Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e5-medium,Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e5-medium,Umax_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e5-medium,Wmax_X,0.0,5e-12,5e-12,PASS
+A-Ra1e5-medium,density_range_kg_m3,0.0,5e-12,5e-12,PASS
+A-Ra1e5-medium,rho(T) EOS,6.661338147750939e-16,5e-12,5e-12,PASS
+A-Ra1e5-medium,Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e5-medium,Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e5-medium,Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e5-medium,Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e5-medium,Nu_bar_cavity_from_section_trapezoid,0.0,5e-12,5e-12,PASS
+A-Ra1e5-medium,Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e5-medium,Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e5-medium,Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e5-medium,Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e5-medium,centreline_4097.csv:coordinate,0.0,5e-12,5e-12,PASS
+A-Ra1e5-medium,centreline_4097.csv:U_at_X0.5,4.618527782440651e-14,5e-12,5e-12,PASS
+A-Ra1e5-medium,centreline_4097.csv:W_at_Z0.5,7.815970093361102e-14,5e-12,5e-12,PASS
+A-Ra1e5-medium,section_nusselt.csv:X,0.0,5e-12,5e-12,PASS
+A-Ra1e5-medium,section_nusselt.csv:Nu_bar_X,0.0,5e-12,5e-12,PASS
+A-Ra1e5-medium,local_nusselt.csv:Z,1.1102230246251565e-16,5e-12,5e-12,PASS
+A-Ra1e5-medium,local_nusselt.csv:Nu_hot_path1,0.0,5e-12,5e-12,PASS
+A-Ra1e5-medium,local_nusselt.csv:Nu_cold_path1,0.0,5e-12,5e-12,PASS
+A-Ra1e5-medium,matrix authority:Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e5-medium,matrix authority:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e5-medium,matrix authority:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e5-medium,matrix authority:Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e5-medium,matrix authority:Umax_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e5-medium,matrix authority:Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e5-medium,matrix authority:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e5-medium,matrix authority:Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e5-medium,matrix authority:Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e5-medium,matrix authority:Wmax_X,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,saved cell ordering X/Z,2.7755575615628914e-17,5e-12,5e-10,PASS
+A-Ra1e5-fine,saved thickness coordinate,1.0842021724855044e-19,5e-12,5e-10,PASS
+A-Ra1e5-fine,temperature_range_K,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,max_dimensionless_velocity,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,Umax_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,Wmax_X,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,density_range_kg_m3,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,rho(T) EOS,6.661338147750939e-16,5e-12,5e-12,PASS
+A-Ra1e5-fine,Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,Nu_bar_cavity_from_section_trapezoid,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,centreline_4097.csv:coordinate,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,centreline_4097.csv:U_at_X0.5,6.306066779870889e-14,5e-12,5e-12,PASS
+A-Ra1e5-fine,centreline_4097.csv:W_at_Z0.5,3.126388037344441e-13,5e-12,5e-12,PASS
+A-Ra1e5-fine,section_nusselt.csv:X,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,section_nusselt.csv:Nu_bar_X,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,local_nusselt.csv:Z,1.1102230246251565e-16,5e-12,5e-12,PASS
+A-Ra1e5-fine,local_nusselt.csv:Nu_hot_path1,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,local_nusselt.csv:Nu_cold_path1,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,matrix authority:Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,matrix authority:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,matrix authority:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,matrix authority:Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,matrix authority:Umax_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,matrix authority:Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,matrix authority:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,matrix authority:Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,matrix authority:Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,matrix authority:Wmax_X,0.0,5e-12,5e-12,PASS
+A-Ra1e6-coarse,saved cell ordering X/Z,1.3877787807814457e-17,5e-12,5e-10,PASS
+A-Ra1e6-coarse,saved thickness coordinate,0.0,5e-12,5e-10,PASS
+A-Ra1e6-coarse,temperature_range_K,0.0,5e-12,5e-12,PASS
+A-Ra1e6-coarse,max_dimensionless_velocity,2.842170943040401e-14,5e-12,5e-12,PASS
+A-Ra1e6-coarse,Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e6-coarse,Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e6-coarse,Umax_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e6-coarse,Wmax_X,0.0,5e-12,5e-12,PASS
+A-Ra1e6-coarse,density_range_kg_m3,0.0,5e-12,5e-12,PASS
+A-Ra1e6-coarse,rho(T) EOS,6.661338147750939e-16,5e-12,5e-12,PASS
+A-Ra1e6-coarse,Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e6-coarse,Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e6-coarse,Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e6-coarse,Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e6-coarse,Nu_bar_cavity_from_section_trapezoid,0.0,5e-12,5e-12,PASS
+A-Ra1e6-coarse,Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e6-coarse,Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e6-coarse,Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e6-coarse,Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e6-coarse,centreline_4097.csv:coordinate,0.0,5e-12,5e-12,PASS
+A-Ra1e6-coarse,centreline_4097.csv:U_at_X0.5,7.105427357601002e-14,5e-12,5e-12,PASS
+A-Ra1e6-coarse,centreline_4097.csv:W_at_Z0.5,4.121147867408581e-13,5e-12,5e-12,PASS
+A-Ra1e6-coarse,section_nusselt.csv:X,0.0,5e-12,5e-12,PASS
+A-Ra1e6-coarse,section_nusselt.csv:Nu_bar_X,0.0,5e-12,5e-12,PASS
+A-Ra1e6-coarse,local_nusselt.csv:Z,1.1102230246251565e-16,5e-12,5e-12,PASS
+A-Ra1e6-coarse,local_nusselt.csv:Nu_hot_path1,0.0,5e-12,5e-12,PASS
+A-Ra1e6-coarse,local_nusselt.csv:Nu_cold_path1,0.0,5e-12,5e-12,PASS
+A-Ra1e6-coarse,matrix authority:Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e6-coarse,matrix authority:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e6-coarse,matrix authority:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e6-coarse,matrix authority:Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e6-coarse,matrix authority:Umax_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e6-coarse,matrix authority:Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e6-coarse,matrix authority:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e6-coarse,matrix authority:Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e6-coarse,matrix authority:Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e6-coarse,matrix authority:Wmax_X,0.0,5e-12,5e-12,PASS
+A-Ra1e6-medium,saved cell ordering X/Z,2.7755575615628914e-17,5e-12,5e-10,PASS
+A-Ra1e6-medium,saved thickness coordinate,1.0842021724855044e-19,5e-12,5e-10,PASS
+A-Ra1e6-medium,temperature_range_K,0.0,5e-12,5e-12,PASS
+A-Ra1e6-medium,max_dimensionless_velocity,0.0,5e-12,5e-12,PASS
+A-Ra1e6-medium,Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e6-medium,Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e6-medium,Umax_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e6-medium,Wmax_X,0.0,5e-12,5e-12,PASS
+A-Ra1e6-medium,density_range_kg_m3,0.0,5e-12,5e-12,PASS
+A-Ra1e6-medium,rho(T) EOS,6.661338147750939e-16,5e-12,5e-12,PASS
+A-Ra1e6-medium,Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e6-medium,Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e6-medium,Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e6-medium,Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e6-medium,Nu_bar_cavity_from_section_trapezoid,0.0,5e-12,5e-12,PASS
+A-Ra1e6-medium,Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e6-medium,Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e6-medium,Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e6-medium,Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e6-medium,centreline_4097.csv:coordinate,0.0,5e-12,5e-12,PASS
+A-Ra1e6-medium,centreline_4097.csv:U_at_X0.5,7.815970093361102e-14,5e-12,5e-12,PASS
+A-Ra1e6-medium,centreline_4097.csv:W_at_Z0.5,4.121147867408581e-13,5e-12,5e-12,PASS
+A-Ra1e6-medium,section_nusselt.csv:X,0.0,5e-12,5e-12,PASS
+A-Ra1e6-medium,section_nusselt.csv:Nu_bar_X,0.0,5e-12,5e-12,PASS
+A-Ra1e6-medium,local_nusselt.csv:Z,1.1102230246251565e-16,5e-12,5e-12,PASS
+A-Ra1e6-medium,local_nusselt.csv:Nu_hot_path1,0.0,5e-12,5e-12,PASS
+A-Ra1e6-medium,local_nusselt.csv:Nu_cold_path1,0.0,5e-12,5e-12,PASS
+A-Ra1e6-medium,matrix authority:Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e6-medium,matrix authority:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e6-medium,matrix authority:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e6-medium,matrix authority:Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e6-medium,matrix authority:Umax_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e6-medium,matrix authority:Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e6-medium,matrix authority:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e6-medium,matrix authority:Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e6-medium,matrix authority:Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e6-medium,matrix authority:Wmax_X,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,saved cell ordering X/Z,2.7755575615628914e-17,5e-12,5e-10,PASS
+A-Ra1e6-fine,saved thickness coordinate,1.0842021724855044e-19,5e-12,5e-10,PASS
+A-Ra1e6-fine,temperature_range_K,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,max_dimensionless_velocity,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,Umax_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,Wmax_X,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,density_range_kg_m3,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,rho(T) EOS,6.661338147750939e-16,5e-12,5e-12,PASS
+A-Ra1e6-fine,Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,Nu_bar_cavity_from_section_trapezoid,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,centreline_4097.csv:coordinate,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,centreline_4097.csv:U_at_X0.5,1.0391687510491465e-13,5e-12,5e-12,PASS
+A-Ra1e6-fine,centreline_4097.csv:W_at_Z0.5,1.7408297026122455e-12,5e-12,5e-12,PASS
+A-Ra1e6-fine,section_nusselt.csv:X,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,section_nusselt.csv:Nu_bar_X,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,local_nusselt.csv:Z,1.1102230246251565e-16,5e-12,5e-12,PASS
+A-Ra1e6-fine,local_nusselt.csv:Nu_hot_path1,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,local_nusselt.csv:Nu_cold_path1,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,matrix authority:Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,matrix authority:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,matrix authority:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,matrix authority:Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,matrix authority:Umax_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,matrix authority:Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,matrix authority:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,matrix authority:Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,matrix authority:Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,matrix authority:Wmax_X,0.0,5e-12,5e-12,PASS
+B-Ra1e3-coarse,saved cell ordering X/Z,1.3877787807814457e-17,5e-12,5e-10,PASS
+B-Ra1e3-coarse,saved thickness coordinate,0.0,5e-12,5e-10,PASS
+B-Ra1e3-coarse,temperature_range_K,0.0,5e-12,5e-12,PASS
+B-Ra1e3-coarse,max_dimensionless_velocity,0.0,5e-12,5e-12,PASS
+B-Ra1e3-coarse,Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e3-coarse,Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e3-coarse,Umax_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e3-coarse,Wmax_X,0.0,5e-12,5e-12,PASS
+B-Ra1e3-coarse,Nu_hot_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e3-coarse,Nu_cold_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e3-coarse,Nu_hot_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e3-coarse,Nu_cold_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e3-coarse,rhok_range,0.0,5e-12,5e-12,PASS
+B-Ra1e3-coarse,Nu_bar_0,0.0,5e-12,5e-12,PASS
+B-Ra1e3-coarse,Nu_bar_half,0.0,5e-12,5e-12,PASS
+B-Ra1e3-coarse,Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e3-coarse,Nu_bar_1,0.0,5e-12,5e-12,PASS
+B-Ra1e3-coarse,Nu_bar_cavity_from_section_trapezoid,0.0,5e-12,5e-12,PASS
+B-Ra1e3-coarse,Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+B-Ra1e3-coarse,Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e3-coarse,Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+B-Ra1e3-coarse,Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e3-coarse,centreline_4097.csv:coordinate,0.0,5e-12,5e-12,PASS
+B-Ra1e3-coarse,centreline_4097.csv:U_at_X0.5,0.0,5e-12,5e-12,PASS
+B-Ra1e3-coarse,centreline_4097.csv:W_at_Z0.5,0.0,5e-12,5e-12,PASS
+B-Ra1e3-coarse,section_nusselt.csv:X,0.0,5e-12,5e-12,PASS
+B-Ra1e3-coarse,section_nusselt.csv:Nu_bar_X,0.0,5e-12,5e-12,PASS
+B-Ra1e3-coarse,local_nusselt.csv:Z,1.1102230246251565e-16,5e-12,5e-12,PASS
+B-Ra1e3-coarse,local_nusselt.csv:Nu_hot_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e3-coarse,local_nusselt.csv:Nu_cold_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e3-coarse,local_nusselt.csv:Nu_hot_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e3-coarse,local_nusselt.csv:Nu_cold_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e3-coarse,matrix authority:Nu_bar_0,0.0,5e-12,5e-12,PASS
+B-Ra1e3-coarse,matrix authority:Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e3-coarse,matrix authority:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e3-coarse,matrix authority:Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e3-coarse,temperature symmetry,0.0,5e-12,5e-12,PASS
+B-Ra1e3-coarse,velocity symmetry,1.003155222862712e-18,5e-12,5e-12,PASS
+B-Ra1e3-medium,saved cell ordering X/Z,2.7755575615628914e-17,5e-12,5e-10,PASS
+B-Ra1e3-medium,saved thickness coordinate,1.0842021724855044e-19,5e-12,5e-10,PASS
+B-Ra1e3-medium,temperature_range_K,0.0,5e-12,5e-12,PASS
+B-Ra1e3-medium,max_dimensionless_velocity,0.0,5e-12,5e-12,PASS
+B-Ra1e3-medium,Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e3-medium,Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e3-medium,Umax_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e3-medium,Wmax_X,0.0,5e-12,5e-12,PASS
+B-Ra1e3-medium,Nu_hot_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e3-medium,Nu_cold_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e3-medium,Nu_hot_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e3-medium,Nu_cold_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e3-medium,rhok_range,0.0,5e-12,5e-12,PASS
+B-Ra1e3-medium,Nu_bar_0,0.0,5e-12,5e-12,PASS
+B-Ra1e3-medium,Nu_bar_half,0.0,5e-12,5e-12,PASS
+B-Ra1e3-medium,Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e3-medium,Nu_bar_1,0.0,5e-12,5e-12,PASS
+B-Ra1e3-medium,Nu_bar_cavity_from_section_trapezoid,0.0,5e-12,5e-12,PASS
+B-Ra1e3-medium,Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+B-Ra1e3-medium,Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e3-medium,Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+B-Ra1e3-medium,Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e3-medium,centreline_4097.csv:coordinate,0.0,5e-12,5e-12,PASS
+B-Ra1e3-medium,centreline_4097.csv:U_at_X0.5,0.0,5e-12,5e-12,PASS
+B-Ra1e3-medium,centreline_4097.csv:W_at_Z0.5,0.0,5e-12,5e-12,PASS
+B-Ra1e3-medium,section_nusselt.csv:X,0.0,5e-12,5e-12,PASS
+B-Ra1e3-medium,section_nusselt.csv:Nu_bar_X,0.0,5e-12,5e-12,PASS
+B-Ra1e3-medium,local_nusselt.csv:Z,1.1102230246251565e-16,5e-12,5e-12,PASS
+B-Ra1e3-medium,local_nusselt.csv:Nu_hot_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e3-medium,local_nusselt.csv:Nu_cold_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e3-medium,local_nusselt.csv:Nu_hot_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e3-medium,local_nusselt.csv:Nu_cold_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e3-medium,matrix authority:Nu_bar_0,0.0,5e-12,5e-12,PASS
+B-Ra1e3-medium,matrix authority:Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e3-medium,matrix authority:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e3-medium,matrix authority:Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e3-medium,temperature symmetry,0.0,5e-12,5e-12,PASS
+B-Ra1e3-medium,velocity symmetry,9.659054187230708e-19,5e-12,5e-12,PASS
+B-Ra1e3-fine,saved cell ordering X/Z,2.7755575615628914e-17,5e-12,5e-10,PASS
+B-Ra1e3-fine,saved thickness coordinate,1.0842021724855044e-19,5e-12,5e-10,PASS
+B-Ra1e3-fine,temperature_range_K,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,max_dimensionless_velocity,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,Umax_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,Wmax_X,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,Nu_hot_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,Nu_cold_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,Nu_hot_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,Nu_cold_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,rhok_range,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,Nu_bar_0,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,Nu_bar_half,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,Nu_bar_1,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,Nu_bar_cavity_from_section_trapezoid,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,centreline_4097.csv:coordinate,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,centreline_4097.csv:U_at_X0.5,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,centreline_4097.csv:W_at_Z0.5,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,section_nusselt.csv:X,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,section_nusselt.csv:Nu_bar_X,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,local_nusselt.csv:Z,1.1102230246251565e-16,5e-12,5e-12,PASS
+B-Ra1e3-fine,local_nusselt.csv:Nu_hot_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,local_nusselt.csv:Nu_cold_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,local_nusselt.csv:Nu_hot_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,local_nusselt.csv:Nu_cold_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,matrix authority:Nu_bar_0,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,matrix authority:Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,matrix authority:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,matrix authority:Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,temperature symmetry,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,velocity symmetry,1.1069661829429638e-19,5e-12,5e-12,PASS
+B-Ra1e4-coarse,saved cell ordering X/Z,1.3877787807814457e-17,5e-12,5e-10,PASS
+B-Ra1e4-coarse,saved thickness coordinate,0.0,5e-12,5e-10,PASS
+B-Ra1e4-coarse,temperature_range_K,0.0,5e-12,5e-12,PASS
+B-Ra1e4-coarse,max_dimensionless_velocity,3.552713678800501e-15,5e-12,5e-12,PASS
+B-Ra1e4-coarse,Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e4-coarse,Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e4-coarse,Umax_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e4-coarse,Wmax_X,0.0,5e-12,5e-12,PASS
+B-Ra1e4-coarse,Nu_hot_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e4-coarse,Nu_cold_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e4-coarse,Nu_hot_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e4-coarse,Nu_cold_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e4-coarse,rhok_range,0.0,5e-12,5e-12,PASS
+B-Ra1e4-coarse,Nu_bar_0,0.0,5e-12,5e-12,PASS
+B-Ra1e4-coarse,Nu_bar_half,0.0,5e-12,5e-12,PASS
+B-Ra1e4-coarse,Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e4-coarse,Nu_bar_1,0.0,5e-12,5e-12,PASS
+B-Ra1e4-coarse,Nu_bar_cavity_from_section_trapezoid,0.0,5e-12,5e-12,PASS
+B-Ra1e4-coarse,Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+B-Ra1e4-coarse,Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e4-coarse,Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+B-Ra1e4-coarse,Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e4-coarse,centreline_4097.csv:coordinate,0.0,5e-12,5e-12,PASS
+B-Ra1e4-coarse,centreline_4097.csv:U_at_X0.5,0.0,5e-12,5e-12,PASS
+B-Ra1e4-coarse,centreline_4097.csv:W_at_Z0.5,0.0,5e-12,5e-12,PASS
+B-Ra1e4-coarse,section_nusselt.csv:X,0.0,5e-12,5e-12,PASS
+B-Ra1e4-coarse,section_nusselt.csv:Nu_bar_X,0.0,5e-12,5e-12,PASS
+B-Ra1e4-coarse,local_nusselt.csv:Z,1.1102230246251565e-16,5e-12,5e-12,PASS
+B-Ra1e4-coarse,local_nusselt.csv:Nu_hot_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e4-coarse,local_nusselt.csv:Nu_cold_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e4-coarse,local_nusselt.csv:Nu_hot_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e4-coarse,local_nusselt.csv:Nu_cold_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e4-coarse,matrix authority:Nu_bar_0,0.0,5e-12,5e-12,PASS
+B-Ra1e4-coarse,matrix authority:Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e4-coarse,matrix authority:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e4-coarse,matrix authority:Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e4-medium,saved cell ordering X/Z,2.7755575615628914e-17,5e-12,5e-10,PASS
+B-Ra1e4-medium,saved thickness coordinate,1.0842021724855044e-19,5e-12,5e-10,PASS
+B-Ra1e4-medium,temperature_range_K,0.0,5e-12,5e-12,PASS
+B-Ra1e4-medium,max_dimensionless_velocity,0.0,5e-12,5e-12,PASS
+B-Ra1e4-medium,Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e4-medium,Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e4-medium,Umax_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e4-medium,Wmax_X,0.0,5e-12,5e-12,PASS
+B-Ra1e4-medium,Nu_hot_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e4-medium,Nu_cold_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e4-medium,Nu_hot_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e4-medium,Nu_cold_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e4-medium,rhok_range,0.0,5e-12,5e-12,PASS
+B-Ra1e4-medium,Nu_bar_0,0.0,5e-12,5e-12,PASS
+B-Ra1e4-medium,Nu_bar_half,0.0,5e-12,5e-12,PASS
+B-Ra1e4-medium,Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e4-medium,Nu_bar_1,0.0,5e-12,5e-12,PASS
+B-Ra1e4-medium,Nu_bar_cavity_from_section_trapezoid,0.0,5e-12,5e-12,PASS
+B-Ra1e4-medium,Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+B-Ra1e4-medium,Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e4-medium,Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+B-Ra1e4-medium,Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e4-medium,centreline_4097.csv:coordinate,0.0,5e-12,5e-12,PASS
+B-Ra1e4-medium,centreline_4097.csv:U_at_X0.5,0.0,5e-12,5e-12,PASS
+B-Ra1e4-medium,centreline_4097.csv:W_at_Z0.5,0.0,5e-12,5e-12,PASS
+B-Ra1e4-medium,section_nusselt.csv:X,0.0,5e-12,5e-12,PASS
+B-Ra1e4-medium,section_nusselt.csv:Nu_bar_X,0.0,5e-12,5e-12,PASS
+B-Ra1e4-medium,local_nusselt.csv:Z,1.1102230246251565e-16,5e-12,5e-12,PASS
+B-Ra1e4-medium,local_nusselt.csv:Nu_hot_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e4-medium,local_nusselt.csv:Nu_cold_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e4-medium,local_nusselt.csv:Nu_hot_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e4-medium,local_nusselt.csv:Nu_cold_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e4-medium,matrix authority:Nu_bar_0,0.0,5e-12,5e-12,PASS
+B-Ra1e4-medium,matrix authority:Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e4-medium,matrix authority:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e4-medium,matrix authority:Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e4-medium,temperature symmetry,0.0,5e-12,5e-12,PASS
+B-Ra1e4-medium,velocity symmetry,3.764184639096059e-19,5e-12,5e-12,PASS
+B-Ra1e4-fine,saved cell ordering X/Z,2.7755575615628914e-17,5e-12,5e-10,PASS
+B-Ra1e4-fine,saved thickness coordinate,1.0842021724855044e-19,5e-12,5e-10,PASS
+B-Ra1e4-fine,temperature_range_K,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,max_dimensionless_velocity,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,Umax_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,Wmax_X,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,Nu_hot_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,Nu_cold_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,Nu_hot_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,Nu_cold_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,rhok_range,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,Nu_bar_0,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,Nu_bar_half,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,Nu_bar_1,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,Nu_bar_cavity_from_section_trapezoid,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,centreline_4097.csv:coordinate,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,centreline_4097.csv:U_at_X0.5,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,centreline_4097.csv:W_at_Z0.5,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,section_nusselt.csv:X,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,section_nusselt.csv:Nu_bar_X,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,local_nusselt.csv:Z,1.1102230246251565e-16,5e-12,5e-12,PASS
+B-Ra1e4-fine,local_nusselt.csv:Nu_hot_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,local_nusselt.csv:Nu_cold_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,local_nusselt.csv:Nu_hot_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,local_nusselt.csv:Nu_cold_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,matrix authority:Nu_bar_0,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,matrix authority:Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,matrix authority:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,matrix authority:Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,temperature symmetry,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,velocity symmetry,3.1247740255925684e-19,5e-12,5e-12,PASS
+B-Ra1e5-coarse,saved cell ordering X/Z,1.3877787807814457e-17,5e-12,5e-10,PASS
+B-Ra1e5-coarse,saved thickness coordinate,0.0,5e-12,5e-10,PASS
+B-Ra1e5-coarse,temperature_range_K,0.0,5e-12,5e-12,PASS
+B-Ra1e5-coarse,max_dimensionless_velocity,0.0,5e-12,5e-12,PASS
+B-Ra1e5-coarse,Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e5-coarse,Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e5-coarse,Umax_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e5-coarse,Wmax_X,0.0,5e-12,5e-12,PASS
+B-Ra1e5-coarse,Nu_hot_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e5-coarse,Nu_cold_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e5-coarse,Nu_hot_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e5-coarse,Nu_cold_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e5-coarse,rhok_range,0.0,5e-12,5e-12,PASS
+B-Ra1e5-coarse,Nu_bar_0,0.0,5e-12,5e-12,PASS
+B-Ra1e5-coarse,Nu_bar_half,0.0,5e-12,5e-12,PASS
+B-Ra1e5-coarse,Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e5-coarse,Nu_bar_1,0.0,5e-12,5e-12,PASS
+B-Ra1e5-coarse,Nu_bar_cavity_from_section_trapezoid,0.0,5e-12,5e-12,PASS
+B-Ra1e5-coarse,Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+B-Ra1e5-coarse,Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e5-coarse,Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+B-Ra1e5-coarse,Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e5-coarse,centreline_4097.csv:coordinate,0.0,5e-12,5e-12,PASS
+B-Ra1e5-coarse,centreline_4097.csv:U_at_X0.5,0.0,5e-12,5e-12,PASS
+B-Ra1e5-coarse,centreline_4097.csv:W_at_Z0.5,0.0,5e-12,5e-12,PASS
+B-Ra1e5-coarse,section_nusselt.csv:X,0.0,5e-12,5e-12,PASS
+B-Ra1e5-coarse,section_nusselt.csv:Nu_bar_X,0.0,5e-12,5e-12,PASS
+B-Ra1e5-coarse,local_nusselt.csv:Z,1.1102230246251565e-16,5e-12,5e-12,PASS
+B-Ra1e5-coarse,local_nusselt.csv:Nu_hot_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e5-coarse,local_nusselt.csv:Nu_cold_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e5-coarse,local_nusselt.csv:Nu_hot_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e5-coarse,local_nusselt.csv:Nu_cold_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e5-coarse,matrix authority:Nu_bar_0,0.0,5e-12,5e-12,PASS
+B-Ra1e5-coarse,matrix authority:Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e5-coarse,matrix authority:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e5-coarse,matrix authority:Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e5-coarse,temperature symmetry,0.0,5e-12,5e-12,PASS
+B-Ra1e5-coarse,velocity symmetry,3.324746593038488e-18,5e-12,5e-12,PASS
+B-Ra1e5-medium,saved cell ordering X/Z,2.7755575615628914e-17,5e-12,5e-10,PASS
+B-Ra1e5-medium,saved thickness coordinate,1.0842021724855044e-19,5e-12,5e-10,PASS
+B-Ra1e5-medium,temperature_range_K,0.0,5e-12,5e-12,PASS
+B-Ra1e5-medium,max_dimensionless_velocity,1.4210854715202004e-14,5e-12,5e-12,PASS
+B-Ra1e5-medium,Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e5-medium,Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e5-medium,Umax_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e5-medium,Wmax_X,0.0,5e-12,5e-12,PASS
+B-Ra1e5-medium,Nu_hot_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e5-medium,Nu_cold_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e5-medium,Nu_hot_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e5-medium,Nu_cold_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e5-medium,rhok_range,0.0,5e-12,5e-12,PASS
+B-Ra1e5-medium,Nu_bar_0,0.0,5e-12,5e-12,PASS
+B-Ra1e5-medium,Nu_bar_half,0.0,5e-12,5e-12,PASS
+B-Ra1e5-medium,Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e5-medium,Nu_bar_1,0.0,5e-12,5e-12,PASS
+B-Ra1e5-medium,Nu_bar_cavity_from_section_trapezoid,0.0,5e-12,5e-12,PASS
+B-Ra1e5-medium,Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+B-Ra1e5-medium,Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e5-medium,Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+B-Ra1e5-medium,Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e5-medium,centreline_4097.csv:coordinate,0.0,5e-12,5e-12,PASS
+B-Ra1e5-medium,centreline_4097.csv:U_at_X0.5,0.0,5e-12,5e-12,PASS
+B-Ra1e5-medium,centreline_4097.csv:W_at_Z0.5,0.0,5e-12,5e-12,PASS
+B-Ra1e5-medium,section_nusselt.csv:X,0.0,5e-12,5e-12,PASS
+B-Ra1e5-medium,section_nusselt.csv:Nu_bar_X,0.0,5e-12,5e-12,PASS
+B-Ra1e5-medium,local_nusselt.csv:Z,1.1102230246251565e-16,5e-12,5e-12,PASS
+B-Ra1e5-medium,local_nusselt.csv:Nu_hot_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e5-medium,local_nusselt.csv:Nu_cold_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e5-medium,local_nusselt.csv:Nu_hot_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e5-medium,local_nusselt.csv:Nu_cold_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e5-medium,matrix authority:Nu_bar_0,0.0,5e-12,5e-12,PASS
+B-Ra1e5-medium,matrix authority:Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e5-medium,matrix authority:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e5-medium,matrix authority:Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e5-medium,temperature symmetry,0.0,5e-12,5e-12,PASS
+B-Ra1e5-medium,velocity symmetry,1.7627615900199045e-18,5e-12,5e-12,PASS
+B-Ra1e5-fine,saved cell ordering X/Z,2.7755575615628914e-17,5e-12,5e-10,PASS
+B-Ra1e5-fine,saved thickness coordinate,1.0842021724855044e-19,5e-12,5e-10,PASS
+B-Ra1e5-fine,temperature_range_K,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,max_dimensionless_velocity,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,Umax_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,Wmax_X,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,Nu_hot_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,Nu_cold_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,Nu_hot_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,Nu_cold_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,rhok_range,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,Nu_bar_0,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,Nu_bar_half,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,Nu_bar_1,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,Nu_bar_cavity_from_section_trapezoid,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,centreline_4097.csv:coordinate,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,centreline_4097.csv:U_at_X0.5,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,centreline_4097.csv:W_at_Z0.5,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,section_nusselt.csv:X,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,section_nusselt.csv:Nu_bar_X,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,local_nusselt.csv:Z,1.1102230246251565e-16,5e-12,5e-12,PASS
+B-Ra1e5-fine,local_nusselt.csv:Nu_hot_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,local_nusselt.csv:Nu_cold_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,local_nusselt.csv:Nu_hot_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,local_nusselt.csv:Nu_cold_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,matrix authority:Nu_bar_0,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,matrix authority:Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,matrix authority:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,matrix authority:Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,temperature symmetry,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,velocity symmetry,2.8488100296326273e-19,5e-12,5e-12,PASS
+B-Ra1e6-coarse,saved cell ordering X/Z,1.3877787807814457e-17,5e-12,5e-10,PASS
+B-Ra1e6-coarse,saved thickness coordinate,0.0,5e-12,5e-10,PASS
+B-Ra1e6-coarse,temperature_range_K,0.0,5e-12,5e-12,PASS
+B-Ra1e6-coarse,max_dimensionless_velocity,0.0,5e-12,5e-12,PASS
+B-Ra1e6-coarse,Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e6-coarse,Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e6-coarse,Umax_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e6-coarse,Wmax_X,0.0,5e-12,5e-12,PASS
+B-Ra1e6-coarse,Nu_hot_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e6-coarse,Nu_cold_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e6-coarse,Nu_hot_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e6-coarse,Nu_cold_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e6-coarse,rhok_range,0.0,5e-12,5e-12,PASS
+B-Ra1e6-coarse,Nu_bar_0,0.0,5e-12,5e-12,PASS
+B-Ra1e6-coarse,Nu_bar_half,0.0,5e-12,5e-12,PASS
+B-Ra1e6-coarse,Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e6-coarse,Nu_bar_1,0.0,5e-12,5e-12,PASS
+B-Ra1e6-coarse,Nu_bar_cavity_from_section_trapezoid,0.0,5e-12,5e-12,PASS
+B-Ra1e6-coarse,Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+B-Ra1e6-coarse,Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e6-coarse,Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+B-Ra1e6-coarse,Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e6-coarse,centreline_4097.csv:coordinate,0.0,5e-12,5e-12,PASS
+B-Ra1e6-coarse,centreline_4097.csv:U_at_X0.5,0.0,5e-12,5e-12,PASS
+B-Ra1e6-coarse,centreline_4097.csv:W_at_Z0.5,0.0,5e-12,5e-12,PASS
+B-Ra1e6-coarse,section_nusselt.csv:X,0.0,5e-12,5e-12,PASS
+B-Ra1e6-coarse,section_nusselt.csv:Nu_bar_X,0.0,5e-12,5e-12,PASS
+B-Ra1e6-coarse,local_nusselt.csv:Z,1.1102230246251565e-16,5e-12,5e-12,PASS
+B-Ra1e6-coarse,local_nusselt.csv:Nu_hot_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e6-coarse,local_nusselt.csv:Nu_cold_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e6-coarse,local_nusselt.csv:Nu_hot_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e6-coarse,local_nusselt.csv:Nu_cold_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e6-coarse,matrix authority:Nu_bar_0,0.0,5e-12,5e-12,PASS
+B-Ra1e6-coarse,matrix authority:Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e6-coarse,matrix authority:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e6-coarse,matrix authority:Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e6-coarse,temperature symmetry,0.0,5e-12,5e-12,PASS
+B-Ra1e6-coarse,velocity symmetry,4.555449069452034e-19,5e-12,5e-12,PASS
+B-Ra1e6-medium,saved cell ordering X/Z,2.7755575615628914e-17,5e-12,5e-10,PASS
+B-Ra1e6-medium,saved thickness coordinate,1.0842021724855044e-19,5e-12,5e-10,PASS
+B-Ra1e6-medium,temperature_range_K,0.0,5e-12,5e-12,PASS
+B-Ra1e6-medium,max_dimensionless_velocity,0.0,5e-12,5e-12,PASS
+B-Ra1e6-medium,Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e6-medium,Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e6-medium,Umax_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e6-medium,Wmax_X,0.0,5e-12,5e-12,PASS
+B-Ra1e6-medium,Nu_hot_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e6-medium,Nu_cold_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e6-medium,Nu_hot_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e6-medium,Nu_cold_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e6-medium,rhok_range,0.0,5e-12,5e-12,PASS
+B-Ra1e6-medium,Nu_bar_0,0.0,5e-12,5e-12,PASS
+B-Ra1e6-medium,Nu_bar_half,0.0,5e-12,5e-12,PASS
+B-Ra1e6-medium,Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e6-medium,Nu_bar_1,0.0,5e-12,5e-12,PASS
+B-Ra1e6-medium,Nu_bar_cavity_from_section_trapezoid,0.0,5e-12,5e-12,PASS
+B-Ra1e6-medium,Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+B-Ra1e6-medium,Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e6-medium,Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+B-Ra1e6-medium,Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e6-medium,centreline_4097.csv:coordinate,0.0,5e-12,5e-12,PASS
+B-Ra1e6-medium,centreline_4097.csv:U_at_X0.5,0.0,5e-12,5e-12,PASS
+B-Ra1e6-medium,centreline_4097.csv:W_at_Z0.5,0.0,5e-12,5e-12,PASS
+B-Ra1e6-medium,section_nusselt.csv:X,0.0,5e-12,5e-12,PASS
+B-Ra1e6-medium,section_nusselt.csv:Nu_bar_X,0.0,5e-12,5e-12,PASS
+B-Ra1e6-medium,local_nusselt.csv:Z,1.1102230246251565e-16,5e-12,5e-12,PASS
+B-Ra1e6-medium,local_nusselt.csv:Nu_hot_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e6-medium,local_nusselt.csv:Nu_cold_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e6-medium,local_nusselt.csv:Nu_hot_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e6-medium,local_nusselt.csv:Nu_cold_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e6-medium,matrix authority:Nu_bar_0,0.0,5e-12,5e-12,PASS
+B-Ra1e6-medium,matrix authority:Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e6-medium,matrix authority:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e6-medium,matrix authority:Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e6-medium,temperature symmetry,0.0,5e-12,5e-12,PASS
+B-Ra1e6-medium,velocity symmetry,6.180693536996223e-19,5e-12,5e-12,PASS
+B-Ra1e6-fine,saved cell ordering X/Z,2.7755575615628914e-17,5e-12,5e-10,PASS
+B-Ra1e6-fine,saved thickness coordinate,1.0842021724855044e-19,5e-12,5e-10,PASS
+B-Ra1e6-fine,temperature_range_K,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,max_dimensionless_velocity,2.842170943040401e-14,5e-12,5e-12,PASS
+B-Ra1e6-fine,Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,Umax_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,Wmax_X,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,Nu_hot_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,Nu_cold_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,Nu_hot_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,Nu_cold_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,rhok_range,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,Nu_bar_0,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,Nu_bar_half,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,Nu_bar_1,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,Nu_bar_cavity_from_section_trapezoid,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,centreline_4097.csv:coordinate,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,centreline_4097.csv:U_at_X0.5,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,centreline_4097.csv:W_at_Z0.5,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,section_nusselt.csv:X,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,section_nusselt.csv:Nu_bar_X,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,local_nusselt.csv:Z,1.1102230246251565e-16,5e-12,5e-12,PASS
+B-Ra1e6-fine,local_nusselt.csv:Nu_hot_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,local_nusselt.csv:Nu_cold_B1,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,local_nusselt.csv:Nu_hot_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,local_nusselt.csv:Nu_cold_B2,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,matrix authority:Nu_bar_0,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,matrix authority:Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,matrix authority:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,matrix authority:Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,temperature symmetry,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,velocity symmetry,5.325388783616392e-21,5e-12,5e-12,PASS
+A-COND,saved cell ordering X/Z,5.551115123125783e-17,5e-12,5e-10,PASS
+A-COND,saved thickness coordinate,1.951563910473908e-18,5e-12,5e-10,PASS
+A-COND,temperature_range_K,0.0,5e-12,5e-12,PASS
+A-COND,max_dimensionless_velocity,0.0,5e-12,5e-12,PASS
+A-COND,Umax,0.0,5e-12,5e-12,PASS
+A-COND,Wmax,0.0,5e-12,5e-12,PASS
+A-COND,Umax_Z,0.0,5e-12,5e-12,PASS
+A-COND,Wmax_X,0.0,5e-12,5e-12,PASS
+A-COND,density_range_kg_m3,0.0,5e-12,5e-12,PASS
+A-COND,rho(T) EOS,6.661338147750939e-16,5e-12,5e-12,PASS
+A-COND,Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-COND,Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-COND,Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-COND,Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-COND,Nu_bar_cavity_from_section_trapezoid,0.0,5e-12,5e-12,PASS
+A-COND,Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-COND,Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+A-COND,Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-COND,Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+A-COND,centreline_4097.csv:coordinate,0.0,5e-12,5e-12,PASS
+A-COND,centreline_4097.csv:U_at_X0.5,0.0,5e-12,5e-12,PASS
+A-COND,centreline_4097.csv:W_at_Z0.5,0.0,5e-12,5e-12,PASS
+A-COND,section_nusselt.csv:X,0.0,5e-12,5e-12,PASS
+A-COND,section_nusselt.csv:Nu_bar_X,0.0,5e-12,5e-12,PASS
+A-COND,local_nusselt.csv:Z,1.1102230246251565e-16,5e-12,5e-12,PASS
+A-COND,local_nusselt.csv:Nu_hot_path1,0.0,5e-12,5e-12,PASS
+A-COND,local_nusselt.csv:Nu_cold_path1,0.0,5e-12,5e-12,PASS
+A-SMOKE,saved cell ordering X/Z,4.163336342344337e-17,5e-12,5e-10,PASS
+A-SMOKE,saved thickness coordinate,9.75781955236954e-19,5e-12,5e-10,PASS
+A-SMOKE,temperature_range_K,0.0,5e-12,5e-12,PASS
+A-SMOKE,max_dimensionless_velocity,0.0,5e-12,5e-12,PASS
+A-SMOKE,Umax,0.0,5e-12,5e-12,PASS
+A-SMOKE,Wmax,0.0,5e-12,5e-12,PASS
+A-SMOKE,Umax_Z,0.0,5e-12,5e-12,PASS
+A-SMOKE,Wmax_X,0.0,5e-12,5e-12,PASS
+A-SMOKE,density_range_kg_m3,0.0,5e-12,5e-12,PASS
+A-SMOKE,rho(T) EOS,6.661338147750939e-16,5e-12,5e-12,PASS
+A-SMOKE,Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-SMOKE,Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-SMOKE,Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-SMOKE,Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-SMOKE,Nu_bar_cavity_from_section_trapezoid,0.0,5e-12,5e-12,PASS
+A-SMOKE,Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-SMOKE,Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+A-SMOKE,Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-SMOKE,Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+A-SMOKE,centreline_4097.csv:coordinate,0.0,5e-12,5e-12,PASS
+A-SMOKE,centreline_4097.csv:U_at_X0.5,1.5987211554602254e-14,5e-12,5e-12,PASS
+A-SMOKE,centreline_4097.csv:W_at_Z0.5,1.7763568394002505e-14,5e-12,5e-12,PASS
+A-SMOKE,section_nusselt.csv:X,0.0,5e-12,5e-12,PASS
+A-SMOKE,section_nusselt.csv:Nu_bar_X,0.0,5e-12,5e-12,PASS
+A-SMOKE,local_nusselt.csv:Z,1.1102230246251565e-16,5e-12,5e-12,PASS
+A-SMOKE,local_nusselt.csv:Nu_hot_path1,0.0,5e-12,5e-12,PASS
+A-SMOKE,local_nusselt.csv:Nu_cold_path1,0.0,5e-12,5e-12,PASS
+B-COND,saved cell ordering X/Z,2.7755575615628914e-17,5e-12,5e-10,PASS
+B-COND,saved thickness coordinate,1.0842021724855044e-19,5e-12,5e-10,PASS
+B-COND,temperature_range_K,0.0,5e-12,5e-12,PASS
+B-COND,max_dimensionless_velocity,0.0,5e-12,5e-12,PASS
+B-COND,Umax,0.0,5e-12,5e-12,PASS
+B-COND,Wmax,0.0,5e-12,5e-12,PASS
+B-COND,Umax_Z,0.0,5e-12,5e-12,PASS
+B-COND,Wmax_X,0.0,5e-12,5e-12,PASS
+B-COND,Nu_hot_B1,0.0,5e-12,5e-12,PASS
+B-COND,Nu_cold_B1,0.0,5e-12,5e-12,PASS
+B-COND,Nu_hot_B2,0.0,5e-12,5e-12,PASS
+B-COND,Nu_cold_B2,0.0,5e-12,5e-12,PASS
+B-COND,rhok_range,0.0,5e-12,5e-12,PASS
+B-COND,Nu_bar_0,0.0,5e-12,5e-12,PASS
+B-COND,Nu_bar_half,0.0,5e-12,5e-12,PASS
+B-COND,Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-COND,Nu_bar_1,0.0,5e-12,5e-12,PASS
+B-COND,Nu_bar_cavity_from_section_trapezoid,0.0,5e-12,5e-12,PASS
+B-COND,Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+B-COND,Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+B-COND,Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+B-COND,Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+B-COND,centreline_4097.csv:coordinate,0.0,5e-12,5e-12,PASS
+B-COND,centreline_4097.csv:U_at_X0.5,0.0,5e-12,5e-12,PASS
+B-COND,centreline_4097.csv:W_at_Z0.5,0.0,5e-12,5e-12,PASS
+B-COND,section_nusselt.csv:X,0.0,5e-12,5e-12,PASS
+B-COND,section_nusselt.csv:Nu_bar_X,0.0,5e-12,5e-12,PASS
+B-COND,local_nusselt.csv:Z,1.1102230246251565e-16,5e-12,5e-12,PASS
+B-COND,local_nusselt.csv:Nu_hot_B1,0.0,5e-12,5e-12,PASS
+B-COND,local_nusselt.csv:Nu_cold_B1,0.0,5e-12,5e-12,PASS
+B-COND,local_nusselt.csv:Nu_hot_B2,0.0,5e-12,5e-12,PASS
+B-COND,local_nusselt.csv:Nu_cold_B2,0.0,5e-12,5e-12,PASS
+B-SMOKE,saved cell ordering X/Z,1.3877787807814457e-17,5e-12,5e-10,PASS
+B-SMOKE,saved thickness coordinate,0.0,5e-12,5e-10,PASS
+B-SMOKE,temperature_range_K,0.0,5e-12,5e-12,PASS
+B-SMOKE,max_dimensionless_velocity,3.552713678800501e-15,5e-12,5e-12,PASS
+B-SMOKE,Umax,0.0,5e-12,5e-12,PASS
+B-SMOKE,Wmax,0.0,5e-12,5e-12,PASS
+B-SMOKE,Umax_Z,0.0,5e-12,5e-12,PASS
+B-SMOKE,Wmax_X,0.0,5e-12,5e-12,PASS
+B-SMOKE,Nu_hot_B1,0.0,5e-12,5e-12,PASS
+B-SMOKE,Nu_cold_B1,0.0,5e-12,5e-12,PASS
+B-SMOKE,Nu_hot_B2,0.0,5e-12,5e-12,PASS
+B-SMOKE,Nu_cold_B2,0.0,5e-12,5e-12,PASS
+B-SMOKE,rhok_range,0.0,5e-12,5e-12,PASS
+B-SMOKE,Nu_bar_0,0.0,5e-12,5e-12,PASS
+B-SMOKE,Nu_bar_half,0.0,5e-12,5e-12,PASS
+B-SMOKE,Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-SMOKE,Nu_bar_1,0.0,5e-12,5e-12,PASS
+B-SMOKE,Nu_bar_cavity_from_section_trapezoid,0.0,5e-12,5e-12,PASS
+B-SMOKE,Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+B-SMOKE,Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+B-SMOKE,Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+B-SMOKE,Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+B-SMOKE,centreline_4097.csv:coordinate,0.0,5e-12,5e-12,PASS
+B-SMOKE,centreline_4097.csv:U_at_X0.5,0.0,5e-12,5e-12,PASS
+B-SMOKE,centreline_4097.csv:W_at_Z0.5,0.0,5e-12,5e-12,PASS
+B-SMOKE,section_nusselt.csv:X,0.0,5e-12,5e-12,PASS
+B-SMOKE,section_nusselt.csv:Nu_bar_X,0.0,5e-12,5e-12,PASS
+B-SMOKE,local_nusselt.csv:Z,1.1102230246251565e-16,5e-12,5e-12,PASS
+B-SMOKE,local_nusselt.csv:Nu_hot_B1,0.0,5e-12,5e-12,PASS
+B-SMOKE,local_nusselt.csv:Nu_cold_B1,0.0,5e-12,5e-12,PASS
+B-SMOKE,local_nusselt.csv:Nu_hot_B2,0.0,5e-12,5e-12,PASS
+B-SMOKE,local_nusselt.csv:Nu_cold_B2,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,saved cell ordering X/Z,2.7755575615628914e-17,5e-12,5e-10,PASS
+A-H-Ra1e6-fine-beta1e-4,saved thickness coordinate,1.0842021724855044e-19,5e-12,5e-10,PASS
+A-H-Ra1e6-fine-beta1e-4,temperature_range_K,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,max_dimensionless_velocity,2.842170943040401e-14,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,Umax,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,Wmax,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,Umax_Z,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,Wmax_X,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,density_range_kg_m3,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,rho(T) EOS,6.661338147750939e-16,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,Nu_bar_cavity_from_section_trapezoid,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,centreline_4097.csv:coordinate,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,centreline_4097.csv:U_at_X0.5,1.0391687510491465e-13,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,centreline_4097.csv:W_at_Z0.5,1.7550405573274475e-12,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,section_nusselt.csv:X,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,section_nusselt.csv:Nu_bar_X,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,local_nusselt.csv:Z,1.1102230246251565e-16,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,local_nusselt.csv:Nu_hot_path1,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,local_nusselt.csv:Nu_cold_path1,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,AB CSV A:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,AB CSV B:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,AB CSV relative:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,AB CSV A:Nu_bar_0,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,AB CSV B:Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,AB CSV relative:Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,AB CSV A:Nu_bar_half,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,AB CSV B:Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,AB CSV relative:Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,AB CSV A:Nu_bar_1,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,AB CSV B:Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,AB CSV relative:Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,AB CSV A:Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,AB CSV B:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,AB CSV relative:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,AB CSV A:Umax_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,AB CSV B:Umax_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,AB CSV A:Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,AB CSV B:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,AB CSV relative:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,AB CSV A:Wmax_X,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,AB CSV B:Wmax_X,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,AB CSV A:Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,AB CSV B:Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,AB CSV relative:Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,AB CSV A:Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,AB CSV B:Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,AB CSV A:Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,AB CSV B:Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,AB CSV relative:Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,AB CSV A:Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,AB CSV B:Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,AB CSV A:section_Nu_max_relative_deviation_from_half,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,AB CSV B:section_Nu_max_relative_deviation_from_half,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,AB CSV relative:section_Nu_max_relative_deviation_from_half,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,AB CSV A:heat_imbalance,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,AB CSV B:heat_imbalance,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,AB CSV relative:heat_imbalance,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,AB CSV relative:reconstructed_U_mean_abs_divergence_1_s,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,AB CSV relative:reconstructed_U_epsilon_v,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,AB CSV relative:temperature_symmetry_L2,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,AB CSV relative:velocity_symmetry_L2,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,AB CSV A:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,AB CSV B:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,AB CSV relative:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,AB CSV A:Nu_bar_0,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,AB CSV B:Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,AB CSV relative:Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,AB CSV A:Nu_bar_half,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,AB CSV B:Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,AB CSV relative:Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,AB CSV A:Nu_bar_1,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,AB CSV B:Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,AB CSV relative:Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,AB CSV A:Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,AB CSV B:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,AB CSV relative:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,AB CSV A:Umax_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,AB CSV B:Umax_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,AB CSV A:Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,AB CSV B:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,AB CSV relative:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,AB CSV A:Wmax_X,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,AB CSV B:Wmax_X,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,AB CSV A:Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,AB CSV B:Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,AB CSV relative:Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,AB CSV A:Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,AB CSV B:Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,AB CSV A:Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,AB CSV B:Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,AB CSV relative:Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,AB CSV A:Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,AB CSV B:Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,AB CSV A:section_Nu_max_relative_deviation_from_half,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,AB CSV B:section_Nu_max_relative_deviation_from_half,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,AB CSV relative:section_Nu_max_relative_deviation_from_half,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,AB CSV A:heat_imbalance,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,AB CSV B:heat_imbalance,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,AB CSV relative:heat_imbalance,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,AB CSV relative:reconstructed_U_mean_abs_divergence_1_s,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,AB CSV relative:reconstructed_U_epsilon_v,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,AB CSV relative:temperature_symmetry_L2,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,AB CSV relative:velocity_symmetry_L2,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,AB CSV A:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,AB CSV B:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,AB CSV relative:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,AB CSV A:Nu_bar_0,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,AB CSV B:Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,AB CSV relative:Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,AB CSV A:Nu_bar_half,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,AB CSV B:Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,AB CSV relative:Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,AB CSV A:Nu_bar_1,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,AB CSV B:Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,AB CSV relative:Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,AB CSV A:Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,AB CSV B:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,AB CSV relative:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,AB CSV A:Umax_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,AB CSV B:Umax_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,AB CSV A:Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,AB CSV B:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,AB CSV relative:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,AB CSV A:Wmax_X,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,AB CSV B:Wmax_X,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,AB CSV A:Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,AB CSV B:Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,AB CSV relative:Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,AB CSV A:Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,AB CSV B:Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,AB CSV A:Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,AB CSV B:Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,AB CSV relative:Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,AB CSV A:Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,AB CSV B:Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,AB CSV A:section_Nu_max_relative_deviation_from_half,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,AB CSV B:section_Nu_max_relative_deviation_from_half,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,AB CSV relative:section_Nu_max_relative_deviation_from_half,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,AB CSV A:heat_imbalance,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,AB CSV B:heat_imbalance,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,AB CSV relative:heat_imbalance,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,AB CSV relative:reconstructed_U_mean_abs_divergence_1_s,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,AB CSV relative:reconstructed_U_epsilon_v,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,AB CSV relative:temperature_symmetry_L2,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,AB CSV relative:velocity_symmetry_L2,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,AB CSV A:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,AB CSV B:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,AB CSV relative:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,AB CSV A:Nu_bar_0,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,AB CSV B:Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,AB CSV relative:Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,AB CSV A:Nu_bar_half,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,AB CSV B:Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,AB CSV relative:Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,AB CSV A:Nu_bar_1,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,AB CSV B:Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,AB CSV relative:Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,AB CSV A:Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,AB CSV B:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,AB CSV relative:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,AB CSV A:Umax_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,AB CSV B:Umax_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,AB CSV A:Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,AB CSV B:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,AB CSV relative:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,AB CSV A:Wmax_X,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,AB CSV B:Wmax_X,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,AB CSV A:Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,AB CSV B:Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,AB CSV relative:Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,AB CSV A:Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,AB CSV B:Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,AB CSV A:Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,AB CSV B:Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,AB CSV relative:Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,AB CSV A:Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,AB CSV B:Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,AB CSV A:section_Nu_max_relative_deviation_from_half,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,AB CSV B:section_Nu_max_relative_deviation_from_half,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,AB CSV relative:section_Nu_max_relative_deviation_from_half,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,AB CSV A:heat_imbalance,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,AB CSV B:heat_imbalance,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,AB CSV relative:heat_imbalance,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,AB CSV relative:reconstructed_U_mean_abs_divergence_1_s,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,AB CSV relative:reconstructed_U_epsilon_v,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,AB CSV relative:temperature_symmetry_L2,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,AB CSV relative:velocity_symmetry_L2,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,H CSV baseline:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,H CSV perturbed:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,H CSV relative:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,H CSV baseline:Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,H CSV perturbed:Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,H CSV baseline:Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,H CSV perturbed:Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,H CSV baseline:Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,H CSV perturbed:Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,H CSV baseline:Umax,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,H CSV perturbed:Umax,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,H CSV relative:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,H CSV baseline:Umax_Z,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,H CSV perturbed:Umax_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,H CSV baseline:Wmax,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,H CSV perturbed:Wmax,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,H CSV relative:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,H CSV baseline:Wmax_X,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,H CSV perturbed:Wmax_X,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,H CSV baseline:Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,H CSV perturbed:Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,H CSV baseline:Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,H CSV perturbed:Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,H CSV baseline:Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,H CSV perturbed:Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,H CSV baseline:Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,H CSV perturbed:Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,H diagnostic:rho_min,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,H diagnostic:rho_max,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,H diagnostic:max_relative_density_deviation,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,H diagnostic:temperature_symmetry,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,H diagnostic:velocity_symmetry,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,H diagnostic:rho_min,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,H diagnostic:rho_max,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,H diagnostic:max_relative_density_deviation,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,H diagnostic:temperature_symmetry,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,H diagnostic:velocity_symmetry,0.0,5e-12,5e-12,PASS
+A-Ra1e3-coarse,paper reference:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e3-coarse,paper error:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e3-coarse,paper reference:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e3-coarse,paper error:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e3-coarse,paper reference:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e3-coarse,paper error:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e3-medium,paper reference:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e3-medium,paper error:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e3-medium,paper reference:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e3-medium,paper error:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e3-medium,paper reference:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e3-medium,paper error:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,paper reference:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,paper error:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,paper reference:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,paper error:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,paper reference:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,paper error:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e4-coarse,paper reference:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e4-coarse,paper error:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e4-coarse,paper reference:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e4-coarse,paper error:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e4-coarse,paper reference:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e4-coarse,paper error:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e4-medium,paper reference:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e4-medium,paper error:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e4-medium,paper reference:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e4-medium,paper error:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e4-medium,paper reference:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e4-medium,paper error:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,paper reference:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,paper error:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,paper reference:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,paper error:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,paper reference:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,paper error:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e5-coarse,paper reference:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e5-coarse,paper error:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e5-coarse,paper reference:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e5-coarse,paper error:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e5-coarse,paper reference:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e5-coarse,paper error:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e5-medium,paper reference:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e5-medium,paper error:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e5-medium,paper reference:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e5-medium,paper error:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e5-medium,paper reference:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e5-medium,paper error:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,paper reference:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,paper error:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,paper reference:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,paper error:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,paper reference:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,paper error:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e6-coarse,paper reference:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e6-coarse,paper error:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e6-coarse,paper reference:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e6-coarse,paper error:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e6-coarse,paper reference:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e6-coarse,paper error:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e6-medium,paper reference:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e6-medium,paper error:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e6-medium,paper reference:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e6-medium,paper error:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e6-medium,paper reference:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e6-medium,paper error:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,paper reference:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,paper error:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,paper reference:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,paper error:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,paper reference:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,paper error:Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e3-coarse,paper reference:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e3-coarse,paper error:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e3-coarse,paper reference:Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e3-coarse,paper error:Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e3-coarse,paper reference:Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e3-coarse,paper error:Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e3-medium,paper reference:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e3-medium,paper error:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e3-medium,paper reference:Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e3-medium,paper error:Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e3-medium,paper reference:Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e3-medium,paper error:Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,paper reference:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,paper error:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,paper reference:Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,paper error:Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,paper reference:Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e3-fine,paper error:Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e4-coarse,paper reference:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e4-coarse,paper error:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e4-medium,paper reference:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e4-medium,paper error:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e4-medium,paper reference:Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e4-medium,paper error:Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e4-medium,paper reference:Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e4-medium,paper error:Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,paper reference:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,paper error:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,paper reference:Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,paper error:Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,paper reference:Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e4-fine,paper error:Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e5-coarse,paper reference:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e5-coarse,paper error:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e5-coarse,paper reference:Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e5-coarse,paper error:Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e5-coarse,paper reference:Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e5-coarse,paper error:Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e5-medium,paper reference:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e5-medium,paper error:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e5-medium,paper reference:Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e5-medium,paper error:Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e5-medium,paper reference:Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e5-medium,paper error:Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,paper reference:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,paper error:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,paper reference:Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,paper error:Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,paper reference:Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e5-fine,paper error:Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e6-coarse,paper reference:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e6-coarse,paper error:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e6-coarse,paper reference:Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e6-coarse,paper error:Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e6-coarse,paper reference:Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e6-coarse,paper error:Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e6-medium,paper reference:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e6-medium,paper error:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e6-medium,paper reference:Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e6-medium,paper error:Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e6-medium,paper reference:Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e6-medium,paper error:Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,paper reference:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,paper error:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,paper reference:Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,paper error:Umax,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,paper reference:Wmax,0.0,5e-12,5e-12,PASS
+B-Ra1e6-fine,paper error:Wmax,0.0,5e-12,5e-12,PASS
+A-SMOKE,paper reference:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-SMOKE,paper error:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-SMOKE,paper reference:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+B-SMOKE,paper error:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,paper reference:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,paper error:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,paper reference:Umax,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,paper error:Umax,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,paper reference:Wmax,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,paper error:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine / B-Ra1e3-fine,AB authority A:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine / B-Ra1e3-fine,AB authority B:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,AB relative difference:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine / B-Ra1e3-fine,AB authority A:Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine / B-Ra1e3-fine,AB authority B:Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,AB relative difference:Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine / B-Ra1e3-fine,AB authority A:Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine / B-Ra1e3-fine,AB authority B:Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,AB relative difference:Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine / B-Ra1e3-fine,AB authority A:Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine / B-Ra1e3-fine,AB authority B:Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,AB relative difference:Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine / B-Ra1e3-fine,AB authority A:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine / B-Ra1e3-fine,AB authority B:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,AB relative difference:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine / B-Ra1e3-fine,AB authority A:Umax_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine / B-Ra1e3-fine,AB authority B:Umax_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine / B-Ra1e3-fine,AB authority A:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine / B-Ra1e3-fine,AB authority B:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,AB relative difference:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine / B-Ra1e3-fine,AB authority A:Wmax_X,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine / B-Ra1e3-fine,AB authority B:Wmax_X,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine / B-Ra1e3-fine,AB authority A:Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine / B-Ra1e3-fine,AB authority B:Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,AB relative difference:Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine / B-Ra1e3-fine,AB authority A:Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine / B-Ra1e3-fine,AB authority B:Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine / B-Ra1e3-fine,AB authority A:Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine / B-Ra1e3-fine,AB authority B:Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,AB relative difference:Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine / B-Ra1e3-fine,AB authority A:Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine / B-Ra1e3-fine,AB authority B:Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine / B-Ra1e3-fine,AB authority A:section_Nu_max_relative_deviation_from_half,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine / B-Ra1e3-fine,AB authority B:section_Nu_max_relative_deviation_from_half,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,AB relative difference:section_Nu_max_relative_deviation_from_half,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine / B-Ra1e3-fine,AB authority A:heat_imbalance,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine / B-Ra1e3-fine,AB authority B:heat_imbalance,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,AB relative difference:heat_imbalance,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,AB relative difference:reconstructed_U_mean_abs_divergence_1_s,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,AB relative difference:reconstructed_U_epsilon_v,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,AB relative difference:temperature_symmetry_L2,0.0,5e-12,5e-12,PASS
+A-Ra1e3-fine,AB relative difference:velocity_symmetry_L2,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine / B-Ra1e4-fine,AB authority A:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine / B-Ra1e4-fine,AB authority B:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,AB relative difference:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine / B-Ra1e4-fine,AB authority A:Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine / B-Ra1e4-fine,AB authority B:Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,AB relative difference:Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine / B-Ra1e4-fine,AB authority A:Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine / B-Ra1e4-fine,AB authority B:Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,AB relative difference:Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine / B-Ra1e4-fine,AB authority A:Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine / B-Ra1e4-fine,AB authority B:Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,AB relative difference:Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine / B-Ra1e4-fine,AB authority A:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine / B-Ra1e4-fine,AB authority B:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,AB relative difference:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine / B-Ra1e4-fine,AB authority A:Umax_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine / B-Ra1e4-fine,AB authority B:Umax_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine / B-Ra1e4-fine,AB authority A:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine / B-Ra1e4-fine,AB authority B:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,AB relative difference:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine / B-Ra1e4-fine,AB authority A:Wmax_X,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine / B-Ra1e4-fine,AB authority B:Wmax_X,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine / B-Ra1e4-fine,AB authority A:Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine / B-Ra1e4-fine,AB authority B:Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,AB relative difference:Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine / B-Ra1e4-fine,AB authority A:Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine / B-Ra1e4-fine,AB authority B:Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine / B-Ra1e4-fine,AB authority A:Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine / B-Ra1e4-fine,AB authority B:Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,AB relative difference:Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine / B-Ra1e4-fine,AB authority A:Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine / B-Ra1e4-fine,AB authority B:Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine / B-Ra1e4-fine,AB authority A:section_Nu_max_relative_deviation_from_half,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine / B-Ra1e4-fine,AB authority B:section_Nu_max_relative_deviation_from_half,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,AB relative difference:section_Nu_max_relative_deviation_from_half,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine / B-Ra1e4-fine,AB authority A:heat_imbalance,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine / B-Ra1e4-fine,AB authority B:heat_imbalance,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,AB relative difference:heat_imbalance,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,AB relative difference:reconstructed_U_mean_abs_divergence_1_s,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,AB relative difference:reconstructed_U_epsilon_v,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,AB relative difference:temperature_symmetry_L2,0.0,5e-12,5e-12,PASS
+A-Ra1e4-fine,AB relative difference:velocity_symmetry_L2,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine / B-Ra1e5-fine,AB authority A:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine / B-Ra1e5-fine,AB authority B:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,AB relative difference:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine / B-Ra1e5-fine,AB authority A:Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine / B-Ra1e5-fine,AB authority B:Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,AB relative difference:Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine / B-Ra1e5-fine,AB authority A:Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine / B-Ra1e5-fine,AB authority B:Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,AB relative difference:Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine / B-Ra1e5-fine,AB authority A:Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine / B-Ra1e5-fine,AB authority B:Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,AB relative difference:Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine / B-Ra1e5-fine,AB authority A:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine / B-Ra1e5-fine,AB authority B:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,AB relative difference:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine / B-Ra1e5-fine,AB authority A:Umax_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine / B-Ra1e5-fine,AB authority B:Umax_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine / B-Ra1e5-fine,AB authority A:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine / B-Ra1e5-fine,AB authority B:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,AB relative difference:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine / B-Ra1e5-fine,AB authority A:Wmax_X,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine / B-Ra1e5-fine,AB authority B:Wmax_X,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine / B-Ra1e5-fine,AB authority A:Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine / B-Ra1e5-fine,AB authority B:Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,AB relative difference:Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine / B-Ra1e5-fine,AB authority A:Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine / B-Ra1e5-fine,AB authority B:Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine / B-Ra1e5-fine,AB authority A:Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine / B-Ra1e5-fine,AB authority B:Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,AB relative difference:Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine / B-Ra1e5-fine,AB authority A:Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine / B-Ra1e5-fine,AB authority B:Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine / B-Ra1e5-fine,AB authority A:section_Nu_max_relative_deviation_from_half,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine / B-Ra1e5-fine,AB authority B:section_Nu_max_relative_deviation_from_half,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,AB relative difference:section_Nu_max_relative_deviation_from_half,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine / B-Ra1e5-fine,AB authority A:heat_imbalance,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine / B-Ra1e5-fine,AB authority B:heat_imbalance,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,AB relative difference:heat_imbalance,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,AB relative difference:reconstructed_U_mean_abs_divergence_1_s,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,AB relative difference:reconstructed_U_epsilon_v,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,AB relative difference:temperature_symmetry_L2,0.0,5e-12,5e-12,PASS
+A-Ra1e5-fine,AB relative difference:velocity_symmetry_L2,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine / B-Ra1e6-fine,AB authority A:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine / B-Ra1e6-fine,AB authority B:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,AB relative difference:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine / B-Ra1e6-fine,AB authority A:Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine / B-Ra1e6-fine,AB authority B:Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,AB relative difference:Nu_bar_0,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine / B-Ra1e6-fine,AB authority A:Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine / B-Ra1e6-fine,AB authority B:Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,AB relative difference:Nu_bar_half,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine / B-Ra1e6-fine,AB authority A:Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine / B-Ra1e6-fine,AB authority B:Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,AB relative difference:Nu_bar_1,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine / B-Ra1e6-fine,AB authority A:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine / B-Ra1e6-fine,AB authority B:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,AB relative difference:Umax,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine / B-Ra1e6-fine,AB authority A:Umax_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine / B-Ra1e6-fine,AB authority B:Umax_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine / B-Ra1e6-fine,AB authority A:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine / B-Ra1e6-fine,AB authority B:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,AB relative difference:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine / B-Ra1e6-fine,AB authority A:Wmax_X,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine / B-Ra1e6-fine,AB authority B:Wmax_X,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine / B-Ra1e6-fine,AB authority A:Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine / B-Ra1e6-fine,AB authority B:Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,AB relative difference:Nu_hot_local_max,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine / B-Ra1e6-fine,AB authority A:Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine / B-Ra1e6-fine,AB authority B:Nu_hot_local_max_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine / B-Ra1e6-fine,AB authority A:Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine / B-Ra1e6-fine,AB authority B:Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,AB relative difference:Nu_hot_local_min,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine / B-Ra1e6-fine,AB authority A:Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine / B-Ra1e6-fine,AB authority B:Nu_hot_local_min_Z,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine / B-Ra1e6-fine,AB authority A:section_Nu_max_relative_deviation_from_half,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine / B-Ra1e6-fine,AB authority B:section_Nu_max_relative_deviation_from_half,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,AB relative difference:section_Nu_max_relative_deviation_from_half,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine / B-Ra1e6-fine,AB authority A:heat_imbalance,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine / B-Ra1e6-fine,AB authority B:heat_imbalance,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,AB relative difference:heat_imbalance,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,AB relative difference:reconstructed_U_mean_abs_divergence_1_s,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,AB relative difference:reconstructed_U_epsilon_v,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,AB relative difference:temperature_symmetry_L2,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,AB relative difference:velocity_symmetry_L2,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,GateH baseline:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,GateH perturbed:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,GateH relative difference:Nu_bar_cavity,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,GateH baseline:Umax,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,GateH perturbed:Umax,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,GateH relative difference:Umax,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,GateH baseline:Wmax,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,GateH perturbed:Wmax,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,GateH relative difference:Wmax,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,GateH saved diagnostic:rho_min,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,GateH saved diagnostic:rho_max,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,GateH saved diagnostic:max_relative_density_deviation,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,GateH saved diagnostic:temperature_symmetry,0.0,5e-12,5e-12,PASS
+A-Ra1e6-fine,GateH saved diagnostic:velocity_symmetry,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,GateH saved diagnostic:rho_min,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,GateH saved diagnostic:rho_max,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,GateH saved diagnostic:max_relative_density_deviation,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,GateH saved diagnostic:temperature_symmetry,0.0,5e-12,5e-12,PASS
+A-H-Ra1e6-fine-beta1e-4,GateH saved diagnostic:velocity_symmetry,0.0,5e-12,5e-12,PASS

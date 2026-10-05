@@ -1,0 +1,12 @@
+FoamFile { version 2.0; format ascii; class volScalarField; object T; }
+dimensions [0 0 0 1 0 0 0];
+internalField uniform 300.5;
+boundaryField
+{
+hotWall { type fixedValue; value uniform 301; }
+coldWall { type fixedValue; value uniform 300; }
+bottomWall { type zeroGradient; }
+topWall { type zeroGradient; }
+front { type empty; }
+back { type empty; }
+}

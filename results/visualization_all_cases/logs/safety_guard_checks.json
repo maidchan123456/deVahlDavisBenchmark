@@ -1,0 +1,12 @@
+[
+  {
+    "check": "outside-output-scope",
+    "returncode": 2,
+    "status": "PASS"
+  },
+  {
+    "check": "existing-output-protection",
+    "returncode": 2,
+    "status": "PASS"
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "completed_at": "2026-10-05T17:11:15.349420+09:00",
+  "display_cases": 29,
+  "formal_conditions": 24,
+  "RouteA_computed": 12,
+  "RouteA_accepted": 12,
+  "RouteB_computed": 12,
+  "RouteB_accepted": 9,
+  "logical_figures": 279,
+  "png_files": 279,
+  "pdf_files": 279,
+  "csv_files": 161,
+  "numerical_checks": 1585,
+  "all_checks_pass": true,
+  "solver_executions": 0
+}

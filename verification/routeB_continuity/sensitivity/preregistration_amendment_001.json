@@ -1,0 +1,150 @@
+{
+  "schema": "routeB-baseline-qualification-amendment-001",
+  "date": "2026-10-04",
+  "previous_STOP": "baseline_n20 reached12000 without v1 steady qualification",
+  "purpose": "Classify continued decay versus plateau/oscillatory band at unchanged numerical conditions; baseline only",
+  "original_preregistration_sha256": "567af0e99595d20cb6aeecc99788c4d4b7d36e2f5f33bec05dc4093bde07d0e3",
+  "original_preregistration_md_sha256": "764d8662b7d2d8e80bdc68737fcb3f8dba057fcf9aa19ba81ad5d9530cbf9915",
+  "continuation_start": 12000,
+  "maximum_iteration": 30000,
+  "checkpoints": [
+    12000,
+    15000,
+    18000,
+    24000,
+    30000
+  ],
+  "sole_controlDict_changes": [
+    "startFrom latestTime",
+    "endTime/checkpoint maximum"
+  ],
+  "unchanged": [
+    "p tolerance1e-10",
+    "U/T tolerance1e-12",
+    "all relTol0",
+    "relaxation",
+    "fvSchemes",
+    "fvSolution",
+    "mesh",
+    "physics",
+    "BC",
+    "zero source",
+    "solver binary",
+    "monitoring and QoI definitions",
+    "v1 steady limits/windows/sample interval/confirmation"
+  ],
+  "stopping": {
+    "minimum_iteration": 400,
+    "sample_interval": 20,
+    "window_iterations": 200,
+    "window_samples": 11,
+    "continuation_block": 200,
+    "maximum_iteration": 12000,
+    "value_QoI_window_range_normalized_by_max_abs_or_one": 1e-08,
+    "position_window_absolute": 0.000244140625,
+    "U_change_over_20_iterations_over_Up": 1e-08,
+    "T_change_over_20_iterations_over_DeltaT": 1e-08,
+    "heat_imbalance_window_absolute_range": 1e-08,
+    "epsilon_mean_window_absolute_range": "<=2*100*p_tolerance",
+    "epsilon_max_window_absolute_range": "<=2*100*p_tolerance*n_cells",
+    "continuity_capacity_scale_rationale": "Case C Kp reached about 25; 100 is a conservative numerical monitor capacity allowance, not research quota. Tight field/QoI conditions independently apply.",
+    "momentum_temperature_initial_residual_max": 1e-08,
+    "pressure_final_residual_max": "1.1*run-specific tolerance, never 1e-10 for 1e-6 run",
+    "normal_exit_and_finite_required": true,
+    "repeat_qualified_checks_for_full_continuation_block": true
+  },
+  "max_iteration_amendment_only": true,
+  "confirmation": "Original compiled monitor repeats qualification for200 iterations before automatic stop. Accept only with its confirmed marker plus unchanged residual/finite/normal-exit checks. A checkpoint-only first qualification requires an additional200 (up to30200 only if first at30000), using the same physical20-step/window definitions; never restart monitor warmup as confirmation evidence. Stop immediately on accepted baseline; no Arm1/Arm2 runs.",
+  "restart_warmup": "Compiled monitor resets at each solver call; first sample has startup sentinel and next200-window history is unavailable. Preserve it, mark unavailable and exclude from trend/classification; no source or monitor modifications.",
+  "diagnostics": [
+    "All7 QoIs values/window min-max-mean-range/slope/checkpoint difference",
+    "U/T max and RMS changes at20/40/100/200 separation",
+    "continuity/heat/residual/true pressure residual",
+    "checkpoint hashes",
+    "restart provenance"
+  ],
+  "classification_rule": {
+    "late_checkpoints_required": 3,
+    "minimum_late_checkpoint_span_iterations": 6000,
+    "amplitude_estimator": "Median of ten 200-iteration nonoverlapping window magnitudes over each checkpoint final2000 iterations; exclude restart warmup until start+240",
+    "continuing_decay": "All last3 amplitude medians strictly decrease, final/first<=0.5, and OLS fitted log-magnitude final/first<=0.5; all must be positive.",
+    "plateau": "All last3 positive amplitude medians max/min<=2 and fitted log-magnitude final/first in [0.8,1.25]. These are classification cutoffs only.",
+    "oscillatory": "Plateau band plus coherent detrended periodicity in all3 late raw chunks: first-difference sign reversal fraction>=0.25, absolute fitted drift/IQR<=0.25, ACF negative lobe<=-0.25 followed by local positive peak>=0.5 at lags2..25; detected lags agree within1 and each chunk contains>=3 periods. Otherwise plateau is not called oscillatory.",
+    "zero_magnitude": "No logarithm/floor; INCONCLUSIVE with observed constant/quantized note",
+    "otherwise": "INCONCLUSIVE",
+    "overall": "Classify max QoI window range, max-window U20 change, max-window T20 change, and heat window range. All continuing => CONTINUING_DECAY; all plateau/oscillatory => OSCILLATORY if any coherent oscillation else PLATEAU; mixed/insufficient => INCONCLUSIVE. Individual QoIs/conservation/residuals also reported.",
+    "cause": "Linear solver precision primary cause stays INCONCLUSIVE without controlled numerical-condition contrast."
+  },
+  "STOP": [
+    "12000 provenance invalid",
+    "need numerical changes",
+    "NaN/Inf/fatal",
+    "binary/mesh/physics/input changes",
+    "need formal data",
+    "need edit original preregistration",
+    "need non-baseline solver call"
+  ],
+  "research_acceptance_quota": false,
+  "qoi_quota": null,
+  "tau_mean": null,
+  "startup_provenance": {
+    "HEAD": "135993c6eec45d6081ba8efd2d86cbb2eeedf57a",
+    "git_status_short": "?? cases/routeA/Ra0_medium/\n?? cases/routeA/Ra1e4_coarse/\n?? verification/\n",
+    "protected_hashes": {
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/gateG_sensitivity_experiment/experiment_report.md": "3c0a78ad3c23a54dabeb690d8a91ed04feea6c6182964094d3ef850ce015adbd",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/gateG_sensitivity_experiment/experiment_summary.json": "f0e92ae58071e00ca1aa8bf7635549d00c3d412818ed208d2d8764fc62723089",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/gateG_sensitivity_experiment/convergence_diagnostics.json": "a8de0a89edf28cdc7c91297f0cdc71a2514a7c563457f7683f5d3efc7c383dec",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/gateG_sensitivity_experiment/baseline_rwin_history.csv": "3e9e34972fb4a38ea4ff8d85896ba23ac7e29655581cf446c39db13c57c37221",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/gateG_sensitivity_experiment/baseline_monitor_history.csv": "1a2d63417b41013810a977c74a2b849bbb57c3e74ad915ffe49ac63f64068f75",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/gateG_sensitivity_experiment/baseline_n20.json": "ce69d4ece8e4c74d40e11d2e65650f495ef14072c03cc3d3cb0eaa2492c8e055",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeB/gateG_sensitivity_experiment/STOP.json": "22ed1a88177c3d003c593e4fc4a0539995f934a48868a8c11a4def10d1829b71",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/verification/routeB_continuity/sensitivity/experiment_preregistration_v1.json": "567af0e99595d20cb6aeecc99788c4d4b7d36e2f5f33bec05dc4093bde07d0e3",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/verification/routeB_continuity/sensitivity/experiment_preregistration_v1.md": "764d8662b7d2d8e80bdc68737fcb3f8dba057fcf9aa19ba81ad5d9530cbf9915",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/verification/routeB_continuity/sensitivity/experiment.py": "8aa694360c1e28875e8adae910aff13258a166a9c441e2b40db23ee57686c101",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/verification/routeB_continuity/sensitivity/diagnose_stop.py": "c1855faee9aa56684ac7628edb012cafa1d56b42ca45f4290ac836165ae9276f"
+    },
+    "original_case_input_hashes": {
+      "constant/radiationProperties": "014e49614153130f43bf1c374c6865e1736c373ad9ea0b889ae30c28743c6a9b",
+      "constant/g": "816f979fc6a2872318bacf9d457fbd71ba77ef2aa6b805441b3ed60749b115a7",
+      "constant/turbulenceProperties": "83ccd08a7cab4204a51cfd89ff8054145ad0548dbc823e3f1058ecc31ceff53a",
+      "constant/continuitySource": "e033e206610689c06c740c485941717c358f96e6defd32073192a4960562feb1",
+      "constant/transportProperties": "1ba2e0680a53761d832661218c5cb40fa2fc46085da75e051529e61758a0bc9d",
+      "constant/polyMesh/faces": "daa0e99501b78e74be07339ff825bd4badaacf24245c168f4a9ca22ae2c8cf19",
+      "constant/polyMesh/points": "31d7d14c0f7df4315d300560214f67bff995eab5361f394c3033699d82cbfb75",
+      "constant/polyMesh/boundary": "61bfd283b1eb5d56ea685edf73cfbfcb43e9c979963d69128bbd86d969fb6fdd",
+      "constant/polyMesh/neighbour": "0ba2c70316ce02446aa52deaae61e66f10a0c6974e1237d70af6655b45946075",
+      "constant/polyMesh/owner": "f07eaca9b8e6a8c9d45bd54e99e3f28ff26f98c188551101c0ecb4456511daa7",
+      "system/fvSolution": "94232dd78c33fc3f9ca941728dcef6d3fc11c6a299b1cfcde95117748e81594a",
+      "system/blockMeshDict": "89c7c0e0e37dddb160c0e03d3e1df33862256186e55f8ed993d699bd3b8aff0c",
+      "system/controlDict": "82bdb21649a0aafda37f1a5b7f72bbca434e1e03e32e89b699a1a522236a1fe3",
+      "system/fvSchemes": "fc82945a96f142b049b68c495183fb188d5aa68500527722e0816ee81ee71591"
+    },
+    "12000_restart_tree_hashes": {
+      "U": "1e319f4661afed3992a6be31f954effd3b7a49582e5552380063da01995349fe",
+      "alphat": "e29fe1c6dddb9eb38423349801b4d71a8ae5f21aa25d800bc26798fbd46f12db",
+      "phi": "b221f60d0bcd87a4f684f530cd619ed0c31ae1d21c02341e695ee14f5c7f6801",
+      "T": "ba8484010268a9dae6c869a4cc20fe28f16a47855a1b763fbee0d402201c28f3",
+      "p": "9a08968b558df1d5d259c2642c6e722d8bfbefc5b18f7dac3fa22baeb20d3725",
+      "p_rgh": "f22af178a878ad88fca991483f8aac68f9af46171ee69332f80cfc41628a3dc3",
+      "uniform/time": "906fbe54ab7952035b4fca38bf552537e5329585befa9faaa3e8834b5a930d5d"
+    },
+    "primary_12000_field_hashes": {
+      "U": "1e319f4661afed3992a6be31f954effd3b7a49582e5552380063da01995349fe",
+      "T": "ba8484010268a9dae6c869a4cc20fe28f16a47855a1b763fbee0d402201c28f3",
+      "p_rgh": "f22af178a878ad88fca991483f8aac68f9af46171ee69332f80cfc41628a3dc3",
+      "phi": "b221f60d0bcd87a4f684f530cd619ed0c31ae1d21c02341e695ee14f5c7f6801"
+    },
+    "binary": {
+      "path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/verification/routeB_continuity/sensitivity/auditSolver/bin/buoyantBoussinesqSimpleFoamContinuitySourceAudit",
+      "sha256": "b3696687e1fbea626916c857215e0654a0c7b710a6a8115811486af1afe7c904",
+      "mtime_utc": "2026-10-03T18:00:35.769845+00:00",
+      "historical_evidence": "Same logged executable path, unchanged registered source hashes, build log and binary mtime preceding original run; no previous-run binary SHA256 was recorded, so no retrospective cryptographic equality claim. Binary frozen by SHA256 for this qualification."
+    },
+    "original_build_log_sha256": "6c241ec2c134da70bad864d04a7587aefea05c1248bf7c01ec81dba87245a88f"
+  },
+  "orchestration_script_sha256": "a87a7bbe783dd0455f198d4801e54214de3637ab938a7465009133dd199a38a8",
+  "allowed_case_path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/verification/routeB_continuity/sensitivity/runs/baseline_qualification_001/case",
+  "original_STOP_retained": true,
+  "arm1_restarted": false,
+  "arm2_executed": false
+}

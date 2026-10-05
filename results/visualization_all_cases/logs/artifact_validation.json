@@ -1,0 +1,9 @@
+{
+  "logical_figures": 279,
+  "png_crc_and_dpi_check": "PASS",
+  "pdf_header_check": "PASS",
+  "per_case_csv_counts_and_no_slip_endpoints": "PASS",
+  "numerical_checks": 1585,
+  "numerical_max_absolute_difference": 1.7550405573274475e-12,
+  "missing_files": 0
+}

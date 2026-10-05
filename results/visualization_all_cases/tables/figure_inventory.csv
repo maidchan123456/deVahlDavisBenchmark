@@ -1,0 +1,280 @@
+figure,png,pdf,description,case_ids,png_dpi
+individual/A-Ra1e3-coarse_temperature,individual/A-Ra1e3-coarse_temperature.png,individual/A-Ra1e3-coarse_temperature.pdf,temperature,A-Ra1e3-coarse,300
+individual/A-Ra1e3-coarse_streamlines,individual/A-Ra1e3-coarse_streamlines.png,individual/A-Ra1e3-coarse_streamlines.pdf,streamlines,A-Ra1e3-coarse,300
+individual/A-Ra1e3-coarse_velocity_magnitude,individual/A-Ra1e3-coarse_velocity_magnitude.png,individual/A-Ra1e3-coarse_velocity_magnitude.pdf,velocity_magnitude,A-Ra1e3-coarse,300
+individual/A-Ra1e3-coarse_density_deviation,individual/A-Ra1e3-coarse_density_deviation.png,individual/A-Ra1e3-coarse_density_deviation.pdf,density_deviation,A-Ra1e3-coarse,300
+individual/A-Ra1e3-coarse_centreline,individual/A-Ra1e3-coarse_centreline.png,individual/A-Ra1e3-coarse_centreline.pdf,centreline,A-Ra1e3-coarse,300
+individual/A-Ra1e3-coarse_local_Nu,individual/A-Ra1e3-coarse_local_Nu.png,individual/A-Ra1e3-coarse_local_Nu.pdf,local_Nu,A-Ra1e3-coarse,300
+individual/A-Ra1e3-coarse_section_Nu,individual/A-Ra1e3-coarse_section_Nu.png,individual/A-Ra1e3-coarse_section_Nu.pdf,section_Nu,A-Ra1e3-coarse,300
+individual/A-Ra1e3-coarse_temperature_centreline,individual/A-Ra1e3-coarse_temperature_centreline.png,individual/A-Ra1e3-coarse_temperature_centreline.pdf,temperature centreline,A-Ra1e3-coarse,300
+individual/A-Ra1e3-medium_temperature,individual/A-Ra1e3-medium_temperature.png,individual/A-Ra1e3-medium_temperature.pdf,temperature,A-Ra1e3-medium,300
+individual/A-Ra1e3-medium_streamlines,individual/A-Ra1e3-medium_streamlines.png,individual/A-Ra1e3-medium_streamlines.pdf,streamlines,A-Ra1e3-medium,300
+individual/A-Ra1e3-medium_velocity_magnitude,individual/A-Ra1e3-medium_velocity_magnitude.png,individual/A-Ra1e3-medium_velocity_magnitude.pdf,velocity_magnitude,A-Ra1e3-medium,300
+individual/A-Ra1e3-medium_density_deviation,individual/A-Ra1e3-medium_density_deviation.png,individual/A-Ra1e3-medium_density_deviation.pdf,density_deviation,A-Ra1e3-medium,300
+individual/A-Ra1e3-medium_centreline,individual/A-Ra1e3-medium_centreline.png,individual/A-Ra1e3-medium_centreline.pdf,centreline,A-Ra1e3-medium,300
+individual/A-Ra1e3-medium_local_Nu,individual/A-Ra1e3-medium_local_Nu.png,individual/A-Ra1e3-medium_local_Nu.pdf,local_Nu,A-Ra1e3-medium,300
+individual/A-Ra1e3-medium_section_Nu,individual/A-Ra1e3-medium_section_Nu.png,individual/A-Ra1e3-medium_section_Nu.pdf,section_Nu,A-Ra1e3-medium,300
+individual/A-Ra1e3-medium_temperature_centreline,individual/A-Ra1e3-medium_temperature_centreline.png,individual/A-Ra1e3-medium_temperature_centreline.pdf,temperature centreline,A-Ra1e3-medium,300
+individual/A-Ra1e3-fine_temperature,individual/A-Ra1e3-fine_temperature.png,individual/A-Ra1e3-fine_temperature.pdf,temperature,A-Ra1e3-fine,300
+individual/A-Ra1e3-fine_streamlines,individual/A-Ra1e3-fine_streamlines.png,individual/A-Ra1e3-fine_streamlines.pdf,streamlines,A-Ra1e3-fine,300
+individual/A-Ra1e3-fine_velocity_magnitude,individual/A-Ra1e3-fine_velocity_magnitude.png,individual/A-Ra1e3-fine_velocity_magnitude.pdf,velocity_magnitude,A-Ra1e3-fine,300
+individual/A-Ra1e3-fine_density_deviation,individual/A-Ra1e3-fine_density_deviation.png,individual/A-Ra1e3-fine_density_deviation.pdf,density_deviation,A-Ra1e3-fine,300
+individual/A-Ra1e3-fine_centreline,individual/A-Ra1e3-fine_centreline.png,individual/A-Ra1e3-fine_centreline.pdf,centreline,A-Ra1e3-fine,300
+individual/A-Ra1e3-fine_local_Nu,individual/A-Ra1e3-fine_local_Nu.png,individual/A-Ra1e3-fine_local_Nu.pdf,local_Nu,A-Ra1e3-fine,300
+individual/A-Ra1e3-fine_section_Nu,individual/A-Ra1e3-fine_section_Nu.png,individual/A-Ra1e3-fine_section_Nu.pdf,section_Nu,A-Ra1e3-fine,300
+individual/A-Ra1e3-fine_temperature_centreline,individual/A-Ra1e3-fine_temperature_centreline.png,individual/A-Ra1e3-fine_temperature_centreline.pdf,temperature centreline,A-Ra1e3-fine,300
+individual/A-Ra1e4-coarse_temperature,individual/A-Ra1e4-coarse_temperature.png,individual/A-Ra1e4-coarse_temperature.pdf,temperature,A-Ra1e4-coarse,300
+individual/A-Ra1e4-coarse_streamlines,individual/A-Ra1e4-coarse_streamlines.png,individual/A-Ra1e4-coarse_streamlines.pdf,streamlines,A-Ra1e4-coarse,300
+individual/A-Ra1e4-coarse_velocity_magnitude,individual/A-Ra1e4-coarse_velocity_magnitude.png,individual/A-Ra1e4-coarse_velocity_magnitude.pdf,velocity_magnitude,A-Ra1e4-coarse,300
+individual/A-Ra1e4-coarse_density_deviation,individual/A-Ra1e4-coarse_density_deviation.png,individual/A-Ra1e4-coarse_density_deviation.pdf,density_deviation,A-Ra1e4-coarse,300
+individual/A-Ra1e4-coarse_centreline,individual/A-Ra1e4-coarse_centreline.png,individual/A-Ra1e4-coarse_centreline.pdf,centreline,A-Ra1e4-coarse,300
+individual/A-Ra1e4-coarse_local_Nu,individual/A-Ra1e4-coarse_local_Nu.png,individual/A-Ra1e4-coarse_local_Nu.pdf,local_Nu,A-Ra1e4-coarse,300
+individual/A-Ra1e4-coarse_section_Nu,individual/A-Ra1e4-coarse_section_Nu.png,individual/A-Ra1e4-coarse_section_Nu.pdf,section_Nu,A-Ra1e4-coarse,300
+individual/A-Ra1e4-coarse_temperature_centreline,individual/A-Ra1e4-coarse_temperature_centreline.png,individual/A-Ra1e4-coarse_temperature_centreline.pdf,temperature centreline,A-Ra1e4-coarse,300
+individual/A-Ra1e4-medium_temperature,individual/A-Ra1e4-medium_temperature.png,individual/A-Ra1e4-medium_temperature.pdf,temperature,A-Ra1e4-medium,300
+individual/A-Ra1e4-medium_streamlines,individual/A-Ra1e4-medium_streamlines.png,individual/A-Ra1e4-medium_streamlines.pdf,streamlines,A-Ra1e4-medium,300
+individual/A-Ra1e4-medium_velocity_magnitude,individual/A-Ra1e4-medium_velocity_magnitude.png,individual/A-Ra1e4-medium_velocity_magnitude.pdf,velocity_magnitude,A-Ra1e4-medium,300
+individual/A-Ra1e4-medium_density_deviation,individual/A-Ra1e4-medium_density_deviation.png,individual/A-Ra1e4-medium_density_deviation.pdf,density_deviation,A-Ra1e4-medium,300
+individual/A-Ra1e4-medium_centreline,individual/A-Ra1e4-medium_centreline.png,individual/A-Ra1e4-medium_centreline.pdf,centreline,A-Ra1e4-medium,300
+individual/A-Ra1e4-medium_local_Nu,individual/A-Ra1e4-medium_local_Nu.png,individual/A-Ra1e4-medium_local_Nu.pdf,local_Nu,A-Ra1e4-medium,300
+individual/A-Ra1e4-medium_section_Nu,individual/A-Ra1e4-medium_section_Nu.png,individual/A-Ra1e4-medium_section_Nu.pdf,section_Nu,A-Ra1e4-medium,300
+individual/A-Ra1e4-medium_temperature_centreline,individual/A-Ra1e4-medium_temperature_centreline.png,individual/A-Ra1e4-medium_temperature_centreline.pdf,temperature centreline,A-Ra1e4-medium,300
+individual/A-Ra1e4-fine_temperature,individual/A-Ra1e4-fine_temperature.png,individual/A-Ra1e4-fine_temperature.pdf,temperature,A-Ra1e4-fine,300
+individual/A-Ra1e4-fine_streamlines,individual/A-Ra1e4-fine_streamlines.png,individual/A-Ra1e4-fine_streamlines.pdf,streamlines,A-Ra1e4-fine,300
+individual/A-Ra1e4-fine_velocity_magnitude,individual/A-Ra1e4-fine_velocity_magnitude.png,individual/A-Ra1e4-fine_velocity_magnitude.pdf,velocity_magnitude,A-Ra1e4-fine,300
+individual/A-Ra1e4-fine_density_deviation,individual/A-Ra1e4-fine_density_deviation.png,individual/A-Ra1e4-fine_density_deviation.pdf,density_deviation,A-Ra1e4-fine,300
+individual/A-Ra1e4-fine_centreline,individual/A-Ra1e4-fine_centreline.png,individual/A-Ra1e4-fine_centreline.pdf,centreline,A-Ra1e4-fine,300
+individual/A-Ra1e4-fine_local_Nu,individual/A-Ra1e4-fine_local_Nu.png,individual/A-Ra1e4-fine_local_Nu.pdf,local_Nu,A-Ra1e4-fine,300
+individual/A-Ra1e4-fine_section_Nu,individual/A-Ra1e4-fine_section_Nu.png,individual/A-Ra1e4-fine_section_Nu.pdf,section_Nu,A-Ra1e4-fine,300
+individual/A-Ra1e4-fine_temperature_centreline,individual/A-Ra1e4-fine_temperature_centreline.png,individual/A-Ra1e4-fine_temperature_centreline.pdf,temperature centreline,A-Ra1e4-fine,300
+individual/A-Ra1e5-coarse_temperature,individual/A-Ra1e5-coarse_temperature.png,individual/A-Ra1e5-coarse_temperature.pdf,temperature,A-Ra1e5-coarse,300
+individual/A-Ra1e5-coarse_streamlines,individual/A-Ra1e5-coarse_streamlines.png,individual/A-Ra1e5-coarse_streamlines.pdf,streamlines,A-Ra1e5-coarse,300
+individual/A-Ra1e5-coarse_velocity_magnitude,individual/A-Ra1e5-coarse_velocity_magnitude.png,individual/A-Ra1e5-coarse_velocity_magnitude.pdf,velocity_magnitude,A-Ra1e5-coarse,300
+individual/A-Ra1e5-coarse_density_deviation,individual/A-Ra1e5-coarse_density_deviation.png,individual/A-Ra1e5-coarse_density_deviation.pdf,density_deviation,A-Ra1e5-coarse,300
+individual/A-Ra1e5-coarse_centreline,individual/A-Ra1e5-coarse_centreline.png,individual/A-Ra1e5-coarse_centreline.pdf,centreline,A-Ra1e5-coarse,300
+individual/A-Ra1e5-coarse_local_Nu,individual/A-Ra1e5-coarse_local_Nu.png,individual/A-Ra1e5-coarse_local_Nu.pdf,local_Nu,A-Ra1e5-coarse,300
+individual/A-Ra1e5-coarse_section_Nu,individual/A-Ra1e5-coarse_section_Nu.png,individual/A-Ra1e5-coarse_section_Nu.pdf,section_Nu,A-Ra1e5-coarse,300
+individual/A-Ra1e5-coarse_temperature_centreline,individual/A-Ra1e5-coarse_temperature_centreline.png,individual/A-Ra1e5-coarse_temperature_centreline.pdf,temperature centreline,A-Ra1e5-coarse,300
+individual/A-Ra1e5-medium_temperature,individual/A-Ra1e5-medium_temperature.png,individual/A-Ra1e5-medium_temperature.pdf,temperature,A-Ra1e5-medium,300
+individual/A-Ra1e5-medium_streamlines,individual/A-Ra1e5-medium_streamlines.png,individual/A-Ra1e5-medium_streamlines.pdf,streamlines,A-Ra1e5-medium,300
+individual/A-Ra1e5-medium_velocity_magnitude,individual/A-Ra1e5-medium_velocity_magnitude.png,individual/A-Ra1e5-medium_velocity_magnitude.pdf,velocity_magnitude,A-Ra1e5-medium,300
+individual/A-Ra1e5-medium_density_deviation,individual/A-Ra1e5-medium_density_deviation.png,individual/A-Ra1e5-medium_density_deviation.pdf,density_deviation,A-Ra1e5-medium,300
+individual/A-Ra1e5-medium_centreline,individual/A-Ra1e5-medium_centreline.png,individual/A-Ra1e5-medium_centreline.pdf,centreline,A-Ra1e5-medium,300
+individual/A-Ra1e5-medium_local_Nu,individual/A-Ra1e5-medium_local_Nu.png,individual/A-Ra1e5-medium_local_Nu.pdf,local_Nu,A-Ra1e5-medium,300
+individual/A-Ra1e5-medium_section_Nu,individual/A-Ra1e5-medium_section_Nu.png,individual/A-Ra1e5-medium_section_Nu.pdf,section_Nu,A-Ra1e5-medium,300
+individual/A-Ra1e5-medium_temperature_centreline,individual/A-Ra1e5-medium_temperature_centreline.png,individual/A-Ra1e5-medium_temperature_centreline.pdf,temperature centreline,A-Ra1e5-medium,300
+individual/A-Ra1e5-fine_temperature,individual/A-Ra1e5-fine_temperature.png,individual/A-Ra1e5-fine_temperature.pdf,temperature,A-Ra1e5-fine,300
+individual/A-Ra1e5-fine_streamlines,individual/A-Ra1e5-fine_streamlines.png,individual/A-Ra1e5-fine_streamlines.pdf,streamlines,A-Ra1e5-fine,300
+individual/A-Ra1e5-fine_velocity_magnitude,individual/A-Ra1e5-fine_velocity_magnitude.png,individual/A-Ra1e5-fine_velocity_magnitude.pdf,velocity_magnitude,A-Ra1e5-fine,300
+individual/A-Ra1e5-fine_density_deviation,individual/A-Ra1e5-fine_density_deviation.png,individual/A-Ra1e5-fine_density_deviation.pdf,density_deviation,A-Ra1e5-fine,300
+individual/A-Ra1e5-fine_centreline,individual/A-Ra1e5-fine_centreline.png,individual/A-Ra1e5-fine_centreline.pdf,centreline,A-Ra1e5-fine,300
+individual/A-Ra1e5-fine_local_Nu,individual/A-Ra1e5-fine_local_Nu.png,individual/A-Ra1e5-fine_local_Nu.pdf,local_Nu,A-Ra1e5-fine,300
+individual/A-Ra1e5-fine_section_Nu,individual/A-Ra1e5-fine_section_Nu.png,individual/A-Ra1e5-fine_section_Nu.pdf,section_Nu,A-Ra1e5-fine,300
+individual/A-Ra1e5-fine_temperature_centreline,individual/A-Ra1e5-fine_temperature_centreline.png,individual/A-Ra1e5-fine_temperature_centreline.pdf,temperature centreline,A-Ra1e5-fine,300
+individual/A-Ra1e6-coarse_temperature,individual/A-Ra1e6-coarse_temperature.png,individual/A-Ra1e6-coarse_temperature.pdf,temperature,A-Ra1e6-coarse,300
+individual/A-Ra1e6-coarse_streamlines,individual/A-Ra1e6-coarse_streamlines.png,individual/A-Ra1e6-coarse_streamlines.pdf,streamlines,A-Ra1e6-coarse,300
+individual/A-Ra1e6-coarse_velocity_magnitude,individual/A-Ra1e6-coarse_velocity_magnitude.png,individual/A-Ra1e6-coarse_velocity_magnitude.pdf,velocity_magnitude,A-Ra1e6-coarse,300
+individual/A-Ra1e6-coarse_density_deviation,individual/A-Ra1e6-coarse_density_deviation.png,individual/A-Ra1e6-coarse_density_deviation.pdf,density_deviation,A-Ra1e6-coarse,300
+individual/A-Ra1e6-coarse_centreline,individual/A-Ra1e6-coarse_centreline.png,individual/A-Ra1e6-coarse_centreline.pdf,centreline,A-Ra1e6-coarse,300
+individual/A-Ra1e6-coarse_local_Nu,individual/A-Ra1e6-coarse_local_Nu.png,individual/A-Ra1e6-coarse_local_Nu.pdf,local_Nu,A-Ra1e6-coarse,300
+individual/A-Ra1e6-coarse_section_Nu,individual/A-Ra1e6-coarse_section_Nu.png,individual/A-Ra1e6-coarse_section_Nu.pdf,section_Nu,A-Ra1e6-coarse,300
+individual/A-Ra1e6-coarse_temperature_centreline,individual/A-Ra1e6-coarse_temperature_centreline.png,individual/A-Ra1e6-coarse_temperature_centreline.pdf,temperature centreline,A-Ra1e6-coarse,300
+individual/A-Ra1e6-medium_temperature,individual/A-Ra1e6-medium_temperature.png,individual/A-Ra1e6-medium_temperature.pdf,temperature,A-Ra1e6-medium,300
+individual/A-Ra1e6-medium_streamlines,individual/A-Ra1e6-medium_streamlines.png,individual/A-Ra1e6-medium_streamlines.pdf,streamlines,A-Ra1e6-medium,300
+individual/A-Ra1e6-medium_velocity_magnitude,individual/A-Ra1e6-medium_velocity_magnitude.png,individual/A-Ra1e6-medium_velocity_magnitude.pdf,velocity_magnitude,A-Ra1e6-medium,300
+individual/A-Ra1e6-medium_density_deviation,individual/A-Ra1e6-medium_density_deviation.png,individual/A-Ra1e6-medium_density_deviation.pdf,density_deviation,A-Ra1e6-medium,300
+individual/A-Ra1e6-medium_centreline,individual/A-Ra1e6-medium_centreline.png,individual/A-Ra1e6-medium_centreline.pdf,centreline,A-Ra1e6-medium,300
+individual/A-Ra1e6-medium_local_Nu,individual/A-Ra1e6-medium_local_Nu.png,individual/A-Ra1e6-medium_local_Nu.pdf,local_Nu,A-Ra1e6-medium,300
+individual/A-Ra1e6-medium_section_Nu,individual/A-Ra1e6-medium_section_Nu.png,individual/A-Ra1e6-medium_section_Nu.pdf,section_Nu,A-Ra1e6-medium,300
+individual/A-Ra1e6-medium_temperature_centreline,individual/A-Ra1e6-medium_temperature_centreline.png,individual/A-Ra1e6-medium_temperature_centreline.pdf,temperature centreline,A-Ra1e6-medium,300
+individual/A-Ra1e6-fine_temperature,individual/A-Ra1e6-fine_temperature.png,individual/A-Ra1e6-fine_temperature.pdf,temperature,A-Ra1e6-fine,300
+individual/A-Ra1e6-fine_streamlines,individual/A-Ra1e6-fine_streamlines.png,individual/A-Ra1e6-fine_streamlines.pdf,streamlines,A-Ra1e6-fine,300
+individual/A-Ra1e6-fine_velocity_magnitude,individual/A-Ra1e6-fine_velocity_magnitude.png,individual/A-Ra1e6-fine_velocity_magnitude.pdf,velocity_magnitude,A-Ra1e6-fine,300
+individual/A-Ra1e6-fine_density_deviation,individual/A-Ra1e6-fine_density_deviation.png,individual/A-Ra1e6-fine_density_deviation.pdf,density_deviation,A-Ra1e6-fine,300
+individual/A-Ra1e6-fine_centreline,individual/A-Ra1e6-fine_centreline.png,individual/A-Ra1e6-fine_centreline.pdf,centreline,A-Ra1e6-fine,300
+individual/A-Ra1e6-fine_local_Nu,individual/A-Ra1e6-fine_local_Nu.png,individual/A-Ra1e6-fine_local_Nu.pdf,local_Nu,A-Ra1e6-fine,300
+individual/A-Ra1e6-fine_section_Nu,individual/A-Ra1e6-fine_section_Nu.png,individual/A-Ra1e6-fine_section_Nu.pdf,section_Nu,A-Ra1e6-fine,300
+individual/A-Ra1e6-fine_temperature_centreline,individual/A-Ra1e6-fine_temperature_centreline.png,individual/A-Ra1e6-fine_temperature_centreline.pdf,temperature centreline,A-Ra1e6-fine,300
+individual/B-Ra1e3-coarse_temperature,individual/B-Ra1e3-coarse_temperature.png,individual/B-Ra1e3-coarse_temperature.pdf,temperature,B-Ra1e3-coarse,300
+individual/B-Ra1e3-coarse_streamlines,individual/B-Ra1e3-coarse_streamlines.png,individual/B-Ra1e3-coarse_streamlines.pdf,streamlines,B-Ra1e3-coarse,300
+individual/B-Ra1e3-coarse_velocity_magnitude,individual/B-Ra1e3-coarse_velocity_magnitude.png,individual/B-Ra1e3-coarse_velocity_magnitude.pdf,velocity_magnitude,B-Ra1e3-coarse,300
+individual/B-Ra1e3-coarse_buoyancy_factor,individual/B-Ra1e3-coarse_buoyancy_factor.png,individual/B-Ra1e3-coarse_buoyancy_factor.pdf,buoyancy_factor,B-Ra1e3-coarse,300
+individual/B-Ra1e3-coarse_centreline,individual/B-Ra1e3-coarse_centreline.png,individual/B-Ra1e3-coarse_centreline.pdf,centreline,B-Ra1e3-coarse,300
+individual/B-Ra1e3-coarse_local_Nu,individual/B-Ra1e3-coarse_local_Nu.png,individual/B-Ra1e3-coarse_local_Nu.pdf,local_Nu,B-Ra1e3-coarse,300
+individual/B-Ra1e3-coarse_section_Nu,individual/B-Ra1e3-coarse_section_Nu.png,individual/B-Ra1e3-coarse_section_Nu.pdf,section_Nu,B-Ra1e3-coarse,300
+individual/B-Ra1e3-coarse_temperature_centreline,individual/B-Ra1e3-coarse_temperature_centreline.png,individual/B-Ra1e3-coarse_temperature_centreline.pdf,temperature centreline,B-Ra1e3-coarse,300
+individual/B-Ra1e3-medium_temperature,individual/B-Ra1e3-medium_temperature.png,individual/B-Ra1e3-medium_temperature.pdf,temperature,B-Ra1e3-medium,300
+individual/B-Ra1e3-medium_streamlines,individual/B-Ra1e3-medium_streamlines.png,individual/B-Ra1e3-medium_streamlines.pdf,streamlines,B-Ra1e3-medium,300
+individual/B-Ra1e3-medium_velocity_magnitude,individual/B-Ra1e3-medium_velocity_magnitude.png,individual/B-Ra1e3-medium_velocity_magnitude.pdf,velocity_magnitude,B-Ra1e3-medium,300
+individual/B-Ra1e3-medium_buoyancy_factor,individual/B-Ra1e3-medium_buoyancy_factor.png,individual/B-Ra1e3-medium_buoyancy_factor.pdf,buoyancy_factor,B-Ra1e3-medium,300
+individual/B-Ra1e3-medium_centreline,individual/B-Ra1e3-medium_centreline.png,individual/B-Ra1e3-medium_centreline.pdf,centreline,B-Ra1e3-medium,300
+individual/B-Ra1e3-medium_local_Nu,individual/B-Ra1e3-medium_local_Nu.png,individual/B-Ra1e3-medium_local_Nu.pdf,local_Nu,B-Ra1e3-medium,300
+individual/B-Ra1e3-medium_section_Nu,individual/B-Ra1e3-medium_section_Nu.png,individual/B-Ra1e3-medium_section_Nu.pdf,section_Nu,B-Ra1e3-medium,300
+individual/B-Ra1e3-medium_temperature_centreline,individual/B-Ra1e3-medium_temperature_centreline.png,individual/B-Ra1e3-medium_temperature_centreline.pdf,temperature centreline,B-Ra1e3-medium,300
+individual/B-Ra1e3-fine_temperature,individual/B-Ra1e3-fine_temperature.png,individual/B-Ra1e3-fine_temperature.pdf,temperature,B-Ra1e3-fine,300
+individual/B-Ra1e3-fine_streamlines,individual/B-Ra1e3-fine_streamlines.png,individual/B-Ra1e3-fine_streamlines.pdf,streamlines,B-Ra1e3-fine,300
+individual/B-Ra1e3-fine_velocity_magnitude,individual/B-Ra1e3-fine_velocity_magnitude.png,individual/B-Ra1e3-fine_velocity_magnitude.pdf,velocity_magnitude,B-Ra1e3-fine,300
+individual/B-Ra1e3-fine_buoyancy_factor,individual/B-Ra1e3-fine_buoyancy_factor.png,individual/B-Ra1e3-fine_buoyancy_factor.pdf,buoyancy_factor,B-Ra1e3-fine,300
+individual/B-Ra1e3-fine_centreline,individual/B-Ra1e3-fine_centreline.png,individual/B-Ra1e3-fine_centreline.pdf,centreline,B-Ra1e3-fine,300
+individual/B-Ra1e3-fine_local_Nu,individual/B-Ra1e3-fine_local_Nu.png,individual/B-Ra1e3-fine_local_Nu.pdf,local_Nu,B-Ra1e3-fine,300
+individual/B-Ra1e3-fine_section_Nu,individual/B-Ra1e3-fine_section_Nu.png,individual/B-Ra1e3-fine_section_Nu.pdf,section_Nu,B-Ra1e3-fine,300
+individual/B-Ra1e3-fine_temperature_centreline,individual/B-Ra1e3-fine_temperature_centreline.png,individual/B-Ra1e3-fine_temperature_centreline.pdf,temperature centreline,B-Ra1e3-fine,300
+individual/B-Ra1e4-coarse_temperature,individual/B-Ra1e4-coarse_temperature.png,individual/B-Ra1e4-coarse_temperature.pdf,temperature,B-Ra1e4-coarse,300
+individual/B-Ra1e4-coarse_streamlines,individual/B-Ra1e4-coarse_streamlines.png,individual/B-Ra1e4-coarse_streamlines.pdf,streamlines,B-Ra1e4-coarse,300
+individual/B-Ra1e4-coarse_velocity_magnitude,individual/B-Ra1e4-coarse_velocity_magnitude.png,individual/B-Ra1e4-coarse_velocity_magnitude.pdf,velocity_magnitude,B-Ra1e4-coarse,300
+individual/B-Ra1e4-coarse_buoyancy_factor,individual/B-Ra1e4-coarse_buoyancy_factor.png,individual/B-Ra1e4-coarse_buoyancy_factor.pdf,buoyancy_factor,B-Ra1e4-coarse,300
+individual/B-Ra1e4-coarse_centreline,individual/B-Ra1e4-coarse_centreline.png,individual/B-Ra1e4-coarse_centreline.pdf,centreline,B-Ra1e4-coarse,300
+individual/B-Ra1e4-coarse_local_Nu,individual/B-Ra1e4-coarse_local_Nu.png,individual/B-Ra1e4-coarse_local_Nu.pdf,local_Nu,B-Ra1e4-coarse,300
+individual/B-Ra1e4-coarse_section_Nu,individual/B-Ra1e4-coarse_section_Nu.png,individual/B-Ra1e4-coarse_section_Nu.pdf,section_Nu,B-Ra1e4-coarse,300
+individual/B-Ra1e4-coarse_temperature_centreline,individual/B-Ra1e4-coarse_temperature_centreline.png,individual/B-Ra1e4-coarse_temperature_centreline.pdf,temperature centreline,B-Ra1e4-coarse,300
+individual/B-Ra1e4-medium_temperature,individual/B-Ra1e4-medium_temperature.png,individual/B-Ra1e4-medium_temperature.pdf,temperature,B-Ra1e4-medium,300
+individual/B-Ra1e4-medium_streamlines,individual/B-Ra1e4-medium_streamlines.png,individual/B-Ra1e4-medium_streamlines.pdf,streamlines,B-Ra1e4-medium,300
+individual/B-Ra1e4-medium_velocity_magnitude,individual/B-Ra1e4-medium_velocity_magnitude.png,individual/B-Ra1e4-medium_velocity_magnitude.pdf,velocity_magnitude,B-Ra1e4-medium,300
+individual/B-Ra1e4-medium_buoyancy_factor,individual/B-Ra1e4-medium_buoyancy_factor.png,individual/B-Ra1e4-medium_buoyancy_factor.pdf,buoyancy_factor,B-Ra1e4-medium,300
+individual/B-Ra1e4-medium_centreline,individual/B-Ra1e4-medium_centreline.png,individual/B-Ra1e4-medium_centreline.pdf,centreline,B-Ra1e4-medium,300
+individual/B-Ra1e4-medium_local_Nu,individual/B-Ra1e4-medium_local_Nu.png,individual/B-Ra1e4-medium_local_Nu.pdf,local_Nu,B-Ra1e4-medium,300
+individual/B-Ra1e4-medium_section_Nu,individual/B-Ra1e4-medium_section_Nu.png,individual/B-Ra1e4-medium_section_Nu.pdf,section_Nu,B-Ra1e4-medium,300
+individual/B-Ra1e4-medium_temperature_centreline,individual/B-Ra1e4-medium_temperature_centreline.png,individual/B-Ra1e4-medium_temperature_centreline.pdf,temperature centreline,B-Ra1e4-medium,300
+individual/B-Ra1e4-fine_temperature,individual/B-Ra1e4-fine_temperature.png,individual/B-Ra1e4-fine_temperature.pdf,temperature,B-Ra1e4-fine,300
+individual/B-Ra1e4-fine_streamlines,individual/B-Ra1e4-fine_streamlines.png,individual/B-Ra1e4-fine_streamlines.pdf,streamlines,B-Ra1e4-fine,300
+individual/B-Ra1e4-fine_velocity_magnitude,individual/B-Ra1e4-fine_velocity_magnitude.png,individual/B-Ra1e4-fine_velocity_magnitude.pdf,velocity_magnitude,B-Ra1e4-fine,300
+individual/B-Ra1e4-fine_buoyancy_factor,individual/B-Ra1e4-fine_buoyancy_factor.png,individual/B-Ra1e4-fine_buoyancy_factor.pdf,buoyancy_factor,B-Ra1e4-fine,300
+individual/B-Ra1e4-fine_centreline,individual/B-Ra1e4-fine_centreline.png,individual/B-Ra1e4-fine_centreline.pdf,centreline,B-Ra1e4-fine,300
+individual/B-Ra1e4-fine_local_Nu,individual/B-Ra1e4-fine_local_Nu.png,individual/B-Ra1e4-fine_local_Nu.pdf,local_Nu,B-Ra1e4-fine,300
+individual/B-Ra1e4-fine_section_Nu,individual/B-Ra1e4-fine_section_Nu.png,individual/B-Ra1e4-fine_section_Nu.pdf,section_Nu,B-Ra1e4-fine,300
+individual/B-Ra1e4-fine_temperature_centreline,individual/B-Ra1e4-fine_temperature_centreline.png,individual/B-Ra1e4-fine_temperature_centreline.pdf,temperature centreline,B-Ra1e4-fine,300
+individual/B-Ra1e5-coarse_temperature,individual/B-Ra1e5-coarse_temperature.png,individual/B-Ra1e5-coarse_temperature.pdf,temperature,B-Ra1e5-coarse,300
+individual/B-Ra1e5-coarse_streamlines,individual/B-Ra1e5-coarse_streamlines.png,individual/B-Ra1e5-coarse_streamlines.pdf,streamlines,B-Ra1e5-coarse,300
+individual/B-Ra1e5-coarse_velocity_magnitude,individual/B-Ra1e5-coarse_velocity_magnitude.png,individual/B-Ra1e5-coarse_velocity_magnitude.pdf,velocity_magnitude,B-Ra1e5-coarse,300
+individual/B-Ra1e5-coarse_buoyancy_factor,individual/B-Ra1e5-coarse_buoyancy_factor.png,individual/B-Ra1e5-coarse_buoyancy_factor.pdf,buoyancy_factor,B-Ra1e5-coarse,300
+individual/B-Ra1e5-coarse_centreline,individual/B-Ra1e5-coarse_centreline.png,individual/B-Ra1e5-coarse_centreline.pdf,centreline,B-Ra1e5-coarse,300
+individual/B-Ra1e5-coarse_local_Nu,individual/B-Ra1e5-coarse_local_Nu.png,individual/B-Ra1e5-coarse_local_Nu.pdf,local_Nu,B-Ra1e5-coarse,300
+individual/B-Ra1e5-coarse_section_Nu,individual/B-Ra1e5-coarse_section_Nu.png,individual/B-Ra1e5-coarse_section_Nu.pdf,section_Nu,B-Ra1e5-coarse,300
+individual/B-Ra1e5-coarse_temperature_centreline,individual/B-Ra1e5-coarse_temperature_centreline.png,individual/B-Ra1e5-coarse_temperature_centreline.pdf,temperature centreline,B-Ra1e5-coarse,300
+individual/B-Ra1e5-medium_temperature,individual/B-Ra1e5-medium_temperature.png,individual/B-Ra1e5-medium_temperature.pdf,temperature,B-Ra1e5-medium,300
+individual/B-Ra1e5-medium_streamlines,individual/B-Ra1e5-medium_streamlines.png,individual/B-Ra1e5-medium_streamlines.pdf,streamlines,B-Ra1e5-medium,300
+individual/B-Ra1e5-medium_velocity_magnitude,individual/B-Ra1e5-medium_velocity_magnitude.png,individual/B-Ra1e5-medium_velocity_magnitude.pdf,velocity_magnitude,B-Ra1e5-medium,300
+individual/B-Ra1e5-medium_buoyancy_factor,individual/B-Ra1e5-medium_buoyancy_factor.png,individual/B-Ra1e5-medium_buoyancy_factor.pdf,buoyancy_factor,B-Ra1e5-medium,300
+individual/B-Ra1e5-medium_centreline,individual/B-Ra1e5-medium_centreline.png,individual/B-Ra1e5-medium_centreline.pdf,centreline,B-Ra1e5-medium,300
+individual/B-Ra1e5-medium_local_Nu,individual/B-Ra1e5-medium_local_Nu.png,individual/B-Ra1e5-medium_local_Nu.pdf,local_Nu,B-Ra1e5-medium,300
+individual/B-Ra1e5-medium_section_Nu,individual/B-Ra1e5-medium_section_Nu.png,individual/B-Ra1e5-medium_section_Nu.pdf,section_Nu,B-Ra1e5-medium,300
+individual/B-Ra1e5-medium_temperature_centreline,individual/B-Ra1e5-medium_temperature_centreline.png,individual/B-Ra1e5-medium_temperature_centreline.pdf,temperature centreline,B-Ra1e5-medium,300
+individual/B-Ra1e5-fine_temperature,individual/B-Ra1e5-fine_temperature.png,individual/B-Ra1e5-fine_temperature.pdf,temperature,B-Ra1e5-fine,300
+individual/B-Ra1e5-fine_streamlines,individual/B-Ra1e5-fine_streamlines.png,individual/B-Ra1e5-fine_streamlines.pdf,streamlines,B-Ra1e5-fine,300
+individual/B-Ra1e5-fine_velocity_magnitude,individual/B-Ra1e5-fine_velocity_magnitude.png,individual/B-Ra1e5-fine_velocity_magnitude.pdf,velocity_magnitude,B-Ra1e5-fine,300
+individual/B-Ra1e5-fine_buoyancy_factor,individual/B-Ra1e5-fine_buoyancy_factor.png,individual/B-Ra1e5-fine_buoyancy_factor.pdf,buoyancy_factor,B-Ra1e5-fine,300
+individual/B-Ra1e5-fine_centreline,individual/B-Ra1e5-fine_centreline.png,individual/B-Ra1e5-fine_centreline.pdf,centreline,B-Ra1e5-fine,300
+individual/B-Ra1e5-fine_local_Nu,individual/B-Ra1e5-fine_local_Nu.png,individual/B-Ra1e5-fine_local_Nu.pdf,local_Nu,B-Ra1e5-fine,300
+individual/B-Ra1e5-fine_section_Nu,individual/B-Ra1e5-fine_section_Nu.png,individual/B-Ra1e5-fine_section_Nu.pdf,section_Nu,B-Ra1e5-fine,300
+individual/B-Ra1e5-fine_temperature_centreline,individual/B-Ra1e5-fine_temperature_centreline.png,individual/B-Ra1e5-fine_temperature_centreline.pdf,temperature centreline,B-Ra1e5-fine,300
+individual/B-Ra1e6-coarse_temperature,individual/B-Ra1e6-coarse_temperature.png,individual/B-Ra1e6-coarse_temperature.pdf,temperature,B-Ra1e6-coarse,300
+individual/B-Ra1e6-coarse_streamlines,individual/B-Ra1e6-coarse_streamlines.png,individual/B-Ra1e6-coarse_streamlines.pdf,streamlines,B-Ra1e6-coarse,300
+individual/B-Ra1e6-coarse_velocity_magnitude,individual/B-Ra1e6-coarse_velocity_magnitude.png,individual/B-Ra1e6-coarse_velocity_magnitude.pdf,velocity_magnitude,B-Ra1e6-coarse,300
+individual/B-Ra1e6-coarse_buoyancy_factor,individual/B-Ra1e6-coarse_buoyancy_factor.png,individual/B-Ra1e6-coarse_buoyancy_factor.pdf,buoyancy_factor,B-Ra1e6-coarse,300
+individual/B-Ra1e6-coarse_centreline,individual/B-Ra1e6-coarse_centreline.png,individual/B-Ra1e6-coarse_centreline.pdf,centreline,B-Ra1e6-coarse,300
+individual/B-Ra1e6-coarse_local_Nu,individual/B-Ra1e6-coarse_local_Nu.png,individual/B-Ra1e6-coarse_local_Nu.pdf,local_Nu,B-Ra1e6-coarse,300
+individual/B-Ra1e6-coarse_section_Nu,individual/B-Ra1e6-coarse_section_Nu.png,individual/B-Ra1e6-coarse_section_Nu.pdf,section_Nu,B-Ra1e6-coarse,300
+individual/B-Ra1e6-coarse_temperature_centreline,individual/B-Ra1e6-coarse_temperature_centreline.png,individual/B-Ra1e6-coarse_temperature_centreline.pdf,temperature centreline,B-Ra1e6-coarse,300
+individual/B-Ra1e6-medium_temperature,individual/B-Ra1e6-medium_temperature.png,individual/B-Ra1e6-medium_temperature.pdf,temperature,B-Ra1e6-medium,300
+individual/B-Ra1e6-medium_streamlines,individual/B-Ra1e6-medium_streamlines.png,individual/B-Ra1e6-medium_streamlines.pdf,streamlines,B-Ra1e6-medium,300
+individual/B-Ra1e6-medium_velocity_magnitude,individual/B-Ra1e6-medium_velocity_magnitude.png,individual/B-Ra1e6-medium_velocity_magnitude.pdf,velocity_magnitude,B-Ra1e6-medium,300
+individual/B-Ra1e6-medium_buoyancy_factor,individual/B-Ra1e6-medium_buoyancy_factor.png,individual/B-Ra1e6-medium_buoyancy_factor.pdf,buoyancy_factor,B-Ra1e6-medium,300
+individual/B-Ra1e6-medium_centreline,individual/B-Ra1e6-medium_centreline.png,individual/B-Ra1e6-medium_centreline.pdf,centreline,B-Ra1e6-medium,300
+individual/B-Ra1e6-medium_local_Nu,individual/B-Ra1e6-medium_local_Nu.png,individual/B-Ra1e6-medium_local_Nu.pdf,local_Nu,B-Ra1e6-medium,300
+individual/B-Ra1e6-medium_section_Nu,individual/B-Ra1e6-medium_section_Nu.png,individual/B-Ra1e6-medium_section_Nu.pdf,section_Nu,B-Ra1e6-medium,300
+individual/B-Ra1e6-medium_temperature_centreline,individual/B-Ra1e6-medium_temperature_centreline.png,individual/B-Ra1e6-medium_temperature_centreline.pdf,temperature centreline,B-Ra1e6-medium,300
+individual/B-Ra1e6-fine_temperature,individual/B-Ra1e6-fine_temperature.png,individual/B-Ra1e6-fine_temperature.pdf,temperature,B-Ra1e6-fine,300
+individual/B-Ra1e6-fine_streamlines,individual/B-Ra1e6-fine_streamlines.png,individual/B-Ra1e6-fine_streamlines.pdf,streamlines,B-Ra1e6-fine,300
+individual/B-Ra1e6-fine_velocity_magnitude,individual/B-Ra1e6-fine_velocity_magnitude.png,individual/B-Ra1e6-fine_velocity_magnitude.pdf,velocity_magnitude,B-Ra1e6-fine,300
+individual/B-Ra1e6-fine_buoyancy_factor,individual/B-Ra1e6-fine_buoyancy_factor.png,individual/B-Ra1e6-fine_buoyancy_factor.pdf,buoyancy_factor,B-Ra1e6-fine,300
+individual/B-Ra1e6-fine_centreline,individual/B-Ra1e6-fine_centreline.png,individual/B-Ra1e6-fine_centreline.pdf,centreline,B-Ra1e6-fine,300
+individual/B-Ra1e6-fine_local_Nu,individual/B-Ra1e6-fine_local_Nu.png,individual/B-Ra1e6-fine_local_Nu.pdf,local_Nu,B-Ra1e6-fine,300
+individual/B-Ra1e6-fine_section_Nu,individual/B-Ra1e6-fine_section_Nu.png,individual/B-Ra1e6-fine_section_Nu.pdf,section_Nu,B-Ra1e6-fine,300
+individual/B-Ra1e6-fine_temperature_centreline,individual/B-Ra1e6-fine_temperature_centreline.png,individual/B-Ra1e6-fine_temperature_centreline.pdf,temperature centreline,B-Ra1e6-fine,300
+comparison/auxiliary/individual/A-COND_temperature,comparison/auxiliary/individual/A-COND_temperature.png,comparison/auxiliary/individual/A-COND_temperature.pdf,temperature,A-COND,300
+comparison/auxiliary/individual/A-COND_streamlines,comparison/auxiliary/individual/A-COND_streamlines.png,comparison/auxiliary/individual/A-COND_streamlines.pdf,streamlines,A-COND,300
+comparison/auxiliary/individual/A-COND_velocity_magnitude,comparison/auxiliary/individual/A-COND_velocity_magnitude.png,comparison/auxiliary/individual/A-COND_velocity_magnitude.pdf,velocity_magnitude,A-COND,300
+comparison/auxiliary/individual/A-COND_density_deviation,comparison/auxiliary/individual/A-COND_density_deviation.png,comparison/auxiliary/individual/A-COND_density_deviation.pdf,density_deviation,A-COND,300
+comparison/auxiliary/individual/A-COND_centreline,comparison/auxiliary/individual/A-COND_centreline.png,comparison/auxiliary/individual/A-COND_centreline.pdf,centreline,A-COND,300
+comparison/auxiliary/individual/A-COND_local_Nu,comparison/auxiliary/individual/A-COND_local_Nu.png,comparison/auxiliary/individual/A-COND_local_Nu.pdf,local_Nu,A-COND,300
+comparison/auxiliary/individual/A-COND_section_Nu,comparison/auxiliary/individual/A-COND_section_Nu.png,comparison/auxiliary/individual/A-COND_section_Nu.pdf,section_Nu,A-COND,300
+comparison/auxiliary/individual/A-COND_temperature_centreline,comparison/auxiliary/individual/A-COND_temperature_centreline.png,comparison/auxiliary/individual/A-COND_temperature_centreline.pdf,temperature centreline,A-COND,300
+comparison/auxiliary/individual/A-SMOKE_temperature,comparison/auxiliary/individual/A-SMOKE_temperature.png,comparison/auxiliary/individual/A-SMOKE_temperature.pdf,temperature,A-SMOKE,300
+comparison/auxiliary/individual/A-SMOKE_streamlines,comparison/auxiliary/individual/A-SMOKE_streamlines.png,comparison/auxiliary/individual/A-SMOKE_streamlines.pdf,streamlines,A-SMOKE,300
+comparison/auxiliary/individual/A-SMOKE_velocity_magnitude,comparison/auxiliary/individual/A-SMOKE_velocity_magnitude.png,comparison/auxiliary/individual/A-SMOKE_velocity_magnitude.pdf,velocity_magnitude,A-SMOKE,300
+comparison/auxiliary/individual/A-SMOKE_density_deviation,comparison/auxiliary/individual/A-SMOKE_density_deviation.png,comparison/auxiliary/individual/A-SMOKE_density_deviation.pdf,density_deviation,A-SMOKE,300
+comparison/auxiliary/individual/A-SMOKE_centreline,comparison/auxiliary/individual/A-SMOKE_centreline.png,comparison/auxiliary/individual/A-SMOKE_centreline.pdf,centreline,A-SMOKE,300
+comparison/auxiliary/individual/A-SMOKE_local_Nu,comparison/auxiliary/individual/A-SMOKE_local_Nu.png,comparison/auxiliary/individual/A-SMOKE_local_Nu.pdf,local_Nu,A-SMOKE,300
+comparison/auxiliary/individual/A-SMOKE_section_Nu,comparison/auxiliary/individual/A-SMOKE_section_Nu.png,comparison/auxiliary/individual/A-SMOKE_section_Nu.pdf,section_Nu,A-SMOKE,300
+comparison/auxiliary/individual/A-SMOKE_temperature_centreline,comparison/auxiliary/individual/A-SMOKE_temperature_centreline.png,comparison/auxiliary/individual/A-SMOKE_temperature_centreline.pdf,temperature centreline,A-SMOKE,300
+comparison/auxiliary/individual/B-COND_temperature,comparison/auxiliary/individual/B-COND_temperature.png,comparison/auxiliary/individual/B-COND_temperature.pdf,temperature,B-COND,300
+comparison/auxiliary/individual/B-COND_streamlines,comparison/auxiliary/individual/B-COND_streamlines.png,comparison/auxiliary/individual/B-COND_streamlines.pdf,streamlines,B-COND,300
+comparison/auxiliary/individual/B-COND_velocity_magnitude,comparison/auxiliary/individual/B-COND_velocity_magnitude.png,comparison/auxiliary/individual/B-COND_velocity_magnitude.pdf,velocity_magnitude,B-COND,300
+comparison/auxiliary/individual/B-COND_buoyancy_factor,comparison/auxiliary/individual/B-COND_buoyancy_factor.png,comparison/auxiliary/individual/B-COND_buoyancy_factor.pdf,buoyancy_factor,B-COND,300
+comparison/auxiliary/individual/B-COND_centreline,comparison/auxiliary/individual/B-COND_centreline.png,comparison/auxiliary/individual/B-COND_centreline.pdf,centreline,B-COND,300
+comparison/auxiliary/individual/B-COND_local_Nu,comparison/auxiliary/individual/B-COND_local_Nu.png,comparison/auxiliary/individual/B-COND_local_Nu.pdf,local_Nu,B-COND,300
+comparison/auxiliary/individual/B-COND_section_Nu,comparison/auxiliary/individual/B-COND_section_Nu.png,comparison/auxiliary/individual/B-COND_section_Nu.pdf,section_Nu,B-COND,300
+comparison/auxiliary/individual/B-COND_temperature_centreline,comparison/auxiliary/individual/B-COND_temperature_centreline.png,comparison/auxiliary/individual/B-COND_temperature_centreline.pdf,temperature centreline,B-COND,300
+comparison/auxiliary/individual/B-SMOKE_temperature,comparison/auxiliary/individual/B-SMOKE_temperature.png,comparison/auxiliary/individual/B-SMOKE_temperature.pdf,temperature,B-SMOKE,300
+comparison/auxiliary/individual/B-SMOKE_streamlines,comparison/auxiliary/individual/B-SMOKE_streamlines.png,comparison/auxiliary/individual/B-SMOKE_streamlines.pdf,streamlines,B-SMOKE,300
+comparison/auxiliary/individual/B-SMOKE_velocity_magnitude,comparison/auxiliary/individual/B-SMOKE_velocity_magnitude.png,comparison/auxiliary/individual/B-SMOKE_velocity_magnitude.pdf,velocity_magnitude,B-SMOKE,300
+comparison/auxiliary/individual/B-SMOKE_buoyancy_factor,comparison/auxiliary/individual/B-SMOKE_buoyancy_factor.png,comparison/auxiliary/individual/B-SMOKE_buoyancy_factor.pdf,buoyancy_factor,B-SMOKE,300
+comparison/auxiliary/individual/B-SMOKE_centreline,comparison/auxiliary/individual/B-SMOKE_centreline.png,comparison/auxiliary/individual/B-SMOKE_centreline.pdf,centreline,B-SMOKE,300
+comparison/auxiliary/individual/B-SMOKE_local_Nu,comparison/auxiliary/individual/B-SMOKE_local_Nu.png,comparison/auxiliary/individual/B-SMOKE_local_Nu.pdf,local_Nu,B-SMOKE,300
+comparison/auxiliary/individual/B-SMOKE_section_Nu,comparison/auxiliary/individual/B-SMOKE_section_Nu.png,comparison/auxiliary/individual/B-SMOKE_section_Nu.pdf,section_Nu,B-SMOKE,300
+comparison/auxiliary/individual/B-SMOKE_temperature_centreline,comparison/auxiliary/individual/B-SMOKE_temperature_centreline.png,comparison/auxiliary/individual/B-SMOKE_temperature_centreline.pdf,temperature centreline,B-SMOKE,300
+comparison/sensitivity/individual/A-H-Ra1e6-fine-beta1e-4_temperature,comparison/sensitivity/individual/A-H-Ra1e6-fine-beta1e-4_temperature.png,comparison/sensitivity/individual/A-H-Ra1e6-fine-beta1e-4_temperature.pdf,temperature,A-H-Ra1e6-fine-beta1e-4,300
+comparison/sensitivity/individual/A-H-Ra1e6-fine-beta1e-4_streamlines,comparison/sensitivity/individual/A-H-Ra1e6-fine-beta1e-4_streamlines.png,comparison/sensitivity/individual/A-H-Ra1e6-fine-beta1e-4_streamlines.pdf,streamlines,A-H-Ra1e6-fine-beta1e-4,300
+comparison/sensitivity/individual/A-H-Ra1e6-fine-beta1e-4_velocity_magnitude,comparison/sensitivity/individual/A-H-Ra1e6-fine-beta1e-4_velocity_magnitude.png,comparison/sensitivity/individual/A-H-Ra1e6-fine-beta1e-4_velocity_magnitude.pdf,velocity_magnitude,A-H-Ra1e6-fine-beta1e-4,300
+comparison/sensitivity/individual/A-H-Ra1e6-fine-beta1e-4_density_deviation,comparison/sensitivity/individual/A-H-Ra1e6-fine-beta1e-4_density_deviation.png,comparison/sensitivity/individual/A-H-Ra1e6-fine-beta1e-4_density_deviation.pdf,density_deviation,A-H-Ra1e6-fine-beta1e-4,300
+comparison/sensitivity/individual/A-H-Ra1e6-fine-beta1e-4_centreline,comparison/sensitivity/individual/A-H-Ra1e6-fine-beta1e-4_centreline.png,comparison/sensitivity/individual/A-H-Ra1e6-fine-beta1e-4_centreline.pdf,centreline,A-H-Ra1e6-fine-beta1e-4,300
+comparison/sensitivity/individual/A-H-Ra1e6-fine-beta1e-4_local_Nu,comparison/sensitivity/individual/A-H-Ra1e6-fine-beta1e-4_local_Nu.png,comparison/sensitivity/individual/A-H-Ra1e6-fine-beta1e-4_local_Nu.pdf,local_Nu,A-H-Ra1e6-fine-beta1e-4,300
+comparison/sensitivity/individual/A-H-Ra1e6-fine-beta1e-4_section_Nu,comparison/sensitivity/individual/A-H-Ra1e6-fine-beta1e-4_section_Nu.png,comparison/sensitivity/individual/A-H-Ra1e6-fine-beta1e-4_section_Nu.pdf,section_Nu,A-H-Ra1e6-fine-beta1e-4,300
+comparison/sensitivity/individual/A-H-Ra1e6-fine-beta1e-4_temperature_centreline,comparison/sensitivity/individual/A-H-Ra1e6-fine-beta1e-4_temperature_centreline.png,comparison/sensitivity/individual/A-H-Ra1e6-fine-beta1e-4_temperature_centreline.pdf,temperature centreline,A-H-Ra1e6-fine-beta1e-4,300
+montage/RouteA_temperature_12panels,montage/RouteA_temperature_12panels.png,montage/RouteA_temperature_12panels.pdf,4 Ra x 3 grid temperature,A-Ra1e3-coarse;A-Ra1e3-medium;A-Ra1e3-fine;A-Ra1e4-coarse;A-Ra1e4-medium;A-Ra1e4-fine;A-Ra1e5-coarse;A-Ra1e5-medium;A-Ra1e5-fine;A-Ra1e6-coarse;A-Ra1e6-medium;A-Ra1e6-fine,300
+montage/RouteA_streamlines_12panels,montage/RouteA_streamlines_12panels.png,montage/RouteA_streamlines_12panels.pdf,4 Ra x 3 grid streamlines,A-Ra1e3-coarse;A-Ra1e3-medium;A-Ra1e3-fine;A-Ra1e4-coarse;A-Ra1e4-medium;A-Ra1e4-fine;A-Ra1e5-coarse;A-Ra1e5-medium;A-Ra1e5-fine;A-Ra1e6-coarse;A-Ra1e6-medium;A-Ra1e6-fine,300
+montage/RouteB_temperature_12panels,montage/RouteB_temperature_12panels.png,montage/RouteB_temperature_12panels.pdf,4 Ra x 3 grid temperature,B-Ra1e3-coarse;B-Ra1e3-medium;B-Ra1e3-fine;B-Ra1e4-coarse;B-Ra1e4-medium;B-Ra1e4-fine;B-Ra1e5-coarse;B-Ra1e5-medium;B-Ra1e5-fine;B-Ra1e6-coarse;B-Ra1e6-medium;B-Ra1e6-fine,300
+montage/RouteB_streamlines_12panels,montage/RouteB_streamlines_12panels.png,montage/RouteB_streamlines_12panels.pdf,4 Ra x 3 grid streamlines,B-Ra1e3-coarse;B-Ra1e3-medium;B-Ra1e3-fine;B-Ra1e4-coarse;B-Ra1e4-medium;B-Ra1e4-fine;B-Ra1e5-coarse;B-Ra1e5-medium;B-Ra1e5-fine;B-Ra1e6-coarse;B-Ra1e6-medium;B-Ra1e6-fine,300
+montage/fine_AB_temperature_8panels,montage/fine_AB_temperature_8panels.png,montage/fine_AB_temperature_8panels.pdf,temperature fine A/B matrix,A-Ra1e3-fine;B-Ra1e3-fine;A-Ra1e4-fine;B-Ra1e4-fine;A-Ra1e5-fine;B-Ra1e5-fine;A-Ra1e6-fine;B-Ra1e6-fine,300
+comparison/fine_Ra1000_AB_temperature,comparison/fine_Ra1000_AB_temperature.png,comparison/fine_Ra1000_AB_temperature.pdf,temperature pair,A-Ra1e3-fine;B-Ra1e3-fine,300
+comparison/fine_Ra10000_AB_temperature,comparison/fine_Ra10000_AB_temperature.png,comparison/fine_Ra10000_AB_temperature.pdf,temperature pair,A-Ra1e4-fine;B-Ra1e4-fine,300
+comparison/fine_Ra100000_AB_temperature,comparison/fine_Ra100000_AB_temperature.png,comparison/fine_Ra100000_AB_temperature.pdf,temperature pair,A-Ra1e5-fine;B-Ra1e5-fine,300
+comparison/fine_Ra1000000_AB_temperature,comparison/fine_Ra1000000_AB_temperature.png,comparison/fine_Ra1000000_AB_temperature.pdf,temperature pair,A-Ra1e6-fine;B-Ra1e6-fine,300
+montage/fine_AB_streamlines_8panels,montage/fine_AB_streamlines_8panels.png,montage/fine_AB_streamlines_8panels.pdf,streamlines fine A/B matrix,A-Ra1e3-fine;B-Ra1e3-fine;A-Ra1e4-fine;B-Ra1e4-fine;A-Ra1e5-fine;B-Ra1e5-fine;A-Ra1e6-fine;B-Ra1e6-fine,300
+comparison/fine_Ra1000_AB_streamlines,comparison/fine_Ra1000_AB_streamlines.png,comparison/fine_Ra1000_AB_streamlines.pdf,streamlines pair,A-Ra1e3-fine;B-Ra1e3-fine,300
+comparison/fine_Ra10000_AB_streamlines,comparison/fine_Ra10000_AB_streamlines.png,comparison/fine_Ra10000_AB_streamlines.pdf,streamlines pair,A-Ra1e4-fine;B-Ra1e4-fine,300
+comparison/fine_Ra100000_AB_streamlines,comparison/fine_Ra100000_AB_streamlines.png,comparison/fine_Ra100000_AB_streamlines.pdf,streamlines pair,A-Ra1e5-fine;B-Ra1e5-fine,300
+comparison/fine_Ra1000000_AB_streamlines,comparison/fine_Ra1000000_AB_streamlines.png,comparison/fine_Ra1000000_AB_streamlines.pdf,streamlines pair,A-Ra1e6-fine;B-Ra1e6-fine,300
+montage/fine_AB_velocity_magnitude_8panels,montage/fine_AB_velocity_magnitude_8panels.png,montage/fine_AB_velocity_magnitude_8panels.pdf,velocity_magnitude fine A/B matrix,A-Ra1e3-fine;B-Ra1e3-fine;A-Ra1e4-fine;B-Ra1e4-fine;A-Ra1e5-fine;B-Ra1e5-fine;A-Ra1e6-fine;B-Ra1e6-fine,300
+comparison/fine_Ra1000_AB_velocity_magnitude,comparison/fine_Ra1000_AB_velocity_magnitude.png,comparison/fine_Ra1000_AB_velocity_magnitude.pdf,velocity_magnitude pair,A-Ra1e3-fine;B-Ra1e3-fine,300
+comparison/fine_Ra10000_AB_velocity_magnitude,comparison/fine_Ra10000_AB_velocity_magnitude.png,comparison/fine_Ra10000_AB_velocity_magnitude.pdf,velocity_magnitude pair,A-Ra1e4-fine;B-Ra1e4-fine,300
+comparison/fine_Ra100000_AB_velocity_magnitude,comparison/fine_Ra100000_AB_velocity_magnitude.png,comparison/fine_Ra100000_AB_velocity_magnitude.pdf,velocity_magnitude pair,A-Ra1e5-fine;B-Ra1e5-fine,300
+comparison/fine_Ra1000000_AB_velocity_magnitude,comparison/fine_Ra1000000_AB_velocity_magnitude.png,comparison/fine_Ra1000000_AB_velocity_magnitude.pdf,velocity_magnitude pair,A-Ra1e6-fine;B-Ra1e6-fine,300
+comparison/grid_dependence_Ra1000,comparison/grid_dependence_Ra1000.png,comparison/grid_dependence_Ra1000.pdf,Nu/Umax/Wmax versus grid,A-Ra1e3-coarse;A-Ra1e3-fine;A-Ra1e3-medium;B-Ra1e3-coarse;B-Ra1e3-fine;B-Ra1e3-medium,300
+comparison/grid_dependence_Ra10000,comparison/grid_dependence_Ra10000.png,comparison/grid_dependence_Ra10000.pdf,Nu/Umax/Wmax versus grid,A-Ra1e4-coarse;A-Ra1e4-fine;A-Ra1e4-medium;B-Ra1e4-coarse;B-Ra1e4-fine;B-Ra1e4-medium,300
+comparison/grid_dependence_Ra100000,comparison/grid_dependence_Ra100000.png,comparison/grid_dependence_Ra100000.pdf,Nu/Umax/Wmax versus grid,A-Ra1e5-coarse;A-Ra1e5-fine;A-Ra1e5-medium;B-Ra1e5-coarse;B-Ra1e5-fine;B-Ra1e5-medium,300
+comparison/grid_dependence_Ra1000000,comparison/grid_dependence_Ra1000000.png,comparison/grid_dependence_Ra1000000.pdf,Nu/Umax/Wmax versus grid,A-Ra1e6-coarse;A-Ra1e6-fine;A-Ra1e6-medium;B-Ra1e6-coarse;B-Ra1e6-fine;B-Ra1e6-medium,300
+comparison/paper_fine_Nu_bar_cavity_value,comparison/paper_fine_Nu_bar_cavity_value.png,comparison/paper_fine_Nu_bar_cavity_value.pdf,paper QoI,A-Ra1e3-fine;A-Ra1e4-fine;A-Ra1e5-fine;A-Ra1e6-fine;B-Ra1e3-fine;B-Ra1e4-fine;B-Ra1e5-fine;B-Ra1e6-fine,300
+comparison/paper_fine_Nu_bar_cavity_error,comparison/paper_fine_Nu_bar_cavity_error.png,comparison/paper_fine_Nu_bar_cavity_error.pdf,paper absolute relative difference,A-Ra1e3-fine;A-Ra1e4-fine;A-Ra1e5-fine;A-Ra1e6-fine;B-Ra1e3-fine;B-Ra1e4-fine;B-Ra1e5-fine;B-Ra1e6-fine,300
+comparison/paper_fine_Umax_value,comparison/paper_fine_Umax_value.png,comparison/paper_fine_Umax_value.pdf,paper QoI,A-Ra1e3-fine;A-Ra1e4-fine;A-Ra1e5-fine;A-Ra1e6-fine;B-Ra1e3-fine;B-Ra1e4-fine;B-Ra1e5-fine;B-Ra1e6-fine,300
+comparison/paper_fine_Umax_error,comparison/paper_fine_Umax_error.png,comparison/paper_fine_Umax_error.pdf,paper absolute relative difference,A-Ra1e3-fine;A-Ra1e4-fine;A-Ra1e5-fine;A-Ra1e6-fine;B-Ra1e3-fine;B-Ra1e4-fine;B-Ra1e5-fine;B-Ra1e6-fine,300
+comparison/paper_fine_Wmax_value,comparison/paper_fine_Wmax_value.png,comparison/paper_fine_Wmax_value.pdf,paper QoI,A-Ra1e3-fine;A-Ra1e4-fine;A-Ra1e5-fine;A-Ra1e6-fine;B-Ra1e3-fine;B-Ra1e4-fine;B-Ra1e5-fine;B-Ra1e6-fine,300
+comparison/paper_fine_Wmax_error,comparison/paper_fine_Wmax_error.png,comparison/paper_fine_Wmax_error.pdf,paper absolute relative difference,A-Ra1e3-fine;A-Ra1e4-fine;A-Ra1e5-fine;A-Ra1e6-fine;B-Ra1e3-fine;B-Ra1e4-fine;B-Ra1e5-fine;B-Ra1e6-fine,300
+tables/gate_F_detail,tables/gate_F_detail.png,tables/gate_F_detail.pdf,Existing Gate F evidence; *B Ra=1e6: unaccepted grid (full status in source CSV),,300
+comparison/routeA_vs_routeB_fine,comparison/routeA_vs_routeB_fine.png,comparison/routeA_vs_routeB_fine.pdf,six comparable QoIs A vs B,A-Ra1e3-fine;A-Ra1e4-fine;A-Ra1e5-fine;A-Ra1e6-fine;B-Ra1e3-fine;B-Ra1e4-fine;B-Ra1e5-fine;B-Ra1e6-fine,300
+comparison/sensitivity/GateH_temperature,comparison/sensitivity/GateH_temperature.png,comparison/sensitivity/GateH_temperature.pdf,temperature pair,A-Ra1e6-fine;A-H-Ra1e6-fine-beta1e-4,300
+comparison/sensitivity/GateH_streamlines,comparison/sensitivity/GateH_streamlines.png,comparison/sensitivity/GateH_streamlines.pdf,streamlines pair,A-Ra1e6-fine;A-H-Ra1e6-fine-beta1e-4,300
+comparison/sensitivity/GateH_velocity_magnitude,comparison/sensitivity/GateH_velocity_magnitude.png,comparison/sensitivity/GateH_velocity_magnitude.pdf,velocity_magnitude pair,A-Ra1e6-fine;A-H-Ra1e6-fine-beta1e-4,300
+comparison/sensitivity/GateH_density_deviation,comparison/sensitivity/GateH_density_deviation.png,comparison/sensitivity/GateH_density_deviation.pdf,density_deviation pair,A-Ra1e6-fine;A-H-Ra1e6-fine-beta1e-4,300
+comparison/sensitivity/GateH_centreline,comparison/sensitivity/GateH_centreline.png,comparison/sensitivity/GateH_centreline.pdf,Gate H centreline,A-Ra1e6-fine;A-H-Ra1e6-fine-beta1e-4,300
+comparison/sensitivity/GateH_local_Nu,comparison/sensitivity/GateH_local_Nu.png,comparison/sensitivity/GateH_local_Nu.pdf,Gate H local_Nu,A-Ra1e6-fine;A-H-Ra1e6-fine-beta1e-4,300
+comparison/sensitivity/GateH_section_Nu,comparison/sensitivity/GateH_section_Nu.png,comparison/sensitivity/GateH_section_Nu.pdf,Gate H section_Nu,A-Ra1e6-fine;A-H-Ra1e6-fine-beta1e-4,300
+comparison/sensitivity/GateH_primary_relative_difference,comparison/sensitivity/GateH_primary_relative_difference.png,comparison/sensitivity/GateH_primary_relative_difference.pdf,Gate H three primary differences,A-Ra1e6-fine;A-H-Ra1e6-fine-beta1e-4,300
+comparison/RouteA_convergence_conservation,comparison/RouteA_convergence_conservation.png,comparison/RouteA_convergence_conservation.pdf,separate-route convergence/conservation indicators,A-Ra1e3-coarse;A-Ra1e3-medium;A-Ra1e3-fine;A-Ra1e4-coarse;A-Ra1e4-medium;A-Ra1e4-fine;A-Ra1e5-coarse;A-Ra1e5-medium;A-Ra1e5-fine;A-Ra1e6-coarse;A-Ra1e6-medium;A-Ra1e6-fine,300
+comparison/RouteB_convergence_conservation,comparison/RouteB_convergence_conservation.png,comparison/RouteB_convergence_conservation.pdf,separate-route convergence/conservation indicators,B-Ra1e3-coarse;B-Ra1e3-medium;B-Ra1e3-fine;B-Ra1e4-coarse;B-Ra1e4-medium;B-Ra1e4-fine;B-Ra1e5-coarse;B-Ra1e5-medium;B-Ra1e5-fine;B-Ra1e6-coarse;B-Ra1e6-medium;B-Ra1e6-fine,300
+comparison/RouteA_density_amplitude,comparison/RouteA_density_amplitude.png,comparison/RouteA_density_amplitude.pdf,Route A density amplitude,A-Ra1e3-coarse;A-Ra1e3-medium;A-Ra1e3-fine;A-Ra1e4-coarse;A-Ra1e4-medium;A-Ra1e4-fine;A-Ra1e5-coarse;A-Ra1e5-medium;A-Ra1e5-fine;A-Ra1e6-coarse;A-Ra1e6-medium;A-Ra1e6-fine,300
+comparison/auxiliary/COND_AB_temperature,comparison/auxiliary/COND_AB_temperature.png,comparison/auxiliary/COND_AB_temperature.pdf,temperature pair,A-COND;B-COND,300
+comparison/auxiliary/COND_AB_streamlines,comparison/auxiliary/COND_AB_streamlines.png,comparison/auxiliary/COND_AB_streamlines.pdf,streamlines pair,A-COND;B-COND,300
+comparison/auxiliary/SMOKE_AB_temperature,comparison/auxiliary/SMOKE_AB_temperature.png,comparison/auxiliary/SMOKE_AB_temperature.pdf,temperature pair,A-SMOKE;B-SMOKE,300
+comparison/auxiliary/SMOKE_AB_streamlines,comparison/auxiliary/SMOKE_AB_streamlines.png,comparison/auxiliary/SMOKE_AB_streamlines.pdf,streamlines pair,A-SMOKE;B-SMOKE,300
+tables/formal_matrix_status,tables/formal_matrix_status.png,tables/formal_matrix_status.pdf,Existing matrix statuses (no reclassification),,300

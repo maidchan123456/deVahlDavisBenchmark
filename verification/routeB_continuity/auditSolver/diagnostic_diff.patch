@@ -1,0 +1,47 @@
+--- stock/buoyantBoussinesqSimpleFoam.C
++++ audit/buoyantBoussinesqSimpleFoam.C
+@@ -51,6 +51,7 @@
+ #include "noRadiation.H"
+ #include "fvOptions.H"
+ #include "simpleControl.H"
++#include "continuityAudit.H"
+ 
+ // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+ 
+@@ -66,6 +67,9 @@
+     #include "initContinuityErrs.H"
+ 
+     turbulence->validate();
++
++    std::ofstream auditOut((runTime.path()/"continuityAudit.csv").c_str());
++    auditOut << "iteration,cell_count,Np,R_initial,R_recursive,linear_iterations,converged,true_residual_L1,R_true,recursive_residual_L1,abs_L1_norm_drift,true_nonreference_L1,true_reference_residual,physical_reference_residual,q_reference,mapping_defect_L1,mapping_defect_max,sum_abs_q,max_abs_q,mean_abs_div_phi,max_abs_div_phi,P95_abs_div_phi,P99_abs_div_phi,signed_volume_mean_div_phi,net_boundary_flux,Up,Kp,epsilon_phi_mean,epsilon_phi_max,ratio_recursive,ratio_true,native_sum_local,native_global,reference_cell,max_cell_id,max_cell_x,max_cell_y,max_cell_z\n";
+ 
+     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+ 
+--- stock/pEqn.H
++++ audit/pEqn.H
+@@ -29,9 +29,14 @@
+             fvm::laplacian(rAUf, p_rgh) == fvc::div(phiHbyA)
+         );
+ 
++        const ContinuityAuditMatrix auditPhysical(p_rghEqn);
+         p_rghEqn.setReference(pRefCell, getRefCellValue(p_rgh, pRefCell));
++        const ContinuityAuditMatrix auditAlgebraic(p_rghEqn);
++        const scalar auditNp = auditAlgebraic.normalization();
+ 
+-        p_rghEqn.solve();
++        const solverPerformance auditPerformance = p_rghEqn.solve();
++        const scalarField auditTrue = auditAlgebraic.trueResidual();
++        const scalarField auditPhysicalTrue = auditPhysical.trueResidual();
+ 
+         if (simple.finalNonOrthogonalIter())
+         {
+@@ -46,6 +51,8 @@
+             U = HbyA + rAU*fvc::reconstruct((phig - p_rghEqn.flux())/rAUf);
+             U.correctBoundaryConditions();
+             fvOptions.correct(U);
++            writeContinuityAudit(auditOut, runTime, mesh, phi, U, pRefCell,
++                auditNp, auditPerformance, auditTrue, auditPhysicalTrue);
+         }
+     }
+ 

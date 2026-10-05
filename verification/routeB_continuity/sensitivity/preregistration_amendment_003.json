@@ -1,0 +1,177 @@
+{
+  "schema": "routeB-gateG-pressure-tolerance-preregistration-amendment-003",
+  "created_utc": "2026-10-04T01:45:59.092700+00:00",
+  "research_questions": [
+    "Does tightening p_rgh absolute tolerance reduce epsilon_phi_mean/max?",
+    "Do QoI/U/T/heat variation bands systematically decrease?",
+    "Is pressure precision a meaningful, negligible or unresolved contributor to current band?",
+    "Does preserved tight-branch band weaken the primary-cause hypothesis?"
+  ],
+  "single_factor": "p_rgh_absolute_tolerance",
+  "common_parent": {
+    "Ra_test": 30000,
+    "grid": [
+      20,
+      20,
+      1
+    ],
+    "source": "zero",
+    "iteration": 12000,
+    "tree_hashes": {
+      "U": "1e319f4661afed3992a6be31f954effd3b7a49582e5552380063da01995349fe",
+      "alphat": "e29fe1c6dddb9eb38423349801b4d71a8ae5f21aa25d800bc26798fbd46f12db",
+      "phi": "b221f60d0bcd87a4f684f530cd619ed0c31ae1d21c02341e695ee14f5c7f6801",
+      "T": "ba8484010268a9dae6c869a4cc20fe28f16a47855a1b763fbee0d402201c28f3",
+      "p": "9a08968b558df1d5d259c2642c6e722d8bfbefc5b18f7dac3fa22baeb20d3725",
+      "p_rgh": "f22af178a878ad88fca991483f8aac68f9af46171ee69332f80cfc41628a3dc3",
+      "uniform/time": "906fbe54ab7952035b4fca38bf552537e5329585befa9faaa3e8834b5a930d5d"
+    }
+  },
+  "levels": {
+    "P10": 1e-10,
+    "P8": 1e-08,
+    "P12": 1e-12
+  },
+  "relTol": 0,
+  "execution_order": [
+    "P10",
+    "P8",
+    "P12"
+  ],
+  "run_interval": [
+    12000,
+    18000
+  ],
+  "one_process_per_branch": true,
+  "parallel": false,
+  "additional_restart_allowed": false,
+  "unchanged": [
+    "U/T tolerances1e-12 and relTol0",
+    "p relTol0",
+    "PCG/DIC and maxIter10000",
+    "relaxation",
+    "SIMPLE structure",
+    "discretization/fvSchemes",
+    "mesh",
+    "physics/properties",
+    "BC",
+    "initial complete12000 state",
+    "zero source",
+    "solver source/binary",
+    "native monitor definitions",
+    "QoI definitions",
+    "original steady criteria",
+    "ASCII precision16/writeInterval20/purgeWrite14",
+    "controlDict auditPressureTolerance1e-10"
+  ],
+  "monitor_capacity_parameter": "Keep auditPressureTolerance1e-10 fixed; it supplies original native epsilon stability criteria, not actual PCG tolerance. Actual PCG tolerance is fvSolution.p_rgh.tolerance. Do not retune native criteria per branch.",
+  "copy_control_changes": [
+    "startFrom latestTime",
+    "endTime18000"
+  ],
+  "branch_input_difference": "Only fvSolution.solvers.p_rgh.tolerance token; parent case_manifest retained byte-identical for provenance, actual branch settings recorded separately.",
+  "feasibility_preflight_sha256": "70f0f8a0c48429e589af1e71304879c58f9b8c298afa9158d4c1bdcb67174fc8",
+  "input_diff_audit_sha256": "dbd6fd294ff64e40f7959851438a99c47c1903dcda7408f7f4bca61ac10523d8",
+  "classification_reference_sha256": "8fb34fd84be4526eaf2a3dff4f028432a3f23391d6369843b9657df5cf1724e5",
+  "startup_provenance_sha256": "50dea6d086f74258d47d6c93402612bb53b5d79649709298b2e8d6a7e925b0a3",
+  "driver_sha256": "793b46c56f22406489968c43d20cca9ccac3bdbc1545e6eb45853bc35c2d6ce4",
+  "analysis_sha256": "71d50fb78ed2cd32b3afc37b8551213371e5e7034119692b9e42e08fbcd17500",
+  "solver_binary_sha256": "b3696687e1fbea626916c857215e0654a0c7b710a6a8115811486af1afe7c904",
+  "checkpoint_iterations": [
+    12000,
+    13000,
+    14000,
+    15000,
+    16000,
+    17000,
+    18000
+  ],
+  "field_capture": "Preserve each completed write from12020 to18000 outside working case; no change to write/purge settings, no field reconstruction. Minimum12000/15000/18000 ensured.",
+  "late_statistics": {
+    "interval_inclusive": [
+      15000,
+      18000
+    ],
+    "sample_interval": 20,
+    "sample_count": 151,
+    "window_iterations": 200,
+    "window_samples": 11,
+    "warmup": "Only first restart at12000; first U/T sentinel12020 and incomplete windows until12240 excluded; late15000 onward has complete history.",
+    "metrics": [
+      "QoI_max_range",
+      "U_change_20",
+      "T_change_20",
+      "U_window_max",
+      "T_window_max",
+      "heat_window_range",
+      "epsilon_phi_mean",
+      "epsilon_phi_max",
+      "R_recursive",
+      "R_true",
+      "Np",
+      "Kp",
+      "P95_normalized",
+      "P99_normalized",
+      "heat_imbalance"
+    ],
+    "statistics": [
+      "min",
+      "median",
+      "max",
+      "P95"
+    ],
+    "empirical_uncertainty": "15 disjoint200-iteration blocks (15000,15200],...,(17800,18000],10 samples/block. Min/max of block medians = empirical variability envelope, not a confidence interval; the inclusive15000 sample belongs to overall151 statistics only."
+  },
+  "primary": "P12 vsP10; P8 directional diagnostic",
+  "resolved_change_rule": "Effective block-median envelopes must not overlap, and absolute overall median change must exceed the fixed matching historical_resolution_proxy from prior C/R median shift. Where no historical proxy exists, use zero and explicitly no certified uncertainty bound. No arbitrary factor2 or percentage cutoff.",
+  "classification": {
+    "STRONG_EFFECT": "Resolved P12 reductions in recursive pressure residual, epsilon mean and max, plus all four QoI_max_range/U_change_20/T_change_20/heat_window_range; all corresponding medians non-increasing P8\u2192P10\u2192P12.",
+    "LIMITED_EFFECT": "Resolved pressure-residual decrease and at least one epsilon mean/max decrease, but not all four major bands resolve decreases; remaining bands are nonzero and no major-band resolved increase. Non-monotone medians within overlapping scatter may coexist with LIMITED_EFFECT; disclose this rather than treat them as resolved causal reversals.",
+    "NO_RESOLVED_EFFECT": "Pressure residual resolves a decrease, but neither epsilon nor any major band resolves a decrease/increase; finite experiment has insufficient resolution, not proof of zero effect.",
+    "INCONCLUSIVE": "Incomplete/nonfeasible branches, unresolved pressure change, resolved contrary responses, or any case not meeting the above rules. Preserve all nonmonotone/worsened data.",
+    "monotonicity": "Per metric descriptive median order: FLAT if exactly equal, MONOTONIC if P8>=P10>=P12, otherwise NON_MONOTONIC (including tightening-induced increase). Overall seven primary metrics: any NON_MONOTONIC ->NON_MONOTONIC; all FLAT ->FLAT; otherwise MONOTONIC; missing ->INCONCLUSIVE. Separate empirical resolved-change assessment.",
+    "primary_cause": "NOT_SUPPORTED only if epsilon improves with resolved pressure response, none of QoI/U20/T20 decreases resolves, and all three retain median above unchanged1e-8 with overlapping block envelopes and median shifts within prior scatter proxy. STRONG_EFFECT supports pressure precision as a contributor but primary cause remains INCONCLUSIVE without replicated/longer evidence. All other cases INCONCLUSIVE.",
+    "contributor": "Do not call coupled-solver response pure continuity. A resolved pressure/epsilon effect alone does not establish meaningful or negligible contribution to QoI/U/T band."
+  },
+  "ratios": "Report P12/P10 and P8/P10 median ratios for every metric; zero denominator ->null, no floor",
+  "normalization_scales": {
+    "U_Up_reference_m_s": 0.0051293067249479985,
+    "T_DeltaT_K": 1.0,
+    "p_rgh_parent_centered_internal_RMS_m2_s2": 5.64631031820992e-05,
+    "phi_characteristic_face_flux_m3_s": 2.564653362473999e-09,
+    "rule": "All scales frozen from common12000: Up=max internal |U|, pscale=centered internal RMS. Same gauge/reference in both branches. Flux=Up*(L/20)*depth."
+  },
+  "field_canonicalization": "Reuse immutable amendment002 Float64/internal+physical patch values/pressure gradients/empty patch canonicalization; U max/RMS vector norm, scalars max/RMS, gradients separate. Frozen common12000 Up/T/p/phi scales.",
+  "qoi_differences": "At18000 existing extract, values abs(branch-P10)/abs(P10) or null for zero reference, positions absolute nondimensional; no formal paper values",
+  "mapping": "Audit true and recursive pressure residuals, Np,Kp, epsilon/(Kp*R), reference/mapping defects and physical-flux evidence. Report deviations; solver tolerance is never epsilon threshold.",
+  "steady_evaluation": "Native criteria unchanged with capacity parameter1e-10; postprocess original U/T initial<=1e-8 and pressure final<=1.1*branch tolerance (unchanged preregistered functional rule). Record qualification, never resume Arm1/Arm2. If original native monitor auto-terminates before18000, preserve/STOP without disabling it or restarting.",
+  "STOP": [
+    "parent/input/binary/source mismatch",
+    "any unexpected factor difference",
+    "NaN/Inf/fatal/unstable/abnormal exit",
+    "P10 cannot reproduce previous continuous C18000 raw/payload hashes",
+    "P12 linear stall/breakdown ->NOT_FEASIBLE, no alternate",
+    "need formal data, existing preregistration edit, U/T/relaxation/other factor change",
+    "failure to reach18000 in one original-settings process; no retry/restart"
+  ],
+  "old_preregistration_hashes": {
+    "experiment_preregistration_v1.json": "567af0e99595d20cb6aeecc99788c4d4b7d36e2f5f33bec05dc4093bde07d0e3",
+    "experiment_preregistration_v1.md": "764d8662b7d2d8e80bdc68737fcb3f8dba057fcf9aa19ba81ad5d9530cbf9915"
+  },
+  "old_amendment_hashes": {
+    "preregistration_amendment_001.json": "6d90e0bba92d62b0563f8582487783521ddc78a6251f071aa4af86eac47fe7d7",
+    "preregistration_amendment_001.md": "58e8b8995b95a761f630716d6ae68d5ec75710936e5d2d3fedadbc79395f3e93",
+    "preregistration_amendment_002.json": "e649e5c87a4cf0af3b339eb43eaccce0dd7d2b5845c52484cd63013ec15cc1fb",
+    "preregistration_amendment_002.md": "e310990d1d5f3831f83df825c791f4846813280418bd1e54b0eaac3bf194e4ee"
+  },
+  "quota": null,
+  "qoi_impact_quota_value": null,
+  "tau_mean": null,
+  "new_Gate_threshold": null,
+  "criteria_changed": false,
+  "arm1_restarted": false,
+  "arm2_executed": false,
+  "formal_benchmark_used": false,
+  "spec_change_executed": false,
+  "next_action": "Stop after this diagnostic; any U/T tolerance or relaxation study is a separate task."
+}

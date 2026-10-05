@@ -1,0 +1,20 @@
+{
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "numpy": "1.26.4",
+  "matplotlib": "3.6.3",
+  "code_sha256": {
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/visualization/plot_case.py": "943d8e5f7ec299ee15d666fc997c3cfb05e3bab1d44dc32f042ded7316fce0ae",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/visualization/plot_comparisons.py": "66abab41c53b4d9de3dd79d8bfd20e2a7a1078c2dce36a285708a76c973cbeca",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/visualization/common.py": "1d767aa35f14c08a7629bbabe17c4f71d9ac6702ee4ac8b50d8c05d6b8c073da",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/visualization/plot_all_cases.py": "a47c72a80a07e2ab4b147d4afe2a0fd23dc29d3a474f85e92d0d84256f31ab99"
+  },
+  "command": "OPENBLAS_NUM_THREADS=1 python3 -B Scripts/visualization/plot_all_cases.py",
+  "solver_executed": false,
+  "initial_generation_code_sha256": {
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/visualization/plot_case.py": "943d8e5f7ec299ee15d666fc997c3cfb05e3bab1d44dc32f042ded7316fce0ae",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/visualization/plot_comparisons.py": "dd48a627119d4f6acbd75492af0e138f7b28096090c7f5a1c4f881a401f77f5e",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/visualization/common.py": "1d767aa35f14c08a7629bbabe17c4f71d9ac6702ee4ac8b50d8c05d6b8c073da",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/visualization/plot_all_cases.py": "a47c72a80a07e2ab4b147d4afe2a0fd23dc29d3a474f85e92d0d84256f31ab99"
+  },
+  "post_generation_visual_fix": "Shortened the Gate F figure-only unaccepted-grid status label to prevent text overflow; source CSV and numeric data unchanged."
+}

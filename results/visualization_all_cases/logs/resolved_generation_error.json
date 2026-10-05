@@ -1,0 +1,49 @@
+{
+  "error": "dict() got multiple values for keyword argument 'case_id'",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/visualization/plot_all_cases.py\", line 187, in main\n    if c.category=='matrix': status.append(dict(case_id=c.case_id,source_case_id=c.source_case_id,route=c.route,Ra=c.ra,N=c.n,**c.status))\n                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: dict() got multiple values for keyword argument 'case_id'\n",
+  "last_checks": [
+    {
+      "case_id": "A-H-Ra1e6-fine-beta1e-4",
+      "quantity": "GateH saved diagnostic:rho_min",
+      "max_absolute_difference": 0,
+      "rtol": 5e-12,
+      "atol": 5e-12,
+      "status": "PASS"
+    },
+    {
+      "case_id": "A-H-Ra1e6-fine-beta1e-4",
+      "quantity": "GateH saved diagnostic:rho_max",
+      "max_absolute_difference": 0,
+      "rtol": 5e-12,
+      "atol": 5e-12,
+      "status": "PASS"
+    },
+    {
+      "case_id": "A-H-Ra1e6-fine-beta1e-4",
+      "quantity": "GateH saved diagnostic:max_relative_density_deviation",
+      "max_absolute_difference": 0,
+      "rtol": 5e-12,
+      "atol": 5e-12,
+      "status": "PASS"
+    },
+    {
+      "case_id": "A-H-Ra1e6-fine-beta1e-4",
+      "quantity": "GateH saved diagnostic:temperature_symmetry",
+      "max_absolute_difference": 0,
+      "rtol": 5e-12,
+      "atol": 5e-12,
+      "status": "PASS"
+    },
+    {
+      "case_id": "A-H-Ra1e6-fine-beta1e-4",
+      "quantity": "GateH saved diagnostic:velocity_symmetry",
+      "max_absolute_difference": 0,
+      "rtol": 5e-12,
+      "atol": 5e-12,
+      "status": "PASS"
+    }
+  ],
+  "solver_executed": false,
+  "resolution": "Fixed duplicate case_id keyword when constructing new status inventory; regenerated all task-owned outputs. This error did not alter authoritative CFD artifacts.",
+  "resolved": true
+}

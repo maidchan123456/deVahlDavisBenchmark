@@ -1,0 +1,51 @@
+Snapshot of protected artifacts...
+Pre-plot verification: 29 display cases; 1398 checks PASS
+Individual 1/29: A-Ra1e3-coarse
+Individual 2/29: A-Ra1e3-medium
+Individual 3/29: A-Ra1e3-fine
+Individual 4/29: A-Ra1e4-coarse
+Individual 5/29: A-Ra1e4-medium
+Individual 6/29: A-Ra1e4-fine
+Individual 7/29: A-Ra1e5-coarse
+Individual 8/29: A-Ra1e5-medium
+Individual 9/29: A-Ra1e5-fine
+Individual 10/29: A-Ra1e6-coarse
+Individual 11/29: A-Ra1e6-medium
+Individual 12/29: A-Ra1e6-fine
+Individual 13/29: B-Ra1e3-coarse
+Individual 14/29: B-Ra1e3-medium
+Individual 15/29: B-Ra1e3-fine
+Individual 16/29: B-Ra1e4-coarse
+Individual 17/29: B-Ra1e4-medium
+Individual 18/29: B-Ra1e4-fine
+Individual 19/29: B-Ra1e5-coarse
+Individual 20/29: B-Ra1e5-medium
+Individual 21/29: B-Ra1e5-fine
+Individual 22/29: B-Ra1e6-coarse
+Individual 23/29: B-Ra1e6-medium
+Individual 24/29: B-Ra1e6-fine
+Individual 25/29: A-COND
+Individual 26/29: A-SMOKE
+Individual 27/29: B-COND
+Individual 28/29: B-SMOKE
+Individual 29/29: A-H-Ra1e6-fine-beta1e-4
+Montages and fine A/B fields...
+Grid and paper comparisons...
+A/B source comparisons...
+Gate H and conservation diagnostics...
+{
+  "completed_at": "2026-10-05T17:11:15.349420+09:00",
+  "display_cases": 29,
+  "formal_conditions": 24,
+  "RouteA_computed": 12,
+  "RouteA_accepted": 12,
+  "RouteB_computed": 12,
+  "RouteB_accepted": 9,
+  "logical_figures": 279,
+  "png_files": 279,
+  "pdf_files": 279,
+  "csv_files": 161,
+  "numerical_checks": 1585,
+  "all_checks_pass": true,
+  "solver_executions": 0
+}

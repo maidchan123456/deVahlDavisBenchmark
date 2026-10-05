@@ -1,0 +1,198 @@
+{
+  "schema": "routeB-gateG-independent-qoi-sensitivity-preregistration-v1",
+  "physics": {
+    "Ra_test": 30000,
+    "Pr": 0.71,
+    "L_m": 0.01,
+    "depth_m": 0.001,
+    "Th_K": 301,
+    "Tc_K": 300,
+    "TRef_K": 300.5,
+    "DeltaT_K": 1,
+    "nu_m2_s": 1e-06,
+    "alpha_definition": "nu/Pr",
+    "beta_definition": "Ra*nu*alpha/(g*DeltaT*L**3)",
+    "gravity_m_s2": 9.81,
+    "laminar": true,
+    "impermeable_walls": true,
+    "front_back": "empty"
+  },
+  "grid_split": {
+    "exploration": [
+      20,
+      40
+    ],
+    "holdout": [
+      80
+    ],
+    "forbidden": [
+      160,
+      320
+    ]
+  },
+  "profile": "serial/DP/ASCII16, Foundation v6",
+  "qois": [
+    "Nu_bar_cavity",
+    "Nu_bar_0",
+    "Nu_bar_half",
+    "Umax",
+    "Wmax",
+    "Umax_Z",
+    "Wmax_X"
+  ],
+  "arm_1": {
+    "tolerances": [
+      1e-06,
+      1e-08,
+      1e-10
+    ],
+    "relTol": 0,
+    "initial_state": "Cold start U=0, T=TRef, p_rgh=0 for every condition",
+    "other_settings": "Fixed Case C template schemes and relaxation; U/T linear tolerance 1e-12 relTol 0",
+    "pure_continuity_claim": false
+  },
+  "baseline": {
+    "pressure_tolerance": 1e-10,
+    "same_grid_only": true,
+    "name": "highest-fidelity tested numerical baseline"
+  },
+  "stopping": {
+    "minimum_iteration": 400,
+    "sample_interval": 20,
+    "window_iterations": 200,
+    "window_samples": 11,
+    "continuation_block": 200,
+    "maximum_iteration": 12000,
+    "value_QoI_window_range_normalized_by_max_abs_or_one": 1e-08,
+    "position_window_absolute": 0.000244140625,
+    "U_change_over_20_iterations_over_Up": 1e-08,
+    "T_change_over_20_iterations_over_DeltaT": 1e-08,
+    "heat_imbalance_window_absolute_range": 1e-08,
+    "epsilon_mean_window_absolute_range": "<=2*100*p_tolerance",
+    "epsilon_max_window_absolute_range": "<=2*100*p_tolerance*n_cells",
+    "continuity_capacity_scale_rationale": "Case C Kp reached about 25; 100 is a conservative numerical monitor capacity allowance, not research quota. Tight field/QoI conditions independently apply.",
+    "momentum_temperature_initial_residual_max": 1e-08,
+    "pressure_final_residual_max": "1.1*run-specific tolerance, never 1e-10 for 1e-6 run",
+    "normal_exit_and_finite_required": true,
+    "repeat_qualified_checks_for_full_continuation_block": true
+  },
+  "arm_2": {
+    "binary": "buoyantBoussinesqSimpleFoamContinuitySourceAudit",
+    "source_units": "g m3/s; s=g/V 1/s",
+    "source_equation": "Build unchanged stock pressure matrix then subtract g from its source before reference; q target +g, verified tiny test",
+    "sum_g": "Zero by internal-face incidence",
+    "nominal": "eta=L/(Up_base*Vtotal)*sum(abs(g)); amplitude fixed within run",
+    "patterns": {
+      "P1": [
+        [
+          0.5,
+          0.5
+        ]
+      ],
+      "P2": [
+        [
+          0.075,
+          0.5
+        ]
+      ],
+      "P3": [
+        [
+          0.925,
+          0.5
+        ]
+      ],
+      "P4": [
+        [
+          0.25,
+          0.25
+        ],
+        [
+          0.75,
+          0.25
+        ],
+        [
+          0.25,
+          0.75
+        ],
+        [
+          0.75,
+          0.75
+        ]
+      ],
+      "P5": [
+        [
+          0.5,
+          0.575
+        ]
+      ]
+    },
+    "face_selection": "Internal X-oriented face nearest Euclidean nondimensional anchor, smallest face ID ties, excludes faces incident on pRefCell; P4 sites require disjoint source cells",
+    "reference_cell": "central cell (n//2)*n+n//2; no source directly there",
+    "equivalence": "20x20 stock/source zero-source cold-start 10 iterations; U/T/p_rgh/phi complete SHA256 match or investigate then STOP",
+    "tiny_sign_test": "20x20, eta=1e-7 positive P1, 20 iterations; compare q versus +/-g, dimensional checks and zero net; below-capability runs STOP",
+    "realization_rule": {
+      "relative_L1_q_minus_g_max": 0.05,
+      "reason": "Controlled-source purity criterion (not research quota). Compare measured vector error, not recursive-vs-true norm drift. Case C supplies mapping units/reference awareness; no certified universal bound transferred.",
+      "mapping_scaled_error_max": 1e-06,
+      "roundoff_zero_net_rule": "abs(sum_g)<=64*machine_epsilon*sum_abs_g; exact cancellation expected",
+      "boundary_rule": "impermeable flux exact zero or <=64*machine_epsilon*Up*L*depth; closure within 128*machine_epsilon*sum_abs_face_flux"
+    },
+    "exploration_patterns": [
+      "P1",
+      "P2",
+      "P4"
+    ],
+    "signs": "Positive at all selected levels; additional negative P1/P2 at mid level"
+  },
+  "pilot": {
+    "grid": 20,
+    "pattern": "P1",
+    "sign": 1,
+    "levels": [
+      1e-08,
+      1e-07,
+      1e-06,
+      1e-05,
+      0.0001
+    ],
+    "selection": "Among valid steady realized levels, start at lowest level where at least one value QoI difference exceeds its conservative uncertainty AND two larger valid levels exist; select that level and next two valid levels. If none qualifies with two successors, use the three highest valid levels, mark response resolution incomplete. Fewer than three valid levels => STOP, preserve pilot. No quota PASS involved."
+  },
+  "uncertainty": {
+    "combination": "Conservative sum/envelope, no unsupported RSS; baseline/test contributions retained",
+    "iterative": "Per QoI max of tail window range and final-minus-200-iterations-earlier magnitude, each side separately",
+    "extraction": "Nu exact defined discrete sums with 64*eps absolute term-sum allowance; U/W and positions compare 4097/8193 sampling plus 1/4096 coordinate resolution and tied-peak interval; no physical interpolation error guarantee",
+    "restart_serialization": "20 baseline matched restart last 200 iterations versus uninterrupted continuation from common checkpoint; all grids report own memory/file diagnostic where available; use corresponding per-QoI measured restart differences conservatively, untested-grid transfer explicitly limited",
+    "near_zero_rule": "If abs(baseline)<=10*baseline uncertainty, use Nu characteristic=1 or nondimensional velocity characteristic=1; record the branch, no arbitrary floor",
+    "source_matching": "Tolerance from q-g plus repeatability epsilon changes only, before QoI pattern comparison; maximum two additional amplitude trials per matched condition; preserve all trials",
+    "effect_not_resolved": "abs(Delta Q)<=combined uncertainty; never ZERO_EFFECT"
+  },
+  "holdout_policy": "No 80 nonzero-source results before exploration analysis and immutable confirmation_manifest_v1 with SHA256. Then P1 seen and P3 held-out, at least two amplitudes and both signs. Never alter v1 model after seeing holdout; new versions separate.",
+  "temperature_offset": "20 grid, shift all temperatures and TRef +50 K; zero-source and representative mid-positive P1 comparisons; interpretation only, no calibration",
+  "STOP": [
+    "Zero-source solver changes solution",
+    "Cannot establish sign/dimensions",
+    "Nonzero net source",
+    "Source realization not controlled relative to numerical residual/reference",
+    "Arm2 NaN/fatal",
+    "Any steady run fails at max iteration",
+    "Need to rewrite confirmation after holdout",
+    "Need formal results",
+    "Need production changes"
+  ],
+  "quota": null,
+  "quota_status": "UNRESOLVED",
+  "tau_mean": null,
+  "tau_mean_status": "UNRESOLVED",
+  "formal_results_used": false,
+  "formal_solver_allowed": false,
+  "source_hashes": {
+    "verification/routeB_continuity/sensitivity/auditSolver/readTransportProperties.H": "8292bf0ba5dfee62229441001a66dbbf76dcce3f2c0f2d51a6cf743989efdd1c",
+    "verification/routeB_continuity/sensitivity/auditSolver/UEqn.H": "74a2aa996ff4de945965c62d9881e224a7931c236d62e1914093c7f00f421e02",
+    "verification/routeB_continuity/sensitivity/auditSolver/TEqn.H": "13056bf4ad6a45089c86d7c64d17e561036e6076faa16fa63cebc8fcfbf9acfb",
+    "verification/routeB_continuity/sensitivity/auditSolver/steadyMonitor.H": "fb53f2c65b6b0d704f867f54c47db543ef62ab125ca9c70fde331e067e621cf2",
+    "verification/routeB_continuity/sensitivity/auditSolver/continuityAudit.H": "01ad09bc350e28d5eeaa14dae218959e91d0472355547cb84737786fa2a45b0c",
+    "verification/routeB_continuity/sensitivity/auditSolver/buoyantBoussinesqSimpleFoam.C": "1e907d5d1c34456ec7852a362145fed1595be0cd50eabc313b092f527c14e6bd",
+    "verification/routeB_continuity/sensitivity/auditSolver/createFields.H": "123e261cecbd8ff187b40e529f07b92b2594252d13e8405464f05e50474f3418",
+    "verification/routeB_continuity/sensitivity/auditSolver/pEqn.H": "abce2c26020073fca186a562e89cf19ea33d3785af0555b0d855deb009f9d26e"
+  }
+}

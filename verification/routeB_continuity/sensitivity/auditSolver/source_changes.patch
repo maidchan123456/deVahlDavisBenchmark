@@ -1,0 +1,87 @@
+--- stock-v6/pEqn.H
++++ verification-only/pEqn.H
+@@ -29,9 +29,20 @@
+             fvm::laplacian(rAUf, p_rgh) == fvc::div(phiHbyA)
+         );
+ 
++        const ContinuityAuditMatrix auditPhysical(p_rghEqn);
++        // operator==(matrix, field) adds V*field to source (v6 fvMatrix.C:1458).
++        // Target q=b0-A0*p=g, so solve with b0-g. No other matrix term changes.
++        p_rghEqn.source() -= mesh.V()*continuitySource.primitiveField();
++        const ContinuityAuditMatrix auditForced(p_rghEqn);
+         p_rghEqn.setReference(pRefCell, getRefCellValue(p_rgh, pRefCell));
+ 
+-        p_rghEqn.solve();
++        const ContinuityAuditMatrix auditAlgebraic(p_rghEqn);
++        const scalar auditNp=auditAlgebraic.normalization();
++        const solverPerformance auditPerformance=p_rghEqn.solve();
++        const scalarField auditTrue=auditAlgebraic.trueResidual();
++        const scalarField auditPhysicalTrue=auditPhysical.trueResidual();
++        lastForcedResidual=auditForced.trueResidual();
++        lastPhysicalResidual=auditPhysicalTrue;
+ 
+         if (simple.finalNonOrthogonalIter())
+         {
+@@ -46,6 +57,8 @@
+             U = HbyA + rAU*fvc::reconstruct((phig - p_rghEqn.flux())/rAUf);
+             U.correctBoundaryConditions();
+             fvOptions.correct(U);
++            writeContinuityAudit(auditOut,runTime,mesh,phi,U,pRefCell,
++                auditNp,auditPerformance,auditTrue,auditPhysicalTrue);
+         }
+     }
+ 
+--- stock-v6/buoyantBoussinesqSimpleFoam.C
++++ verification-only/buoyantBoussinesqSimpleFoam.C
+@@ -51,6 +51,8 @@
+ #include "noRadiation.H"
+ #include "fvOptions.H"
+ #include "simpleControl.H"
++#include "continuityAudit.H"
++#include "steadyMonitor.H"
+ 
+ // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+ 
+@@ -66,6 +68,16 @@
+     #include "initContinuityErrs.H"
+ 
+     turbulence->validate();
++    volScalarField continuitySource(IOobject("continuitySource",runTime.constant(),mesh,
++        IOobject::MUST_READ,IOobject::NO_WRITE),mesh);
++    if(continuitySource.dimensions()!=dimless/dimTime)
++        FatalErrorInFunction<<"continuitySource must have units 1/s"<<exit(FatalError);
++    const bool monitorEnabled=runTime.controlDict().lookupOrDefault<bool>("steadyMonitorEnabled",true);
++    const scalar pressureTolerance=runTime.controlDict().lookupOrDefault<scalar>("auditPressureTolerance",1e-10);
++    SensitivityMonitor sensitivityMonitor(runTime);
++    scalarField lastForcedResidual(mesh.nCells(),0.),lastPhysicalResidual(mesh.nCells(),0.);
++    std::ofstream auditOut((runTime.path()/"continuityAudit.csv").c_str());
++    auditOut<<"iteration,cell_count,Np,R_initial,R_recursive,linear_iterations,converged,true_residual_L1,R_true,recursive_residual_L1,abs_L1_norm_drift,true_nonreference_L1,true_reference_residual,physical_reference_residual,q_reference,mapping_defect_L1,mapping_defect_max,sum_abs_q,max_abs_q,mean_abs_div_phi,max_abs_div_phi,P95_abs_div_phi,P99_abs_div_phi,signed_volume_mean_div_phi,net_boundary_flux,Up,Kp,epsilon_phi_mean,epsilon_phi_max,ratio_recursive,ratio_true,native_sum_local,native_global,reference_cell,max_cell_id,max_cell_x,max_cell_y,max_cell_z\n";
+ 
+     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+ 
+@@ -85,6 +97,11 @@
+         laminarTransport.correct();
+         turbulence->correct();
+ 
++        if(monitorEnabled && sensitivityMonitor.check(runTime,mesh,U,T,phi,pressureTolerance))
++        {
++            Info<<"SENSITIVITY_STEADY_CONFIRMED"<<nl;
++            runTime.writeAndEnd();
++        }
+         runTime.write();
+ 
+         Info<< "ExecutionTime = " << runTime.elapsedCpuTime() << " s"
+@@ -92,6 +109,13 @@
+             << nl << endl;
+     }
+ 
++    std::ofstream cells((runTime.path()/"sourceCells.csv").c_str());
++    cells<<"cell,g,V,physical_residual,forced_residual,X,Z\n";
++    forAll(mesh.V(),i) cells<<std::setprecision(17)<<i<<','
++        <<mesh.V()[i]*continuitySource[i]<<','<<mesh.V()[i]<<','
++        <<lastPhysicalResidual[i]<<','<<lastForcedResidual[i]<<','
++        <<mesh.C()[i].x()/.01<<','<<mesh.C()[i].y()/.01<<'\n';
++    Info<<"SENSITIVITY_STATUS "<<(sensitivityMonitor.steady ? "STEADY" : "NOT_CONVERGED")<<nl;
+     Info<< "End\n" << endl;
+ 
+     return 0;

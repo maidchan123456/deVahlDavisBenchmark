@@ -1,0 +1,23 @@
+{
+  "protected_file_count": 403344,
+  "protected_roots": [
+    "results/routeA/",
+    "results/routeB/",
+    "cases/",
+    "docs/",
+    "reference/",
+    "Scripts/routeA/",
+    "Scripts/routeB/",
+    "external v6 cases/routeB/"
+  ],
+  "full_metadata_inventory_unchanged": true,
+  "changed_count": 0,
+  "hashed_input_count": 359,
+  "input_hashes_unchanged": true,
+  "git_diff_before_after_identical": true,
+  "git_existing_diff_empty": true,
+  "git_head": "4986b1a4fbf3219aebfbc7938665c0b74680a2ed",
+  "solver_executions": 0,
+  "mesh_generations": 0,
+  "analyzer_main_invocations": 0
+}

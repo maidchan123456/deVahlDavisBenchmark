@@ -1,0 +1,208 @@
+{
+  "schema": "routeB-gateG-restart-effect-preregistration-amendment-002",
+  "created_utc": "2026-10-03T19:11:20.442938+00:00",
+  "purpose": "Isolate additional restart at iteration 15000; common restart at 12000 is shared, not separately estimated.",
+  "research_questions": [
+    "Does the additional restart change U/T/p_rgh/phi at 18000?",
+    "What are field/QoI/continuity differences relative to previous variation magnitudes?",
+    "Does the continuous branch retain a similar variation band? Primary cause remains distinct from detected effect."
+  ],
+  "parent": {
+    "path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/verification/routeB_continuity/sensitivity/runs/baseline_n20",
+    "iteration": 12000,
+    "Ra_test": 30000,
+    "grid": [
+      20,
+      20,
+      1
+    ],
+    "source": "zero",
+    "tree_hashes": {
+      "U": "1e319f4661afed3992a6be31f954effd3b7a49582e5552380063da01995349fe",
+      "alphat": "e29fe1c6dddb9eb38423349801b4d71a8ae5f21aa25d800bc26798fbd46f12db",
+      "phi": "b221f60d0bcd87a4f684f530cd619ed0c31ae1d21c02341e695ee14f5c7f6801",
+      "T": "ba8484010268a9dae6c869a4cc20fe28f16a47855a1b763fbee0d402201c28f3",
+      "p": "9a08968b558df1d5d259c2642c6e722d8bfbefc5b18f7dac3fa22baeb20d3725",
+      "p_rgh": "f22af178a878ad88fca991483f8aac68f9af46171ee69332f80cfc41628a3dc3",
+      "uniform/time": "906fbe54ab7952035b4fca38bf552537e5329585befa9faaa3e8834b5a930d5d"
+    }
+  },
+  "original_preregistration_sha256": "567af0e99595d20cb6aeecc99788c4d4b7d36e2f5f33bec05dc4093bde07d0e3",
+  "previous_amendment_sha256": "6d90e0bba92d62b0563f8582487783521ddc78a6251f071aa4af86eac47fe7d7",
+  "startup_provenance_sha256": "e8c332b996d1998e4522df9d1bd3a57795c2306f54d684532c0be971771b07b4",
+  "driver_sha256": "4295f096c260700952d9e712d97067d4ac72f50db799b611bc1c3ea6fbf7a631",
+  "analysis_sha256": "10ec93378af8f2bdee46125699332f6fa6882c5e9f7b231e2bc16839302e4ac0",
+  "branches": {
+    "C": {
+      "kind": "continuous",
+      "process_intervals": [
+        [
+          12000,
+          18000
+        ]
+      ],
+      "intermediate_restart": false
+    },
+    "R": {
+      "kind": "restart",
+      "process_intervals": [
+        [
+          12000,
+          15000
+        ],
+        [
+          15000,
+          18000
+        ]
+      ],
+      "intermediate_restart": true
+    }
+  },
+  "execution_order": [
+    "R12000-15000",
+    "C12000-18000",
+    "R15000-18000"
+  ],
+  "maximum_solver_calls": 3,
+  "continuous_snapshot_capture": "Read stdout ExecutionTime after completed write at each multiple of 20 from 15000 onward; copy already-written fields to external ignored snapshots. No signal/pause/control edit/restart at 15000. Verify C/R15000 during C process before R second process.",
+  "unchanged": [
+    "p tolerance 1e-10",
+    "U/T tolerance 1e-12",
+    "all relTol 0",
+    "relaxation",
+    "fvSchemes",
+    "mesh",
+    "physics",
+    "BC",
+    "zero source",
+    "all 12000 state",
+    "solver source/binary",
+    "QoI definitions",
+    "monitor definitions",
+    "original steady criteria",
+    "writeInterval 20",
+    "purgeWrite 14",
+    "ASCII precision16"
+  ],
+  "sole_input_edits": [
+    "startFrom latestTime in both copied cases",
+    "endTime 15000 or 18000 in copied cases"
+  ],
+  "solver_binary_sha256": "b3696687e1fbea626916c857215e0654a0c7b710a6a8115811486af1afe7c904",
+  "canonicalization": {
+    "version": 1,
+    "encoding": "UTF8 sorted compact JSON metadata, NUL byte, then ordered contiguous little-endian float64 arrays; no rounding/tolerances",
+    "metadata": "field name, dimensions, patch names/types, block names/shapes; omit FoamFile header and formatting only",
+    "block_order": [
+      "internalField",
+      "hotWall",
+      "coldWall",
+      "bottomWall",
+      "topWall",
+      "front",
+      "back"
+    ],
+    "patch_values": "Physical patches expanded to mesh size20, vectors component x/y/z. zeroGradient without stored value uses adjacent owner internal values from the common verified mesh; metadata marks this implicit origin. Empty front/back zero-length arrays with type empty, not invented values for mesh faces. Include stored uniform/nonuniform scalar gradients for fixedFluxPressure patches after that patch value; STOP for unsupported gradients/implicit BC.",
+    "raw_hashes_always_saved": true,
+    "raw_mismatch_rule": "If numerical hashes identical, remove only FoamFile header and whitespace/comments and require all remaining tokens equal. Otherwise STOP at15000; do not blame metadata without proving it."
+  },
+  "field_comparison": {
+    "checkpoints": [
+      15000,
+      18000
+    ],
+    "intermediate": "All written samples 15020:20:18000 if captured; never reconstruct unavailable fields",
+    "U": "max Euclidean vector norm, RMS of vector norm; internal+physical boundary values; also component max and internal-only metrics",
+    "scalars": "max abs, RMS over internal+physical boundary value arrays; stored gradients hash/equality checked separately",
+    "phi": "also L1 sum of internal+physical boundary differences; normalized max/RMS/L1 using same characteristic face flux, not epsilon or actual flux denominator"
+  },
+  "normalization_scales": {
+    "U_Up_reference_m_s": 0.0051293067249479985,
+    "T_DeltaT_K": 1.0,
+    "p_rgh_parent_centered_internal_RMS_m2_s2": 5.64631031820992e-05,
+    "phi_characteristic_face_flux_m3_s": 2.564653362473999e-09,
+    "rule": "All scales frozen from common12000: Up=max internal |U|, pscale=centered internal RMS. Same gauge/reference in both branches. Flux=Up*(L/20)*depth."
+  },
+  "qoi_comparison": {
+    "names": [
+      "Nu_bar_cavity",
+      "Nu_bar_0",
+      "Nu_bar_half",
+      "Umax",
+      "Wmax",
+      "Umax_Z",
+      "Wmax_X"
+    ],
+    "value_relative_difference": "|R-C|/|C|; if C exactly zero report null, retain absolute difference, do not introduce floor",
+    "position_difference": "absolute nondimensional; no inferred sub-sampling peak accuracy",
+    "definitions": "existing experiment.extract / native monitor, 4097 centreline samples"
+  },
+  "continuity_comparison": [
+    "epsilon_phi_mean",
+    "epsilon_phi_max",
+    "heat_imbalance",
+    "boundary_flux",
+    "closure",
+    "pressure audit"
+  ],
+  "branch_variation": {
+    "sample_interval": 20,
+    "window_iterations": 200,
+    "samples": 11,
+    "matched_valid_interval": [
+      15240,
+      18000
+    ],
+    "warmup": "R15020 U/T change is restart sentinel; exclude all windows until15240. C uses the identical matched interval, retaining original native definitions.",
+    "statistics": "min/median/max/P95; QoI ranges divided by max(abs(current),1), positions absolute; U/T window max20-step changes, heat absolute range; epsilon mean/max absolute level and window range. Native monitor remains authoritative and unchanged."
+  },
+  "existing_band_reference": {
+    "source": "results/routeB/gateG_sensitivity_experiment/baseline_convergence_qualification.json",
+    "rule": "median of previously saved amplitude_medians for18000/24000/30000, fixed before calls",
+    "magnitudes": {
+      "qoi": 1.0387909182722118e-07,
+      "U": 2.8479140975427466e-07,
+      "T": 9.389415822624869e-08,
+      "heat": 3.131879825141723e-08,
+      "Nu_bar_cavity": 2.665156823246098e-08,
+      "Nu_bar_0": 3.52731749265561e-08,
+      "Nu_bar_half": 6.518709409177097e-08,
+      "Umax": 8.077048077765928e-08,
+      "Wmax": 3.4012766864068844e-08,
+      "Umax_Z": 0.0,
+      "Wmax_X": 0.0,
+      "epsilon_phi_mean": 2.7002888636536e-10,
+      "epsilon_phi_max": 1.8130404566440064e-09,
+      "heat_imbalance": 1.6209475830414855e-08
+    },
+    "ratios": "endpoint and trajectory max/median absolute restart difference divided by the matching fixed magnitude; positions with zero reference -> null, no floor; epsilon references are level magnitudes, not variation amplitudes; pressure/phi lack prior like-for-like band -> null"
+  },
+  "classification": {
+    "NOT_DETECTED": "All four18000 numerical hashes equal or every field value difference exactly zero; restart effect NOT_SUPPORTED at endpoint, inspect history separately.",
+    "DETECTED": "Any nonzero18000 field value difference with verified common12000 and pre-restart15000 equivalence; restart effect exists, not automatically primary cause.",
+    "INCONCLUSIVE": "Insufficient provenance, setup equivalence or comparison resolution.",
+    "continuous_retains_band": "Descriptive only: median C matched-window max value-QoI range nonzero and nearest power-of-ten order equals previous QoI reference (floor(log10(x)+0.5)); report unrounded ratio and all component ranges. This is an order label, never scientific acceptance/steady PASS.",
+    "necessary_condition": "If continuous retains band: additional15000 restart is NOT_SUPPORTED as a necessary condition in this interval. Otherwise INCONCLUSIVE, not proof of necessity.",
+    "primary_cause": "INCONCLUSIVE: single matched3000-iteration post-factor interval lacks independent replicated/long-term distributions; no primary-cause claim from difference magnitude alone.",
+    "trajectory": "Report exact-zero samples, first nonzero, first/last values, early15020-15200 and late17800-18000 medians, maxima and ratios. Label zero/decaying/amplifying/persistent irregular qualitatively from these observations; no causal fit or new acceptance cutoff."
+  },
+  "STOP": [
+    "12000 parent/input mismatch",
+    "branch input inequivalence beyond permitted start/end fields",
+    "15000 numerical mismatch or unproved raw mismatch",
+    "binary/source hash mismatch",
+    "numerical settings changed",
+    "NaN/Inf/fatal or failure to reach target normally",
+    "formal data or existing preregistration edits needed",
+    "any factor other than restart needed"
+  ],
+  "research_quota": null,
+  "qoi_impact_quota_value": null,
+  "tau_mean": null,
+  "criteria_changed": false,
+  "arm1_restarted": false,
+  "arm2_executed": false,
+  "formal_benchmark_used": false,
+  "spec_change_executed": false,
+  "next_action": "Stop after restart diagnostic. Any tolerance or relaxation study needs a separate task."
+}
