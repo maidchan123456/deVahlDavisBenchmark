@@ -1,0 +1,1382 @@
+{
+  "task": "FIX_ROUTE_A_DIAGNOSTIC_TRANSIENT_V1_4_AUTHORITY_CONSISTENCY",
+  "status": {
+    "ROUTE_A_DIAGNOSTIC_TRANSIENT_AUTHORITY_CONSISTENCY_FIX": "COMPLETE",
+    "SOURCE_CONTRACT_VERSION": "1.4",
+    "SOURCE_CONTRACT_SHA256": "c58096f1b6422003c16884e7b8d3c0bb828d9ea797ae59fca9605229af597a82",
+    "SOURCE_CONTRACT_HASH_VERIFIED": "YES",
+    "NEW_DIAGNOSTIC_CONTRACT_CREATED": "YES",
+    "NEW_DIAGNOSTIC_CONTRACT_VERSION": "1.5",
+    "NEW_DIAGNOSTIC_CONTRACT_SHA256": "06c71945289ffe419b784843f7aab2fea66c44d28c9dba46d828bbd24837e27d",
+    "REVISION_SCOPE": "MACHINE_AUTHORITY_CONSISTENCY_ONLY",
+    "PARENT_DIAGNOSTIC_CONTRACT_VERSION": "1.2",
+    "PARENT_DIAGNOSTIC_CONTRACT_SHA256": "7e95d4078433ff9e96527dd37430c2519cd1479ccc581e84f64bc94762af08dd",
+    "PARENT_VERSION_SHA_CONSISTENT": "YES",
+    "FORMAL_ROUTE_A_VERSION": "1.7",
+    "FORMAL_ROUTE_A_SHA256": "fbc744e012f66b37b5d9409be961cb5a9410c3d75ac7e2f026b2acf118d3bb60",
+    "FORMAL_AUTHORITY_CONSISTENT": "YES",
+    "STALE_V1_3_EXECUTION_GUARD_REMOVED": "YES",
+    "CURRENT_EXECUTION_GUARD": "DIAGNOSTIC_TRANSIENT_RESOURCE_QUALIFICATION_PENDING_NO_RUN_AUTHORIZATION",
+    "LIVE_PRIMARY_BINDING_STATUS_CONSISTENT": "YES",
+    "PRODUCTION_PREFLIGHT_STATUS_CONSISTENT": "YES",
+    "READINESS_CHECKLIST_STALE_ITEMS_FIXED": "YES",
+    "RESOURCE_REVISION_COMPLETE_STATUS_CONSISTENT": "YES",
+    "NEXT_SINGLE_TASK_CONSISTENT": "YES",
+    "AUTHORITY_HEAD_SEMANTICS_RESOLVED": "YES",
+    "LEGACY_0P55_GUARD_SEMANTICS_RESOLVED": "YES",
+    "LEGACY_0P55_GUARD_STATUS": "PER_SERIES_ONLY",
+    "SEQUENTIAL_PRIMARY_PEAK_FRACTION": 0.560285624635319,
+    "STORAGE_FEASIBILITY": "FEASIBLE",
+    "DIAGNOSTIC_TRANSIENT_STORAGE_READY": "YES",
+    "MEMORY_FEASIBILITY": "UNRESOLVED",
+    "IO_FEASIBILITY": "UNRESOLVED",
+    "COMPUTE_FEASIBILITY": "UNRESOLVED",
+    "DIAGNOSTIC_TRANSIENT_RESOURCE_READY": "NO",
+    "DIAGNOSTIC_TRANSIENT_SCIENTIFICALLY_ALLOWED": "YES",
+    "DIAGNOSTIC_TRANSIENT_TECHNICALLY_READY": "YES",
+    "COMPLETE_EXECUTION_CONFIGURATION_FROZEN": "NO",
+    "EXECUTION_AUTHORIZED": "NO",
+    "CONSISTENCY_CHECKER_IMPLEMENTED": "YES",
+    "CONSISTENCY_CHECKER_PASS": "YES",
+    "ACTIVE_CURRENT_STATE_CONTRADICTIONS": 0,
+    "NEGATIVE_TESTS": "PASS",
+    "SCIENTIFIC_SECTIONS_CHANGED": "NO",
+    "U01_CHANGED": "NO",
+    "U02_CHANGED": "NO",
+    "U03_CHANGED": "NO",
+    "U04_EQUATION_SEMANTICS_CHANGED": "NO",
+    "PERSISTENCE_POLICY_CHANGED": "NO",
+    "SEAL_PURGE_POLICY_CHANGED": "NO",
+    "CAPACITY_ESTIMATES_CHANGED": "NO",
+    "PRODUCTION_SOLVER_EXECUTED": "NO",
+    "CFD_TRANSIENT_EXECUTED": "NO",
+    "PRODUCTION_DATA_PURGED": "NO",
+    "HISTORICAL_DATA_PURGED": "NO",
+    "FORMAL_CRITERIA_CHANGED": "NO",
+    "HISTORICAL_STATUS_CHANGED": "NO",
+    "FORMAL_GATE_J_CURRENTLY_ALLOWED": "NO",
+    "FORMAL_GATE_J_EXECUTED": "NO",
+    "FORMAL_GATE_J_PASS": "NOT_EVALUATED",
+    "BENCHMARK_CORE_PASS": "NO",
+    "ROUTE_A_CHARACTERIZED": "NO",
+    "ALL_ROUTE_A_GATE_F": "FAIL",
+    "ALL_RA_NEEDS_320": "YES",
+    "DOWNSTREAM_TRANSIENT_READY": "NO",
+    "PARTICLE_COUPLING_READY": "NO",
+    "NEXT_SINGLE_TASK": "REVIEW_ROUTE_A_DIAGNOSTIC_TRANSIENT_COMPUTE_FEASIBILITY",
+    "RECOMMENDED_REASONING_MODEL_FOR_NEXT_TASK": "gpt-6.1-sol / medium",
+    "USER_DECISION_REQUIRED": "YES"
+  },
+  "start_guard": {
+    "HEAD": "8707aa00785f83b0620fdc6b8847c200f59b3522",
+    "git_status_short": "?? Scripts/routeA/diagnostic_transient/v1_5/\n?? cases/routeA/A-H-Ra1e6-fine-beta1e-4/\n?? cases/routeA/A-Ra1e3-coarse/\n?? cases/routeA/A-Ra1e3-fine/\n?? cases/routeA/A-Ra1e3-medium/\n?? cases/routeA/A-Ra1e4-coarse/\n?? cases/routeA/A-Ra1e4-fine/\n?? cases/routeA/A-Ra1e4-medium/\n?? cases/routeA/A-Ra1e5-coarse/\n?? cases/routeA/A-Ra1e5-fine/\n?? cases/routeA/A-Ra1e5-medium/\n?? cases/routeA/A-Ra1e6-coarse/\n?? cases/routeA/A-Ra1e6-fine/\n?? cases/routeA/A-Ra1e6-medium/\n?? cases/routeA/Ra0_medium/\n?? cases/routeA/Ra1e4_coarse/\n",
+    "authority_sha256": {
+      "docs/routeA_diagnostic_transient_contract_v1.2.json": "7e95d4078433ff9e96527dd37430c2519cd1479ccc581e84f64bc94762af08dd",
+      "docs/routeA_diagnostic_transient_contract_v1.3.json": "212c1dc5056775e1825e13f29336ce51483679862e5e41c1e164f8c724db21b3",
+      "docs/routeA_diagnostic_transient_contract_v1.4.json": "c58096f1b6422003c16884e7b8d3c0bb828d9ea797ae59fca9605229af597a82",
+      "docs/routeA_execution_contract_v1.7.json": "fbc744e012f66b37b5d9409be961cb5a9410c3d75ac7e2f026b2acf118d3bb60"
+    },
+    "git_status_capture_scope": "Contract-generation snapshot after new checker scripts were written",
+    "initial_task_git_status_short": "?? cases/routeA/A-H-Ra1e6-fine-beta1e-4/\n?? cases/routeA/A-Ra1e3-coarse/\n?? cases/routeA/A-Ra1e3-fine/\n?? cases/routeA/A-Ra1e3-medium/\n?? cases/routeA/A-Ra1e4-coarse/\n?? cases/routeA/A-Ra1e4-fine/\n?? cases/routeA/A-Ra1e4-medium/\n?? cases/routeA/A-Ra1e5-coarse/\n?? cases/routeA/A-Ra1e5-fine/\n?? cases/routeA/A-Ra1e5-medium/\n?? cases/routeA/A-Ra1e6-coarse/\n?? cases/routeA/A-Ra1e6-fine/\n?? cases/routeA/A-Ra1e6-medium/\n?? cases/routeA/Ra0_medium/\n?? cases/routeA/Ra1e4_coarse/\n",
+    "initial_task_git_status_scope": "Exact initial guard output observed before creating any task artifacts: pre-existing untracked cases only, no tracked modifications"
+  },
+  "sections": [
+    {
+      "number": 1,
+      "title": "Overall result",
+      "text": "COMPLETE. New v1.5 changes machine authority metadata only. Source v1.4 and all historical authorities remain byte-for-byte unchanged. No run authorization."
+    },
+    {
+      "number": 2,
+      "title": "v1.4 parent verification",
+      "text": "Input HEAD 8707aa00785f83b0620fdc6b8847c200f59b3522; v1.4/v1.3/v1.2/formal v1.7 hashes match all supplied authorities. Existing untracked Route A cases were left untouched. Verification remained scoped to the contract lineage and referenced v1.4 evidence/source."
+    },
+    {
+      "number": 3,
+      "title": "Detected inconsistencies",
+      "text": "Corrected A–G: duplicate v1.2 SHA inherited from v1.1; stale v1.3 guard; two OPEN binding checklist entries; incomplete revision/obsolete next task; native binding false; inherited current-state text; ambiguous HEAD. Also corrected sampling.full_fields.production_binding_qualified=false and trust_basis[6] stale qualification blocker. Qualified binding means synthetic implementation verification, not production CFD qualification."
+    },
+    {
+      "number": 4,
+      "title": "Parent SHA correction",
+      "text": "All current parent version/path/SHA fields point to v1.2 (7e95d4078433ff9e96527dd37430c2519cd1479ccc581e84f64bc94762af08dd). Formal v1.7 SHA remains unchanged."
+    },
+    {
+      "number": 5,
+      "title": "Execution guard correction",
+      "text": "DIAGNOSTIC_TRANSIENT_RESOURCE_QUALIFICATION_PENDING_NO_RUN_AUTHORIZATION. Remaining blockers: compute, memory, I/O qualification and explicit future run authorization. execution_authorized=false."
+    },
+    {
+      "number": 6,
+      "title": "Readiness checklist correction",
+      "text": "Entries 23/24 FIXED with native/policy and preflight/lifecycle evidence; null blockers. Production compute/I/O/memory qualification stays OPEN. Source v1.4 OPEN entries remain in the immutable source."
+    },
+    {
+      "number": 7,
+      "title": "Resource-review status correction",
+      "text": "revision_complete/resource_revision_complete/storage_revision_complete=true. resource_ready/overall_resource_ready=false; compute_review_required=true. Completed review scope is storage/evidence revision, not overall resource qualification."
+    },
+    {
+      "number": 8,
+      "title": "Live-binding flag correction",
+      "text": "Stored live_native_validation PASS: complete required columns, 145 fv solves/169 component records, U01 PASS, controller PASS, bitwise non-invasiveness. live_policy_validation PASS verifies U03/controller/anomaly bindings; lifecycle validation retains selected fields. Native-primary and field-binding status flags now agree. Evidence was inspected, not re-executed."
+    },
+    {
+      "number": 9,
+      "title": "Authority HEAD semantics",
+      "text": "v1.0 actual preparation input fd129af05d43e3551cf0d4a037b5dd8f54ccbe4a. Inherited 74b1f7b2c0e844ac559997277ce30dde2450b3f8 is v1.1 fix input HEAD, as confirmed by v1.0/v1.1 contracts and git show of the v1.0 commit. v1.3 input ed2371e88c2d728bfbf8fffd21cd99497c1b9afc comes from resource_revision/authority.json; v1.4 fix input 7369926b5517ce1da49829759653224489614575 from start_guard.json. Current v1.5 input HEAD is recorded separately. Historical inventories and U04 build authority remain unchanged."
+    },
+    {
+      "number": 10,
+      "title": "Storage guard 0.55 vs sequential 0.5603 resolution",
+      "text": "PER_SERIES_ONLY, retained at 0.55. resource_guard.preflight receives each series working peak, current statvfs free and file budget. launcher.prepare additionally checks current free > working peak + measured existing permanent + max(32 GiB, int(10% current free)). BOTH_REQUIRED. Current free already excludes retained bytes; existing permanent is an additional conservative reserve. Cumulative 0.560285624635319 uses initial free and is descriptive, not the per-series gate numerator. Primary planning guard checks below pass; no threshold, capacity, safety reserve, lifecycle or code changes. Fresh measurements and checks are still required before each future series. Co0.125 remains conditional, infeasible at the current worst-case planning caps, and requires separate review/authorization."
+    },
+    {
+      "number": 11,
+      "title": "Historical/current-state separation",
+      "text": "Preserved every inherited_* section, resource_candidate_lineage, original v1.3 INCOMPLETE fact, U04 build authority, and frozen scientific annotation strings. Explicit scope descriptions identify their historical meaning. v1.5 readiness is current. Unchanged v1.4 launcher is version-pinned to 1.4; this metadata-only revision does not migrate it or claim executable v1.5 support."
+    },
+    {
+      "number": 12,
+      "title": "v1.4→v1.5 changed JSON paths",
+      "text": "134 leaf changes, individually listed and classified in DiagnosticTransient_v1_4_v1_5_semantic_diff.csv and the JSON report. Only STATUS_METADATA/PROVENANCE_METADATA/GUARD_METADATA/READINESS_METADATA/RESOURCE_GUARD_CLARIFICATION allowed; 0 out-of-scope changes."
+    },
+    {
+      "number": 13,
+      "title": "Scientific-section invariance",
+      "text": "All 17 required scientific sections semantically equal; remaining non-allowlisted contract leaves are also equal. resource_revision_fix is wholly equal, including capacity, P1 evidence/cadence, R0–R4, seal/purge lifecycle and source hashes. Formal authority/status and all historical sections equal. U01/U02/U03/U04 equation semantics unchanged."
+    },
+    {
+      "number": 14,
+      "title": "Consistency checker",
+      "text": "check_contract_consistency.py checks real lineage and evidence hashes, duplicate statuses/next tasks, readiness/guard hierarchy, frozen scientific/historical/source/library equality, strict metadata diff allowlist and storage guard semantics. CLI validates sidecar; JSON loader rejects duplicate keys. Result: 0 contradictions, 0 stale active blockers, 0 mismatched parent hashes, 0 conflicting current next tasks."
+    },
+    {
+      "number": 15,
+      "title": "Negative tests",
+      "text": "22 synthetic mutated contracts fail the intended invariant, including all six requested mutations. Additional tests cover formal SHA, revision status, extra next-task field, unresolved readiness, sampling binding, frozen configuration, threshold relaxation, cumulative gate, HEAD ambiguity, scientific/capacity and historical changes. No CFD, mesh, case or purge tests."
+    },
+    {
+      "number": 16,
+      "title": "Final readiness",
+      "text": "Scientific/technical/storage/live binding/evidence lifecycle READY. Memory/I/O/compute UNRESOLVED. Overall resource NOT_READY; complete execution configuration remains unfrozen; execution unauthorized. Formal Gate J, Gate F, 320 need and downstream/particle status unchanged."
+    },
+    {
+      "number": 17,
+      "title": "Exact next task",
+      "text": "REVIEW_ROUTE_A_DIAGNOSTIC_TRANSIENT_COMPUTE_FEASIBILITY. Recommended gpt-6.1-sol / medium. USER_DECISION_REQUIRED=YES refers to selecting/authorizing a future task; this completed fix grants no run authorization."
+    }
+  ],
+  "detected_inconsistency_count": 10,
+  "semantic_diff": [
+    {
+      "path": "/authority_provenance/HEAD",
+      "category": "PROVENANCE_METADATA",
+      "operation": "REMOVE",
+      "before": "74b1f7b2c0e844ac559997277ce30dde2450b3f8",
+      "after": null
+    },
+    {
+      "path": "/authority_provenance/HEAD_equals_requested",
+      "category": "PROVENANCE_METADATA",
+      "operation": "REMOVE",
+      "before": true,
+      "after": null
+    },
+    {
+      "path": "/authority_provenance/HEAD_semantics/current_consistency_fix_input_HEAD",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "v1.5 creation input HEAD; no git commit was made for this task"
+    },
+    {
+      "path": "/authority_provenance/HEAD_semantics/original_contract_fix_HEAD_equals_requested",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "Historical v1.1 input verification only"
+    },
+    {
+      "path": "/authority_provenance/HEAD_semantics/original_contract_fix_input_HEAD",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "v1.1 U01-U04 contract-fix input HEAD, inherited by v1.2-v1.4; 74b1... is the commit containing v1.0"
+    },
+    {
+      "path": "/authority_provenance/HEAD_semantics/original_preparation_HEAD",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "v1.0 preparation input HEAD (fd129...); not its resulting commit"
+    },
+    {
+      "path": "/authority_provenance/HEAD_semantics/references_sha256_and_source_inventory",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "Inherited preparation/fix inventories; not a new repository-wide audit or v1.5 creation inventory"
+    },
+    {
+      "path": "/authority_provenance/HEAD_semantics/resource_revision_parent_HEAD",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "v1.3 resource-candidate preparation input HEAD from resource_revision/authority.json"
+    },
+    {
+      "path": "/authority_provenance/HEAD_semantics/v1_4_fix_input_HEAD",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "v1.4 binding/lifecycle fix input HEAD from resource_revision_fix/start_guard.json"
+    },
+    {
+      "path": "/authority_provenance/current_consistency_fix_input_HEAD",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "8707aa00785f83b0620fdc6b8847c200f59b3522"
+    },
+    {
+      "path": "/authority_provenance/original_contract_fix_HEAD_equals_requested",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": true
+    },
+    {
+      "path": "/authority_provenance/original_contract_fix_input_HEAD",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "74b1f7b2c0e844ac559997277ce30dde2450b3f8"
+    },
+    {
+      "path": "/authority_provenance/original_preparation_HEAD",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "fd129af05d43e3551cf0d4a037b5dd8f54ccbe4a"
+    },
+    {
+      "path": "/authority_provenance/resource_revision_parent_HEAD",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "ed2371e88c2d728bfbf8fffd21cd99497c1b9afc"
+    },
+    {
+      "path": "/authority_provenance/v1_4_fix_input_HEAD",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "7369926b5517ce1da49829759653224489614575"
+    },
+    {
+      "path": "/consistency_revision/evidence_sha256/Scripts~1routeA~1diagnostic_transient~1v1_4~1finalize.py",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "8370ad64bbc779736e8760f01bd15aceed39a8a98a142fed3c0e28fbc4ca5ff0"
+    },
+    {
+      "path": "/consistency_revision/evidence_sha256/Scripts~1routeA~1diagnostic_transient~1v1_4~1launcher.py",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "4a0c79f2b824bd7da4ed79c8e49c300a21009406524184ab551697f2db5990c9"
+    },
+    {
+      "path": "/consistency_revision/evidence_sha256/Scripts~1routeA~1diagnostic_transient~1v1_4~1resource_guard.py",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "328df5fb45756d230db76ae5e0ec8960ce7b051d5d35e1b811f10bccfeffe4e1"
+    },
+    {
+      "path": "/consistency_revision/evidence_sha256/results~1routeA~1diagnostic_transient~1diagnostic_attempt_001~1preparation~1DiagnosticTransient_resource_revision_fix.json",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "c044b9f6795cf05da882b0a8dcee30f68a76f86e788fdbca90afdad3c95868f6"
+    },
+    {
+      "path": "/consistency_revision/evidence_sha256/results~1routeA~1diagnostic_transient~1diagnostic_attempt_001~1preparation~1resource_revision_fix~1lifecycle_validation.json",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "a6513530361417ca019c6454e8769bb75be71d610f0b0b18d18ab92af2fa7da2"
+    },
+    {
+      "path": "/consistency_revision/evidence_sha256/results~1routeA~1diagnostic_transient~1diagnostic_attempt_001~1preparation~1resource_revision_fix~1live_native_validation.json",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "a250aa65b4a932a7ccd493d26b302a020a898d90f875c7bc2bffc0360b110aff"
+    },
+    {
+      "path": "/consistency_revision/evidence_sha256/results~1routeA~1diagnostic_transient~1diagnostic_attempt_001~1preparation~1resource_revision_fix~1live_policy_validation.json",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "f3ae1e5eb4835171006be47bdc470c9d083114f1946876c58287eaf3d289f172"
+    },
+    {
+      "path": "/consistency_revision/evidence_sha256/results~1routeA~1diagnostic_transient~1diagnostic_attempt_001~1preparation~1resource_revision_fix~1native~1synthetic_validation.json",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "f51ce53fcae98c33afeb4443c2a23fff29416ac9554c7705e606b1922920adc4"
+    },
+    {
+      "path": "/consistency_revision/evidence_sha256/results~1routeA~1diagnostic_transient~1diagnostic_attempt_001~1preparation~1resource_revision_fix~1preflight_validation.json",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "28e9f6f9ec3b74c369575266d4ed7d0bd5dc51a8d1a649287d96851f7de85cb4"
+    },
+    {
+      "path": "/consistency_revision/evidence_sha256/results~1routeA~1diagnostic_transient~1diagnostic_attempt_001~1preparation~1resource_revision_fix~1start_guard.json",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "c0aea7ee6a83c336a8899e0291b1bc9f3aba40c7c168d4617a8a8fa94052dcd1"
+    },
+    {
+      "path": "/consistency_revision/evidence_sha256/results~1routeA~1diagnostic_transient~1diagnostic_attempt_001~1preparation~1resource_revision~1authority.json",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "5558f2be23061d8ce7a3e6884f1080492d93ccf0ecddf19691ce347f6f244bbb"
+    },
+    {
+      "path": "/consistency_revision/frozen_historical_annotations/inner_convergence.instrumentation_binding_pending",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "Inherited v1.2 annotation; current live qualification is resource_revision.qualification"
+    },
+    {
+      "path": "/consistency_revision/frozen_historical_annotations/resource_candidate_lineage",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "Historical incomplete v1.3 to finalized v1.4 decision, preserved unchanged"
+    },
+    {
+      "path": "/consistency_revision/frozen_historical_annotations/steady_arrival.validity_dependency",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "Inherited v1.2 dependency text; current binding evidence is evaluator_verification/resource_revision_fix"
+    },
+    {
+      "path": "/consistency_revision/frozen_historical_annotations/u04_build_authority",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "Historical v1.2 build/protected-artifact inventory, preserved unchanged"
+    },
+    {
+      "path": "/consistency_revision/historical_sections/0",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "inherited_v1_1_evaluator_verification"
+    },
+    {
+      "path": "/consistency_revision/historical_sections/1",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "inherited_v1_1_fix_implementation_sha256"
+    },
+    {
+      "path": "/consistency_revision/historical_sections/2",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "inherited_v1_2_evaluator_verification"
+    },
+    {
+      "path": "/consistency_revision/historical_sections/3",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "inherited_v1_2_pre_run_resource_review"
+    },
+    {
+      "path": "/consistency_revision/historical_sections/4",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "inherited_v1_3_evaluator_verification"
+    },
+    {
+      "path": "/consistency_revision/lineage/0/historical_state",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "U01_U04_CLOSED"
+    },
+    {
+      "path": "/consistency_revision/lineage/0/path",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "docs/routeA_diagnostic_transient_contract_v1.2.json"
+    },
+    {
+      "path": "/consistency_revision/lineage/0/sha256",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "7e95d4078433ff9e96527dd37430c2519cd1479ccc581e84f64bc94762af08dd"
+    },
+    {
+      "path": "/consistency_revision/lineage/0/version",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "1.2"
+    },
+    {
+      "path": "/consistency_revision/lineage/1/historical_state",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "RESOURCE_REVISION_CANDIDATE_INCOMPLETE"
+    },
+    {
+      "path": "/consistency_revision/lineage/1/path",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "docs/routeA_diagnostic_transient_contract_v1.3.json"
+    },
+    {
+      "path": "/consistency_revision/lineage/1/sha256",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "212c1dc5056775e1825e13f29336ce51483679862e5e41c1e164f8c724db21b3"
+    },
+    {
+      "path": "/consistency_revision/lineage/1/version",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "1.3"
+    },
+    {
+      "path": "/consistency_revision/lineage/2/historical_state",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "RESOURCE_BINDING_LIFECYCLE_FIX_FINALIZED"
+    },
+    {
+      "path": "/consistency_revision/lineage/2/path",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "docs/routeA_diagnostic_transient_contract_v1.4.json"
+    },
+    {
+      "path": "/consistency_revision/lineage/2/sha256",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "c58096f1b6422003c16884e7b8d3c0bb828d9ea797ae59fca9605229af597a82"
+    },
+    {
+      "path": "/consistency_revision/lineage/2/version",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "1.4"
+    },
+    {
+      "path": "/consistency_revision/lineage/3/current_state",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "MACHINE_AUTHORITY_CONSISTENCY_ONLY"
+    },
+    {
+      "path": "/consistency_revision/lineage/3/path",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "docs/routeA_diagnostic_transient_contract_v1.5.json"
+    },
+    {
+      "path": "/consistency_revision/lineage/3/version",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "1.5"
+    },
+    {
+      "path": "/consistency_revision/production_supported_semantics",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "Binding implementation supports production observation; not resource qualification or run authorization"
+    },
+    {
+      "path": "/consistency_revision/reviewed_evidence_scope",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "Stored v1.4 synthetic/read-only PASS evidence inspected and hashed; no native tests or solver were re-executed"
+    },
+    {
+      "path": "/consistency_revision/runtime_compatibility",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "Unchanged v1.4 launcher.prepare is pinned to version 1.4. This metadata-only v1.5 is not an executable launcher migration; a future authorized revision must bind its chosen authority explicitly."
+    },
+    {
+      "path": "/consistency_revision/schema_semantics",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "Inherited routeA_diagnostic_transient_contract/1.3 format identifier; document revision is version=1.5"
+    },
+    {
+      "path": "/consistency_revision/scope",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "MACHINE_AUTHORITY_CONSISTENCY_ONLY"
+    },
+    {
+      "path": "/consistency_revision/source_path",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "docs/routeA_diagnostic_transient_contract_v1.4.json"
+    },
+    {
+      "path": "/consistency_revision/source_preserved_byte_for_byte",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": true
+    },
+    {
+      "path": "/consistency_revision/source_sha256",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "c58096f1b6422003c16884e7b8d3c0bb828d9ea797ae59fca9605229af597a82"
+    },
+    {
+      "path": "/consistency_revision/source_version",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "1.4"
+    },
+    {
+      "path": "/current_execution_blockers/0",
+      "category": "GUARD_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "COMPUTE_FEASIBILITY_UNRESOLVED"
+    },
+    {
+      "path": "/current_execution_blockers/1",
+      "category": "GUARD_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "MEMORY_FEASIBILITY_UNRESOLVED"
+    },
+    {
+      "path": "/current_execution_blockers/2",
+      "category": "GUARD_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "IO_FEASIBILITY_UNRESOLVED"
+    },
+    {
+      "path": "/current_execution_blockers/3",
+      "category": "GUARD_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "EXPLICIT_FUTURE_RUN_AUTHORIZATION_REQUIRED"
+    },
+    {
+      "path": "/decision_type",
+      "category": "PROVENANCE_METADATA",
+      "operation": "CHANGE",
+      "before": "FINALIZE_RESOURCE_BINDING_AND_EVIDENCE_LIFECYCLE_V1_4_WITH_IMMUTABLE_V1_3_LINEAGE",
+      "after": "METADATA_CONSISTENCY_V1_5_FROM_IMMUTABLE_V1_4"
+    },
+    {
+      "path": "/diagnostic_execution_guard",
+      "category": "GUARD_METADATA",
+      "operation": "CHANGE",
+      "before": "DIAGNOSTIC_TRANSIENT_CONTRACT_v1.3_RESOURCE_UNQUALIFIED",
+      "after": "DIAGNOSTIC_TRANSIENT_RESOURCE_QUALIFICATION_PENDING_NO_RUN_AUTHORIZATION"
+    },
+    {
+      "path": "/document_state",
+      "category": "STATUS_METADATA",
+      "operation": "CHANGE",
+      "before": "RESOURCE_REVISION_FIX_FINALIZED_RESOURCE_REVIEW_REQUIRED",
+      "after": "MACHINE_AUTHORITY_CONSISTENCY_FINALIZED_RESOURCE_QUALIFICATION_PENDING"
+    },
+    {
+      "path": "/final_status/COMPLETE_EXECUTION_CONFIGURATION_FROZEN",
+      "category": "READINESS_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "NO"
+    },
+    {
+      "path": "/final_status/CURRENT_EXECUTION_GUARD",
+      "category": "GUARD_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "DIAGNOSTIC_TRANSIENT_RESOURCE_QUALIFICATION_PENDING_NO_RUN_AUTHORIZATION"
+    },
+    {
+      "path": "/final_status/DIAGNOSTIC_CONTRACT_VERSION",
+      "category": "STATUS_METADATA",
+      "operation": "CHANGE",
+      "before": "1.4",
+      "after": "1.5"
+    },
+    {
+      "path": "/final_status/EXECUTION_AUTHORIZED",
+      "category": "GUARD_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "NO"
+    },
+    {
+      "path": "/final_status/FINAL_DIAGNOSTIC_CONTRACT_VERSION",
+      "category": "STATUS_METADATA",
+      "operation": "CHANGE",
+      "before": "1.4",
+      "after": "1.5"
+    },
+    {
+      "path": "/final_status/FORMAL_ROUTE_A_CONTRACT_SHA256",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "fbc744e012f66b37b5d9409be961cb5a9410c3d75ac7e2f026b2acf118d3bb60"
+    },
+    {
+      "path": "/final_status/LEGACY_0P55_GUARD_STATUS",
+      "category": "RESOURCE_GUARD_CLARIFICATION",
+      "operation": "ADD",
+      "before": null,
+      "after": "PER_SERIES_ONLY"
+    },
+    {
+      "path": "/final_status/PARENT_DIAGNOSTIC_CONTRACT_PATH",
+      "category": "PROVENANCE_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "docs/routeA_diagnostic_transient_contract_v1.2.json"
+    },
+    {
+      "path": "/final_status/PARENT_DIAGNOSTIC_CONTRACT_SHA256",
+      "category": "PROVENANCE_METADATA",
+      "operation": "CHANGE",
+      "before": "574b83ed63e244e9fbb1307d1a463e1c92fade86a99375054d599b06b155d675",
+      "after": "7e95d4078433ff9e96527dd37430c2519cd1479ccc581e84f64bc94762af08dd"
+    },
+    {
+      "path": "/final_status/REVISION_SCOPE",
+      "category": "STATUS_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "MACHINE_AUTHORITY_CONSISTENCY_ONLY"
+    },
+    {
+      "path": "/final_status/ROUTE_A_DIAGNOSTIC_TRANSIENT_AUTHORITY_CONSISTENCY_FIX",
+      "category": "STATUS_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "COMPLETE"
+    },
+    {
+      "path": "/final_status/SAMPLING_RULE",
+      "category": "STATUS_METADATA",
+      "operation": "CHANGE",
+      "before": "every native stage evaluated/compact receipts; selected binary field/raw audit policy candidate; production binding blocked",
+      "after": "every native stage evaluated/compact receipts; inherited v1.4 selected binary field/raw audit policy and live binding synthetically qualified; production resource qualification unresolved"
+    },
+    {
+      "path": "/pre_run_resource_review/compute_review_required",
+      "category": "READINESS_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": true
+    },
+    {
+      "path": "/pre_run_resource_review/next_single_task",
+      "category": "STATUS_METADATA",
+      "operation": "CHANGE",
+      "before": "FIX_ROUTE_A_DIAGNOSTIC_TRANSIENT_RESOURCE_REVISION",
+      "after": "REVIEW_ROUTE_A_DIAGNOSTIC_TRANSIENT_COMPUTE_FEASIBILITY"
+    },
+    {
+      "path": "/pre_run_resource_review/overall_resource_ready",
+      "category": "READINESS_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": false
+    },
+    {
+      "path": "/pre_run_resource_review/planning_model",
+      "category": "PROVENANCE_METADATA",
+      "operation": "CHANGE",
+      "before": "capacity_accounting.json",
+      "after": "resource_revision_fix.capacity"
+    },
+    {
+      "path": "/pre_run_resource_review/resource_revision_complete",
+      "category": "STATUS_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": true
+    },
+    {
+      "path": "/pre_run_resource_review/review_scope",
+      "category": "STATUS_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "Completed storage/evidence revision review; production compute/memory/I/O qualification remains unresolved"
+    },
+    {
+      "path": "/pre_run_resource_review/revision_complete",
+      "category": "STATUS_METADATA",
+      "operation": "CHANGE",
+      "before": false,
+      "after": true
+    },
+    {
+      "path": "/pre_run_resource_review/storage_revision_complete",
+      "category": "STATUS_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": true
+    },
+    {
+      "path": "/prepared_at",
+      "category": "PROVENANCE_METADATA",
+      "operation": "CHANGE",
+      "before": "2026-10-05T12:50:22.778660+00:00",
+      "after": "2026-10-05T22:15:07.015846+09:00"
+    },
+    {
+      "path": "/readiness_checklist/23/blocker",
+      "category": "READINESS_METADATA",
+      "operation": "CHANGE",
+      "before": "Complete native-to-P1 live binding of every required primary/stage column, Co/controller receipts and native per-solve residuals is not implemented. Existing QoI array helper is not attached to native callbacks.",
+      "after": null
+    },
+    {
+      "path": "/readiness_checklist/23/evidence/0",
+      "category": "READINESS_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/resource_revision_fix/live_native_validation.json"
+    },
+    {
+      "path": "/readiness_checklist/23/evidence/1",
+      "category": "READINESS_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/resource_revision_fix/live_policy_validation.json"
+    },
+    {
+      "path": "/readiness_checklist/23/item",
+      "category": "READINESS_METADATA",
+      "operation": "CHANGE",
+      "before": "v1.3 complete live primary/control/certificate/arrival collector",
+      "after": "v1.4 live primary/control/certificate/arrival collector"
+    },
+    {
+      "path": "/readiness_checklist/23/status",
+      "category": "READINESS_METADATA",
+      "operation": "CHANGE",
+      "before": "OPEN",
+      "after": "FIXED"
+    },
+    {
+      "path": "/readiness_checklist/24/blocker",
+      "category": "READINESS_METADATA",
+      "operation": "CHANGE",
+      "before": "Production preflight, frozen runtime source/library checks and full raw-log rotation need integration into the future authorized run launcher. Production classification is currently rejected before evidence reduction.",
+      "after": null
+    },
+    {
+      "path": "/readiness_checklist/24/evidence/0",
+      "category": "READINESS_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/resource_revision_fix/preflight_validation.json"
+    },
+    {
+      "path": "/readiness_checklist/24/evidence/1",
+      "category": "READINESS_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/resource_revision_fix/lifecycle_validation.json"
+    },
+    {
+      "path": "/readiness_checklist/24/item",
+      "category": "READINESS_METADATA",
+      "operation": "CHANGE",
+      "before": "v1.3 production resource/runtime/log guard binding",
+      "after": "v1.4 production resource/runtime/log guard binding"
+    },
+    {
+      "path": "/readiness_checklist/24/status",
+      "category": "READINESS_METADATA",
+      "operation": "CHANGE",
+      "before": "OPEN",
+      "after": "FIXED"
+    },
+    {
+      "path": "/readiness_checklist/25/item",
+      "category": "READINESS_METADATA",
+      "operation": "CHANGE",
+      "before": "v1.3 production compute/I/O/memory resource qualification",
+      "after": "production compute/I/O/memory resource qualification"
+    },
+    {
+      "path": "/resource_readiness_components/COMPUTE",
+      "category": "READINESS_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "UNRESOLVED"
+    },
+    {
+      "path": "/resource_readiness_components/EVIDENCE_LIFECYCLE",
+      "category": "READINESS_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "READY"
+    },
+    {
+      "path": "/resource_readiness_components/IO",
+      "category": "READINESS_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "UNRESOLVED"
+    },
+    {
+      "path": "/resource_readiness_components/LIVE_BINDING",
+      "category": "READINESS_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "READY"
+    },
+    {
+      "path": "/resource_readiness_components/MEMORY",
+      "category": "READINESS_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "UNRESOLVED"
+    },
+    {
+      "path": "/resource_readiness_components/OVERALL_RESOURCE",
+      "category": "READINESS_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "NOT_READY"
+    },
+    {
+      "path": "/resource_readiness_components/STORAGE",
+      "category": "READINESS_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "READY"
+    },
+    {
+      "path": "/resource_revision/U04_scope",
+      "category": "STATUS_METADATA",
+      "operation": "CHANGE",
+      "before": "Equations/native graph/math unchanged; online validation, packing, persistence, cadence, guards revised. Existing U04 CLOSED evidence remains immutable. New production binding not closed.",
+      "after": "Equations/native graph/math unchanged; inherited v1.4 online validation, packing, persistence, cadence and guards unchanged. U04 CLOSED evidence immutable; live binding synthetically qualified, production resource qualification unresolved."
+    },
+    {
+      "path": "/resource_revision/commit/normal_discard",
+      "category": "STATUS_METADATA",
+      "operation": "CHANGE",
+      "before": "nonselected raw arrays only after successful live evaluation; source unqualified for production",
+      "after": "nonselected raw arrays only after successful live evaluation; v1.4 binding synthetically qualified, production resource qualification and run authorization remain pending"
+    },
+    {
+      "path": "/resource_revision/resource_guards/native_primary_binding_complete",
+      "category": "READINESS_METADATA",
+      "operation": "CHANGE",
+      "before": false,
+      "after": true
+    },
+    {
+      "path": "/resource_revision/resource_guards/storage_guard_authority/combination",
+      "category": "RESOURCE_GUARD_CLARIFICATION",
+      "operation": "ADD",
+      "before": null,
+      "after": "BOTH_REQUIRED"
+    },
+    {
+      "path": "/resource_revision/resource_guards/storage_guard_authority/cumulative_peak_fraction_is_a_run_gate",
+      "category": "RESOURCE_GUARD_CLARIFICATION",
+      "operation": "ADD",
+      "before": null,
+      "after": false
+    },
+    {
+      "path": "/resource_revision/resource_guards/storage_guard_authority/evidence/0",
+      "category": "RESOURCE_GUARD_CLARIFICATION",
+      "operation": "ADD",
+      "before": null,
+      "after": "Scripts/routeA/diagnostic_transient/v1_4/resource_guard.py:preflight"
+    },
+    {
+      "path": "/resource_revision/resource_guards/storage_guard_authority/evidence/1",
+      "category": "RESOURCE_GUARD_CLARIFICATION",
+      "operation": "ADD",
+      "before": null,
+      "after": "Scripts/routeA/diagnostic_transient/v1_4/launcher.py:prepare"
+    },
+    {
+      "path": "/resource_revision/resource_guards/storage_guard_authority/evidence/2",
+      "category": "RESOURCE_GUARD_CLARIFICATION",
+      "operation": "ADD",
+      "before": null,
+      "after": "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/resource_revision_fix/preflight_validation.json"
+    },
+    {
+      "path": "/resource_revision/resource_guards/storage_guard_authority/execution_requirements/0",
+      "category": "RESOURCE_GUARD_CLARIFICATION",
+      "operation": "ADD",
+      "before": null,
+      "after": "overall resource ready YES"
+    },
+    {
+      "path": "/resource_revision/resource_guards/storage_guard_authority/execution_requirements/1",
+      "category": "RESOURCE_GUARD_CLARIFICATION",
+      "operation": "ADD",
+      "before": null,
+      "after": "explicit future run authorization"
+    },
+    {
+      "path": "/resource_revision/resource_guards/storage_guard_authority/execution_requirements/2",
+      "category": "RESOURCE_GUARD_CLARIFICATION",
+      "operation": "ADD",
+      "before": null,
+      "after": "immediate preflight recheck"
+    },
+    {
+      "path": "/resource_revision/resource_guards/storage_guard_authority/existing_permanent_semantics",
+      "category": "RESOURCE_GUARD_CLARIFICATION",
+      "operation": "ADD",
+      "before": null,
+      "after": "Measured retained bytes and lifecycle manifests from verified prior production seals in PURGED state; not guaranteed planning reclaim"
+    },
+    {
+      "path": "/resource_revision/resource_guards/storage_guard_authority/fraction_rule",
+      "category": "RESOURCE_GUARD_CLARIFICATION",
+      "operation": "ADD",
+      "before": null,
+      "after": "0 < current_series_working_peak_bytes <= 0.55 * current_verified_free_bytes"
+    },
+    {
+      "path": "/resource_revision/resource_guards/storage_guard_authority/free_space_semantics",
+      "category": "RESOURCE_GUARD_CLARIFICATION",
+      "operation": "ADD",
+      "before": null,
+      "after": "statvfs f_bavail*f_frsize immediately before each series; already excludes retained footprint. Existing permanent in reserve rule is an additional conservative reserve, not actual usage counted twice."
+    },
+    {
+      "path": "/resource_revision/resource_guards/storage_guard_authority/hierarchy",
+      "category": "RESOURCE_GUARD_CLARIFICATION",
+      "operation": "ADD",
+      "before": null,
+      "after": "v1.4 resource_guard.preflight retains per-series 0.55; launcher.prepare additionally requires sequential reserve. Neither supersedes the other. Initial-free cumulative 0.560285624635319 is descriptive capacity accounting."
+    },
+    {
+      "path": "/resource_revision/resource_guards/storage_guard_authority/legacy_0p55_guard_status",
+      "category": "RESOURCE_GUARD_CLARIFICATION",
+      "operation": "ADD",
+      "before": null,
+      "after": "PER_SERIES_ONLY"
+    },
+    {
+      "path": "/resource_revision/resource_guards/storage_guard_authority/other_preflight_requirements/0",
+      "category": "RESOURCE_GUARD_CLARIFICATION",
+      "operation": "ADD",
+      "before": null,
+      "after": "registered series working/permanent/file caps"
+    },
+    {
+      "path": "/resource_revision/resource_guards/storage_guard_authority/other_preflight_requirements/1",
+      "category": "RESOURCE_GUARD_CLARIFICATION",
+      "operation": "ADD",
+      "before": null,
+      "after": "pinned provenance/source/library hashes"
+    },
+    {
+      "path": "/resource_revision/resource_guards/storage_guard_authority/other_preflight_requirements/2",
+      "category": "RESOURCE_GUARD_CLARIFICATION",
+      "operation": "ADD",
+      "before": null,
+      "after": "new registered export root"
+    },
+    {
+      "path": "/resource_revision/resource_guards/storage_guard_authority/other_preflight_requirements/3",
+      "category": "RESOURCE_GUARD_CLARIFICATION",
+      "operation": "ADD",
+      "before": null,
+      "after": "required prior production seals and measured retained footprint"
+    },
+    {
+      "path": "/resource_revision/resource_guards/storage_guard_authority/other_preflight_requirements/4",
+      "category": "RESOURCE_GUARD_CLARIFICATION",
+      "operation": "ADD",
+      "before": null,
+      "after": "0 < planned_files <= 0.05 * current_free_inodes"
+    },
+    {
+      "path": "/resource_revision/resource_guards/storage_guard_authority/other_preflight_requirements/5",
+      "category": "RESOURCE_GUARD_CLARIFICATION",
+      "operation": "ADD",
+      "before": null,
+      "after": "MemAvailable >= 24 * 2**30"
+    },
+    {
+      "path": "/resource_revision/resource_guards/storage_guard_authority/other_preflight_requirements/6",
+      "category": "RESOURCE_GUARD_CLARIFICATION",
+      "operation": "ADD",
+      "before": null,
+      "after": "Co0.125 separate resource review and explicit conditional authorization"
+    },
+    {
+      "path": "/resource_revision/resource_guards/storage_guard_authority/sequential_reserve_rule",
+      "category": "RESOURCE_GUARD_CLARIFICATION",
+      "operation": "ADD",
+      "before": null,
+      "after": "current_verified_free_bytes > current_series_working_peak_bytes + measured_existing_permanent_bytes + max(32 * 2**30, int(0.10 * current_verified_free_bytes))"
+    },
+    {
+      "path": "/resource_revision/trust_basis/6",
+      "category": "GUARD_METADATA",
+      "operation": "CHANGE",
+      "before": "production blocked until complete primary/control/certificate/arrival binding qualification",
+      "after": "production blocked pending compute/memory/I/O resource qualification and explicit future run authorization; v1.4 primary/control/certificate/arrival binding PASS"
+    },
+    {
+      "path": "/revision_scope",
+      "category": "STATUS_METADATA",
+      "operation": "ADD",
+      "before": null,
+      "after": "MACHINE_AUTHORITY_CONSISTENCY_ONLY"
+    },
+    {
+      "path": "/sampling/full_fields/production_binding_qualified",
+      "category": "READINESS_METADATA",
+      "operation": "CHANGE",
+      "before": false,
+      "after": true
+    },
+    {
+      "path": "/task",
+      "category": "STATUS_METADATA",
+      "operation": "CHANGE",
+      "before": "FIX_ROUTE_A_DIAGNOSTIC_TRANSIENT_RESOURCE_REVISION",
+      "after": "FIX_ROUTE_A_DIAGNOSTIC_TRANSIENT_V1_4_AUTHORITY_CONSISTENCY"
+    },
+    {
+      "path": "/version",
+      "category": "STATUS_METADATA",
+      "operation": "CHANGE",
+      "before": "1.4",
+      "after": "1.5"
+    }
+  ],
+  "scientific_invariants": {
+    "physical_problem": true,
+    "governing_equations": true,
+    "transient_algorithm": true,
+    "initial_condition": true,
+    "spatial_discretization": true,
+    "temporal_discretization": true,
+    "courant_control": true,
+    "series": true,
+    "inner_convergence": true,
+    "dimensionless_time": true,
+    "duration": true,
+    "steady_arrival": true,
+    "QoIs": true,
+    "mass_diagnostic": true,
+    "energy_diagnostic": true,
+    "thermo_rho_synchronization": true,
+    "temporal_comparison": true
+  },
+  "consistency_checks_path": "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_contract_consistency_checks.json",
+  "negative_tests": [
+    {
+      "test": "wrong_parent_SHA",
+      "status": "PASS",
+      "expected_failure": "PARENT_VERSION_PATH_SHA",
+      "detected_failures": [
+        "PARENT_VERSION_PATH_SHA",
+        "PARENT_DUPLICATE_STATUS",
+        "SCOPED_SEMANTIC_DIFF"
+      ]
+    },
+    {
+      "test": "wrong_duplicate_parent_SHA",
+      "status": "PASS",
+      "expected_failure": "PARENT_DUPLICATE_STATUS",
+      "detected_failures": [
+        "PARENT_DUPLICATE_STATUS"
+      ]
+    },
+    {
+      "test": "wrong_formal_SHA",
+      "status": "PASS",
+      "expected_failure": "FORMAL_VERSION_PATH_SHA",
+      "detected_failures": [
+        "FORMAL_VERSION_PATH_SHA",
+        "FORMAL_DUPLICATE_STATUS",
+        "SCOPED_SEMANTIC_DIFF"
+      ]
+    },
+    {
+      "test": "stale_duplicate_revision_version",
+      "status": "PASS",
+      "expected_failure": "DUPLICATE_CURRENT_REVISION_STATUS",
+      "detected_failures": [
+        "DUPLICATE_CURRENT_REVISION_STATUS"
+      ]
+    },
+    {
+      "test": "wrong_source_revision_SHA",
+      "status": "PASS",
+      "expected_failure": "SOURCE_REVISION_PROVENANCE",
+      "detected_failures": [
+        "SOURCE_REVISION_PROVENANCE"
+      ]
+    },
+    {
+      "test": "binding_PASS_binding_complete_false",
+      "status": "PASS",
+      "expected_failure": "LIVE_BINDING_COMPLETION",
+      "detected_failures": [
+        "LIVE_BINDING_COMPLETION"
+      ]
+    },
+    {
+      "test": "storage_ready_active_storage_blocker",
+      "status": "PASS",
+      "expected_failure": "NO_ACTIVE_PRIMARY_STORAGE_BLOCKER",
+      "detected_failures": [
+        "NO_ACTIVE_PRIMARY_STORAGE_BLOCKER",
+        "SCOPED_SEMANTIC_DIFF"
+      ]
+    },
+    {
+      "test": "authorized_resource_not_ready",
+      "status": "PASS",
+      "expected_failure": "NO_RUN_AUTHORIZATION",
+      "detected_failures": [
+        "NO_RUN_AUTHORIZATION",
+        "SCOPED_SEMANTIC_DIFF"
+      ]
+    },
+    {
+      "test": "two_active_next_tasks",
+      "status": "PASS",
+      "expected_failure": "UNIQUE_CURRENT_NEXT_TASK",
+      "detected_failures": [
+        "UNIQUE_CURRENT_NEXT_TASK"
+      ]
+    },
+    {
+      "test": "extra_active_next_task",
+      "status": "PASS",
+      "expected_failure": "UNIQUE_CURRENT_NEXT_TASK",
+      "detected_failures": [
+        "UNIQUE_CURRENT_NEXT_TASK",
+        "SCOPED_SEMANTIC_DIFF"
+      ]
+    },
+    {
+      "test": "old_v1_3_guard",
+      "status": "PASS",
+      "expected_failure": "CURRENT_EXECUTION_GUARD",
+      "detected_failures": [
+        "CURRENT_EXECUTION_GUARD",
+        "NO_STALE_ACTIVE_BLOCKERS"
+      ]
+    },
+    {
+      "test": "revision_complete_false",
+      "status": "PASS",
+      "expected_failure": "RESOURCE_REVISION_COMPLETION",
+      "detected_failures": [
+        "RESOURCE_REVISION_COMPLETION"
+      ]
+    },
+    {
+      "test": "resource_ready_unresolved_compute",
+      "status": "PASS",
+      "expected_failure": "RESOURCE_READINESS_HIERARCHY",
+      "detected_failures": [
+        "RESOURCE_READINESS_HIERARCHY",
+        "SCOPED_SEMANTIC_DIFF"
+      ]
+    },
+    {
+      "test": "closed_checklist_stale_blocker",
+      "status": "PASS",
+      "expected_failure": "NO_STALE_ACTIVE_BLOCKERS",
+      "detected_failures": [
+        "CLOSED_CHECKLIST_23",
+        "NO_STALE_ACTIVE_BLOCKERS",
+        "NO_CLOSED_ITEM_BLOCKER"
+      ]
+    },
+    {
+      "test": "sampling_binding_false",
+      "status": "PASS",
+      "expected_failure": "LIVE_BINDING_COMPLETION",
+      "detected_failures": [
+        "LIVE_BINDING_COMPLETION"
+      ]
+    },
+    {
+      "test": "configuration_frozen_before_qualification",
+      "status": "PASS",
+      "expected_failure": "CONFIGURATION_NOT_FROZEN",
+      "detected_failures": [
+        "CONFIGURATION_NOT_FROZEN",
+        "SCOPED_SEMANTIC_DIFF"
+      ]
+    },
+    {
+      "test": "relaxed_55_percent",
+      "status": "PASS",
+      "expected_failure": "STORAGE_GUARD_SEMANTICS",
+      "detected_failures": [
+        "STORAGE_GUARD_SEMANTICS",
+        "SCOPED_SEMANTIC_DIFF"
+      ]
+    },
+    {
+      "test": "cumulative_55_percent_gate",
+      "status": "PASS",
+      "expected_failure": "STORAGE_GUARD_SEMANTICS",
+      "detected_failures": [
+        "STORAGE_GUARD_SEMANTICS"
+      ]
+    },
+    {
+      "test": "ambiguous_HEAD_reintroduced",
+      "status": "PASS",
+      "expected_failure": "HEAD_SEMANTICS",
+      "detected_failures": [
+        "HEAD_SEMANTICS"
+      ]
+    },
+    {
+      "test": "science_changed",
+      "status": "PASS",
+      "expected_failure": "SCIENTIFIC_INVARIANT_transient_algorithm",
+      "detected_failures": [
+        "SCIENTIFIC_INVARIANT_transient_algorithm",
+        "SCOPED_SEMANTIC_DIFF"
+      ]
+    },
+    {
+      "test": "capacity_changed",
+      "status": "PASS",
+      "expected_failure": "PERSISTENCE_CAPACITY_LIFECYCLE_INVARIANT",
+      "detected_failures": [
+        "PERSISTENCE_CAPACITY_LIFECYCLE_INVARIANT",
+        "SCOPED_SEMANTIC_DIFF"
+      ]
+    },
+    {
+      "test": "historical_status_changed",
+      "status": "PASS",
+      "expected_failure": "HISTORICAL_INVARIANT_inherited_v1_3_evaluator_verification",
+      "detected_failures": [
+        "HISTORICAL_INVARIANT_inherited_v1_3_evaluator_verification",
+        "SCOPED_SEMANTIC_DIFF"
+      ]
+    }
+  ],
+  "storage_guard_planning_checks": [
+    {
+      "Co": "0.5",
+      "planning_current_free": 795726016512,
+      "working_peak": 195816776152,
+      "existing_permanent": 0,
+      "working_peak_fraction": 0.2460856778446768,
+      "fraction_pass": true,
+      "reserve_pass": true
+    },
+    {
+      "Co": "0.25",
+      "planning_current_free": 617089109544,
+      "working_peak": 267196941232,
+      "existing_permanent": 178636906968,
+      "working_peak_fraction": 0.43299571666310244,
+      "fraction_pass": true,
+      "reserve_pass": true
+    }
+  ],
+  "final_contract_path": "docs/routeA_diagnostic_transient_contract_v1.5.json",
+  "final_contract_sha256": "06c71945289ffe419b784843f7aab2fea66c44d28c9dba46d828bbd24837e27d",
+  "evidence_sha256": {
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/resource_revision_fix/live_native_validation.json": "a250aa65b4a932a7ccd493d26b302a020a898d90f875c7bc2bffc0360b110aff",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/resource_revision_fix/live_policy_validation.json": "f3ae1e5eb4835171006be47bdc470c9d083114f1946876c58287eaf3d289f172",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/resource_revision_fix/lifecycle_validation.json": "a6513530361417ca019c6454e8769bb75be71d610f0b0b18d18ab92af2fa7da2",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/resource_revision_fix/native/synthetic_validation.json": "f51ce53fcae98c33afeb4443c2a23fff29416ac9554c7705e606b1922920adc4",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/resource_revision_fix/preflight_validation.json": "28e9f6f9ec3b74c369575266d4ed7d0bd5dc51a8d1a649287d96851f7de85cb4",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_resource_revision_fix.json": "c044b9f6795cf05da882b0a8dcee30f68a76f86e788fdbca90afdad3c95868f6",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/resource_revision_fix/start_guard.json": "c0aea7ee6a83c336a8899e0291b1bc9f3aba40c7c168d4617a8a8fa94052dcd1",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/resource_revision/authority.json": "5558f2be23061d8ce7a3e6884f1080492d93ccf0ecddf19691ce347f6f244bbb",
+    "Scripts/routeA/diagnostic_transient/v1_4/resource_guard.py": "328df5fb45756d230db76ae5e0ec8960ce7b051d5d35e1b811f10bccfeffe4e1",
+    "Scripts/routeA/diagnostic_transient/v1_4/launcher.py": "4a0c79f2b824bd7da4ed79c8e49c300a21009406524184ab551697f2db5990c9",
+    "Scripts/routeA/diagnostic_transient/v1_4/finalize.py": "8370ad64bbc779736e8760f01bd15aceed39a8a98a142fed3c0e28fbc4ca5ff0"
+  },
+  "unit_test_run": {
+    "command": "python3 -B -m unittest discover -s Scripts/routeA/diagnostic_transient/v1_5 -p 'test_contract_consistency.py' -v",
+    "exit_code": 0,
+    "status": "PASS",
+    "test_cases": [
+      "test_current_authority",
+      "test_duplicate_json_key_rejected",
+      "test_negative_mutations"
+    ],
+    "negative_mutations": 22,
+    "scope": "Metadata fixtures only; no launcher/native/CFD execution"
+  },
+  "fix_implementation_sha256": {
+    "Scripts/routeA/diagnostic_transient/v1_5/build_revision.py": "a6862087894514c3dc3ce5dbaf32f8ac4b1d896b3dfb5c95d84d7b02ae1446a4",
+    "Scripts/routeA/diagnostic_transient/v1_5/check_contract_consistency.py": "84530dc7f9c7c06954661497367068bccd8c7f11a04f71adb2b09e40a202a374",
+    "Scripts/routeA/diagnostic_transient/v1_5/test_contract_consistency.py": "89222ba11510a99bce854510e1731f0088c6d7c77d01f26e246efc2c01258ab7"
+  },
+  "end_guard": {
+    "HEAD": "8707aa00785f83b0620fdc6b8847c200f59b3522",
+    "git_status_short": "?? Scripts/routeA/diagnostic_transient/v1_5/\n?? cases/routeA/A-H-Ra1e6-fine-beta1e-4/\n?? cases/routeA/A-Ra1e3-coarse/\n?? cases/routeA/A-Ra1e3-fine/\n?? cases/routeA/A-Ra1e3-medium/\n?? cases/routeA/A-Ra1e4-coarse/\n?? cases/routeA/A-Ra1e4-fine/\n?? cases/routeA/A-Ra1e4-medium/\n?? cases/routeA/A-Ra1e5-coarse/\n?? cases/routeA/A-Ra1e5-fine/\n?? cases/routeA/A-Ra1e5-medium/\n?? cases/routeA/A-Ra1e6-coarse/\n?? cases/routeA/A-Ra1e6-fine/\n?? cases/routeA/A-Ra1e6-medium/\n?? cases/routeA/Ra0_medium/\n?? cases/routeA/Ra1e4_coarse/\n?? docs/routeA_diagnostic_transient_contract_v1.5.json\n?? docs/routeA_diagnostic_transient_contract_v1.5.md\n?? docs/routeA_diagnostic_transient_contract_v1.5.sha256\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_contract_consistency_checks.json\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_v1_4_authority_consistency_fix.json\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_v1_4_authority_consistency_fix.md\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_v1_4_v1_5_semantic_diff.csv\n",
+    "git_diff_stat": ""
+  }
+}
