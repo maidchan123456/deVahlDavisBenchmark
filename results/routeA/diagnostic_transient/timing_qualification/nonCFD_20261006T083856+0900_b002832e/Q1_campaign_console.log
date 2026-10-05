@@ -1,0 +1,7 @@
+{
+  "stage": "Q1",
+  "status": "STOPPED",
+  "STOP_reason": "STOP_WALL_TIME",
+  "trials": 1,
+  "completed": 0
+}

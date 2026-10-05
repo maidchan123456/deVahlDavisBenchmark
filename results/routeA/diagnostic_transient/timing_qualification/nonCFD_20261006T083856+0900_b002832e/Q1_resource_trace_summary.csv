@@ -1,0 +1,4 @@
+trial_id,role,scope,peak_role_RSS_bytes,peak_individual_VmSize_bytes,peak_role_total_VmSize_bytes,sampled_user_CPU_seconds_lower_bound,sampled_system_CPU_seconds_lower_bound,proc_wchar_sampled_lower_bound,proc_write_bytes_sampled_lower_bound,samples,time_v_complete
+000_startup,native,CENSORED_STARTUP_ONLY_NOT_FULL_EVENT_QUALIFICATION,432934912,440909824,443682816,7.57,0.29,2907,4096,821,False
+000_startup,backend,CENSORED_STARTUP_ONLY_NOT_FULL_EVENT_QUALIFICATION,170524672,190926848,193699840,18.16,2.92,5349473,5390336,821,False
+000_startup,driver,CENSORED_STARTUP_ONLY_NOT_FULL_EVENT_QUALIFICATION,130387968,138465280,138465280,2.33,0.2,30746937,8192,821,False

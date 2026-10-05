@@ -1,0 +1,81 @@
+{
+  "artifacts": [
+    {
+      "bytes": 7039959,
+      "path": "archive/data_0000.bin",
+      "sha256": "b0e43c1c2bb71da2780fb9db98e964991ae4a0140b72c816ea3855d03670ead6"
+    },
+    {
+      "bytes": 5966,
+      "path": "archive/trial_index.jsonl",
+      "sha256": "24fcd6a0f44a2dbd3ffbef043a3d090bedae4666c196d8a60e4387833cbf203d"
+    },
+    {
+      "bytes": 3351,
+      "path": "authority_receipt.json",
+      "sha256": "2ed11786c4f99f525db0149c77c0327a8c038511d8950ff35d06da32767283b2"
+    },
+    {
+      "bytes": 83,
+      "path": "process_group.json",
+      "sha256": "78b7911a425c0b9017a73c39ab0816229b32383fb940d1958733328d5794a6ad"
+    },
+    {
+      "bytes": 696,
+      "path": "quota_context.json",
+      "sha256": "b9ea7216560d90d5798cc3c4c79a99edc17912bb9ab65c01884dd1b74af59a1e"
+    },
+    {
+      "bytes": 2251644,
+      "path": "resource_trace.jsonl",
+      "sha256": "8769bf91e411c7b554c37332e4e25b76def4e6d13d0b2faef43dda9be8c1e27b"
+    },
+    {
+      "bytes": 16,
+      "path": "runner.heartbeat",
+      "sha256": "fef6983b0703e3f21868ab0278608dd0cacff8dc08bab82f747e285119b850ce"
+    },
+    {
+      "bytes": 3495,
+      "path": "stage_receipt.json",
+      "sha256": "c28ff005de7a5d919e7cbecf60f1e5e93eb6f1ad1744ba72103cb4b4f8eec126"
+    },
+    {
+      "bytes": 83,
+      "path": "stage_receipt_sha256.json",
+      "sha256": "3d1b403ef244263d1376d9fccdd0c8da725ad5cc93f6e5fb1a56470ed12f8798"
+    },
+    {
+      "bytes": 307,
+      "path": "stage_request.json",
+      "sha256": "b9774ed09f9ae297a92c0f238466de68e6e90c836ab076e6fc826cfa4356ff04"
+    },
+    {
+      "bytes": 4361,
+      "path": "stage_result.json",
+      "sha256": "fa6ccf5da984e0999ac590e5ec8f27bbc2dea4865f7cf206dfd5b0b1e936f8b3"
+    },
+    {
+      "bytes": 841,
+      "path": "supervisor_request.json",
+      "sha256": "12cdac81c3475c3605d7c05865bc32fab10a8064ef538705477573c0fef2336b"
+    },
+    {
+      "bytes": 806,
+      "path": "trial_result.json",
+      "sha256": "9b7a8844dc8816258bf4bbe52e37a2c63913fc5067da64177f5f2315dd1eb46f"
+    },
+    {
+      "bytes": 16,
+      "path": "watchdog.heartbeat",
+      "sha256": "1937562278aed2598690df20fdafc6dab875403cbec2db6f8a7649bcbddd8c17"
+    },
+    {
+      "bytes": 0,
+      "path": "worker.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "production_result": false,
+  "schema": "qualification_evidence/1"
+}

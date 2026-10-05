@@ -1,0 +1,14 @@
+{
+  "all_committed_trial_artifacts_hashes_verified": true,
+  "all_stage_artifact_hashes_verified": true,
+  "archive_record_hash": "56afc640be8d42c1660e272b37d9977e607688f552a19a70704a4d93ed815cab",
+  "full_trial_valid": false,
+  "no_orphans": true,
+  "partial_evidence_valid": true,
+  "scope": "ACTUAL_TARGET_SIZE_NONCFD_Q1",
+  "stage_manifest_SHA256": "82b72eb7af6884627dd40f1b7891bed01f20d9c51b251ca8faf2684abc17dea2",
+  "stage_manifest_path": "Q1/qualification_manifest.json",
+  "stage_receipt_SHA256": "c28ff005de7a5d919e7cbecf60f1e5e93eb6f1ad1744ba72103cb4b4f8eec126",
+  "status": "STOPPED",
+  "uncommitted_tail": false
+}

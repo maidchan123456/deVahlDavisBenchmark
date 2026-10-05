@@ -1,0 +1,10 @@
+{
+  "auth": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/timing_qualification/nonCFD_20261006T083856+0900_b002832e/authorization.json",
+  "prior": {
+    "Q0_status": "PASS"
+  },
+  "stage": "Q1",
+  "test_fault": null,
+  "test_requests": null,
+  "tiny": false
+}

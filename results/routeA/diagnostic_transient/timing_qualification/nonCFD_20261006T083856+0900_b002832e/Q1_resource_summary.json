@@ -1,0 +1,124 @@
+{
+  "backend": {
+    "PIDs": [
+      446462,
+      446463
+    ],
+    "peak_individual_process_VmSize_bytes": 190926848,
+    "peak_role_total_VmSize_bytes": 193699840,
+    "sampled_CPU_lower_bound_by_PID": {
+      "446462": {
+        "CPU_system_ticks": 0.0,
+        "CPU_user_ticks": 0.0
+      },
+      "446463": {
+        "CPU_system_ticks": 2.92,
+        "CPU_user_ticks": 18.16
+      }
+    },
+    "sampled_proc_IO_lower_bound_by_PID": {
+      "446462": {
+        "rchar": 4092,
+        "read_bytes": 0,
+        "wchar": 0,
+        "write_bytes": 0
+      },
+      "446463": {
+        "rchar": 548465793,
+        "read_bytes": 0,
+        "wchar": 5349473,
+        "write_bytes": 5390336
+      }
+    }
+  },
+  "classification": "MEASURED_PEAK_SAMPLED",
+  "driver": {
+    "PIDs": [
+      446461
+    ],
+    "peak_individual_process_VmSize_bytes": 138465280,
+    "peak_role_total_VmSize_bytes": 138465280,
+    "sampled_CPU_lower_bound_by_PID": {
+      "446461": {
+        "CPU_system_ticks": 0.2,
+        "CPU_user_ticks": 2.33
+      }
+    },
+    "sampled_proc_IO_lower_bound_by_PID": {
+      "446461": {
+        "rchar": 937898091,
+        "read_bytes": 0,
+        "wchar": 30746937,
+        "write_bytes": 8192
+      }
+    }
+  },
+  "full_memory_event_coverage": false,
+  "host_MemAvailable_min_bytes": 62491074560,
+  "host_stability": {
+    "no_additional_repeats": true,
+    "other_CPU_fraction_max": 0.12222222222222222,
+    "other_CPU_method": "delta host busy minus tracked process tick deltas; conservative for short-lived/missing process attribution",
+    "reasons": [
+      "other CPU busy exceeds registered10percent"
+    ],
+    "status": "UNRESOLVED"
+  },
+  "max_simultaneous_combined_RSS_bytes": 596127744,
+  "maximum_sampling_gap_seconds": 0.04676626296713948,
+  "memory_guard_violated": false,
+  "min_disk_free_bytes_sampled": 793445781504,
+  "native": {
+    "PIDs": [
+      446464,
+      446465,
+      446466
+    ],
+    "peak_individual_process_VmSize_bytes": 440909824,
+    "peak_role_total_VmSize_bytes": 443682816,
+    "sampled_CPU_lower_bound_by_PID": {
+      "446464": {
+        "CPU_system_ticks": 0.0,
+        "CPU_user_ticks": 0.0
+      },
+      "446465": {
+        "CPU_system_ticks": 0.18,
+        "CPU_user_ticks": 7.17
+      },
+      "446466": {
+        "CPU_system_ticks": 0.11,
+        "CPU_user_ticks": 0.4
+      }
+    },
+    "sampled_proc_IO_lower_bound_by_PID": {
+      "446464": {
+        "rchar": 4092,
+        "read_bytes": 0,
+        "wchar": 0,
+        "write_bytes": 0
+      },
+      "446465": {
+        "rchar": 574791230,
+        "read_bytes": 0,
+        "wchar": 2907,
+        "write_bytes": 4096
+      },
+      "446466": {
+        "rchar": 538716069,
+        "read_bytes": 0,
+        "wchar": 0,
+        "write_bytes": 0
+      }
+    }
+  },
+  "outer_samples": 883,
+  "peak_backend_RSS_bytes": 170524672,
+  "peak_file_count_sampled": 33,
+  "peak_native_RSS_bytes": 432934912,
+  "peak_scratch_bytes_sampled": 15147008,
+  "role_caveat": "Native/backend role RSS includes registered time wrappers and native permission helper; individual and role VmSize are distinguished",
+  "samples": 821,
+  "sampling_caveat": "20ms nominal sampling can miss short peaks; killed time-v wrappers did not publish high-water results",
+  "scope": "CENSORED_STARTUP_ONLY_NOT_FULL_EVENT_QUALIFICATION",
+  "sum_individual_native_backend_peaks_upper_bound": 603459584
+}

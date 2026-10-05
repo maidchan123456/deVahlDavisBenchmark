@@ -1,0 +1,37 @@
+{
+  "CFD_allowed": false,
+  "HEAD": "b6e93cfef34b542304adc23ed8fe6dd154a5f5b3",
+  "Q3_authorized": false,
+  "allowed_stages": [
+    "Q1",
+    "Q2"
+  ],
+  "authorization_class": "NONCFD_TIMING_QUALIFICATION",
+  "blocker_closure_SHA256": "94449ef421853998ebcea7aa100b3b2dc5e9b91d342f4343d039693a0879a5b3",
+  "campaigns_per_stage": 1,
+  "canonical_authority_SHA256": "06c71945289ffe419b784843f7aab2fea66c44d28c9dba46d828bbd24837e27d",
+  "case_generation_allowed": false,
+  "forbidden_stages": [
+    "Q3",
+    "PILOT_CFD",
+    "PRODUCTION_CFD"
+  ],
+  "formal_authority_SHA256": "fbc744e012f66b37b5d9409be961cb5a9410c3d75ac7e2f026b2acf118d3bb60",
+  "harness_manifest_SHA256": "d4702d8d72583158413c98de639e996a3c4adb9248abb6751bf8948025cc92b4",
+  "initialization_allowed": false,
+  "measurement_readiness_SHA256": "4bda1aa03b9539debf6670bc0b6b776f3553bf379bf9106bb884a8d9d696c3c5",
+  "mesh_generation_allowed": false,
+  "physical_time_advance_allowed": false,
+  "plan_SHA256": "79c065a9d21900f57daefe3cd8caec980dec203344ab59c995738eb59339dfe9",
+  "premeasurement_regression_SHA256": "9f0c84190cf5798bf168e255d90432653ca8de97b26614848ad47c0c1cd07fa0",
+  "preparation_fix_002_SHA256": "bfaa794b192a4b6416cf3934942216da5ef6fe3ae75f69af24b97e8ff40b838b",
+  "production_execution_authorized": false,
+  "production_namespace_allowed": false,
+  "qualification_id": "nonCFD_20261006T083856+0900_b002832e",
+  "runtime_mapping_SHA256": "703a4e11a1d15af5aecdf7a0e1059cc2f0d3cd92605a2e06f1601ee6c8870d11",
+  "schema": "user_nonCFD_qualification_scope/1",
+  "task": "RUN_ROUTE_A_DIAGNOSTIC_TRANSIENT_NONCFD_TIMING_QUALIFICATION",
+  "task_attachment_SHA256": "7dad92930108f40c91e40d8411b55be0d941eae6a706a9b3befa63e68d2d7a2f",
+  "timestamp": "2026-10-05T23:43:53.145234+00:00",
+  "user_authorization_scope": "Q1_Q2_NONCFD_ONLY"
+}

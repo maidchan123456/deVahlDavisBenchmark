@@ -1,0 +1,7 @@
+payload_class,status,reason
+compact scalar receipt,NOT_EXECUTED,STOP_Q1_NOT_PASS
+field-state payload,NOT_EXECUTED,STOP_Q1_NOT_PASS
+scalar LDU matrix,NOT_EXECUTED,STOP_Q1_NOT_PASS
+explicit term,NOT_EXECUTED,STOP_Q1_NOT_PASS
+controller payload,NOT_EXECUTED,STOP_Q1_NOT_PASS
+selected bundle,NOT_EXECUTED,STOP_Q1_NOT_PASS

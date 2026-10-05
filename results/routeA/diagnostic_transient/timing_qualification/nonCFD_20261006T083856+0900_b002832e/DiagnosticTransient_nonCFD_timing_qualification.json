@@ -1,0 +1,412 @@
+{
+  "HEAD": "b6e93cfef34b542304adc23ed8fe6dd154a5f5b3",
+  "Q1": {
+    "completed_startup_samples": 0,
+    "critical_trial_status": "CENSORED",
+    "finalization_completed": false,
+    "full_startup_audit_completed": false,
+    "graph_fully_executed": false,
+    "paired_ON_minus_OFF": [],
+    "planned_graph_verified_before_launch": true,
+    "recurring_trials_attempted": 0,
+    "selected_audit_completed": false,
+    "startup_projection_multiplicity_registered": 3,
+    "startup_three_distinct_states_measured": false,
+    "status": "STOPPED",
+    "trial": {
+      "STOP_reason": "STOP_WALL_TIME",
+      "backend_CPU_seconds_sampled_lower_bound": 21.08,
+      "completed_callbacks_including_constructor": 4,
+      "completed_matrix_packets": 0,
+      "cost_class": "STARTUP_ONE_TIME",
+      "end_monotonic": 662788.338510884,
+      "external_wall_seconds": 30.062141012982465,
+      "file_count_peak_sampled": 33,
+      "full_recurring_callbacks_expected": 1144,
+      "full_recurring_matrix_packets_expected": 701,
+      "host_MemAvailable_min_bytes": 62491074560,
+      "max_simultaneous_combined_RSS_bytes": 596127744,
+      "mode": "ON",
+      "native_CPU_seconds_sampled_lower_bound": 7.86,
+      "native_JSON_IPC_bytes_completed_prefix": 21038037,
+      "other_CPU_busy_max_fraction": 0.12222222222222222,
+      "peak_backend_RSS_bytes": 170524672,
+      "peak_backend_VmSize_bytes": 190926848,
+      "peak_native_RSS_bytes": 432934912,
+      "peak_native_VmSize_bytes": 440909824,
+      "sample_valid": false,
+      "scratch_bytes_peak_sampled": 15147008,
+      "start_monotonic": 662758.276370927,
+      "startup_production_projection_multiplicity": 3,
+      "startup_sample_completed": false,
+      "startup_three_distinct_states_measured": false,
+      "status": "CENSORED",
+      "timing_stability": "UNRESOLVED",
+      "trial_id": "000_startup"
+    }
+  },
+  "Q2": {
+    "actual_trials": 0,
+    "no_target_U03_primitive_memory_IO_measurements": true,
+    "reason": "STOP_Q1_NOT_PASS",
+    "registered_trials": 66,
+    "status": "NOT_EXECUTED",
+    "user_authorized": true
+  },
+  "authorization": {
+    "Q3_authorized": false,
+    "actual_nonCFD_authorization_created": true,
+    "production_execution_authorized": false,
+    "runner_exact_schema_SHA256": "eca4a834931755b37ca75afe11f73b26567c4e7290b69737750de04945784b9c",
+    "runner_exact_schema_path": "authorization.json",
+    "scope_SHA256": "d500e3ca178c7ffa998b9ff0b737614dfb704305b17dd12cac4af578bc2626fd",
+    "scope_path": "authorization_scope.json"
+  },
+  "bottleneck_ranking": [
+    {
+      "campaign_rank": "UNKNOWN",
+      "component": "serialization",
+      "reason": "No completed recurring graph or Q2 breakdown; prefix spans cannot establish production dominance",
+      "risk": "UNKNOWN"
+    },
+    {
+      "campaign_rank": "UNKNOWN",
+      "component": "canonicalization",
+      "reason": "No completed recurring graph or Q2 breakdown; prefix spans cannot establish production dominance",
+      "risk": "UNKNOWN"
+    },
+    {
+      "campaign_rank": "UNKNOWN",
+      "component": "matrix replay",
+      "reason": "No completed recurring graph or Q2 breakdown; prefix spans cannot establish production dominance",
+      "risk": "UNKNOWN"
+    },
+    {
+      "campaign_rank": "UNKNOWN",
+      "component": "packing",
+      "reason": "No completed recurring graph or Q2 breakdown; prefix spans cannot establish production dominance",
+      "risk": "UNKNOWN"
+    },
+    {
+      "campaign_rank": "UNKNOWN",
+      "component": "IPC",
+      "reason": "No completed recurring graph or Q2 breakdown; prefix spans cannot establish production dominance",
+      "risk": "UNKNOWN"
+    },
+    {
+      "campaign_rank": "UNKNOWN",
+      "component": "U03",
+      "reason": "No completed recurring graph or Q2 breakdown; prefix spans cannot establish production dominance",
+      "risk": "UNKNOWN"
+    },
+    {
+      "campaign_rank": "UNKNOWN",
+      "component": "memory",
+      "reason": "No completed recurring graph or Q2 breakdown; prefix spans cannot establish production dominance",
+      "risk": "UNKNOWN"
+    },
+    {
+      "campaign_rank": "UNKNOWN",
+      "component": "I/O",
+      "reason": "No completed recurring graph or Q2 breakdown; prefix spans cannot establish production dominance",
+      "risk": "UNKNOWN"
+    },
+    {
+      "campaign_rank": "UNKNOWN",
+      "component": "other",
+      "reason": "No completed recurring graph or Q2 breakdown; prefix spans cannot establish production dominance",
+      "risk": "UNKNOWN"
+    }
+  ],
+  "evidence": {
+    "archive_artifacts_verified": true,
+    "frozen_source_and_authority_SHA_unchanged": true,
+    "no_actual_evidence_purged": true,
+    "no_orphan_processes": true,
+    "no_uncommitted_index_tail": true,
+    "partial_trial_addressable": true,
+    "regression_tiny_fixtures": "Original regression TemporaryDirectory cleanup; actual campaign archive and evidence never removed",
+    "stage_manifest_verified": true
+  },
+  "feasibility": {
+    "IO": {
+      "classification": "UNRESOLVED",
+      "confidence": "LOW",
+      "reason": "Q2 bounded I/O unexecuted; initial runtime writes are not selected/audit sustained I/O qualification"
+    },
+    "compute": {
+      "classification": "UNRESOLVED",
+      "confidence": "LOW",
+      "reason": "Censored startup with no full graph, no recurring OFF/ON pair or target U03 fit"
+    },
+    "memory": {
+      "classification": "UNRESOLVED",
+      "confidence": "LOW",
+      "reason": "Observed prefix respected all guards; required rolling/bundle/audit/U01/U03 events unqualified"
+    }
+  },
+  "historical_harness_metadata_caveat": {
+    "stage_result_actual_authorization_created_false": "Frozen stage_summary hardcodes false for preparation-era reporting. Real authorization exists and is hash-bound by actual stage receipt; parent report records true without rewriting frozen output.",
+    "stage_result_execution_authorized_false": "Production permission remains false; separate exact-schema authorization enables only Q1/Q2 nonCFD launches."
+  },
+  "interpretation": {
+    "actual_partial_observations_not_guard_limits": true,
+    "cache_uncertainty": "Uncontrolled existing caches; no cache drop; warm/cold sustained I/O unknown",
+    "host_instability_rule_triggered": [
+      "other CPU busy exceeds registered10percent"
+    ],
+    "no_formal_user_deadline": true,
+    "no_full_graph_extrapolation_from_four_callbacks": true,
+    "no_new_months_years_projection_from_incomplete_data": true,
+    "no_tiny_timings_substituted": true,
+    "startup_or_guard_cost_not_substituted_for_recurring_cost": true,
+    "timeout_is_not_production_infeasibility_proof": true
+  },
+  "next_task_scope": "Inspect the failed target startup path and durable incomplete span evidence; any implementation or bound/schedule revision requires a separate task and new preparation/authorization. Do not retry this campaign.",
+  "qualification_id": "nonCFD_20261006T083856+0900_b002832e",
+  "regression": {
+    "path": "premeasurement_regression.json",
+    "source_unchanged": true,
+    "status": "PASS",
+    "tests": 46
+  },
+  "required_final_status": {
+    "ALL_RA_NEEDS_320": "YES",
+    "ALL_ROUTE_A_GATE_F": "FAIL",
+    "AUTHORIZATION_SCOPE": "Q1_Q2_NONCFD_ONLY",
+    "BENCHMARK_CORE_PASS": "NO",
+    "CALLBACKS_PER_STEP_EQUIVALENT": 1144,
+    "CANONICALIZATION_RISK": "UNKNOWN",
+    "CANONICAL_AUTHORITY_HASH_VERIFIED": "YES",
+    "CANONICAL_DIAGNOSTIC_AUTHORITY_VERSION": "1.5",
+    "CAPACITY_ESTIMATES_CHANGED": "NO",
+    "CASE_GENERATED": "NO",
+    "CENSORED_TRIALS_PRESENT": "YES",
+    "CFD_TRANSIENT_EXECUTED": "NO",
+    "COMPLETE_EXECUTION_CONFIGURATION_FROZEN": "NO",
+    "COMPUTE_CONFIDENCE": "LOW",
+    "COMPUTE_FEASIBILITY": "UNRESOLVED",
+    "CURRENT_FROZEN_DIAGNOSTIC_DESIGN_PRACTICALLY_EXECUTABLE": "UNRESOLVED",
+    "DIAGNOSTIC_TRANSIENT_RESOURCE_READY": "NO",
+    "DIAGNOSTIC_TRANSIENT_STORAGE_READY": "YES",
+    "DOMINANT_BOTTLENECK": "UNKNOWN",
+    "DOWNSTREAM_TRANSIENT_READY": "NO",
+    "EXECUTION_AUTHORIZED": "NO",
+    "FORMAL_AUTHORITY_HASH_VERIFIED": "YES",
+    "FORMAL_CRITERIA_CHANGED": "NO",
+    "FORMAL_GATE_J_CURRENTLY_ALLOWED": "NO",
+    "FORMAL_GATE_J_EXECUTED": "NO",
+    "FORMAL_GATE_J_PASS": "NOT_EVALUATED",
+    "FSYNC_LATENCY": "UNRESOLVED",
+    "GRID_INDEPENDENT_TRANSIENT_CLAIM_ALLOWED": "NO",
+    "HISTORICAL_STATUS_CHANGED": "NO",
+    "INITIALIZATION_EXECUTED": "NO",
+    "IO_CONFIDENCE": "LOW",
+    "IO_EFFECTIVE_MBPS": "UNRESOLVED",
+    "IO_FEASIBILITY": "UNRESOLVED",
+    "IO_STAGE_BYTES": "UNRESOLVED",
+    "IPC_RISK": "UNKNOWN",
+    "LINEAR_SOLVER_POLICY_CHANGED": "NO",
+    "MATRIX_PACKETS_PER_STEP_EQUIVALENT": 701,
+    "MATRIX_REPLAY_RISK": "UNKNOWN",
+    "MAX_SIMULTANEOUS_COMBINED_RSS_BYTES": 596127744,
+    "MEASUREMENT_READINESS_VERIFIED": "YES",
+    "MEMORY_CONFIDENCE": "LOW",
+    "MEMORY_FEASIBILITY": "UNRESOLVED",
+    "MEMORY_GUARDS_RESPECTED": "YES",
+    "MESH_GENERATED": "NO",
+    "NEXT_SINGLE_TASK": "FIX_ROUTE_A_DIAGNOSTIC_TRANSIENT_NONCFD_TIMING_QUALIFICATION",
+    "N_OUTER_CORRECTORS_CHANGED": "NO",
+    "PACKING_RISK": "UNKNOWN",
+    "PARTIAL_EVIDENCE_VALID": "YES",
+    "PARTICLE_COUPLING_READY": "NO",
+    "PEAK_BACKEND_RSS_BYTES": 170524672,
+    "PEAK_NATIVE_RSS_BYTES": 432934912,
+    "PERSISTENCE_POLICY_CHANGED": "NO",
+    "PILOT_CFD_EXECUTED": "NO",
+    "PREMEASUREMENT_REGRESSION": "PASS",
+    "PRODUCTION_EXECUTION_AUTHORIZED": "NO",
+    "PRODUCTION_SOLVER_EXECUTED": "NO",
+    "Q1_AUTHORIZED": "YES",
+    "Q1_CLASSIFICATION": "UNRESOLVED",
+    "Q1_CO0125_DIAGNOSTIC_ONLY_RUNTIME_PROJECTION": "UNRESOLVED",
+    "Q1_CO025_DIAGNOSTIC_ONLY_RUNTIME_PROJECTION": "UNRESOLVED",
+    "Q1_CO05_DIAGNOSTIC_ONLY_RUNTIME_PROJECTION": "UNRESOLVED",
+    "Q1_DIAGNOSTIC_FRACTION": "UNRESOLVED",
+    "Q1_EXECUTED": "YES",
+    "Q1_MAX_SIMULTANEOUS_COMBINED_RSS_BYTES": 596127744,
+    "Q1_OFF_MEDIAN_SECONDS": "UNRESOLVED",
+    "Q1_ON_MEDIAN_SECONDS": "UNRESOLVED",
+    "Q1_PEAK_BACKEND_RSS_BYTES": 170524672,
+    "Q1_PEAK_BACKEND_VMSIZE_BYTES": 190926848,
+    "Q1_PEAK_NATIVE_RSS_BYTES": 432934912,
+    "Q1_PEAK_NATIVE_VMSIZE_BYTES": 440909824,
+    "Q1_RECURRING_DIAGNOSTIC_OVERHEAD_SECONDS": "UNRESOLVED",
+    "Q1_STATUS": "STOPPED",
+    "Q1_TIMING_STABILITY": "UNRESOLVED",
+    "Q2_AUTHORIZED": "YES",
+    "Q2_EXECUTED": "NO",
+    "Q2_FILE_COUNT_PEAK": "UNRESOLVED",
+    "Q2_FILE_LIMIT": 256,
+    "Q2_FILE_LIMIT_RESPECTED": "UNRESOLVED",
+    "Q2_STATUS": "NOT_EXECUTED",
+    "Q3_AUTHORIZED": "NO",
+    "Q3_BOUNDED_CFD_QUALIFICATION_RECOMMENDED": "NO",
+    "Q3_EXECUTED": "NO",
+    "QUALIFICATION_ID": "nonCFD_20261006T083856+0900_b002832e",
+    "RECOMMENDED_REASONING_MODEL_FOR_NEXT_TASK": "gpt-6.1-sol / high",
+    "RETENTION_POLICY_CHANGED": "NO",
+    "ROUTE_A_CHARACTERIZED": "NO",
+    "ROUTE_A_DIAGNOSTIC_TRANSIENT_NONCFD_TIMING_QUALIFICATION": "STOPPED",
+    "RUNTIME_AUTHORITY_COMPATIBILITY": "PASS",
+    "SEAL_PURGE_POLICY_CHANGED": "NO",
+    "SERIALIZATION_RISK": "UNKNOWN",
+    "STOP_REASON": "STOP_WALL_TIME",
+    "TARGET_CELL_COUNT": 25600,
+    "TARGET_INTERNAL_FACE_COUNT": 50880,
+    "TEMPORAL_POLICY_CHANGED": "NO",
+    "U01_CHANGED": "NO",
+    "U02_CHANGED": "NO",
+    "U03_CENSORED_AT_N": "UNRESOLVED",
+    "U03_CHANGED": "NO",
+    "U03_COMPLETED_MAX_N": "UNRESOLVED",
+    "U03_COMPUTE_RISK": "UNKNOWN",
+    "U03_EMPIRICAL_SCALING": "UNRESOLVED",
+    "U03_POWER_LAW_COEFFICIENT_A": "UNRESOLVED",
+    "U03_POWER_LAW_EXPONENT_P": "UNRESOLVED",
+    "U03_PRODUCTION_NODE_PROJECTION_CONFIDENCE": "NONE",
+    "U03_SOURCE_COMPLEXITY_CLASS": "QUADRATIC_TENDENCY_SOURCE_REASONING_NOT_EMPIRICAL_FIT",
+    "U04_EQUATION_SEMANTICS_CHANGED": "NO",
+    "USER_DECISION_REQUIRED": "YES",
+    "USER_NONCFD_Q1_Q2_AUTHORIZATION": "YES",
+    "WATCHDOG_STOP_OCCURRED": "YES"
+  },
+  "resources": {
+    "backend": {
+      "PIDs": [
+        446462,
+        446463
+      ],
+      "peak_individual_process_VmSize_bytes": 190926848,
+      "peak_role_total_VmSize_bytes": 193699840,
+      "sampled_CPU_lower_bound_by_PID": {
+        "446462": {
+          "CPU_system_ticks": 0.0,
+          "CPU_user_ticks": 0.0
+        },
+        "446463": {
+          "CPU_system_ticks": 2.92,
+          "CPU_user_ticks": 18.16
+        }
+      },
+      "sampled_proc_IO_lower_bound_by_PID": {
+        "446462": {
+          "rchar": 4092,
+          "read_bytes": 0,
+          "wchar": 0,
+          "write_bytes": 0
+        },
+        "446463": {
+          "rchar": 548465793,
+          "read_bytes": 0,
+          "wchar": 5349473,
+          "write_bytes": 5390336
+        }
+      }
+    },
+    "classification": "MEASURED_PEAK_SAMPLED",
+    "driver": {
+      "PIDs": [
+        446461
+      ],
+      "peak_individual_process_VmSize_bytes": 138465280,
+      "peak_role_total_VmSize_bytes": 138465280,
+      "sampled_CPU_lower_bound_by_PID": {
+        "446461": {
+          "CPU_system_ticks": 0.2,
+          "CPU_user_ticks": 2.33
+        }
+      },
+      "sampled_proc_IO_lower_bound_by_PID": {
+        "446461": {
+          "rchar": 937898091,
+          "read_bytes": 0,
+          "wchar": 30746937,
+          "write_bytes": 8192
+        }
+      }
+    },
+    "full_memory_event_coverage": false,
+    "host_MemAvailable_min_bytes": 62491074560,
+    "host_stability": {
+      "no_additional_repeats": true,
+      "other_CPU_fraction_max": 0.12222222222222222,
+      "other_CPU_method": "delta host busy minus tracked process tick deltas; conservative for short-lived/missing process attribution",
+      "reasons": [
+        "other CPU busy exceeds registered10percent"
+      ],
+      "status": "UNRESOLVED"
+    },
+    "max_simultaneous_combined_RSS_bytes": 596127744,
+    "maximum_sampling_gap_seconds": 0.04676626296713948,
+    "memory_guard_violated": false,
+    "min_disk_free_bytes_sampled": 793445781504,
+    "native": {
+      "PIDs": [
+        446464,
+        446465,
+        446466
+      ],
+      "peak_individual_process_VmSize_bytes": 440909824,
+      "peak_role_total_VmSize_bytes": 443682816,
+      "sampled_CPU_lower_bound_by_PID": {
+        "446464": {
+          "CPU_system_ticks": 0.0,
+          "CPU_user_ticks": 0.0
+        },
+        "446465": {
+          "CPU_system_ticks": 0.18,
+          "CPU_user_ticks": 7.17
+        },
+        "446466": {
+          "CPU_system_ticks": 0.11,
+          "CPU_user_ticks": 0.4
+        }
+      },
+      "sampled_proc_IO_lower_bound_by_PID": {
+        "446464": {
+          "rchar": 4092,
+          "read_bytes": 0,
+          "wchar": 0,
+          "write_bytes": 0
+        },
+        "446465": {
+          "rchar": 574791230,
+          "read_bytes": 0,
+          "wchar": 2907,
+          "write_bytes": 4096
+        },
+        "446466": {
+          "rchar": 538716069,
+          "read_bytes": 0,
+          "wchar": 0,
+          "write_bytes": 0
+        }
+      }
+    },
+    "outer_samples": 883,
+    "peak_backend_RSS_bytes": 170524672,
+    "peak_file_count_sampled": 33,
+    "peak_native_RSS_bytes": 432934912,
+    "peak_scratch_bytes_sampled": 15147008,
+    "role_caveat": "Native/backend role RSS includes registered time wrappers and native permission helper; individual and role VmSize are distinguished",
+    "samples": 821,
+    "sampling_caveat": "20ms nominal sampling can miss short peaks; killed time-v wrappers did not publish high-water results",
+    "scope": "CENSORED_STARTUP_ONLY_NOT_FULL_EVENT_QUALIFICATION",
+    "sum_individual_native_backend_peaks_upper_bound": 603459584
+  },
+  "schema": "routeA_nonCFD_timing_qualification_result/1",
+  "status": "STOPPED",
+  "task": "RUN_ROUTE_A_DIAGNOSTIC_TRANSIENT_NONCFD_TIMING_QUALIFICATION",
+  "timestamp": "2026-10-05T23:48:42.954618+00:00"
+}

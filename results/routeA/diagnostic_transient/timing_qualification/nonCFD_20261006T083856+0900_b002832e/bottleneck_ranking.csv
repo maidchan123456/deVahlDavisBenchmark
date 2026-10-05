@@ -1,0 +1,10 @@
+component,campaign_rank,risk,reason
+serialization,UNKNOWN,UNKNOWN,No completed recurring graph or Q2 breakdown; prefix spans cannot establish production dominance
+canonicalization,UNKNOWN,UNKNOWN,No completed recurring graph or Q2 breakdown; prefix spans cannot establish production dominance
+matrix replay,UNKNOWN,UNKNOWN,No completed recurring graph or Q2 breakdown; prefix spans cannot establish production dominance
+packing,UNKNOWN,UNKNOWN,No completed recurring graph or Q2 breakdown; prefix spans cannot establish production dominance
+IPC,UNKNOWN,UNKNOWN,No completed recurring graph or Q2 breakdown; prefix spans cannot establish production dominance
+U03,UNKNOWN,UNKNOWN,No completed recurring graph or Q2 breakdown; prefix spans cannot establish production dominance
+memory,UNKNOWN,UNKNOWN,No completed recurring graph or Q2 breakdown; prefix spans cannot establish production dominance
+I/O,UNKNOWN,UNKNOWN,No completed recurring graph or Q2 breakdown; prefix spans cannot establish production dominance
+other,UNKNOWN,UNKNOWN,No completed recurring graph or Q2 breakdown; prefix spans cannot establish production dominance

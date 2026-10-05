@@ -1,0 +1,13 @@
+{
+  "a": null,
+  "censored_trials": [],
+  "completed_sizes": [],
+  "empirical_measurement_performed": false,
+  "local_exponents": [],
+  "no_tiny_timings_substituted": true,
+  "p": null,
+  "production_node_projection_confidence": "NONE",
+  "reason": "Q2 NOT_EXECUTED: STOP_Q1_NOT_PASS",
+  "source_reasoning": "window_stats enumerates O(N) points and repeated interpolate/integral searches traverse history; nested work consistent with quadratic tendency, timing exponent alone not mathematical proof",
+  "status": "UNRESOLVED"
+}

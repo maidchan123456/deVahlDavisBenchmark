@@ -1,0 +1,25 @@
+{
+  "current_complete_graph_measured": false,
+  "current_status": "CENSORED",
+  "current_target_size_startup_external_elapsed_seconds": 30.062141012982465,
+  "direct_runtime_ratio": null,
+  "frozen_harness_features": [
+    "separate startup/recurring cost",
+    "actual 25600-cell/50880-internal-face topology",
+    "separate compact scalar receipts and controller payloads",
+    "immutable chunk archive",
+    "compacted profiling span trees"
+  ],
+  "interpretation": "Different data shapes and scope: previous complete four-cell graph versus target-size incomplete startup, no current OFF baseline. Counts and event coverage differ; no direct ratio or whole-step speed claim is valid.",
+  "numerical_pattern_and_cache_limits": "Manufactured resource fixtures and uncontrolled cache remain limitations; no cache drop, frequency or affinity change",
+  "observed_current_prefix_classes": [
+    "constructor_complete",
+    "preSolve_before",
+    "preSolve_after",
+    "controller_complete"
+  ],
+  "previous_four_cell_OFF_median_seconds": 0.3651115819811821,
+  "previous_four_cell_ON_median_seconds": 22.26968833594583,
+  "previous_review_SHA256": "669f2fcca81bca1e1c6c36dd249e70fa880549478134cadf9b3d26bb94d1e499",
+  "previous_review_path": "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_compute_feasibility_review.json"
+}

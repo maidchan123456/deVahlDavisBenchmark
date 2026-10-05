@@ -1,0 +1,84 @@
+{
+  "COMPLETE_EXECUTION_CONFIGURATION_FROZEN": "NO",
+  "EXECUTION_AUTHORIZED": "NO",
+  "RESOURCE_READINESS": "NO",
+  "RUNTIME_AUTHORITY_COMPATIBILITY": "PASS",
+  "canonical_authority": {
+    "path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/docs/routeA_diagnostic_transient_contract_v1.5.json",
+    "sha256": "06c71945289ffe419b784843f7aab2fea66c44d28c9dba46d828bbd24837e27d",
+    "version": "1.5"
+  },
+  "current_execution_guard": "DIAGNOSTIC_TRANSIENT_RESOURCE_QUALIFICATION_PENDING_NO_RUN_AUTHORIZATION",
+  "formal_authority": {
+    "path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/docs/routeA_execution_contract_v1.7.json",
+    "sha256": "fbc744e012f66b37b5d9409be961cb5a9410c3d75ac7e2f026b2acf118d3bb60",
+    "version": "1.7"
+  },
+  "implementation_generation": "v1.4",
+  "manifest_sha256": "703a4e11a1d15af5aecdf7a0e1059cc2f0d3cd92605a2e06f1601ee6c8870d11",
+  "mapping_input_HEAD": "90183094936266183e1e1fb4487f0f0a512c512b",
+  "native_and_library_identities_verified": 851,
+  "production_run_authorized": false,
+  "qualification_execution_authorized": false,
+  "qualification_permissions": {
+    "PRODUCTION": {
+      "CFD_solve": true,
+      "authorization_scope": "PRODUCTION_CFD",
+      "execution_implemented": false,
+      "production_namespace": true,
+      "resource_ready_required": true,
+      "stage_prerequisites": "stage-specific pinned plan and prior stage PASS",
+      "time_advance": true
+    },
+    "Q0": {
+      "CFD_solve": false,
+      "authorization_scope": "RUNTIME_AUTHORITY_COMPATIBILITY_FIX",
+      "execution_implemented": false,
+      "production_namespace": false,
+      "resource_ready_required": false,
+      "stage_prerequisites": "stage-specific pinned plan and prior stage PASS",
+      "time_advance": false
+    },
+    "Q1": {
+      "CFD_solve": false,
+      "authorization_scope": "NONCFD_TIMING_QUALIFICATION",
+      "execution_implemented": false,
+      "production_namespace": false,
+      "resource_ready_required": false,
+      "stage_prerequisites": "stage-specific pinned plan and prior stage PASS",
+      "time_advance": false
+    },
+    "Q2": {
+      "CFD_solve": false,
+      "authorization_scope": "NONCFD_TIMING_QUALIFICATION",
+      "execution_implemented": false,
+      "production_namespace": false,
+      "resource_ready_required": false,
+      "stage_prerequisites": "stage-specific pinned plan and prior stage PASS",
+      "time_advance": false
+    },
+    "Q3": {
+      "CFD_solve": true,
+      "authorization_scope": "Q3_BOUNDED_CFD_TIMING_QUALIFICATION",
+      "execution_implemented": false,
+      "production_namespace": false,
+      "resource_ready_required": false,
+      "stage_prerequisites": "Q0-Q2 PASS + memory/IO PASS + practical budget/risk + separate auth",
+      "time_advance": true
+    }
+  },
+  "repository_files_verified": 91,
+  "resource_ready": false,
+  "rule_id": "EXACT_V15_MACHINE_METADATA_TO_FROZEN_V14_RESOURCE_RUNTIME",
+  "schema": "routeA_runtime_authority_receipt/1.0",
+  "semantic_diff_leaves_verified": 134,
+  "semantic_report_errata": [
+    {
+      "canonical_after": "2026-10-05T22:12:28.543211+09:00",
+      "path": "/prepared_at",
+      "report_after": "2026-10-05T22:15:07.015846+09:00",
+      "scope": "EXACT_PROVENANCE_TIMESTAMP_ONLY_NO_SCIENTIFIC_DIFFERENCE"
+    }
+  ],
+  "timestamp_UTC": "2026-10-05T23:43:55.565186+00:00"
+}

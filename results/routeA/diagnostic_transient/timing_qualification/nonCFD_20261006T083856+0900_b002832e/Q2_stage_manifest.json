@@ -1,0 +1,12 @@
+{
+  "actual_stage_receipt_created": false,
+  "actual_trials": 0,
+  "progression_allowed": false,
+  "reason": "STOP_Q1_NOT_PASS",
+  "registered_file_limit": 256,
+  "registered_layout_upper_bound": 149,
+  "stage_directory_created": false,
+  "status": "NOT_EXECUTED",
+  "upper_bound_is_not_observed_file_count": true,
+  "user_authorized": true
+}

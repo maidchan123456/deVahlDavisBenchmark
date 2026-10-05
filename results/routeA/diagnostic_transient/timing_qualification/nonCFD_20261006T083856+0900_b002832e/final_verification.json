@@ -1,0 +1,17 @@
+{
+  "Q1_STOP_reason": "STOP_WALL_TIME",
+  "all_campaign_artifacts_verified": 47,
+  "campaign_manifest_SHA256": "f08342b15471955811cfddcfd41be0c83415aee334ebb94dbd8df9c6c79eeec2",
+  "git_HEAD": "b6e93cfef34b542304adc23ed8fe6dd154a5f5b3",
+  "harness_readiness": {
+    "Q1": true,
+    "Q2": true
+  },
+  "no_Q2_stage": true,
+  "no_actual_evidence_purge": true,
+  "no_orphans": true,
+  "source_and_authority_unchanged": true,
+  "status": "PASS",
+  "status_fields": 109,
+  "tracked_diff_empty": true
+}

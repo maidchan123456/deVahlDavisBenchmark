@@ -1,0 +1,18 @@
+{
+  "Q1_STOP_reason": "STOP_WALL_TIME",
+  "Q1_classification": "UNRESOLVED",
+  "Q1_status": "STOPPED",
+  "Q2_executed": false,
+  "Q2_progression_allowed": false,
+  "Q2_user_authorized": true,
+  "critical_trial_status": "CENSORED",
+  "frozen_permission_validator_rejection": "STOP_Q1_NOT_PASS",
+  "no_additional_repeats": true,
+  "no_budget_change": true,
+  "no_retry": true,
+  "prior_stage_evidence": {
+    "Q0_status": "PASS",
+    "Q1_status": "CENSORED"
+  },
+  "reason": "Frozen Q2 requires Q1 PASS; startup-only incomplete graph supplies neither recurring cost nor a U03 dominance diagnosis"
+}
