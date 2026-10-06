@@ -1,0 +1,34 @@
+{
+  "iterations": {
+    "every_step_24_outer": true,
+    "early_outer_exit_observed": false,
+    "pressure_solves_per_step": [
+      48
+    ],
+    "energy_solves_per_step": [
+      24
+    ],
+    "pressure_iterations_per_step_total_min_max": [
+      1288,
+      4065
+    ],
+    "energy_iterations_per_step_total_min_max": [
+      4,
+      25
+    ],
+    "pressure_single_solve_iteration_max": 401,
+    "energy_single_solve_iteration_max": 4,
+    "pressure_final_residual_max": 9.997481636815114e-13,
+    "energy_final_residual_max": 9.89174382457245e-13,
+    "max_local_continuity_error": 7.68286877874593e-11,
+    "nonlinear_convergence_certified": false
+  },
+  "trend": {
+    "steps6_15_median_s": 0.14489067398244515,
+    "steps20_29_median_s": 0.1645273015019484,
+    "late_over_early": 1.135527201163288,
+    "linear_slope_seconds_per_step_index": 0.001291694083332043,
+    "classification": "STABLE",
+    "classification_rule": "late/early median ratio >1.15 increasing, <0.85 decreasing; excludes final write; descriptive only"
+  }
+}

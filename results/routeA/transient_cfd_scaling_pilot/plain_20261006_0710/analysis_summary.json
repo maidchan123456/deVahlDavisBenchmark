@@ -1,0 +1,111 @@
+{
+  "best_rank": 12,
+  "serial_median": 0.6676124710356817,
+  "best_median": 0.09614649903960526,
+  "speedup": 6.943700266825884,
+  "scaling": [
+    {
+      "ranks": 1,
+      "median": 0.6676124710356817,
+      "RSS_MiB": 159.984375,
+      "trend": "INCREASING"
+    },
+    {
+      "ranks": 2,
+      "median": 0.3786849119933322,
+      "RSS_MiB": 311.68359375,
+      "trend": "STABLE"
+    },
+    {
+      "ranks": 4,
+      "median": 0.194818826043047,
+      "RSS_MiB": 575.546875,
+      "trend": "STABLE"
+    },
+    {
+      "ranks": 6,
+      "median": 0.15376722894143313,
+      "RSS_MiB": 842.828125,
+      "trend": "STABLE"
+    },
+    {
+      "ranks": 8,
+      "median": 0.12174252304248512,
+      "RSS_MiB": 1117.3671875,
+      "trend": "STABLE"
+    },
+    {
+      "ranks": 12,
+      "median": 0.09614649903960526,
+      "RSS_MiB": 1658.0703125,
+      "trend": "STABLE"
+    }
+  ],
+  "projections": [
+    {
+      "scenario": "t*=0.5 ideal maxDeltaT floor",
+      "steps": 12800,
+      "serial_hours": 2.3737332303490906,
+      "serial_days": 0.09890555126454544,
+      "best_MPI_hours": 0.34185421880748534,
+      "best_MPI_days": 0.014243925783645224,
+      "best_MPI_ranks": 12,
+      "less_than24h_best_MPI": true,
+      "classification": "PROJECTED_FROM_SHORT_PILOT"
+    },
+    {
+      "scenario": "t*=2 ideal maxDeltaT planning count",
+      "steps": 51200,
+      "serial_hours": 9.494932921396362,
+      "serial_days": 0.39562220505818174,
+      "best_MPI_hours": 1.3674168752299414,
+      "best_MPI_days": 0.0569757031345809,
+      "best_MPI_ranks": 12,
+      "less_than24h_best_MPI": true,
+      "classification": "PROJECTED_FROM_SHORT_PILOT"
+    },
+    {
+      "scenario": "Co0.5 prior prospective planning count",
+      "steps": 200061,
+      "serial_hours": 37.10089404663042,
+      "serial_days": 1.5458705852762675,
+      "best_MPI_hours": 5.343101317878463,
+      "best_MPI_days": 0.2226292215782693,
+      "best_MPI_ranks": 12,
+      "less_than24h_best_MPI": true,
+      "classification": "PROJECTED_FROM_SHORT_PILOT"
+    },
+    {
+      "scenario": "Co0.25 prior prospective planning count",
+      "steps": 400122,
+      "serial_hours": 74.20178809326084,
+      "serial_days": 3.091741170552535,
+      "best_MPI_hours": 10.686202635756926,
+      "best_MPI_days": 0.4452584431565386,
+      "best_MPI_ranks": 12,
+      "less_than24h_best_MPI": true,
+      "classification": "PROJECTED_FROM_SHORT_PILOT"
+    }
+  ],
+  "sequence": {
+    "final_physical_time_s": 0.03277874664020242,
+    "final_t_star": 4.61672487890175e-05,
+    "first_dt_s": 2.7734374999999998e-05,
+    "last_dt_s": 0.005486236419200402,
+    "maxDeltaT_reached": false,
+    "all_dt_growth_limited": true,
+    "max_absolute_deltaT_difference_across_ranks_s": 0.0,
+    "max_end_time_difference_across_ranks_s": 0.0,
+    "max_dt_abs_difference_vs_native_1_2_growth_s": 1.734723475976807e-18,
+    "maximum_logged_preSolve_Co_by_rank": {
+      "1": 0.0035861630702619693,
+      "2": 0.0035861630702613318,
+      "4": 0.003586163070255192,
+      "6": 0.0035861630702599644,
+      "8": 0.0035861630702615326,
+      "12": 0.0035861630702668326
+    },
+    "end_state_Co_measured": false,
+    "Co_note": "native log Co uses previous state; no added end-Co function object. Thus not a claim of maximum achieved end-state Co."
+  }
+}

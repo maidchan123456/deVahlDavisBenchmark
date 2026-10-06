@@ -1,0 +1,190 @@
+{
+  "returncode": 0,
+  "wall_seconds_total": 20.77899298700504,
+  "peak_summed_solver_RSS_bytes": 0,
+  "max_solver_processes_observed": 0,
+  "steps": [
+    {
+      "step": 1,
+      "external_completion_wall": 1.0353563360404223,
+      "execution_time": 0.96395,
+      "clock_time": 0.0
+    },
+    {
+      "step": 2,
+      "external_completion_wall": 2.270462797023356,
+      "execution_time": 2.198865,
+      "clock_time": 2.0
+    },
+    {
+      "step": 3,
+      "external_completion_wall": 2.9196412690216675,
+      "execution_time": 2.847902,
+      "clock_time": 2.0
+    },
+    {
+      "step": 4,
+      "external_completion_wall": 3.539589482010342,
+      "execution_time": 3.467693,
+      "clock_time": 3.0
+    },
+    {
+      "step": 5,
+      "external_completion_wall": 4.157792408950627,
+      "execution_time": 4.085846,
+      "clock_time": 4.0
+    },
+    {
+      "step": 6,
+      "external_completion_wall": 4.777910212986171,
+      "execution_time": 4.705837,
+      "clock_time": 4.0
+    },
+    {
+      "step": 7,
+      "external_completion_wall": 5.38461039296817,
+      "execution_time": 5.312421,
+      "clock_time": 5.0
+    },
+    {
+      "step": 8,
+      "external_completion_wall": 5.987225890043192,
+      "execution_time": 5.914955,
+      "clock_time": 5.0
+    },
+    {
+      "step": 9,
+      "external_completion_wall": 6.5950459010200575,
+      "execution_time": 6.522707,
+      "clock_time": 6.0
+    },
+    {
+      "step": 10,
+      "external_completion_wall": 7.210410928004421,
+      "execution_time": 7.137882,
+      "clock_time": 7.0
+    },
+    {
+      "step": 11,
+      "external_completion_wall": 7.821797476965003,
+      "execution_time": 7.749175,
+      "clock_time": 7.0
+    },
+    {
+      "step": 12,
+      "external_completion_wall": 8.442631429992616,
+      "execution_time": 8.369953,
+      "clock_time": 8.0
+    },
+    {
+      "step": 13,
+      "external_completion_wall": 9.084310133010149,
+      "execution_time": 9.011461,
+      "clock_time": 9.0
+    },
+    {
+      "step": 14,
+      "external_completion_wall": 9.717201833962463,
+      "execution_time": 9.644219,
+      "clock_time": 9.0
+    },
+    {
+      "step": 15,
+      "external_completion_wall": 10.349294324056245,
+      "execution_time": 10.276254,
+      "clock_time": 10.0
+    },
+    {
+      "step": 16,
+      "external_completion_wall": 10.991344345035031,
+      "execution_time": 10.918126,
+      "clock_time": 10.0
+    },
+    {
+      "step": 17,
+      "external_completion_wall": 11.635230935062282,
+      "execution_time": 11.561874,
+      "clock_time": 11.0
+    },
+    {
+      "step": 18,
+      "external_completion_wall": 12.282242496032268,
+      "execution_time": 12.208857,
+      "clock_time": 12.0
+    },
+    {
+      "step": 19,
+      "external_completion_wall": 12.93280081404373,
+      "execution_time": 12.859258,
+      "clock_time": 12.0
+    },
+    {
+      "step": 20,
+      "external_completion_wall": 13.604243654990569,
+      "execution_time": 13.530586,
+      "clock_time": 13.0
+    },
+    {
+      "step": 21,
+      "external_completion_wall": 14.271782397991046,
+      "execution_time": 14.198051,
+      "clock_time": 14.0
+    },
+    {
+      "step": 22,
+      "external_completion_wall": 14.942927828989923,
+      "execution_time": 14.869042,
+      "clock_time": 14.0
+    },
+    {
+      "step": 23,
+      "external_completion_wall": 15.617068786057644,
+      "execution_time": 15.543048,
+      "clock_time": 15.0
+    },
+    {
+      "step": 24,
+      "external_completion_wall": 16.321410026052035,
+      "execution_time": 16.247326,
+      "clock_time": 16.0
+    },
+    {
+      "step": 25,
+      "external_completion_wall": 17.026275060954504,
+      "execution_time": 16.951997,
+      "clock_time": 16.0
+    },
+    {
+      "step": 26,
+      "external_completion_wall": 17.73632688401267,
+      "execution_time": 17.661901,
+      "clock_time": 17.0
+    },
+    {
+      "step": 27,
+      "external_completion_wall": 18.450818886049092,
+      "execution_time": 18.3763,
+      "clock_time": 18.0
+    },
+    {
+      "step": 28,
+      "external_completion_wall": 19.195334383053705,
+      "execution_time": 19.102672,
+      "clock_time": 19.0
+    },
+    {
+      "step": 29,
+      "external_completion_wall": 19.925990730989724,
+      "execution_time": 19.851145,
+      "clock_time": 19.0
+    },
+    {
+      "step": 30,
+      "external_completion_wall": 20.76074357703328,
+      "execution_time": 20.685454,
+      "clock_time": 20.0
+    }
+  ],
+  "stopreason": null,
+  "first": 0.21351693395990878
+}

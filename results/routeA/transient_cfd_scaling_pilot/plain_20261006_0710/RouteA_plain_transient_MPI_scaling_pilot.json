@@ -1,0 +1,918 @@
+{
+  "classification": "PLAIN_TRANSIENT_CFD_MPI_PERFORMANCE_PILOT",
+  "measurement_classification": "ACTUAL_TRANSIENT_CFD_SHORT_RUN_MEASUREMENT",
+  "authority_hashes": {
+    "docs/routeA_diagnostic_transient_contract_v1.5.json": "06c71945289ffe419b784843f7aab2fea66c44d28c9dba46d828bbd24837e27d",
+    "docs/routeA_execution_contract_v1.7.json": "fbc744e012f66b37b5d9409be961cb5a9410c3d75ac7e2f026b2acf118d3bb60"
+  },
+  "design": {
+    "ranks": [
+      1,
+      2,
+      4,
+      6,
+      8,
+      12
+    ],
+    "steps": 30,
+    "cold_check_steps": 5,
+    "starting_state": "IDENTICAL_COLD_REST; startup benchmark alternative; no checkpoint restart",
+    "warmup_steps_excluded": 5,
+    "time_end_rule": "analytical sum of native 1.2 growth increments; verify 30 completed, external guard kills upon step 31",
+    "end_time": "0.032778746640202423",
+    "wall_cap_per_condition_seconds": 600,
+    "primary_total_cap_seconds": 3600,
+    "write_policy": "write only at final step 30, no functions; solver-only-ish secondary excludes final write",
+    "binding": "--nooversubscribe --map-by core --bind-to core --report-bindings",
+    "native_solver": "foamRun -solver fluid -noFunctionObjects; -parallel only for N>1",
+    "sampling": "lightweight /proc RSS 0.5 s, external log marker timestamps; native ClockTime increments preferred",
+    "primary_timing_source": "external monotonic completion timestamps because native ClockTime is integer seconds",
+    "reference_cell_representation": "pRefPoint (0.0496875 0.0496875 0.0005), proven identical to original global cell12719",
+    "repair_history": "Preserved initial serial and2rank runs plus4rank initialization failure; same physical reference point required for fair decomposition."
+  },
+  "scaling": [
+    {
+      "ranks": 1,
+      "cells_per_rank_average": 25600.0,
+      "median_s_per_step": 0.6676124710356817,
+      "mean_s_per_step": 0.6743802413204685,
+      "min_s_per_step": 0.5862212820211425,
+      "max_s_per_step": 0.8603803559672087,
+      "CV": 0.09453843059171456,
+      "peak_summed_RSS_MiB": 159.984375,
+      "wall_seconds_total": 21.01952741597779,
+      "completed_steps": 30,
+      "solver_only_ish": {
+        "count": 24,
+        "median": 0.6659942985279486,
+        "mean": 0.6666302365435209,
+        "min": 0.5862212820211425,
+        "max": 0.7647898580180481,
+        "CV": 0.07841395244438351
+      },
+      "status": "PASS",
+      "field_sanity": {
+        "T_min_K": 299.63782718684644,
+        "T_max_K": 300.3622235841429,
+        "T_mean_K": 300.00000121281323,
+        "T_minus300_RMS_K": 0.044220016804716746,
+        "Umax_speed_m_s": 0.0005791365392136803,
+        "U_RMS_speed_m_s": 7.704961691920916e-05,
+        "Wmax_abs_m_s": 1.257246661722982e-24,
+        "U_component_Linf_difference_vs_serial_m_s": 0.0,
+        "T_Linf_difference_vs_serial_K": 0.0,
+        "p_rgh_at_registered_reference_Pa": 1.4231769278306403e-08,
+        "registered_reference_cell_mapping": [
+          {
+            "rank": 0,
+            "local_cell": 12719,
+            "global_cell": 12719
+          }
+        ],
+        "Nu_hot_two_point_offline": 44.18580616669158,
+        "Nu_method": "hot-wall one-sided orthogonal face-normal gradient, L=0.1, DeltaT=1; internal adjacent-cell T, distance dx/2; no function object",
+        "finite": true,
+        "gross_sanity_only": true,
+        "PASS": true
+      },
+      "trend": {
+        "steps6_15_median_s": 0.6061362660257146,
+        "steps20_29_median_s": 0.7226372084696777,
+        "late_over_early": 1.1922025606681332,
+        "linear_slope_seconds_per_step_index": 0.007384310506294361,
+        "classification": "INCREASING",
+        "classification_rule": "late/early median ratio >1.15 increasing, <0.85 decreasing; excludes final write; descriptive only"
+      },
+      "iterations": {
+        "every_step_24_outer": true,
+        "early_outer_exit_observed": false,
+        "pressure_solves_per_step": [
+          48
+        ],
+        "energy_solves_per_step": [
+          24
+        ],
+        "pressure_iterations_per_step_total_min_max": [
+          1064,
+          3527
+        ],
+        "energy_iterations_per_step_total_min_max": [
+          3,
+          24
+        ],
+        "pressure_single_solve_iteration_max": 337,
+        "energy_single_solve_iteration_max": 3,
+        "pressure_final_residual_max": 9.99088860821323e-13,
+        "energy_final_residual_max": 9.756957766734705e-13,
+        "max_local_continuity_error": 7.682870000860098e-11,
+        "nonlinear_convergence_certified": false
+      },
+      "speedup": 1.0,
+      "parallel_efficiency": 1.0
+    },
+    {
+      "ranks": 2,
+      "cells_per_rank_average": 12800.0,
+      "median_s_per_step": 0.3786849119933322,
+      "mean_s_per_step": 0.38284203595947475,
+      "min_s_per_step": 0.33156833495013416,
+      "max_s_per_step": 0.4808661980787292,
+      "CV": 0.08532447675814808,
+      "peak_summed_RSS_MiB": 311.68359375,
+      "wall_seconds_total": 12.311339337029494,
+      "completed_steps": 30,
+      "solver_only_ish": {
+        "count": 24,
+        "median": 0.37791411502985284,
+        "mean": 0.3787576958711725,
+        "min": 0.33156833495013416,
+        "max": 0.43128234695177525,
+        "CV": 0.06957688257051842
+      },
+      "status": "PASS",
+      "field_sanity": {
+        "T_min_K": 299.63782718684644,
+        "T_max_K": 300.3622235841429,
+        "T_mean_K": 300.00000121281323,
+        "T_minus300_RMS_K": 0.044220016804716794,
+        "Umax_speed_m_s": 0.0005791365392141401,
+        "U_RMS_speed_m_s": 7.704961691920187e-05,
+        "Wmax_abs_m_s": 1.2572466617033172e-24,
+        "U_component_Linf_difference_vs_serial_m_s": 4.9129427129725005e-15,
+        "T_Linf_difference_vs_serial_K": 1.7053025658242404e-13,
+        "p_rgh_at_registered_reference_Pa": 1.4231769594644349e-08,
+        "registered_reference_cell_mapping": [
+          {
+            "rank": 1,
+            "local_cell": 12571,
+            "global_cell": 12719
+          }
+        ],
+        "Nu_hot_two_point_offline": 44.185806166691805,
+        "Nu_method": "hot-wall one-sided orthogonal face-normal gradient, L=0.1, DeltaT=1; internal adjacent-cell T, distance dx/2; no function object",
+        "finite": true,
+        "gross_sanity_only": true,
+        "PASS": true
+      },
+      "trend": {
+        "steps6_15_median_s": 0.3531267984653823,
+        "steps20_29_median_s": 0.40606692602159455,
+        "late_over_early": 1.1499181817587318,
+        "linear_slope_seconds_per_step_index": 0.003572269459356276,
+        "classification": "STABLE",
+        "classification_rule": "late/early median ratio >1.15 increasing, <0.85 decreasing; excludes final write; descriptive only"
+      },
+      "iterations": {
+        "every_step_24_outer": true,
+        "early_outer_exit_observed": false,
+        "pressure_solves_per_step": [
+          48
+        ],
+        "energy_solves_per_step": [
+          24
+        ],
+        "pressure_iterations_per_step_total_min_max": [
+          1224,
+          3967
+        ],
+        "energy_iterations_per_step_total_min_max": [
+          4,
+          25
+        ],
+        "pressure_single_solve_iteration_max": 384,
+        "energy_single_solve_iteration_max": 4,
+        "pressure_final_residual_max": 9.989507282669445e-13,
+        "energy_final_residual_max": 9.920048756289341e-13,
+        "max_local_continuity_error": 7.682867854137431e-11,
+        "nonlinear_convergence_certified": false
+      },
+      "speedup": 1.7629761574642213,
+      "parallel_efficiency": 0.8814880787321107
+    },
+    {
+      "ranks": 4,
+      "cells_per_rank_average": 6400.0,
+      "median_s_per_step": 0.194818826043047,
+      "mean_s_per_step": 0.20063659203704445,
+      "min_s_per_step": 0.1763063290854916,
+      "max_s_per_step": 0.25084019103087485,
+      "CV": 0.08162466180515184,
+      "peak_summed_RSS_MiB": 575.546875,
+      "wall_seconds_total": 6.629286727053113,
+      "completed_steps": 30,
+      "solver_only_ish": {
+        "count": 24,
+        "median": 0.19429033302003518,
+        "mean": 0.19854477541230153,
+        "min": 0.1763063290854916,
+        "max": 0.22309524496085942,
+        "CV": 0.06566701568860865
+      },
+      "status": "PASS",
+      "field_sanity": {
+        "T_min_K": 299.63782718684644,
+        "T_max_K": 300.36222358414284,
+        "T_mean_K": 300.00000121281323,
+        "T_minus300_RMS_K": 0.04422001680471481,
+        "Umax_speed_m_s": 0.0005791365392136031,
+        "U_RMS_speed_m_s": 7.70496169192047e-05,
+        "Wmax_abs_m_s": 1.2572466617081333e-24,
+        "U_component_Linf_difference_vs_serial_m_s": 1.5197542113755738e-14,
+        "T_Linf_difference_vs_serial_K": 1.6484591469634324e-12,
+        "p_rgh_at_registered_reference_Pa": 2.846353042982889e-08,
+        "registered_reference_cell_mapping": [
+          {
+            "rank": 3,
+            "local_cell": 6399,
+            "global_cell": 12719
+          }
+        ],
+        "Nu_hot_two_point_offline": 44.185806166695556,
+        "Nu_method": "hot-wall one-sided orthogonal face-normal gradient, L=0.1, DeltaT=1; internal adjacent-cell T, distance dx/2; no function object",
+        "finite": true,
+        "gross_sanity_only": true,
+        "PASS": true
+      },
+      "trend": {
+        "steps6_15_median_s": 0.18577251443639398,
+        "steps20_29_median_s": 0.21324071648996323,
+        "late_over_early": 1.1478593436542734,
+        "linear_slope_seconds_per_step_index": 0.0017720420835235981,
+        "classification": "STABLE",
+        "classification_rule": "late/early median ratio >1.15 increasing, <0.85 decreasing; excludes final write; descriptive only"
+      },
+      "iterations": {
+        "every_step_24_outer": true,
+        "early_outer_exit_observed": false,
+        "pressure_solves_per_step": [
+          48
+        ],
+        "energy_solves_per_step": [
+          24
+        ],
+        "pressure_iterations_per_step_total_min_max": [
+          1237,
+          4011
+        ],
+        "energy_iterations_per_step_total_min_max": [
+          4,
+          25
+        ],
+        "pressure_single_solve_iteration_max": 385,
+        "energy_single_solve_iteration_max": 4,
+        "pressure_final_residual_max": 9.99852078409716e-13,
+        "energy_final_residual_max": 9.92005863492256e-13,
+        "max_local_continuity_error": 7.682862994310502e-11,
+        "nonlinear_convergence_certified": false
+      },
+      "speedup": 3.4268375628552783,
+      "parallel_efficiency": 0.8567093907138196
+    },
+    {
+      "ranks": 6,
+      "cells_per_rank_average": 4266.666666666667,
+      "median_s_per_step": 0.15376722894143313,
+      "mean_s_per_step": 0.15545588224194945,
+      "min_s_per_step": 0.14261856395751238,
+      "max_s_per_step": 0.19237479101866484,
+      "CV": 0.0779427998128437,
+      "peak_summed_RSS_MiB": 842.828125,
+      "wall_seconds_total": 5.221183213987388,
+      "completed_steps": 30,
+      "solver_only_ish": {
+        "count": 24,
+        "median": 0.15231083845719695,
+        "mean": 0.15391759437625296,
+        "min": 0.14261856395751238,
+        "max": 0.17390053602866828,
+        "CV": 0.06291435203965964
+      },
+      "status": "PASS",
+      "field_sanity": {
+        "T_min_K": 299.63782718684644,
+        "T_max_K": 300.3622235841429,
+        "T_mean_K": 300.00000121281323,
+        "T_minus300_RMS_K": 0.04422001680471665,
+        "Umax_speed_m_s": 0.0005791365392152492,
+        "U_RMS_speed_m_s": 7.70496169192024e-05,
+        "Wmax_abs_m_s": 1.2572466616284485e-24,
+        "U_component_Linf_difference_vs_serial_m_s": 3.831851692502261e-15,
+        "T_Linf_difference_vs_serial_K": 1.7053025658242404e-13,
+        "p_rgh_at_registered_reference_Pa": 1.4231769786731185e-08,
+        "registered_reference_cell_mapping": [
+          {
+            "rank": 1,
+            "local_cell": 81,
+            "global_cell": 12719
+          }
+        ],
+        "Nu_hot_two_point_offline": 44.18580616669249,
+        "Nu_method": "hot-wall one-sided orthogonal face-normal gradient, L=0.1, DeltaT=1; internal adjacent-cell T, distance dx/2; no function object",
+        "finite": true,
+        "gross_sanity_only": true,
+        "PASS": true
+      },
+      "trend": {
+        "steps6_15_median_s": 0.14489067398244515,
+        "steps20_29_median_s": 0.1645273015019484,
+        "late_over_early": 1.135527201163288,
+        "linear_slope_seconds_per_step_index": 0.001291694083332043,
+        "classification": "STABLE",
+        "classification_rule": "late/early median ratio >1.15 increasing, <0.85 decreasing; excludes final write; descriptive only"
+      },
+      "iterations": {
+        "every_step_24_outer": true,
+        "early_outer_exit_observed": false,
+        "pressure_solves_per_step": [
+          48
+        ],
+        "energy_solves_per_step": [
+          24
+        ],
+        "pressure_iterations_per_step_total_min_max": [
+          1288,
+          4065
+        ],
+        "energy_iterations_per_step_total_min_max": [
+          4,
+          25
+        ],
+        "pressure_single_solve_iteration_max": 401,
+        "energy_single_solve_iteration_max": 4,
+        "pressure_final_residual_max": 9.997481636815114e-13,
+        "energy_final_residual_max": 9.89174382457245e-13,
+        "max_local_continuity_error": 7.68286877874593e-11,
+        "nonlinear_convergence_certified": false
+      },
+      "speedup": 4.34170840972859,
+      "parallel_efficiency": 0.7236180682880984
+    },
+    {
+      "ranks": 8,
+      "cells_per_rank_average": 3200.0,
+      "median_s_per_step": 0.12174252304248512,
+      "mean_s_per_step": 0.1243457931606099,
+      "min_s_per_step": 0.11328310205135494,
+      "max_s_per_step": 0.15364253404550254,
+      "CV": 0.07395568663588611,
+      "peak_summed_RSS_MiB": 1117.3671875,
+      "wall_seconds_total": 4.2534509730758145,
+      "completed_steps": 30,
+      "solver_only_ish": {
+        "count": 24,
+        "median": 0.1216004875022918,
+        "mean": 0.12312509562373937,
+        "min": 0.11328310205135494,
+        "max": 0.13738520198967308,
+        "CV": 0.0579097571346513
+      },
+      "status": "PASS",
+      "field_sanity": {
+        "T_min_K": 299.63782718684644,
+        "T_max_K": 300.3622235841429,
+        "T_mean_K": 300.00000121281323,
+        "T_minus300_RMS_K": 0.044220016804716336,
+        "Umax_speed_m_s": 0.0005791365392136175,
+        "U_RMS_speed_m_s": 7.704961691921164e-05,
+        "Wmax_abs_m_s": 1.25724666162745e-24,
+        "U_component_Linf_difference_vs_serial_m_s": 1.4667319360961582e-14,
+        "T_Linf_difference_vs_serial_K": 7.389644451905042e-13,
+        "p_rgh_at_registered_reference_Pa": 1.897568707221699e-08,
+        "registered_reference_cell_mapping": [
+          {
+            "rank": 5,
+            "local_cell": 3043,
+            "global_cell": 12719
+          }
+        ],
+        "Nu_hot_two_point_offline": 44.18580616669283,
+        "Nu_method": "hot-wall one-sided orthogonal face-normal gradient, L=0.1, DeltaT=1; internal adjacent-cell T, distance dx/2; no function object",
+        "finite": true,
+        "gross_sanity_only": true,
+        "PASS": true
+      },
+      "trend": {
+        "steps6_15_median_s": 0.11587870394578204,
+        "steps20_29_median_s": 0.13065434648888186,
+        "late_over_early": 1.127509559910276,
+        "linear_slope_seconds_per_step_index": 0.0009601651494006585,
+        "classification": "STABLE",
+        "classification_rule": "late/early median ratio >1.15 increasing, <0.85 decreasing; excludes final write; descriptive only"
+      },
+      "iterations": {
+        "every_step_24_outer": true,
+        "early_outer_exit_observed": false,
+        "pressure_solves_per_step": [
+          48
+        ],
+        "energy_solves_per_step": [
+          24
+        ],
+        "pressure_iterations_per_step_total_min_max": [
+          1272,
+          4112
+        ],
+        "energy_iterations_per_step_total_min_max": [
+          3,
+          25
+        ],
+        "pressure_single_solve_iteration_max": 405,
+        "energy_single_solve_iteration_max": 5,
+        "pressure_final_residual_max": 9.99882408561743e-13,
+        "energy_final_residual_max": 9.796886916875157e-13,
+        "max_local_continuity_error": 7.682869058036262e-11,
+        "nonlinear_convergence_certified": false
+      },
+      "speedup": 5.48380676160869,
+      "parallel_efficiency": 0.6854758452010863
+    },
+    {
+      "ranks": 12,
+      "cells_per_rank_average": 2133.3333333333335,
+      "median_s_per_step": 0.09614649903960526,
+      "mean_s_per_step": 0.09792014883831143,
+      "min_s_per_step": 0.08969475305639207,
+      "max_s_per_step": 0.11999887099955231,
+      "CV": 0.07584984291379245,
+      "peak_summed_RSS_MiB": 1658.0703125,
+      "wall_seconds_total": 3.4506287740077823,
+      "completed_steps": 30,
+      "solver_only_ish": {
+        "count": 24,
+        "median": 0.0958578905556351,
+        "mean": 0.09700020208159306,
+        "min": 0.08969475305639207,
+        "max": 0.10891306994017214,
+        "CV": 0.062116717490087375
+      },
+      "status": "PASS",
+      "field_sanity": {
+        "T_min_K": 299.63782718684644,
+        "T_max_K": 300.3622235841429,
+        "T_mean_K": 300.00000121281323,
+        "T_minus300_RMS_K": 0.04422001680471524,
+        "Umax_speed_m_s": 0.0005791365392136609,
+        "U_RMS_speed_m_s": 7.704961691918796e-05,
+        "Wmax_abs_m_s": 1.2572466616585829e-24,
+        "U_component_Linf_difference_vs_serial_m_s": 1.3455945964646143e-14,
+        "T_Linf_difference_vs_serial_K": 1.7053025658242404e-12,
+        "p_rgh_at_registered_reference_Pa": 2.8463531852255893e-08,
+        "registered_reference_cell_mapping": [
+          {
+            "rank": 9,
+            "local_cell": 2133,
+            "global_cell": 12719
+          }
+        ],
+        "Nu_hot_two_point_offline": 44.18580616669476,
+        "Nu_method": "hot-wall one-sided orthogonal face-normal gradient, L=0.1, DeltaT=1; internal adjacent-cell T, distance dx/2; no function object",
+        "finite": true,
+        "gross_sanity_only": true,
+        "PASS": true
+      },
+      "trend": {
+        "steps6_15_median_s": 0.0904854815453291,
+        "steps20_29_median_s": 0.1024319835123606,
+        "late_over_early": 1.1320267269732864,
+        "linear_slope_seconds_per_step_index": 0.0007900758274405695,
+        "classification": "STABLE",
+        "classification_rule": "late/early median ratio >1.15 increasing, <0.85 decreasing; excludes final write; descriptive only"
+      },
+      "iterations": {
+        "every_step_24_outer": true,
+        "early_outer_exit_observed": false,
+        "pressure_solves_per_step": [
+          48
+        ],
+        "energy_solves_per_step": [
+          24
+        ],
+        "pressure_iterations_per_step_total_min_max": [
+          1315,
+          3718
+        ],
+        "energy_iterations_per_step_total_min_max": [
+          3,
+          25
+        ],
+        "pressure_single_solve_iteration_max": 406,
+        "energy_single_solve_iteration_max": 4,
+        "pressure_final_residual_max": 9.999316544506401e-13,
+        "energy_final_residual_max": 9.80665878151728e-13,
+        "max_local_continuity_error": 7.682867544056357e-11,
+        "nonlinear_convergence_certified": false
+      },
+      "speedup": 6.943700266825884,
+      "parallel_efficiency": 0.578641688902157
+    }
+  ],
+  "best_MPI": {
+    "ranks": 12,
+    "cells_per_rank_average": 2133.3333333333335,
+    "median_s_per_step": 0.09614649903960526,
+    "mean_s_per_step": 0.09792014883831143,
+    "min_s_per_step": 0.08969475305639207,
+    "max_s_per_step": 0.11999887099955231,
+    "CV": 0.07584984291379245,
+    "peak_summed_RSS_MiB": 1658.0703125,
+    "wall_seconds_total": 3.4506287740077823,
+    "completed_steps": 30,
+    "solver_only_ish": {
+      "count": 24,
+      "median": 0.0958578905556351,
+      "mean": 0.09700020208159306,
+      "min": 0.08969475305639207,
+      "max": 0.10891306994017214,
+      "CV": 0.062116717490087375
+    },
+    "status": "PASS",
+    "field_sanity": {
+      "T_min_K": 299.63782718684644,
+      "T_max_K": 300.3622235841429,
+      "T_mean_K": 300.00000121281323,
+      "T_minus300_RMS_K": 0.04422001680471524,
+      "Umax_speed_m_s": 0.0005791365392136609,
+      "U_RMS_speed_m_s": 7.704961691918796e-05,
+      "Wmax_abs_m_s": 1.2572466616585829e-24,
+      "U_component_Linf_difference_vs_serial_m_s": 1.3455945964646143e-14,
+      "T_Linf_difference_vs_serial_K": 1.7053025658242404e-12,
+      "p_rgh_at_registered_reference_Pa": 2.8463531852255893e-08,
+      "registered_reference_cell_mapping": [
+        {
+          "rank": 9,
+          "local_cell": 2133,
+          "global_cell": 12719
+        }
+      ],
+      "Nu_hot_two_point_offline": 44.18580616669476,
+      "Nu_method": "hot-wall one-sided orthogonal face-normal gradient, L=0.1, DeltaT=1; internal adjacent-cell T, distance dx/2; no function object",
+      "finite": true,
+      "gross_sanity_only": true,
+      "PASS": true
+    },
+    "trend": {
+      "steps6_15_median_s": 0.0904854815453291,
+      "steps20_29_median_s": 0.1024319835123606,
+      "late_over_early": 1.1320267269732864,
+      "linear_slope_seconds_per_step_index": 0.0007900758274405695,
+      "classification": "STABLE",
+      "classification_rule": "late/early median ratio >1.15 increasing, <0.85 decreasing; excludes final write; descriptive only"
+    },
+    "iterations": {
+      "every_step_24_outer": true,
+      "early_outer_exit_observed": false,
+      "pressure_solves_per_step": [
+        48
+      ],
+      "energy_solves_per_step": [
+        24
+      ],
+      "pressure_iterations_per_step_total_min_max": [
+        1315,
+        3718
+      ],
+      "energy_iterations_per_step_total_min_max": [
+        3,
+        25
+      ],
+      "pressure_single_solve_iteration_max": 406,
+      "energy_single_solve_iteration_max": 4,
+      "pressure_final_residual_max": 9.999316544506401e-13,
+      "energy_final_residual_max": 9.80665878151728e-13,
+      "max_local_continuity_error": 7.682867544056357e-11,
+      "nonlinear_convergence_certified": false
+    },
+    "speedup": 6.943700266825884,
+    "parallel_efficiency": 0.578641688902157
+  },
+  "best_overall": {
+    "ranks": 12,
+    "cells_per_rank_average": 2133.3333333333335,
+    "median_s_per_step": 0.09614649903960526,
+    "mean_s_per_step": 0.09792014883831143,
+    "min_s_per_step": 0.08969475305639207,
+    "max_s_per_step": 0.11999887099955231,
+    "CV": 0.07584984291379245,
+    "peak_summed_RSS_MiB": 1658.0703125,
+    "wall_seconds_total": 3.4506287740077823,
+    "completed_steps": 30,
+    "solver_only_ish": {
+      "count": 24,
+      "median": 0.0958578905556351,
+      "mean": 0.09700020208159306,
+      "min": 0.08969475305639207,
+      "max": 0.10891306994017214,
+      "CV": 0.062116717490087375
+    },
+    "status": "PASS",
+    "field_sanity": {
+      "T_min_K": 299.63782718684644,
+      "T_max_K": 300.3622235841429,
+      "T_mean_K": 300.00000121281323,
+      "T_minus300_RMS_K": 0.04422001680471524,
+      "Umax_speed_m_s": 0.0005791365392136609,
+      "U_RMS_speed_m_s": 7.704961691918796e-05,
+      "Wmax_abs_m_s": 1.2572466616585829e-24,
+      "U_component_Linf_difference_vs_serial_m_s": 1.3455945964646143e-14,
+      "T_Linf_difference_vs_serial_K": 1.7053025658242404e-12,
+      "p_rgh_at_registered_reference_Pa": 2.8463531852255893e-08,
+      "registered_reference_cell_mapping": [
+        {
+          "rank": 9,
+          "local_cell": 2133,
+          "global_cell": 12719
+        }
+      ],
+      "Nu_hot_two_point_offline": 44.18580616669476,
+      "Nu_method": "hot-wall one-sided orthogonal face-normal gradient, L=0.1, DeltaT=1; internal adjacent-cell T, distance dx/2; no function object",
+      "finite": true,
+      "gross_sanity_only": true,
+      "PASS": true
+    },
+    "trend": {
+      "steps6_15_median_s": 0.0904854815453291,
+      "steps20_29_median_s": 0.1024319835123606,
+      "late_over_early": 1.1320267269732864,
+      "linear_slope_seconds_per_step_index": 0.0007900758274405695,
+      "classification": "STABLE",
+      "classification_rule": "late/early median ratio >1.15 increasing, <0.85 decreasing; excludes final write; descriptive only"
+    },
+    "iterations": {
+      "every_step_24_outer": true,
+      "early_outer_exit_observed": false,
+      "pressure_solves_per_step": [
+        48
+      ],
+      "energy_solves_per_step": [
+        24
+      ],
+      "pressure_iterations_per_step_total_min_max": [
+        1315,
+        3718
+      ],
+      "energy_iterations_per_step_total_min_max": [
+        3,
+        25
+      ],
+      "pressure_single_solve_iteration_max": 406,
+      "energy_single_solve_iteration_max": 4,
+      "pressure_final_residual_max": 9.999316544506401e-13,
+      "energy_final_residual_max": 9.80665878151728e-13,
+      "max_local_continuity_error": 7.682867544056357e-11,
+      "nonlinear_convergence_certified": false
+    },
+    "speedup": 6.943700266825884,
+    "parallel_efficiency": 0.578641688902157
+  },
+  "runtime_estimates": [
+    {
+      "scenario": "t*=0.5 ideal maxDeltaT floor",
+      "steps": 12800,
+      "serial_hours": 2.3737332303490906,
+      "serial_days": 0.09890555126454544,
+      "best_MPI_hours": 0.34185421880748534,
+      "best_MPI_days": 0.014243925783645224,
+      "best_MPI_ranks": 12,
+      "less_than24h_best_MPI": true,
+      "classification": "PROJECTED_FROM_SHORT_PILOT"
+    },
+    {
+      "scenario": "t*=2 ideal maxDeltaT planning count",
+      "steps": 51200,
+      "serial_hours": 9.494932921396362,
+      "serial_days": 0.39562220505818174,
+      "best_MPI_hours": 1.3674168752299414,
+      "best_MPI_days": 0.0569757031345809,
+      "best_MPI_ranks": 12,
+      "less_than24h_best_MPI": true,
+      "classification": "PROJECTED_FROM_SHORT_PILOT"
+    },
+    {
+      "scenario": "Co0.5 prior prospective planning count",
+      "steps": 200061,
+      "serial_hours": 37.10089404663042,
+      "serial_days": 1.5458705852762675,
+      "best_MPI_hours": 5.343101317878463,
+      "best_MPI_days": 0.2226292215782693,
+      "best_MPI_ranks": 12,
+      "less_than24h_best_MPI": true,
+      "classification": "PROJECTED_FROM_SHORT_PILOT"
+    },
+    {
+      "scenario": "Co0.25 prior prospective planning count",
+      "steps": 400122,
+      "serial_hours": 74.20178809326084,
+      "serial_days": 3.091741170552535,
+      "best_MPI_hours": 10.686202635756926,
+      "best_MPI_days": 0.4452584431565386,
+      "best_MPI_ranks": 12,
+      "less_than24h_best_MPI": true,
+      "classification": "PROJECTED_FROM_SHORT_PILOT"
+    }
+  ],
+  "dt_Co_comparison": {
+    "final_physical_time_s": 0.03277874664020242,
+    "final_t_star": 4.61672487890175e-05,
+    "first_dt_s": 2.7734374999999998e-05,
+    "last_dt_s": 0.005486236419200402,
+    "maxDeltaT_reached": false,
+    "all_dt_growth_limited": true,
+    "max_absolute_deltaT_difference_across_ranks_s": 0.0,
+    "max_end_time_difference_across_ranks_s": 0.0,
+    "max_dt_abs_difference_vs_native_1_2_growth_s": 1.734723475976807e-18,
+    "maximum_logged_preSolve_Co_by_rank": {
+      "1": 0.0035861630702619693,
+      "2": 0.0035861630702613318,
+      "4": 0.003586163070255192,
+      "6": 0.0035861630702599644,
+      "8": 0.0035861630702615326,
+      "12": 0.0035861630702668326
+    },
+    "end_state_Co_measured": false,
+    "Co_note": "native log Co uses previous state; no added end-Co function object. Thus not a claim of maximum achieved end-state Co."
+  },
+  "questions": {
+    "actual_serial_s_per_step": 0.6676124710356817,
+    "fastest_MPI_ranks": 12,
+    "best_speedup": 6.943700266825884,
+    "12_improves_over8": true,
+    "24_worth_later": "Not a priority: only12 physical cores; 24 shares SMT resources and halves cells/rank again. No24 run; mature-state behavior may change the recommendation.",
+    "under24h": "Conditional yes for scenarios whose table estimate is <24h; not a runtime guarantee.",
+    "few_days": "Serial projects to1.55 and3.09 days for200061/400122. BestMPI is below1 day in this cold-window projection; for400122, later step cost2.25\u201311.23 times higher would imply1\u20135 days. This is a sensitivity calculation, not a measured mature-flow range.",
+    "previous100days_diagnostic_overhead": "The old exact-evidence proxy does not measure plain CFD and is not applicable. Plain CFD measured here is much faster; no matched instrumented/native mature-state pair was measured, so the complete causal overhead fraction is not established.",
+    "trend_interpretation": "Serial late/early median rises19.2%; best12rank rises13.2%. The best-rank descriptive15% threshold labels this STABLE, but a modest upward tendency is visible and constant-cost extrapolation remains uncertain.",
+    "upward_cost_trend_by_rank": {
+      "1": {
+        "steps6_15_median_s": 0.6061362660257146,
+        "steps20_29_median_s": 0.7226372084696777,
+        "late_over_early": 1.1922025606681332,
+        "linear_slope_seconds_per_step_index": 0.007384310506294361,
+        "classification": "INCREASING",
+        "classification_rule": "late/early median ratio >1.15 increasing, <0.85 decreasing; excludes final write; descriptive only"
+      },
+      "2": {
+        "steps6_15_median_s": 0.3531267984653823,
+        "steps20_29_median_s": 0.40606692602159455,
+        "late_over_early": 1.1499181817587318,
+        "linear_slope_seconds_per_step_index": 0.003572269459356276,
+        "classification": "STABLE",
+        "classification_rule": "late/early median ratio >1.15 increasing, <0.85 decreasing; excludes final write; descriptive only"
+      },
+      "4": {
+        "steps6_15_median_s": 0.18577251443639398,
+        "steps20_29_median_s": 0.21324071648996323,
+        "late_over_early": 1.1478593436542734,
+        "linear_slope_seconds_per_step_index": 0.0017720420835235981,
+        "classification": "STABLE",
+        "classification_rule": "late/early median ratio >1.15 increasing, <0.85 decreasing; excludes final write; descriptive only"
+      },
+      "6": {
+        "steps6_15_median_s": 0.14489067398244515,
+        "steps20_29_median_s": 0.1645273015019484,
+        "late_over_early": 1.135527201163288,
+        "linear_slope_seconds_per_step_index": 0.001291694083332043,
+        "classification": "STABLE",
+        "classification_rule": "late/early median ratio >1.15 increasing, <0.85 decreasing; excludes final write; descriptive only"
+      },
+      "8": {
+        "steps6_15_median_s": 0.11587870394578204,
+        "steps20_29_median_s": 0.13065434648888186,
+        "late_over_early": 1.127509559910276,
+        "linear_slope_seconds_per_step_index": 0.0009601651494006585,
+        "classification": "STABLE",
+        "classification_rule": "late/early median ratio >1.15 increasing, <0.85 decreasing; excludes final write; descriptive only"
+      },
+      "12": {
+        "steps6_15_median_s": 0.0904854815453291,
+        "steps20_29_median_s": 0.1024319835123606,
+        "late_over_early": 1.1320267269732864,
+        "linear_slope_seconds_per_step_index": 0.0007900758274405695,
+        "classification": "STABLE",
+        "classification_rule": "late/early median ratio >1.15 increasing, <0.85 decreasing; excludes final write; descriptive only"
+      }
+    },
+    "next_task": "User-authorized bounded continuation with valid native oldTime histories through the maxDeltaT/Co-controlled regime, using12 physical-core ranks, at most1000 completed steps and600 s wall, with no automatic retry or extension. Obtain a later window and compare its step and linear-iteration costs before committing to production."
+  },
+  "status": {
+    "ROUTE_A_PLAIN_TRANSIENT_CFD_MPI_SCALING_PILOT": "COMPLETE",
+    "PILOT_ID": "plain_20261006_0710",
+    "CANONICAL_AUTHORITY_HASH_VERIFIED": "YES",
+    "FORMAL_AUTHORITY_HASH_VERIFIED": "YES",
+    "PHYSICAL_MODEL_CHANGED": "NO",
+    "NUMERICAL_POLICY_CHANGED": "NO",
+    "HEAVY_DIAGNOSTICS_ENABLED": "NO",
+    "EXACT_EVIDENCE_BACKEND_ENABLED": "NO",
+    "ACTUAL_TRANSIENT_CFD_EXECUTED": "YES",
+    "PRODUCTION_CFD_EXECUTED": "NO",
+    "Q3_BOUNDED_CFD_QUALIFICATION_READY": "NO",
+    "Q3_AUTHORIZED": "NO",
+    "Q3_EXECUTED": "NO",
+    "FORMAL_GATE_J_EXECUTED": "NO",
+    "GRID": "160x160x1",
+    "RA": "1e6",
+    "PR": 0.71,
+    "RANKS_REQUESTED": [
+      1,
+      2,
+      4,
+      6,
+      8,
+      12
+    ],
+    "RANKS_COMPLETED": [
+      1,
+      2,
+      4,
+      6,
+      8,
+      12
+    ],
+    "SERIAL_MEDIAN_SECONDS_PER_STEP": 0.6676124710356817,
+    "RANK2_MEDIAN_SECONDS_PER_STEP": 0.3786849119933322,
+    "RANK4_MEDIAN_SECONDS_PER_STEP": 0.194818826043047,
+    "RANK6_MEDIAN_SECONDS_PER_STEP": 0.15376722894143313,
+    "RANK8_MEDIAN_SECONDS_PER_STEP": 0.12174252304248512,
+    "RANK12_MEDIAN_SECONDS_PER_STEP": 0.09614649903960526,
+    "BEST_MPI_RANKS": 12,
+    "BEST_MPI_MEDIAN_SECONDS_PER_STEP": 0.09614649903960526,
+    "BEST_MPI_SPEEDUP": 6.943700266825884,
+    "BEST_MPI_PARALLEL_EFFICIENCY": 0.578641688902157,
+    "RANK24_EXPLORATORY_EXECUTED": "NO",
+    "RANK24_MEDIAN_SECONDS_PER_STEP": "NOT_EXECUTED",
+    "ESTIMATED_12800_STEP_BEST_MPI_HOURS": 0.34185421880748534,
+    "ESTIMATED_51200_STEP_BEST_MPI_HOURS": 1.3674168752299414,
+    "ESTIMATED_200061_STEP_BEST_MPI_DAYS": 0.2226292215782693,
+    "ESTIMATED_400122_STEP_BEST_MPI_DAYS": 0.4452584431565386,
+    "LESS_THAN_24H_PLAUSIBLE": "YES",
+    "FEW_DAY_RUNTIME_PLAUSIBLE": "YES",
+    "PREVIOUS_100_DAY_DIAGNOSTIC_PROXY_APPLICABLE_TO_PLAIN_CFD": "NO",
+    "STEP_COST_TREND": "STABLE",
+    "SOLVER_STABILITY": "PASS",
+    "MPI_SCALING_CLASSIFICATION": "GOOD",
+    "RECOMMENDED_PRODUCTION_MPI_RANKS": 12,
+    "NEXT_SINGLE_TASK": "RUN_ROUTE_A_PLAIN_TRANSIENT_LATE_WINDOW_BOUNDED_PERFORMANCE_PILOT",
+    "PRODUCTION_EXECUTION_AUTHORIZED": "NO",
+    "USER_DECISION_REQUIRED": "YES"
+  },
+  "same_input_hashes_except_decomposition": true,
+  "immutable_source_and_authority_hashes_unchanged": true,
+  "superseded_attempts": "Initial cell-ID reference trials preserved separately; rank4 failed before any physical timestep because pRefCell is master-local. Primary series uses proven identical global physical reference via pRefPoint for every rank. No timeout retry, tolerance or physics tuning.",
+  "measurement_limitations": [
+    "Single30-step trial per rank, no confidence interval or replicated statistical scaling claim.",
+    "All conditions start at cold-rest. First5 excluded but entire trajectory remains startup; finalt*=4.6167e-5, not developed natural convection.",
+    "Native ClockTime integer seconds; external monotonic end-log markers used. Small log-pipe/observer latency remains; native CPU time retained but not treated as wall timing.",
+    "One scheduled final field write included in primary25 samples; secondary24 samples exclude final write.",
+    "RSS is0.5s sampled sum of worker RSS, includes shared pages and may miss short peaks; not kernel maximum resident set.",
+    "Initial cold check RSS unavailable due observer parser repair; final serial and allMPI RSS recorded with corrected descendant lookup.",
+    "Pressure and energy linear residuals/24outer execution and gross field sanity do not certify nonlinear convergence, GateJ or scientific parallel equivalence.",
+    "12800/51200/200061/400122 are supplied planning step counts, not measured adaptive production counts; Co0.25 runtime uses the Co0.5 per-step proxy.",
+    "Projected mature-flow pressure/energy iterations, CPU frequency/load, output cadence and MPI scaling can differ.",
+    "No exact-evidence proxy contributes to these estimates."
+  ],
+  "resource_accounting": {
+    "primary_solver_wall_total_seconds": 52.88541644113138,
+    "primary_wall_including_decomposition_seconds": 54.1342040321324,
+    "previous_attempt_wall_including_decomposition_seconds": 34.19555619196035,
+    "cold_check_last_completion_wall_seconds": 4.298424935084768,
+    "per_rank_cumulative_with_previous_attempts_under600_seconds": true,
+    "elapsed_pilot_wall_seconds_at_verification": 470.30986499786377,
+    "primary_total_cap_seconds": 3600,
+    "timeout_hit": false,
+    "automatic_timeout_retry": false
+  },
+  "system_summary": {
+    "CPU_model": "Intel(R) Xeon(R) w5-2545",
+    "physical_cores": 12,
+    "logical_CPUs": 24,
+    "memory_GiB": 62.044158935546875,
+    "OpenFOAM_version": "13",
+    "OpenFOAM_build": "13-441953dfbb42",
+    "MPI": "OpenMPI4.1.6",
+    "precision_and_labels": "double,32-bit labels"
+  },
+  "parallel_classification_rule": "GOOD if fastestMPI speedup>=3, MODERATE >=1.5, POOR >=1, NEGATIVE <1; descriptive, not formal gate",
+  "binding_verified_all_primary": true,
+  "post_run_input_hashes_verified": true,
+  "planning_sensitivity": [
+    {
+      "steps": 12800,
+      "24hour_threshold_seconds_per_step": 6.75,
+      "24hour_step_cost_multiplier_vs_measured_best": 70.20536439105805
+    },
+    {
+      "steps": 51200,
+      "24hour_threshold_seconds_per_step": 1.6875,
+      "24hour_step_cost_multiplier_vs_measured_best": 17.551341097764514
+    },
+    {
+      "steps": 200061,
+      "24hour_threshold_seconds_per_step": 0.43186828017454676,
+      "24hour_step_cost_multiplier_vs_measured_best": 4.491773330162015
+    },
+    {
+      "steps": 400122,
+      "24hour_threshold_seconds_per_step": 0.21593414008727338,
+      "24hour_step_cost_multiplier_vs_measured_best": 2.2458866650810076
+    }
+  ]
+}

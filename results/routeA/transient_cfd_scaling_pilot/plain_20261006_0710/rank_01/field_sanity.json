@@ -1,0 +1,24 @@
+{
+  "T_min_K": 299.63782718684644,
+  "T_max_K": 300.3622235841429,
+  "T_mean_K": 300.00000121281323,
+  "T_minus300_RMS_K": 0.044220016804716746,
+  "Umax_speed_m_s": 0.0005791365392136803,
+  "U_RMS_speed_m_s": 7.704961691920916e-05,
+  "Wmax_abs_m_s": 1.257246661722982e-24,
+  "U_component_Linf_difference_vs_serial_m_s": 0.0,
+  "T_Linf_difference_vs_serial_K": 0.0,
+  "p_rgh_at_registered_reference_Pa": 1.4231769278306403e-08,
+  "registered_reference_cell_mapping": [
+    {
+      "rank": 0,
+      "local_cell": 12719,
+      "global_cell": 12719
+    }
+  ],
+  "Nu_hot_two_point_offline": 44.18580616669158,
+  "Nu_method": "hot-wall one-sided orthogonal face-normal gradient, L=0.1, DeltaT=1; internal adjacent-cell T, distance dx/2; no function object",
+  "finite": true,
+  "gross_sanity_only": true,
+  "PASS": true
+}

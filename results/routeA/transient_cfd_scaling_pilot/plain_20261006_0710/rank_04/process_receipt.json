@@ -1,0 +1,190 @@
+{
+  "returncode": 0,
+  "wall_seconds_total": 6.629286727053113,
+  "peak_summed_solver_RSS_bytes": 603504640,
+  "max_solver_processes_observed": 4,
+  "steps": [
+    {
+      "step": 1,
+      "external_completion_wall": 0.6123983459547162,
+      "execution_time": 0.313741,
+      "clock_time": 1.0
+    },
+    {
+      "step": 2,
+      "external_completion_wall": 0.9817229709587991,
+      "execution_time": 0.683048,
+      "clock_time": 1.0
+    },
+    {
+      "step": 3,
+      "external_completion_wall": 1.18044360994827,
+      "execution_time": 0.88174,
+      "clock_time": 1.0
+    },
+    {
+      "step": 4,
+      "external_completion_wall": 1.3696616330416873,
+      "execution_time": 1.070951,
+      "clock_time": 1.0
+    },
+    {
+      "step": 5,
+      "external_completion_wall": 1.5586652130587026,
+      "execution_time": 1.25994,
+      "clock_time": 1.0
+    },
+    {
+      "step": 6,
+      "external_completion_wall": 1.7444255129667,
+      "execution_time": 1.445673,
+      "clock_time": 2.0
+    },
+    {
+      "step": 7,
+      "external_completion_wall": 1.9263509430456907,
+      "execution_time": 1.627556,
+      "clock_time": 2.0
+    },
+    {
+      "step": 8,
+      "external_completion_wall": 2.1121356720104814,
+      "execution_time": 1.813307,
+      "clock_time": 2.0
+    },
+    {
+      "step": 9,
+      "external_completion_wall": 2.2965283220401034,
+      "execution_time": 1.99768,
+      "clock_time": 2.0
+    },
+    {
+      "step": 10,
+      "external_completion_wall": 2.4859472200041637,
+      "execution_time": 2.187095,
+      "clock_time": 2.0
+    },
+    {
+      "step": 11,
+      "external_completion_wall": 2.670706089003943,
+      "execution_time": 2.371857,
+      "clock_time": 3.0
+    },
+    {
+      "step": 12,
+      "external_completion_wall": 2.859098411980085,
+      "execution_time": 2.56025,
+      "clock_time": 3.0
+    },
+    {
+      "step": 13,
+      "external_completion_wall": 3.050014541950077,
+      "execution_time": 2.742001,
+      "clock_time": 3.0
+    },
+    {
+      "step": 14,
+      "external_completion_wall": 3.2263208710355684,
+      "execution_time": 2.927425,
+      "clock_time": 3.0
+    },
+    {
+      "step": 15,
+      "external_completion_wall": 3.419862604001537,
+      "execution_time": 3.120963,
+      "clock_time": 3.0
+    },
+    {
+      "step": 16,
+      "external_completion_wall": 3.6136244439985603,
+      "execution_time": 3.314698,
+      "clock_time": 4.0
+    },
+    {
+      "step": 17,
+      "external_completion_wall": 3.8084432700416073,
+      "execution_time": 3.509476,
+      "clock_time": 4.0
+    },
+    {
+      "step": 18,
+      "external_completion_wall": 4.001943408045918,
+      "execution_time": 3.702946,
+      "clock_time": 4.0
+    },
+    {
+      "step": 19,
+      "external_completion_wall": 4.205475399037823,
+      "execution_time": 3.906436,
+      "clock_time": 4.0
+    },
+    {
+      "step": 20,
+      "external_completion_wall": 4.4083440320100635,
+      "execution_time": 4.10931,
+      "clock_time": 4.0
+    },
+    {
+      "step": 21,
+      "external_completion_wall": 4.611043237964623,
+      "execution_time": 4.312003,
+      "clock_time": 5.0
+    },
+    {
+      "step": 22,
+      "external_completion_wall": 4.816115421010181,
+      "execution_time": 4.517075,
+      "clock_time": 5.0
+    },
+    {
+      "step": 23,
+      "external_completion_wall": 5.022532716044225,
+      "execution_time": 4.723462,
+      "clock_time": 5.0
+    },
+    {
+      "step": 24,
+      "external_completion_wall": 5.23584432003554,
+      "execution_time": 4.936742,
+      "clock_time": 5.0
+    },
+    {
+      "step": 25,
+      "external_completion_wall": 5.449907436966896,
+      "execution_time": 5.150807,
+      "clock_time": 5.0
+    },
+    {
+      "step": 26,
+      "external_completion_wall": 5.663077265955508,
+      "execution_time": 5.363942,
+      "clock_time": 6.0
+    },
+    {
+      "step": 27,
+      "external_completion_wall": 5.88142380095087,
+      "execution_time": 5.582248,
+      "clock_time": 6.0
+    },
+    {
+      "step": 28,
+      "external_completion_wall": 6.10064457799308,
+      "execution_time": 5.801404,
+      "clock_time": 6.0
+    },
+    {
+      "step": 29,
+      "external_completion_wall": 6.323739822953939,
+      "execution_time": 6.024481,
+      "clock_time": 6.0
+    },
+    {
+      "step": 30,
+      "external_completion_wall": 6.574580013984814,
+      "execution_time": 6.272965,
+      "clock_time": 7.0
+    }
+  ],
+  "stopreason": null,
+  "first": 0.3724619100103155
+}

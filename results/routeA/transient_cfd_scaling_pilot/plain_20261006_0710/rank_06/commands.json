@@ -1,0 +1,34 @@
+[
+  {
+    "argv": [
+      "decomposePar",
+      "-case",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/transient_cfd_scaling_pilot/plain_20261006_0710/rank_06/case",
+      "-force"
+    ],
+    "shell": "decomposePar -case /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/transient_cfd_scaling_pilot/plain_20261006_0710/rank_06/case -force",
+    "returncode": 0,
+    "wall_seconds": 0.24425044003874063
+  },
+  {
+    "argv": [
+      "mpirun",
+      "--nooversubscribe",
+      "--bind-to",
+      "core",
+      "--map-by",
+      "core",
+      "--report-bindings",
+      "-np",
+      "6",
+      "foamRun",
+      "-case",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/transient_cfd_scaling_pilot/plain_20261006_0710/rank_06/case",
+      "-solver",
+      "fluid",
+      "-noFunctionObjects",
+      "-parallel"
+    ],
+    "shell": "mpirun --nooversubscribe --bind-to core --map-by core --report-bindings -np 6 foamRun -case /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/transient_cfd_scaling_pilot/plain_20261006_0710/rank_06/case -solver fluid -noFunctionObjects -parallel"
+  }
+]

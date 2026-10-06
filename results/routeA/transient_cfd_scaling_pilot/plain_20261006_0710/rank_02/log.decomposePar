@@ -1,0 +1,80 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  13
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 13-441953dfbb42
+Exec   : decomposePar -case /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/transient_cfd_scaling_pilot/plain_20261006_0710/rank_02/case -force
+Date   : Oct 06 2026
+Time   : 14:08:39
+Host   : "mirai-Precision-5860-Tower"
+PID    : 457418
+I/O    : uncollated
+Case   : /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/transient_cfd_scaling_pilot/plain_20261006_0710/rank_02/case
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Removing 0 existing processor directories
+
+Calculating distribution of cells
+
+Selecting decomposer scotch
+
+Finished decomposition in 0.020728 s
+
+Calculating original mesh data
+
+Distributing cells to processors
+
+Distributing faces to processors
+
+Distributing points to processors
+
+Constructing processor meshes
+
+Processor 0
+    Number of cells = 12865
+    Number of faces shared with processor 1 = 163
+    Number of processor patches = 1
+    Number of processor faces = 163
+    Number of boundary faces = 26051
+
+Processor 1
+    Number of cells = 12735
+    Number of faces shared with processor 0 = 163
+    Number of processor patches = 1
+    Number of processor faces = 163
+    Number of boundary faces = 25789
+
+Number of processor faces = 163
+Max number of cells = 12865 (0.5078125% above average 12800)
+Max number of processor patches = 1 (0% above average 1)
+Max number of faces between processors = 163 (0% above average 163)
+
+Time = 0s
+
+Decomposing FV fields
+
+    Decomposing volScalarFields
+
+        T
+        p_rgh
+        p
+
+    Decomposing volVectorFields
+
+        U
+
+Decomposing point fields
+
+    (no point fields)
+
+End
+

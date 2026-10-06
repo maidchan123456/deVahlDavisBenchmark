@@ -1,0 +1,11 @@
+FoamFile
+{
+    format ascii;
+    class dictionary;
+    location "constant";
+    object thermophysicalTransport;
+}
+laminar
+{
+    model Fourier;
+}

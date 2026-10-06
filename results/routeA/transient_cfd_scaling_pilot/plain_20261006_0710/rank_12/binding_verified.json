@@ -1,0 +1,54 @@
+{
+  "binding": "one MPI rank per distinct physical core; two sibling hardware threads in each core CPU mask, single-threaded solver",
+  "bindings": [
+    {
+      "MPI_rank": 2,
+      "physical_core": 2
+    },
+    {
+      "MPI_rank": 3,
+      "physical_core": 3
+    },
+    {
+      "MPI_rank": 4,
+      "physical_core": 4
+    },
+    {
+      "MPI_rank": 5,
+      "physical_core": 5
+    },
+    {
+      "MPI_rank": 6,
+      "physical_core": 6
+    },
+    {
+      "MPI_rank": 7,
+      "physical_core": 7
+    },
+    {
+      "MPI_rank": 8,
+      "physical_core": 8
+    },
+    {
+      "MPI_rank": 9,
+      "physical_core": 9
+    },
+    {
+      "MPI_rank": 10,
+      "physical_core": 10
+    },
+    {
+      "MPI_rank": 11,
+      "physical_core": 11
+    },
+    {
+      "MPI_rank": 0,
+      "physical_core": 0
+    },
+    {
+      "MPI_rank": 1,
+      "physical_core": 1
+    }
+  ],
+  "verified": true
+}

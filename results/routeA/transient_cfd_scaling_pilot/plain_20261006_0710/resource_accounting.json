@@ -1,0 +1,11 @@
+{
+  "primary_solver_wall_total_seconds": 52.88541644113138,
+  "primary_wall_including_decomposition_seconds": 54.1342040321324,
+  "previous_attempt_wall_including_decomposition_seconds": 34.19555619196035,
+  "cold_check_last_completion_wall_seconds": 4.298424935084768,
+  "per_rank_cumulative_with_previous_attempts_under600_seconds": true,
+  "elapsed_pilot_wall_seconds_at_verification": 470.30986499786377,
+  "primary_total_cap_seconds": 3600,
+  "timeout_hit": false,
+  "automatic_timeout_retry": false
+}

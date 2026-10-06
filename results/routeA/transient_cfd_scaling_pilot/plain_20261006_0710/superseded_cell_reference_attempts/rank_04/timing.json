@@ -1,0 +1,57 @@
+{
+  "status": "FAIL",
+  "rank": 4,
+  "cold_check": false,
+  "returncode": 1,
+  "wall_seconds_total": 0.42513983498793095,
+  "completed_steps": 0,
+  "startup_to_first_time_seconds": null,
+  "total_seconds_per_completed_step": null,
+  "peak_summed_solver_RSS_bytes": 0,
+  "max_solver_processes_observed": 0,
+  "RSS_sampling_interval_seconds": 0.5,
+  "all_steps": [],
+  "primary_timing_source": "external monotonic log completion increments; native ClockTime integer seconds inadequate; first5 excluded; final scheduled write included",
+  "primary": null,
+  "solver_only_ish": null,
+  "external_primary": null,
+  "all_step_stats": null,
+  "max_logged_preSolve_Co": null,
+  "preSolve_Co_sequence": [],
+  "final_physical_time": null,
+  "nonfinite_or_fatal_log": true,
+  "commands": [
+    {
+      "argv": [
+        "decomposePar",
+        "-case",
+        "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/transient_cfd_scaling_pilot/plain_20261006_0710/rank_04/case",
+        "-force"
+      ],
+      "shell": "decomposePar -case /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/transient_cfd_scaling_pilot/plain_20261006_0710/rank_04/case -force",
+      "returncode": 0,
+      "wall_seconds": 0.25850684102624655
+    },
+    {
+      "argv": [
+        "mpirun",
+        "--nooversubscribe",
+        "--bind-to",
+        "core",
+        "--map-by",
+        "core",
+        "--report-bindings",
+        "-np",
+        "4",
+        "foamRun",
+        "-case",
+        "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/transient_cfd_scaling_pilot/plain_20261006_0710/rank_04/case",
+        "-solver",
+        "fluid",
+        "-noFunctionObjects",
+        "-parallel"
+      ],
+      "shell": "mpirun --nooversubscribe --bind-to core --map-by core --report-bindings -np 4 foamRun -case /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/transient_cfd_scaling_pilot/plain_20261006_0710/rank_04/case -solver fluid -noFunctionObjects -parallel"
+    }
+  ]
+}

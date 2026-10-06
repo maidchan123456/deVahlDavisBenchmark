@@ -1,0 +1,9 @@
+{
+  "returncode": 1,
+  "wall_seconds_total": 0.42513983498793095,
+  "peak_summed_solver_RSS_bytes": 0,
+  "max_solver_processes_observed": 0,
+  "steps": [],
+  "stopreason": null,
+  "first": null
+}

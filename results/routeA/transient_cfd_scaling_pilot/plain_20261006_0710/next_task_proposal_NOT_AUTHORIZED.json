@@ -1,0 +1,15 @@
+{
+  "task": "RUN_ROUTE_A_PLAIN_TRANSIENT_LATE_WINDOW_BOUNDED_PERFORMANCE_PILOT",
+  "authorization_status": "NOT_AUTHORIZED_NOT_EXECUTED",
+  "requires_user_decision": true,
+  "suggested_ranks": 12,
+  "suggested_max_completed_steps": 1000,
+  "suggested_wall_cap_seconds": 600,
+  "no_automatic_retry": true,
+  "same_physical_and_numerical_contract": true,
+  "heavy_diagnostics": false,
+  "production_series": false,
+  "initialization": "Continuous native cold-start evolution retains oldTime histories in memory; no restart from pilot final fields unless history correctness independently verified",
+  "measurement": "rolling late100-step wall and linear-iteration windows, including maxDeltaT/Co-limited phase if reached; record phase if cap prevents reaching it",
+  "completion": "report later cost, adaptive dt, stability, field sanity, and how it changes planning estimates; stop under hard bounds"
+}

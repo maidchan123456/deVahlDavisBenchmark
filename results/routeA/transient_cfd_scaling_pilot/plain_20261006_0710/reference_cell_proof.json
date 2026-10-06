@@ -1,0 +1,35 @@
+{
+  "original_global_cell": 12719,
+  "vertex_average_m": [
+    0.0496875,
+    0.0496875,
+    0.0005
+  ],
+  "faces": [
+    25359,
+    25360,
+    64239,
+    89839,
+    25041,
+    25357
+  ],
+  "unique_vertices": [
+    12798,
+    12799,
+    12959,
+    12960,
+    38719,
+    38720,
+    38880,
+    38881
+  ],
+  "new_pRefPoint_m": [
+    0.0496875,
+    0.0496875,
+    0.0005
+  ],
+  "pRefValue": 0,
+  "native_source": "/opt/openfoam13/src/finiteVolume/cfdTools/general/findRefCell/findRefCell.C",
+  "reason": "native pRefCell is rank0 local ID; pRefPoint locates the same global physical cell on any decomposition",
+  "physics_and_numerical_policy_changed": false
+}

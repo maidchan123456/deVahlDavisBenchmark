@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "authority_and_original_case_unchanged": true,
+  "all_primary_input_hashes_same_except_decomposeParDict": true,
+  "all_primary_post_run_input_hashes_unchanged": true,
+  "all_ranks30_completed_steps": true,
+  "all_ranks24_outer_every_step": true,
+  "all_binding_cores_distinct_and_solver_process_counts_correct": true,
+  "field_sanity_pass": true,
+  "syntax_all_pilot_scripts_valid": true,
+  "no_production_Q3_GateJ_executed": true,
+  "24_rank_not_executed": true,
+  "verified_UTC": "2026-10-06T05:13:10.273813+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "foamRun": {
+    "path": "/opt/openfoam13/platforms/linux64GccDPInt32Opt/bin/foamRun",
+    "sha256": "96aeb56a4fb12fae411076235ca7469f988fc09c0a2eeb288f18cfce3522aead"
+  },
+  "decomposePar": {
+    "path": "/opt/openfoam13/platforms/linux64GccDPInt32Opt/bin/decomposePar",
+    "sha256": "a8442ff8c272d63d7e7b26afb0f5ca377e1f62a6bc411f3ac29394e69ec3c9ec"
+  },
+  "mpirun": {
+    "path": "/usr/bin/orterun",
+    "sha256": "e3a009cd4ab8b41ef23019df3a1388944294b330b7c51ad17be18a0120b36daa"
+  },
+  "libfluid": {
+    "path": "/opt/openfoam13/platforms/linux64GccDPInt32Opt/lib/libfluid.so",
+    "sha256": "132832d25c7d28b054a8ee2abdf997709321517c2deb68c8131f5666d7b6c133"
+  },
+  "load_average_capture": "0.63 0.22 0.20 2/1046 457332\n",
+  "disk_free_bytes": 792559919104
+}

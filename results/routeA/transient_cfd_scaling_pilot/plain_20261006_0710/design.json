@@ -1,0 +1,25 @@
+{
+  "ranks": [
+    1,
+    2,
+    4,
+    6,
+    8,
+    12
+  ],
+  "steps": 30,
+  "cold_check_steps": 5,
+  "starting_state": "IDENTICAL_COLD_REST; startup benchmark alternative; no checkpoint restart",
+  "warmup_steps_excluded": 5,
+  "time_end_rule": "analytical sum of native 1.2 growth increments; verify 30 completed, external guard kills upon step 31",
+  "end_time": "0.032778746640202423",
+  "wall_cap_per_condition_seconds": 600,
+  "primary_total_cap_seconds": 3600,
+  "write_policy": "write only at final step 30, no functions; solver-only-ish secondary excludes final write",
+  "binding": "--nooversubscribe --map-by core --bind-to core --report-bindings",
+  "native_solver": "foamRun -solver fluid -noFunctionObjects; -parallel only for N>1",
+  "sampling": "lightweight /proc RSS 0.5 s, external log marker timestamps; native ClockTime increments preferred",
+  "primary_timing_source": "external monotonic completion timestamps because native ClockTime is integer seconds",
+  "reference_cell_representation": "pRefPoint (0.0496875 0.0496875 0.0005), proven identical to original global cell12719",
+  "repair_history": "Preserved initial serial and2rank runs plus4rank initialization failure; same physical reference point required for fair decomposition."
+}

@@ -1,0 +1,180 @@
+Architecture:                            x86_64
+CPU op-mode(s):                          32-bit, 64-bit
+Address sizes:                           52 bits physical, 57 bits virtual
+Byte Order:                              Little Endian
+CPU(s):                                  24
+On-line CPU(s) list:                     0-23
+Vendor ID:                               GenuineIntel
+Model name:                              Intel(R) Xeon(R) w5-2545
+CPU family:                              6
+Model:                                   143
+Thread(s) per core:                      2
+Core(s) per socket:                      12
+Socket(s):                               1
+Stepping:                                8
+CPU(s) scaling MHz:                      21%
+CPU max MHz:                             4700.0000
+CPU min MHz:                             800.0000
+BogoMIPS:                                7008.00
+Flags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cat_l2 cdp_l3 intel_ppin cdp_l2 ssbd mba ibrs ibpb stibp ibrs_enhanced tpr_shadow flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid cqm rdt_a avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb intel_pt avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local split_lock_detect user_shstk avx_vnni avx512_bf16 wbnoinvd dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req vnmi avx512vbmi umip pku ospke waitpkg avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq la57 rdpid bus_lock_detect cldemote movdiri movdir64b enqcmd fsrm md_clear serialize tsxldtrk pconfig arch_lbr ibt amx_bf16 avx512_fp16 amx_tile amx_int8 flush_l1d arch_capabilities
+Virtualization:                          VT-x
+L1d cache:                               576 KiB (12 instances)
+L1i cache:                               384 KiB (12 instances)
+L2 cache:                                24 MiB (12 instances)
+L3 cache:                                30 MiB (1 instance)
+NUMA node(s):                            1
+NUMA node0 CPU(s):                       0-23
+Vulnerability Gather data sampling:      Not affected
+Vulnerability Ghostwrite:                Not affected
+Vulnerability Indirect target selection: Not affected
+Vulnerability Itlb multihit:             Not affected
+Vulnerability L1tf:                      Not affected
+Vulnerability Mds:                       Not affected
+Vulnerability Meltdown:                  Not affected
+Vulnerability Mmio stale data:           Not affected
+Vulnerability Old microcode:             Vulnerable
+Vulnerability Reg file data sampling:    Not affected
+Vulnerability Retbleed:                  Not affected
+Vulnerability Spec rstack overflow:      Not affected
+Vulnerability Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl
+Vulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:                Mitigation; Enhanced / Automatic IBRS; IBPB conditional; PBRSB-eIBRS SW sequence; BHI BHI_DIS_S
+Vulnerability Srbds:                     Not affected
+Vulnerability Tsa:                       Not affected
+Vulnerability Tsx async abort:           Not affected
+Vulnerability Vmscape:                   Mitigation; IBPB before exit to userspace
+
+mpirun (Open MPI) 4.1.6
+
+Report bugs to http://www.open-mpi.org/community/help/
+
+               MCA hwloc: external (MCA v2.1.0, API v2.0.0, Component v4.1.6)
+          MCA hwloc base: ---------------------------------------------------
+          MCA hwloc base: parameter "hwloc" (current value: "", data source: default, level: 2 user/detail, type: string)
+                          Default selection set of components for the hwloc framework (<none> means use all components that can be found)
+          MCA hwloc base: ---------------------------------------------------
+          MCA hwloc base: parameter "hwloc_base_verbose" (current value: "error", data source: default, level: 8 dev/detail, type: int)
+                          Verbosity level for the hwloc framework (default: 0)
+                          Valid values: -1:"none", 0:"error", 10:"component", 20:"warn", 40:"info", 60:"trace", 80:"debug", 100:"max", 0 - 100
+          MCA hwloc base: parameter "hwloc_base_mem_alloc_policy" (current value: "none", data source: default, level: 9 dev/all, type: int)
+                          General memory allocations placement policy (this is not memory binding). "none" means that no memory policy is applied. "local_only" means that a process' memory allocations will be restricted to its local NUMA node. If using direct launch, this policy will not be in effect until after MPI_INIT. Note that operating system paging policies are unaffected by this setting. For example, if "local_only" is used and local NUMA node memory is exhausted, a new memory allocation may cause paging.
+                          Valid values: 0:"none", 1:"local_only"
+          MCA hwloc base: parameter "hwloc_base_mem_bind_failure_action" (current value: "warn", data source: default, level: 9 dev/all, type: int)
+                          What Open MPI will do if it explicitly tries to bind memory to a specific NUMA location, and fails.  Note that this is a different case than the general allocation policy described by hwloc_base_alloc_policy.  A value of "silent" means that Open MPI will proceed without comment. A value of "warn" means that Open MPI will warn the first time this happens, but allow the job to continue (possibly with degraded performance).  A value of "error" means that Open MPI will abort the job if this happens.
+                          Valid values: 0:"silent", 1:"warn", 2:"error"
+          MCA hwloc base: parameter "hwloc_base_binding_policy" (current value: "", data source: default, level: 9 dev/all, type: string)
+                          Policy for binding processes. Allowed values: none, hwthread, core, l1cache, l2cache, l3cache, socket, numa, board, cpu-list ("none" is the default when oversubscribed, "core" is the default when np<=2, and "numa" is the default when np>2). Allowed qualifiers: overload-allowed, if-supported, ordered
+          MCA hwloc base: parameter "hwloc_base_bind_to_core" (current value: "false", data source: default, level: 9 dev/all, type: bool)
+                          Bind processes to cores
+                          Valid values: 0: f|false|disabled|no|n, 1: t|true|enabled|yes|y
+          MCA hwloc base: parameter "hwloc_base_bind_to_socket" (current value: "false", data source: default, level: 9 dev/all, type: bool)
+                          Bind processes to sockets
+                          Valid values: 0: f|false|disabled|no|n, 1: t|true|enabled|yes|y
+          MCA hwloc base: parameter "hwloc_base_report_bindings" (current value: "false", data source: default, level: 9 dev/all, type: bool)
+                          Report bindings to stderr
+                          Valid values: 0: f|false|disabled|no|n, 1: t|true|enabled|yes|y
+          MCA hwloc base: parameter "hwloc_base_cpu_list" (current value: "", data source: default, level: 9 dev/all, type: string, synonyms: hwloc_base_slot_list, hwloc_base_cpu_set)
+                          Comma-separated list of ranges specifying logical cpus to be used by these processes [default: none]
+          MCA hwloc base: parameter "hwloc_base_slot_list" (current value: "", data source: default, level: 9 dev/all, type: string, deprecated, synonym of: hwloc_base_cpu_list)
+                          Comma-separated list of ranges specifying logical cpus to be used by these processes [default: none]
+          MCA hwloc base: parameter "hwloc_base_cpu_set" (current value: "", data source: default, level: 9 dev/all, type: string, deprecated, synonym of: hwloc_base_cpu_list)
+                          Comma-separated list of ranges specifying logical cpus to be used by these processes [default: none]
+          MCA hwloc base: parameter "hwloc_base_use_hwthreads_as_cpus" (current value: "false", data source: default, level: 9 dev/all, type: bool)
+                          Use hardware threads as independent cpus
+                          Valid values: 0: f|false|disabled|no|n, 1: t|true|enabled|yes|y
+          MCA hwloc base: parameter "hwloc_base_topo_file" (current value: "", data source: default, level: 9 dev/all, type: string)
+                          Read local topology from file instead of directly sensing it
+
+
+Usage: foamRun [OPTIONS]
+options:
+  -case <dir>       specify alternate case directory, default is the cwd
+  -fileHandler <handler>
+                    override the fileHandler
+  -hostRoots <((host1 dir1) .. (hostN dirN))>
+                    slave root directories (per host) for distributed running
+  -libs '("lib1.so" ... "libN.so")'
+                    pre-load libraries
+  -noFunctionObjects
+                    do not execute functionObjects
+  -parallel         run in parallel
+  -roots <(dir1 .. dirN)>
+                    slave root directories for distributed running
+  -solver <name>    Solver name
+  -srcDoc           display source code in browser
+  -doc              display application documentation in browser
+  -help             print the usage
+
+Using: OpenFOAM-13 (see https://openfoam.org)
+Build: 13-441953dfbb42
+
+
+MemTotal:       65058016 kB
+MemFree:         1291264 kB
+MemAvailable:   61719940 kB
+Buffers:         3924564 kB
+Cached:         51391336 kB
+SwapCached:           16 kB
+Active:          1198488 kB
+Inactive:       55338588 kB
+Active(anon):     580904 kB
+Inactive(anon):   714220 kB
+Active(file):     617584 kB
+Inactive(file): 54624368 kB
+Unevictable:       20456 kB
+Mlocked:           11852 kB
+SwapTotal:       8388604 kB
+SwapFree:        8388588 kB
+Zswap:                 0 kB
+Zswapped:              0 kB
+Dirty:             48876 kB
+Writeback:             4 kB
+AnonPages:       1242240 kB
+Mapped:           915404 kB
+Shmem:             62104 kB
+KReclaimable:    5894892 kB
+Slab:            6795476 kB
+SReclaimable:    5894892 kB
+SUnreclaim:       900584 kB
+KernelStack:       17072 kB
+PageTables:        26300 kB
+SecPageTables:     10680 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    40917612 kB
+Committed_AS:    7809728 kB
+VmallocTotal:   13743895347199 kB
+VmallocUsed:       56556 kB
+VmallocChunk:          0 kB
+Percpu:            67584 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+FileHugePages:   1951744 kB
+FilePmdMapped:    331776 kB
+CmaTotal:              0 kB
+CmaFree:          135856 kB
+Unaccepted:            0 kB
+Balloon:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+Hugetlb:               0 kB
+DirectMap4k:      262728 kB
+DirectMap2M:     5242880 kB
+DirectMap1G:    61865984 kB
+
+{
+  "WM_PROJECT_VERSION": "13",
+  "WM_OPTIONS": "linux64GccDPInt32Opt",
+  "FOAM_LIBBIN": "/opt/openfoam13/platforms/linux64GccDPInt32Opt/lib",
+  "LD_LIBRARY_PATH": "/opt/openfoam13/thirdparty/platforms/linux64Gcc/gperftools-svn/lib:/usr/lib/x86_64-linux-gnu:/opt/openfoam13/platforms/linux64GccDPInt32Opt/lib/paraview-5.11:/opt/openfoam13/platforms/linux64GccDPInt32Opt/lib/openmpi-system:/opt/openfoam13/thirdparty/platforms/linux64GccDPInt32/lib/openmpi-system:/usr/lib/x86_64-linux-gnu/openmpi/lib:/home/mirai/OpenFOAM/mirai-13/platforms/linux64GccDPInt32Opt/lib:/opt/site/13/platforms/linux64GccDPInt32Opt/lib:/opt/openfoam13/platforms/linux64GccDPInt32Opt/lib:/opt/openfoam13/thirdparty/platforms/linux64GccDPInt32/lib:/opt/openfoam13/platforms/linux64GccDPInt32Opt/lib/dummy:/usr/local/cuda/lib64",
+  "OMP_NUM_THREADS": "1",
+  "OPENBLAS_NUM_THREADS": "1",
+  "MKL_NUM_THREADS": "1",
+  "LD_PRELOAD": null
+}

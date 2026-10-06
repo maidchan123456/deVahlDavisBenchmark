@@ -1,0 +1,17 @@
+{
+  "authorization_class": "PLAIN_TRANSIENT_CFD_MPI_PERFORMANCE_PILOT",
+  "source_request": "/home/mirai/.codex/attachments/3dd6567d-f13e-47bf-9497-58a279e72380/\u8cbc\u308a\u4ed8\u3051\u305f\u30c6\u30ad\u30b9\u30c8.txt",
+  "CFD_ALLOWED": "YES",
+  "SHORT_TRANSIENT_ONLY": "YES",
+  "MPI_SCALING_ALLOWED": "YES",
+  "MAX_MPI_RANKS_PRIMARY": 12,
+  "PRODUCTION_ALLOWED": "NO",
+  "Q3_ALLOWED": "NO",
+  "PARTICLE_COUPLING_ALLOWED": "NO",
+  "authority_hashes": {
+    "docs/routeA_diagnostic_transient_contract_v1.5.json": "06c71945289ffe419b784843f7aab2fea66c44d28c9dba46d828bbd24837e27d",
+    "docs/routeA_execution_contract_v1.7.json": "fbc744e012f66b37b5d9409be961cb5a9410c3d75ac7e2f026b2acf118d3bb60"
+  },
+  "source_request_sha256": "1e998ecc7c919d3fa4856c8ee2e4cf9a89f7797dfc0f95b56004bfafd1520787",
+  "receipt_created_UTC": "2026-10-06T05:05:19Z"
+}

@@ -1,0 +1,10 @@
+{
+  "binding": "one MPI rank per distinct physical core; two sibling hardware threads in each core CPU mask, single-threaded solver",
+  "bindings": [
+    {
+      "MPI_rank": 0,
+      "physical_core": 0
+    }
+  ],
+  "verified": true
+}
