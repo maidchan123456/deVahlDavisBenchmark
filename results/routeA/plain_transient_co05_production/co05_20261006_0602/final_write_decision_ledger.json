@@ -1,0 +1,59 @@
+{
+  "result": "PASS",
+  "arithmetic_samples": 3000000,
+  "CFD_EXECUTED": "NO",
+  "native_running_expression": "value < endTime - 0.5*deltaT",
+  "native_write_bin_expression": "int(((value-beginTime)+0.5*deltaT)/writeInterval)",
+  "beginTime": 0,
+  "endTime": 1420,
+  "writeInterval": 5,
+  "required_final_bin": 284,
+  "maxDeltaT": 0.027734375,
+  "growth_limit": 1.2,
+  "final_time_lower_bound_s": 1419.9861328125,
+  "final_time_upper_bound_s": 1420.0161783854167,
+  "exact_timestamp_forced": false,
+  "output_changes_deltaT": false,
+  "roundoff_test": "at termination boundary, next representable above, and one maxDeltaT beyond boundary; no missed final bin",
+  "proof": "Since maxDeltaT < writeInterval, the first stopped step crosses bin284 without skipping any bin. Native driver writes before retesting running(). No adjustment for runTime IO.",
+  "source_evidence": [
+    {
+      "path": "/opt/openfoam13/src/OpenFOAM/db/Time/Time.C",
+      "lines": "70-119;884-886;1052-1060;1196-1214",
+      "meaning": "adjustableRunTime adjusts dt; runTime does not; native running and write bin predicates"
+    },
+    {
+      "path": "/opt/openfoam13/src/OpenFOAM/db/Time/TimeIO.C",
+      "lines": "210-249;254-282",
+      "meaning": "uniform/time has actual value,index,deltaT,deltaT0; writeTime gates native AUTO_WRITE objects"
+    },
+    {
+      "path": "/opt/openfoam13/applications/solvers/foamRun/foamRun.C",
+      "lines": "188-200",
+      "meaning": "postSolve then runTime.write before loop termination; End alone does not force write"
+    },
+    {
+      "path": "/opt/openfoam13/applications/solvers/foamRun/setDeltaT.C",
+      "lines": "55-80",
+      "meaning": "native bounded growth and solver CFL policy"
+    },
+    {
+      "path": "/opt/openfoam13/src/OSspecific/POSIX/signals/sigWriteNow.C",
+      "lines": "58-65;102-120",
+      "meaning": "native writeOnce flag, no dt change"
+    }
+  ],
+  "installed_sources_sha256": {
+    "/opt/openfoam13/src/OpenFOAM/db/Time/Time.C": "c25af623b370d07b877fa127398b499e1e0358931ddf46413f533d9305e685da",
+    "/opt/openfoam13/src/OpenFOAM/db/Time/TimeIO.C": "f9a71ae7b20ea06cd40c75f544a043e004e34e0679a819b4432465c90c0afd68",
+    "/opt/openfoam13/applications/solvers/foamRun/foamRun.C": "5c1e6e34c4bd253f5cc4665a8672f21b6ded2c7a5e391c67419f7586a7b5de91",
+    "/opt/openfoam13/applications/solvers/foamRun/setDeltaT.C": "656a3a8782614b0f14aff03d0925d339eb6e568356c792f61fa4095d1ade5f11",
+    "/opt/openfoam13/src/OSspecific/POSIX/signals/sigWriteNow.C": "06ee262bbc4090413d4cca868ec4edf0363bfcc7578ba13cc23c4d8f0f5efafa",
+    "/opt/openfoam13/src/OSspecific/POSIX/signals/sigStopAtWriteNow.C": "2b6221083b0c11227ec6f407450f98e5a1a673347cf31e95a8981378866dea2f",
+    "/opt/openfoam13/src/thermophysicalModels/specie/thermo/eConst/eConstThermo.C": "498e3027993e6c0c8fa52864e9265e25b76e14866d11b6e102833ac0cbf34927",
+    "/opt/openfoam13/src/thermophysicalModels/specie/thermo/eConst/eConstThermoI.H": "e0455961505f927cfeefc2871d14aefd1593a095368e81c7393781582f41e0ae",
+    "/opt/openfoam13/src/thermophysicalModels/specie/equationOfState/Boussinesq/BoussinesqI.H": "4e23872bfb92a392ee199b1a2f2ee869e4eddd55e23d64eee7ec67478409f740"
+  },
+  "writeAtEnd_option_found": false,
+  "method": "NATIVE_RUN_TIME_BIN_ENDTIME_MULTIPLE"
+}

@@ -1,0 +1,129 @@
+{
+  "status": "PASS",
+  "non_CFD_probe": true,
+  "physical_cores_distinct": true,
+  "ranks": [
+    {
+      "rank": 0,
+      "pid": 460369,
+      "affinity": [
+        0,
+        12
+      ],
+      "physical_core": 0
+    },
+    {
+      "rank": 1,
+      "pid": 460370,
+      "affinity": [
+        1,
+        13
+      ],
+      "physical_core": 1
+    },
+    {
+      "rank": 2,
+      "pid": 460371,
+      "affinity": [
+        2,
+        14
+      ],
+      "physical_core": 2
+    },
+    {
+      "rank": 3,
+      "pid": 460372,
+      "affinity": [
+        3,
+        15
+      ],
+      "physical_core": 3
+    },
+    {
+      "rank": 4,
+      "pid": 460373,
+      "affinity": [
+        4,
+        16
+      ],
+      "physical_core": 4
+    },
+    {
+      "rank": 5,
+      "pid": 460374,
+      "affinity": [
+        5,
+        17
+      ],
+      "physical_core": 5
+    },
+    {
+      "rank": 6,
+      "pid": 460375,
+      "affinity": [
+        6,
+        18
+      ],
+      "physical_core": 6
+    },
+    {
+      "rank": 7,
+      "pid": 460376,
+      "affinity": [
+        7,
+        19
+      ],
+      "physical_core": 7
+    },
+    {
+      "rank": 8,
+      "pid": 460377,
+      "affinity": [
+        8,
+        20
+      ],
+      "physical_core": 8
+    },
+    {
+      "rank": 9,
+      "pid": 460378,
+      "affinity": [
+        9,
+        21
+      ],
+      "physical_core": 9
+    },
+    {
+      "rank": 10,
+      "pid": 460379,
+      "affinity": [
+        10,
+        22
+      ],
+      "physical_core": 10
+    },
+    {
+      "rank": 11,
+      "pid": 460380,
+      "affinity": [
+        11,
+        23
+      ],
+      "physical_core": 11
+    }
+  ],
+  "command": [
+    "mpirun",
+    "--nooversubscribe",
+    "--map-by",
+    "core",
+    "--bind-to",
+    "core",
+    "--report-bindings",
+    "-np",
+    "12",
+    "/usr/bin/python3",
+    "-c",
+    "import os,json; print(json.dumps({\"rank\":int(os.environ[\"OMPI_COMM_WORLD_RANK\"]),\"pid\":os.getpid(),\"affinity\":sorted(os.sched_getaffinity(0))}),flush=True)"
+  ]
+}

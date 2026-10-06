@@ -1,0 +1,13 @@
+{
+  "authorization_class": "PLAIN_TRANSIENT_CO05_PRODUCTION_PREPARATION_ONLY",
+  "PRODUCTION_PREPARATION": "AUTHORIZED",
+  "PRODUCTION_CFD_EXECUTION": "NOT_AUTHORIZED",
+  "ACTUAL_CFD_ALLOWED": "NO",
+  "source_request": "/home/mirai/.codex/attachments/b4c0f0f0-de39-4e86-9b41-35539313e8a5/\u8cbc\u308a\u4ed8\u3051\u305f\u30c6\u30ad\u30b9\u30c8.txt",
+  "source_request_sha256": "a68c3b97cb8b513dcedad20a85dc93f3254586f24f6063533bde28075c21ad1d",
+  "expected_HEAD": "f57d60d85e36ea9928e4bc481d3cbde586496f58",
+  "authority_hashes": {
+    "docs/routeA_diagnostic_transient_contract_v1.5.json": "06c71945289ffe419b784843f7aab2fea66c44d28c9dba46d828bbd24837e27d",
+    "docs/routeA_execution_contract_v1.7.json": "fbc744e012f66b37b5d9409be961cb5a9410c3d75ac7e2f026b2acf118d3bb60"
+  }
+}

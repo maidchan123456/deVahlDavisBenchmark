@@ -1,0 +1,79 @@
+{
+  "preparation_id": "co05_20261006_0602",
+  "execution": "AFTER_PRODUCTION_ONLY",
+  "script": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/plain_transient_co05_production/co05_20261006_0602/postprocess_production.py",
+  "command_argv": [
+    "python3",
+    "-B",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/plain_transient_co05_production/co05_20261006_0602/postprocess_production.py",
+    "--case",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602",
+    "--output",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/plain_transient_co05_production/co05_20261006_0602/postprocessing",
+    "--times",
+    "all",
+    "--log",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/plain_transient_co05_production/co05_20261006_0602/execution/log.foamRun"
+  ],
+  "cold_and_saved_state_selection": "all fully saved rank-consistent states including cold0; use actual uniform/time.value and index",
+  "QoI": [
+    "Nu_hot(t)",
+    "Nu_cold(t)",
+    "Umax(t)",
+    "Wmax(t)",
+    "speed_max_m_s(t)",
+    "Uz_absmax_m_s(t)"
+  ],
+  "normalization": {
+    "L_m": 0.1,
+    "alpha_m2_s": 1.4084507042253523e-05,
+    "DeltaT_K": 1,
+    "time": "tstar=alpha*t/L^2",
+    "velocity": "Umax/Wmax use L/alpha, benchmark positive component centreline maxima,4097 samples"
+  },
+  "profiles": [
+    "dimensionless centreline Ux at x/L=.5",
+    "dimensionless centreline Uy at y/L=.5",
+    "theta=T-300 along horizontal/vertical centrelines"
+  ],
+  "symmetry": "180-degree temperature antisymmetry about300K and vector velocity antisymmetry, RMS descriptors",
+  "conservation_coverage": "native rho volume mass, rho*Cv*(T-Tstd) internal-energy proxy, kinetic energy, wall heat flux and coarse saved-state secants; no native BDF conservation residual or missing e/K history reconstruction",
+  "log_outputs": [
+    "deltaT",
+    "Co_mean/max on pre-advance state",
+    "pressure/energy/momentum iterations and solves",
+    "initial/final residual maxima",
+    "continuity local/global/cumulative",
+    "native CPU/ClockTime",
+    "external per-step launcher markers"
+  ],
+  "baseline_metrics": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/cases/A-Ra1e6-fine/segments/end_9000/metrics.json",
+  "baseline_profiles": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/cases/A-Ra1e6-fine/segments/end_9000/centreline_4097.csv",
+  "comparison": [
+    "relative differences Nu_hot/Nu_cold/Umax/Wmax",
+    "centreline velocity RMS/Linf differences",
+    "inspect late trajectories and temperature profiles without assuming final=steady"
+  ],
+  "approach_assessment": {
+    "window": "last10% of physical span, at leastlast5 available saved states",
+    "descriptors": [
+      "relative range",
+      "linear slope",
+      "relative slope change across window"
+    ],
+    "descriptive_stationary_candidate_threshold": 0.001,
+    "insufficient_history_allowed": true,
+    "not_a_formal_arrival_or_convergence_certificate": true
+  },
+  "next_review": [
+    "verify normal end/final state completeness",
+    "verify actual startup and5s write schedule and tstar coverage",
+    "generate offline scientific QoI/profile/evolution plots from CSVs",
+    "review late stationary/evolving descriptors and final baseline differences",
+    "compare mass and energy descriptors with explicitly stated missing-stage-history limitations"
+  ],
+  "validation": "offline late checkpoint reproduces Nu_hot6.2249983769413575 and speed0.03805799912427893;598-step log solves48pressure/24energy perstep; analytic coldstate velocity0 and Nu_hot=Nu_cold=160",
+  "Q3_EXECUTED": "NO",
+  "FORMAL_GATE_J_EXECUTED": "NO",
+  "FULL_CONSERVATION_AUDIT": "NO"
+}

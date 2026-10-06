@@ -1,0 +1,19 @@
+{
+  "result": "PASS",
+  "arithmetic_samples": 3000000,
+  "CFD_EXECUTED": "NO",
+  "native_running_expression": "value < endTime - 0.5*deltaT",
+  "native_write_bin_expression": "int(((value-beginTime)+0.5*deltaT)/writeInterval)",
+  "beginTime": 0,
+  "endTime": 1420,
+  "writeInterval": 5,
+  "required_final_bin": 284,
+  "maxDeltaT": 0.027734375,
+  "growth_limit": 1.2,
+  "final_time_lower_bound_s": 1419.9861328125,
+  "final_time_upper_bound_s": 1420.0161783854167,
+  "exact_timestamp_forced": false,
+  "output_changes_deltaT": false,
+  "roundoff_test": "at termination boundary, next representable above, and one maxDeltaT beyond boundary; no missed final bin",
+  "proof": "Since maxDeltaT < writeInterval, the first stopped step crosses bin284 without skipping any bin. Native driver writes before retesting running(). No adjustment for runTime IO."
+}

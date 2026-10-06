@@ -1,0 +1,43 @@
+{
+  "result": "PASS",
+  "tests": [
+    {
+      "test": "complete_launch_preflight",
+      "result": "PASS",
+      "CFD_EXECUTED": "NO"
+    },
+    {
+      "test": "actual_cold_field_tamper_rejected",
+      "result": "PASS"
+    },
+    {
+      "test": "HEAD_change_rejected",
+      "result": "PASS"
+    },
+    {
+      "test": "existing_execution_namespace_rejected",
+      "result": "PASS"
+    },
+    {
+      "test": "draft_NO_rejected_before_Popen_and_runtime_creation",
+      "result": "PASS"
+    },
+    {
+      "test": "accepted_pilot_log_parser_and_fatal_detection",
+      "result": "PASS",
+      "steps_read_offline": 598
+    },
+    {
+      "test": "native_final_write_boundary_arithmetic",
+      "result": "PASS",
+      "samples": 3000000
+    },
+    {
+      "test": "offline_QoI_analytic_cold_and_real_late_checkpoint_plus_native_598_steps",
+      "result": "PASS"
+    }
+  ],
+  "production_CFD_executed": "NO",
+  "runtime_namespace_created": false,
+  "input_restored_and_reverified": true
+}

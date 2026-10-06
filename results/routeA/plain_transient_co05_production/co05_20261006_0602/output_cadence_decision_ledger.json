@@ -1,0 +1,152 @@
+{
+  "actual_checkpoint_measurements": [
+    {
+      "time_name": "4.693077723592",
+      "logical_bytes": 9689885,
+      "allocated_bytes": 9965568,
+      "files": 144
+    },
+    {
+      "time_name": "2.913037886007",
+      "logical_bytes": 9718934,
+      "allocated_bytes": 9969664,
+      "files": 144
+    },
+    {
+      "time_name": "4.707987914239",
+      "logical_bytes": 9689614,
+      "allocated_bytes": 9969664,
+      "files": 144
+    },
+    {
+      "time_name": "1.471581902844",
+      "logical_bytes": 9751432,
+      "allocated_bytes": 10010624,
+      "files": 144
+    },
+    {
+      "time_name": "4.700529668609",
+      "logical_bytes": 9689853,
+      "allocated_bytes": 9965568,
+      "files": 144
+    },
+    {
+      "time_name": "1.485572405285",
+      "logical_bytes": 9751377,
+      "allocated_bytes": 10010624,
+      "files": 144
+    },
+    {
+      "time_name": "5.450949822821",
+      "logical_bytes": 9691536,
+      "allocated_bytes": 9977856,
+      "files": 144
+    },
+    {
+      "time_name": "5.466642678038",
+      "logical_bytes": 9692204,
+      "allocated_bytes": 9977856,
+      "files": 144
+    },
+    {
+      "time_name": "5.458796862288",
+      "logical_bytes": 9691637,
+      "allocated_bytes": 9973760,
+      "files": 144
+    },
+    {
+      "time_name": "2.928096339318",
+      "logical_bytes": 9718107,
+      "allocated_bytes": 9961472,
+      "files": 144
+    },
+    {
+      "time_name": "1.457463432822",
+      "logical_bytes": 9751650,
+      "allocated_bytes": 10006528,
+      "files": 144
+    },
+    {
+      "time_name": "2.92057390164",
+      "logical_bytes": 9718029,
+      "allocated_bytes": 9965568,
+      "files": 144
+    }
+  ],
+  "checkpoint_peak_allocated_bytes": 10010624,
+  "checkpoint_peak_logical_bytes": 9751650,
+  "checkpoint_files_per_global_snapshot": 144,
+  "cadence_comparison": [
+    {
+      "interval_seconds": 2,
+      "regular_snapshots": 710,
+      "extra_startup_snapshot_upper_bound": 10,
+      "expected_snapshots_upper_bound": 720,
+      "field_logical_bytes_estimate": 7021188000,
+      "field_allocated_bytes_estimate": 7207649280,
+      "expected_field_files_upper_bound": 103680,
+      "transient_resolution": "2s later samples; startup checkpoints retained"
+    },
+    {
+      "interval_seconds": 5,
+      "regular_snapshots": 284,
+      "extra_startup_snapshot_upper_bound": 10,
+      "expected_snapshots_upper_bound": 294,
+      "field_logical_bytes_estimate": 2866985100,
+      "field_allocated_bytes_estimate": 2943123456,
+      "expected_field_files_upper_bound": 42336,
+      "transient_resolution": "5s approach-to-steady history plus dense startup checkpoints"
+    },
+    {
+      "interval_seconds": 10,
+      "regular_snapshots": 142,
+      "extra_startup_snapshot_upper_bound": 10,
+      "expected_snapshots_upper_bound": 152,
+      "field_logical_bytes_estimate": 1482250800,
+      "field_allocated_bytes_estimate": 1521614848,
+      "expected_field_files_upper_bound": 21888,
+      "transient_resolution": "10s coarse later evolution; startup checkpoints retained"
+    }
+  ],
+  "selected_interval_seconds": 5,
+  "selected": {
+    "interval_seconds": 5,
+    "regular_snapshots": 284,
+    "extra_startup_snapshot_upper_bound": 10,
+    "expected_snapshots_upper_bound": 294,
+    "field_logical_bytes_estimate": 2866985100,
+    "field_allocated_bytes_estimate": 2943123456,
+    "expected_field_files_upper_bound": 42336,
+    "transient_resolution": "5s approach-to-steady history plus dense startup checkpoints"
+  },
+  "startup_write_steps": [
+    2,
+    5,
+    10,
+    20,
+    30,
+    39,
+    60,
+    100,
+    250,
+    500
+  ],
+  "startup_reason": "late pilot Umax changes from0.0225 to0.0397m/s between1.49 and2.93s;5s-only output misses early dynamics. Add10 native signal-requested startup snapshots without changing dt. Later5s spacing supports approach/profile evolution but is not a guarantee of resolving all oscillations.",
+  "selected_reason": "default5s retained with explicitly resolved startup sampling; full fields around2.75GiB plus native log around5.0GiB;2s is2.45times more state files,10s halves later resolution; ample capacity and no need for format conversion or purge",
+  "representation": "ASCII,no compression,writePrecision17",
+  "purgeWrite": 0,
+  "log_bytes_per_completed_step_measured": 26972.327759197324,
+  "expected_log_bytes_at200000_steps": 5394465552,
+  "expected_total_output_allocated_bytes_including_log": 8337589008,
+  "expected_fullfield_output_files": 42336,
+  "prelaunch_required_free_bytes": 34359738368,
+  "runtime_free_disk_low_watermark_bytes": 8589934592,
+  "free_bytes_at_preparation": 792038248448,
+  "total_disk_bytes": 1005867986944,
+  "RAM_MemTotal_and_MemAvailable": [
+    "MemTotal:       65058016 kB",
+    "MemAvailable:   61580488 kB"
+  ],
+  "RSS_note": "pilot sampled summed worker RSS~1.63GiB; includes shared pages, not unique-memory use",
+  "storage_scope": "field snapshots and full stdout/stderr log; case/decomposition and small postprocess tables extra;32GiB reserve covers these and margin;200k steps is a capacity estimate, never a timestep stop"
+}

@@ -1,0 +1,11 @@
+{
+  "case": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/transient_cfd_late_window_pilot/late_20261006_0531/case",
+  "snapshot_count": 1,
+  "final_time_s": 5.466642678038034,
+  "final_tstar": 0.007699496729631034,
+  "energy_scope": "eConst Cv*(T-298.15) volume proxy; coarse saved-state secants, no native BDF balance or missing e/K history reconstruction",
+  "Umax_Wmax_semantics": "dimensionless positive horizontal Ux and vertical Uy maxima on centre lines; speed and Uz separate",
+  "Q3_EXECUTED": "NO",
+  "FORMAL_GATE_J_EXECUTED": "NO",
+  "FULL_CONSERVATION_AUDIT": "NO"
+}

@@ -1,0 +1,347 @@
+[
+  {
+    "argv": [
+      "foamDictionary",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602/system/controlDict",
+      "-entry",
+      "solver",
+      "-value"
+    ],
+    "cwd": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602",
+    "returncode": 0,
+    "wall_seconds": 0.021991351037286222
+  },
+  {
+    "argv": [
+      "foamDictionary",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602/system/controlDict",
+      "-entry",
+      "startFrom",
+      "-value"
+    ],
+    "cwd": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602",
+    "returncode": 0,
+    "wall_seconds": 0.019395989016629755
+  },
+  {
+    "argv": [
+      "foamDictionary",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602/system/controlDict",
+      "-entry",
+      "startTime",
+      "-value"
+    ],
+    "cwd": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602",
+    "returncode": 0,
+    "wall_seconds": 0.018689868971705437
+  },
+  {
+    "argv": [
+      "foamDictionary",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602/system/controlDict",
+      "-entry",
+      "endTime",
+      "-value"
+    ],
+    "cwd": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602",
+    "returncode": 0,
+    "wall_seconds": 0.01937314891256392
+  },
+  {
+    "argv": [
+      "foamDictionary",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602/system/controlDict",
+      "-entry",
+      "deltaT",
+      "-value"
+    ],
+    "cwd": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602",
+    "returncode": 0,
+    "wall_seconds": 0.02200028591323644
+  },
+  {
+    "argv": [
+      "foamDictionary",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602/system/controlDict",
+      "-entry",
+      "maxCo",
+      "-value"
+    ],
+    "cwd": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602",
+    "returncode": 0,
+    "wall_seconds": 0.020593894994817674
+  },
+  {
+    "argv": [
+      "foamDictionary",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602/system/controlDict",
+      "-entry",
+      "maxDeltaT",
+      "-value"
+    ],
+    "cwd": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602",
+    "returncode": 0,
+    "wall_seconds": 0.019839465036056936
+  },
+  {
+    "argv": [
+      "foamDictionary",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602/system/controlDict",
+      "-entry",
+      "deltaTFactor",
+      "-value"
+    ],
+    "cwd": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602",
+    "returncode": 0,
+    "wall_seconds": 0.018986535957083106
+  },
+  {
+    "argv": [
+      "foamDictionary",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602/system/controlDict",
+      "-entry",
+      "adjustTimeStep",
+      "-value"
+    ],
+    "cwd": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602",
+    "returncode": 0,
+    "wall_seconds": 0.019879358005709946
+  },
+  {
+    "argv": [
+      "foamDictionary",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602/system/controlDict",
+      "-entry",
+      "writeControl",
+      "-value"
+    ],
+    "cwd": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602",
+    "returncode": 0,
+    "wall_seconds": 0.018916815984994173
+  },
+  {
+    "argv": [
+      "foamDictionary",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602/system/controlDict",
+      "-entry",
+      "writeInterval",
+      "-value"
+    ],
+    "cwd": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602",
+    "returncode": 0,
+    "wall_seconds": 0.01957523892633617
+  },
+  {
+    "argv": [
+      "foamDictionary",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602/system/controlDict",
+      "-entry",
+      "timePrecision",
+      "-value"
+    ],
+    "cwd": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602",
+    "returncode": 0,
+    "wall_seconds": 0.01973874995019287
+  },
+  {
+    "argv": [
+      "foamDictionary",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602/system/controlDict",
+      "-entry",
+      "writePrecision",
+      "-value"
+    ],
+    "cwd": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602",
+    "returncode": 0,
+    "wall_seconds": 0.019766913959756494
+  },
+  {
+    "argv": [
+      "foamDictionary",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602/system/controlDict",
+      "-entry",
+      "purgeWrite",
+      "-value"
+    ],
+    "cwd": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602",
+    "returncode": 0,
+    "wall_seconds": 0.0194813929265365
+  },
+  {
+    "argv": [
+      "foamDictionary",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602/system/controlDict",
+      "-entry",
+      "functions",
+      "-value"
+    ],
+    "cwd": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602",
+    "returncode": 0,
+    "wall_seconds": 0.019447099999524653
+  },
+  {
+    "argv": [
+      "foamDictionary",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602/system/fvSolution",
+      "-entry",
+      "PIMPLE/pRefPoint",
+      "-value"
+    ],
+    "cwd": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602",
+    "returncode": 0,
+    "wall_seconds": 0.019194305990822613
+  },
+  {
+    "argv": [
+      "foamDictionary",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602/system/fvSolution",
+      "-entry",
+      "PIMPLE/nOuterCorrectors",
+      "-value"
+    ],
+    "cwd": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602",
+    "returncode": 0,
+    "wall_seconds": 0.019375975942239165
+  },
+  {
+    "argv": [
+      "foamDictionary",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602/system/fvSolution",
+      "-entry",
+      "PIMPLE/nCorrectors",
+      "-value"
+    ],
+    "cwd": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602",
+    "returncode": 0,
+    "wall_seconds": 0.0192665490321815
+  },
+  {
+    "argv": [
+      "foamDictionary",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602/system/fvSolution",
+      "-entry",
+      "PIMPLE/nNonOrthogonalCorrectors",
+      "-value"
+    ],
+    "cwd": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602",
+    "returncode": 0,
+    "wall_seconds": 0.019543449045158923
+  },
+  {
+    "argv": [
+      "foamDictionary",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602/system/fvSolution",
+      "-entry",
+      "PIMPLE/simpleRho",
+      "-value"
+    ],
+    "cwd": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602",
+    "returncode": 0,
+    "wall_seconds": 0.02020773198455572
+  },
+  {
+    "argv": [
+      "foamDictionary",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602/system/decomposeParDict",
+      "-entry",
+      "numberOfSubdomains",
+      "-value"
+    ],
+    "cwd": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602",
+    "returncode": 0,
+    "wall_seconds": 0.019856270984746516
+  },
+  {
+    "argv": [
+      "foamDictionary",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602/system/decomposeParDict",
+      "-entry",
+      "method",
+      "-value"
+    ],
+    "cwd": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602",
+    "returncode": 0,
+    "wall_seconds": 0.020945098949596286
+  },
+  {
+    "argv": [
+      "foamDictionary",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602/system/fvSchemes",
+      "-entry",
+      "ddtSchemes/default",
+      "-value"
+    ],
+    "cwd": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602",
+    "returncode": 0,
+    "wall_seconds": 0.01965481205843389
+  },
+  {
+    "argv": [
+      "checkMesh",
+      "-case",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602"
+    ],
+    "cwd": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602",
+    "returncode": 0,
+    "wall_seconds": 0.2753826370462775
+  },
+  {
+    "argv": [
+      "decomposePar",
+      "-case",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602",
+      "-force"
+    ],
+    "cwd": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602",
+    "returncode": 0,
+    "wall_seconds": 0.27563530299812555
+  },
+  {
+    "argv": [
+      "mpirun",
+      "--nooversubscribe",
+      "--map-by",
+      "core",
+      "--bind-to",
+      "core",
+      "--report-bindings",
+      "-np",
+      "12",
+      "/usr/bin/python3",
+      "-c",
+      "import os,json; print(json.dumps({\"rank\":int(os.environ[\"OMPI_COMM_WORLD_RANK\"]),\"pid\":os.getpid(),\"affinity\":sorted(os.sched_getaffinity(0))}),flush=True)"
+    ],
+    "cwd": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602",
+    "returncode": 0,
+    "wall_seconds": 0.12063834897708148
+  },
+  {
+    "argv": [
+      "mpirun",
+      "--nooversubscribe",
+      "--map-by",
+      "core",
+      "--bind-to",
+      "core",
+      "--report-bindings",
+      "-np",
+      "12",
+      "checkMesh",
+      "-case",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602",
+      "-parallel"
+    ],
+    "cwd": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602",
+    "returncode": 0,
+    "wall_seconds": 0.46011337894015014
+  },
+  {
+    "argv": [
+      "mpirun",
+      "--version"
+    ],
+    "cwd": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark",
+    "returncode": 0,
+    "wall_seconds": 0.004615003010258079
+  }
+]

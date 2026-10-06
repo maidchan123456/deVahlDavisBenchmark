@@ -1,0 +1,30 @@
+{
+  "Nu_hot": {
+    "transient_final": 6.2249983769413575,
+    "steady_baseline": 8.863383392408878,
+    "relative_difference": -0.29767244613689936
+  },
+  "Nu_cold": {
+    "transient_final": 6.226318117364144,
+    "steady_baseline": 8.863383756337953,
+    "relative_difference": -0.29752357693957665
+  },
+  "Umax": {
+    "transient_final": 225.16129982113458,
+    "steady_baseline": 64.9147345963897,
+    "relative_difference": 2.4685699821632965
+  },
+  "Wmax": {
+    "transient_final": 249.85714501810537,
+    "steady_baseline": 219.90026166168474,
+    "relative_difference": 0.13622941205276565
+  },
+  "U_at_X0.5": {
+    "RMS_difference": 78.0657834700979,
+    "Linf_difference": 172.35777837591087
+  },
+  "W_at_Z0.5": {
+    "RMS_difference": 42.176449209820746,
+    "Linf_difference": 70.20224554142217
+  }
+}

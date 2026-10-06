@@ -1,0 +1,13 @@
+{
+  "strict_restart": "NOT_RELIED_UPON",
+  "primary_production": "CONTINUOUS_COLD_START",
+  "pilot_restart": false,
+  "synthetic_oldTime": false,
+  "interruption_status": "INTERRUPTED_REQUIRES_RESTART_REVIEW_OR_COLD_RERUN",
+  "interruption_policy": "STOP_AND_REVIEW",
+  "automatic_retry": false,
+  "automatic_restart": false,
+  "automatic_cold_rerun": false,
+  "reason": "Native e/K histories are not fully stored; U_0/rho_0/phi_0 and uniform/time alone do not establish identical variable-step BDF2 continuation. Keep native oldTime state in memory continuously from cold start.",
+  "write_retention": "All native AUTO_WRITE fields and native _0 output preserved without thinning; retained states are analysis evidence and are not claimed strict-BDF restart certificates."
+}

@@ -1,0 +1,6 @@
+{
+  "completed_steps": 598,
+  "last_started_step_incomplete": null,
+  "Co_alignment": "Co on standard pre-advance state; do not treat as post-solve Co",
+  "wall_timing": "native ClockTime has integer-second granularity; use launcher external markers for per-step timing"
+}

@@ -1,0 +1,181 @@
+Authorization required, but no authorization protocol specified
+
+Authorization required, but no authorization protocol specified
+
+Authorization required, but no authorization protocol specified
+
+Authorization required, but no authorization protocol specified
+
+[mirai-Precision-5860-Tower:460381] MCW rank 4 bound to socket 0[core 4[hwt 0-1]]: [../../../../BB/../../../../../../..]
+[mirai-Precision-5860-Tower:460381] MCW rank 5 bound to socket 0[core 5[hwt 0-1]]: [../../../../../BB/../../../../../..]
+[mirai-Precision-5860-Tower:460381] MCW rank 6 bound to socket 0[core 6[hwt 0-1]]: [../../../../../../BB/../../../../..]
+[mirai-Precision-5860-Tower:460381] MCW rank 7 bound to socket 0[core 7[hwt 0-1]]: [../../../../../../../BB/../../../..]
+[mirai-Precision-5860-Tower:460381] MCW rank 8 bound to socket 0[core 8[hwt 0-1]]: [../../../../../../../../BB/../../..]
+[mirai-Precision-5860-Tower:460381] MCW rank 9 bound to socket 0[core 9[hwt 0-1]]: [../../../../../../../../../BB/../..]
+[mirai-Precision-5860-Tower:460381] MCW rank 10 bound to socket 0[core 10[hwt 0-1]]: [../../../../../../../../../../BB/..]
+[mirai-Precision-5860-Tower:460381] MCW rank 11 bound to socket 0[core 11[hwt 0-1]]: [../../../../../../../../../../../BB]
+[mirai-Precision-5860-Tower:460381] MCW rank 0 bound to socket 0[core 0[hwt 0-1]]: [BB/../../../../../../../../../../..]
+[mirai-Precision-5860-Tower:460381] MCW rank 1 bound to socket 0[core 1[hwt 0-1]]: [../BB/../../../../../../../../../..]
+[mirai-Precision-5860-Tower:460381] MCW rank 2 bound to socket 0[core 2[hwt 0-1]]: [../../BB/../../../../../../../../..]
+[mirai-Precision-5860-Tower:460381] MCW rank 3 bound to socket 0[core 3[hwt 0-1]]: [../../../BB/../../../../../../../..]
+Authorization required, but no authorization protocol specified
+
+Authorization required, but no authorization protocol specified
+
+Authorization required, but no authorization protocol specified
+
+Authorization required, but no authorization protocol specified
+
+Authorization required, but no authorization protocol specified
+
+Authorization required, but no authorization protocol specified
+
+Authorization required, but no authorization protocol specified
+
+Authorization required, but no authorization protocol specified
+
+Authorization required, but no authorization protocol specified
+
+Authorization required, but no authorization protocol specified
+
+Authorization required, but no authorization protocol specified
+
+Authorization required, but no authorization protocol specified
+
+Authorization required, but no authorization protocol specified
+
+Authorization required, but no authorization protocol specified
+
+Authorization required, but no authorization protocol specified
+
+Authorization required, but no authorization protocol specified
+
+Authorization required, but no authorization protocol specified
+
+Authorization required, but no authorization protocol specified
+
+Authorization required, but no authorization protocol specified
+
+Authorization required, but no authorization protocol specified
+
+Authorization required, but no authorization protocol specified
+
+Authorization required, but no authorization protocol specified
+
+Authorization required, but no authorization protocol specified
+
+Authorization required, but no authorization protocol specified
+
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  13
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 13-441953dfbb42
+Exec   : checkMesh -case /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602 -parallel
+Date   : Oct 06 2026
+Time   : 15:07:46
+Host   : "mirai-Precision-5860-Tower"
+PID    : 460384
+I/O    : uncollated
+Case   : /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602
+nProcs : 12
+Slaves : 
+11
+(
+"mirai-Precision-5860-Tower.460385"
+"mirai-Precision-5860-Tower.460386"
+"mirai-Precision-5860-Tower.460387"
+"mirai-Precision-5860-Tower.460388"
+"mirai-Precision-5860-Tower.460389"
+"mirai-Precision-5860-Tower.460390"
+"mirai-Precision-5860-Tower.460391"
+"mirai-Precision-5860-Tower.460392"
+"mirai-Precision-5860-Tower.460393"
+"mirai-Precision-5860-Tower.460401"
+"mirai-Precision-5860-Tower.460403"
+)
+
+Pstream initialised with:
+    floatTransfer      : false
+    nProcsSimpleSum    : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+sigWriteNow : Enabling writing upon signal 10
+sigStopAtWriteNow : Enabling writing and stopping upon signal 12
+--> FOAM Warning : 
+    From function Foam::Time::Time(const Foam::word&, const Foam::argList&, bool)
+    in file db/Time/Time.C at line 414
+    Reading "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602/system/controlDict" at line 31
+    OptimisationSwitches in system/controlDict are only processed if checkMesh is run in the "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602/processor0" directory
+Create mesh for time = 0
+
+Time = 0s
+
+Mesh stats
+    points:           53632
+    internal points:  0
+    faces:            103604
+    internal faces:   49996
+    cells:            25600
+    faces per cell:   6
+    boundary patches: 12
+    point zones:      0
+    face zones:       0
+    cell zones:       0
+
+Overall number of cells of each type:
+    hexahedra:     25600
+    prisms:        0
+    wedges:        0
+    pyramids:      0
+    tet wedges:    0
+    tetrahedra:    0
+    polyhedra:     0
+
+Checking topology...
+    Boundary definition OK.
+    Cell to face addressing OK.
+    Point usage OK.
+    Upper triangular ordering OK.
+    Face vertices OK.
+    Number of regions: 1 (OK).
+
+Checking basic patch addressing...
+    Patch               Faces    Points   
+    hotWall             160      328      
+    coldWall            160      328      
+    bottomWall          160      328      
+    topWall             160      326      
+    front               25600    26816    
+    back                25600    26816    
+
+Checking geometry...
+    Overall domain bounding box (0 0 0) (0.10000000000000001 0.10000000000000001 0.001)
+    Mesh has 2 geometric (non-empty/wedge) directions (1 1 0)
+    Mesh has 2 solution (non-empty) directions (1 1 0)
+    All edges aligned with or perpendicular to non-empty directions.
+    Max cell openness = 1.7550522667108913e-16 OK.
+    Max aspect ratio = 1.000000000000089 OK.
+    Minimum face area = 3.9062499999997466e-07. Maximum face area = 6.2500000000004219e-07.  Face area magnitudes OK.
+    Min volume = 3.9062499999996886e-10. Max volume = 3.906250000000354e-10.  Total volume = 1.0000000000000182e-05.  Cell volumes OK.
+    Mesh non-orthogonality Max: 0 average: 0
+    Non-orthogonality check OK.
+    Face pyramids OK.
+    Max skewness = 2.1199972994031402e-13 OK.
+    Coupled point location match (average 0) OK.
+
+Mesh OK.
+
+End
+
+Finalising parallel run

@@ -1,0 +1,12 @@
+{
+  "authorization_class": "ROUTE_A_PLAIN_TRANSIENT_CO05_PRODUCTION",
+  "AUTHORIZED": "NO",
+  "preparation_id": "co05_20261006_0602",
+  "expected_HEAD": "f57d60d85e36ea9928e4bc481d3cbde586496f58",
+  "execution_plan_sha256": "cc86ea8712d12e5660b5c7850c6dc8c6df718003de1d48e3f76a08c136808c51",
+  "input_manifest_sha256": "6f286199e7419a5d3d85241b3ff77f1a37b15ef51daf296966aaab4cc99d57a2",
+  "MPI_RANKS": 12,
+  "endTime_s": 1420,
+  "source_user_authorization_reference": null,
+  "note": "Preparation-only user instruction; a later explicit user production instruction is required. Do not change AUTHORIZED during preparation."
+}

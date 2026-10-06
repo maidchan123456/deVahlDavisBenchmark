@@ -1,0 +1,487 @@
+{
+  "preparation_id": "co05_20261006_0602",
+  "created_UTC": "2026-10-06T06:22:44.976165+00:00",
+  "status": {
+    "ROUTE_A_PLAIN_TRANSIENT_CO05_PRODUCTION_PREPARATION": "COMPLETE",
+    "PRODUCTION_PREPARATION_ID": "co05_20261006_0602",
+    "SOURCE_LATE_PILOT": "late_20261006_0531",
+    "CANONICAL_AUTHORITY_HASH_VERIFIED": "YES",
+    "FORMAL_AUTHORITY_HASH_VERIFIED": "YES",
+    "PHYSICAL_MODEL_CHANGED": "NO",
+    "NUMERICAL_POLICY_CHANGED": "NO",
+    "GRID": "160x160x1",
+    "RA": "1e6",
+    "PR": 0.71,
+    "MAX_CO": 0.5,
+    "MPI_RANKS": 12,
+    "MPI_DECOMPOSITION": "scotch",
+    "MPI_BINDING_VERIFIED": "YES",
+    "PREF_REFERENCE_METHOD": "pRefPoint",
+    "PREF_POINT": "(0.0496875 0.0496875 0.0005)",
+    "PREF_POINT_MAPPING_VERIFIED": "YES",
+    "TIME_SCHEME": "backward_variable_step_BDF2",
+    "INITIAL_DELTA_T": 2.3111979166666666e-05,
+    "MAX_DELTA_T": 0.027734375,
+    "END_TIME_SECONDS": 1420,
+    "TARGET_TSTAR": 2,
+    "TIME_PRECISION": 12,
+    "WRITE_PRECISION": 17,
+    "HEAVY_DIAGNOSTICS_ENABLED": "NO",
+    "EXACT_EVIDENCE_BACKEND_ENABLED": "NO",
+    "FUNCTION_OBJECTS_DURING_PRODUCTION": "NO",
+    "PRODUCTION_START_MODE": "CONTINUOUS_COLD_START",
+    "STRICT_BDF_RESTART_RELIED_UPON": "NO",
+    "INTERRUPTION_POLICY": "STOP_AND_REVIEW",
+    "OUTPUT_WRITE_CONTROL": "runTime",
+    "FULL_FIELD_OUTPUT_INTERVAL_SECONDS": 5,
+    "OUTPUT_POLICY_CHANGES_DELTAT": "NO",
+    "EXPECTED_FULL_FIELD_SNAPSHOTS": "284 regular + up to10 startup =294 upper bound, cold0 additional",
+    "EXPECTED_OUTPUT_BYTES": "8337589008 fields+log estimate; small metadata/postprocessing extra",
+    "EXPECTED_OUTPUT_FILES": "42336 field/state files +1 log +5 metadata =42342 upper bound; postprocessing additional",
+    "DISK_CAPACITY_PASS": "YES",
+    "FINAL_STATE_WRITE_METHOD": "NATIVE_RUN_TIME_BIN_ENDTIME_MULTIPLE(bin284)",
+    "FINAL_STATE_WRITE_VERIFIED_BY_SOURCE_REVIEW": "YES",
+    "CHECKMESH": "PASS",
+    "DECOMPOSITION_PREPARATION": "PASS",
+    "PRODUCTION_LAUNCHER_PREPARED": "YES",
+    "PRODUCTION_LAUNCHER_DRY_VALIDATED": "YES",
+    "POSTPROCESSING_PLAN_PREPARED": "YES",
+    "EXPECTED_PRODUCTION_STEPS": "~180000-200000 planning only, not a stopping rule",
+    "EXPECTED_PRODUCTION_RUNTIME_HOURS": "~6.1 (late-window projection, not guarantee)",
+    "PRODUCTION_CFD_EXECUTED": "NO",
+    "PRODUCTION_EXECUTION_AUTHORIZED": "NO",
+    "Q3_EXECUTED": "NO",
+    "FORMAL_GATE_J_EXECUTED": "NO",
+    "CO05_PRODUCTION_PREPARATION_READY": "YES",
+    "BLOCKER": "NONE",
+    "NEXT_SINGLE_TASK": "RUN_ROUTE_A_PLAIN_TRANSIENT_CO05_PRODUCTION",
+    "RECOMMENDED_REASONING_MODEL_FOR_NEXT_TASK": "gpt-6.1-sol / high",
+    "USER_DECISION_REQUIRED": "YES"
+  },
+  "scientific_status_unchanged": {
+    "FORMAL_GATE_J_CURRENTLY_ALLOWED": "NO",
+    "FORMAL_GATE_J_EXECUTED": "NO",
+    "BENCHMARK_CORE_PASS": "NO",
+    "ROUTE_A_CHARACTERIZED": "NO",
+    "ALL_ROUTE_A_GATE_F": "FAIL",
+    "ALL_RA_NEEDS_320": "YES",
+    "GRID_INDEPENDENT_TRANSIENT_CLAIM_ALLOWED": "NO",
+    "DOWNSTREAM_TRANSIENT_READY": "NO",
+    "PARTICLE_COUPLING_READY": "NO",
+    "FORMAL_GATE_J_PASS": "NOT_EVALUATED"
+  },
+  "expected_HEAD": "f57d60d85e36ea9928e4bc481d3cbde586496f58",
+  "case": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602",
+  "results": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/plain_transient_co05_production/co05_20261006_0602",
+  "checks": {
+    "authority_hashes": "PASS",
+    "expected_HEAD": "PASS",
+    "late_full_artifact_seal_unchanged": "PASS",
+    "cold_initial_field_hashes": "PASS",
+    "physical_constants_and_grid_pinned": "PASS",
+    "fvSolution_fvSchemes_bytes_frozen": "PASS",
+    "backward_BDF2": "PASS",
+    "PIMPLE24_2_0": "PASS",
+    "pressure_pRefPoint_only": "PASS",
+    "12rank_scotch_decomposition": "PASS",
+    "all_cells_mapped_once": "PASS",
+    "processor_interface_pair_geometry": "PASS",
+    "MPI12_distinct_physical_cores": "PASS",
+    "global_and_parallel_checkMesh": "PASS",
+    "heavy_diagnostics_absent": "PASS",
+    "functions_empty_and_cli_disabled": "PASS",
+    "precision12_17": "PASS",
+    "endTime1420_Co05_frozen_dt": "PASS",
+    "runTime_output_does_not_adjust_dt": "PASS",
+    "storage_capacity": "PASS",
+    "source_and_arithmetic_final_write": "PASS",
+    "continuous_cold_policy": "PASS",
+    "restart_limitations": "PASS",
+    "dry_launcher_preflight_and_rejection": "PASS",
+    "offline_postprocessing_validation": "PASS",
+    "no_solver_or_physical_timestep": "PASS",
+    "authorization_remains_NO": "PASS",
+    "execution_namespace_absent": "PASS"
+  },
+  "source_late_artifact_count_reverified": 2982,
+  "authority_hashes": {
+    "docs/routeA_diagnostic_transient_contract_v1.5.json": "06c71945289ffe419b784843f7aab2fea66c44d28c9dba46d828bbd24837e27d",
+    "docs/routeA_execution_contract_v1.7.json": "fbc744e012f66b37b5d9409be961cb5a9410c3d75ac7e2f026b2acf118d3bb60"
+  },
+  "exact_production_command": "mpirun --nooversubscribe --map-by core --bind-to core --report-bindings -np 12 foamRun -case /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602 -solver fluid -noFunctionObjects -parallel",
+  "command_cwd": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602",
+  "environment_overrides": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  },
+  "execution_plan": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/plain_transient_co05_production/co05_20261006_0602/production_execution_plan.json",
+  "execution_plan_sha256": "cc86ea8712d12e5660b5c7850c6dc8c6df718003de1d48e3f76a08c136808c51",
+  "input_manifest_sha256": "6f286199e7419a5d3d85241b3ff77f1a37b15ef51daf296966aaab4cc99d57a2",
+  "output_decision": {
+    "actual_checkpoint_measurements": [
+      {
+        "time_name": "4.693077723592",
+        "logical_bytes": 9689885,
+        "allocated_bytes": 9965568,
+        "files": 144
+      },
+      {
+        "time_name": "2.913037886007",
+        "logical_bytes": 9718934,
+        "allocated_bytes": 9969664,
+        "files": 144
+      },
+      {
+        "time_name": "4.707987914239",
+        "logical_bytes": 9689614,
+        "allocated_bytes": 9969664,
+        "files": 144
+      },
+      {
+        "time_name": "1.471581902844",
+        "logical_bytes": 9751432,
+        "allocated_bytes": 10010624,
+        "files": 144
+      },
+      {
+        "time_name": "4.700529668609",
+        "logical_bytes": 9689853,
+        "allocated_bytes": 9965568,
+        "files": 144
+      },
+      {
+        "time_name": "1.485572405285",
+        "logical_bytes": 9751377,
+        "allocated_bytes": 10010624,
+        "files": 144
+      },
+      {
+        "time_name": "5.450949822821",
+        "logical_bytes": 9691536,
+        "allocated_bytes": 9977856,
+        "files": 144
+      },
+      {
+        "time_name": "5.466642678038",
+        "logical_bytes": 9692204,
+        "allocated_bytes": 9977856,
+        "files": 144
+      },
+      {
+        "time_name": "5.458796862288",
+        "logical_bytes": 9691637,
+        "allocated_bytes": 9973760,
+        "files": 144
+      },
+      {
+        "time_name": "2.928096339318",
+        "logical_bytes": 9718107,
+        "allocated_bytes": 9961472,
+        "files": 144
+      },
+      {
+        "time_name": "1.457463432822",
+        "logical_bytes": 9751650,
+        "allocated_bytes": 10006528,
+        "files": 144
+      },
+      {
+        "time_name": "2.92057390164",
+        "logical_bytes": 9718029,
+        "allocated_bytes": 9965568,
+        "files": 144
+      }
+    ],
+    "checkpoint_peak_allocated_bytes": 10010624,
+    "checkpoint_peak_logical_bytes": 9751650,
+    "checkpoint_files_per_global_snapshot": 144,
+    "cadence_comparison": [
+      {
+        "interval_seconds": 2,
+        "regular_snapshots": 710,
+        "extra_startup_snapshot_upper_bound": 10,
+        "expected_snapshots_upper_bound": 720,
+        "field_logical_bytes_estimate": 7021188000,
+        "field_allocated_bytes_estimate": 7207649280,
+        "expected_field_files_upper_bound": 103680,
+        "transient_resolution": "2s later samples; startup checkpoints retained"
+      },
+      {
+        "interval_seconds": 5,
+        "regular_snapshots": 284,
+        "extra_startup_snapshot_upper_bound": 10,
+        "expected_snapshots_upper_bound": 294,
+        "field_logical_bytes_estimate": 2866985100,
+        "field_allocated_bytes_estimate": 2943123456,
+        "expected_field_files_upper_bound": 42336,
+        "transient_resolution": "5s approach-to-steady history plus dense startup checkpoints"
+      },
+      {
+        "interval_seconds": 10,
+        "regular_snapshots": 142,
+        "extra_startup_snapshot_upper_bound": 10,
+        "expected_snapshots_upper_bound": 152,
+        "field_logical_bytes_estimate": 1482250800,
+        "field_allocated_bytes_estimate": 1521614848,
+        "expected_field_files_upper_bound": 21888,
+        "transient_resolution": "10s coarse later evolution; startup checkpoints retained"
+      }
+    ],
+    "selected_interval_seconds": 5,
+    "selected": {
+      "interval_seconds": 5,
+      "regular_snapshots": 284,
+      "extra_startup_snapshot_upper_bound": 10,
+      "expected_snapshots_upper_bound": 294,
+      "field_logical_bytes_estimate": 2866985100,
+      "field_allocated_bytes_estimate": 2943123456,
+      "expected_field_files_upper_bound": 42336,
+      "transient_resolution": "5s approach-to-steady history plus dense startup checkpoints"
+    },
+    "startup_write_steps": [
+      2,
+      5,
+      10,
+      20,
+      30,
+      39,
+      60,
+      100,
+      250,
+      500
+    ],
+    "startup_reason": "late pilot Umax changes from0.0225 to0.0397m/s between1.49 and2.93s;5s-only output misses early dynamics. Add10 native signal-requested startup snapshots without changing dt. Later5s spacing supports approach/profile evolution but is not a guarantee of resolving all oscillations.",
+    "selected_reason": "default5s retained with explicitly resolved startup sampling; full fields around2.75GiB plus native log around5.0GiB;2s is2.45times more state files,10s halves later resolution; ample capacity and no need for format conversion or purge",
+    "representation": "ASCII,no compression,writePrecision17",
+    "purgeWrite": 0,
+    "log_bytes_per_completed_step_measured": 26972.327759197324,
+    "expected_log_bytes_at200000_steps": 5394465552,
+    "expected_total_output_allocated_bytes_including_log": 8337589008,
+    "expected_fullfield_output_files": 42336,
+    "prelaunch_required_free_bytes": 34359738368,
+    "runtime_free_disk_low_watermark_bytes": 8589934592,
+    "free_bytes_at_preparation": 792038248448,
+    "total_disk_bytes": 1005867986944,
+    "RAM_MemTotal_and_MemAvailable": [
+      "MemTotal:       65058016 kB",
+      "MemAvailable:   61580488 kB"
+    ],
+    "RSS_note": "pilot sampled summed worker RSS~1.63GiB; includes shared pages, not unique-memory use",
+    "storage_scope": "field snapshots and full stdout/stderr log; case/decomposition and small postprocess tables extra;32GiB reserve covers these and margin;200k steps is a capacity estimate, never a timestep stop"
+  },
+  "final_write": {
+    "result": "PASS",
+    "arithmetic_samples": 3000000,
+    "CFD_EXECUTED": "NO",
+    "native_running_expression": "value < endTime - 0.5*deltaT",
+    "native_write_bin_expression": "int(((value-beginTime)+0.5*deltaT)/writeInterval)",
+    "beginTime": 0,
+    "endTime": 1420,
+    "writeInterval": 5,
+    "required_final_bin": 284,
+    "maxDeltaT": 0.027734375,
+    "growth_limit": 1.2,
+    "final_time_lower_bound_s": 1419.9861328125,
+    "final_time_upper_bound_s": 1420.0161783854167,
+    "exact_timestamp_forced": false,
+    "output_changes_deltaT": false,
+    "roundoff_test": "at termination boundary, next representable above, and one maxDeltaT beyond boundary; no missed final bin",
+    "proof": "Since maxDeltaT < writeInterval, the first stopped step crosses bin284 without skipping any bin. Native driver writes before retesting running(). No adjustment for runTime IO.",
+    "source_evidence": [
+      {
+        "path": "/opt/openfoam13/src/OpenFOAM/db/Time/Time.C",
+        "lines": "70-119;884-886;1052-1060;1196-1214",
+        "meaning": "adjustableRunTime adjusts dt; runTime does not; native running and write bin predicates"
+      },
+      {
+        "path": "/opt/openfoam13/src/OpenFOAM/db/Time/TimeIO.C",
+        "lines": "210-249;254-282",
+        "meaning": "uniform/time has actual value,index,deltaT,deltaT0; writeTime gates native AUTO_WRITE objects"
+      },
+      {
+        "path": "/opt/openfoam13/applications/solvers/foamRun/foamRun.C",
+        "lines": "188-200",
+        "meaning": "postSolve then runTime.write before loop termination; End alone does not force write"
+      },
+      {
+        "path": "/opt/openfoam13/applications/solvers/foamRun/setDeltaT.C",
+        "lines": "55-80",
+        "meaning": "native bounded growth and solver CFL policy"
+      },
+      {
+        "path": "/opt/openfoam13/src/OSspecific/POSIX/signals/sigWriteNow.C",
+        "lines": "58-65;102-120",
+        "meaning": "native writeOnce flag, no dt change"
+      }
+    ],
+    "installed_sources_sha256": {
+      "/opt/openfoam13/src/OpenFOAM/db/Time/Time.C": "c25af623b370d07b877fa127398b499e1e0358931ddf46413f533d9305e685da",
+      "/opt/openfoam13/src/OpenFOAM/db/Time/TimeIO.C": "f9a71ae7b20ea06cd40c75f544a043e004e34e0679a819b4432465c90c0afd68",
+      "/opt/openfoam13/applications/solvers/foamRun/foamRun.C": "5c1e6e34c4bd253f5cc4665a8672f21b6ded2c7a5e391c67419f7586a7b5de91",
+      "/opt/openfoam13/applications/solvers/foamRun/setDeltaT.C": "656a3a8782614b0f14aff03d0925d339eb6e568356c792f61fa4095d1ade5f11",
+      "/opt/openfoam13/src/OSspecific/POSIX/signals/sigWriteNow.C": "06ee262bbc4090413d4cca868ec4edf0363bfcc7578ba13cc23c4d8f0f5efafa",
+      "/opt/openfoam13/src/OSspecific/POSIX/signals/sigStopAtWriteNow.C": "2b6221083b0c11227ec6f407450f98e5a1a673347cf31e95a8981378866dea2f",
+      "/opt/openfoam13/src/thermophysicalModels/specie/thermo/eConst/eConstThermo.C": "498e3027993e6c0c8fa52864e9265e25b76e14866d11b6e102833ac0cbf34927",
+      "/opt/openfoam13/src/thermophysicalModels/specie/thermo/eConst/eConstThermoI.H": "e0455961505f927cfeefc2871d14aefd1593a095368e81c7393781582f41e0ae",
+      "/opt/openfoam13/src/thermophysicalModels/specie/equationOfState/Boussinesq/BoussinesqI.H": "4e23872bfb92a392ee199b1a2f2ee869e4eddd55e23d64eee7ec67478409f740"
+    },
+    "writeAtEnd_option_found": false,
+    "method": "NATIVE_RUN_TIME_BIN_ENDTIME_MULTIPLE"
+  },
+  "restart": {
+    "strict_restart": "NOT_RELIED_UPON",
+    "primary_production": "CONTINUOUS_COLD_START",
+    "pilot_restart": false,
+    "synthetic_oldTime": false,
+    "interruption_status": "INTERRUPTED_REQUIRES_RESTART_REVIEW_OR_COLD_RERUN",
+    "interruption_policy": "STOP_AND_REVIEW",
+    "automatic_retry": false,
+    "automatic_restart": false,
+    "automatic_cold_rerun": false,
+    "reason": "Native e/K histories are not fully stored; U_0/rho_0/phi_0 and uniform/time alone do not establish identical variable-step BDF2 continuation. Keep native oldTime state in memory continuously from cold start.",
+    "write_retention": "All native AUTO_WRITE fields and native _0 output preserved without thinning; retained states are analysis evidence and are not claimed strict-BDF restart certificates."
+  },
+  "launcher_validation": {
+    "result": "PASS",
+    "tests": [
+      {
+        "test": "complete_launch_preflight",
+        "result": "PASS",
+        "CFD_EXECUTED": "NO"
+      },
+      {
+        "test": "actual_cold_field_tamper_rejected",
+        "result": "PASS"
+      },
+      {
+        "test": "HEAD_change_rejected",
+        "result": "PASS"
+      },
+      {
+        "test": "existing_execution_namespace_rejected",
+        "result": "PASS"
+      },
+      {
+        "test": "draft_NO_rejected_before_Popen_and_runtime_creation",
+        "result": "PASS"
+      },
+      {
+        "test": "accepted_pilot_log_parser_and_fatal_detection",
+        "result": "PASS",
+        "steps_read_offline": 598
+      },
+      {
+        "test": "native_final_write_boundary_arithmetic",
+        "result": "PASS",
+        "samples": 3000000
+      },
+      {
+        "test": "offline_QoI_analytic_cold_and_real_late_checkpoint_plus_native_598_steps",
+        "result": "PASS"
+      }
+    ],
+    "production_CFD_executed": "NO",
+    "runtime_namespace_created": false,
+    "input_restored_and_reverified": true
+  },
+  "postprocessing": {
+    "preparation_id": "co05_20261006_0602",
+    "execution": "AFTER_PRODUCTION_ONLY",
+    "script": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/plain_transient_co05_production/co05_20261006_0602/postprocess_production.py",
+    "command_argv": [
+      "python3",
+      "-B",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/plain_transient_co05_production/co05_20261006_0602/postprocess_production.py",
+      "--case",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602",
+      "--output",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/plain_transient_co05_production/co05_20261006_0602/postprocessing",
+      "--times",
+      "all",
+      "--log",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/plain_transient_co05_production/co05_20261006_0602/execution/log.foamRun"
+    ],
+    "cold_and_saved_state_selection": "all fully saved rank-consistent states including cold0; use actual uniform/time.value and index",
+    "QoI": [
+      "Nu_hot(t)",
+      "Nu_cold(t)",
+      "Umax(t)",
+      "Wmax(t)",
+      "speed_max_m_s(t)",
+      "Uz_absmax_m_s(t)"
+    ],
+    "normalization": {
+      "L_m": 0.1,
+      "alpha_m2_s": 1.4084507042253523e-05,
+      "DeltaT_K": 1,
+      "time": "tstar=alpha*t/L^2",
+      "velocity": "Umax/Wmax use L/alpha, benchmark positive component centreline maxima,4097 samples"
+    },
+    "profiles": [
+      "dimensionless centreline Ux at x/L=.5",
+      "dimensionless centreline Uy at y/L=.5",
+      "theta=T-300 along horizontal/vertical centrelines"
+    ],
+    "symmetry": "180-degree temperature antisymmetry about300K and vector velocity antisymmetry, RMS descriptors",
+    "conservation_coverage": "native rho volume mass, rho*Cv*(T-Tstd) internal-energy proxy, kinetic energy, wall heat flux and coarse saved-state secants; no native BDF conservation residual or missing e/K history reconstruction",
+    "log_outputs": [
+      "deltaT",
+      "Co_mean/max on pre-advance state",
+      "pressure/energy/momentum iterations and solves",
+      "initial/final residual maxima",
+      "continuity local/global/cumulative",
+      "native CPU/ClockTime",
+      "external per-step launcher markers"
+    ],
+    "baseline_metrics": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/cases/A-Ra1e6-fine/segments/end_9000/metrics.json",
+    "baseline_profiles": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/cases/A-Ra1e6-fine/segments/end_9000/centreline_4097.csv",
+    "comparison": [
+      "relative differences Nu_hot/Nu_cold/Umax/Wmax",
+      "centreline velocity RMS/Linf differences",
+      "inspect late trajectories and temperature profiles without assuming final=steady"
+    ],
+    "approach_assessment": {
+      "window": "last10% of physical span, at leastlast5 available saved states",
+      "descriptors": [
+        "relative range",
+        "linear slope",
+        "relative slope change across window"
+      ],
+      "descriptive_stationary_candidate_threshold": 0.001,
+      "insufficient_history_allowed": true,
+      "not_a_formal_arrival_or_convergence_certificate": true
+    },
+    "next_review": [
+      "verify normal end/final state completeness",
+      "verify actual startup and5s write schedule and tstar coverage",
+      "generate offline scientific QoI/profile/evolution plots from CSVs",
+      "review late stationary/evolving descriptors and final baseline differences",
+      "compare mass and energy descriptors with explicitly stated missing-stage-history limitations"
+    ],
+    "validation": "offline late checkpoint reproduces Nu_hot6.2249983769413575 and speed0.03805799912427893;598-step log solves48pressure/24energy perstep; analytic coldstate velocity0 and Nu_hot=Nu_cold=160",
+    "Q3_EXECUTED": "NO",
+    "FORMAL_GATE_J_EXECUTED": "NO",
+    "FULL_CONSERVATION_AUDIT": "NO"
+  },
+  "preparation_only_changes": [
+    "isolated validated cold case cloned",
+    "controlDict endTime/writeControl/writeInterval only changed relative to accepted pilot",
+    "native non-CFD decomposition",
+    "new preparation/launcher/postprocessing artifacts"
+  ],
+  "minor_preparation_fixes": [
+    "floating-point geometry centre sorting replaced by verified integer lattice mapping during offline postprocessing validation",
+    "native Time header unit suffix s accepted by launcher parser",
+    "floating-point exception trapping startup message distinguished from actual FPE",
+    "required final AUTO_WRITE fields match native pilot; e/K intentionally not assumed written"
+  ],
+  "limitations": [
+    "No production trajectory or transient stationarity evidence yet",
+    "6.1121h and~189795 steps are late-window extrapolations; cost/dt can evolve",
+    "5s output does not guarantee resolution of all temporal oscillations; startup writes mitigate initial undersampling",
+    "Final native time is near1420, not forciblyexact1420",
+    "Stored native outputs do not certify full-BDF restart or exact mass/energy audit",
+    "Formal benchmark/grid-independence/downstream readiness remain unchanged"
+  ]
+}
