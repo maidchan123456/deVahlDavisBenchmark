@@ -1,0 +1,210 @@
+{
+  "result": "PASS",
+  "actual_native_ranks": [
+    {
+      "rank": 0,
+      "pid": 463394,
+      "affinity": [
+        0,
+        12
+      ],
+      "physical_core": [
+        0,
+        0
+      ],
+      "threads": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      }
+    },
+    {
+      "rank": 1,
+      "pid": 463395,
+      "affinity": [
+        1,
+        13
+      ],
+      "physical_core": [
+        0,
+        1
+      ],
+      "threads": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      }
+    },
+    {
+      "rank": 2,
+      "pid": 463396,
+      "affinity": [
+        2,
+        14
+      ],
+      "physical_core": [
+        0,
+        2
+      ],
+      "threads": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      }
+    },
+    {
+      "rank": 3,
+      "pid": 463397,
+      "affinity": [
+        3,
+        15
+      ],
+      "physical_core": [
+        0,
+        3
+      ],
+      "threads": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      }
+    },
+    {
+      "rank": 4,
+      "pid": 463398,
+      "affinity": [
+        4,
+        16
+      ],
+      "physical_core": [
+        0,
+        4
+      ],
+      "threads": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      }
+    },
+    {
+      "rank": 5,
+      "pid": 463399,
+      "affinity": [
+        5,
+        17
+      ],
+      "physical_core": [
+        0,
+        5
+      ],
+      "threads": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      }
+    },
+    {
+      "rank": 6,
+      "pid": 463400,
+      "affinity": [
+        6,
+        18
+      ],
+      "physical_core": [
+        0,
+        6
+      ],
+      "threads": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      }
+    },
+    {
+      "rank": 7,
+      "pid": 463401,
+      "affinity": [
+        7,
+        19
+      ],
+      "physical_core": [
+        0,
+        7
+      ],
+      "threads": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      }
+    },
+    {
+      "rank": 8,
+      "pid": 463402,
+      "affinity": [
+        8,
+        20
+      ],
+      "physical_core": [
+        0,
+        8
+      ],
+      "threads": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      }
+    },
+    {
+      "rank": 9,
+      "pid": 463409,
+      "affinity": [
+        9,
+        21
+      ],
+      "physical_core": [
+        0,
+        9
+      ],
+      "threads": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      }
+    },
+    {
+      "rank": 10,
+      "pid": 463412,
+      "affinity": [
+        10,
+        22
+      ],
+      "physical_core": [
+        0,
+        10
+      ],
+      "threads": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      }
+    },
+    {
+      "rank": 11,
+      "pid": 463414,
+      "affinity": [
+        11,
+        23
+      ],
+      "physical_core": [
+        0,
+        11
+      ],
+      "threads": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      }
+    }
+  ],
+  "online_field_reads": false
+}

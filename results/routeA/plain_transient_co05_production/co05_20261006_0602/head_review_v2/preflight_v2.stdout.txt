@@ -1,0 +1,8 @@
+{
+  "DRY_VALIDATION": "PASS",
+  "CFD_EXECUTED": "NO",
+  "AUTHORIZED": "YES",
+  "case": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602",
+  "command": "mpirun --nooversubscribe --map-by core --bind-to core --report-bindings -np 12 foamRun -case /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602 -solver fluid -noFunctionObjects -parallel",
+  "disk_free_bytes": 792033681408
+}

@@ -1,0 +1,12 @@
+{"rank": 0, "pid": 463332, "affinity": [0, 12]}
+{"rank": 1, "pid": 463333, "affinity": [1, 13]}
+{"rank": 2, "pid": 463334, "affinity": [2, 14]}
+{"rank": 3, "pid": 463335, "affinity": [3, 15]}
+{"rank": 4, "pid": 463336, "affinity": [4, 16]}
+{"rank": 5, "pid": 463337, "affinity": [5, 17]}
+{"rank": 6, "pid": 463338, "affinity": [6, 18]}
+{"rank": 7, "pid": 463339, "affinity": [7, 19]}
+{"rank": 8, "pid": 463340, "affinity": [8, 20]}
+{"rank": 9, "pid": 463341, "affinity": [9, 21]}
+{"rank": 10, "pid": 463342, "affinity": [10, 22]}
+{"rank": 11, "pid": 463343, "affinity": [11, 23]}

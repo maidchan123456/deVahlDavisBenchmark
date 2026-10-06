@@ -1,0 +1,22 @@
+{
+  "state": "LAUNCHER_EXITED",
+  "completed_steps": 143203,
+  "last_completed": {
+    "Co_mean": 0.12993577270750434,
+    "Co_max": 0.5000000000005896,
+    "deltaT_s": 0.009929812303648828,
+    "time_s": 1420.00438257155,
+    "step": 143203,
+    "completed_step": 143203,
+    "external_observer_wall_s": 8401.23081166402,
+    "native_ExecutionTime_s": 8398.5775,
+    "native_ClockTime_s": 8401.0
+  },
+  "wall_hours": 2.334230949469719,
+  "free_disk_GiB": 731.2239418029785,
+  "launcher_pid": 463385,
+  "monitor_pid": 463376,
+  "log_bytes_observed": 3870570559,
+  "fields_read_online": false,
+  "last_completed_tstar": 2.0000061726359855
+}

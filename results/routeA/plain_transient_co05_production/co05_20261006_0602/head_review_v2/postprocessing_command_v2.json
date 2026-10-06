@@ -1,0 +1,18 @@
+{
+  "argv": [
+    "python3",
+    "-B",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/plain_transient_co05_production/co05_20261006_0602/postprocess_production.py",
+    "--case",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602",
+    "--output",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/plain_transient_co05_production/co05_20261006_0602/postprocessing_v2",
+    "--times",
+    "all",
+    "--log",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/plain_transient_co05_production/co05_20261006_0602/execution_v2/log.foamRun"
+  ],
+  "CFD_EXECUTED_BY_POSTPROCESS": "NO",
+  "source_script_sha256": "0f2e2c7b507334bf1805fb38dc922ed5cb0d08651bb7ead9469ac963b54b00af",
+  "only_execution_namespace_paths_adapted": true
+}

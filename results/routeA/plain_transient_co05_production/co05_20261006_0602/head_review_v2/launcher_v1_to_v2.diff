@@ -1,0 +1,55 @@
+--- historical/production_launcher.py
++++ head_review_v2/production_launcher_v2.py
+@@ -15,14 +15,16 @@
+ import time
+ import threading
+ 
+-P = Path(__file__).resolve().parent
++V2 = Path(__file__).resolve().parent
++P = V2.parent
++from head_integrity_v2 import reviewed_head_guard, verify_package_and_authorization
+ ROOT = P.parents[3]
+ 
+ def sha(path):
+     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+ 
+ def read(name):
+-    return json.loads((P / name).read_text())
++    return json.loads(((V2 / 'production_execution_plan_v2.json') if name == 'production_execution_plan.json' else (P / name)).read_text())
+ 
+ def save(path, value):
+     Path(path).write_text(json.dumps(value, indent=2) + '\n')
+@@ -71,11 +73,12 @@
+     require(len(list(case.glob('processor[0-9]*')))==12, 'wrong processor count')
+ 
+ def authorization(path, plan):
+-    a=json.loads(Path(path).read_text())
++    require(Path(path).resolve()==(V2/'production_authorization_v2.json').resolve(),'use pinned v2 authorization receipt')
++    a=verify_package_and_authorization(plan)
+     require(a.get('AUTHORIZED')=='YES', 'PRODUCTION_EXECUTION_NOT_AUTHORIZED: draft AUTHORIZED=NO')
+     for key,value in {'authorization_class':'ROUTE_A_PLAIN_TRANSIENT_CO05_PRODUCTION',
+                       'preparation_id':plan['preparation_id'],'expected_HEAD':plan['expected_HEAD'],
+-                      'execution_plan_sha256':sha(P/'production_execution_plan.json'),
++                      'execution_plan_sha256':sha(V2/'production_execution_plan_v2.json'),
+                       'input_manifest_sha256':plan['input_manifest_sha256'],
+                       'MPI_RANKS':12,'endTime_s':1420}.items():
+         require(a.get(key)==value,'authorization mismatch: '+key)
+@@ -84,7 +87,8 @@
+ 
+ def check():
+     plan=read('production_execution_plan.json'); case=Path(plan['case'])
+-    require(subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()==plan['expected_HEAD'],'HEAD changed; reviewed preparation refresh required')
++    reviewed_head_guard(plan)
++    verify_package_and_authorization(plan)
+     require(sha(plan['input_manifest_file'])==plan['input_manifest_sha256'],'input manifest changed')
+     m=read('production_input_manifest.json')
+     require(sha(P/'source_reference_guard.json')==m['source_reference_guard_sha256'],'source guard changed')
+@@ -263,7 +267,7 @@
+             auth=authorization(args.authorization_file,read('production_execution_plan.json'))
+         plan=check()
+         if args.check:
+-            print(json.dumps({'DRY_VALIDATION':'PASS','CFD_EXECUTED':'NO','AUTHORIZED':'NO','case':plan['case'],'command':plan['command_shell'],'disk_free_bytes':shutil.disk_usage(plan['case']).free},indent=2)); return 0
++            print(json.dumps({'DRY_VALIDATION':'PASS','CFD_EXECUTED':'NO','AUTHORIZED':'YES','case':plan['case'],'command':plan['command_shell'],'disk_free_bytes':shutil.disk_usage(plan['case']).free},indent=2)); return 0
+         return execute(plan,auth)
+     except Exception as e:
+         print('STOP_AND_REVIEW: '+str(e),file=sys.stderr); return 2

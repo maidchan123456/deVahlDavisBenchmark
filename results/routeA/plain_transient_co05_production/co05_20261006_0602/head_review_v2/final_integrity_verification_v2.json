@@ -1,0 +1,22 @@
+{
+  "result": "PASS",
+  "artifact_manifest_counts_before_final_receipt": {
+    "execution_artifact_manifest_sha256.json": 6,
+    "postprocessing_artifact_manifest_sha256.json": 318,
+    "final_v2_artifact_manifest_sha256.json": 49
+  },
+  "historical_artifacts_unchanged": 63,
+  "production_sensitive_files_unchanged": 263,
+  "all_regular_output_bins": 284,
+  "saved_native_snapshots": 294,
+  "offline_cold_and_saved_states": 295,
+  "all_12_rank_final_states_consistent": true,
+  "normal_native_exit": true,
+  "offline_postprocessing_completed": true,
+  "revision_source_hashes": "PASS",
+  "HEAD": "83a910f31a7a26cd91bf15c0eff432f48ff24800",
+  "git_status_short": "?? cases/routeA/A-H-Ra1e6-fine-beta1e-4/\n?? cases/routeA/A-Ra1e3-coarse/\n?? cases/routeA/A-Ra1e3-fine/\n?? cases/routeA/A-Ra1e3-medium/\n?? cases/routeA/A-Ra1e4-coarse/\n?? cases/routeA/A-Ra1e4-fine/\n?? cases/routeA/A-Ra1e4-medium/\n?? cases/routeA/A-Ra1e5-coarse/\n?? cases/routeA/A-Ra1e5-fine/\n?? cases/routeA/A-Ra1e5-medium/\n?? cases/routeA/A-Ra1e6-coarse/\n?? cases/routeA/A-Ra1e6-fine/\n?? cases/routeA/A-Ra1e6-medium/\n?? cases/routeA/Ra0_medium/\n?? cases/routeA/Ra1e4_coarse/\n?? cases/routeA/plain_transient_co05_production/\n?? results/routeA/plain_transient_co05_production/co05_20261006_0602/execution_v2/\n?? results/routeA/plain_transient_co05_production/co05_20261006_0602/head_review_v2/\n?? results/routeA/plain_transient_co05_production/co05_20261006_0602/postprocessing_v2/\n",
+  "git_diff_stat": "",
+  "next_series_executed": false,
+  "automatic_restart_or_rerun": false
+}

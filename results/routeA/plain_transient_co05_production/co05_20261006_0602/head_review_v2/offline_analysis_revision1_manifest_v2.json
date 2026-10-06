@@ -1,0 +1,7 @@
+{
+  "source_sha256": "abe5d84db0ba4317ed4867d0fd016635ab83ab16e48186aa5197c0e6abed6b90",
+  "original_source_retained": true,
+  "prepared_outputs_retained": true,
+  "CFD_INVOCATION": "NO",
+  "reason": "ModuleNotFoundError: No module named foam_fields at original line43; missing Scripts/routeA on sys.path"
+}

@@ -1,0 +1,34 @@
+{
+  "Nu_hot": {
+    "transient_final": 8.863412719910798,
+    "steady_baseline": 8.863383392408878,
+    "relative_difference": 3.30883824177394e-06,
+    "absolute_relative_difference": 3.30883824177394e-06
+  },
+  "Nu_cold": {
+    "transient_final": 8.863412713264665,
+    "steady_baseline": 8.863383756337953,
+    "relative_difference": 3.2670284293791467e-06,
+    "absolute_relative_difference": 3.2670284293791467e-06
+  },
+  "Umax": {
+    "transient_final": 64.91563253034387,
+    "steady_baseline": 64.9147345963897,
+    "relative_difference": 1.3832513677316512e-05,
+    "absolute_relative_difference": 1.3832513677316512e-05
+  },
+  "Wmax": {
+    "transient_final": 219.9015344727529,
+    "steady_baseline": 219.90026166168474,
+    "relative_difference": 5.7881289387474204e-06,
+    "absolute_relative_difference": 5.7881289387474204e-06
+  },
+  "U_at_X0.5": {
+    "RMS_difference": 0.0009546453256697771,
+    "Linf_difference": 0.0014124764995671057
+  },
+  "W_at_Z0.5": {
+    "RMS_difference": 0.0010155305675896768,
+    "Linf_difference": 0.0017787590296194367
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "start_UTC": "2026-10-06T06:52:09.449680+00:00",
+  "host": "mirai-Precision-5860-Tower",
+  "launcher_pid": 463385,
+  "command": [
+    "mpirun",
+    "--nooversubscribe",
+    "--map-by",
+    "core",
+    "--bind-to",
+    "core",
+    "--report-bindings",
+    "-np",
+    "12",
+    "foamRun",
+    "-case",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602",
+    "-solver",
+    "fluid",
+    "-noFunctionObjects",
+    "-parallel"
+  ],
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  },
+  "input_manifest_sha256": "6f286199e7419a5d3d85241b3ff77f1a37b15ef51daf296966aaab4cc99d57a2"
+}

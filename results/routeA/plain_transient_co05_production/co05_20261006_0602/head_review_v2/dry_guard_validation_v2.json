@@ -1,0 +1,12 @@
+{
+  "result": "PASS",
+  "CFD_EXECUTED": "NO",
+  "tests": [
+    "authorized_reviewed_package_full_preflight_PASS",
+    "actual_v2_authorization_tamper_rejected_and_restored",
+    "sensitive_input_mismatch_rejected",
+    "synthetic_results_only_HEAD_drift_accepted_no_disk_receipt",
+    "synthetic_sensitive_HEAD_drift_rejected"
+  ],
+  "synthetic_git_tests": "memory only; no real reviewed HEAD is fabricated"
+}

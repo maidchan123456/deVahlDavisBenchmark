@@ -1,0 +1,47 @@
+{
+  "late_QoI": {
+    "Nu_hot": {
+      "relative_range": 6.765995084659669e-11,
+      "slope_per_second": -9.032413196389882e-15,
+      "relative_slope_per_second": -1.0190672014865507e-15,
+      "relative_slope_change_over_window": 1.477698895683688e-13,
+      "classification": "STATIONARY_CANDIDATE",
+      "threshold_descriptive_only": 0.001,
+      "snapshots": 30,
+      "span_s": 145.0050490809747
+    },
+    "Nu_cold": {
+      "relative_range": 7.335493065549683e-11,
+      "slope_per_second": 1.5959476432867005e-14,
+      "relative_slope_per_second": 1.8006017489785575e-15,
+      "relative_slope_change_over_window": 2.610963449859246e-13,
+      "classification": "STATIONARY_CANDIDATE",
+      "threshold_descriptive_only": 0.001,
+      "snapshots": 30,
+      "span_s": 145.0050490809747
+    },
+    "Umax": {
+      "relative_range": 7.105804702987625e-10,
+      "slope_per_second": -1.9341122639044976e-12,
+      "relative_slope_per_second": -2.979424505264091e-14,
+      "relative_slope_change_over_window": 4.320315966188782e-12,
+      "classification": "STATIONARY_CANDIDATE",
+      "threshold_descriptive_only": 0.001,
+      "snapshots": 30,
+      "span_s": 145.0050490809747
+    },
+    "Wmax": {
+      "relative_range": 5.2696027764336e-10,
+      "slope_per_second": -3.582651318255637e-12,
+      "relative_slope_per_second": -1.629207057188305e-14,
+      "relative_slope_change_over_window": 2.3624324929066046e-12,
+      "classification": "STATIONARY_CANDIDATE",
+      "threshold_descriptive_only": 0.001,
+      "snapshots": 30,
+      "span_s": 145.0050490809747
+    }
+  },
+  "tstar2_time_horizon": "ADEQUATE_FOR_CURRENT_DIAGNOSTIC",
+  "stationarity_proven": false,
+  "physical_model_validated": false
+}

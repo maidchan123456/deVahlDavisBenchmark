@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "command_argv": [
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/plain_transient_co05_production/co05_20261006_0602/head_review_v2/run_production_v2.sh",
+    "--check"
+  ],
+  "returncode": 0,
+  "stdout": {
+    "DRY_VALIDATION": "PASS",
+    "CFD_EXECUTED": "NO",
+    "AUTHORIZED": "YES",
+    "case": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602",
+    "command": "mpirun --nooversubscribe --map-by core --bind-to core --report-bindings -np 12 foamRun -case /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602 -solver fluid -noFunctionObjects -parallel",
+    "disk_free_bytes": 792033681408
+  },
+  "reviewed_HEAD": "83a910f31a7a26cd91bf15c0eff432f48ff24800",
+  "actual_HEAD": "83a910f31a7a26cd91bf15c0eff432f48ff24800",
+  "execution_package_seal_sha256": "f74138aa021162748d11ffec02480ff9f0724f95e19b7dbb1872fa7f831ca723",
+  "launch_time_UTC": "2026-10-06T06:52:09.354851+00:00"
+}

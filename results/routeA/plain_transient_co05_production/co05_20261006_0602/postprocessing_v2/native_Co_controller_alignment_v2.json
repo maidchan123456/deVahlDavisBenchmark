@@ -1,0 +1,27 @@
+{
+  "configured_maxCo": 0.5,
+  "maximum_logged_Co_state": {
+    "step": 62,
+    "logged_Co": 0.5172179551948343,
+    "pre_advance_logged_time_s": 0.778190853453,
+    "new_step_time_s": 0.804030906601,
+    "previous_dt_s": 0.026729878902837508,
+    "new_dt_s": 0.02584005314816309,
+    "expected_dt_s": 0.02584005314816309,
+    "relative_controller_difference": 0.0,
+    "rescaled_pre_advance_Co_at_new_dt": 0.5
+  },
+  "all_steps_controller_relative_difference_max": 0.0,
+  "all_steps_rescaled_pre_advance_Co_max": 0.5000000000000001,
+  "logged_Co_over_config_plus_1e_9_count": 6539,
+  "last_step_over_config_plus_1e_9": 13839,
+  "last_over_new_step_time_s": 135.444142532231,
+  "meaning": "Native preSolve computes Co from previous completed flux/rho and previous dt, then adjustDeltaT selects new dt before advancing Time. Rescaled Co is DERIVED for that pre-advance state at the selected new dt, not a post-solve Co certificate. Configured maxCo is unchanged; all logged Co values are retained.",
+  "source_sha256": {
+    "/opt/openfoam13/applications/solvers/foamRun/foamRun.C": "5c1e6e34c4bd253f5cc4665a8672f21b6ded2c7a5e391c67419f7586a7b5de91",
+    "/opt/openfoam13/applications/solvers/foamRun/setDeltaT.C": "656a3a8782614b0f14aff03d0925d339eb6e568356c792f61fa4095d1ade5f11",
+    "/opt/openfoam13/applications/modules/fluidSolver/fluidSolver.C": "cc7e5f228ad7e421decd14cf711f4e75a381b2474821253a96c91a3c6793116a",
+    "/opt/openfoam13/applications/modules/isothermalFluid/isothermalFluid.C": "b1f6631e889b2c83d6468c2d631a106d35d75f5e2bd75e85518d8569e250cf59"
+  },
+  "frozen_native_controller_check": "PASS"
+}

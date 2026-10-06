@@ -1,0 +1,29 @@
+{
+  "mass": {
+    "status": "RECONSTRUCTED_FINITE_NOT_EXACT_FV_AUDIT",
+    "initial_kg": 1.000000000000011e-05,
+    "final_kg": 1.0000000284767312e-05,
+    "final_relative_drift": 2.8476720323976306e-08,
+    "max_abs_relative_drift": 2.8476720832196074e-08,
+    "native_continuity_max_local_abs": 1.4815354670353096e-10,
+    "native_continuity_max_global_abs": 1.4814301717486854e-10,
+    "native_continuity_final_cumulative": -9.18337562761583e-07
+  },
+  "energy": {
+    "status": "RECONSTRUCTED_FINITE_COARSE_DESCRIPTOR_ONLY",
+    "initial_sensible_proxy_J": 0.01850000000000043,
+    "final_sensible_proxy_J": 0.018499138166098786,
+    "final_kinetic_energy_J": 4.936543676954308e-10,
+    "final_Q_hot_W": 0.00012483679887198307,
+    "final_Q_cold_W": 0.00012483679877837558,
+    "coarse_secant_minus_net_heat_max_abs_W": 7.711988193962718e-08,
+    "coarse_secant_minus_net_heat_late_max_abs_W": 1.0825197688479826e-13,
+    "late_secant_difference_relative_to_wall_flux_max": 8.671479716224548e-10,
+    "exact_BDF_energy_certificate": false,
+    "missing_native_stage_or_eK_histories_reconstructed": false
+  },
+  "symmetry": {
+    "final_T_RMS_K": 6.125367480071459e-05,
+    "final_U_RMS_m_s": 2.3011557734149107e-06
+  }
+}

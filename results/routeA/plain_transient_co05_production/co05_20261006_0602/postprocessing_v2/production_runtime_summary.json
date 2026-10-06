@@ -1,0 +1,51 @@
+{
+  "completed_physical_steps": 143203,
+  "total_wall_seconds": 8400.79742391,
+  "total_wall_hours": 2.333554839975,
+  "projected_hours": 6.112102039491276,
+  "actual_to_projected": 0.3817925199706298,
+  "final_time_seconds": 1420.0043825715495,
+  "final_tstar": 2.000006172635985,
+  "max_logged_Co": 0.5172179551948343,
+  "late_logged_Co": {
+    "min": 0.4999999999989064,
+    "median": 0.4999999999999639,
+    "max": 0.50000000000111
+  },
+  "late_deltaT_seconds": {
+    "min": 0.009929812301771384,
+    "median": 0.009929812304467326,
+    "max": 0.009929812306989977
+  },
+  "late_external_seconds_per_step_excluding_native_writes": {
+    "min": 0.04534474108368158,
+    "median": 0.05461593548534438,
+    "max": 0.06680952105671167
+  },
+  "last200_nonwrite_seconds_per_step": {
+    "min": 0.04717701696790755,
+    "median": 0.05453049798961729,
+    "max": 0.062472896999679506
+  },
+  "pressure_iterations_early1000": {
+    "min": 1323.0,
+    "median": 2383.0,
+    "max": 4216.0
+  },
+  "pressure_iterations_last10percent": {
+    "min": 2.0,
+    "median": 35.0,
+    "max": 291.0
+  },
+  "energy_iterations_last10percent": {
+    "min": 0.0,
+    "median": 0.0,
+    "max": 1.0
+  },
+  "all_steps_pressure48_energy24": true,
+  "standard_log_Co_is_pre_advance_state": true,
+  "returncode": 0,
+  "normal_exit": true,
+  "fatal_nan_fpe": false,
+  "log_bytes": 3870570559
+}

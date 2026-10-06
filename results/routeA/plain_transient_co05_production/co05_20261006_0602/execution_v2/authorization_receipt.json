@@ -1,0 +1,23 @@
+{
+  "TASK": "REVIEW_REPIN_AND_RUN_ROUTE_A_PLAIN_TRANSIENT_CO05_PRODUCTION",
+  "AUTHORIZED": "YES",
+  "AUTHORIZATION_SOURCE": "EXPLICIT_CURRENT_USER_INSTRUCTION",
+  "authorization_class": "ROUTE_A_PLAIN_TRANSIENT_CO05_PRODUCTION",
+  "preparation_id": "co05_20261006_0602",
+  "reviewed_HEAD": "83a910f31a7a26cd91bf15c0eff432f48ff24800",
+  "expected_HEAD": "83a910f31a7a26cd91bf15c0eff432f48ff24800",
+  "production_sensitive_manifest_sha256": "1c6f6287c1747fd0216ce87bb600e21ea136ef1214879c1fa78a382bf974e8d8",
+  "input_manifest_sha256": "6f286199e7419a5d3d85241b3ff77f1a37b15ef51daf296966aaab4cc99d57a2",
+  "execution_plan_sha256": "7a1f2c2dabb1f8352f0bb7e43e9da0d3838e2e01919eb164d51a4abd7573ab2b",
+  "source_user_authorization_reference": "/home/mirai/.codex/attachments/94cfeb87-d235-4e33-9cea-66bcbdee26fd/\u8cbc\u308a\u4ed8\u3051\u305f\u30c6\u30ad\u30b9\u30c8.txt",
+  "source_user_authorization_sha256": "e957d33f2e1e650588cfba94c87a247189ec2765297b225c436e39e9371d0f3c",
+  "MPI_RANKS": 12,
+  "maxCo": 0.5,
+  "endTime_s": 1420,
+  "CO05_ALLOWED": "YES",
+  "CO025_ALLOWED": "NO",
+  "AUTOMATIC_RESTART": "NO",
+  "AUTOMATIC_RERUN": "NO",
+  "Q3_ALLOWED": "NO",
+  "FORMAL_GATE_J_ALLOWED": "NO"
+}

@@ -1,0 +1,1445 @@
+deVahlDavisBenchmark の Route A transient study について、
+
+# REVIEW_REPIN_AND_RUN_ROUTE_A_PLAIN_TRANSIENT_CO05_PRODUCTION
+
+を実施してください。
+
+今回の目的は、
+
+1. 前回productionが `BLOCKED_HEAD_CHANGED` で0 step停止した原因を確認する
+2. 現在HEADとproduction preparation時点との差分がproduction-sensitiveではないことを機械的に証明する
+3. 元のpreparation artifactsを履歴として保持したまま、execution package v2を作成する
+4. current reviewed HEADへ安全に再pinする
+5. preflightを再実行する
+6. PASSした場合のみ、ユーザーが明示承認済みのCo=0.5 production CFDを実行する
+7. 正常完走後、そのままoffline post-processingまで行う
+
+ことです。
+
+---
+
+# 0. USER AUTHORIZATION
+
+ユーザーは今回、
+
+```text
+HEAD change review
+safe repin
+Co0.5 production execution
+postprocessing after normal completion
+```
+
+を明示的に承認しています。
+
+したがって：
+
+```text
+PRODUCTION_CFD_EXECUTION_AUTHORIZED = YES
+```
+
+です。
+
+ただし許可対象は：
+
+```text
+Ra = 1e6
+Pr = 0.71
+grid = 160x160x1
+maxCo = 0.5
+12 MPI ranks
+cold continuous start
+target t* = 2
+```
+
+の1 seriesのみです。
+
+禁止：
+
+```text
+Co0.25 run
+320 grid
+Q3
+formal Gate J
+Route B rerun
+particle coupling
+model tuning
+automatic restart
+automatic rerun
+```
+
+---
+
+# 1. RECOMMENDED MODEL
+
+```text
+gpt-6.1-sol / high
+```
+
+---
+
+# 2. KNOWN GIT HISTORY
+
+production preparation前：
+
+```text
+f57d60d85e36ea9928e4bc481d3cbde586496f58
+```
+
+production preparation成果commit：
+
+```text
+f6d59815779a205ce489684dcba452a6f09d10ce
+```
+
+前回 `BLOCKED_HEAD_CHANGED` 停止報告commit：
+
+```text
+83a910f31a7a26cd91bf15c0eff432f48ff24800
+```
+
+開始時は必ず：
+
+```bash
+git rev-parse HEAD
+git status --short
+```
+
+を確認。
+
+現在HEADが `83a910...` からさらに進んでいても、
+**HEADが違うという理由だけで即停止しないこと。**
+
+今回のtaskでは、
+
+```text
+HEAD identity
+```
+
+ではなく、
+
+```text
+production-sensitive state identity
+```
+
+を本質的なguardとします。
+
+---
+
+# 3. PREVIOUS FAILURE
+
+前回productionは：
+
+```text
+ROUTE_A_PLAIN_TRANSIENT_CO05_PRODUCTION =
+BLOCKED_HEAD_CHANGED
+
+PRODUCTION_CFD_EXECUTED = NO
+COMPLETED_PHYSICAL_STEPS = 0
+```
+
+でした。
+
+CFD trajectoryは開始されていません。
+
+したがってproduction caseはcold startのままです。
+
+---
+
+# 4. WHY HEAD CHANGED
+
+既知のGitHub reviewでは、
+
+```text
+f57d... → f6d...
+```
+
+はproduction preparation成果の追加、
+
+```text
+f6d... → 83a...
+```
+
+はHEAD mismatch停止報告・preflight・authorization evidenceの追加
+
+でした。
+
+しかし、このprompt内の記述だけを信用せず、
+local gitでも再確認してください。
+
+---
+
+# 5. PRIMARY PREPARATION PACKAGE
+
+```text
+results/routeA/plain_transient_co05_production/
+co05_20261006_0602/
+```
+
+特に：
+
+```text
+RouteA_plain_transient_Co05_production_preparation.md
+production_execution_plan.json
+production_input_manifest.json
+production_launcher.py
+run_production.sh
+production_postprocessing_plan.md
+production_postprocessing_plan.json
+postprocess_production.py
+```
+
+を読む。
+
+---
+
+# 6. ORIGINAL PREPARATION ARTIFACTS ARE HISTORICAL
+
+既存のpreparation packageを、
+「前からcurrent HEADだった」ように書き換えてはいけません。
+
+特に旧：
+
+```text
+expected_HEAD = f57d...
+```
+
+という記録は、
+当時のpreparation evidenceとして保持してください。
+
+---
+
+# 7. CREATE V2 EXECUTION REVIEW PACKAGE
+
+新しいnamespaceを作成：
+
+```text
+results/routeA/plain_transient_co05_production/
+co05_20261006_0602/head_review_v2/
+```
+
+または同等の明確に分離されたnamespace。
+
+ここへ：
+
+```text
+head_change_review.md
+head_change_review.json
+production_execution_plan_v2.json
+production_authorization_v2.json
+production_sensitive_manifest_v2.json
+production_launcher_v2.py
+run_production_v2.sh
+preflight_v2.json
+```
+
+等を保存。
+
+旧packageを上書きしない。
+
+---
+
+# 8. PRODUCTION-SENSITIVE REVIEW — MOST IMPORTANT
+
+以下をproduction-sensitiveとして扱う。
+
+## A. Physical/numerical case
+
+```text
+case/0/*
+case/constant/*
+case/system/*
+mesh
+decomposition configuration
+```
+
+ただしruntime-generated filesは除外。
+
+## B. Scientific authorities
+
+```text
+docs/routeA_diagnostic_transient_contract_v1.5.json
+docs/routeA_execution_contract_v1.7.json
+```
+
+expected hashes：
+
+```text
+06c71945289ffe419b784843f7aab2fea66c44d28c9dba46d828bbd24837e27d
+
+fbc744e012f66b37b5d9409be961cb5a9410c3d75ac7e2f026b2acf118d3bb60
+```
+
+## C. Executable/runtime authority
+
+```text
+foamRun binary
+fluid solver/library
+OpenFOAM build/version
+relevant installed OpenFOAM source hashes
+MPI implementation/version
+```
+
+prepared manifestと比較。
+
+## D. Execution semantics
+
+```text
+MPI ranks = 12
+scotch
+binding
+OMP/OpenBLAS/MKL threads=1
+pRefPoint
+maxCo
+deltaT
+maxDeltaT
+endTime
+time scheme
+PIMPLE settings
+linear solver settings
+output policy
+```
+
+## E. Execution scripts actually used
+
+v2 launcher / execution plan / authorization themselvesをhash pin。
+
+---
+
+# 9. GIT DIFF IS SUPPORTING EVIDENCE, NOT THE PRIMARY AUTHORITY
+
+最低限：
+
+```bash
+git diff --name-status f57d60d85e36ea9928e4bc481d3cbde586496f58..HEAD
+```
+
+等を確認。
+
+各changed pathを：
+
+```text
+PRODUCTION_SENSITIVE
+RESULTS_ONLY
+DOCUMENTATION_ONLY_NONAUTHORITY
+EXECUTION_EVIDENCE_ONLY
+OTHER
+```
+
+に分類。
+
+---
+
+# 10. ALLOWED HEAD CHANGES
+
+以下のような追加だけなら、
+HEAD変更をproduction blockerにしない：
+
+```text
+results/... reports
+failure reports
+preflight logs
+authorization receipts
+git status records
+analysis figures
+postprocessing outputs from previous pilots
+```
+
+ただし既存sensitive fileの変更を隠してはいけない。
+
+---
+
+# 11. BLOCKING HEAD CHANGES
+
+以下のどれかがpreparation時と不一致なら停止：
+
+```text
+physical input hash changed
+mesh changed
+fvSchemes changed
+fvSolution changed
+controlDict scientific/numerical semantics changed
+thermophysical properties changed
+authority hash changed
+solver binary/library changed unexpectedly
+OpenFOAM build changed unexpectedly
+pRefPoint changed
+MPI rank/decomposition policy changed
+time scheme changed
+maxCo/deltaT/maxDeltaT changed
+endTime changed
+heavy diagnostics introduced
+production-sensitive launcher behavior cannot be verified
+```
+
+status：
+
+```text
+BLOCKED_PRODUCTION_SENSITIVE_CHANGE
+```
+
+。
+
+この場合CFDを実行しない。
+
+---
+
+# 12. CURRENT HEAD REPIN POLICY
+
+全production-sensitive checksがPASSした場合のみ、
+
+```text
+reviewed_current_HEAD = <actual HEAD at start of execution review>
+```
+
+をv2 execution packageへpin。
+
+これは、
+
+```text
+old preparation was wrong
+```
+
+という意味ではなく、
+
+```text
+current HEAD was reviewed and found production-equivalent
+```
+
+という意味。
+
+---
+
+# 13. DO NOT CREATE ANOTHER SELF-DEFEATING HEAD LOOP
+
+v2 launcherでは単純な：
+
+```text
+HEAD must equal old f57d...
+```
+
+guardを使わない。
+
+v2では：
+
+```text
+reviewed_current_HEAD
++
+production-sensitive manifest hashes
+```
+
+を検証する。
+
+---
+
+# 14. FUTURE HEAD DRIFT DURING THIS TASK
+
+production launch直前にHEADを再取得。
+
+review開始後にHEADが変わっていた場合：
+
+1. diffを再確認
+2. production-sensitive manifest再検証
+3. non-sensitive追加だけならreview receiptを更新して続行可
+4. sensitive changeならSTOP
+
+単純HEAD mismatchだけでは停止しない。
+
+---
+
+# 15. DO NOT GIT COMMIT
+
+今回Codexは：
+
+```text
+git add
+git commit
+git push
+git reset
+git checkout
+```
+
+を実行しない。
+
+v2 artifactsはworking tree上で作成する。
+
+そのためv2 artifact作成自体でHEADは変わりません。
+
+---
+
+# 16. SCIENTIFIC CASE FREEZE
+
+```text
+Ra = 1e6
+Pr = 0.71
+
+domain =
+0.1 × 0.1 × 0.001 m
+
+grid =
+160 × 160 × 1
+
+T0 = 300 K
+Th = 300.5 K
+Tc = 299.5 K
+
+rho0 = 1
+beta = 1e-3
+mu = 1e-5
+Cv = 1000
+
+nu = 1e-5
+alpha = 1.4084507042253522e-5
+k = 0.014084507042253521
+
+g =
+(0 -140.8450704225352 0)
+```
+
+変更禁止。
+
+---
+
+# 17. NUMERICAL POLICY FREEZE
+
+```text
+backward variable-step BDF2
+
+momentumPredictor = yes
+simpleRho = no
+transonic = no
+consistent = no
+
+nOuterCorrectors = 24
+nCorrectors = 2
+nNonOrthogonalCorrectors = 0
+
+adjustTimeStep = true
+maxCo = 0.5
+growth factor = 1.2
+
+initial deltaT =
+2.3111979166666666e-5
+
+maxDeltaT =
+0.027734375
+
+endTime =
+1420
+```
+
+変更禁止。
+
+---
+
+# 18. LINEAR SOLVERS FREEZE
+
+prepared caseのactual dictionariesをそのまま使用。
+
+tolerance緩和等禁止。
+
+---
+
+# 19. PRESSURE REFERENCE
+
+```text
+pRefPoint =
+(0.0496875 0.0496875 0.0005)
+```
+
+。
+
+parallel `pRefCell`は禁止。
+
+mappingを再確認。
+
+---
+
+# 20. MPI
+
+```text
+12 ranks
+scotch
+--nooversubscribe
+--map-by core
+--bind-to core
+--report-bindings
+```
+
+。
+
+threads：
+
+```text
+OMP_NUM_THREADS=1
+OPENBLAS_NUM_THREADS=1
+MKL_NUM_THREADS=1
+```
+
+。
+
+---
+
+# 21. HEAVY DIAGNOSTICS
+
+絶対OFF：
+
+```text
+exact evidence backend
+1144 callback diagnostic
+701 matrix diagnostic
+matrix replay
+diagnostic IPC
+U01/U03 online heavy audit
+```
+
+。
+
+---
+
+# 22. FUNCTION OBJECTS
+
+```text
+-noFunctionObjects
+```
+
+維持。
+
+---
+
+# 23. START MODE
+
+```text
+CONTINUOUS_COLD_START
+```
+
+。
+
+pilot checkpointから開始しない。
+
+---
+
+# 24. STRICT RESTART
+
+```text
+STRICT_BDF_RESTART_RELIED_UPON = NO
+```
+
+。
+
+---
+
+# 25. OUTPUT POLICY
+
+prepared production policyを維持：
+
+```text
+writeControl = runTime
+writeInterval = 5 s
+timePrecision = 12
+writePrecision = 17
+purgeWrite = 0
+```
+
+。
+
+startup additional writes：
+
+```text
+steps approximately:
+2,5,10,20,30,39,60,100,250,500
+```
+
+prepared native write-request mechanismに従う。
+
+outputのためにdeltaTを変更しない。
+
+---
+
+# 26. DISK POLICY
+
+prelaunch：
+
+```text
+>= 32 GiB free
+```
+
+。
+
+runtime low-watermark：
+
+```text
+8 GiB
+```
+
+。
+
+---
+
+# 27. WALL GUARD
+
+```text
+24 h
+```
+
+。
+
+~6.1hは予測であり停止条件ではない。
+
+---
+
+# 28. V2 AUTHORIZATION
+
+ユーザーの今回の明示承認を、
+
+```text
+production_authorization_v2.json
+```
+
+へ記録。
+
+最低限：
+
+```text
+TASK =
+REVIEW_REPIN_AND_RUN_ROUTE_A_PLAIN_TRANSIENT_CO05_PRODUCTION
+
+AUTHORIZED =
+YES
+
+AUTHORIZATION_SOURCE =
+EXPLICIT_CURRENT_USER_INSTRUCTION
+
+PREPARATION_ID =
+co05_20261006_0602
+
+REVIEWED_HEAD =
+<actual reviewed head>
+
+PRODUCTION_SENSITIVE_MANIFEST_SHA256 =
+<value>
+
+CO05_ALLOWED =
+YES
+
+CO025_ALLOWED =
+NO
+
+MPI_RANKS =
+12
+
+MAX_CO =
+0.5
+
+END_TIME =
+1420
+
+AUTOMATIC_RESTART =
+NO
+
+AUTOMATIC_RERUN =
+NO
+
+Q3_ALLOWED =
+NO
+
+FORMAL_GATE_J_ALLOWED =
+NO
+```
+
+。
+
+---
+
+# 29. V2 PREFLIGHT
+
+production実行直前に必ず：
+
+```text
+authority hashes
+case hashes
+mesh hashes
+fvSchemes/fvSolution
+controlDict semantics
+binary hashes
+MPI version
+12 ranks
+binding
+pRefPoint
+cold state
+no runtime trajectory already present
+no existing same-case solver
+disk
+RAM
+heavy diagnostics absent
+function objects disabled
+execution namespace safe
+authorization v2 valid
+v2 launcher hash valid
+```
+
+を確認。
+
+---
+
+# 30. OLD BLOCKED EXECUTION EVIDENCE MUST REMAIN
+
+前回：
+
+```text
+BLOCKED_HEAD_CHANGED
+0 steps
+```
+
+のreport/preflightは削除・上書きしない。
+
+今回のv2 runは別receiptとして残す。
+
+---
+
+# 31. EXECUTION NAMESPACE
+
+旧preflight evidenceと衝突しないように、
+prepared execution namespaceの実状態を確認。
+
+0-step blocked attemptが作ったmetadataがある場合、
+
+それを削除して「なかったこと」にしない。
+
+production actual output用に明確なsubnamespaceを作成するか、
+launcher設計に従って安全に分離する。
+
+例：
+
+```text
+execution_v2/
+```
+
+を推奨。
+
+---
+
+# 32. IF PREFLIGHT PASSES — RUN PRODUCTION
+
+production CFDを実行してください。
+
+今回は**準備だけで停止しない。**
+
+---
+
+# 33. ACTUAL MPI COMMAND
+
+prepared working commandを維持：
+
+```bash
+mpirun \
+  --nooversubscribe \
+  --map-by core \
+  --bind-to core \
+  --report-bindings \
+  -np 12 \
+  foamRun \
+  -case /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co05_production/co05_20261006_0602 \
+  -solver fluid \
+  -noFunctionObjects \
+  -parallel
+```
+
+ただし必ずv2 launcher経由。
+
+---
+
+# 34. DO NOT RUN IN BACKGROUND AND ABANDON IT
+
+launcherからproduction processを開始し、
+normal completionまたはguard/failureまで監視する。
+
+---
+
+# 35. PRIMARY SCIENTIFIC STOP
+
+```text
+native endTime = 1420 s
+```
+
+。
+
+step countでは止めない。
+
+---
+
+# 36. DO NOT STOP WHEN "STEADY LOOKING"
+
+必ずtarget t*=2付近まで進める。
+
+---
+
+# 37. NO AUTOMATIC EXTENSION
+
+1420 sを超えて追加studyを実行しない。
+
+---
+
+# 38. INTERRUPTION
+
+途中で失敗したら：
+
+```text
+STOP_AND_REVIEW
+```
+
+。
+
+automatic restart禁止。
+
+automatic cold rerun禁止。
+
+---
+
+# 39. FAILURE EVIDENCE
+
+保存：
+
+```text
+last completed time
+t*
+step
+deltaT
+Co
+return code
+fatal/error
+disk
+wall
+last saved fields
+solver log
+```
+
+。
+
+---
+
+# 40. NORMAL COMPLETION REQUIREMENTS
+
+最低限：
+
+```text
+return code 0
+12 ranks normal exit
+no fatal
+no NaN/FPE
+final physical time near1420
+final runTime output present
+uniform/time readable
+final fields consistent across ranks
+full log retained
+```
+
+。
+
+---
+
+# 41. AFTER NORMAL COMPLETION — AUTOMATIC POSTPROCESS
+
+productionが正常終了した場合、
+ユーザーへ一度戻らず、
+
+prepared：
+
+```text
+postprocess_production.py
+```
+
+を実行。
+
+---
+
+# 42. POSTPROCESS MUST BE OFFLINE ONLY
+
+postprocessでCFDを再実行しない。
+
+---
+
+# 43. TRANSIENT QoI
+
+計算：
+
+```text
+Nu_hot(t)
+Nu_cold(t)
+Umax(t)
+Wmax(t)
+```
+
+。
+
+各saved stateで：
+
+```text
+t* = alpha t / L^2
+```
+
+。
+
+---
+
+# 44. STANDARD LOG ANALYSIS
+
+最低限：
+
+```text
+actual steps
+deltaT(t)
+Co(t)
+pressure iterations
+energy iterations
+residuals
+continuity errors
+wall runtime
+```
+
+。
+
+---
+
+# 45. FINAL STEADY BASELINE COMPARISON
+
+Route A：
+
+```text
+Ra1e6
+160²
+steady end_9000
+```
+
+と：
+
+```text
+Nu
+Umax
+Wmax
+centreline profiles
+```
+
+を比較。
+
+---
+
+# 46. DO NOT ASSUME TRANSIENT FINAL = STEADY
+
+differenceを実測。
+
+---
+
+# 47. LATE-TIME ASSESSMENT
+
+last10%かつ最低5 snapshotsで：
+
+```text
+relative range
+slope
+relative slope
+```
+
+等を評価。
+
+結果は：
+
+```text
+STATIONARY_CANDIDATE
+STILL_EVOLVING
+UNRESOLVED
+```
+
+のように分類。
+
+stationarityの証明とは言わない。
+
+---
+
+# 48. MASS/ENERGY
+
+保存fieldから再構成可能なdescriptorのみ評価。
+
+exact BDF conservation certificateとは呼ばない。
+
+---
+
+# 49. FORMAL STATUSES FREEZE
+
+productionが完走しても：
+
+```text
+FORMAL_GATE_J_CURRENTLY_ALLOWED = NO
+FORMAL_GATE_J_EXECUTED = NO
+FORMAL_GATE_J_PASS = NOT_EVALUATED
+
+BENCHMARK_CORE_PASS = NO
+ROUTE_A_CHARACTERIZED = NO
+
+ALL_ROUTE_A_GATE_F = FAIL
+ALL_RA_NEEDS_320 = YES
+
+GRID_INDEPENDENT_TRANSIENT_CLAIM_ALLOWED = NO
+DOWNSTREAM_TRANSIENT_READY = NO
+PARTICLE_COUPLING_READY = NO
+```
+
+を維持。
+
+---
+
+# 50. SUCCESS REPORT
+
+作成：
+
+```text
+RouteA_plain_transient_Co05_production_report_v2.md
+RouteA_plain_transient_Co05_production_report_v2.json
+```
+
+。
+
+---
+
+# 51. HEAD REVIEW REPORT
+
+必ず作成：
+
+```text
+head_change_review.md
+head_change_review.json
+```
+
+。
+
+最低限：
+
+```text
+old_preparation_head
+current_reviewed_head
+commit range reviewed
+all changed paths
+path classifications
+production-sensitive hashes before
+production-sensitive hashes current
+equivalent yes/no
+reason repin is scientifically safe
+```
+
+。
+
+---
+
+# 52. IMPORTANT HEAD-GUARD LESSON
+
+最終reportで、
+
+```text
+HEAD provenance guard
+```
+
+と
+
+```text
+production input integrity guard
+```
+
+を区別。
+
+今回以降、
+
+results-only commitによって自動的にCFDを止める必要はないことを記録。
+
+ただしproduction-sensitive変更はfail-closed。
+
+---
+
+# 53. SUCCESS FINAL STATUS
+
+正常完走時：
+
+```text
+ROUTE_A_CO05_HEAD_CHANGE_REVIEW =
+PASS
+
+OLD_PREPARATION_HEAD =
+f57d60d85e36ea9928e4bc481d3cbde586496f58
+
+REVIEWED_EXECUTION_HEAD =
+<actual>
+
+HEAD_CHANGED =
+YES
+
+HEAD_CHANGE_PRODUCTION_SENSITIVE =
+NO
+
+PRODUCTION_SENSITIVE_MANIFEST_MATCH =
+PASS
+
+HEAD_REPINNED =
+YES
+
+V2_PREFLIGHT =
+PASS
+
+PRODUCTION_EXECUTION_AUTHORIZED =
+YES
+
+ROUTE_A_PLAIN_TRANSIENT_CO05_PRODUCTION =
+COMPLETE
+
+PRODUCTION_CFD_EXECUTED =
+YES
+
+PRODUCTION_NORMAL_EXIT =
+YES
+
+PHYSICAL_MODEL_CHANGED =
+NO
+
+NUMERICAL_POLICY_CHANGED =
+NO
+
+GRID =
+160x160x1
+
+RA =
+1e6
+
+PR =
+0.71
+
+MAX_CO =
+0.5
+
+MPI_RANKS =
+12
+
+HEAVY_DIAGNOSTICS_ENABLED =
+NO
+
+FUNCTION_OBJECTS_DURING_PRODUCTION =
+NO
+
+PRODUCTION_START_MODE =
+CONTINUOUS_COLD_START
+
+STRICT_BDF_RESTART_RELIED_UPON =
+NO
+
+ACTUAL_FINAL_TIME_SECONDS =
+<value>
+
+ACTUAL_FINAL_TSTAR =
+<value>
+
+COMPLETED_PHYSICAL_STEPS =
+<value>
+
+TOTAL_PRODUCTION_WALL_HOURS =
+<value>
+
+EXPECTED_RUNTIME_HOURS =
+~6.1
+
+RUNTIME_RATIO_ACTUAL_TO_PROJECTED =
+<value>
+
+MAX_LOGGED_CO =
+<value>
+
+LATE_MEDIAN_DELTA_T =
+<value>
+
+LATE_MEDIAN_SECONDS_PER_STEP =
+<value>
+
+FINAL_NU_HOT =
+<value>
+
+FINAL_NU_COLD =
+<value>
+
+FINAL_UMAX =
+<value>
+
+FINAL_WMAX =
+<value>
+
+FINAL_VS_STEADY_NU_RELATIVE_DIFFERENCE =
+<value>
+
+FINAL_VS_STEADY_UMAX_RELATIVE_DIFFERENCE =
+<value>
+
+FINAL_VS_STEADY_WMAX_RELATIVE_DIFFERENCE =
+<value>
+
+LATE_NU_BEHAVIOR =
+<status>
+
+LATE_UMAX_BEHAVIOR =
+<status>
+
+LATE_WMAX_BEHAVIOR =
+<status>
+
+TSTAR2_TIME_HORIZON_ASSESSMENT =
+<status>
+
+POSTPROCESSING_COMPLETED =
+YES
+
+Q3_EXECUTED =
+NO
+
+FORMAL_GATE_J_EXECUTED =
+NO
+
+BENCHMARK_CORE_PASS =
+NO
+
+ROUTE_A_CHARACTERIZED =
+NO
+
+DOWNSTREAM_TRANSIENT_READY =
+NO
+
+PARTICLE_COUPLING_READY =
+NO
+
+NEXT_SINGLE_TASK =
+<evidence-based exact task>
+
+USER_DECISION_REQUIRED =
+YES
+```
+
+---
+
+# 54. FAILURE BEFORE CFD
+
+production-sensitive review/preflightで止まる場合：
+
+```text
+ROUTE_A_CO05_HEAD_CHANGE_REVIEW =
+FAIL / BLOCKED
+
+PRODUCTION_CFD_EXECUTED =
+NO
+
+COMPLETED_PHYSICAL_STEPS =
+0
+
+BLOCKER =
+<exact blocker>
+
+NEXT_SINGLE_TASK =
+<exact review task>
+
+USER_DECISION_REQUIRED =
+YES
+```
+
+。
+
+---
+
+# 55. FAILURE AFTER CFD START
+
+```text
+ROUTE_A_PLAIN_TRANSIENT_CO05_PRODUCTION =
+INTERRUPTED / FAILED
+
+PRODUCTION_CFD_EXECUTED =
+YES
+
+PRODUCTION_NORMAL_EXIT =
+NO
+
+LAST_COMPLETED_TIME =
+<value>
+
+LAST_COMPLETED_TSTAR =
+<value>
+
+LAST_COMPLETED_STEP =
+<value>
+
+AUTOMATIC_RESTART_EXECUTED =
+NO
+
+AUTOMATIC_RERUN_EXECUTED =
+NO
+
+NEXT_SINGLE_TASK =
+REVIEW_ROUTE_A_CO05_PRODUCTION_INTERRUPTION
+
+USER_DECISION_REQUIRED =
+YES
+```
+
+。
+
+---
+
+# 56. MOST IMPORTANT RULE
+
+単なるHEAD hash変更と、
+production physics/numerics/input変更を混同しない。
+
+---
+
+# 57. SECOND MOST IMPORTANT RULE
+
+今回のreviewでproduction-sensitive stateが同一なら、
+
+```text
+review → repin → preflight → run
+```
+
+まで進める。
+
+再び「HEADが変わった」という理由だけで戻らない。
+
+---
+
+# 58. THIRD MOST IMPORTANT RULE
+
+production-sensitive hashが違えば、
+どんなに小さく見えても勝手に進めない。
+
+---
+
+# 59. FOURTH MOST IMPORTANT RULE
+
+productionが始まったら、
+異常終了時にrestart/rerunしない。
+
+---
+
+# 60. FIFTH MOST IMPORTANT RULE
+
+正常完走後はpostprocessingまで自律的に実施する。
+
+Co0.25等の次seriesは開始しない。
+
+---
+
+# 61. IDEAL END STATE
+
+```text
+HEAD change reviewed
+results-only/non-sensitive changes proven
+production-sensitive inputs identical
+current HEAD safely reviewed/pinned
+v2 preflight PASS
+Co0.5 production completed from cold start
+t*=2 reached
+postprocessing completed
+steady baseline comparison completed
+late-time behavior characterized
+no Co0.25 run started
+```
+
+となった時点で停止してください。

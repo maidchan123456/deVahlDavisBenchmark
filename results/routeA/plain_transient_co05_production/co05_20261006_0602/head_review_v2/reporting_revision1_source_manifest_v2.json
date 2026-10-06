@@ -1,0 +1,5 @@
+{
+  "sha256": "3629137a328096c488eb93b349e208c8df7f4eaa13023cc9a59bb63eb8d0d5e6",
+  "original_writer_preserved": true,
+  "changes": "Include repaired offline-analysis provenance and measured native Co/controller alignment, retaining all scientific definitions/statuses."
+}

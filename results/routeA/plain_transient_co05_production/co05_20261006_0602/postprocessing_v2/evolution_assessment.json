@@ -1,0 +1,29 @@
+{
+  "classification": "STATIONARY_CANDIDATE",
+  "formal_validation": false,
+  "baseline_agreement_assumed": false,
+  "late_history_samples": 29,
+  "late_history_span_s": 140.0004236800205,
+  "late_QoI_descriptors": {
+    "Nu_hot": {
+      "relative_range": 6.765995084652184e-11,
+      "slope_per_second": -4.301900689588747e-13,
+      "relative_change_over_window": 6.794988997847878e-12
+    },
+    "Nu_cold": {
+      "relative_range": 7.33549306555849e-11,
+      "slope_per_second": 4.737772883737606e-13,
+      "relative_change_over_window": 7.483463001268472e-12
+    },
+    "Umax": {
+      "relative_range": 7.105804702941765e-10,
+      "slope_per_second": -2.0096679872918246e-11,
+      "relative_change_over_window": 4.334154326601466e-11
+    },
+    "Wmax": {
+      "relative_range": 5.26960277645762e-10,
+      "slope_per_second": 3.8989532677476496e-11,
+      "relative_change_over_window": 2.4822705796076846e-11
+    }
+  }
+}

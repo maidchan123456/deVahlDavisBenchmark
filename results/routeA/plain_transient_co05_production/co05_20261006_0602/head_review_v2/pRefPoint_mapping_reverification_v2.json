@@ -1,0 +1,17 @@
+{
+  "result": "PASS",
+  "native_global_local_geometry_identical": true,
+  "all_cells_once": true,
+  "mapping": [
+    {
+      "rank": 3,
+      "local_cell": 2107,
+      "global_cell": 12719,
+      "centre": [
+        0.0496875,
+        0.04968750000000001,
+        0.0005
+      ]
+    }
+  ]
+}

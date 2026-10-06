@@ -1,0 +1,27 @@
+{
+  "output": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/plain_transient_co05_production/co05_20261006_0602/postprocessing_v2",
+  "snapshots": 295,
+  "final": {
+    "time_s": 1420.0043825715495,
+    "tstar": 2.000006172635985,
+    "time_index": 143203,
+    "Nu_hot": 8.863412719910798,
+    "Nu_cold": 8.863412713264665,
+    "Umax": 64.91563253034387,
+    "Umax_Y": 0.85302734375,
+    "Wmax": 219.9015344727529,
+    "Wmax_X": 0.04052734375,
+    "speed_max_m_s": 0.0311322809413494,
+    "Uz_absmax_m_s": 3.2256692217359392e-24,
+    "Tmin_K": 299.50305241018526,
+    "Tmax_K": 300.49694700765383,
+    "symmetry_T_RMS_K": 6.125367480071459e-05,
+    "symmetry_U_RMS_m_s": 2.3011557734149107e-06,
+    "mass_kg": 1.0000000284767312e-05,
+    "sensible_internal_energy_proxy_J": 0.018499138166098786,
+    "kinetic_energy_J": 4.936543676954308e-10,
+    "Q_hot_W": 0.00012483679887198307,
+    "Q_cold_W": 0.00012483679877837558,
+    "native_rho_read": true
+  }
+}

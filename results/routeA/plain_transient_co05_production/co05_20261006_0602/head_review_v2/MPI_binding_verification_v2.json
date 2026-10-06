@@ -1,0 +1,169 @@
+{
+  "status": "PASS",
+  "CFD_EXECUTED": "NO",
+  "ranks": [
+    {
+      "rank": 0,
+      "pid": 463332,
+      "affinity": [
+        0,
+        12
+      ],
+      "physical_core": [
+        0,
+        0
+      ]
+    },
+    {
+      "rank": 1,
+      "pid": 463333,
+      "affinity": [
+        1,
+        13
+      ],
+      "physical_core": [
+        0,
+        1
+      ]
+    },
+    {
+      "rank": 2,
+      "pid": 463334,
+      "affinity": [
+        2,
+        14
+      ],
+      "physical_core": [
+        0,
+        2
+      ]
+    },
+    {
+      "rank": 3,
+      "pid": 463335,
+      "affinity": [
+        3,
+        15
+      ],
+      "physical_core": [
+        0,
+        3
+      ]
+    },
+    {
+      "rank": 4,
+      "pid": 463336,
+      "affinity": [
+        4,
+        16
+      ],
+      "physical_core": [
+        0,
+        4
+      ]
+    },
+    {
+      "rank": 5,
+      "pid": 463337,
+      "affinity": [
+        5,
+        17
+      ],
+      "physical_core": [
+        0,
+        5
+      ]
+    },
+    {
+      "rank": 6,
+      "pid": 463338,
+      "affinity": [
+        6,
+        18
+      ],
+      "physical_core": [
+        0,
+        6
+      ]
+    },
+    {
+      "rank": 7,
+      "pid": 463339,
+      "affinity": [
+        7,
+        19
+      ],
+      "physical_core": [
+        0,
+        7
+      ]
+    },
+    {
+      "rank": 8,
+      "pid": 463340,
+      "affinity": [
+        8,
+        20
+      ],
+      "physical_core": [
+        0,
+        8
+      ]
+    },
+    {
+      "rank": 9,
+      "pid": 463341,
+      "affinity": [
+        9,
+        21
+      ],
+      "physical_core": [
+        0,
+        9
+      ]
+    },
+    {
+      "rank": 10,
+      "pid": 463342,
+      "affinity": [
+        10,
+        22
+      ],
+      "physical_core": [
+        0,
+        10
+      ]
+    },
+    {
+      "rank": 11,
+      "pid": 463343,
+      "affinity": [
+        11,
+        23
+      ],
+      "physical_core": [
+        0,
+        11
+      ]
+    }
+  ],
+  "command_argv": [
+    "mpirun",
+    "--nooversubscribe",
+    "--map-by",
+    "core",
+    "--bind-to",
+    "core",
+    "--report-bindings",
+    "-np",
+    "12",
+    "/usr/bin/python3",
+    "-c",
+    "import os,json; print(json.dumps({\"rank\":int(os.environ[\"OMPI_COMM_WORLD_RANK\"]),\"pid\":os.getpid(),\"affinity\":sorted(os.sched_getaffinity(0))}),flush=True)"
+  ],
+  "threads": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "created_UTC": "2026-10-06T06:54:26.826888+00:00",
+  "monitor_source_sha256": "c32211200dc19bd8ee90f9a45a224176500d7d020117627463a362dabbc6cd0f",
+  "monitor_source_path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/plain_transient_co05_production/co05_20261006_0602/head_review_v2/monitor_production_v2.py",
+  "scope": "standard-log observer; invokes exactly the pinned v2 launcher; no field reads online",
+  "captured_during_initial_supervision": true
+}

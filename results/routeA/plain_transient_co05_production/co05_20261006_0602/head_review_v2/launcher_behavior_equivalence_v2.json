@@ -1,0 +1,19 @@
+{
+  "protected_function_AST_identity": {
+    "semantics": true,
+    "descendants": true,
+    "kill_tree": true,
+    "verified_master": true,
+    "fatal_line": true,
+    "final_state": true,
+    "execute": true
+  },
+  "execution_loop_unchanged": true,
+  "changes": [
+    "historical P kept at original prep; v2 envelope read separately",
+    "HEAD identity guard replaced by reviewed provenance plus sensitive byte identity",
+    "v2 plan/authorization/package seal verification added",
+    "execution namespace comes from v2 plan",
+    "dry print reflects current authorization YES"
+  ]
+}
