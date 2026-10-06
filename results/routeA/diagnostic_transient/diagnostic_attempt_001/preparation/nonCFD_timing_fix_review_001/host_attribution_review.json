@@ -1,0 +1,44 @@
+{
+  "actual_external_load_at_peak": "UNRESOLVED",
+  "bias_classification": "CONFIRMED",
+  "caveats": [
+    "New PID initial ticks need process birth/starttime and aligned sampling before subtracting them as exact interval work",
+    "Disappearing processes can lose final ticks",
+    "Host CPU snapshot is collected after sequential process samples",
+    "Watchdog/coordinator CPU is not external user workload but is omitted from inner own attribution",
+    "Linux /proc/io rchar/syscr are file-I/O counters; do not infer socket byte/syscall counts from them"
+  ],
+  "future_method": "Track (PID,starttime), observer and all registered groups; persist final waited CPU or bounded exit attribution; timestamp/bracket samples and report uncertainty. Keep 10percent threshold; formally review metric changes.",
+  "historical_rule_triggered": true,
+  "historical_threshold_unchanged": 0.1,
+  "inner_attribution_omits_qualification_observer_PIDs": [
+    446459,
+    446460
+  ],
+  "intervals_over_threshold": 1,
+  "maximum_excluding_new_PID_intervals": 0.07954545454545454,
+  "observer_CPU_ticks_visible_in_outer_trace": {
+    "446459": 440,
+    "446460": 1360
+  },
+  "sensitivity_is_not_revised_acceptance": true,
+  "whole_trace_tick_residual_fraction_descriptive": 0.044860306478278385,
+  "worst_interval": {
+    "attributed_ticks": 4,
+    "busy_host_ticks": 15,
+    "historical_other_fraction": 0.12222222222222222,
+    "lost_PIDs": [],
+    "new_PIDs": [
+      446462,
+      446463,
+      446464,
+      446465,
+      446466
+    ],
+    "new_initial_tick_sensitivity_fraction": 0.07777777777777778,
+    "new_initial_ticks_omitted": 4,
+    "start_relative_seconds": 0.8587534739635885,
+    "total_host_ticks": 90,
+    "wall_delta": 0.03684392699506134
+  }
+}

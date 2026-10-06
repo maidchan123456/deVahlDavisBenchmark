@@ -1,0 +1,103 @@
+{
+  "CFD_executed": false,
+  "actual_target_measurement": false,
+  "artifacts": [
+    {
+      "bytes": 43394,
+      "path": "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_nonCFD_timing_qualification_fix_review.json",
+      "sha256": "54c3fbadbe1d99f110c9ee194b8e8387a9dd2778029dec74929b9b55981623e9"
+    },
+    {
+      "bytes": 21321,
+      "path": "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_nonCFD_timing_qualification_fix_review.md",
+      "sha256": "2ad8b279d8daafc7ceaab8522d35df80314d9a34300d05db27a69b0b80a1f6e4"
+    },
+    {
+      "bytes": 2609,
+      "path": "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_architecture_options.csv",
+      "sha256": "38b693426c3a90c10842b6c88b64ebec23d47d2240686114449cf76447c2b8d3"
+    },
+    {
+      "bytes": 2756,
+      "path": "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_budget_revision_model.csv",
+      "sha256": "e5690513f9c590e42c87274b65f04508250bb5352130ff781ca828d1a28970a9"
+    },
+    {
+      "bytes": 1587,
+      "path": "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_callback_critical_path.csv",
+      "sha256": "edb1000b4e072d8721af53481dfa71c3c67d67f8a719af0eb3030a4aec6b7fef"
+    },
+    {
+      "bytes": 1332,
+      "path": "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_failed_startup_breakdown.csv",
+      "sha256": "f71e4ed5257e0ee8da41d503dd8e8a19e7a206eb630f37a2947a18fa89cb0c4c"
+    },
+    {
+      "bytes": 1980,
+      "path": "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_payload_static_dynamic_review.csv",
+      "sha256": "d1d99be0fdaa716af72404db52126ba5135aa68f2c8ee01e07086b03215bab74"
+    },
+    {
+      "bytes": 64307,
+      "path": "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/nonCFD_timing_fix_review_001/analyze_failed_campaign.py",
+      "sha256": "7eecff393a92c499540c3845780a530930ad4fd3462a73ed446fcbfcea558764"
+    },
+    {
+      "bytes": 5084,
+      "path": "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/nonCFD_timing_fix_review_001/budget_model.json",
+      "sha256": "c6a858b1fc341a68a424daa2e8cf3b47b977f16f1025912390b7792d32f0c1c7"
+    },
+    {
+      "bytes": 6761,
+      "path": "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/nonCFD_timing_fix_review_001/callback_taxonomy_model.csv",
+      "sha256": "c13d1b4400951bb78984f212d59e2ee3477754ce276934786abc2f9cc46ceaa2"
+    },
+    {
+      "bytes": 1989,
+      "path": "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/nonCFD_timing_fix_review_001/end_guard.json",
+      "sha256": "5f0753441e97df3784abab3350142e4b1c10f273c21643ffea8636630f41d7f0"
+    },
+    {
+      "bytes": 1753,
+      "path": "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/nonCFD_timing_fix_review_001/host_attribution_review.json",
+      "sha256": "40e0a9845aea25012942bc6da9fc680d858d24336e53a5adb1345a70a0fb557e"
+    },
+    {
+      "bytes": 16525,
+      "path": "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/nonCFD_timing_fix_review_001/regression.json",
+      "sha256": "648b1ab409f0c9e5948de6d4951e8982934173205983c5098c6a9be7eb020327"
+    },
+    {
+      "bytes": 5301,
+      "path": "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/nonCFD_timing_fix_review_001/regression.log",
+      "sha256": "a3df45daee9d11a4bcbb7cbdabd32bf3c81fa6aa3bd511f6941a3116722b8a4e"
+    },
+    {
+      "bytes": 2416,
+      "path": "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/nonCFD_timing_fix_review_001/required_final_status.txt",
+      "sha256": "0afdd8f192e116295ad08eb5de8343a201c417605734a976769f5c88e16b192f"
+    },
+    {
+      "bytes": 22014,
+      "path": "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/nonCFD_timing_fix_review_001/start_guard.json",
+      "sha256": "81f0a95cc29521ac3ab17c7680742314e98f4fa3aaffc935a31c6ee303fdbe15"
+    },
+    {
+      "bytes": 1263,
+      "path": "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/nonCFD_timing_fix_review_001/static_value_byte_reconstruction.json",
+      "sha256": "75c97335b6338d1eff1dda81d626f1bb0287ee88e6807886413b24dc2f1064a1"
+    },
+    {
+      "bytes": 3052,
+      "path": "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/nonCFD_timing_fix_review_001/timeout_safe_observability_design.json",
+      "sha256": "6cfb831f7e074bbd48bbddcdfb777299fbc7a80abc7252535bc006cd9580ccac"
+    },
+    {
+      "bytes": 1718,
+      "path": "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/nonCFD_timing_fix_review_001/tiny_receiver_structure_probe.json",
+      "sha256": "ce4d388197e4294210f4e05e9079dcd0a28c95157b1bc96eaff3a64470c957f6"
+    }
+  ],
+  "schema": "nonCFD_failure_review_evidence/1",
+  "status": "COMPLETE"
+}

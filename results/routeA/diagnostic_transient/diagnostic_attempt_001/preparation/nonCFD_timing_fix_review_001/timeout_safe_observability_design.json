@@ -1,0 +1,43 @@
+{
+  "implemented": false,
+  "next_design": {
+    "bounds": {
+      "Q1_callback_receipts_max": 1145,
+      "Q1_existing_layout_upper": 111,
+      "Q1_extra_files_model": 3,
+      "Q1_ledger_bytes_upper": 75038720,
+      "Q1_ledger_chunks_max": 2,
+      "Q1_proposed_layout_with_ledger_before_trace_revision": 114,
+      "chunk_max_bytes": 67108864,
+      "per_receipt_max_bytes": 65536
+    },
+    "durability_boundary": "Commit bounded per-callback aggregate receipt before ACK; native completed progress remains an independent ACK-delivery witness",
+    "fail_closed": "Ledger hash/quota/fsync failure prevents success ACK and stops the campaign; reserved STOP evidence remains",
+    "inflight_marker": "Bounded qualification-only phase marker for next expected callback; never a scientific completed receipt",
+    "kill_policy": "No SIGTERM-only reliance: durable completed prefix survives SIGKILL; incomplete tail is invalid, bounded and retained",
+    "location": "Future qualification instrumentation around current backend; never edit v1_4 in this task",
+    "no_per_byte_timer_wrapper": "Time readline as one receive span; per-byte Python wrappers would materially change a millions-call path",
+    "overhead": "MEASUREMENT_OBSERVER_OVERHEAD named separately; measure aggregate/encode/hash/write/sync and persist preceding completed publication costs. Final self-publication sync cannot be self-timed in its own receipt; disclose coverage and include external ACK wall, never invent zero.",
+    "periodic_checkpoint_tradeoff": "Periodic-only K callbacks may lose up to K acknowledged callbacks. Optional batching is acceptable only after new protocol formally permits that bounded loss; it does not meet all-completed-callback durability by itself.",
+    "receipt_fields": [
+      "qualification/stage/trial/sequence/class/payload SHA",
+      "native/backend PID and original packet identity",
+      "receive/decode/canonical/replay/packing/hash/persistence/ACK-preparation inclusive/exclusive tree",
+      "bytes/counters and phase timestamps",
+      "previous receipt hash and record hash",
+      "measurement observer overhead and accounting coverage"
+    ]
+  },
+  "qualification_side_only": true,
+  "required_tiny_acceptance": [
+    "Original46 regression unchanged",
+    "Completed data + SIGTERM/SIGKILL mid-next callback",
+    "Partial ledger write/chain corruption/record ordering/readback",
+    "Near-byte/file reserve and ledger failure before ACK",
+    "Exact payload content/graph/persistence invariance",
+    "Instrumentation enabled/disabled tiny paired overhead accounting (not target performance)",
+    "Finalization with no reliance on final backend_result.json"
+  ],
+  "scientific_and_production_sources_unchanged": true,
+  "why_not_implemented_now": "Bytewise receive is also present in frozen production-like v1_4/server.py; the minimal meaningful next change requires a separate compute/equivalence review. This task supplies the observer design without altering the active hash-pinned backend or claiming new readiness."
+}

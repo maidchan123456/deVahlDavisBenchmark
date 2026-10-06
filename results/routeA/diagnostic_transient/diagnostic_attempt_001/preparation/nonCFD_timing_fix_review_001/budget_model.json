@@ -1,0 +1,109 @@
+{
+  "accounted_max_simultaneous_bytes": 12700352512,
+  "combined_descriptive_trace_bytes_per_second": 125515.22366464057,
+  "conditional_models": [
+    {
+      "basis": "42_FREQUENCIES_AND_COPY_SHAPES_PLUS_ASSUMED_MATRIX_BYTES_AND_PREFIX_BYTE_NORMALIZATION_NOT_CLASS_TIMINGS",
+      "completion_guarantee": false,
+      "full_stage_seconds": 17355.62063644923,
+      "model_IPC_bytes": 3401905659.7,
+      "modeled_callback_seconds": 4338.905159112307,
+      "projected_raw_trace_bytes": 2178394606.0225763,
+      "scenario": "lower_shape_assumption",
+      "scope": "ONE_FULL_STARTUP_SOURCE_SHAPE_WHAT_IF",
+      "trial_seconds": "UNRESOLVED_TOTAL_COMPLETION_BUDGET",
+      "unmeasured_cost": "Matrix replay/term synchronization, class-specific hashes, full startup audit, selected writes, finalization, 3 OFF framework costs, observer persistence; may invalidate linear byte-cost model"
+    },
+    {
+      "basis": "42_FREQUENCIES_AND_COPY_SHAPES_PLUS_ASSUMED_MATRIX_BYTES_AND_PREFIX_BYTE_NORMALIZATION_NOT_CLASS_TIMINGS",
+      "completion_guarantee": false,
+      "full_stage_seconds": 27496.973056412036,
+      "model_IPC_bytes": 5389434174.0,
+      "modeled_callback_seconds": 6874.243264103009,
+      "projected_raw_trace_bytes": 3451288723.276152,
+      "scenario": "central_shape_assumption",
+      "scope": "ONE_FULL_STARTUP_SOURCE_SHAPE_WHAT_IF",
+      "trial_seconds": "UNRESOLVED_TOTAL_COMPLETION_BUDGET",
+      "unmeasured_cost": "Matrix replay/term synchronization, class-specific hashes, full startup audit, selected writes, finalization, 3 OFF framework costs, observer persistence; may invalidate linear byte-cost model"
+    },
+    {
+      "basis": "42_FREQUENCIES_AND_COPY_SHAPES_PLUS_ASSUMED_MATRIX_BYTES_AND_PREFIX_BYTE_NORMALIZATION_NOT_CLASS_TIMINGS",
+      "completion_guarantee": false,
+      "full_stage_seconds": 41614.917671294745,
+      "model_IPC_bytes": 8156305526.400001,
+      "modeled_callback_seconds": 10403.729417823686,
+      "projected_raw_trace_bytes": 5223305699.298163,
+      "scenario": "conservative_shape_assumption",
+      "scope": "ONE_FULL_STARTUP_SOURCE_SHAPE_WHAT_IF",
+      "trial_seconds": "UNRESOLVED_TOTAL_COMPLETION_BUDGET",
+      "unmeasured_cost": "Matrix replay/term synchronization, class-specific hashes, full startup audit, selected writes, finalization, 3 OFF framework costs, observer persistence; may invalidate linear byte-cost model"
+    }
+  ],
+  "constructor_measured_once_separately": true,
+  "current_Q1_stage_seconds": 300,
+  "current_Q1_trial_seconds": 30,
+  "current_trace_metadata_reserve_bytes": 402653184,
+  "finite_scout_proposals": [
+    {
+      "registered": false,
+      "scope": "FOUR_CONTROL_CALLBACK_OBSERVABILITY_ONLY_NOT_FULL_Q1",
+      "stage_seconds": 90,
+      "trial_seconds": 60
+    },
+    {
+      "registered": false,
+      "scope": "FOUR_CONTROL_CALLBACK_OBSERVABILITY_ONLY_NOT_FULL_Q1",
+      "stage_seconds": 150,
+      "trial_seconds": 90
+    },
+    {
+      "registered": false,
+      "scope": "FOUR_CONTROL_CALLBACK_OBSERVABILITY_ONLY_NOT_FULL_Q1",
+      "stage_seconds": 180,
+      "trial_seconds": 120
+    }
+  ],
+  "full_campaign_model_is_production_runtime_projection": false,
+  "longer_trial_alone_is_safe": false,
+  "measured_target_classes": 3,
+  "model_basis": "MEASURED_PREFIX_PLUS_MODEL",
+  "new_budgets_registered": false,
+  "no_automatic_timeout_doubling": true,
+  "observed_outer_trace_bytes_per_second": 69484.94959758097,
+  "observed_trial_trace_bytes_per_second": 56030.27406705959,
+  "preregistration_requirements": [
+    "Class-size/cost screening with timeout-safe spans",
+    "Reconcile longer raw-trace/file/metadata accounting or approve lossless representation compaction",
+    "Account observer work and fixture/setup/three OFF trials plus all ON finalizations",
+    "Keep hard AS/RSS/host/storage guards and independent process-group supervisor",
+    "Issue a new plan/hash/harness/readiness/authorization and qualification ID; never resume failed archive"
+  ],
+  "recommended_complete_Q1_stage_seconds": "UNRESOLVED",
+  "recommended_complete_Q1_trial_seconds": "UNRESOLVED",
+  "registered_Q1_scratch_bytes": 12884901888,
+  "shape_assumptions": {
+    "cost_per_byte_proxy_seconds": 1.2756235126939242e-06,
+    "matrix_slot_assumed_bytes": [
+      500000,
+      1500000,
+      3000000
+    ],
+    "missing_class_specific_backend_work": "UNRESOLVED",
+    "proxy_warning": "Controls only, host rule triggered; not stable coefficient for all classes",
+    "reason": "Half of measured two-state-copy control packet, including envelope uncertainty; not isolated state measurement",
+    "state_copy_base_bytes": 2449131.0,
+    "state_factors": [
+      0.7,
+      1.0,
+      1.4
+    ],
+    "term_array_assumed_bytes": 51201
+  },
+  "taxonomy_callbacks": 1144,
+  "taxonomy_matrix_packets": 701,
+  "trace_plus_slack_duration_at_observed_rate_seconds": 4678.337359051557,
+  "trace_plus_unused_slack_bytes": 587202560,
+  "trace_reserve_only_duration_at_observed_rate_seconds": 3208.0027604924962,
+  "unmeasured_target_classes": 39,
+  "unused_accounting_slack_bytes": 184549376
+}

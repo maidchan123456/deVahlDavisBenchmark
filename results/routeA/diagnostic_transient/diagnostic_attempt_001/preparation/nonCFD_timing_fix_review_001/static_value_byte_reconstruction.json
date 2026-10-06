@@ -1,0 +1,28 @@
+{
+  "Cv_occurrences": 4,
+  "canonical_Cv_value_bytes": 51201,
+  "canonical_g_value_bytes": 7,
+  "canonical_geometry_value_bytes": 770254,
+  "canonical_volume_value_bytes": 588801,
+  "denominator_observed_prefix_IPC_bytes": 21038037,
+  "distinct_static_value_bytes": 1410263,
+  "full_message_redundancy_fraction": "UNRESOLVED_RAW_MESSAGES_NOT_RETAINED",
+  "g_occurrences": 4,
+  "geometry_occurrences_in_four_packets": 8,
+  "intra_message_duplicate_geometry_volume_value_bytes": 5436220,
+  "method": "Source-proven occurrence counts times canonical bytes of actual retained immutable values; native/canonical codec equivalence is frozen and covered by original tests",
+  "no_linear_wall_time_saving_claim": true,
+  "no_removal_of_required_hashes": true,
+  "no_transport_optimization_implemented": true,
+  "omissions": [
+    "Repeated JSON keys and delimiters",
+    "Patch metadata",
+    "Duplicate dynamic fields and oldTime content",
+    "Additional matrix owner/neighbour/volume repeats in unmeasured classes"
+  ],
+  "reconstructed_static_value_bytes_prefix": 11077272,
+  "redundant_static_value_bytes_lower_bound": 9667009,
+  "redundant_static_value_fraction_lower_bound": 0.4595014734502083,
+  "status": "CONFIRMED",
+  "volume_occurrences_in_four_packets": 8
+}

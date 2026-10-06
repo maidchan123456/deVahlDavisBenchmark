@@ -1,0 +1,21 @@
+{
+  "CFD_executed": false,
+  "active_source_plan_authority_manifest_unchanged": true,
+  "actual_Q1_Q2_retries": 0,
+  "existing_regression": "PASS",
+  "existing_regression_tests": 46,
+  "failed_49_files_SHA_size_mtime_unchanged": true,
+  "failed_file_set_unchanged": true,
+  "git_HEAD": "69406b991d6c35f77d2cd9601021d453407562dc",
+  "git_add_commit_push_executed": false,
+  "git_status_short": "?? cases/routeA/A-H-Ra1e6-fine-beta1e-4/\n?? cases/routeA/A-Ra1e3-coarse/\n?? cases/routeA/A-Ra1e3-fine/\n?? cases/routeA/A-Ra1e3-medium/\n?? cases/routeA/A-Ra1e4-coarse/\n?? cases/routeA/A-Ra1e4-fine/\n?? cases/routeA/A-Ra1e4-medium/\n?? cases/routeA/A-Ra1e5-coarse/\n?? cases/routeA/A-Ra1e5-fine/\n?? cases/routeA/A-Ra1e5-medium/\n?? cases/routeA/A-Ra1e6-coarse/\n?? cases/routeA/A-Ra1e6-fine/\n?? cases/routeA/A-Ra1e6-medium/\n?? cases/routeA/Ra0_medium/\n?? cases/routeA/Ra1e4_coarse/\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_nonCFD_timing_qualification_fix_review.json\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_nonCFD_timing_qualification_fix_review.md\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_architecture_options.csv\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_budget_revision_model.csv\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_callback_critical_path.csv\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_failed_startup_breakdown.csv\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/TimingQualification_payload_static_dynamic_review.csv\n?? results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/nonCFD_timing_fix_review_001/\n",
+  "observability_fix_implemented": false,
+  "prefix_byte_span_recomputation": "PASS",
+  "review_artifacts_verified": 19,
+  "review_manifest_SHA256": "c8c52b721243e208377ab3d07abcf0368a5c279ac7d184985701e8140af1317c",
+  "source_syntax_and_whitespace": "PASS",
+  "status": "PASS",
+  "taxonomy_42_1144_701": "PASS",
+  "tiny_structural_receiver_probe": "PASS",
+  "tracked_diff_empty": true
+}

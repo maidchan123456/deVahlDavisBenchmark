@@ -1,0 +1,914 @@
+{
+  "HEAD": "69406b991d6c35f77d2cd9601021d453407562dc",
+  "Q2_gate_review": {
+    "changed": false,
+    "execution_now": false,
+    "information_value": "HIGH",
+    "mandatory_future_boundaries": [
+      "New formally reviewed scope/name/prerequisites/authority",
+      "No Q3/production/time advance",
+      "Hash-pinned unchanged algorithm and exact payload classes",
+      "Finite one-shot stage/trial/AS/RSS/storage guards, new ID/auth",
+      "Isolated diagnostic results never become Q1/Q2 full-stage PASS"
+    ],
+    "recommended_review": "Separate diagnostic-only primitive/receiver substage from full Q2 acceptance; isolated U03 is safe in resource-only histories but secondary to startup cause"
+  },
+  "authority": {
+    "COMPLETE_EXECUTION_CONFIGURATION_FROZEN": "NO",
+    "EXECUTION_AUTHORIZED": "NO",
+    "RESOURCE_READINESS": "NO",
+    "RUNTIME_AUTHORITY_COMPATIBILITY": "PASS",
+    "canonical_authority": {
+      "path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/docs/routeA_diagnostic_transient_contract_v1.5.json",
+      "sha256": "06c71945289ffe419b784843f7aab2fea66c44d28c9dba46d828bbd24837e27d",
+      "version": "1.5"
+    },
+    "current_execution_guard": "DIAGNOSTIC_TRANSIENT_RESOURCE_QUALIFICATION_PENDING_NO_RUN_AUTHORIZATION",
+    "formal_authority": {
+      "path": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/docs/routeA_execution_contract_v1.7.json",
+      "sha256": "fbc744e012f66b37b5d9409be961cb5a9410c3d75ac7e2f026b2acf118d3bb60",
+      "version": "1.7"
+    },
+    "implementation_generation": "v1.4",
+    "manifest_sha256": "703a4e11a1d15af5aecdf7a0e1059cc2f0d3cd92605a2e06f1601ee6c8870d11",
+    "mapping_input_HEAD": "90183094936266183e1e1fb4487f0f0a512c512b",
+    "native_and_library_identities_verified": 851,
+    "production_run_authorized": false,
+    "qualification_execution_authorized": false,
+    "qualification_permissions": {
+      "PRODUCTION": {
+        "CFD_solve": true,
+        "authorization_scope": "PRODUCTION_CFD",
+        "execution_implemented": false,
+        "production_namespace": true,
+        "resource_ready_required": true,
+        "stage_prerequisites": "stage-specific pinned plan and prior stage PASS",
+        "time_advance": true
+      },
+      "Q0": {
+        "CFD_solve": false,
+        "authorization_scope": "RUNTIME_AUTHORITY_COMPATIBILITY_FIX",
+        "execution_implemented": false,
+        "production_namespace": false,
+        "resource_ready_required": false,
+        "stage_prerequisites": "stage-specific pinned plan and prior stage PASS",
+        "time_advance": false
+      },
+      "Q1": {
+        "CFD_solve": false,
+        "authorization_scope": "NONCFD_TIMING_QUALIFICATION",
+        "execution_implemented": false,
+        "production_namespace": false,
+        "resource_ready_required": false,
+        "stage_prerequisites": "stage-specific pinned plan and prior stage PASS",
+        "time_advance": false
+      },
+      "Q2": {
+        "CFD_solve": false,
+        "authorization_scope": "NONCFD_TIMING_QUALIFICATION",
+        "execution_implemented": false,
+        "production_namespace": false,
+        "resource_ready_required": false,
+        "stage_prerequisites": "stage-specific pinned plan and prior stage PASS",
+        "time_advance": false
+      },
+      "Q3": {
+        "CFD_solve": true,
+        "authorization_scope": "Q3_BOUNDED_CFD_TIMING_QUALIFICATION",
+        "execution_implemented": false,
+        "production_namespace": false,
+        "resource_ready_required": false,
+        "stage_prerequisites": "Q0-Q2 PASS + memory/IO PASS + practical budget/risk + separate auth",
+        "time_advance": true
+      }
+    },
+    "repository_files_verified": 91,
+    "resource_ready": false,
+    "rule_id": "EXACT_V15_MACHINE_METADATA_TO_FROZEN_V14_RESOURCE_RUNTIME",
+    "schema": "routeA_runtime_authority_receipt/1.0",
+    "semantic_diff_leaves_verified": 134,
+    "semantic_report_errata": [
+      {
+        "canonical_after": "2026-10-05T22:12:28.543211+09:00",
+        "path": "/prepared_at",
+        "report_after": "2026-10-05T22:15:07.015846+09:00",
+        "scope": "EXACT_PROVENANCE_TIMESTAMP_ONLY_NO_SCIENTIFIC_DIFFERENCE"
+      }
+    ],
+    "timestamp_UTC": "2026-10-06T00:12:39.024761+00:00"
+  },
+  "budget": {
+    "accounted_max_simultaneous_bytes": 12700352512,
+    "combined_descriptive_trace_bytes_per_second": 125515.22366464057,
+    "conditional_models": [
+      {
+        "basis": "42_FREQUENCIES_AND_COPY_SHAPES_PLUS_ASSUMED_MATRIX_BYTES_AND_PREFIX_BYTE_NORMALIZATION_NOT_CLASS_TIMINGS",
+        "completion_guarantee": false,
+        "full_stage_seconds": 17355.62063644923,
+        "model_IPC_bytes": 3401905659.7,
+        "modeled_callback_seconds": 4338.905159112307,
+        "projected_raw_trace_bytes": 2178394606.0225763,
+        "scenario": "lower_shape_assumption",
+        "scope": "ONE_FULL_STARTUP_SOURCE_SHAPE_WHAT_IF",
+        "trial_seconds": "UNRESOLVED_TOTAL_COMPLETION_BUDGET",
+        "unmeasured_cost": "Matrix replay/term synchronization, class-specific hashes, full startup audit, selected writes, finalization, 3 OFF framework costs, observer persistence; may invalidate linear byte-cost model"
+      },
+      {
+        "basis": "42_FREQUENCIES_AND_COPY_SHAPES_PLUS_ASSUMED_MATRIX_BYTES_AND_PREFIX_BYTE_NORMALIZATION_NOT_CLASS_TIMINGS",
+        "completion_guarantee": false,
+        "full_stage_seconds": 27496.973056412036,
+        "model_IPC_bytes": 5389434174.0,
+        "modeled_callback_seconds": 6874.243264103009,
+        "projected_raw_trace_bytes": 3451288723.276152,
+        "scenario": "central_shape_assumption",
+        "scope": "ONE_FULL_STARTUP_SOURCE_SHAPE_WHAT_IF",
+        "trial_seconds": "UNRESOLVED_TOTAL_COMPLETION_BUDGET",
+        "unmeasured_cost": "Matrix replay/term synchronization, class-specific hashes, full startup audit, selected writes, finalization, 3 OFF framework costs, observer persistence; may invalidate linear byte-cost model"
+      },
+      {
+        "basis": "42_FREQUENCIES_AND_COPY_SHAPES_PLUS_ASSUMED_MATRIX_BYTES_AND_PREFIX_BYTE_NORMALIZATION_NOT_CLASS_TIMINGS",
+        "completion_guarantee": false,
+        "full_stage_seconds": 41614.917671294745,
+        "model_IPC_bytes": 8156305526.400001,
+        "modeled_callback_seconds": 10403.729417823686,
+        "projected_raw_trace_bytes": 5223305699.298163,
+        "scenario": "conservative_shape_assumption",
+        "scope": "ONE_FULL_STARTUP_SOURCE_SHAPE_WHAT_IF",
+        "trial_seconds": "UNRESOLVED_TOTAL_COMPLETION_BUDGET",
+        "unmeasured_cost": "Matrix replay/term synchronization, class-specific hashes, full startup audit, selected writes, finalization, 3 OFF framework costs, observer persistence; may invalidate linear byte-cost model"
+      }
+    ],
+    "constructor_measured_once_separately": true,
+    "current_Q1_stage_seconds": 300,
+    "current_Q1_trial_seconds": 30,
+    "current_trace_metadata_reserve_bytes": 402653184,
+    "finite_scout_proposals": [
+      {
+        "registered": false,
+        "scope": "FOUR_CONTROL_CALLBACK_OBSERVABILITY_ONLY_NOT_FULL_Q1",
+        "stage_seconds": 90,
+        "trial_seconds": 60
+      },
+      {
+        "registered": false,
+        "scope": "FOUR_CONTROL_CALLBACK_OBSERVABILITY_ONLY_NOT_FULL_Q1",
+        "stage_seconds": 150,
+        "trial_seconds": 90
+      },
+      {
+        "registered": false,
+        "scope": "FOUR_CONTROL_CALLBACK_OBSERVABILITY_ONLY_NOT_FULL_Q1",
+        "stage_seconds": 180,
+        "trial_seconds": 120
+      }
+    ],
+    "full_campaign_model_is_production_runtime_projection": false,
+    "longer_trial_alone_is_safe": false,
+    "measured_target_classes": 3,
+    "model_basis": "MEASURED_PREFIX_PLUS_MODEL",
+    "new_budgets_registered": false,
+    "no_automatic_timeout_doubling": true,
+    "observed_outer_trace_bytes_per_second": 69484.94959758097,
+    "observed_trial_trace_bytes_per_second": 56030.27406705959,
+    "preregistration_requirements": [
+      "Class-size/cost screening with timeout-safe spans",
+      "Reconcile longer raw-trace/file/metadata accounting or approve lossless representation compaction",
+      "Account observer work and fixture/setup/three OFF trials plus all ON finalizations",
+      "Keep hard AS/RSS/host/storage guards and independent process-group supervisor",
+      "Issue a new plan/hash/harness/readiness/authorization and qualification ID; never resume failed archive"
+    ],
+    "recommended_complete_Q1_stage_seconds": "UNRESOLVED",
+    "recommended_complete_Q1_trial_seconds": "UNRESOLVED",
+    "registered_Q1_scratch_bytes": 12884901888,
+    "shape_assumptions": {
+      "cost_per_byte_proxy_seconds": 1.2756235126939242e-06,
+      "matrix_slot_assumed_bytes": [
+        500000,
+        1500000,
+        3000000
+      ],
+      "missing_class_specific_backend_work": "UNRESOLVED",
+      "proxy_warning": "Controls only, host rule triggered; not stable coefficient for all classes",
+      "reason": "Half of measured two-state-copy control packet, including envelope uncertainty; not isolated state measurement",
+      "state_copy_base_bytes": 2449131.0,
+      "state_factors": [
+        0.7,
+        1.0,
+        1.4
+      ],
+      "term_array_assumed_bytes": 51201
+    },
+    "taxonomy_callbacks": 1144,
+    "taxonomy_matrix_packets": 701,
+    "trace_plus_slack_duration_at_observed_rate_seconds": 4678.337359051557,
+    "trace_plus_unused_slack_bytes": 587202560,
+    "trace_reserve_only_duration_at_observed_rate_seconds": 3208.0027604924962,
+    "unmeasured_target_classes": 39,
+    "unused_accounting_slack_bytes": 184549376
+  },
+  "completed_prefix": {
+    "ACK_includes_backend_and_is_not_additive": true,
+    "actual_IPC_prefix_bytes": 21038037,
+    "backend_CPU_inside_callback_windows_sampled_lower_bound": 20.439999999999998,
+    "callback_rows": [
+      {
+        "ACK_wait_seconds": 2.512654550955631,
+        "JSON_IPC_bytes_observed": 6343251,
+        "backend_CPU_seconds_inside_callback_sampled_lower_bound": 5.99,
+        "backend_CPU_seconds_inside_inferred_ACK_window_sampled_lower_bound": 2.34,
+        "backend_CPU_seconds_inside_inferred_send_window_sampled_lower_bound": 3.57,
+        "callback": "constructor_complete",
+        "callback_ordinal": 1,
+        "construct_seconds": 0.14185208291746676,
+        "descriptive_send_MBps_decimal": 1.756645028937098,
+        "hash_bind_seconds": 0.8692994159646332,
+        "inclusive_seconds": 7.445911754970439,
+        "serialization_seconds": 0.3110751360654831,
+        "socket_send_seconds": 3.611003302037716,
+        "throughput_is_network_bandwidth": false,
+        "timing_scope": "COMPLETED_CALLBACK_PREFIX_OF_CENSORED_TRIAL"
+      },
+      {
+        "ACK_wait_seconds": 2.0962973620044068,
+        "JSON_IPC_bytes_observed": 4898261,
+        "backend_CPU_seconds_inside_callback_sampled_lower_bound": 4.81,
+        "backend_CPU_seconds_inside_inferred_ACK_window_sampled_lower_bound": 2.06,
+        "backend_CPU_seconds_inside_inferred_send_window_sampled_lower_bound": 2.68,
+        "callback": "preSolve_before",
+        "callback_ordinal": 2,
+        "construct_seconds": 0.09172032494097948,
+        "descriptive_send_MBps_decimal": 1.7936411624151571,
+        "hash_bind_seconds": 1.2515378729440272,
+        "inclusive_seconds": 6.482728749047965,
+        "serialization_seconds": 0.31224837992340326,
+        "socket_send_seconds": 2.730903540039435,
+        "throughput_is_network_bandwidth": false,
+        "timing_scope": "COMPLETED_CALLBACK_PREFIX_OF_CENSORED_TRIAL"
+      },
+      {
+        "ACK_wait_seconds": 2.112089917063713,
+        "JSON_IPC_bytes_observed": 4898260,
+        "backend_CPU_seconds_inside_callback_sampled_lower_bound": 4.81,
+        "backend_CPU_seconds_inside_inferred_ACK_window_sampled_lower_bound": 2.09,
+        "backend_CPU_seconds_inside_inferred_send_window_sampled_lower_bound": 2.64,
+        "callback": "preSolve_after",
+        "callback_ordinal": 3,
+        "construct_seconds": 0.08981048304121941,
+        "descriptive_send_MBps_decimal": 1.8105941739243308,
+        "hash_bind_seconds": 1.2278301999904215,
+        "inclusive_seconds": 6.447263544076122,
+        "serialization_seconds": 0.3121799200307578,
+        "socket_send_seconds": 2.705332907033153,
+        "throughput_is_network_bandwidth": false,
+        "timing_scope": "COMPLETED_CALLBACK_PREFIX_OF_CENSORED_TRIAL"
+      },
+      {
+        "ACK_wait_seconds": 2.1097623499808833,
+        "JSON_IPC_bytes_observed": 4898265,
+        "backend_CPU_seconds_inside_callback_sampled_lower_bound": 4.83,
+        "backend_CPU_seconds_inside_inferred_ACK_window_sampled_lower_bound": 2.06,
+        "backend_CPU_seconds_inside_inferred_send_window_sampled_lower_bound": 2.69,
+        "callback": "controller_complete",
+        "callback_ordinal": 4,
+        "construct_seconds": 0.08928880095481873,
+        "descriptive_send_MBps_decimal": 1.7983898024194105,
+        "hash_bind_seconds": 1.226364989997819,
+        "inclusive_seconds": 6.460710610030219,
+        "serialization_seconds": 0.3115775469923392,
+        "socket_send_seconds": 2.7236948260106146,
+        "throughput_is_network_bandwidth": false,
+        "timing_scope": "COMPLETED_CALLBACK_PREFIX_OF_CENSORED_TRIAL"
+      }
+    ],
+    "critical_paths": [
+      {
+        "backend_child_cost": "UNRESOLVED_NOT_DURABLE",
+        "backend_overlap": "Reader overlaps native send; remaining read/decode/evaluate/Writer/Live overlaps ACK wait",
+        "backend_times_additive_to_send_ACK": false,
+        "callback": "constructor_complete",
+        "callback_ordinal": 1,
+        "end_relative_seconds": 9.610559383989312,
+        "inferred_send_start_relative_seconds": 3.486874263966456,
+        "native_pre_send_seconds": 1.322226634947583,
+        "post_send_ACK_wait_seconds": 2.512654550955631,
+        "socket_backpressure_interval_seconds": 3.611003302037716,
+        "start_relative_seconds": 2.164647629018873,
+        "window_boundary_method": "Native start plus measured pre-send spans; tiny unsampled overhead remains"
+      },
+      {
+        "backend_child_cost": "UNRESOLVED_NOT_DURABLE",
+        "backend_overlap": "Reader overlaps native send; remaining read/decode/evaluate/Writer/Live overlaps ACK wait",
+        "backend_times_additive_to_send_ACK": false,
+        "callback": "preSolve_before",
+        "callback_ordinal": 2,
+        "end_relative_seconds": 16.17078821605537,
+        "inferred_send_start_relative_seconds": 11.343566044815816,
+        "native_pre_send_seconds": 1.65550657780841,
+        "post_send_ACK_wait_seconds": 2.0962973620044068,
+        "socket_backpressure_interval_seconds": 2.730903540039435,
+        "start_relative_seconds": 9.688059467007406,
+        "window_boundary_method": "Native start plus measured pre-send spans; tiny unsampled overhead remains"
+      },
+      {
+        "backend_child_cost": "UNRESOLVED_NOT_DURABLE",
+        "backend_overlap": "Reader overlaps native send; remaining read/decode/evaluate/Writer/Live overlaps ACK wait",
+        "backend_times_additive_to_send_ACK": false,
+        "callback": "preSolve_after",
+        "callback_ordinal": 3,
+        "end_relative_seconds": 22.68779767502565,
+        "inferred_send_start_relative_seconds": 17.870354734011926,
+        "native_pre_send_seconds": 1.6298206030623987,
+        "post_send_ACK_wait_seconds": 2.112089917063713,
+        "socket_backpressure_interval_seconds": 2.705332907033153,
+        "start_relative_seconds": 16.240534130949527,
+        "window_boundary_method": "Native start plus measured pre-send spans; tiny unsampled overhead remains"
+      },
+      {
+        "backend_child_cost": "UNRESOLVED_NOT_DURABLE",
+        "backend_overlap": "Reader overlaps native send; remaining read/decode/evaluate/Writer/Live overlaps ACK wait",
+        "backend_times_additive_to_send_ACK": false,
+        "callback": "controller_complete",
+        "callback_ordinal": 4,
+        "end_relative_seconds": 29.21930921904277,
+        "inferred_send_start_relative_seconds": 24.38582994695753,
+        "native_pre_send_seconds": 1.627231337944977,
+        "post_send_ACK_wait_seconds": 2.1097623499808833,
+        "socket_backpressure_interval_seconds": 2.7236948260106146,
+        "start_relative_seconds": 22.75859860901255,
+        "window_boundary_method": "Native start plus measured pre-send spans; tiny unsampled overhead remains"
+      }
+    ],
+    "native_components_recomputed": {
+      "ACK_exclusive_seconds": 8.830804180004634,
+      "callback_inclusive_seconds": 26.836614658124745,
+      "construct_exclusive_seconds": 0.4126716918544844,
+      "hash_exclusive_seconds": 4.575032478896901,
+      "send_ACK_inclusive_seconds": 20.601741257007234,
+      "serialization_exclusive_seconds": 1.2470809830119833,
+      "socket_send_exclusive_seconds": 11.770934575120918
+    },
+    "native_send_plus_ACK_fraction_of_completed_callback_wall": 0.767672879737463
+  },
+  "failed_evidence": {
+    "all_49_files_SHA_and_mtime_unchanged": true,
+    "archive_chain_and_artifacts_verified": true,
+    "archive_partial_tail": false,
+    "campaign_manifest_pin_verified": true,
+    "required_reads": {
+      "DiagnosticTransient_nonCFD_timing_qualification.json": {
+        "bytes": 15546,
+        "sha256": "06d5494b43f9cda0f2af01ad046827d3b65590fcb519c5aec649c5b80f50034a"
+      },
+      "DiagnosticTransient_nonCFD_timing_qualification.md": {
+        "bytes": 9076,
+        "sha256": "a5a21d05ffaac69da75de03e9d240f23e1c8a25690fc31b393e957282875f031"
+      },
+      "Q1/resource_trace.jsonl": {
+        "bytes": 2251644,
+        "sha256": "8769bf91e411c7b554c37332e4e25b76def4e6d13d0b2faef43dda9be8c1e27b"
+      },
+      "Q1/stage_result.json": {
+        "bytes": 4361,
+        "sha256": "fa6ccf5da984e0999ac590e5ec8f27bbc2dea4865f7cf206dfd5b0b1e936f8b3"
+      },
+      "Q1/trial_result.json": {
+        "bytes": 806,
+        "sha256": "9b7a8844dc8816258bf4bbe52e37a2c63913fc5067da64177f5f2315dd1eb46f"
+      },
+      "Q1_callback_class_metrics.csv": {
+        "bytes": 1573,
+        "sha256": "5c47204d698c3590de48559ce0cddf4025ce6792bdd0b6b05fb550bc6e5ea896"
+      },
+      "Q1_partial_span_accounting.json": {
+        "bytes": 1291,
+        "sha256": "5deb944576c912616d3d44b326f6858b9215f9b9567124cfd6415d901b3efe27"
+      },
+      "Q1_resource_summary.json": {
+        "bytes": 3381,
+        "sha256": "dbbb971c2d75e7125445fde9422e2fc07e9dd72452a50788aa13358d9842436d"
+      },
+      "Q1_resource_trace_summary.csv": {
+        "bytes": 671,
+        "sha256": "93a7b8a5a58e4f02e304261a4f9db3f1f5e24f4eebb633e49e0fb788cbc8bbc5"
+      },
+      "Q1_trial_metrics.csv": {
+        "bytes": 999,
+        "sha256": "8b20e132745483d66c36ba830d08f2040b705951041d8786f9838af24a23ea5a"
+      },
+      "campaign_evidence_manifest.json": {
+        "bytes": 7689,
+        "sha256": "f08342b15471955811cfddcfd41be0c83415aee334ebb94dbd8df9c6c79eeec2"
+      },
+      "final_verification.json": {
+        "bytes": 496,
+        "sha256": "22196d5f8306a9eb62626ada24f6f8d156edd9885a1d8002b8ee1ab13f67d2cd"
+      }
+    },
+    "stage_manifest_verified": true
+  },
+  "failed_qualification_id": "nonCFD_20261006T083856+0900_b002832e",
+  "generated_UTC": "2026-10-06T00:12:40.587176+00:00",
+  "host": {
+    "actual_external_load_at_peak": "UNRESOLVED",
+    "bias_classification": "CONFIRMED",
+    "caveats": [
+      "New PID initial ticks need process birth/starttime and aligned sampling before subtracting them as exact interval work",
+      "Disappearing processes can lose final ticks",
+      "Host CPU snapshot is collected after sequential process samples",
+      "Watchdog/coordinator CPU is not external user workload but is omitted from inner own attribution",
+      "Linux /proc/io rchar/syscr are file-I/O counters; do not infer socket byte/syscall counts from them"
+    ],
+    "future_method": "Track (PID,starttime), observer and all registered groups; persist final waited CPU or bounded exit attribution; timestamp/bracket samples and report uncertainty. Keep 10percent threshold; formally review metric changes.",
+    "historical_rule_triggered": true,
+    "historical_threshold_unchanged": 0.1,
+    "inner_attribution_omits_qualification_observer_PIDs": [
+      446459,
+      446460
+    ],
+    "intervals_over_threshold": 1,
+    "maximum_excluding_new_PID_intervals": 0.07954545454545454,
+    "observer_CPU_ticks_visible_in_outer_trace": {
+      "446459": 440,
+      "446460": 1360
+    },
+    "sensitivity_is_not_revised_acceptance": true,
+    "whole_trace_tick_residual_fraction_descriptive": 0.044860306478278385,
+    "worst_interval": {
+      "attributed_ticks": 4,
+      "busy_host_ticks": 15,
+      "historical_other_fraction": 0.12222222222222222,
+      "lost_PIDs": [],
+      "new_PIDs": [
+        446462,
+        446463,
+        446464,
+        446465,
+        446466
+      ],
+      "new_initial_tick_sensitivity_fraction": 0.07777777777777778,
+      "new_initial_ticks_omitted": 4,
+      "start_relative_seconds": 0.8587534739635885,
+      "total_host_ticks": 90,
+      "wall_delta": 0.03684392699506134
+    }
+  },
+  "invariance": {
+    "Q2_gate_unchanged": true,
+    "all_scientific_and_current_harness_sources_unchanged": true,
+    "callback_graph_1144_unchanged": true,
+    "capacity_estimates_unchanged": true,
+    "failed_campaign_unchanged": true,
+    "formal_status_preserved": {
+      "ALL_RA_NEEDS_320": "YES",
+      "ALL_ROUTE_A_GATE_F": "FAIL",
+      "BENCHMARK_CORE_PASS": "NO",
+      "DOWNSTREAM_TRANSIENT_READY": "NO",
+      "FORMAL_GATE_J_EXECUTED": "NO",
+      "FORMAL_GATE_J_PASS": "NOT_EVALUATED",
+      "GRID_INDEPENDENT_TRANSIENT_CLAIM_ALLOWED": "NO",
+      "PARTICLE_COUPLING_READY": "NO",
+      "ROUTE_A_CHARACTERIZED": "NO"
+    },
+    "git_add_commit_push_executed": false,
+    "matrix_graph_701_unchanged": true,
+    "plan_and_readiness_unchanged": true,
+    "production_persistence_unchanged": true
+  },
+  "memory": {
+    "feasibility": "UNRESOLVED",
+    "memory_guard_violation_observed": false,
+    "observed_combined_RSS_bytes": 596127744,
+    "partial_prefix_only": true,
+    "selected_U03_audit_memory_not_qualified": true
+  },
+  "native_hash_inventory": {
+    "contents": [
+      "Recursive rehash of fields and oldTime value/object identities",
+      "State/payload epoch serializations",
+      "Matrix coefficient identities in unmeasured packets",
+      "BC hash map and payload SHA; Json deep copies and repeated dump are inside this block"
+    ],
+    "estimated_SHA_calls_from_four_control_shapes": {
+      "constructor": 33,
+      "each_other_control": 57
+    },
+    "hash_span_is_crypto_only": false,
+    "inventory_method": "Source count: two state representations, 10 value hashes each, constructor0/others6 oldTime objects per state with two hashes each, two state_epoch identities, ten BC hashes, one payload hash. Not runtime crypto-call instrumentation.",
+    "removed_hashes": 0,
+    "same_content_rehash_confirmed_source": "Duplicated inline/native state is visited separately; hash identities still required and unchanged",
+    "unmeasured_crypto_vs_formatting_fraction": "UNRESOLVED"
+  },
+  "observability": {
+    "implemented": false,
+    "next_design": {
+      "bounds": {
+        "Q1_callback_receipts_max": 1145,
+        "Q1_existing_layout_upper": 111,
+        "Q1_extra_files_model": 3,
+        "Q1_ledger_bytes_upper": 75038720,
+        "Q1_ledger_chunks_max": 2,
+        "Q1_proposed_layout_with_ledger_before_trace_revision": 114,
+        "chunk_max_bytes": 67108864,
+        "per_receipt_max_bytes": 65536
+      },
+      "durability_boundary": "Commit bounded per-callback aggregate receipt before ACK; native completed progress remains an independent ACK-delivery witness",
+      "fail_closed": "Ledger hash/quota/fsync failure prevents success ACK and stops the campaign; reserved STOP evidence remains",
+      "inflight_marker": "Bounded qualification-only phase marker for next expected callback; never a scientific completed receipt",
+      "kill_policy": "No SIGTERM-only reliance: durable completed prefix survives SIGKILL; incomplete tail is invalid, bounded and retained",
+      "location": "Future qualification instrumentation around current backend; never edit v1_4 in this task",
+      "no_per_byte_timer_wrapper": "Time readline as one receive span; per-byte Python wrappers would materially change a millions-call path",
+      "overhead": "MEASUREMENT_OBSERVER_OVERHEAD named separately; measure aggregate/encode/hash/write/sync and persist preceding completed publication costs. Final self-publication sync cannot be self-timed in its own receipt; disclose coverage and include external ACK wall, never invent zero.",
+      "periodic_checkpoint_tradeoff": "Periodic-only K callbacks may lose up to K acknowledged callbacks. Optional batching is acceptable only after new protocol formally permits that bounded loss; it does not meet all-completed-callback durability by itself.",
+      "receipt_fields": [
+        "qualification/stage/trial/sequence/class/payload SHA",
+        "native/backend PID and original packet identity",
+        "receive/decode/canonical/replay/packing/hash/persistence/ACK-preparation inclusive/exclusive tree",
+        "bytes/counters and phase timestamps",
+        "previous receipt hash and record hash",
+        "measurement observer overhead and accounting coverage"
+      ]
+    },
+    "qualification_side_only": true,
+    "required_tiny_acceptance": [
+      "Original46 regression unchanged",
+      "Completed data + SIGTERM/SIGKILL mid-next callback",
+      "Partial ledger write/chain corruption/record ordering/readback",
+      "Near-byte/file reserve and ledger failure before ACK",
+      "Exact payload content/graph/persistence invariance",
+      "Instrumentation enabled/disabled tiny paired overhead accounting (not target performance)",
+      "Finalization with no reliance on final backend_result.json"
+    ],
+    "scientific_and_production_sources_unchanged": true,
+    "why_not_implemented_now": "Bytewise receive is also present in frozen production-like v1_4/server.py; the minimal meaningful next change requires a separate compute/equivalence review. This task supplies the observer design without altering the active hash-pinned backend or claiming new readiness."
+  },
+  "options": [
+    {
+      "decision": "Insufficient as sole change; full completion cap UNRESOLVED",
+      "difficulty": "LOW_CODE_MEDIUM_PROTOCOL",
+      "evidence_semantics": "Longer trace and retention/file accounting require new proof",
+      "expected_benefit": "More completion time; does not reduce bytewise reader or multi-MB repeated cost",
+      "option": "A finite budget extension",
+      "risk": "HIGH_IF_USED_ALONE",
+      "scientific_semantics": "None if graph/evaluator unchanged",
+      "verification": "Budget/prerequisites/trace reserve/whole-stage STOP cases"
+    },
+    {
+      "decision": "REQUIRED; design supplied, not implemented",
+      "difficulty": "MEDIUM",
+      "evidence_semantics": "New qualification-only ledger; ACK ordering stays after scientific work plus ledger commit",
+      "expected_benefit": "Separate receive/decode/canonical/replay/pack/hash/persistence for acknowledged callbacks after timeout",
+      "option": "B durable backend observability",
+      "risk": "MEDIUM_OBSERVER_EFFECT",
+      "scientific_semantics": "None with wrappers only",
+      "verification": "Tiny timeout/SIGKILL/tail/corruption/quota/observer overhead regressions"
+    },
+    {
+      "decision": "FIRST architecture revision candidate; no change now",
+      "difficulty": "LOW_TO_MEDIUM_IMPLEMENTATION_MEDIUM_REVIEW",
+      "evidence_semantics": "Must preserve exact bytes, limit/newline/truncation/ACK failure and record order",
+      "expected_benefit": "Amortize millions of 1-byte receive calls; complete framing and processing-before-ACK remain",
+      "option": "C0 bounded buffered line receive",
+      "risk": "MEDIUM_UNTIL_EQUIVALENCE",
+      "scientific_semantics": "Intended unchanged; frozen backend currently uses same bytewise reader",
+      "verification": "Tiny segmentation/partial send/overflow/FINISH/ACK/deadlock and scientific full regression"
+    },
+    {
+      "decision": "Future option; no performance saving promised",
+      "difficulty": "HIGH",
+      "evidence_semantics": "Dictionary lifetime, change rejection, provenance and P1 lossless replay need new authority",
+      "expected_benefit": "Reduce confirmed repeated static value bytes; >=45.95percent prefix byte accounting is redundant",
+      "option": "C static references / delta transport",
+      "risk": "HIGH",
+      "scientific_semantics": "Fields stay dynamic; exact identity and restored content required",
+      "verification": "All class/history/BC/hash round trips plus missing/corrupt/static-changed references"
+    },
+    {
+      "decision": "Defer",
+      "difficulty": "HIGH",
+      "evidence_semantics": "ACK/atomic retention boundary changes",
+      "expected_benefit": "Potentially amortize transfer/serialization overhead; not measured",
+      "option": "D batch callbacks",
+      "risk": "HIGH",
+      "scientific_semantics": "Stage-order and failure boundary risk",
+      "verification": "Intermediate failures, prefix evidence, ordering and finite buffer proof"
+    },
+    {
+      "decision": "Defer",
+      "difficulty": "HIGH",
+      "evidence_semantics": "New schema and hash-domain/versioning",
+      "expected_benefit": "Potentially avoid recursive text formatting and copies; not measured",
+      "option": "E binary transport",
+      "risk": "HIGH",
+      "scientific_semantics": "IEEE/epoch/BC/oldTime exact equivalence required",
+      "verification": "Every shape/class/matrix slot plus hashes and signed zero"
+    },
+    {
+      "decision": "Defer",
+      "difficulty": "VERY_HIGH",
+      "evidence_semantics": "Bounded queue, durable completion and backpressure become explicit",
+      "expected_benefit": "Could overlap driver and backend; serial backend work still remains",
+      "option": "F asynchronous backend",
+      "risk": "VERY_HIGH",
+      "scientific_semantics": "Non-invasiveness/failure boundaries need review",
+      "verification": "No loss/reordering/unstable overwrite; process crash and high-water tests"
+    }
+  ],
+  "regression": {
+    "actual_Q1_Q2_campaigns_in_this_task": 0,
+    "observability_fix_tests": "NOT_APPLICABLE_NO_CODE_FIX",
+    "original_tests": 46,
+    "source_unchanged": true,
+    "status": "PASS",
+    "tiny_receiver_probe": "PASS"
+  },
+  "required_final_status": {
+    "BACKEND_DETAILED_SPANS_DURABLE_ON_TIMEOUT": "NO",
+    "BACKEND_PROCESSING_DOMINANCE": "SUPPORTED",
+    "CANONICAL_AUTHORITY_HASH_VERIFIED": "YES",
+    "CFD_EXECUTED": "NO",
+    "COMPUTE_FEASIBILITY": "UNRESOLVED",
+    "CURRENT_Q1_STAGE_BUDGET_SECONDS": 300,
+    "CURRENT_Q1_TRIAL_BUDGET_SECONDS": 30,
+    "DIAGNOSTIC_ARCHITECTURE_REVISION_REQUIRED": "YES",
+    "DIAGNOSTIC_TRANSIENT_RESOURCE_READY": "NO",
+    "EXECUTION_AUTHORIZED": "NO",
+    "FAILED_CAMPAIGN_EVIDENCE_INTACT": "YES",
+    "FAILED_CAMPAIGN_HASH_VERIFIED": "YES",
+    "FAILED_QUALIFICATION_ID": "nonCFD_20261006T083856+0900_b002832e",
+    "FORMAL_AUTHORITY_HASH_VERIFIED": "YES",
+    "FORMAL_CRITERIA_CHANGED": "NO",
+    "FORMAL_GATE_J_CURRENTLY_ALLOWED": "NO",
+    "HISTORICAL_STATUS_CHANGED": "NO",
+    "HOST_STABILITY_METRIC_BIAS": "CONFIRMED",
+    "HOST_STABILITY_RULE_TRIGGERED": "YES",
+    "IO_FEASIBILITY": "UNRESOLVED",
+    "MEMORY_FEASIBILITY": "UNRESOLVED",
+    "NEXT_SINGLE_TASK": "PREPARE_ROUTE_A_DIAGNOSTIC_TRANSIENT_DIAGNOSTIC_COMPUTE_REVISION",
+    "OBSERVABILITY_FIX_IMPLEMENTED": "NO",
+    "OBSERVABILITY_FIX_REQUIRED": "YES",
+    "OBSERVABILITY_FIX_TINY_TESTS": "NOT_APPLICABLE",
+    "OBSERVABILITY_LIMITATION_CONFIRMED": "YES",
+    "PERSISTENCE_POLICY_CHANGED": "NO",
+    "Q1_ACK_WAIT_SECONDS": 8.830804180004634,
+    "Q1_COMPLETED_CALLBACKS": 4,
+    "Q1_COMPLETED_CALLBACK_INCLUSIVE_SECONDS": 26.836614658124745,
+    "Q1_COMPLETED_MATRIX_PACKETS": 0,
+    "Q1_COMPLETED_PREFIX_IPC_BYTES": 21038037,
+    "Q1_FAILURE_REPRODUCED": "NO",
+    "Q1_NATIVE_CONSTRUCT_SECONDS": 0.4126716918544844,
+    "Q1_NATIVE_HASH_SECONDS": 4.575032478896901,
+    "Q1_NATIVE_SERIALIZATION_SECONDS": 1.2470809830119833,
+    "Q1_RETRY_EXECUTED": "NO",
+    "Q1_SOCKET_SEND_SECONDS": 11.770934575120918,
+    "Q1_STOP_REASON": "STOP_WALL_TIME",
+    "Q2_EXECUTED": "NO",
+    "Q2_GATE_CHANGED": "NO",
+    "Q2_GATE_REVISION_INFORMATION_VALUE": "HIGH",
+    "Q3_BOUNDED_CFD_QUALIFICATION_RECOMMENDED": "NO",
+    "Q3_EXECUTED": "NO",
+    "RECOMMENDED_BUDGET_BASIS": "MEASURED_PREFIX_PLUS_MODEL",
+    "RECOMMENDED_Q1_STAGE_BUDGET_SECONDS": "UNRESOLVED",
+    "RECOMMENDED_Q1_TRIAL_BUDGET_SECONDS": "UNRESOLVED",
+    "RECOMMENDED_REASONING_MODEL_FOR_NEXT_TASK": "gpt-6.1-sol / high",
+    "ROOT_CAUSE_CLASSIFICATION": "MULTIPLE",
+    "ROUTE_A_DIAGNOSTIC_TRANSIENT_NONCFD_TIMING_QUALIFICATION_FIX_REVIEW": "COMPLETE",
+    "RUNTIME_AUTHORITY_COMPATIBILITY": "PASS",
+    "SOCKET_BACKPRESSURE_HYPOTHESIS": "SUPPORTED",
+    "STARTUP_FULL_AUDIT_PRIMARY_CAUSE": "NO",
+    "STARTUP_FULL_AUDIT_STARTED_BEFORE_TIMEOUT": "NO",
+    "STATIC_PAYLOAD_REDUNDANCY": "CONFIRMED",
+    "STATIC_PAYLOAD_REDUNDANCY_FRACTION": 0.4595014734502083,
+    "TIMING_PROTOCOL_BUDGET_REVISION_REQUIRED": "YES",
+    "U01_CHANGED": "NO",
+    "U02_CHANGED": "NO",
+    "U03_CHANGED": "NO",
+    "U04_EQUATION_SEMANTICS_CHANGED": "NO",
+    "USER_DECISION_REQUIRED": "YES"
+  },
+  "root_cause": {
+    "budget_alone_sufficient": false,
+    "classification": "MULTIPLE",
+    "diagnosis_limitation": "Backend child span aggregates remained in RAM and were never durably published",
+    "external_host_instability_primary_cause": "UNRESOLVED_NOT_ESTABLISHED",
+    "production_infeasible_proved": false,
+    "stop_trigger": "Finite30s operational cap",
+    "supported_execution_cost": "Synchronous bytewise backend receive/backpressure plus post-send evaluation/retention work and native bind/hash formatting"
+  },
+  "schema": "routeA_nonCFD_failed_qualification_review/1",
+  "serialization": {
+    "deep_copies": [
+      "Json::push(const Json&) copies subtree",
+      "identity creates Json x=j and erases identity key",
+      "bind constructs field/oldTime/BC/matrix epoch maps",
+      "matrix coefficient hash selection copies arrays"
+    ],
+    "float_format": "setprecision(17)",
+    "native_JSON_type": "std::map/std::vector value ownership",
+    "native_driver_fixture_time": "Only partial sampled CPU / gaps; not fully decomposed",
+    "native_parse_metric_scope": "Parse received fixture JSON; excludes Python fixture generation and stdin wait before callback_start",
+    "string_strategy": "Recursive ostringstream per subtree then parent copies emitted text; no static/delta references"
+  },
+  "socket_semantics": {
+    "actual_receive_syscall_count_measured": false,
+    "backpressure": "SUPPORTED: millions of bytewise receives and backend CPU-bound drain overlap native blocking send; this is not an AF_UNIX bandwidth measurement",
+    "blocking": true,
+    "buffer_settings_in_source": "No setsockopt override; inherited defaults, historical values not measured",
+    "callbacks_concurrent": false,
+    "framing": "One newline-terminated JSON record; ACK newline response after processing",
+    "native_send": "send remaining complete serialized line until all bytes sent; no application chunk size or nonblocking queue",
+    "probe": {
+      "SocketIO_readinto_source": "    def readinto(self, b):\n        \"\"\"Read up to len(b) bytes into the writable buffer *b* and return\n        the number of bytes read.  If the socket is non-blocking and no bytes\n        are available, None is returned.\n\n        If *b* is non-empty, a 0 return value indicates that the connection\n        was shutdown at the other end.\n        \"\"\"\n        self._checkClosed()\n        self._checkReadable()\n        if self._timeout_occurred:\n            raise OSError(\"cannot read from timed out object\")\n        while True:\n            try:\n                return self._sock.recv_into(b)\n            except timeout:\n                self._timeout_occurred = True\n                raise\n            except error as e:\n                if e.errno in _blocking_errnos:\n                    return None\n                raise\n",
+      "blocking": true,
+      "classification": "TINY_STRUCTURAL_ONLY_NOT_PERFORMANCE_MEASUREMENT",
+      "current_probe_SO_RCVBUF": 212992,
+      "current_probe_SO_SNDBUF": 212992,
+      "exact_readback": true,
+      "historical_actual_socket_buffer_sizes": "NOT_CAPTURED",
+      "input_bytes": 31,
+      "python_version": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+      "readinto_calls": 31,
+      "requested_sizes": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "socket_python_SHA256": "b59366f7c35583a274c8031351c146d9c64c4e680adf45d99a3335536a20a6cc",
+      "socket_python_path": "/usr/lib/python3.12/socket.py",
+      "stream_type": "SocketIO",
+      "target_measurement_executed": false
+    },
+    "production_like_source": "Frozen v1_4/server.py uses the same buffering=0 + readline path",
+    "receive_vs_process": "Read entire current message, decode/evaluate/Writer/Live, ACK, then receive next; no prefetch/asynchronous receiver",
+    "receiver": "Unbuffered SocketIO.readline; tiny installed-implementation probe confirms one recv_into per byte"
+  },
+  "source_refs": {
+    "analysis.py": [
+      {
+        "line": 41,
+        "text": "   dt=total-previous[0];db=busy-previous[1];own=sum(max(0,t-previous[2].get(pid,t)) for pid,t in ticks.items())"
+      }
+    ],
+    "backend.py": [
+      {
+        "line": 75,
+        "text": " sock=socket.socket(fileno=fd);stream=sock.makefile('rwb',buffering=0);current=[None];bytes_in=0;count=0;matrices=0;rows=[]"
+      },
+      {
+        "line": 81,
+        "text": "    raw=stream.readline(cfg['Q1_design']['packet_limit_bytes']+1)"
+      },
+      {
+        "line": 90,
+        "text": " def ack():"
+      },
+      {
+        "line": 92,
+        "text": " def save(summary,status):"
+      },
+      {
+        "line": 109,
+        "text": "      receipt=spans.wrap('replay',structural_receipt)(r);matrices+=len(receipt['matrix_metrics']);writer.accept(r,receipt);raw=writer.ring[-1]"
+      },
+      {
+        "line": 134,
+        "text": "    writer.accept(r,receipt);classes[label]['packed_bytes'].append(len(writer.ring[-1]));live.accept(r,receipt)"
+      }
+    ],
+    "fixture.py": [
+      {
+        "line": 57,
+        "text": " for stage in ('constructor_complete','preSolve_before','preSolve_after','controller_complete'):"
+      },
+      {
+        "line": 105,
+        "text": "  if 'state' in original:p['state']=current"
+      },
+      {
+        "line": 111,
+        "text": "   p.update(current)"
+      }
+    ],
+    "native_adapter.C": [
+      {
+        "line": 24,
+        "text": "void rehash(Json& j){"
+      },
+      {
+        "line": 32,
+        "text": "void bind(Json& r){Json& p=r[\"payload\"];rehash(p);auto& m=r[\"metadata\"];Json fields=Json::obj(),olds=Json::obj(),bc=Json::obj(),mat=Json::obj();"
+      },
+      {
+        "line": 39,
+        "text": "void sendall(int fd,const std::string& s){size_t pos=0;while(pos<s.size()){ssize_t n=::send(fd,s.data()+pos,s.size()-pos,MSG_NOSIGNAL);if(n<=0)fail(\"IPC_SEND\");pos+=n;}}"
+      },
+      {
+        "line": 40,
+        "text": "std::string ack(int fd){std::string s;char c;while(::recv(fd,&c,1,0)==1){s+=c;if(c=='\\n')return s;if(s.size()>8192)fail(\"ACK_SIZE\");}fail(\"ACK_TRUNCATED\");return s;}"
+      },
+      {
+        "line": 44,
+        "text": " if(on){t=now();if(compact)r[\"payload_sha256\"]=digest(r.at(\"payload\").dump());else bind(r);hash+=now()-t;t=now();std::string raw=r.dump()+\"\\n\";dump+=now()-t;if(raw.size()>cap)fail(\"STAGE_CAP\");t=now();sendall(fd,raw);send_seconds=now()-t;double astart=now();std::string response=ack(fd);ack_seconds=now()-astart;wait+=now()-t;bytes+=raw.size();ackbytes+=response.size();if(response!=\"OK\\n\")fail(\"BACKEND_REJECTED\");}"
+      },
+      {
+        "line": 47,
+        "text": " if(on){double final_start=now();sendall(fd,\"FINISH\\n\");if(ack(fd)!=\"OK\\n\")fail(\"BACKEND_FINISH\");Json f=Json::obj();f[\"phase\"]=\"FINALIZATION\";f[\"inclusive_seconds\"]=now()-final_start;std::cerr<<f.dump()<<std::endl;}return 0;"
+      }
+    ],
+    "spans.py": [
+      {
+        "line": 5,
+        "text": " def __init__(self,compact=False):self.compact=compact;self.aggregates={};self.counter=0;self.values={};self.nodes=[];self.stack=[];self.payload_class='startup';self.max_nodes=150000"
+      },
+      {
+        "line": 20,
+        "text": " def flush(self):"
+      },
+      {
+        "line": 28,
+        "text": "  self.nodes=[]"
+      }
+    ],
+    "watchdog.py": [
+      {
+        "line": 87,
+        "text": "    tree=descendants(proc.pid);tracked|=set(tree);allowed_groups={proc.pid}"
+      },
+      {
+        "line": 93,
+        "text": "    snapshot=host();rss={'native':0,'backend':0,'driver':0}"
+      }
+    ]
+  },
+  "startup": {
+    "full_audit_primary_cause": false,
+    "full_audit_started": false,
+    "next_actual_phase": "UNRESOLVED",
+    "next_source_order_callback": "time_start",
+    "planned_first_four": [
+      "constructor_complete",
+      "preSolve_before",
+      "preSolve_after",
+      "controller_complete"
+    ],
+    "proof": "Writer creates spool first at physical time_start after schedule.begin; four control stages excluded; archive contains no full_audit.scratch/full_*.bin and no branch deletes such a spool on STOP",
+    "tail_evidence": "After controller ACK, native CPU and stdin rchar rise while backend CPU/rchar remain constant; consistent with fifth time_start pre-send preparation, not a published backend stage entry"
+  },
+  "static_dynamic": {
+    "Cv_occurrences": 4,
+    "canonical_Cv_value_bytes": 51201,
+    "canonical_g_value_bytes": 7,
+    "canonical_geometry_value_bytes": 770254,
+    "canonical_volume_value_bytes": 588801,
+    "denominator_observed_prefix_IPC_bytes": 21038037,
+    "distinct_static_value_bytes": 1410263,
+    "full_message_redundancy_fraction": "UNRESOLVED_RAW_MESSAGES_NOT_RETAINED",
+    "g_occurrences": 4,
+    "geometry_occurrences_in_four_packets": 8,
+    "intra_message_duplicate_geometry_volume_value_bytes": 5436220,
+    "method": "Source-proven occurrence counts times canonical bytes of actual retained immutable values; native/canonical codec equivalence is frozen and covered by original tests",
+    "no_linear_wall_time_saving_claim": true,
+    "no_removal_of_required_hashes": true,
+    "no_transport_optimization_implemented": true,
+    "omissions": [
+      "Repeated JSON keys and delimiters",
+      "Patch metadata",
+      "Duplicate dynamic fields and oldTime content",
+      "Additional matrix owner/neighbour/volume repeats in unmeasured classes"
+    ],
+    "reconstructed_static_value_bytes_prefix": 11077272,
+    "redundant_static_value_bytes_lower_bound": 9667009,
+    "redundant_static_value_fraction_lower_bound": 0.4595014734502083,
+    "status": "CONFIRMED",
+    "volume_occurrences_in_four_packets": 8
+  },
+  "status": "COMPLETE",
+  "task": "FIX_ROUTE_A_DIAGNOSTIC_TRANSIENT_NONCFD_TIMING_QUALIFICATION"
+}
