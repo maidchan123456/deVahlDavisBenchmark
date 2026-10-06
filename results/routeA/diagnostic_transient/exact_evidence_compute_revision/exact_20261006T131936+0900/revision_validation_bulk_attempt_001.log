@@ -1,0 +1,14 @@
+test_32MiB_bound (__main__.Revision.test_32MiB_bound) ... ok
+test_CPU_controlled_tree (__main__.Revision.test_CPU_controlled_tree) ... ok
+test_CPU_late_child_and_reaped_short_lived (__main__.Revision.test_CPU_late_child_and_reaped_short_lived) ... ok
+test_framing_exact_equivalence (__main__.Revision.test_framing_exact_equivalence) ... ok
+test_full_backend_receiver_observer_evidence_equivalence (__main__.Revision.test_full_backend_receiver_observer_evidence_equivalence) ... ok
+test_ledger_chain_corruption_and_partial (__main__.Revision.test_ledger_chain_corruption_and_partial) ... ok
+test_ledger_sigkill_after_ACK (__main__.Revision.test_ledger_sigkill_after_ACK) ... ok
+test_new_watchdog_timeout_trace (__main__.Revision.test_new_watchdog_timeout_trace) ... ok
+test_trace_lossless_and_accounting (__main__.Revision.test_trace_lossless_and_accounting) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 47.229s
+
+OK

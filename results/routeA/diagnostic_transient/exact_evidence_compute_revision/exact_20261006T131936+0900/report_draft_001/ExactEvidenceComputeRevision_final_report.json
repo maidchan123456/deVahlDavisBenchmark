@@ -1,0 +1,574 @@
+{
+  "required_final_status": {
+    "AUTONOMOUS_EXACT_EVIDENCE_COMPUTE_REVISION": "BLOCKED",
+    "MASTER_RUN_ID": "exact_20261006T131936+0900",
+    "MAJOR_ARCHITECTURE_CYCLES_EXECUTED": 3,
+    "CANONICAL_AUTHORITY_HASH_VERIFIED": "YES",
+    "FORMAL_AUTHORITY_HASH_VERIFIED": "YES",
+    "SCIENTIFIC_CONTRACT_CHANGED": "NO",
+    "NUMERICAL_POLICY_CHANGED": "NO",
+    "U01_CHANGED": "NO",
+    "U02_CHANGED": "NO",
+    "U03_CHANGED": "NO",
+    "U04_EQUATION_SEMANTICS_CHANGED": "NO",
+    "LOGICAL_CALLBACK_GRAPH_CHANGED": "NO",
+    "LOGICAL_MATRIX_PACKET_GRAPH_CHANGED": "NO",
+    "EXACT_EVIDENCE_REQUIREMENTS_CHANGED": "NO",
+    "BASELINE_IMPLEMENTATION": "compute_revision_v3",
+    "COMPUTE_REUSE_EVALUATED": "YES",
+    "COMPUTE_REUSE_IMPLEMENTED": "YES",
+    "COMPUTE_REUSE_EQUIVALENCE": "PASS",
+    "COMPUTE_REUSE_HIT_RATE": 0.8952294850182174,
+    "STATIC_REFERENCE_CACHE_EVALUATED": "YES",
+    "STATIC_REFERENCE_CACHE_IMPLEMENTED": "YES",
+    "STATIC_REFERENCE_EQUIVALENCE": "PASS",
+    "BULK_BINARY_EVALUATED": "YES",
+    "BULK_BINARY_IMPLEMENTED": "YES",
+    "BULK_BINARY_EQUIVALENCE": "PASS",
+    "DETERMINISTIC_PARALLELISM_EVALUATED": "YES",
+    "DETERMINISTIC_PARALLELISM_IMPLEMENTED": "YES",
+    "PARALLEL_EQUIVALENCE": "PASS",
+    "BEST_PARALLEL_WORKERS": 4,
+    "CALLBACK_BATCHING_IMPLEMENTED": "NO",
+    "ASYNC_BACKEND_IMPLEMENTED": "NO",
+    "CALLBACK_BATCHING_REQUIRED_TO_CONTINUE": "UNRESOLVED",
+    "ASYNC_BACKEND_REQUIRED_TO_CONTINUE": "UNRESOLVED",
+    "BASELINE_CENTRAL_PROXY_SECONDS_PER_STEP": 2101.614222754155,
+    "NEW_LOWER_PROXY_SECONDS_PER_STEP": 961.0104338506935,
+    "NEW_CENTRAL_PROXY_SECONDS_PER_STEP": 1025.6245977308945,
+    "NEW_CONSERVATIVE_PROXY_SECONDS_PER_STEP": 2181.718339874642,
+    "PROXY_SPEEDUP_CENTRAL": 2.0491066881623103,
+    "EARLIEST_12800_STEP_PROXY": "151.9443848490214 days (central conditional proxy per series)",
+    "NOMINAL_51200_STEP_PROXY": "607.7775393960856 days (central conditional proxy per series)",
+    "PROXY_CLASSIFICATION": "CONDITIONAL_NONCFD_RESOURCE_PROXY",
+    "NEW_FULL_Q1_EXECUTED": "NO",
+    "LATEST_Q1_STATUS": "NOT_EXECUTED",
+    "Q1_OFF_MEDIAN_SECONDS": "UNRESOLVED",
+    "Q1_ON_MEDIAN_SECONDS": "UNRESOLVED",
+    "Q1_DIAGNOSTIC_OVERHEAD_SECONDS": "UNRESOLVED",
+    "NEW_FULL_Q2_EXECUTED": "NO",
+    "LATEST_Q2_STATUS": "NOT_EXECUTED",
+    "U03_EMPIRICAL_EXPONENT": 1.942846140870192,
+    "COMPUTE_FEASIBILITY": "UNRESOLVED",
+    "MEMORY_FEASIBILITY": "UNRESOLVED",
+    "IO_FEASIBILITY": "UNRESOLVED",
+    "DIAGNOSTIC_TRANSIENT_RESOURCE_READY": "NO",
+    "CURRENT_FROZEN_DIAGNOSTIC_DESIGN_PRACTICALLY_EXECUTABLE": "NO",
+    "Q3_PLAN_PREPARED": "NO",
+    "Q3_WATCHDOG_PREPARED": "NO",
+    "Q3_NAMESPACE_ISOLATED": "NO",
+    "Q3_AUTHORIZATION_SCHEMA_PREPARED": "NO",
+    "Q3_BOUNDED_CFD_QUALIFICATION_READY": "NO",
+    "Q3_AUTHORIZED": "NO",
+    "Q3_EXECUTED": "NO",
+    "PILOT_CFD_EXECUTED": "NO",
+    "PRODUCTION_SOLVER_EXECUTED": "NO",
+    "CFD_TRANSIENT_EXECUTED": "NO",
+    "CFD_EXECUTED": "NO",
+    "PRODUCTION_EXECUTION_AUTHORIZED": "NO",
+    "FORMAL_GATE_J_CURRENTLY_ALLOWED": "NO",
+    "FORMAL_GATE_J_EXECUTED": "NO",
+    "FORMAL_GATE_J_PASS": "NOT_EVALUATED",
+    "BENCHMARK_CORE_PASS": "NO",
+    "ROUTE_A_CHARACTERIZED": "NO",
+    "ALL_ROUTE_A_GATE_F": "FAIL",
+    "ALL_RA_NEEDS_320": "YES",
+    "GRID_INDEPENDENT_TRANSIENT_CLAIM_ALLOWED": "NO",
+    "DOWNSTREAM_TRANSIENT_READY": "NO",
+    "PARTICLE_COUPLING_READY": "NO",
+    "BLOCKER_CLASS": "AUTONOMOUS_CYCLE_LIMIT",
+    "NEXT_SINGLE_TASK": "REVIEW_ROUTE_A_DIAGNOSTIC_TRANSIENT_MAJOR_ARCHITECTURE_DECISION",
+    "RECOMMENDED_REASONING_MODEL_FOR_NEXT_TASK": "gpt-6.1-sol / high",
+    "USER_DECISION_REQUIRED": "YES"
+  },
+  "baseline_problem": {
+    "claim": "MEASURED + PROJECTED",
+    "v3_central_proxy": 2101.614222754155,
+    "reason": "repeated native formatting/hash and backend canonicalization/packing/replay; source-mix not CFD runtime"
+  },
+  "candidate_decisions": [
+    {
+      "candidate": "A",
+      "decision": "accepted",
+      "scope": "bounded nonCFD validated prototype",
+      "reason": "actual typed content plus epoch; no pointer-only key; callback cache128MiB; native array cache128MiB. Cycle1~1.77x central proxy; final combination2.05x. Every lookup verifies content; mutation/epoch/eviction tests and fullgraph Writer equality PASS."
+    },
+    {
+      "candidate": "B",
+      "decision": "rejected_for_default_target_path",
+      "reason": "Implemented64MiB static registration/reference protocol, exact reconstruction and corruption/mismatch tests PASS. Combined B+C increases central proxy versus A; separate B-only end-to-end gain UNKNOWN. Prototype retained for later variable-field study."
+    },
+    {
+      "candidate": "C",
+      "decision": "rejected_for_default_target_path",
+      "reason": "RAEB4 lossless dtype/endian/shape/count/fieldID/epoch/byteLength/contentSHA implemented and tested;fullgraph Writer SHA exact. Binary expansion on constant-valued fixture plus decode cost; joint A+B+C central1315.41 versus A1186.55. Does not establish that binary is slower on real variable fields."
+    },
+    {
+      "candidate": "D",
+      "decision": "accepted",
+      "scope": "bounded nonCFD prototype,4worker policy",
+      "reason": "independent numeric canonical tasks; deterministic ordered collection; scientific callback and commit sequence unchanged. All1/2/4/8/12 fulltinygraph outputs identical. Random array isolated4workers2.8x,12workers4.58x;4 selected to reserve physical cores. Final pipeline change also includes compiled formatting and numeric-copy optimization; end-to-end gain cannot be attributed to parallelism alone."
+    },
+    {
+      "candidate": "E",
+      "decision": "deferred",
+      "reason": "design only; no implementation authorization; necessity UNKNOWN. Requires review of callback timing/durability/backpressure, preserving all1144/701 logical events."
+    },
+    {
+      "candidate": "F",
+      "decision": "deferred",
+      "reason": "design only; no implementation authorization; necessity UNKNOWN. Would overlap work but cannot erase CPU requirement; bounded queues, ownership, durable ACK/STOP and scientific ordering need review."
+    }
+  ],
+  "equivalence": {
+    "status": "PASS",
+    "scope": "implemented prototypes A/B/C/D; no Q1/Q2 or CFD inference",
+    "A": [
+      "reuse_unit_validation.json",
+      "native_array_cache_validation.json",
+      "cross_revision_scientific_equivalence.json"
+    ],
+    "B_C": [
+      "bulk_unit_validation.json",
+      "cross_revision_scientific_equivalence_bulk.json"
+    ],
+    "D": [
+      "parallel_numeric_equivalence.json",
+      "parallel_revision_equivalence.json",
+      "cross_revision_scientific_equivalence_parallel.json"
+    ],
+    "shared_regressions": [
+      "revision_validation_cycle2.json",
+      "revision_validation_bulk.json",
+      "revision_validation_parallel.json",
+      "additional_validation_cycle2.json",
+      "bounds_validation_cycle2.json"
+    ],
+    "full_tiny_graph": {
+      "callbacks": 1145,
+      "matrix_packets": 701,
+      "Writer_files_equal_SHA256": 17,
+      "all_worker_counts": [
+        1,
+        2,
+        4,
+        8,
+        12
+      ]
+    },
+    "original46_regression": "historical PASS reused only with frozen-source hash proof; no new46-suite run",
+    "classification": "MEASURED + DERIVED",
+    "new_binary_errors": "fail-closed protocol-specific errors; original line framing negatives retained for JSON path"
+  },
+  "target_class_statistics": {
+    "controller": {
+      "ACK_wait_median_seconds": 0.6206155749969184,
+      "JSON_packet_bytes_median": 4898296,
+      "max_seconds": 0.928181417984888,
+      "median_seconds": 0.9207751279463992,
+      "min_seconds": 0.9110256490530446,
+      "native_hash_median_seconds": 0.17072825401555747,
+      "native_serialization_median_seconds": 0.02535179501865059,
+      "repeatability": {
+        "CV": 0.007636522699808132,
+        "CV_population": 0.007636522699808132,
+        "TIMING_STABILITY": "STABLE",
+        "automatic_extra_repeats": false,
+        "max": 0.928181417984888,
+        "median": 0.9207751279463992,
+        "min": 0.9110256490530446,
+        "status": "STABLE"
+      },
+      "socket_send_median_seconds": 0.0035098911030218005
+    },
+    "field": {
+      "ACK_wait_median_seconds": 0.6159885450033471,
+      "JSON_packet_bytes_median": 4898288,
+      "max_seconds": 0.9166961540468037,
+      "median_seconds": 0.9165402440121397,
+      "min_seconds": 0.9131463249213994,
+      "native_hash_median_seconds": 0.1715319079812616,
+      "native_serialization_median_seconds": 0.024458974949084222,
+      "repeatability": {
+        "CV": 0.0017891472493487214,
+        "CV_population": 0.0017891472493487214,
+        "TIMING_STABILITY": "STABLE",
+        "automatic_extra_repeats": false,
+        "max": 0.9166961540468037,
+        "median": 0.9165402440121397,
+        "min": 0.9131463249213994,
+        "status": "STABLE"
+      },
+      "socket_send_median_seconds": 0.0033546319464221597
+    },
+    "matrix": {
+      "ACK_wait_median_seconds": 0.5130448680138215,
+      "JSON_packet_bytes_median": 5027701,
+      "max_seconds": 0.7431164650479332,
+      "median_seconds": 0.7388173610670492,
+      "min_seconds": 0.7380160790635273,
+      "native_hash_median_seconds": 0.13475322804879397,
+      "native_serialization_median_seconds": 0.018237847019918263,
+      "repeatability": {
+        "CV": 0.0030264210789674013,
+        "CV_population": 0.0030264210789674013,
+        "TIMING_STABILITY": "STABLE",
+        "automatic_extra_repeats": false,
+        "max": 0.7431164650479332,
+        "median": 0.7388173610670492,
+        "min": 0.7380160790635273,
+        "status": "STABLE"
+      },
+      "socket_send_median_seconds": 0.0021407470339909196
+    },
+    "term": {
+      "ACK_wait_median_seconds": 0.36322870198637247,
+      "JSON_packet_bytes_median": 2528089,
+      "max_seconds": 0.5602228760253638,
+      "median_seconds": 0.5348562790313736,
+      "min_seconds": 0.5327922879951075,
+      "native_hash_median_seconds": 0.11110163701232523,
+      "native_serialization_median_seconds": 0.012757205055095255,
+      "repeatability": {
+        "CV": 0.022986293904527496,
+        "CV_population": 0.022986293904527496,
+        "TIMING_STABILITY": "STABLE",
+        "automatic_extra_repeats": false,
+        "max": 0.5602228760253638,
+        "median": 0.5348562790313736,
+        "min": 0.5327922879951075,
+        "status": "STABLE"
+      },
+      "socket_send_median_seconds": 0.0023515410721302032
+    },
+    "energy_matrix": {
+      "ACK_wait_median_seconds": 1.047854108037427,
+      "JSON_packet_bytes_median": 10919324,
+      "max_seconds": 1.525167017010972,
+      "median_seconds": 1.5248839759733528,
+      "min_seconds": 1.5108741780277342,
+      "native_hash_median_seconds": 0.23142061091493815,
+      "native_serialization_median_seconds": 0.046555699896998703,
+      "repeatability": {
+        "CV": 0.004388580777219737,
+        "CV_population": 0.004388580777219737,
+        "TIMING_STABILITY": "STABLE",
+        "automatic_extra_repeats": false,
+        "max": 1.525167017010972,
+        "median": 1.5248839759733528,
+        "min": 1.5108741780277342,
+        "status": "STABLE"
+      },
+      "socket_send_median_seconds": 0.007430491968989372
+    },
+    "pressure_matrix": {
+      "ACK_wait_median_seconds": 0.7465872670290992,
+      "JSON_packet_bytes_median": 7195848,
+      "max_seconds": 1.113670691032894,
+      "median_seconds": 1.1036812330130488,
+      "min_seconds": 1.1006802869960666,
+      "native_hash_median_seconds": 0.19324683595914394,
+      "native_serialization_median_seconds": 0.03159469005186111,
+      "repeatability": {
+        "CV": 0.005020957357839271,
+        "CV_population": 0.005020957357839271,
+        "TIMING_STABILITY": "STABLE",
+        "automatic_extra_repeats": false,
+        "max": 1.113670691032894,
+        "median": 1.1036812330130488,
+        "min": 1.1006802869960666,
+        "status": "STABLE"
+      },
+      "socket_send_median_seconds": 0.004330098978243768
+    }
+  },
+  "cache": {
+    "claim": "MEASURED",
+    "hit_rate_definition": "median of six classes x3 repeats, backend constructor+representative totals; not production hit rate",
+    "backend_hit_rate": 0.8952294850182174,
+    "backend_peak_cache_bytes": 17489369,
+    "native_peak_cache_bytes": 7721796,
+    "lifetime": "callback, keyed by sequence + all scientific counters; actual content SHA plus complete retained typed-byte equality on hits",
+    "eviction": "bounded LRU backend; native capacity skips insert; mutation/epoch cannot reuse old result",
+    "saved_seconds": "sum of prior measured compute durations; not actual observed wall saving; parallel-prewarmed canonical tasks uncredited/UNKNOWN"
+  },
+  "parallel": {
+    "status": "PASS",
+    "exact_ordered_output_equal_all_worker_counts": true,
+    "host_stability": {
+      "status": "STABLE",
+      "reasons": [],
+      "other_CPU_fraction_max": 0.053763440860215055,
+      "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+      "uncertain_intervals": 0,
+      "samples": 376,
+      "no_additional_repeats": true
+    },
+    "statistics": [
+      {
+        "case": "constant",
+        "workers": 1,
+        "wall_median": 0.06767711392603815,
+        "CPU_median": 0.067658327,
+        "speedup": 1.0,
+        "parallel_efficiency": 1.0,
+        "RSS_max": 37683200,
+        "stability": {
+          "min": 0.06756334309466183,
+          "median": 0.06767711392603815,
+          "max": 0.06901425204705447,
+          "CV_population": 0.009675982957385648,
+          "CV": 0.009675982957385648,
+          "TIMING_STABILITY": "STABLE",
+          "status": "STABLE",
+          "automatic_extra_repeats": false
+        }
+      },
+      {
+        "case": "constant",
+        "workers": 2,
+        "wall_median": 0.054110190947540104,
+        "CPU_median": 0.09089673399999998,
+        "speedup": 1.250727686244005,
+        "parallel_efficiency": 0.6253638431220025,
+        "RSS_max": 38572032,
+        "stability": {
+          "min": 0.053303277934901416,
+          "median": 0.054110190947540104,
+          "max": 0.05693927500396967,
+          "CV_population": 0.02845771651168448,
+          "CV": 0.02845771651168448,
+          "TIMING_STABILITY": "STABLE",
+          "status": "STABLE",
+          "automatic_extra_repeats": false
+        }
+      },
+      {
+        "case": "constant",
+        "workers": 4,
+        "wall_median": 0.04480195790529251,
+        "CPU_median": 0.10009979300000002,
+        "speedup": 1.5105838470073507,
+        "parallel_efficiency": 0.3776459617518377,
+        "RSS_max": 38674432,
+        "stability": {
+          "min": 0.044611749006435275,
+          "median": 0.04480195790529251,
+          "max": 0.04746438795700669,
+          "CV_population": 0.028541415180345062,
+          "CV": 0.028541415180345062,
+          "TIMING_STABILITY": "STABLE",
+          "status": "STABLE",
+          "automatic_extra_repeats": false
+        }
+      },
+      {
+        "case": "constant",
+        "workers": 8,
+        "wall_median": 0.043535458971746266,
+        "CPU_median": 0.10236238699999999,
+        "speedup": 1.5545285503928965,
+        "parallel_efficiency": 0.19431606879911206,
+        "RSS_max": 38526976,
+        "stability": {
+          "min": 0.04294394503813237,
+          "median": 0.043535458971746266,
+          "max": 0.044154720031656325,
+          "CV_population": 0.011352472155471935,
+          "CV": 0.011352472155471935,
+          "TIMING_STABILITY": "STABLE",
+          "status": "STABLE",
+          "automatic_extra_repeats": false
+        }
+      },
+      {
+        "case": "constant",
+        "workers": 12,
+        "wall_median": 0.042066347086802125,
+        "CPU_median": 0.10810246500000001,
+        "speedup": 1.6088184169257504,
+        "parallel_efficiency": 0.1340682014104792,
+        "RSS_max": 39501824,
+        "stability": {
+          "min": 0.04163516405969858,
+          "median": 0.042066347086802125,
+          "max": 0.04221621493343264,
+          "CV_population": 0.005868257568852804,
+          "CV": 0.005868257568852804,
+          "TIMING_STABILITY": "STABLE",
+          "status": "STABLE",
+          "automatic_extra_repeats": false
+        }
+      },
+      {
+        "case": "random",
+        "workers": 1,
+        "wall_median": 1.430218506953679,
+        "CPU_median": 1.43016452,
+        "speedup": 1.0,
+        "parallel_efficiency": 1.0,
+        "RSS_max": 93224960,
+        "stability": {
+          "min": 1.41874941799324,
+          "median": 1.430218506953679,
+          "max": 1.4313569760415703,
+          "CV_population": 0.003990763219293663,
+          "CV": 0.003990763219293663,
+          "TIMING_STABILITY": "STABLE",
+          "status": "STABLE",
+          "automatic_extra_repeats": false
+        }
+      },
+      {
+        "case": "random",
+        "workers": 2,
+        "wall_median": 0.8320093260845169,
+        "CPU_median": 1.507669581,
+        "speedup": 1.7189933599475,
+        "parallel_efficiency": 0.85949667997375,
+        "RSS_max": 98258944,
+        "stability": {
+          "min": 0.8245721579296514,
+          "median": 0.8320093260845169,
+          "max": 0.8366204890189692,
+          "CV_population": 0.005972569421120246,
+          "CV": 0.005972569421120246,
+          "TIMING_STABILITY": "STABLE",
+          "status": "STABLE",
+          "automatic_extra_repeats": false
+        }
+      },
+      {
+        "case": "random",
+        "workers": 4,
+        "wall_median": 0.5114668519236147,
+        "CPU_median": 1.553135775,
+        "speedup": 2.7963073297412353,
+        "parallel_efficiency": 0.6990768324353088,
+        "RSS_max": 102408192,
+        "stability": {
+          "min": 0.5074952370487154,
+          "median": 0.5114668519236147,
+          "max": 0.5279438850702718,
+          "CV_population": 0.017169513229780917,
+          "CV": 0.017169513229780917,
+          "TIMING_STABILITY": "STABLE",
+          "status": "STABLE",
+          "automatic_extra_repeats": false
+        }
+      },
+      {
+        "case": "random",
+        "workers": 8,
+        "wall_median": 0.3586729660164565,
+        "CPU_median": 1.6327155439999999,
+        "speedup": 3.987528033791257,
+        "parallel_efficiency": 0.49844100422390714,
+        "RSS_max": 109219840,
+        "stability": {
+          "min": 0.35589688608888537,
+          "median": 0.3586729660164565,
+          "max": 0.3615638370392844,
+          "CV_population": 0.006449982751611193,
+          "CV": 0.006449982751611193,
+          "TIMING_STABILITY": "STABLE",
+          "status": "STABLE",
+          "automatic_extra_repeats": false
+        }
+      },
+      {
+        "case": "random",
+        "workers": 12,
+        "wall_median": 0.3123853290453553,
+        "CPU_median": 1.7508135669999998,
+        "speedup": 4.578379245031783,
+        "parallel_efficiency": 0.3815316037526486,
+        "RSS_max": 113913856,
+        "stability": {
+          "min": 0.3109935800312087,
+          "median": 0.3123853290453553,
+          "max": 0.3129612850025296,
+          "CV_population": 0.002646488985897562,
+          "CV": 0.002646488985897562,
+          "TIMING_STABILITY": "STABLE",
+          "status": "STABLE",
+          "automatic_extra_repeats": false
+        }
+      }
+    ],
+    "selected_target_workers": 4,
+    "selection_basis": "bounded4 of12 physical cores; independent random-array throughput improvement;12workers excluded as deployment policy due future solver contention; exact pipeline benefit still must be measured"
+  },
+  "memory": {
+    "MemAvailable_min_bytes": 62256635904,
+    "formal_feasibility": "UNRESOLVED",
+    "full_Q2_memory_event_qualification": "NOT_EXECUTED",
+    "scout_backend_peak_bytes": 203767808,
+    "scout_combined_simultaneous_peak_bytes": 636186624,
+    "scout_native_peak_bytes": 432418816
+  },
+  "IO": {
+    "formal_feasibility": "UNRESOLVED",
+    "full_Q2_IO_qualification": "NOT_EXECUTED",
+    "scout_writer_small_commits": "MEASURED_ONLY"
+  },
+  "runtime_proxy": {
+    "classification": "CONDITIONAL_NONCFD_RESOURCE_PROXY",
+    "NOT_CFD_RUNTIME": true,
+    "claim": "PROJECTED",
+    "lower_central_conservative_seconds_per_step": {
+      "central": 1025.6245977308945,
+      "conservative": 2181.718339874642,
+      "lower": 961.0104338506935
+    },
+    "central_speedup": 2.0491066881623103,
+    "speedup_orders_of_magnitude": 0.3115645708335751,
+    "earliest12800_central_days": 151.9443848490214,
+    "nominal51200_central_days": 607.7775393960856,
+    "same_source_mix_as_baseline": true,
+    "conservative_is_certified_upper_bound": false,
+    "omitted_processing": [
+      "complete field/oldTime/BC identity canonicalization",
+      "equation/term reconstruction and multiple replays",
+      "U01 terminal state reductions",
+      "full startup raw audit9GiB worst case",
+      "selected bundle and field/primary publication",
+      "native framework fixture generation/OFF fullgraph",
+      "finalization and reload/archive costs"
+    ],
+    "resource_primitive_only_includes_extra_fixture_and_telemetry_cost": true
+  },
+  "qualification": {
+    "full_Q1": "NOT_EXECUTED",
+    "full_Q2": "NOT_EXECUTED",
+    "reason": "orders-of-magnitude practical improvement not achieved; after three authorized architecture cycles nominal primitive proxy remains hundreds of days; full science/audit/U03 unqualified",
+    "U03": "algorithm unchanged; old isolated exponent retained as informational evidence only; not formal Q2"
+  },
+  "Q3": {
+    "ready": false,
+    "plan_prepared": false,
+    "authorized": false,
+    "executed": false,
+    "reason": "new full Q1/Q2 PASS and resource feasibility prerequisites not met"
+  },
+  "failed_attempts": [
+    {
+      "campaign": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/timing_qualification/scout_20261006T132240+0900_exact_c1",
+      "reason": "systemd scope plus-sign escaping rejected scope guard; zero target trials; all files retained",
+      "minor_fix": "new sanitized scope and immutable plan/manifest/auth/new ID; no automatic repeats of unstable measured samples"
+    }
+  ],
+  "remaining_risks": [
+    "All fixtures are synthetic resource-only; cache hit rates and repeated scalar compression do not predict physical-field mutation.",
+    "B+C comparison combines two features; separate target end-to-end attribution UNKNOWN.",
+    "D target gain combines compiled exact numeric formatting, parallel scheduling and Writer numeric-copy optimization; cannot assign whole gain to threads.",
+    "Only callback-lifetime compute cache explored; deeper content/epoch-safe registration and compiled exact RAP13 packing remain possible A-D designs, unproven.",
+    "Pipeline packing, identity preparation, resource-only logical-byte telemetry and fixture parsing remain material; full evaluator/U03/audit add costs.",
+    "No evidence that E/F is sufficient or necessary; batching/async cannot erase exact compute demand.",
+    "Memory and IO measurements cover scouts; formal Q2 and future CFD core contention unqualified."
+  ],
+  "next_single_task": "REVIEW_ROUTE_A_DIAGNOSTIC_TRANSIENT_MAJOR_ARCHITECTURE_DECISION",
+  "next_task_scope": "Review measured residual packing/identity costs and choose a separately bounded deeper A-D redesign or expressly authorized E/F design; preserve sciences/evidence and no Q3 until Q1/Q2 gates pass.",
+  "user_decision_required": true,
+  "CFD_executed": false
+}

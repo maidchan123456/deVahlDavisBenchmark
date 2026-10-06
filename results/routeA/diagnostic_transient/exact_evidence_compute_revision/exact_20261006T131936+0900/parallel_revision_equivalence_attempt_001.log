@@ -1,0 +1,4 @@
+PASS fullgraph workers 1
+PASS fullgraph workers 2
+PASS fullgraph workers 8
+PASS fullgraph workers 12

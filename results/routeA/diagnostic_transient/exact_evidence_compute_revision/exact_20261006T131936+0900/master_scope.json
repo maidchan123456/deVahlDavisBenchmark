@@ -1,0 +1,8 @@
+{
+  "master_run_id": "exact_20261006T131936+0900",
+  "HEAD": "03e3035cd4d43ba287ec532c6531a119ac5c0830",
+  "master_prompt": "/home/mirai/.codex/attachments/05c7a1a8-4666-4893-9c5d-48195030faee/\u8cbc\u308a\u4ed8\u3051\u305f\u30c6\u30ad\u30b9\u30c8.txt",
+  "master_prompt_sha256": "c9a5586079981944cbab752b7a26ef96fe48f8db136f1642d221fa3a0ce15471",
+  "max_major_cycles": 3,
+  "allowed": "A-D only; E/F design only; no CFD"
+}

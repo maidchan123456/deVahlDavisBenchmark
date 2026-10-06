@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "required_outputs": [
+    "ExactEvidenceComputeRevision_progress.md",
+    "ExactEvidenceComputeRevision_progress.json",
+    "ExactEvidence_architecture_comparison.md",
+    "ExactEvidence_architecture_comparison.csv",
+    "ExactEvidence_equivalence_matrix.json",
+    "ExactEvidence_target_scout_results.csv",
+    "ExactEvidence_component_breakdown.csv",
+    "ExactEvidence_runtime_proxy.csv",
+    "ExactEvidence_decision_ledger.json",
+    "ExactEvidenceComputeRevision_final_report.md",
+    "ExactEvidenceComputeRevision_final_report.json",
+    "required_final_status.txt"
+  ],
+  "required_status_fields": 80,
+  "science_equivalence": "PASS",
+  "target_stable_trials": 63,
+  "cycles": 3,
+  "history": "PASS",
+  "source_pins": "PASS",
+  "cleanup": "PASS",
+  "Q3_and_CFD": "NOT_EXECUTED",
+  "no_full_Q1_Q2_PASS_claim": true
+}

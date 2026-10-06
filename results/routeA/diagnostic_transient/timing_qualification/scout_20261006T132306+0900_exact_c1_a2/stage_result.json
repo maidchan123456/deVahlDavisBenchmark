@@ -1,0 +1,2158 @@
+{
+  "Q1_accounting": null,
+  "Q3_authorized": false,
+  "STOP_reason": null,
+  "actual_authorization_created": false,
+  "classification": "RESOURCE_QUALIFICATION_FIXTURE_ONLY",
+  "completed_repeats": 21,
+  "cost_classes": {
+    "campaign_startup": [],
+    "finalization": "native FINISH span and backend finalization parent tree overlap",
+    "full_startup_audit": "startup Writer.accept inclusive spans + stream_hash_commit_fsync; no additive ACK",
+    "per_trial_setup": "worker_summary.setup_completed_monotonic minus watchdog start; includes authority/process setup",
+    "recurring_step_equivalent": "native callback spans excluding constructor; full external wall retained separately",
+    "selected_audit": "backend class persistence_write_fsync_manifest spans at bundle publication",
+    "startup_audit_projection_multiplicity": 3
+  },
+  "execution_authorized": false,
+  "file_layout": {
+    "kind": "bounded_resource_only_scout"
+  },
+  "pairedONminusOFF": [],
+  "resource_feasibility": "UNRESOLVED",
+  "stability": {
+    "scout_OFF|pressure_matrix": {
+      "CV": 0.009791636932101033,
+      "CV_population": 0.009791636932101033,
+      "TIMING_STABILITY": "STABLE",
+      "automatic_extra_repeats": false,
+      "max": 2.4264985639601946,
+      "median": 2.4236144920578226,
+      "min": 2.3750935189891607,
+      "status": "STABLE"
+    },
+    "scout_controller|controller": {
+      "CV": 0.0029045113177343963,
+      "CV_population": 0.0029045113177343963,
+      "TIMING_STABILITY": "STABLE",
+      "automatic_extra_repeats": false,
+      "max": 4.547890935908072,
+      "median": 4.538300096988678,
+      "min": 4.516421744017862,
+      "status": "STABLE"
+    },
+    "scout_energy_matrix|energy_matrix": {
+      "CV": 0.002124765006396396,
+      "CV_population": 0.002124765006396396,
+      "TIMING_STABILITY": "STABLE",
+      "automatic_extra_repeats": false,
+      "max": 5.243848848971538,
+      "median": 5.227710242033936,
+      "min": 5.216799573972821,
+      "status": "STABLE"
+    },
+    "scout_field|field": {
+      "CV": 0.0030039773871348993,
+      "CV_population": 0.0030039773871348993,
+      "TIMING_STABILITY": "STABLE",
+      "automatic_extra_repeats": false,
+      "max": 4.52508943900466,
+      "median": 4.517445066943765,
+      "min": 4.4932879119878635,
+      "status": "STABLE"
+    },
+    "scout_matrix|matrix": {
+      "CV": 0.002381042239197426,
+      "CV_population": 0.002381042239197426,
+      "TIMING_STABILITY": "STABLE",
+      "automatic_extra_repeats": false,
+      "max": 4.425851579988375,
+      "median": 4.423705865046941,
+      "min": 4.4025443230057135,
+      "status": "STABLE"
+    },
+    "scout_pressure_matrix|pressure_matrix": {
+      "CV": 0.0037867485897260175,
+      "CV_population": 0.0037867485897260175,
+      "TIMING_STABILITY": "STABLE",
+      "automatic_extra_repeats": false,
+      "max": 4.837715798057616,
+      "median": 4.806214784970507,
+      "min": 4.794571110978723,
+      "status": "STABLE"
+    },
+    "scout_term|term": {
+      "CV": 0.004169959932433212,
+      "CV_population": 0.004169959932433212,
+      "TIMING_STABILITY": "STABLE",
+      "automatic_extra_repeats": false,
+      "max": 4.142006917973049,
+      "median": 4.119736775988713,
+      "min": 4.099942650995217,
+      "status": "STABLE"
+    }
+  },
+  "stage": "SCOUT",
+  "status": "COMPLETE_REQUIRES_RESOURCE_REVIEW",
+  "trials": [
+    {
+      "STOP_reason": null,
+      "archive_index": {
+        "artifacts": 23,
+        "index_length": 7407,
+        "index_offset": 0,
+        "record_hash": "888bfafda6778f8c2ea7bfb125d9822c5dea35e1a4db5970c4d8d61aa42a5a1b",
+        "sha256": "cbb9e0c55b838f143a3cda6ce22d79b155e85e09e291cadda610603337d1e604",
+        "status": "COMPLETE",
+        "trial_id": "000_scout_controller"
+      },
+      "completed_repeats": 1,
+      "disk": {
+        "disk_free": 793053229056,
+        "file_count": 33,
+        "free_inodes": 59452751,
+        "scratch_bytes": 4128768
+      },
+      "end_monotonic": 679516.559086512,
+      "exit_code": 0,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.022222222222222223,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 119,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "memory_event_coverage": [],
+      "partial_output_retained": true,
+      "peak_RSS_bytes": {
+        "all_processes_simultaneous": 493842432,
+        "backend": 153829376,
+        "combined_simultaneous": 406167552,
+        "native": 262283264
+      },
+      "remaining_live_pids": [],
+      "request": {
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "kind": "pipeline",
+        "mode": "ON",
+        "phase": "scout_controller",
+        "purpose": "primitive",
+        "repeat": 0,
+        "sample_class": "controller"
+      },
+      "resource_trace_SHA256": "613485b51c6626ce223116a8738f62b0259d1dea13556a2490bf2d6e45866400",
+      "sample_valid": true,
+      "samples": 119,
+      "signal": null,
+      "stage": "SCOUT",
+      "start_monotonic": 679512.04266507,
+      "status": "COMPLETE",
+      "sum_individual_native_backend_peaks_upper_bound": 416112640,
+      "trace_accounting": {
+        "lossless": true,
+        "raw_SHA256": "0616231fb2dfecd8337d67e61932f570591fc91b03f5af8eee284d5ad6e896aa",
+        "representation": "concatenated complete gzip members; one raw JSON line per member",
+        "sample_fields_unchanged": true,
+        "samples": 119,
+        "stored_bytes": 195359,
+        "uncompressed_bytes": 664441
+      },
+      "trace_samples": 119,
+      "tracked_pids": [
+        454452,
+        454453,
+        454454,
+        454455,
+        454456,
+        454457
+      ],
+      "trial_id": "000_scout_controller",
+      "wall_seconds": 4.516421744017862,
+      "worker": {
+        "backend_exit": 0,
+        "backend_time_v": {
+          "CPU_system_seconds": 0.14,
+          "CPU_user_seconds": 2.03,
+          "peak_RSS_bytes": 151367680.0
+        },
+        "callbacks_recurring": 1,
+        "constructor_native_seconds": 1.3142983180005103,
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "matrix_packets": 0,
+        "mode": "ON",
+        "native_exit": 0,
+        "native_time_v": {
+          "CPU_system_seconds": 0.2,
+          "CPU_user_seconds": 1.09,
+          "peak_RSS_bytes": 260120576.0
+        },
+        "purpose": "primitive",
+        "recurring_native_seconds": 1.033357398933731,
+        "setup_completed_monotonic": 679513.819595631,
+        "status": "COMPLETE"
+      }
+    },
+    {
+      "STOP_reason": null,
+      "archive_index": {
+        "artifacts": 23,
+        "index_length": 7419,
+        "index_offset": 7407,
+        "record_hash": "12d7a7eeb3523cf53cc515f525ecf5661f433771d5528ab632e7bf6b1759e7f0",
+        "sha256": "dab3e2ef52d1534b3d5852334bc5bd621c1038176e5b85f4d688b84e125f8ca7",
+        "status": "COMPLETE",
+        "trial_id": "001_scout_controller"
+      },
+      "completed_repeats": 1,
+      "disk": {
+        "disk_free": 793049055232,
+        "file_count": 35,
+        "free_inodes": 59452749,
+        "scratch_bytes": 8118272
+      },
+      "end_monotonic": 679521.632425963,
+      "exit_code": 0,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.031578947368421054,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 118,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "memory_event_coverage": [],
+      "partial_output_retained": true,
+      "peak_RSS_bytes": {
+        "all_processes_simultaneous": 494071808,
+        "backend": 154157056,
+        "combined_simultaneous": 406454272,
+        "native": 262246400
+      },
+      "remaining_live_pids": [],
+      "request": {
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "kind": "pipeline",
+        "mode": "ON",
+        "phase": "scout_controller",
+        "purpose": "primitive",
+        "repeat": 1,
+        "sample_class": "controller"
+      },
+      "resource_trace_SHA256": "7aa669f1b28e37a968153675e6ef13d4c9c8785e5982359aff15b28bd5a55a18",
+      "sample_valid": true,
+      "samples": 118,
+      "signal": null,
+      "stage": "SCOUT",
+      "start_monotonic": 679517.094126172,
+      "status": "COMPLETE",
+      "sum_individual_native_backend_peaks_upper_bound": 416403456,
+      "trace_accounting": {
+        "lossless": true,
+        "raw_SHA256": "86412dfb62835d27bb25b223a7bd408648b4a0a200afbeea476013f2a2deeb7c",
+        "representation": "concatenated complete gzip members; one raw JSON line per member",
+        "sample_fields_unchanged": true,
+        "samples": 118,
+        "stored_bytes": 198612,
+        "uncompressed_bytes": 660338
+      },
+      "trace_samples": 118,
+      "tracked_pids": [
+        454459,
+        454460,
+        454461,
+        454462,
+        454463,
+        454464
+      ],
+      "trial_id": "001_scout_controller",
+      "wall_seconds": 4.538300096988678,
+      "worker": {
+        "backend_exit": 0,
+        "backend_time_v": {
+          "CPU_system_seconds": 0.12,
+          "CPU_user_seconds": 2.07,
+          "peak_RSS_bytes": 151789568.0
+        },
+        "callbacks_recurring": 1,
+        "constructor_native_seconds": 1.3166112450417131,
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "matrix_packets": 0,
+        "mode": "ON",
+        "native_exit": 0,
+        "native_time_v": {
+          "CPU_system_seconds": 0.22,
+          "CPU_user_seconds": 1.07,
+          "peak_RSS_bytes": 260141056.0
+        },
+        "purpose": "primitive",
+        "recurring_native_seconds": 1.05458182701841,
+        "setup_completed_monotonic": 679518.868831863,
+        "status": "COMPLETE"
+      }
+    },
+    {
+      "STOP_reason": null,
+      "archive_index": {
+        "artifacts": 23,
+        "index_length": 7421,
+        "index_offset": 14826,
+        "record_hash": "8a9fa1ee3b9ff0a3ab9738d20ccb333d163043341aef71494d3044fd601a7ee2",
+        "sha256": "c86f35e286827ab98cc4b3a004dc129cb4652a247024ef7f58482a954615d1a5",
+        "status": "COMPLETE",
+        "trial_id": "002_scout_controller"
+      },
+      "completed_repeats": 1,
+      "disk": {
+        "disk_free": 793048449024,
+        "file_count": 34,
+        "free_inodes": 59452750,
+        "scratch_bytes": 8585216
+      },
+      "end_monotonic": 679526.601270012,
+      "exit_code": 0,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.022222222222222223,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 119,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "memory_event_coverage": [],
+      "partial_output_retained": true,
+      "peak_RSS_bytes": {
+        "all_processes_simultaneous": 491872256,
+        "backend": 153964544,
+        "combined_simultaneous": 406302720,
+        "native": 262287360
+      },
+      "remaining_live_pids": [],
+      "request": {
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "kind": "pipeline",
+        "mode": "ON",
+        "phase": "scout_controller",
+        "purpose": "primitive",
+        "repeat": 2,
+        "sample_class": "controller"
+      },
+      "resource_trace_SHA256": "cacf4911aa52b27a7d3aaf375471e847dda94ff1b8aa615665272a94313817e2",
+      "sample_valid": true,
+      "samples": 119,
+      "signal": null,
+      "stage": "SCOUT",
+      "start_monotonic": 679522.053379361,
+      "status": "COMPLETE",
+      "sum_individual_native_backend_peaks_upper_bound": 416251904,
+      "trace_accounting": {
+        "lossless": true,
+        "raw_SHA256": "ae622f6e1559689b373b21d1f4286afce04ec6320ab78c02dbc14ab7721f4af1",
+        "representation": "concatenated complete gzip members; one raw JSON line per member",
+        "sample_fields_unchanged": true,
+        "samples": 119,
+        "stored_bytes": 199167,
+        "uncompressed_bytes": 668712
+      },
+      "trace_samples": 119,
+      "tracked_pids": [
+        454466,
+        454467,
+        454468,
+        454469,
+        454470,
+        454471
+      ],
+      "trial_id": "002_scout_controller",
+      "wall_seconds": 4.547890935908072,
+      "worker": {
+        "backend_exit": 0,
+        "backend_time_v": {
+          "CPU_system_seconds": 0.12,
+          "CPU_user_seconds": 2.05,
+          "peak_RSS_bytes": 151773184.0
+        },
+        "callbacks_recurring": 1,
+        "constructor_native_seconds": 1.3351685700472444,
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "matrix_packets": 0,
+        "mode": "ON",
+        "native_exit": 0,
+        "native_time_v": {
+          "CPU_system_seconds": 0.21,
+          "CPU_user_seconds": 1.11,
+          "peak_RSS_bytes": 260112384.0
+        },
+        "purpose": "primitive",
+        "recurring_native_seconds": 1.0676139750285074,
+        "setup_completed_monotonic": 679523.831979753,
+        "status": "COMPLETE"
+      }
+    },
+    {
+      "STOP_reason": null,
+      "archive_index": {
+        "artifacts": 23,
+        "index_length": 7399,
+        "index_offset": 22247,
+        "record_hash": "8eaf8bcb8a770f486ca34a5dd4ac73f8aa880b1758ccccfa72d36b642d9fad16",
+        "sha256": "7da511cabbc25df19a8b63a991d4b3ce46431bf20362f0532207773b332ad5d1",
+        "status": "COMPLETE",
+        "trial_id": "003_scout_field"
+      },
+      "completed_repeats": 1,
+      "disk": {
+        "disk_free": 793047838720,
+        "file_count": 35,
+        "free_inodes": 59452749,
+        "scratch_bytes": 9076736
+      },
+      "end_monotonic": 679531.604049412,
+      "exit_code": 0,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.022727272727272728,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 119,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "memory_event_coverage": [],
+      "partial_output_retained": true,
+      "peak_RSS_bytes": {
+        "all_processes_simultaneous": 494870528,
+        "backend": 153825280,
+        "combined_simultaneous": 406126592,
+        "native": 262246400
+      },
+      "remaining_live_pids": [],
+      "request": {
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "kind": "pipeline",
+        "mode": "ON",
+        "phase": "scout_field",
+        "purpose": "primitive",
+        "repeat": 0,
+        "sample_class": "field"
+      },
+      "resource_trace_SHA256": "7d233bb7fdbda7ea797abe0d62fde16c6ca0161f80a1a6eccebd21840d493a90",
+      "sample_valid": true,
+      "samples": 119,
+      "signal": null,
+      "stage": "SCOUT",
+      "start_monotonic": 679527.086604677,
+      "status": "COMPLETE",
+      "sum_individual_native_backend_peaks_upper_bound": 416071680,
+      "trace_accounting": {
+        "lossless": true,
+        "raw_SHA256": "91b079e79034a03230c95d752d09be56f3c87b1a700e4b7497803a478bcabe50",
+        "representation": "concatenated complete gzip members; one raw JSON line per member",
+        "sample_fields_unchanged": true,
+        "samples": 119,
+        "stored_bytes": 197991,
+        "uncompressed_bytes": 666947
+      },
+      "trace_samples": 119,
+      "tracked_pids": [
+        454474,
+        454475,
+        454476,
+        454477,
+        454478,
+        454479
+      ],
+      "trial_id": "003_scout_field",
+      "wall_seconds": 4.517445066943765,
+      "worker": {
+        "backend_exit": 0,
+        "backend_time_v": {
+          "CPU_system_seconds": 0.13,
+          "CPU_user_seconds": 2.04,
+          "peak_RSS_bytes": 151437312.0
+        },
+        "callbacks_recurring": 1,
+        "constructor_native_seconds": 1.320779689005576,
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "matrix_packets": 0,
+        "mode": "ON",
+        "native_exit": 0,
+        "native_time_v": {
+          "CPU_system_seconds": 0.2,
+          "CPU_user_seconds": 1.11,
+          "peak_RSS_bytes": 260247552.0
+        },
+        "purpose": "primitive",
+        "recurring_native_seconds": 1.0367383389966562,
+        "setup_completed_monotonic": 679528.868984778,
+        "status": "COMPLETE"
+      }
+    },
+    {
+      "STOP_reason": null,
+      "archive_index": {
+        "artifacts": 23,
+        "index_length": 7396,
+        "index_offset": 29646,
+        "record_hash": "053ce5cfac5fbe4453b976482278cb7217af9e5fc78e5caebb97ab36f9966f30",
+        "sha256": "87fad04e14fc7b8c81afbdd46c47254684d6eeaad726894ab00fd6595e649d6e",
+        "status": "COMPLETE",
+        "trial_id": "004_scout_field"
+      },
+      "completed_repeats": 1,
+      "disk": {
+        "disk_free": 793047351296,
+        "file_count": 35,
+        "free_inodes": 59452749,
+        "scratch_bytes": 9560064
+      },
+      "end_monotonic": 679536.602425019,
+      "exit_code": 0,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.021739130434782608,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 118,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "memory_event_coverage": [],
+      "partial_output_retained": true,
+      "peak_RSS_bytes": {
+        "all_processes_simultaneous": 490807296,
+        "backend": 154091520,
+        "combined_simultaneous": 406429696,
+        "native": 262283264
+      },
+      "remaining_live_pids": [],
+      "request": {
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "kind": "pipeline",
+        "mode": "ON",
+        "phase": "scout_field",
+        "purpose": "primitive",
+        "repeat": 1,
+        "sample_class": "field"
+      },
+      "resource_trace_SHA256": "ac61cc52eb501d98bc9952041cc4c1d55de3e405c6de6688b6b2d23af4c1c6a1",
+      "sample_valid": true,
+      "samples": 118,
+      "signal": null,
+      "stage": "SCOUT",
+      "start_monotonic": 679532.07733592,
+      "status": "COMPLETE",
+      "sum_individual_native_backend_peaks_upper_bound": 416374784,
+      "trace_accounting": {
+        "lossless": true,
+        "raw_SHA256": "ef25ce319d30b3766282273d010a07de464110b3c509b4377c4fa319d43e5b51",
+        "representation": "concatenated complete gzip members; one raw JSON line per member",
+        "sample_fields_unchanged": true,
+        "samples": 118,
+        "stored_bytes": 197716,
+        "uncompressed_bytes": 662424
+      },
+      "trace_samples": 118,
+      "tracked_pids": [
+        454481,
+        454482,
+        454483,
+        454484,
+        454485,
+        454486
+      ],
+      "trial_id": "004_scout_field",
+      "wall_seconds": 4.52508943900466,
+      "worker": {
+        "backend_exit": 0,
+        "backend_time_v": {
+          "CPU_system_seconds": 0.13,
+          "CPU_user_seconds": 2.03,
+          "peak_RSS_bytes": 151830528.0
+        },
+        "callbacks_recurring": 1,
+        "constructor_native_seconds": 1.3235854089725763,
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "matrix_packets": 0,
+        "mode": "ON",
+        "native_exit": 0,
+        "native_time_v": {
+          "CPU_system_seconds": 0.18,
+          "CPU_user_seconds": 1.11,
+          "peak_RSS_bytes": 260132864.0
+        },
+        "purpose": "primitive",
+        "recurring_native_seconds": 1.03709343704395,
+        "setup_completed_monotonic": 679533.86307201,
+        "status": "COMPLETE"
+      }
+    },
+    {
+      "STOP_reason": null,
+      "archive_index": {
+        "artifacts": 23,
+        "index_length": 7400,
+        "index_offset": 37042,
+        "record_hash": "855ddcaae97d8cc68b31a0f3f7d59bfd10f10c60f61e3d7e1a866a030a04bdf6",
+        "sha256": "753cbd7f8b2579d462a0f6e4c85ff9528aeb3596a2dba338108b94c189f6ee86",
+        "status": "COMPLETE",
+        "trial_id": "005_scout_field"
+      },
+      "completed_repeats": 1,
+      "disk": {
+        "disk_free": 793046867968,
+        "file_count": 35,
+        "free_inodes": 59452749,
+        "scratch_bytes": 10043392
+      },
+      "end_monotonic": 679541.56547597,
+      "exit_code": 0,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.02247191011235955,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 118,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "memory_event_coverage": [],
+      "partial_output_retained": true,
+      "peak_RSS_bytes": {
+        "all_processes_simultaneous": 495144960,
+        "backend": 154087424,
+        "combined_simultaneous": 406388736,
+        "native": 262250496
+      },
+      "remaining_live_pids": [],
+      "request": {
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "kind": "pipeline",
+        "mode": "ON",
+        "phase": "scout_field",
+        "purpose": "primitive",
+        "repeat": 2,
+        "sample_class": "field"
+      },
+      "resource_trace_SHA256": "94dda3354cfe5d0fb8afdf416c8a38c44aeb9a8acd27edc4fadae5cf75cf0b7f",
+      "sample_valid": true,
+      "samples": 118,
+      "signal": null,
+      "stage": "SCOUT",
+      "start_monotonic": 679537.072188282,
+      "status": "COMPLETE",
+      "sum_individual_native_backend_peaks_upper_bound": 416337920,
+      "trace_accounting": {
+        "lossless": true,
+        "raw_SHA256": "1a353b10420d5f41a3e20683de9a26d7c09da4019e4fff3e8c046a69778f2f78",
+        "representation": "concatenated complete gzip members; one raw JSON line per member",
+        "sample_fields_unchanged": true,
+        "samples": 118,
+        "stored_bytes": 197848,
+        "uncompressed_bytes": 663478
+      },
+      "trace_samples": 118,
+      "tracked_pids": [
+        454488,
+        454490,
+        454491,
+        454492,
+        454493,
+        454494
+      ],
+      "trial_id": "005_scout_field",
+      "wall_seconds": 4.4932879119878635,
+      "worker": {
+        "backend_exit": 0,
+        "backend_time_v": {
+          "CPU_system_seconds": 0.12,
+          "CPU_user_seconds": 2.04,
+          "peak_RSS_bytes": 151506944.0
+        },
+        "callbacks_recurring": 1,
+        "constructor_native_seconds": 1.3207629870157689,
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "matrix_packets": 0,
+        "mode": "ON",
+        "native_exit": 0,
+        "native_time_v": {
+          "CPU_system_seconds": 0.2,
+          "CPU_user_seconds": 1.09,
+          "peak_RSS_bytes": 260141056.0
+        },
+        "purpose": "primitive",
+        "recurring_native_seconds": 1.0350282789440826,
+        "setup_completed_monotonic": 679538.854104739,
+        "status": "COMPLETE"
+      }
+    },
+    {
+      "STOP_reason": null,
+      "archive_index": {
+        "artifacts": 26,
+        "index_length": 8255,
+        "index_offset": 44442,
+        "record_hash": "d9291c3f1ba7cfa9cbeb0e9652b9b20b6dfa72464e0d6632396526ade72e6670",
+        "sha256": "b21e5964f40ba400f5997ba54b6b74b81a296b6340a42893a1213611e354b4d4",
+        "status": "COMPLETE",
+        "trial_id": "006_scout_matrix"
+      },
+      "completed_repeats": 1,
+      "disk": {
+        "disk_free": 793043255296,
+        "file_count": 38,
+        "free_inodes": 59452746,
+        "scratch_bytes": 13406208
+      },
+      "end_monotonic": 679546.407582045,
+      "exit_code": 0,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.04395604395604396,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 115,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "memory_event_coverage": [],
+      "partial_output_retained": true,
+      "peak_RSS_bytes": {
+        "all_processes_simultaneous": 520470528,
+        "backend": 147566592,
+        "combined_simultaneous": 399155200,
+        "native": 262250496
+      },
+      "remaining_live_pids": [],
+      "request": {
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "kind": "pipeline",
+        "mode": "ON",
+        "phase": "scout_matrix",
+        "purpose": "primitive",
+        "repeat": 0,
+        "sample_class": "matrix"
+      },
+      "resource_trace_SHA256": "cd7c1db8e7e1fd5520a0c2fdb465171eaeec7fdd79ecc54c30dcaddf44a52f42",
+      "sample_valid": true,
+      "samples": 115,
+      "signal": null,
+      "stage": "SCOUT",
+      "start_monotonic": 679542.005038111,
+      "status": "COMPLETE",
+      "sum_individual_native_backend_peaks_upper_bound": 409817088,
+      "trace_accounting": {
+        "lossless": true,
+        "raw_SHA256": "364feb6709e5b589390d3153d3faf44ab3d6d62534271e72337c8fcebef68f5b",
+        "representation": "concatenated complete gzip members; one raw JSON line per member",
+        "sample_fields_unchanged": true,
+        "samples": 115,
+        "stored_bytes": 192284,
+        "uncompressed_bytes": 643164
+      },
+      "trace_samples": 115,
+      "tracked_pids": [
+        454496,
+        454497,
+        454498,
+        454499,
+        454500,
+        454501
+      ],
+      "trial_id": "006_scout_matrix",
+      "wall_seconds": 4.4025443230057135,
+      "worker": {
+        "backend_exit": 0,
+        "backend_time_v": {
+          "CPU_system_seconds": 0.13,
+          "CPU_user_seconds": 1.94,
+          "peak_RSS_bytes": 145297408.0
+        },
+        "callbacks_recurring": 1,
+        "constructor_native_seconds": 1.3358144840458408,
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "matrix_packets": 1,
+        "mode": "ON",
+        "native_exit": 0,
+        "native_time_v": {
+          "CPU_system_seconds": 0.17,
+          "CPU_user_seconds": 1.05,
+          "peak_RSS_bytes": 259727360.0
+        },
+        "purpose": "primitive",
+        "recurring_native_seconds": 0.8836862969910726,
+        "setup_completed_monotonic": 679543.773859165,
+        "status": "COMPLETE"
+      }
+    },
+    {
+      "STOP_reason": null,
+      "archive_index": {
+        "artifacts": 26,
+        "index_length": 8250,
+        "index_offset": 52697,
+        "record_hash": "f540fa2593af4581ea58534f9527b1d086041c5bf909e83d558c3374b44c987f",
+        "sha256": "b7d8b571a204c06a2e71f970f393171bbb8f2c44a5b245e88bf150793413f5a4",
+        "status": "COMPLETE",
+        "trial_id": "007_scout_matrix"
+      },
+      "completed_repeats": 1,
+      "disk": {
+        "disk_free": 793039630336,
+        "file_count": 39,
+        "free_inodes": 59452745,
+        "scratch_bytes": 16785408
+      },
+      "end_monotonic": 679551.308085209,
+      "exit_code": 0,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.05434782608695652,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 116,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "memory_event_coverage": [],
+      "partial_output_retained": true,
+      "peak_RSS_bytes": {
+        "all_processes_simultaneous": 520876032,
+        "backend": 148041728,
+        "combined_simultaneous": 399548416,
+        "native": 262234112
+      },
+      "remaining_live_pids": [],
+      "request": {
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "kind": "pipeline",
+        "mode": "ON",
+        "phase": "scout_matrix",
+        "purpose": "primitive",
+        "repeat": 1,
+        "sample_class": "matrix"
+      },
+      "resource_trace_SHA256": "f08800e2ed8f1b3d4d7238d31b34e341cbd09aee2385c873a49bdf5fe5086639",
+      "sample_valid": true,
+      "samples": 116,
+      "signal": null,
+      "stage": "SCOUT",
+      "start_monotonic": 679546.884379689,
+      "status": "COMPLETE",
+      "sum_individual_native_backend_peaks_upper_bound": 410275840,
+      "trace_accounting": {
+        "lossless": true,
+        "raw_SHA256": "69c23bb04a6cfeca92c65eb19812a93a882893cee11d2fa9655ce985beacb574",
+        "representation": "concatenated complete gzip members; one raw JSON line per member",
+        "sample_fields_unchanged": true,
+        "samples": 116,
+        "stored_bytes": 195645,
+        "uncompressed_bytes": 650230
+      },
+      "trace_samples": 116,
+      "tracked_pids": [
+        454517,
+        454518,
+        454519,
+        454520,
+        454521,
+        454522
+      ],
+      "trial_id": "007_scout_matrix",
+      "wall_seconds": 4.423705865046941,
+      "worker": {
+        "backend_exit": 0,
+        "backend_time_v": {
+          "CPU_system_seconds": 0.13,
+          "CPU_user_seconds": 1.93,
+          "peak_RSS_bytes": 145543168.0
+        },
+        "callbacks_recurring": 1,
+        "constructor_native_seconds": 1.3194792460417375,
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "matrix_packets": 1,
+        "mode": "ON",
+        "native_exit": 0,
+        "native_time_v": {
+          "CPU_system_seconds": 0.18,
+          "CPU_user_seconds": 1.03,
+          "peak_RSS_bytes": 260136960.0
+        },
+        "purpose": "primitive",
+        "recurring_native_seconds": 0.8919286300661042,
+        "setup_completed_monotonic": 679548.682281618,
+        "status": "COMPLETE"
+      }
+    },
+    {
+      "STOP_reason": null,
+      "archive_index": {
+        "artifacts": 26,
+        "index_length": 8249,
+        "index_offset": 60947,
+        "record_hash": "16e4ffe2ef87eb9274d9ea0a0f6b9c3ddd6c255e500c1a4cda0cb6981ebf29e2",
+        "sha256": "8e85e8b60e694b24174f2a1085097e74e257ea90eb89e2b7c272acc55cead9ec",
+        "status": "COMPLETE",
+        "trial_id": "008_scout_matrix"
+      },
+      "completed_repeats": 1,
+      "disk": {
+        "disk_free": 793038962688,
+        "file_count": 39,
+        "free_inodes": 59452745,
+        "scratch_bytes": 17260544
+      },
+      "end_monotonic": 679556.185754496,
+      "exit_code": 0,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.04395604395604396,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 115,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "memory_event_coverage": [],
+      "partial_output_retained": true,
+      "peak_RSS_bytes": {
+        "all_processes_simultaneous": 520409088,
+        "backend": 148598784,
+        "combined_simultaneous": 399032320,
+        "native": 262250496
+      },
+      "remaining_live_pids": [],
+      "request": {
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "kind": "pipeline",
+        "mode": "ON",
+        "phase": "scout_matrix",
+        "purpose": "primitive",
+        "repeat": 2,
+        "sample_class": "matrix"
+      },
+      "resource_trace_SHA256": "8f72c846ebcdf30146f402e1fb4785bdf5051ce4e08c91bfa74cdd20d406d16c",
+      "sample_valid": true,
+      "samples": 115,
+      "signal": null,
+      "stage": "SCOUT",
+      "start_monotonic": 679551.759903246,
+      "status": "COMPLETE",
+      "sum_individual_native_backend_peaks_upper_bound": 410849280,
+      "trace_accounting": {
+        "lossless": true,
+        "raw_SHA256": "00923a252aff7839872f96f26a039651bef2e4861f5563b0d8d9342993895d5c",
+        "representation": "concatenated complete gzip members; one raw JSON line per member",
+        "sample_fields_unchanged": true,
+        "samples": 115,
+        "stored_bytes": 192361,
+        "uncompressed_bytes": 644071
+      },
+      "trace_samples": 115,
+      "tracked_pids": [
+        454530,
+        454531,
+        454532,
+        454533,
+        454534,
+        454535
+      ],
+      "trial_id": "008_scout_matrix",
+      "wall_seconds": 4.425851579988375,
+      "worker": {
+        "backend_exit": 0,
+        "backend_time_v": {
+          "CPU_system_seconds": 0.13,
+          "CPU_user_seconds": 1.94,
+          "peak_RSS_bytes": 146173952.0
+        },
+        "callbacks_recurring": 1,
+        "constructor_native_seconds": 1.3292492929613218,
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "matrix_packets": 1,
+        "mode": "ON",
+        "native_exit": 0,
+        "native_time_v": {
+          "CPU_system_seconds": 0.2,
+          "CPU_user_seconds": 1.02,
+          "peak_RSS_bytes": 259596288.0
+        },
+        "purpose": "primitive",
+        "recurring_native_seconds": 0.8846451609861106,
+        "setup_completed_monotonic": 679553.540840938,
+        "status": "COMPLETE"
+      }
+    },
+    {
+      "STOP_reason": null,
+      "archive_index": {
+        "artifacts": 24,
+        "index_length": 7677,
+        "index_offset": 69196,
+        "record_hash": "ff6f53f4e76d1b528e9804816d4bd71378ffc0d82fb4fca7658e97e5b448abb1",
+        "sha256": "ee156da8e50c25561573b86086792f942b3165c64d81ed02e9f0ec4904967012",
+        "status": "COMPLETE",
+        "trial_id": "009_scout_term"
+      },
+      "completed_repeats": 1,
+      "disk": {
+        "disk_free": 793039564800,
+        "file_count": 36,
+        "free_inodes": 59452748,
+        "scratch_bytes": 16658432
+      },
+      "end_monotonic": 679560.767223739,
+      "exit_code": 0,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.02247191011235955,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 108,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "memory_event_coverage": [],
+      "partial_output_retained": true,
+      "peak_RSS_bytes": {
+        "all_processes_simultaneous": 516026368,
+        "backend": 137428992,
+        "combined_simultaneous": 399683584,
+        "native": 262254592
+      },
+      "remaining_live_pids": [],
+      "request": {
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "kind": "pipeline",
+        "mode": "ON",
+        "phase": "scout_term",
+        "purpose": "primitive",
+        "repeat": 0,
+        "sample_class": "term"
+      },
+      "resource_trace_SHA256": "a9a199e274ebcee9b5397baa6ba71082f0f7f6a95240e1f1feb1e46f9ecb72d2",
+      "sample_valid": true,
+      "samples": 108,
+      "signal": null,
+      "stage": "SCOUT",
+      "start_monotonic": 679556.647487352,
+      "status": "COMPLETE",
+      "sum_individual_native_backend_peaks_upper_bound": 399683584,
+      "trace_accounting": {
+        "lossless": true,
+        "raw_SHA256": "07bf4275220e67e1c2eeb2fc4bc37d1ed7028b1b1924ae86dd6fa4b8eeb5624e",
+        "representation": "concatenated complete gzip members; one raw JSON line per member",
+        "sample_fields_unchanged": true,
+        "samples": 108,
+        "stored_bytes": 179367,
+        "uncompressed_bytes": 603195
+      },
+      "trace_samples": 108,
+      "tracked_pids": [
+        454544,
+        454545,
+        454546,
+        454547,
+        454548,
+        454549
+      ],
+      "trial_id": "009_scout_term",
+      "wall_seconds": 4.119736775988713,
+      "worker": {
+        "backend_exit": 0,
+        "backend_time_v": {
+          "CPU_system_seconds": 0.13,
+          "CPU_user_seconds": 1.78,
+          "peak_RSS_bytes": 135200768.0
+        },
+        "callbacks_recurring": 1,
+        "constructor_native_seconds": 1.3147792329546064,
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "matrix_packets": 0,
+        "mode": "ON",
+        "native_exit": 0,
+        "native_time_v": {
+          "CPU_system_seconds": 0.19,
+          "CPU_user_seconds": 0.94,
+          "peak_RSS_bytes": 259919872.0
+        },
+        "purpose": "primitive",
+        "recurring_native_seconds": 0.6447572560282424,
+        "setup_completed_monotonic": 679558.433822811,
+        "status": "COMPLETE"
+      }
+    },
+    {
+      "STOP_reason": null,
+      "archive_index": {
+        "artifacts": 24,
+        "index_length": 7675,
+        "index_offset": 76873,
+        "record_hash": "b8f6f768029cf0613628101ee701813c99b9e4a97554451fd0cf45cb93300100",
+        "sha256": "c19b159590a5364184827f5a8a81b39d594b77f408dba6f2e5566cc3275925e7",
+        "status": "COMPLETE",
+        "trial_id": "010_scout_term"
+      },
+      "completed_repeats": 1,
+      "disk": {
+        "disk_free": 793037217792,
+        "file_count": 38,
+        "free_inodes": 59452746,
+        "scratch_bytes": 19005440
+      },
+      "end_monotonic": 679565.383687214,
+      "exit_code": 0,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.022222222222222223,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 109,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "memory_event_coverage": [],
+      "partial_output_retained": true,
+      "peak_RSS_bytes": {
+        "all_processes_simultaneous": 515534848,
+        "backend": 136839168,
+        "combined_simultaneous": 399126528,
+        "native": 262287360
+      },
+      "remaining_live_pids": [],
+      "request": {
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "kind": "pipeline",
+        "mode": "ON",
+        "phase": "scout_term",
+        "purpose": "primitive",
+        "repeat": 1,
+        "sample_class": "term"
+      },
+      "resource_trace_SHA256": "1b5b53ad8c03d36971374866d225a1d5e04fce697260452bbfbeff5e86a3f23c",
+      "sample_valid": true,
+      "samples": 109,
+      "signal": null,
+      "stage": "SCOUT",
+      "start_monotonic": 679561.2416807,
+      "status": "COMPLETE",
+      "sum_individual_native_backend_peaks_upper_bound": 399126528,
+      "trace_accounting": {
+        "lossless": true,
+        "raw_SHA256": "8d2126098ccd36834b8121e07ffea3fff0e2e9098d99d2f229ab245e3941b0f3",
+        "representation": "concatenated complete gzip members; one raw JSON line per member",
+        "sample_fields_unchanged": true,
+        "samples": 109,
+        "stored_bytes": 183827,
+        "uncompressed_bytes": 609068
+      },
+      "trace_samples": 109,
+      "tracked_pids": [
+        454551,
+        454553,
+        454554,
+        454555,
+        454556,
+        454557
+      ],
+      "trial_id": "010_scout_term",
+      "wall_seconds": 4.142006917973049,
+      "worker": {
+        "backend_exit": 0,
+        "backend_time_v": {
+          "CPU_system_seconds": 0.12,
+          "CPU_user_seconds": 1.79,
+          "peak_RSS_bytes": 134864896.0
+        },
+        "callbacks_recurring": 1,
+        "constructor_native_seconds": 1.315260224044323,
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "matrix_packets": 0,
+        "mode": "ON",
+        "native_exit": 0,
+        "native_time_v": {
+          "CPU_system_seconds": 0.19,
+          "CPU_user_seconds": 0.94,
+          "peak_RSS_bytes": 259969024.0
+        },
+        "purpose": "primitive",
+        "recurring_native_seconds": 0.6529715069336817,
+        "setup_completed_monotonic": 679563.017659462,
+        "status": "COMPLETE"
+      }
+    },
+    {
+      "STOP_reason": null,
+      "archive_index": {
+        "artifacts": 24,
+        "index_length": 7677,
+        "index_offset": 84548,
+        "record_hash": "c0ee5ddc6754496f00cba1a9ee685c1c5841a5e646bfb47a89fbbcf1abc20cd3",
+        "sha256": "63e2f0eec90857281facdfe50f428dc3d011032cde8efae7ce5f2c680c97470b",
+        "status": "COMPLETE",
+        "trial_id": "011_scout_term"
+      },
+      "completed_repeats": 1,
+      "disk": {
+        "disk_free": 793036722176,
+        "file_count": 38,
+        "free_inodes": 59452746,
+        "scratch_bytes": 19439616
+      },
+      "end_monotonic": 679569.933056138,
+      "exit_code": 0,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.022222222222222223,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 106,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "memory_event_coverage": [],
+      "partial_output_retained": true,
+      "peak_RSS_bytes": {
+        "all_processes_simultaneous": 515166208,
+        "backend": 136441856,
+        "combined_simultaneous": 398688256,
+        "native": 262246400
+      },
+      "remaining_live_pids": [],
+      "request": {
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "kind": "pipeline",
+        "mode": "ON",
+        "phase": "scout_term",
+        "purpose": "primitive",
+        "repeat": 2,
+        "sample_class": "term"
+      },
+      "resource_trace_SHA256": "439563e822408c3d3cb8bee5f357bb19a17862306ec2f79f80f1573a0470fe55",
+      "sample_valid": true,
+      "samples": 106,
+      "signal": null,
+      "stage": "SCOUT",
+      "start_monotonic": 679565.833113874,
+      "status": "COMPLETE",
+      "sum_individual_native_backend_peaks_upper_bound": 398688256,
+      "trace_accounting": {
+        "lossless": true,
+        "raw_SHA256": "83f1e7a01898344a54bf9923c4557f318c9fc6a8fecc000d869b485a642e5e2d",
+        "representation": "concatenated complete gzip members; one raw JSON line per member",
+        "sample_fields_unchanged": true,
+        "samples": 106,
+        "stored_bytes": 177692,
+        "uncompressed_bytes": 593000
+      },
+      "trace_samples": 106,
+      "tracked_pids": [
+        454559,
+        454560,
+        454561,
+        454562,
+        454563,
+        454564
+      ],
+      "trial_id": "011_scout_term",
+      "wall_seconds": 4.099942650995217,
+      "worker": {
+        "backend_exit": 0,
+        "backend_time_v": {
+          "CPU_system_seconds": 0.12,
+          "CPU_user_seconds": 1.79,
+          "peak_RSS_bytes": 134070272.0
+        },
+        "callbacks_recurring": 1,
+        "constructor_native_seconds": 1.323230059002526,
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "matrix_packets": 0,
+        "mode": "ON",
+        "native_exit": 0,
+        "native_time_v": {
+          "CPU_system_seconds": 0.19,
+          "CPU_user_seconds": 0.96,
+          "peak_RSS_bytes": 259960832.0
+        },
+        "purpose": "primitive",
+        "recurring_native_seconds": 0.6463311479892582,
+        "setup_completed_monotonic": 679567.615895861,
+        "status": "COMPLETE"
+      }
+    },
+    {
+      "STOP_reason": null,
+      "archive_index": {
+        "artifacts": 26,
+        "index_length": 8281,
+        "index_offset": 92225,
+        "record_hash": "1b74c2b7fde2c7bb448e8720eb977455a2b9c5567a0d3961b91a975fa2175ae8",
+        "sha256": "30058dc7ff5d99ed91e3eacdb3ea37318b57708e4468a6b49c60b47ec687917c",
+        "status": "COMPLETE",
+        "trial_id": "012_scout_energy_matrix"
+      },
+      "completed_repeats": 1,
+      "disk": {
+        "disk_free": 793034727424,
+        "file_count": 39,
+        "free_inodes": 59452745,
+        "scratch_bytes": 21233664
+      },
+      "end_monotonic": 679575.588866538,
+      "exit_code": 0,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.056818181818181816,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 137,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "memory_event_coverage": [],
+      "partial_output_retained": true,
+      "peak_RSS_bytes": {
+        "all_processes_simultaneous": 752427008,
+        "backend": 200101888,
+        "combined_simultaneous": 632500224,
+        "native": 432398336
+      },
+      "remaining_live_pids": [],
+      "request": {
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "kind": "pipeline",
+        "mode": "ON",
+        "phase": "scout_energy_matrix",
+        "purpose": "primitive",
+        "repeat": 0,
+        "sample_class": "energy_matrix"
+      },
+      "resource_trace_SHA256": "36e62e32df3b2c694214cce3faaafee12189d807c600caa47a19709831607fac",
+      "sample_valid": true,
+      "samples": 137,
+      "signal": null,
+      "stage": "SCOUT",
+      "start_monotonic": 679570.372067358,
+      "status": "COMPLETE",
+      "sum_individual_native_backend_peaks_upper_bound": 632500224,
+      "trace_accounting": {
+        "lossless": true,
+        "raw_SHA256": "7b9e9a232afb82357f57d0c7a075167c120510b1607d0ed41dbeb252c113f4ec",
+        "representation": "concatenated complete gzip members; one raw JSON line per member",
+        "sample_fields_unchanged": true,
+        "samples": 137,
+        "stored_bytes": 233041,
+        "uncompressed_bytes": 776515
+      },
+      "trace_samples": 137,
+      "tracked_pids": [
+        454567,
+        454581,
+        454582,
+        454583,
+        454584,
+        454585
+      ],
+      "trial_id": "012_scout_energy_matrix",
+      "wall_seconds": 5.216799573972821,
+      "worker": {
+        "backend_exit": 0,
+        "backend_time_v": {
+          "CPU_system_seconds": 0.16,
+          "CPU_user_seconds": 2.46,
+          "peak_RSS_bytes": 197570560.0
+        },
+        "callbacks_recurring": 1,
+        "constructor_native_seconds": 1.3141482829814777,
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "matrix_packets": 2,
+        "mode": "ON",
+        "native_exit": 0,
+        "native_time_v": {
+          "CPU_system_seconds": 0.27,
+          "CPU_user_seconds": 1.29,
+          "peak_RSS_bytes": 430415872.0
+        },
+        "purpose": "primitive",
+        "recurring_native_seconds": 1.6848826190689579,
+        "setup_completed_monotonic": 679572.148419019,
+        "status": "COMPLETE"
+      }
+    },
+    {
+      "STOP_reason": null,
+      "archive_index": {
+        "artifacts": 26,
+        "index_length": 8279,
+        "index_offset": 100506,
+        "record_hash": "014eca6d999eb0429800d0716749fb6fe6d12ed7cec6593864ddf99c130c62ee",
+        "sha256": "ec6f939ee5efd18e0a872b53023fd9d76e8d7c30baac8de2b655ef72975287b0",
+        "status": "COMPLETE",
+        "trial_id": "013_scout_energy_matrix"
+      },
+      "completed_repeats": 1,
+      "disk": {
+        "disk_free": 793031852032,
+        "file_count": 41,
+        "free_inodes": 59452743,
+        "scratch_bytes": 24109056
+      },
+      "end_monotonic": 679581.302231066,
+      "exit_code": 0,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.022222222222222223,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 136,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "memory_event_coverage": [],
+      "partial_output_retained": true,
+      "peak_RSS_bytes": {
+        "all_processes_simultaneous": 752640000,
+        "backend": 200269824,
+        "combined_simultaneous": 632676352,
+        "native": 432406528
+      },
+      "remaining_live_pids": [],
+      "request": {
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "kind": "pipeline",
+        "mode": "ON",
+        "phase": "scout_energy_matrix",
+        "purpose": "primitive",
+        "repeat": 1,
+        "sample_class": "energy_matrix"
+      },
+      "resource_trace_SHA256": "cddda181e07eec3b5df572cf6d567d3f2515596a4cd8547c6cee0f5281dbe893",
+      "sample_valid": true,
+      "samples": 136,
+      "signal": null,
+      "stage": "SCOUT",
+      "start_monotonic": 679576.058382569,
+      "status": "COMPLETE",
+      "sum_individual_native_backend_peaks_upper_bound": 632676352,
+      "trace_accounting": {
+        "lossless": true,
+        "raw_SHA256": "b0b111c1902dc3f75a9b8084453f22969d06c9c158ae720f8f230b7e5a7f3bfa",
+        "representation": "concatenated complete gzip members; one raw JSON line per member",
+        "sample_fields_unchanged": true,
+        "samples": 136,
+        "stored_bytes": 230242,
+        "uncompressed_bytes": 770072
+      },
+      "trace_samples": 136,
+      "tracked_pids": [
+        454587,
+        454588,
+        454589,
+        454590,
+        454591,
+        454592
+      ],
+      "trial_id": "013_scout_energy_matrix",
+      "wall_seconds": 5.243848848971538,
+      "worker": {
+        "backend_exit": 0,
+        "backend_time_v": {
+          "CPU_system_seconds": 0.15,
+          "CPU_user_seconds": 2.47,
+          "peak_RSS_bytes": 197816320.0
+        },
+        "callbacks_recurring": 1,
+        "constructor_native_seconds": 1.3227579409722239,
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "matrix_packets": 2,
+        "mode": "ON",
+        "native_exit": 0,
+        "native_time_v": {
+          "CPU_system_seconds": 0.3,
+          "CPU_user_seconds": 1.25,
+          "peak_RSS_bytes": 430288896.0
+        },
+        "purpose": "primitive",
+        "recurring_native_seconds": 1.6858922339743003,
+        "setup_completed_monotonic": 679577.835319002,
+        "status": "COMPLETE"
+      }
+    },
+    {
+      "STOP_reason": null,
+      "archive_index": {
+        "artifacts": 26,
+        "index_length": 8278,
+        "index_offset": 108785,
+        "record_hash": "3c32ccfaa9e44ddda34dd39d5b82b334f97b1ba0b3641c88fe77fd18ff2298fd",
+        "sha256": "00582244a05268f042504a54a0c2585a783367d81c8565a99994393c622c3cf8",
+        "status": "COMPLETE",
+        "trial_id": "014_scout_energy_matrix"
+      },
+      "completed_repeats": 1,
+      "disk": {
+        "disk_free": 793031294976,
+        "file_count": 41,
+        "free_inodes": 59452743,
+        "scratch_bytes": 24662016
+      },
+      "end_monotonic": 679586.992352692,
+      "exit_code": 0,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.021739130434782608,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 136,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "memory_event_coverage": [],
+      "partial_output_retained": true,
+      "peak_RSS_bytes": {
+        "all_processes_simultaneous": 755666944,
+        "backend": 200228864,
+        "combined_simultaneous": 632631296,
+        "native": 432402432
+      },
+      "remaining_live_pids": [],
+      "request": {
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "kind": "pipeline",
+        "mode": "ON",
+        "phase": "scout_energy_matrix",
+        "purpose": "primitive",
+        "repeat": 2,
+        "sample_class": "energy_matrix"
+      },
+      "resource_trace_SHA256": "86fd03f95c497d4a862fc2b63b205d42062351c309cd57b799e312609796015d",
+      "sample_valid": true,
+      "samples": 136,
+      "signal": null,
+      "stage": "SCOUT",
+      "start_monotonic": 679581.7646429,
+      "status": "COMPLETE",
+      "sum_individual_native_backend_peaks_upper_bound": 632631296,
+      "trace_accounting": {
+        "lossless": true,
+        "raw_SHA256": "24ea48508cc9c731107fe831fea5477a28dacacb25b1b4f72236e9722e2f0900",
+        "representation": "concatenated complete gzip members; one raw JSON line per member",
+        "sample_fields_unchanged": true,
+        "samples": 136,
+        "stored_bytes": 227848,
+        "uncompressed_bytes": 771560
+      },
+      "trace_samples": 136,
+      "tracked_pids": [
+        454594,
+        454595,
+        454596,
+        454597,
+        454598,
+        454599
+      ],
+      "trial_id": "014_scout_energy_matrix",
+      "wall_seconds": 5.227710242033936,
+      "worker": {
+        "backend_exit": 0,
+        "backend_time_v": {
+          "CPU_system_seconds": 0.14,
+          "CPU_user_seconds": 2.48,
+          "peak_RSS_bytes": 197644288.0
+        },
+        "callbacks_recurring": 1,
+        "constructor_native_seconds": 1.3214644020190462,
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "matrix_packets": 2,
+        "mode": "ON",
+        "native_exit": 0,
+        "native_time_v": {
+          "CPU_system_seconds": 0.27,
+          "CPU_user_seconds": 1.28,
+          "peak_RSS_bytes": 430264320.0
+        },
+        "purpose": "primitive",
+        "recurring_native_seconds": 1.6823686070274562,
+        "setup_completed_monotonic": 679583.541238392,
+        "status": "COMPLETE"
+      }
+    },
+    {
+      "STOP_reason": null,
+      "archive_index": {
+        "artifacts": 26,
+        "index_length": 8289,
+        "index_offset": 117063,
+        "record_hash": "e37dbe2e9058e3ef0e82994b6496d76faab86bb1f51930e685d1f9a18bc4a10d",
+        "sha256": "0018c5c8da506acac222d5df80376a7eccbbf0649f80932f1bbc08b8a7880b79",
+        "status": "COMPLETE",
+        "trial_id": "015_scout_pressure_matrix"
+      },
+      "completed_repeats": 1,
+      "disk": {
+        "disk_free": 793030971392,
+        "file_count": 40,
+        "free_inodes": 59452744,
+        "scratch_bytes": 24932352
+      },
+      "end_monotonic": 679592.286211229,
+      "exit_code": 0,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.022222222222222223,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 126,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "memory_event_coverage": [],
+      "partial_output_retained": true,
+      "peak_RSS_bytes": {
+        "all_processes_simultaneous": 605638656,
+        "backend": 167596032,
+        "combined_simultaneous": 476008448,
+        "native": 311951360
+      },
+      "remaining_live_pids": [],
+      "request": {
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "kind": "pipeline",
+        "mode": "ON",
+        "phase": "scout_pressure_matrix",
+        "purpose": "primitive",
+        "repeat": 0,
+        "sample_class": "pressure_matrix"
+      },
+      "resource_trace_SHA256": "28c7fa56c153d6b7cc31562e766592bd71f4fa9802b4ccb78fa29ed81ec44d23",
+      "sample_valid": true,
+      "samples": 126,
+      "signal": null,
+      "stage": "SCOUT",
+      "start_monotonic": 679587.448495765,
+      "status": "COMPLETE",
+      "sum_individual_native_backend_peaks_upper_bound": 479547392,
+      "trace_accounting": {
+        "lossless": true,
+        "raw_SHA256": "57c862bf3ced51074950f4a186b33a430130f1f43074b7eeb05bef5746009b07",
+        "representation": "concatenated complete gzip members; one raw JSON line per member",
+        "sample_fields_unchanged": true,
+        "samples": 126,
+        "stored_bytes": 211441,
+        "uncompressed_bytes": 710880
+      },
+      "trace_samples": 126,
+      "tracked_pids": [
+        454602,
+        454603,
+        454604,
+        454605,
+        454606,
+        454607
+      ],
+      "trial_id": "015_scout_pressure_matrix",
+      "wall_seconds": 4.837715798057616,
+      "worker": {
+        "backend_exit": 0,
+        "backend_time_v": {
+          "CPU_system_seconds": 0.14,
+          "CPU_user_seconds": 2.19,
+          "peak_RSS_bytes": 164945920.0
+        },
+        "callbacks_recurring": 1,
+        "constructor_native_seconds": 1.3530152960447595,
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "matrix_packets": 3,
+        "mode": "ON",
+        "native_exit": 0,
+        "native_time_v": {
+          "CPU_system_seconds": 0.24,
+          "CPU_user_seconds": 1.16,
+          "peak_RSS_bytes": 309366784.0
+        },
+        "purpose": "primitive",
+        "recurring_native_seconds": 1.2718784739263356,
+        "setup_completed_monotonic": 679589.232541606,
+        "status": "COMPLETE"
+      }
+    },
+    {
+      "STOP_reason": null,
+      "archive_index": {
+        "artifacts": 26,
+        "index_length": 8286,
+        "index_offset": 125352,
+        "record_hash": "11128831febbaae3a8277dc3829a76e87db38bc67331fc52c8a993f852ff7265",
+        "sha256": "554ad5f1de98e6bf2ca24699b7e90aefd86cff798699a5209727cd84e150584a",
+        "status": "COMPLETE",
+        "trial_id": "016_scout_pressure_matrix"
+      },
+      "completed_repeats": 1,
+      "disk": {
+        "disk_free": 793028349952,
+        "file_count": 42,
+        "free_inodes": 59452742,
+        "scratch_bytes": 27549696
+      },
+      "end_monotonic": 679597.608647761,
+      "exit_code": 0,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.022222222222222223,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 125,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "memory_event_coverage": [],
+      "partial_output_retained": true,
+      "peak_RSS_bytes": {
+        "all_processes_simultaneous": 605069312,
+        "backend": 167153664,
+        "combined_simultaneous": 475574272,
+        "native": 308678656
+      },
+      "remaining_live_pids": [],
+      "request": {
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "kind": "pipeline",
+        "mode": "ON",
+        "phase": "scout_pressure_matrix",
+        "purpose": "primitive",
+        "repeat": 1,
+        "sample_class": "pressure_matrix"
+      },
+      "resource_trace_SHA256": "549d87373af7d45cc37e6787a4c2f6cfece5216916101ab4453cf1100b71be6f",
+      "sample_valid": true,
+      "samples": 125,
+      "signal": null,
+      "stage": "SCOUT",
+      "start_monotonic": 679592.802433284,
+      "status": "COMPLETE",
+      "sum_individual_native_backend_peaks_upper_bound": 475832320,
+      "trace_accounting": {
+        "lossless": true,
+        "raw_SHA256": "56818dc6e4bf11985288a8e9c2daf8a2ac2af9d5f5e39ec607eafd4eb2be0d7d",
+        "representation": "concatenated complete gzip members; one raw JSON line per member",
+        "sample_fields_unchanged": true,
+        "samples": 125,
+        "stored_bytes": 210750,
+        "uncompressed_bytes": 704506
+      },
+      "trace_samples": 125,
+      "tracked_pids": [
+        454610,
+        454611,
+        454612,
+        454613,
+        454614,
+        454615
+      ],
+      "trial_id": "016_scout_pressure_matrix",
+      "wall_seconds": 4.806214784970507,
+      "worker": {
+        "backend_exit": 0,
+        "backend_time_v": {
+          "CPU_system_seconds": 0.13,
+          "CPU_user_seconds": 2.19,
+          "peak_RSS_bytes": 164446208.0
+        },
+        "callbacks_recurring": 1,
+        "constructor_native_seconds": 1.338528451975435,
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "matrix_packets": 3,
+        "mode": "ON",
+        "native_exit": 0,
+        "native_time_v": {
+          "CPU_system_seconds": 0.26,
+          "CPU_user_seconds": 1.12,
+          "peak_RSS_bytes": 309694464.0
+        },
+        "purpose": "primitive",
+        "recurring_native_seconds": 1.253922204952687,
+        "setup_completed_monotonic": 679594.586431408,
+        "status": "COMPLETE"
+      }
+    },
+    {
+      "STOP_reason": null,
+      "archive_index": {
+        "artifacts": 26,
+        "index_length": 8288,
+        "index_offset": 133638,
+        "record_hash": "e4aa7be0d7e85e8ab45b2a95ff5b060cf49131443a32711076f07d06a00563ae",
+        "sha256": "7beb4e77bc712096f2e1b818816c4de1603bff60f860650a565f44cf3aa07d59",
+        "status": "COMPLETE",
+        "trial_id": "017_scout_pressure_matrix"
+      },
+      "completed_repeats": 1,
+      "disk": {
+        "disk_free": 793027842048,
+        "file_count": 42,
+        "free_inodes": 59452742,
+        "scratch_bytes": 28057600
+      },
+      "end_monotonic": 679602.858674127,
+      "exit_code": 0,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.022222222222222223,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 125,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "memory_event_coverage": [],
+      "partial_output_retained": true,
+      "peak_RSS_bytes": {
+        "all_processes_simultaneous": 605585408,
+        "backend": 167542784,
+        "combined_simultaneous": 475959296,
+        "native": 311955456
+      },
+      "remaining_live_pids": [],
+      "request": {
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "kind": "pipeline",
+        "mode": "ON",
+        "phase": "scout_pressure_matrix",
+        "purpose": "primitive",
+        "repeat": 2,
+        "sample_class": "pressure_matrix"
+      },
+      "resource_trace_SHA256": "fc95399570ce44f87a0b42a7834ca416bfd9067b5c773725e26325ba833e4a47",
+      "sample_valid": true,
+      "samples": 125,
+      "signal": null,
+      "stage": "SCOUT",
+      "start_monotonic": 679598.064103318,
+      "status": "COMPLETE",
+      "sum_individual_native_backend_peaks_upper_bound": 479498240,
+      "trace_accounting": {
+        "lossless": true,
+        "raw_SHA256": "568e7ae8946c2aa1e4059b15f20a8da871d7b78c61a9411276e97c93e214134c",
+        "representation": "concatenated complete gzip members; one raw JSON line per member",
+        "sample_fields_unchanged": true,
+        "samples": 125,
+        "stored_bytes": 208958,
+        "uncompressed_bytes": 703991
+      },
+      "trace_samples": 125,
+      "tracked_pids": [
+        454617,
+        454618,
+        454619,
+        454620,
+        454621,
+        454622
+      ],
+      "trial_id": "017_scout_pressure_matrix",
+      "wall_seconds": 4.794571110978723,
+      "worker": {
+        "backend_exit": 0,
+        "backend_time_v": {
+          "CPU_system_seconds": 0.14,
+          "CPU_user_seconds": 2.16,
+          "peak_RSS_bytes": 165203968.0
+        },
+        "callbacks_recurring": 1,
+        "constructor_native_seconds": 1.3156081449706107,
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "matrix_packets": 3,
+        "mode": "ON",
+        "native_exit": 0,
+        "native_time_v": {
+          "CPU_system_seconds": 0.24,
+          "CPU_user_seconds": 1.14,
+          "peak_RSS_bytes": 309481472.0
+        },
+        "purpose": "primitive",
+        "recurring_native_seconds": 1.2672427640063688,
+        "setup_completed_monotonic": 679599.847396327,
+        "status": "COMPLETE"
+      }
+    },
+    {
+      "STOP_reason": null,
+      "archive_index": {
+        "artifacts": 14,
+        "index_length": 5081,
+        "index_offset": 141926,
+        "record_hash": "241f00c86534f417b94244c3c723fecfbcd0441ca736e259cf28875f0799f318",
+        "sha256": "39d6086e55be39d67fbd44f1ec8d1bd90878b51d6c0e6c632c522d68fe558a30",
+        "status": "COMPLETE",
+        "trial_id": "018_scout_OFF"
+      },
+      "completed_repeats": 1,
+      "disk": {
+        "disk_free": 793034043392,
+        "file_count": 30,
+        "free_inodes": 59452755,
+        "scratch_bytes": 21864448
+      },
+      "end_monotonic": 679605.718236504,
+      "exit_code": 0,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.021739130434782608,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 64,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "partial_output_retained": true,
+      "peak_RSS_bytes": {
+        "all_processes_simultaneous": 360353792,
+        "backend": 0,
+        "combined_simultaneous": 230760448,
+        "native": 230760448
+      },
+      "remaining_live_pids": [],
+      "request": {
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "kind": "pipeline",
+        "mode": "OFF",
+        "phase": "scout_OFF",
+        "purpose": "primitive",
+        "repeat": 0,
+        "sample_class": "pressure_matrix"
+      },
+      "resource_trace_SHA256": "34d4ab4421bd5bd74c37c55f964ceed82cc48e4d3e137555778153c7952e03ee",
+      "sample_valid": true,
+      "samples": 64,
+      "signal": null,
+      "stage": "SCOUT",
+      "start_monotonic": 679603.294622327,
+      "status": "COMPLETE",
+      "sum_individual_native_backend_peaks_upper_bound": 230760448,
+      "trace_accounting": {
+        "lossless": true,
+        "raw_SHA256": "ba5673cbde2e1cbfe2aeb9c8eda073eee0eeb0431d6886e46edbcf3e3d408f66",
+        "representation": "concatenated complete gzip members; one raw JSON line per member",
+        "sample_fields_unchanged": true,
+        "samples": 64,
+        "stored_bytes": 98332,
+        "uncompressed_bytes": 303402
+      },
+      "trace_samples": 64,
+      "tracked_pids": [
+        454624,
+        454625,
+        454626,
+        454627
+      ],
+      "trial_id": "018_scout_OFF",
+      "wall_seconds": 2.4236144920578226,
+      "worker": {
+        "backend_exit": null,
+        "backend_time_v": null,
+        "callbacks_recurring": 1,
+        "constructor_native_seconds": 0.13998609699774534,
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "matrix_packets": 3,
+        "mode": "OFF",
+        "native_exit": 0,
+        "native_time_v": {
+          "CPU_system_seconds": 0.2,
+          "CPU_user_seconds": 0.73,
+          "peak_RSS_bytes": 272048128.0
+        },
+        "purpose": "primitive",
+        "recurring_native_seconds": 0.12628011999186128,
+        "setup_completed_monotonic": 679605.081527537,
+        "status": "COMPLETE"
+      }
+    },
+    {
+      "STOP_reason": null,
+      "archive_index": {
+        "artifacts": 14,
+        "index_length": 5080,
+        "index_offset": 147007,
+        "record_hash": "60c002428565029d001b45c054daf33fdcd653499e6cd33c3f80f73a6d0af4ec",
+        "sha256": "32a968644945bde8c0e48f10d63f6562756a1f817f0360ae45ca319c47ad7d76",
+        "status": "COMPLETE",
+        "trial_id": "019_scout_OFF"
+      },
+      "completed_repeats": 1,
+      "disk": {
+        "disk_free": 793033797632,
+        "file_count": 30,
+        "free_inodes": 59452755,
+        "scratch_bytes": 22106112
+      },
+      "end_monotonic": 679608.550641571,
+      "exit_code": 0,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.02247191011235955,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 64,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "partial_output_retained": true,
+      "peak_RSS_bytes": {
+        "all_processes_simultaneous": 403664896,
+        "backend": 0,
+        "combined_simultaneous": 274108416,
+        "native": 274108416
+      },
+      "remaining_live_pids": [],
+      "request": {
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "kind": "pipeline",
+        "mode": "OFF",
+        "phase": "scout_OFF",
+        "purpose": "primitive",
+        "repeat": 1,
+        "sample_class": "pressure_matrix"
+      },
+      "resource_trace_SHA256": "9ba26b1952c116f0b84a1e04d1af26073ff2f3145c716010e30cb1f380cad43a",
+      "sample_valid": true,
+      "samples": 64,
+      "signal": null,
+      "stage": "SCOUT",
+      "start_monotonic": 679606.124143337,
+      "status": "COMPLETE",
+      "sum_individual_native_backend_peaks_upper_bound": 274108416,
+      "trace_accounting": {
+        "lossless": true,
+        "raw_SHA256": "9a4e13c311a67745e4b93d58962c9a4386b3b78aff571d2193a20dfd7508127f",
+        "representation": "concatenated complete gzip members; one raw JSON line per member",
+        "sample_fields_unchanged": true,
+        "samples": 64,
+        "stored_bytes": 98931,
+        "uncompressed_bytes": 303196
+      },
+      "trace_samples": 64,
+      "tracked_pids": [
+        454629,
+        454630,
+        454631,
+        454632
+      ],
+      "trial_id": "019_scout_OFF",
+      "wall_seconds": 2.4264985639601946,
+      "worker": {
+        "backend_exit": null,
+        "backend_time_v": null,
+        "callbacks_recurring": 1,
+        "constructor_native_seconds": 0.14170285896398127,
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "matrix_packets": 3,
+        "mode": "OFF",
+        "native_exit": 0,
+        "native_time_v": {
+          "CPU_system_seconds": 0.19,
+          "CPU_user_seconds": 0.73,
+          "peak_RSS_bytes": 271425536.0
+        },
+        "purpose": "primitive",
+        "recurring_native_seconds": 0.1256713670445606,
+        "setup_completed_monotonic": 679607.922454257,
+        "status": "COMPLETE"
+      }
+    },
+    {
+      "STOP_reason": null,
+      "archive_index": {
+        "artifacts": 14,
+        "index_length": 5082,
+        "index_offset": 152087,
+        "record_hash": "4dce17b2330caffa61adf5196bd8cbfbe31c767f5c611188c0be0202963b5404",
+        "sha256": "f4b37f3a0f10d0980c67817b436e25241346aaa77cb823c9a1b3c658796cfdbb",
+        "status": "COMPLETE",
+        "trial_id": "020_scout_OFF"
+      },
+      "completed_repeats": 1,
+      "disk": {
+        "disk_free": 793033580544,
+        "file_count": 29,
+        "free_inodes": 59452756,
+        "scratch_bytes": 22327296
+      },
+      "end_monotonic": 679611.335487226,
+      "exit_code": 0,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.022222222222222223,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 62,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "partial_output_retained": true,
+      "peak_RSS_bytes": {
+        "all_processes_simultaneous": 374362112,
+        "backend": 0,
+        "combined_simultaneous": 244817920,
+        "native": 244817920
+      },
+      "remaining_live_pids": [],
+      "request": {
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "kind": "pipeline",
+        "mode": "OFF",
+        "phase": "scout_OFF",
+        "purpose": "primitive",
+        "repeat": 2,
+        "sample_class": "pressure_matrix"
+      },
+      "resource_trace_SHA256": "55f54d6247f6f317aad11ea7ccd02d2e6fdb32d9d0179016b67437fadc9cdb30",
+      "sample_valid": true,
+      "samples": 62,
+      "signal": null,
+      "stage": "SCOUT",
+      "start_monotonic": 679608.960394016,
+      "status": "COMPLETE",
+      "sum_individual_native_backend_peaks_upper_bound": 244817920,
+      "trace_accounting": {
+        "lossless": true,
+        "raw_SHA256": "73ffe8441d50ee61d54932647a1a0d8f40628e75ff89047414b36e9548dae119",
+        "representation": "concatenated complete gzip members; one raw JSON line per member",
+        "sample_fields_unchanged": true,
+        "samples": 62,
+        "stored_bytes": 95170,
+        "uncompressed_bytes": 293706
+      },
+      "trace_samples": 62,
+      "tracked_pids": [
+        454635,
+        454636,
+        454637,
+        454638
+      ],
+      "trial_id": "020_scout_OFF",
+      "wall_seconds": 2.3750935189891607,
+      "worker": {
+        "backend_exit": null,
+        "backend_time_v": null,
+        "callbacks_recurring": 1,
+        "constructor_native_seconds": 0.13998278102371842,
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "matrix_packets": 3,
+        "mode": "OFF",
+        "native_exit": 0,
+        "native_time_v": {
+          "CPU_system_seconds": 0.21,
+          "CPU_user_seconds": 0.73,
+          "peak_RSS_bytes": 271888384.0
+        },
+        "purpose": "primitive",
+        "recurring_native_seconds": 0.12686143501196057,
+        "setup_completed_monotonic": 679610.726533713,
+        "status": "COMPLETE"
+      }
+    }
+  ],
+  "wall_seconds": 101.43890425306745
+}

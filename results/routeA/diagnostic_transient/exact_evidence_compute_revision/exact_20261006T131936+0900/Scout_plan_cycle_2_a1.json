@@ -1,0 +1,2451 @@
+{
+  "HEAD": "03e3035cd4d43ba287ec532c6531a119ac5c0830",
+  "IO_design": {
+    "allocation_semantics": "real non-sparse bytes for throughput; preallocation/sparse only allocation metadata probe, never sustained performance evidence",
+    "audit_prefix_cumulative_max_bytes": 1073741824,
+    "audit_prefix_max_bytes": 1073741824,
+    "audit_prefix_per_trial_max_bytes": 268435456,
+    "cache": "record new files cold-uncontrolled and subsequent warm read separately; fsync does not guarantee cold cache; no root cache drop",
+    "counters": "logical sizes/wchar distinct from proc io write_bytes and device sectors; device IO includes other activity, do not equate attribution",
+    "coverage": "normal/selected real immutable writer path and readback SHA required; actual payloads not arbitrary byte writes when measuring pipeline;9GiB sustained throughput NOT_QUALIFIED_BY_PREFIX",
+    "operation_byte_budget": "3 trials each <=512MiB bundle +256MiB audit prefix +16MiB field +4MiB log +two16MiB receipt/primary chunks; all retained plus manifests <=4GiB; earlier wall/file caps still stop",
+    "operations": [
+      "publish actual64-step receipt/primary chunk with immutable commit",
+      "4MiB raw log rotate",
+      "manifest append and fsync file+directory",
+      "16MiB field-sized file",
+      "512MiB selected-bundle-sized streamed file",
+      "32MiB stage-stream chunks up to1GiB full-audit prefix"
+    ],
+    "production_capacity_unchanged_bytes": {
+      "including_conditional": 838611250408,
+      "primary_permanent": 428653979016,
+      "primary_working_peak": 445833848200
+    },
+    "repeat_order": "3 trials distinct files each; no cache-drop requirement",
+    "same_filesystem_as_future_results": true,
+    "suite_cap_seconds": 120,
+    "total_stage_scratch_bytes": 4294967296
+  },
+  "Q0_requirements": [
+    "verify all pins and contract metadata consistency",
+    "pin native OpenFOAM source/build, diagnostic/instrumentation, executable, replacement and all linked libraries; resolve realpaths and SHA",
+    "compiler version/options, ABI, WM_OPTIONS, LD_LIBRARY_PATH, Python version and import origins",
+    "actual mesh/field hash manifest; constructor must not write fields or advance time",
+    "contract version and namespace checks; resource readiness remains NO for production",
+    "target adapter and external process-group watchdog acceptance; no production launcher bypass"
+  ],
+  "Q1_design": {
+    "OFF": "same fixture enumeration/indexing, timer and count guards; diagnostic path disabled, no physics solver",
+    "U_vector_matrix_note": "recurring701 matrices are scalar packet schemas in diagnostic graph; U vector solves contribute145fv/169records but have no vector matrix callback in this graph. Optional vector packing/replay stress is auxiliary and excluded from1144.",
+    "acceptance": "all required classes and counts complete; field/topology/history/epoch/matrix checks PASS; no write in source case; watchdog and simultaneous memory traces complete; no diagnostic criterion weakened",
+    "adapter_implemented": false,
+    "censored": "incomplete mix gives elapsed lower bound only; weighted class sum is PLANNING_ONLY, not measured step-equivalent",
+    "class_partition": "stage + term + every matrix slot (matrix/current_matrix/unrelaxed_matrix/physical_matrix/referenced_matrix) + field/history shape; source schema only, actual byte sizes measured in Q1",
+    "counts": {
+      "controller_callbacks": 3,
+      "matrix_packets": 701,
+      "matrix_replays_minimum": 1475,
+      "physical_callbacks": 1141
+    },
+    "fixture": "private in-memory resource-only fields, actual owner/neighbour/patch topology; manufactured coefficients b=Apsi with explicit component and boundary terms; all epoch and payload hashes regenerated; no fv solve, time increment, thermo evolution or case writes",
+    "input": "cases/routeA/A-Ra1e6-fine constant/polyMesh and existing fields read-only; pinned manifest before any future fixture build",
+    "kind": "TARGET_SIZE_DIAGNOSTIC_REPLAY",
+    "order": [
+      "OFF",
+      "ON",
+      "ON",
+      "OFF",
+      "OFF",
+      "ON"
+    ],
+    "packet_limit_bytes": 33554432,
+    "payload_byte_accounting": "record each class min/median/max JSON and packed bytes, native send and ACK bytes; actual controller meshState field count10; native stage32MiB guard unchanged",
+    "repeats_per_mode": 3,
+    "timed_scope": "startup separate; one complete recurring graph per trial, bounded30s; selected-audit policy retained; archetype screening max10s each counts toward300s",
+    "topology": {
+      "active_boundary_faces": 640,
+      "cells": 25600,
+      "empty_faces": 51200,
+      "internal_faces": 50880,
+      "total_faces": 102720
+    }
+  },
+  "Q2_U03": {
+    "U03_COMPUTE_REVISION_REQUIRED": "NOT_DECIDED_WITHOUT_MEASUREMENT",
+    "algorithm_unchanged": true,
+    "fit": "log median(T)=log(a)+p log(N); completed sizes>=3, report range, local slopes/residuals and a,p; <3sizes UNRESOLVED; compare full-process wall separately from kernel",
+    "fixture": "eight constant finite histories on0..0.6 t*, evaluate endpoint0.5, all three confirmation windows, fixed support scales; constant values avoid early rejection and exercise interpolation/continuous OLS/integration",
+    "node_counts": [
+      100,
+      200,
+      400,
+      800,
+      1600,
+      3200,
+      6400
+    ],
+    "projection_label": "LOW_CONFIDENCE_PROJECTION",
+    "projection_node_counts_planning_only": [
+      30011,
+      60021,
+      120039
+    ],
+    "repeats": 3,
+    "single_trial_wall_seconds": 15,
+    "source_reasoning": "window_stats enumerates O(N) points and repeated interpolate/integral searches traverse history; nested work consistent with quadratic tendency, timing exponent alone not mathematical proof",
+    "suite_wall_seconds": 120,
+    "timeout": "STOP_U03_BENCHMARK_LIMIT; stop larger N, preserve censored lower bound, no auto retry"
+  },
+  "Q2_pipeline": {
+    "instrumentation": "adapter wrapper spans or profiler; runtime source unchanged; profile perturbation measured against uninstrumented run, timing spans may overlap and cannot simply be summed",
+    "payload_classes": [
+      "small controller/scalar receipt",
+      "field state including existing oldTimes",
+      "scalar_ldu/explicit matrix state; U vector-field shape (vector matrix primitive separately labeled auxiliary)",
+      "term-specific payload",
+      "selected bundle"
+    ],
+    "primitives": "native JSON, AF_UNIX send+ACK, Python decode, canonicalization, replay, binary packing and SHA on actual Q1 bytes/classes; measure CPU/wall and p50/p95 bytes; no repeated identical payload shortcut",
+    "repeats": 3
+  },
+  "Q2_subbudgets_seconds": {
+    "IO": 120,
+    "U03": 120,
+    "memory": 60,
+    "primitives": 120
+  },
+  "Q3_design": {
+    "completion": "complete steps only; terminate on earliest trial/stage wall or step cap; censored partial final step is not s/step",
+    "execute_in_this_task": false,
+    "initial_condition": "identical independently verified frozen rest/uniformT0 cold state; private qualification workspace in future only",
+    "labels": [
+      "NOT_PRODUCTION_RESULT",
+      "NOT_GATE_J",
+      "NOT_TEMPORAL_COMPARISON_RESULT",
+      "NOT_VALIDATION_DATA"
+    ],
+    "namespace": "results/routeA/diagnostic_transient/timing_qualification/<authorized_id>/Q3/",
+    "noninvasiveness": "paired hashes/cell fields of U,rho,T,e,p,p_rgh,phi,K and existing oldTimes,BC and timestep trajectories; use frozen expectations not new relaxed thresholds",
+    "numerics": "frozen24outer/2pressure/0nonOrthogonal; all tolerances, Co policy, U01/U02/U03/U04/P1/seal/purge unchanged; no early outer exit",
+    "repeat_limit": "two ON/OFF pairs only to minimize CFD; Q3 repeatability provisional, not equivalent to3repeat qualification",
+    "science_forbidden": [
+      "Nu interpretation",
+      "arrival conclusions",
+      "Co comparison",
+      "mass/energy physical acceptance"
+    ],
+    "separate_user_authorization_required": true,
+    "single_trial_wall_seconds": 30,
+    "startup_included_in_wall_cap": true,
+    "steps_per_trial_max": 2,
+    "suite_wall_seconds": 120,
+    "total_steps_max": 8,
+    "trials": [
+      "OFF_cold_A",
+      "ON_cold_A",
+      "ON_cold_B",
+      "OFF_cold_B"
+    ]
+  },
+  "authority_sha256": {
+    "Scripts/routeA/diagnostic_transient/v1_1/NativeMatrixObserver.H": "f2fd88408ed4d20525c8825fbcd0fc54393876860ca84164b18f2708d674392c",
+    "Scripts/routeA/diagnostic_transient/v1_1/TestNativeMatrixObserver.C": "fa7f8a9968caf25f6e3e9fe83fa261b4e4969507d748bd92e59c39b316a08c73",
+    "Scripts/routeA/diagnostic_transient/v1_1/contract_policy.py": "e452f6fb5d225f0ecac7ef94bbdb661ffa601f3f813ae5ab56a97b1007a529b2",
+    "Scripts/routeA/diagnostic_transient/v1_1/test_contract_policy.py": "7eb08efa0a89bbc8469abd3d193fc6987045f75b53d1f9b8faacb90066900659",
+    "Scripts/routeA/diagnostic_transient/v1_1/verify_stage_plan.py": "ae3d46cec8fbf3b1335ee4af2be61e58eef62691c1c5bcda6ebe4ff57150590b",
+    "Scripts/routeA/diagnostic_transient/v1_2/DiagnosticJson.H": "af0e2078a78c8e732edc67efa5f559c0808b519e1960b246c49580bf8de8b1ee",
+    "Scripts/routeA/diagnostic_transient/v1_2/NativeStageObserver.C": "d745d08364c1aeb71d7536fd53aa68d810335a17c0cf700b4682a152028291ba",
+    "Scripts/routeA/diagnostic_transient/v1_2/NativeStageObserver.H": "5dac264c79a14492a4657acea9b8c14f99108115dc4a3b94881c462e00a24dd4",
+    "Scripts/routeA/diagnostic_transient/v1_2/build_u04.py": "1b94efbb06ac35dcdaabef62146843a81dbeac926ef765ee75c51958512e8ee7",
+    "Scripts/routeA/diagnostic_transient/v1_2/generate_overlay.py": "a8fdcfc4e7acbb14140b6622c6ac4f5e84e8cbcfb3afab037c1423252cc72a0b",
+    "Scripts/routeA/diagnostic_transient/v1_2/overlay/Fourier/Fourier.C": "acf713d77d983bd31e36171e31d8a24696e9c365208d5a2c8e825ea5235eb62e",
+    "Scripts/routeA/diagnostic_transient/v1_2/overlay/Fourier/Fourier.H": "3d0a53b924bc028ea774147456ee8b06580a93dd8488a90ac040425f4198cb82",
+    "Scripts/routeA/diagnostic_transient/v1_2/overlay/driver/foamRunDiagnostic.C": "58352b8ad135b8e34d267abe716f90a5150959dcf3636f456c3bfb69637ea4e6",
+    "Scripts/routeA/diagnostic_transient/v1_2/overlay/fluid/routeADiagnosticFluid.C": "b5867da371a49fd416491d9bf2ed7c78896da0d7479675270b8e6c0c3afb948f",
+    "Scripts/routeA/diagnostic_transient/v1_2/overlay/fluid/routeADiagnosticFluid.H": "0cbc91d6271228229d02918cc8a91de1e81ae17b71d5e4c686a68f30b39d7cef",
+    "Scripts/routeA/diagnostic_transient/v1_2/overlay/fluid/thermophysicalPredictor.C": "1ee40dedc620c2537c4a906b13e248c298ce58c0d1bd8df747883bb6ba9ce646",
+    "Scripts/routeA/diagnostic_transient/v1_2/overlay/isothermalFluid/correctBuoyantPressure.C": "8ae53ba8c4978104b3ef8e41ae10147bcb2121f6bec3bd75982bd7e918e9fcf4",
+    "Scripts/routeA/diagnostic_transient/v1_2/overlay/isothermalFluid/correctDensity.C": "7a8d7eb42efa04f265e4d04872107ab0662acf063e41eb8f30f2f9d2cb650c0c",
+    "Scripts/routeA/diagnostic_transient/v1_2/overlay/isothermalFluid/correctPressure.C": "6a76f02425acd9b7c1043755ed5d5580e9846d9f5087ddf0b94eb7838fd5217a",
+    "Scripts/routeA/diagnostic_transient/v1_2/overlay/isothermalFluid/momentumPredictor.C": "b17318c0a7607f37eed06b8ecba85dcf96317cd793c6a2de23503ebc8574abcc",
+    "Scripts/routeA/diagnostic_transient/v1_2/overlay/isothermalFluid/moveMesh.C": "803cda51e89b8e005ec9776303c191b5b5a16c5838c824558057f1b38f86d6e1",
+    "Scripts/routeA/diagnostic_transient/v1_2/overlay/isothermalFluid/routeADiagnosticIsothermalFluid.C": "c8c8f697239ba4d72347585987fac8d8d0dce89a5dce93c187d02d79486c8679",
+    "Scripts/routeA/diagnostic_transient/v1_2/overlay/isothermalFluid/routeADiagnosticIsothermalFluid.H": "d47495bf37c33f9d418d0f8303a973116401f2797cd89184478167ccac5d8dbd",
+    "Scripts/routeA/diagnostic_transient/v1_2/overlay/isothermalFluid/setRDeltaT.C": "7df939cbd12db47d41d1c2cf1e57217c83305f9d72feabf26b6bbfee178fc017",
+    "Scripts/routeA/diagnostic_transient/v1_2/replay_evaluator.py": "ccc9ab23b48c4192235444ce179fe91e347841169354c2b9fbf81027f9a96cab",
+    "Scripts/routeA/diagnostic_transient/v1_2/resource_estimator.py": "b03845257b8380a0e7f0fa02c50e6269389640a16e510d6bc4949a145f2b0648",
+    "Scripts/routeA/diagnostic_transient/v1_2/synthetic_native_driver.C": "e2840a3ece077caa2de02b9417fe147e233043d8a58245c04f3c197dbda8f725",
+    "Scripts/routeA/diagnostic_transient/v1_2/verify_u04.py": "2da04edf2e5179ee7050aac779beda623258af5a71a1868f55c9a0ed37b47a8b",
+    "Scripts/routeA/diagnostic_transient/v1_3/DiagnosticJson.H": "af0e2078a78c8e732edc67efa5f559c0808b519e1960b246c49580bf8de8b1ee",
+    "Scripts/routeA/diagnostic_transient/v1_3/NativeStageObserver.C": "372ee1c7396761d9715ac37e0f1a8c2939db3373f01d9f4c5ef043d5a1466443",
+    "Scripts/routeA/diagnostic_transient/v1_3/NativeStageObserver.H": "5dac264c79a14492a4657acea9b8c14f99108115dc4a3b94881c462e00a24dd4",
+    "Scripts/routeA/diagnostic_transient/v1_3/PersistenceBridge.H": "21cbf507e3aa709f9e55cda66c4d4ed5ea59e2956a3a69c4d5b427ade1eaf81a",
+    "Scripts/routeA/diagnostic_transient/v1_3/account_capacity.py": "8ea9e1aa19eb638b3914a8f7cf04eb3e449ceb18b7e1aa982be2b315c0b7a03b",
+    "Scripts/routeA/diagnostic_transient/v1_3/build_synthetic.py": "a9db43c2e25399008de716de030b0384c019eec6910e99974b3d61e30706e7a8",
+    "Scripts/routeA/diagnostic_transient/v1_3/generate_native.py": "d3842c26f4d2256f0f3f26239e2fd9e2554148ca4e0082974732c290fc3076bb",
+    "Scripts/routeA/diagnostic_transient/v1_3/generate_online.py": "d05185aefee3caaf1936ef7f6597f0a2a5ffcd5df1aad7cdd1336d2319253f3a",
+    "Scripts/routeA/diagnostic_transient/v1_3/log_rotation.py": "23a541f4f5ea20d079dbb2352a0dc8720ef4cf0838869e99f3a940f4aef697cd",
+    "Scripts/routeA/diagnostic_transient/v1_3/online_evaluator.py": "357b2a37d61915f2dd477cc25f513cf050ee3de7e36a3aee6b74e636829e5377",
+    "Scripts/routeA/diagnostic_transient/v1_3/packed.py": "57169a413020f1d3808cb9e49631aabe43a2f230e517ee58a0e89f917ce0c0f1",
+    "Scripts/routeA/diagnostic_transient/v1_3/persistence.py": "ed11c0331419390f4602886e5e70b6c2e445b1eaedd81c91ebe974115733913d",
+    "Scripts/routeA/diagnostic_transient/v1_3/primary_evidence.py": "afa25a1889a9e1503e0bfe7c2fe4682a70020cda8ad5055358b2ccff65a84668",
+    "Scripts/routeA/diagnostic_transient/v1_3/resource_guard.py": "328df5fb45756d230db76ae5e0ec8960ce7b051d5d35e1b811f10bccfeffe4e1",
+    "Scripts/routeA/diagnostic_transient/v1_3/selected_replay.py": "d09033f256974e4bc7644e2eef8232b936fd037c4fa92e5688d7968832ebc186",
+    "Scripts/routeA/diagnostic_transient/v1_3/server.py": "a72a9986a242e87d2bf9f9de0eb70b2295df5c4b7d5bafc82049427292bcbf9d",
+    "Scripts/routeA/diagnostic_transient/v1_3/test_pipeline.py": "3bb5d540b338e55b9efbd2f928aac85ff4366c18a43ef23059f3c55b93314f19",
+    "Scripts/routeA/diagnostic_transient/v1_3/test_storage.py": "267eef1a4659d14e2057b352700557f17409e07fb6b76c2d528940aed73b9c9c",
+    "Scripts/routeA/diagnostic_transient/v1_4/DiagnosticJson.H": "af0e2078a78c8e732edc67efa5f559c0808b519e1960b246c49580bf8de8b1ee",
+    "Scripts/routeA/diagnostic_transient/v1_4/NativeStageObserver.C": "774b9c03a3cac5df3d8033a5d45b954c605bb5226b9c9f45d4783f5ab6aa8af6",
+    "Scripts/routeA/diagnostic_transient/v1_4/NativeStageObserver.H": "5dac264c79a14492a4657acea9b8c14f99108115dc4a3b94881c462e00a24dd4",
+    "Scripts/routeA/diagnostic_transient/v1_4/PersistenceBridge.H": "83b14d84a90755236e9a09ce86697e2adbe1908e21c8977c7c689513e31d0111",
+    "Scripts/routeA/diagnostic_transient/v1_4/README.md": "816f353f92abbaa94a72ee96898e316f8303ef183850cb3fca4396b724e109c2",
+    "Scripts/routeA/diagnostic_transient/v1_4/account_capacity.py": "84e016aac3d348ca3e07f09e56108fd773a50792b4e6e4ea40268337575b6ca5",
+    "Scripts/routeA/diagnostic_transient/v1_4/account_lifecycle.py": "d5cae38d8ba3ae9ff09dcf0ef183a987174dac0456523ff9df90856cb7503c11",
+    "Scripts/routeA/diagnostic_transient/v1_4/build_synthetic.py": "a9db43c2e25399008de716de030b0384c019eec6910e99974b3d61e30706e7a8",
+    "Scripts/routeA/diagnostic_transient/v1_4/finalize.py": "8370ad64bbc779736e8760f01bd15aceed39a8a98a142fed3c0e28fbc4ca5ff0",
+    "Scripts/routeA/diagnostic_transient/v1_4/generate_native.py": "682f23df7030c305d1361ee6fb2e91972241a9ebce5549d899164e93435b1f6a",
+    "Scripts/routeA/diagnostic_transient/v1_4/generate_online.py": "d05185aefee3caaf1936ef7f6597f0a2a5ffcd5df1aad7cdd1336d2319253f3a",
+    "Scripts/routeA/diagnostic_transient/v1_4/launcher.py": "4a0c79f2b824bd7da4ed79c8e49c300a21009406524184ab551697f2db5990c9",
+    "Scripts/routeA/diagnostic_transient/v1_4/lifecycle.py": "6e4fca2b2a658573d85d816e9e1e5c495f8ddc272b869e75412942f8a2b3a5ae",
+    "Scripts/routeA/diagnostic_transient/v1_4/lifecycle_cli.py": "a427e13082b78fbc0f8b4560b80afc125a04530a7e2f59a91c2cbc222729a7c0",
+    "Scripts/routeA/diagnostic_transient/v1_4/liveBinding.C.inc": "ade312344766d3a5b193c8b40958c05ab8c035a27778e962c5a3549965037680",
+    "Scripts/routeA/diagnostic_transient/v1_4/live_collector.py": "6bf47bfcc24d6210c05ea81854baac286d170840dc218cfd52b6151399c96350",
+    "Scripts/routeA/diagnostic_transient/v1_4/log_rotation.py": "23a541f4f5ea20d079dbb2352a0dc8720ef4cf0838869e99f3a940f4aef697cd",
+    "Scripts/routeA/diagnostic_transient/v1_4/online_evaluator.py": "357b2a37d61915f2dd477cc25f513cf050ee3de7e36a3aee6b74e636829e5377",
+    "Scripts/routeA/diagnostic_transient/v1_4/packed.py": "57169a413020f1d3808cb9e49631aabe43a2f230e517ee58a0e89f917ce0c0f1",
+    "Scripts/routeA/diagnostic_transient/v1_4/persistence.py": "43179de928dc0518015df7da566958f42cb3a7c604aa9f3e7c42cd65d6a1ef23",
+    "Scripts/routeA/diagnostic_transient/v1_4/primary_evidence.py": "af9e7c9469c5136ed9cdce09a7741b843146f3eb342498c948b19ee52468df32",
+    "Scripts/routeA/diagnostic_transient/v1_4/provenance.py": "5ea898f06fe8bfc5f8603dbccfca6f631bb82c05f7aa163526cf50747eb066e4",
+    "Scripts/routeA/diagnostic_transient/v1_4/resource_guard.py": "328df5fb45756d230db76ae5e0ec8960ce7b051d5d35e1b811f10bccfeffe4e1",
+    "Scripts/routeA/diagnostic_transient/v1_4/selected_replay.py": "27d2852a368e4ec2bb4926f57b9004b308773b9f1954eda73bf9cd1a3265b8c6",
+    "Scripts/routeA/diagnostic_transient/v1_4/series_validation.py": "82d13d1a297863d9cac432edb55612b795d1daf2dd08cca32d5372c442d7af6a",
+    "Scripts/routeA/diagnostic_transient/v1_4/server.py": "fdd279c282780fe9cb43814a8f6c77d8d58cc10d8ba5caf775a434e65c1b9729",
+    "Scripts/routeA/diagnostic_transient/v1_4/synthetic_grid.C.inc": "4b73e9ad4bbd26b9c6afd726aa975ab3e4be25f6a5182e97a8abcee0aa4a3890",
+    "Scripts/routeA/diagnostic_transient/v1_4/synthetic_native_binding_driver.C": "2cbf8d353e0bc3443eced98339646fc8b112cbeb505b3631d097151764d3b61f",
+    "Scripts/routeA/diagnostic_transient/v1_4/temporary.py": "0635202e130626eee9dc3f1d93789c4c63e5649ca860fb3d24772a6c951ffc79",
+    "Scripts/routeA/diagnostic_transient/v1_4/test_lifecycle.py": "dba65527c109e83a93febf85dd1792d93ec399996fa84c4dc45505c8453155f6",
+    "Scripts/routeA/diagnostic_transient/v1_4/test_live_native.py": "be23a8f290ff4a7dc21f0d628f298ad8e5dadf396f745af3b402b3e63ca39215",
+    "Scripts/routeA/diagnostic_transient/v1_4/test_live_policy.py": "9c7b829c1b31ea4d7b61a52871e8ffd88b36089dc87c4075a4112ab8d749d348",
+    "Scripts/routeA/diagnostic_transient/v1_4/test_pipeline.py": "819b84849ddce006897d97e405bcf968e82c41542369b1a117e425c57b01a615",
+    "Scripts/routeA/diagnostic_transient/v1_4/test_preflight.py": "d7b9c535db01fcf1b468d558b9c50ded1492d69c9405313a7f8ef6783a76e72d",
+    "Scripts/routeA/diagnostic_transient/v1_4/test_storage.py": "267eef1a4659d14e2057b352700557f17409e07fb6b76c2d528940aed73b9c9c",
+    "Scripts/routeA/diagnostic_transient/v1_4/verify_post_purge.py": "17113d50146651c09752595ce67294cca99b9695b10d77bd79600d88d8b438bd",
+    "docs/routeA_diagnostic_transient_contract_v1.5.json": "06c71945289ffe419b784843f7aab2fea66c44d28c9dba46d828bbd24837e27d",
+    "docs/routeA_diagnostic_transient_contract_v1.5.md": "105e4932f7abdb6e5bf2a5f81e0c115e1b50fd5a0bfb5c2bca68b01710ee4c1e",
+    "docs/routeA_diagnostic_transient_contract_v1.5.sha256": "700f9dc488107bcd074b36db318a4b559acd7b29b8a0e037dad1328756496f9c",
+    "docs/routeA_execution_contract_v1.7.json": "fbc744e012f66b37b5d9409be961cb5a9410c3d75ac7e2f026b2acf118d3bb60",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_compute_feasibility_review.json": "669f2fcca81bca1e1c6c36dd249e70fa880549478134cadf9b3d26bb94d1e499",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/DiagnosticTransient_compute_feasibility_review.md": "c0c37a44f36a87d416fc3c15020e2227cab05d0af57e7d4d250285f310f421f6",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/compute_review/callback_workload.json": "82fac36434f1ccc9cc4c660fb4ec3bfe7b34813cdc29bec339e0016c83bd0cd7",
+    "results/routeA/diagnostic_transient/diagnostic_attempt_001/preparation/compute_review/native_0_on/full_2.bin": "21dd526283ef22520852bffdee38b1548027dfb869582009ec4bf13f9d2f7b63"
+  },
+  "callback_classes": [
+    {
+      "callback_type": "time_start",
+      "field_count": 10,
+      "field_names": [
+        "K",
+        "T",
+        "U",
+        "e",
+        "gh",
+        "p",
+        "p_rgh",
+        "phi",
+        "rho",
+        "rhoFluidThermo:rho"
+      ],
+      "frequency_per_step": 1,
+      "history_requirement": "existing oldTime count; include startup 0/1 and steady 2 without materializing forbidden histories",
+      "matrix_packets_per_callback": 0,
+      "matrix_schema": {},
+      "matrix_type": "no_matrix_packet",
+      "target_payload_bytes": "NOT_MEASURED_REQUIRED_BY_Q1",
+      "term": "",
+      "tiny_bytes_scope": "HISTORICAL_FOUR_CELL_SCHEMA_ONLY",
+      "tiny_fixture_bytes": 17954
+    },
+    {
+      "callback_type": "outer_start",
+      "field_count": 10,
+      "field_names": [
+        "K",
+        "T",
+        "U",
+        "e",
+        "gh",
+        "p",
+        "p_rgh",
+        "phi",
+        "rho",
+        "rhoFluidThermo:rho"
+      ],
+      "frequency_per_step": 24,
+      "history_requirement": "existing oldTime count; include startup 0/1 and steady 2 without materializing forbidden histories",
+      "matrix_packets_per_callback": 0,
+      "matrix_schema": {},
+      "matrix_type": "no_matrix_packet",
+      "target_payload_bytes": "NOT_MEASURED_REQUIRED_BY_Q1",
+      "term": "",
+      "tiny_bytes_scope": "HISTORICAL_FOUR_CELL_SCHEMA_ONLY",
+      "tiny_fixture_bytes": 20645
+    },
+    {
+      "callback_type": "before_correctDensity",
+      "field_count": 10,
+      "field_names": [
+        "K",
+        "T",
+        "U",
+        "e",
+        "gh",
+        "p",
+        "p_rgh",
+        "phi",
+        "rho",
+        "rhoFluidThermo:rho"
+      ],
+      "frequency_per_step": 49,
+      "history_requirement": "existing oldTime count; include startup 0/1 and steady 2 without materializing forbidden histories",
+      "matrix_packets_per_callback": 0,
+      "matrix_schema": {},
+      "matrix_type": "no_matrix_packet",
+      "target_payload_bytes": "NOT_MEASURED_REQUIRED_BY_Q1",
+      "term": "",
+      "tiny_bytes_scope": "HISTORICAL_FOUR_CELL_SCHEMA_ONLY",
+      "tiny_fixture_bytes": 20109
+    },
+    {
+      "callback_type": "term_capture",
+      "field_count": 10,
+      "field_names": [
+        "K",
+        "T",
+        "U",
+        "e",
+        "gh",
+        "p",
+        "p_rgh",
+        "phi",
+        "rho",
+        "rhoFluidThermo:rho"
+      ],
+      "frequency_per_step": 49,
+      "history_requirement": "existing oldTime count; include startup 0/1 and steady 2 without materializing forbidden histories",
+      "matrix_packets_per_callback": 1,
+      "matrix_schema": {
+        "matrix": {
+          "arrays": [
+            "diag",
+            "upper",
+            "lower",
+            "source",
+            "psi",
+            "owner",
+            "neighbour",
+            "patches"
+          ],
+          "components": 1,
+          "matrix_type": "scalar_ldu",
+          "psi_name": "rho"
+        }
+      },
+      "matrix_type": "scalar_ldu",
+      "target_payload_bytes": "NOT_MEASURED_REQUIRED_BY_Q1",
+      "term": "D_B_rho",
+      "tiny_bytes_scope": "HISTORICAL_FOUR_CELL_SCHEMA_ONLY",
+      "tiny_fixture_bytes": 14385
+    },
+    {
+      "callback_type": "term_capture",
+      "field_count": 10,
+      "field_names": [
+        "K",
+        "T",
+        "U",
+        "e",
+        "gh",
+        "p",
+        "p_rgh",
+        "phi",
+        "rho",
+        "rhoFluidThermo:rho"
+      ],
+      "frequency_per_step": 49,
+      "history_requirement": "existing oldTime count; include startup 0/1 and steady 2 without materializing forbidden histories",
+      "matrix_packets_per_callback": 0,
+      "matrix_schema": {},
+      "matrix_type": "explicit_cell_term",
+      "target_payload_bytes": "NOT_MEASURED_REQUIRED_BY_Q1",
+      "term": "div_phi",
+      "tiny_bytes_scope": "HISTORICAL_FOUR_CELL_SCHEMA_ONLY",
+      "tiny_fixture_bytes": 12227
+    },
+    {
+      "callback_type": "term_capture",
+      "field_count": 10,
+      "field_names": [
+        "K",
+        "T",
+        "U",
+        "e",
+        "gh",
+        "p",
+        "p_rgh",
+        "phi",
+        "rho",
+        "rhoFluidThermo:rho"
+      ],
+      "frequency_per_step": 49,
+      "history_requirement": "existing oldTime count; include startup 0/1 and steady 2 without materializing forbidden histories",
+      "matrix_packets_per_callback": 1,
+      "matrix_schema": {
+        "matrix": {
+          "arrays": [
+            "diag",
+            "upper",
+            "lower",
+            "source",
+            "psi",
+            "owner",
+            "neighbour",
+            "patches"
+          ],
+          "components": 1,
+          "matrix_type": "scalar_ldu",
+          "psi_name": "rho"
+        }
+      },
+      "matrix_type": "scalar_ldu",
+      "target_payload_bytes": "NOT_MEASURED_REQUIRED_BY_Q1",
+      "term": "mass_models",
+      "tiny_bytes_scope": "HISTORICAL_FOUR_CELL_SCHEMA_ONLY",
+      "tiny_fixture_bytes": 14133
+    },
+    {
+      "callback_type": "mass_unrelaxed_assembly",
+      "field_count": 10,
+      "field_names": [
+        "K",
+        "T",
+        "U",
+        "e",
+        "gh",
+        "p",
+        "p_rgh",
+        "phi",
+        "rho",
+        "rhoFluidThermo:rho"
+      ],
+      "frequency_per_step": 49,
+      "history_requirement": "existing oldTime count; include startup 0/1 and steady 2 without materializing forbidden histories",
+      "matrix_packets_per_callback": 1,
+      "matrix_schema": {
+        "matrix": {
+          "arrays": [
+            "diag",
+            "upper",
+            "lower",
+            "source",
+            "psi",
+            "owner",
+            "neighbour",
+            "patches"
+          ],
+          "components": 1,
+          "matrix_type": "scalar_ldu",
+          "psi_name": "rho"
+        }
+      },
+      "matrix_type": "scalar_ldu",
+      "target_payload_bytes": "NOT_MEASURED_REQUIRED_BY_Q1",
+      "term": "",
+      "tiny_bytes_scope": "HISTORICAL_FOUR_CELL_SCHEMA_ONLY",
+      "tiny_fixture_bytes": 22393
+    },
+    {
+      "callback_type": "mass_after_solve",
+      "field_count": 10,
+      "field_names": [
+        "K",
+        "T",
+        "U",
+        "e",
+        "gh",
+        "p",
+        "p_rgh",
+        "phi",
+        "rho",
+        "rhoFluidThermo:rho"
+      ],
+      "frequency_per_step": 49,
+      "history_requirement": "existing oldTime count; include startup 0/1 and steady 2 without materializing forbidden histories",
+      "matrix_packets_per_callback": 2,
+      "matrix_schema": {
+        "current_matrix": {
+          "arrays": [
+            "diag",
+            "upper",
+            "lower",
+            "source",
+            "psi",
+            "owner",
+            "neighbour",
+            "patches"
+          ],
+          "components": 1,
+          "matrix_type": "scalar_ldu",
+          "psi_name": "rho"
+        },
+        "unrelaxed_matrix": {
+          "arrays": [
+            "diag",
+            "upper",
+            "lower",
+            "source",
+            "psi",
+            "owner",
+            "neighbour",
+            "patches"
+          ],
+          "components": 1,
+          "matrix_type": "scalar_ldu",
+          "psi_name": "rho"
+        }
+      },
+      "matrix_type": "scalar_ldu",
+      "target_payload_bytes": "NOT_MEASURED_REQUIRED_BY_Q1",
+      "term": "",
+      "tiny_bytes_scope": "HISTORICAL_FOUR_CELL_SCHEMA_ONLY",
+      "tiny_fixture_bytes": 25985
+    },
+    {
+      "callback_type": "after_correctDensity",
+      "field_count": 10,
+      "field_names": [
+        "K",
+        "T",
+        "U",
+        "e",
+        "gh",
+        "p",
+        "p_rgh",
+        "phi",
+        "rho",
+        "rhoFluidThermo:rho"
+      ],
+      "frequency_per_step": 49,
+      "history_requirement": "existing oldTime count; include startup 0/1 and steady 2 without materializing forbidden histories",
+      "matrix_packets_per_callback": 0,
+      "matrix_schema": {},
+      "matrix_type": "no_matrix_packet",
+      "target_payload_bytes": "NOT_MEASURED_REQUIRED_BY_Q1",
+      "term": "",
+      "tiny_bytes_scope": "HISTORICAL_FOUR_CELL_SCHEMA_ONLY",
+      "tiny_fixture_bytes": 20654
+    },
+    {
+      "callback_type": "density_predictor_complete",
+      "field_count": 10,
+      "field_names": [
+        "K",
+        "T",
+        "U",
+        "e",
+        "gh",
+        "p",
+        "p_rgh",
+        "phi",
+        "rho",
+        "rhoFluidThermo:rho"
+      ],
+      "frequency_per_step": 24,
+      "history_requirement": "existing oldTime count; include startup 0/1 and steady 2 without materializing forbidden histories",
+      "matrix_packets_per_callback": 0,
+      "matrix_schema": {},
+      "matrix_type": "no_matrix_packet",
+      "target_payload_bytes": "NOT_MEASURED_REQUIRED_BY_Q1",
+      "term": "",
+      "tiny_bytes_scope": "HISTORICAL_FOUR_CELL_SCHEMA_ONLY",
+      "tiny_fixture_bytes": 20660
+    },
+    {
+      "callback_type": "energy_begin",
+      "field_count": 10,
+      "field_names": [
+        "K",
+        "T",
+        "U",
+        "e",
+        "gh",
+        "p",
+        "p_rgh",
+        "phi",
+        "rho",
+        "rhoFluidThermo:rho"
+      ],
+      "frequency_per_step": 24,
+      "history_requirement": "existing oldTime count; include startup 0/1 and steady 2 without materializing forbidden histories",
+      "matrix_packets_per_callback": 0,
+      "matrix_schema": {},
+      "matrix_type": "no_matrix_packet",
+      "target_payload_bytes": "NOT_MEASURED_REQUIRED_BY_Q1",
+      "term": "",
+      "tiny_bytes_scope": "HISTORICAL_FOUR_CELL_SCHEMA_ONLY",
+      "tiny_fixture_bytes": 20825
+    },
+    {
+      "callback_type": "term_capture",
+      "field_count": 10,
+      "field_names": [
+        "K",
+        "T",
+        "U",
+        "e",
+        "gh",
+        "p",
+        "p_rgh",
+        "phi",
+        "rho",
+        "rhoFluidThermo:rho"
+      ],
+      "frequency_per_step": 24,
+      "history_requirement": "existing oldTime count; include startup 0/1 and steady 2 without materializing forbidden histories",
+      "matrix_packets_per_callback": 1,
+      "matrix_schema": {
+        "matrix": {
+          "arrays": [
+            "diag",
+            "upper",
+            "lower",
+            "source",
+            "psi",
+            "owner",
+            "neighbour",
+            "patches"
+          ],
+          "components": 1,
+          "matrix_type": "scalar_ldu",
+          "psi_name": "e"
+        }
+      },
+      "matrix_type": "scalar_ldu",
+      "target_payload_bytes": "NOT_MEASURED_REQUIRED_BY_Q1",
+      "term": "S_e",
+      "tiny_bytes_scope": "HISTORICAL_FOUR_CELL_SCHEMA_ONLY",
+      "tiny_fixture_bytes": 14629
+    },
+    {
+      "callback_type": "term_capture",
+      "field_count": 10,
+      "field_names": [
+        "K",
+        "T",
+        "U",
+        "e",
+        "gh",
+        "p",
+        "p_rgh",
+        "phi",
+        "rho",
+        "rhoFluidThermo:rho"
+      ],
+      "frequency_per_step": 24,
+      "history_requirement": "existing oldTime count; include startup 0/1 and steady 2 without materializing forbidden histories",
+      "matrix_packets_per_callback": 1,
+      "matrix_schema": {
+        "matrix": {
+          "arrays": [
+            "diag",
+            "upper",
+            "lower",
+            "source",
+            "psi",
+            "owner",
+            "neighbour",
+            "patches"
+          ],
+          "components": 1,
+          "matrix_type": "scalar_ldu",
+          "psi_name": "e"
+        }
+      },
+      "matrix_type": "scalar_ldu",
+      "target_payload_bytes": "NOT_MEASURED_REQUIRED_BY_Q1",
+      "term": "F_e",
+      "tiny_bytes_scope": "HISTORICAL_FOUR_CELL_SCHEMA_ONLY",
+      "tiny_fixture_bytes": 14583
+    },
+    {
+      "callback_type": "term_capture",
+      "field_count": 10,
+      "field_names": [
+        "K",
+        "T",
+        "U",
+        "e",
+        "gh",
+        "p",
+        "p_rgh",
+        "phi",
+        "rho",
+        "rhoFluidThermo:rho"
+      ],
+      "frequency_per_step": 24,
+      "history_requirement": "existing oldTime count; include startup 0/1 and steady 2 without materializing forbidden histories",
+      "matrix_packets_per_callback": 0,
+      "matrix_schema": {},
+      "matrix_type": "explicit_cell_term",
+      "target_payload_bytes": "NOT_MEASURED_REQUIRED_BY_Q1",
+      "term": "S_K",
+      "tiny_bytes_scope": "HISTORICAL_FOUR_CELL_SCHEMA_ONLY",
+      "tiny_fixture_bytes": 12615
+    },
+    {
+      "callback_type": "term_capture",
+      "field_count": 10,
+      "field_names": [
+        "K",
+        "T",
+        "U",
+        "e",
+        "gh",
+        "p",
+        "p_rgh",
+        "phi",
+        "rho",
+        "rhoFluidThermo:rho"
+      ],
+      "frequency_per_step": 24,
+      "history_requirement": "existing oldTime count; include startup 0/1 and steady 2 without materializing forbidden histories",
+      "matrix_packets_per_callback": 0,
+      "matrix_schema": {},
+      "matrix_type": "explicit_cell_term",
+      "target_payload_bytes": "NOT_MEASURED_REQUIRED_BY_Q1",
+      "term": "F_K",
+      "tiny_bytes_scope": "HISTORICAL_FOUR_CELL_SCHEMA_ONLY",
+      "tiny_fixture_bytes": 12486
+    },
+    {
+      "callback_type": "term_capture",
+      "field_count": 10,
+      "field_names": [
+        "K",
+        "T",
+        "U",
+        "e",
+        "gh",
+        "p",
+        "p_rgh",
+        "phi",
+        "rho",
+        "rhoFluidThermo:rho"
+      ],
+      "frequency_per_step": 24,
+      "history_requirement": "existing oldTime count; include startup 0/1 and steady 2 without materializing forbidden histories",
+      "matrix_packets_per_callback": 0,
+      "matrix_schema": {},
+      "matrix_type": "explicit_cell_term",
+      "target_payload_bytes": "NOT_MEASURED_REQUIRED_BY_Q1",
+      "term": "W_p",
+      "tiny_bytes_scope": "HISTORICAL_FOUR_CELL_SCHEMA_ONLY",
+      "tiny_fixture_bytes": 12515
+    },
+    {
+      "callback_type": "term_capture",
+      "field_count": 10,
+      "field_names": [
+        "K",
+        "T",
+        "U",
+        "e",
+        "gh",
+        "p",
+        "p_rgh",
+        "phi",
+        "rho",
+        "rhoFluidThermo:rho"
+      ],
+      "frequency_per_step": 24,
+      "history_requirement": "existing oldTime count; include startup 0/1 and steady 2 without materializing forbidden histories",
+      "matrix_packets_per_callback": 0,
+      "matrix_schema": {},
+      "matrix_type": "explicit_cell_term",
+      "target_payload_bytes": "NOT_MEASURED_REQUIRED_BY_Q1",
+      "term": "Fourier_laplacian",
+      "tiny_bytes_scope": "HISTORICAL_FOUR_CELL_SCHEMA_ONLY",
+      "tiny_fixture_bytes": 12567
+    },
+    {
+      "callback_type": "term_capture",
+      "field_count": 10,
+      "field_names": [
+        "K",
+        "T",
+        "U",
+        "e",
+        "gh",
+        "p",
+        "p_rgh",
+        "phi",
+        "rho",
+        "rhoFluidThermo:rho"
+      ],
+      "frequency_per_step": 24,
+      "history_requirement": "existing oldTime count; include startup 0/1 and steady 2 without materializing forbidden histories",
+      "matrix_packets_per_callback": 1,
+      "matrix_schema": {
+        "matrix": {
+          "arrays": [
+            "diag",
+            "upper",
+            "lower",
+            "source",
+            "psi",
+            "owner",
+            "neighbour",
+            "patches"
+          ],
+          "components": 1,
+          "matrix_type": "scalar_ldu",
+          "psi_name": "e"
+        }
+      },
+      "matrix_type": "scalar_ldu",
+      "target_payload_bytes": "NOT_MEASURED_REQUIRED_BY_Q1",
+      "term": "Fourier_correction",
+      "tiny_bytes_scope": "HISTORICAL_FOUR_CELL_SCHEMA_ONLY",
+      "tiny_fixture_bytes": 15398
+    },
+    {
+      "callback_type": "term_capture",
+      "field_count": 10,
+      "field_names": [
+        "K",
+        "T",
+        "U",
+        "e",
+        "gh",
+        "p",
+        "p_rgh",
+        "phi",
+        "rho",
+        "rhoFluidThermo:rho"
+      ],
+      "frequency_per_step": 24,
+      "history_requirement": "existing oldTime count; include startup 0/1 and steady 2 without materializing forbidden histories",
+      "matrix_packets_per_callback": 1,
+      "matrix_schema": {
+        "matrix": {
+          "arrays": [
+            "diag",
+            "upper",
+            "lower",
+            "source",
+            "psi",
+            "owner",
+            "neighbour",
+            "patches"
+          ],
+          "components": 1,
+          "matrix_type": "scalar_ldu",
+          "psi_name": "e"
+        }
+      },
+      "matrix_type": "scalar_ldu",
+      "target_payload_bytes": "NOT_MEASURED_REQUIRED_BY_Q1",
+      "term": "H_out",
+      "tiny_bytes_scope": "HISTORICAL_FOUR_CELL_SCHEMA_ONLY",
+      "tiny_fixture_bytes": 15356
+    },
+    {
+      "callback_type": "term_capture",
+      "field_count": 10,
+      "field_names": [
+        "K",
+        "T",
+        "U",
+        "e",
+        "gh",
+        "p",
+        "p_rgh",
+        "phi",
+        "rho",
+        "rhoFluidThermo:rho"
+      ],
+      "frequency_per_step": 24,
+      "history_requirement": "existing oldTime count; include startup 0/1 and steady 2 without materializing forbidden histories",
+      "matrix_packets_per_callback": 0,
+      "matrix_schema": {},
+      "matrix_type": "explicit_cell_term",
+      "target_payload_bytes": "NOT_MEASURED_REQUIRED_BY_Q1",
+      "term": "W_g",
+      "tiny_bytes_scope": "HISTORICAL_FOUR_CELL_SCHEMA_ONLY",
+      "tiny_fixture_bytes": 12559
+    },
+    {
+      "callback_type": "term_capture",
+      "field_count": 10,
+      "field_names": [
+        "K",
+        "T",
+        "U",
+        "e",
+        "gh",
+        "p",
+        "p_rgh",
+        "phi",
+        "rho",
+        "rhoFluidThermo:rho"
+      ],
+      "frequency_per_step": 24,
+      "history_requirement": "existing oldTime count; include startup 0/1 and steady 2 without materializing forbidden histories",
+      "matrix_packets_per_callback": 1,
+      "matrix_schema": {
+        "matrix": {
+          "arrays": [
+            "diag",
+            "upper",
+            "lower",
+            "source",
+            "psi",
+            "owner",
+            "neighbour",
+            "patches"
+          ],
+          "components": 1,
+          "matrix_type": "scalar_ldu",
+          "psi_name": "e"
+        }
+      },
+      "matrix_type": "scalar_ldu",
+      "target_payload_bytes": "NOT_MEASURED_REQUIRED_BY_Q1",
+      "term": "S_models",
+      "tiny_bytes_scope": "HISTORICAL_FOUR_CELL_SCHEMA_ONLY",
+      "tiny_fixture_bytes": 14387
+    },
+    {
+      "callback_type": "energy_unrelaxed_assembly",
+      "field_count": 10,
+      "field_names": [
+        "K",
+        "T",
+        "U",
+        "e",
+        "gh",
+        "p",
+        "p_rgh",
+        "phi",
+        "rho",
+        "rhoFluidThermo:rho"
+      ],
+      "frequency_per_step": 24,
+      "history_requirement": "existing oldTime count; include startup 0/1 and steady 2 without materializing forbidden histories",
+      "matrix_packets_per_callback": 1,
+      "matrix_schema": {
+        "matrix": {
+          "arrays": [
+            "diag",
+            "upper",
+            "lower",
+            "source",
+            "psi",
+            "owner",
+            "neighbour",
+            "patches"
+          ],
+          "components": 1,
+          "matrix_type": "scalar_ldu",
+          "psi_name": "e"
+        }
+      },
+      "matrix_type": "scalar_ldu",
+      "target_payload_bytes": "NOT_MEASURED_REQUIRED_BY_Q1",
+      "term": "",
+      "tiny_bytes_scope": "HISTORICAL_FOUR_CELL_SCHEMA_ONLY",
+      "tiny_fixture_bytes": 23628
+    },
+    {
+      "callback_type": "energy_after_relax",
+      "field_count": 10,
+      "field_names": [
+        "K",
+        "T",
+        "U",
+        "e",
+        "gh",
+        "p",
+        "p_rgh",
+        "phi",
+        "rho",
+        "rhoFluidThermo:rho"
+      ],
+      "frequency_per_step": 24,
+      "history_requirement": "existing oldTime count; include startup 0/1 and steady 2 without materializing forbidden histories",
+      "matrix_packets_per_callback": 1,
+      "matrix_schema": {
+        "matrix": {
+          "arrays": [
+            "diag",
+            "upper",
+            "lower",
+            "source",
+            "psi",
+            "owner",
+            "neighbour",
+            "patches"
+          ],
+          "components": 1,
+          "matrix_type": "scalar_ldu",
+          "psi_name": "e"
+        }
+      },
+      "matrix_type": "scalar_ldu",
+      "target_payload_bytes": "NOT_MEASURED_REQUIRED_BY_Q1",
+      "term": "",
+      "tiny_bytes_scope": "HISTORICAL_FOUR_CELL_SCHEMA_ONLY",
+      "tiny_fixture_bytes": 23621
+    },
+    {
+      "callback_type": "energy_after_solve",
+      "field_count": 10,
+      "field_names": [
+        "K",
+        "T",
+        "U",
+        "e",
+        "gh",
+        "p",
+        "p_rgh",
+        "phi",
+        "rho",
+        "rhoFluidThermo:rho"
+      ],
+      "frequency_per_step": 24,
+      "history_requirement": "existing oldTime count; include startup 0/1 and steady 2 without materializing forbidden histories",
+      "matrix_packets_per_callback": 2,
+      "matrix_schema": {
+        "current_matrix": {
+          "arrays": [
+            "diag",
+            "upper",
+            "lower",
+            "source",
+            "psi",
+            "owner",
+            "neighbour",
+            "patches"
+          ],
+          "components": 1,
+          "matrix_type": "scalar_ldu",
+          "psi_name": "e"
+        },
+        "unrelaxed_matrix": {
+          "arrays": [
+            "diag",
+            "upper",
+            "lower",
+            "source",
+            "psi",
+            "owner",
+            "neighbour",
+            "patches"
+          ],
+          "components": 1,
+          "matrix_type": "scalar_ldu",
+          "psi_name": "e"
+        }
+      },
+      "matrix_type": "scalar_ldu",
+      "target_payload_bytes": "NOT_MEASURED_REQUIRED_BY_Q1",
+      "term": "",
+      "tiny_bytes_scope": "HISTORICAL_FOUR_CELL_SCHEMA_ONLY",
+      "tiny_fixture_bytes": 27662
+    },
+    {
+      "callback_type": "before_thermo_correct",
+      "field_count": 10,
+      "field_names": [
+        "K",
+        "T",
+        "U",
+        "e",
+        "gh",
+        "p",
+        "p_rgh",
+        "phi",
+        "rho",
+        "rhoFluidThermo:rho"
+      ],
+      "frequency_per_step": 24,
+      "history_requirement": "existing oldTime count; include startup 0/1 and steady 2 without materializing forbidden histories",
+      "matrix_packets_per_callback": 0,
+      "matrix_schema": {},
+      "matrix_type": "no_matrix_packet",
+      "target_payload_bytes": "NOT_MEASURED_REQUIRED_BY_Q1",
+      "term": "",
+      "tiny_bytes_scope": "HISTORICAL_FOUR_CELL_SCHEMA_ONLY",
+      "tiny_fixture_bytes": 20655
+    },
+    {
+      "callback_type": "after_thermo_correct",
+      "field_count": 10,
+      "field_names": [
+        "K",
+        "T",
+        "U",
+        "e",
+        "gh",
+        "p",
+        "p_rgh",
+        "phi",
+        "rho",
+        "rhoFluidThermo:rho"
+      ],
+      "frequency_per_step": 24,
+      "history_requirement": "existing oldTime count; include startup 0/1 and steady 2 without materializing forbidden histories",
+      "matrix_packets_per_callback": 0,
+      "matrix_schema": {},
+      "matrix_type": "no_matrix_packet",
+      "target_payload_bytes": "NOT_MEASURED_REQUIRED_BY_Q1",
+      "term": "",
+      "tiny_bytes_scope": "HISTORICAL_FOUR_CELL_SCHEMA_ONLY",
+      "tiny_fixture_bytes": 20654
+    },
+    {
+      "callback_type": "pressure_start",
+      "field_count": 10,
+      "field_names": [
+        "K",
+        "T",
+        "U",
+        "e",
+        "gh",
+        "p",
+        "p_rgh",
+        "phi",
+        "rho",
+        "rhoFluidThermo:rho"
+      ],
+      "frequency_per_step": 48,
+      "history_requirement": "existing oldTime count; include startup 0/1 and steady 2 without materializing forbidden histories",
+      "matrix_packets_per_callback": 0,
+      "matrix_schema": {},
+      "matrix_type": "no_matrix_packet",
+      "target_payload_bytes": "NOT_MEASURED_REQUIRED_BY_Q1",
+      "term": "",
+      "tiny_bytes_scope": "HISTORICAL_FOUR_CELL_SCHEMA_ONLY",
+      "tiny_fixture_bytes": 20648
+    },
+    {
+      "callback_type": "before_pressure_EOS_copy",
+      "field_count": 10,
+      "field_names": [
+        "K",
+        "T",
+        "U",
+        "e",
+        "gh",
+        "p",
+        "p_rgh",
+        "phi",
+        "rho",
+        "rhoFluidThermo:rho"
+      ],
+      "frequency_per_step": 48,
+      "history_requirement": "existing oldTime count; include startup 0/1 and steady 2 without materializing forbidden histories",
+      "matrix_packets_per_callback": 0,
+      "matrix_schema": {},
+      "matrix_type": "no_matrix_packet",
+      "target_payload_bytes": "NOT_MEASURED_REQUIRED_BY_Q1",
+      "term": "",
+      "tiny_bytes_scope": "HISTORICAL_FOUR_CELL_SCHEMA_ONLY",
+      "tiny_fixture_bytes": 20658
+    },
+    {
+      "callback_type": "after_pressure_EOS_copy",
+      "field_count": 10,
+      "field_names": [
+        "K",
+        "T",
+        "U",
+        "e",
+        "gh",
+        "p",
+        "p_rgh",
+        "phi",
+        "rho",
+        "rhoFluidThermo:rho"
+      ],
+      "frequency_per_step": 48,
+      "history_requirement": "existing oldTime count; include startup 0/1 and steady 2 without materializing forbidden histories",
+      "matrix_packets_per_callback": 0,
+      "matrix_schema": {},
+      "matrix_type": "no_matrix_packet",
+      "target_payload_bytes": "NOT_MEASURED_REQUIRED_BY_Q1",
+      "term": "",
+      "tiny_bytes_scope": "HISTORICAL_FOUR_CELL_SCHEMA_ONLY",
+      "tiny_fixture_bytes": 20111
+    },
+    {
+      "callback_type": "pressure_pre_reference",
+      "field_count": 10,
+      "field_names": [
+        "K",
+        "T",
+        "U",
+        "e",
+        "gh",
+        "p",
+        "p_rgh",
+        "phi",
+        "rho",
+        "rhoFluidThermo:rho"
+      ],
+      "frequency_per_step": 48,
+      "history_requirement": "existing oldTime count; include startup 0/1 and steady 2 without materializing forbidden histories",
+      "matrix_packets_per_callback": 1,
+      "matrix_schema": {
+        "matrix": {
+          "arrays": [
+            "diag",
+            "upper",
+            "lower",
+            "source",
+            "psi",
+            "owner",
+            "neighbour",
+            "patches"
+          ],
+          "components": 1,
+          "matrix_type": "scalar_ldu",
+          "psi_name": "p_rgh"
+        }
+      },
+      "matrix_type": "scalar_ldu",
+      "target_payload_bytes": "NOT_MEASURED_REQUIRED_BY_Q1",
+      "term": "",
+      "tiny_bytes_scope": "HISTORICAL_FOUR_CELL_SCHEMA_ONLY",
+      "tiny_fixture_bytes": 13741
+    },
+    {
+      "callback_type": "pressure_post_reference",
+      "field_count": 10,
+      "field_names": [
+        "K",
+        "T",
+        "U",
+        "e",
+        "gh",
+        "p",
+        "p_rgh",
+        "phi",
+        "rho",
+        "rhoFluidThermo:rho"
+      ],
+      "frequency_per_step": 48,
+      "history_requirement": "existing oldTime count; include startup 0/1 and steady 2 without materializing forbidden histories",
+      "matrix_packets_per_callback": 1,
+      "matrix_schema": {
+        "matrix": {
+          "arrays": [
+            "diag",
+            "upper",
+            "lower",
+            "source",
+            "psi",
+            "owner",
+            "neighbour",
+            "patches"
+          ],
+          "components": 1,
+          "matrix_type": "scalar_ldu",
+          "psi_name": "p_rgh"
+        }
+      },
+      "matrix_type": "scalar_ldu",
+      "target_payload_bytes": "NOT_MEASURED_REQUIRED_BY_Q1",
+      "term": "",
+      "tiny_bytes_scope": "HISTORICAL_FOUR_CELL_SCHEMA_ONLY",
+      "tiny_fixture_bytes": 13740
+    },
+    {
+      "callback_type": "pressure_solved",
+      "field_count": 10,
+      "field_names": [
+        "K",
+        "T",
+        "U",
+        "e",
+        "gh",
+        "p",
+        "p_rgh",
+        "phi",
+        "rho",
+        "rhoFluidThermo:rho"
+      ],
+      "frequency_per_step": 48,
+      "history_requirement": "existing oldTime count; include startup 0/1 and steady 2 without materializing forbidden histories",
+      "matrix_packets_per_callback": 3,
+      "matrix_schema": {
+        "matrix": {
+          "arrays": [
+            "diag",
+            "upper",
+            "lower",
+            "source",
+            "psi",
+            "owner",
+            "neighbour",
+            "patches"
+          ],
+          "components": 1,
+          "matrix_type": "scalar_ldu",
+          "psi_name": "p_rgh"
+        },
+        "physical_matrix": {
+          "arrays": [
+            "diag",
+            "upper",
+            "lower",
+            "source",
+            "psi",
+            "owner",
+            "neighbour",
+            "patches"
+          ],
+          "components": 1,
+          "matrix_type": "scalar_ldu",
+          "psi_name": "p_rgh"
+        },
+        "referenced_matrix": {
+          "arrays": [
+            "diag",
+            "upper",
+            "lower",
+            "source",
+            "psi",
+            "owner",
+            "neighbour",
+            "patches"
+          ],
+          "components": 1,
+          "matrix_type": "scalar_ldu",
+          "psi_name": "p_rgh"
+        }
+      },
+      "matrix_type": "scalar_ldu",
+      "target_payload_bytes": "NOT_MEASURED_REQUIRED_BY_Q1",
+      "term": "",
+      "tiny_bytes_scope": "HISTORICAL_FOUR_CELL_SCHEMA_ONLY",
+      "tiny_fixture_bytes": 17325
+    },
+    {
+      "callback_type": "native_continuity_report",
+      "field_count": 10,
+      "field_names": [
+        "K",
+        "T",
+        "U",
+        "e",
+        "gh",
+        "p",
+        "p_rgh",
+        "phi",
+        "rho",
+        "rhoFluidThermo:rho"
+      ],
+      "frequency_per_step": 48,
+      "history_requirement": "existing oldTime count; include startup 0/1 and steady 2 without materializing forbidden histories",
+      "matrix_packets_per_callback": 0,
+      "matrix_schema": {},
+      "matrix_type": "no_matrix_packet",
+      "target_payload_bytes": "NOT_MEASURED_REQUIRED_BY_Q1",
+      "term": "",
+      "tiny_bytes_scope": "HISTORICAL_FOUR_CELL_SCHEMA_ONLY",
+      "tiny_fixture_bytes": 20658
+    },
+    {
+      "callback_type": "outer_end",
+      "field_count": 10,
+      "field_names": [
+        "K",
+        "T",
+        "U",
+        "e",
+        "gh",
+        "p",
+        "p_rgh",
+        "phi",
+        "rho",
+        "rhoFluidThermo:rho"
+      ],
+      "frequency_per_step": 24,
+      "history_requirement": "existing oldTime count; include startup 0/1 and steady 2 without materializing forbidden histories",
+      "matrix_packets_per_callback": 0,
+      "matrix_schema": {},
+      "matrix_type": "no_matrix_packet",
+      "target_payload_bytes": "NOT_MEASURED_REQUIRED_BY_Q1",
+      "term": "",
+      "tiny_bytes_scope": "HISTORICAL_FOUR_CELL_SCHEMA_ONLY",
+      "tiny_fixture_bytes": 20643
+    },
+    {
+      "callback_type": "before_postSolve",
+      "field_count": 10,
+      "field_names": [
+        "K",
+        "T",
+        "U",
+        "e",
+        "gh",
+        "p",
+        "p_rgh",
+        "phi",
+        "rho",
+        "rhoFluidThermo:rho"
+      ],
+      "frequency_per_step": 1,
+      "history_requirement": "existing oldTime count; include startup 0/1 and steady 2 without materializing forbidden histories",
+      "matrix_packets_per_callback": 0,
+      "matrix_schema": {},
+      "matrix_type": "no_matrix_packet",
+      "target_payload_bytes": "NOT_MEASURED_REQUIRED_BY_Q1",
+      "term": "",
+      "tiny_bytes_scope": "HISTORICAL_FOUR_CELL_SCHEMA_ONLY",
+      "tiny_fixture_bytes": 20650
+    },
+    {
+      "callback_type": "before_postSolve_EOS_copy",
+      "field_count": 10,
+      "field_names": [
+        "K",
+        "T",
+        "U",
+        "e",
+        "gh",
+        "p",
+        "p_rgh",
+        "phi",
+        "rho",
+        "rhoFluidThermo:rho"
+      ],
+      "frequency_per_step": 1,
+      "history_requirement": "existing oldTime count; include startup 0/1 and steady 2 without materializing forbidden histories",
+      "matrix_packets_per_callback": 0,
+      "matrix_schema": {},
+      "matrix_type": "no_matrix_packet",
+      "target_payload_bytes": "NOT_MEASURED_REQUIRED_BY_Q1",
+      "term": "",
+      "tiny_bytes_scope": "HISTORICAL_FOUR_CELL_SCHEMA_ONLY",
+      "tiny_fixture_bytes": 20659
+    },
+    {
+      "callback_type": "after_postSolve_EOS_copy",
+      "field_count": 10,
+      "field_names": [
+        "K",
+        "T",
+        "U",
+        "e",
+        "gh",
+        "p",
+        "p_rgh",
+        "phi",
+        "rho",
+        "rhoFluidThermo:rho"
+      ],
+      "frequency_per_step": 1,
+      "history_requirement": "existing oldTime count; include startup 0/1 and steady 2 without materializing forbidden histories",
+      "matrix_packets_per_callback": 0,
+      "matrix_schema": {},
+      "matrix_type": "no_matrix_packet",
+      "target_payload_bytes": "NOT_MEASURED_REQUIRED_BY_Q1",
+      "term": "",
+      "tiny_bytes_scope": "HISTORICAL_FOUR_CELL_SCHEMA_ONLY",
+      "tiny_fixture_bytes": 20112
+    },
+    {
+      "callback_type": "after_postSolve",
+      "field_count": 10,
+      "field_names": [
+        "K",
+        "T",
+        "U",
+        "e",
+        "gh",
+        "p",
+        "p_rgh",
+        "phi",
+        "rho",
+        "rhoFluidThermo:rho"
+      ],
+      "frequency_per_step": 1,
+      "history_requirement": "existing oldTime count; include startup 0/1 and steady 2 without materializing forbidden histories",
+      "matrix_packets_per_callback": 0,
+      "matrix_schema": {},
+      "matrix_type": "no_matrix_packet",
+      "target_payload_bytes": "NOT_MEASURED_REQUIRED_BY_Q1",
+      "term": "",
+      "tiny_bytes_scope": "HISTORICAL_FOUR_CELL_SCHEMA_ONLY",
+      "tiny_fixture_bytes": 20103
+    },
+    {
+      "callback_type": "time_end",
+      "field_count": 10,
+      "field_names": [
+        "K",
+        "T",
+        "U",
+        "e",
+        "gh",
+        "p",
+        "p_rgh",
+        "phi",
+        "rho",
+        "rhoFluidThermo:rho"
+      ],
+      "frequency_per_step": 1,
+      "history_requirement": "existing oldTime count; include startup 0/1 and steady 2 without materializing forbidden histories",
+      "matrix_packets_per_callback": 0,
+      "matrix_schema": {},
+      "matrix_type": "no_matrix_packet",
+      "target_payload_bytes": "NOT_MEASURED_REQUIRED_BY_Q1",
+      "term": "",
+      "tiny_bytes_scope": "HISTORICAL_FOUR_CELL_SCHEMA_ONLY",
+      "tiny_fixture_bytes": 20096
+    },
+    {
+      "callback_type": "preSolve_before",
+      "field_count": 10,
+      "field_names": [
+        "K",
+        "T",
+        "U",
+        "e",
+        "gh",
+        "p",
+        "p_rgh",
+        "phi",
+        "rho",
+        "rhoFluidThermo:rho"
+      ],
+      "frequency_per_step": 1,
+      "history_requirement": "meshState per NativeStageObserver.stage; startup oldTime count must be separately bound",
+      "matrix_packets_per_callback": 0,
+      "matrix_schema": {},
+      "matrix_type": "no_matrix_packet",
+      "target_payload_bytes": "NOT_MEASURED_REQUIRED_BY_Q1",
+      "term": "",
+      "tiny_bytes_scope": "NOT_IN_SELECTED_PHYSICAL_BUNDLE",
+      "tiny_fixture_bytes": null
+    },
+    {
+      "callback_type": "preSolve_after",
+      "field_count": 10,
+      "field_names": [
+        "K",
+        "T",
+        "U",
+        "e",
+        "gh",
+        "p",
+        "p_rgh",
+        "phi",
+        "rho",
+        "rhoFluidThermo:rho"
+      ],
+      "frequency_per_step": 1,
+      "history_requirement": "meshState per NativeStageObserver.stage; startup oldTime count must be separately bound",
+      "matrix_packets_per_callback": 0,
+      "matrix_schema": {},
+      "matrix_type": "no_matrix_packet",
+      "target_payload_bytes": "NOT_MEASURED_REQUIRED_BY_Q1",
+      "term": "",
+      "tiny_bytes_scope": "NOT_IN_SELECTED_PHYSICAL_BUNDLE",
+      "tiny_fixture_bytes": null
+    },
+    {
+      "callback_type": "controller_complete",
+      "field_count": 10,
+      "field_names": [
+        "K",
+        "T",
+        "U",
+        "e",
+        "gh",
+        "p",
+        "p_rgh",
+        "phi",
+        "rho",
+        "rhoFluidThermo:rho"
+      ],
+      "frequency_per_step": 1,
+      "history_requirement": "meshState per NativeStageObserver.stage; startup oldTime count must be separately bound",
+      "matrix_packets_per_callback": 0,
+      "matrix_schema": {},
+      "matrix_type": "no_matrix_packet",
+      "target_payload_bytes": "NOT_MEASURED_REQUIRED_BY_Q1",
+      "term": "",
+      "tiny_bytes_scope": "NOT_IN_SELECTED_PHYSICAL_BUNDLE",
+      "tiny_fixture_bytes": null
+    }
+  ],
+  "constructor_callbacks_once": 1,
+  "cpu_scope_name": "route-a-exact-scout-exact_20261006T131936-0900-c2-a1.scope",
+  "current_compatibility_evidence": {
+    "decision": "metadata equivalence does not bypass executable preflight; preparation neither changes launcher nor claims compatibility PASS",
+    "namespace_pin_line": 49,
+    "path": "Scripts/routeA/diagnostic_transient/v1_4/launcher.py",
+    "resource_ready_gate_line": 76,
+    "version_pin_line": 26
+  },
+  "current_runtime_compatibility": "REQUIRES_FIX",
+  "decision_tree": [
+    {
+      "Q3_allowed": "NO",
+      "condition": "Q0 compatibility REQUIRES_FIX",
+      "next_task": "FIX_ROUTE_A_DIAGNOSTIC_TRANSIENT_RUNTIME_AUTHORITY_COMPATIBILITY",
+      "reason": "current next task; reissue protocol pins after reviewed fix"
+    },
+    {
+      "Q3_allowed": "NO",
+      "condition": "target adapter/guards not prepared or any invalid evidence",
+      "next_task": "FIX_ROUTE_A_DIAGNOSTIC_TRANSIENT_TIMING_QUALIFICATION_PREPARATION",
+      "reason": "complete adapter and watchdog; no target measurements inferred"
+    },
+    {
+      "Q3_allowed": "NO",
+      "condition": "Q0 PASS and harness acceptance and explicit nonCFD task authorized",
+      "next_task": "RUN_ROUTE_A_DIAGNOSTIC_TRANSIENT_NONCFD_TIMING_QUALIFICATION",
+      "reason": "Q1 then Q2 only"
+    },
+    {
+      "Q3_allowed": "NO",
+      "condition": "diagnostic HIGH_RISK or clearly impractical",
+      "next_task": "REVIEW_ROUTE_A_DIAGNOSTIC_TRANSIENT_COMPUTE_REVISION_OPTIONS",
+      "reason": "months/years projection is architecture risk; no arbitrary seven-day rejection"
+    },
+    {
+      "Q3_allowed": "NO",
+      "condition": "U03 measured dominant / revision required",
+      "next_task": "PREPARE_ROUTE_A_DIAGNOSTIC_TRANSIENT_U03_COMPUTE_REVISION",
+      "reason": "equivalence review required; current algorithm unchanged"
+    },
+    {
+      "Q3_allowed": "NO",
+      "condition": "serialization/backend dominates",
+      "next_task": "PREPARE_ROUTE_A_DIAGNOSTIC_TRANSIENT_DIAGNOSTIC_COMPUTE_REVISION",
+      "reason": "separate semantic preservation review"
+    },
+    {
+      "Q3_allowed": "SEPARATE_AUTH_ONLY",
+      "condition": "Q0-Q2 PASS with practical cost, proven guards, accepted budget/risk",
+      "next_task": "REQUEST_SEPARATE_Q3_BOUNDED_TIMING_AUTHORIZATION",
+      "reason": "qualification PASS is never run authorization"
+    },
+    {
+      "Q3_allowed": "NO_PRODUCTION",
+      "condition": "Q3 core dominates",
+      "next_task": "REVIEW_MPI_QUALIFICATION_VS_U01_OUTER_POLICY_INFORMATION_VALUE",
+      "reason": "MPI support NOT_VALIDATED; outer remains24"
+    },
+    {
+      "Q3_allowed": "NO_PRODUCTION",
+      "condition": "compute/memory/IO QUALIFIED_FEASIBLE after adequate evidence",
+      "next_task": "PREPARE_ROUTE_A_DIAGNOSTIC_TRANSIENT_EXECUTION_AUTHORIZATION",
+      "reason": "production authorization remains separate"
+    },
+    {
+      "Q3_allowed": "NO",
+      "condition": "marginal, unstable, censored, missing storage/memory evidence",
+      "next_task": "USER_RESOURCE_BUDGET_AND_TARGETED_QUALIFICATION_REVIEW",
+      "reason": "UNRESOLVED or MARGINAL; no automatic additional repeat"
+    }
+  ],
+  "exact_evidence_architecture": {
+    "async_backend": false,
+    "bulk_schema": "routeA_exact_bulk/1",
+    "cache_bound_per_process": 134217728,
+    "cache_key": "actual typed content + SHA + full byte equality + scientific epoch/callback sequence",
+    "cache_lifetime": "callback",
+    "callback_batching": false,
+    "cycle": 2,
+    "parallel_workers": 1
+  },
+  "excluded_auxiliary_callbacks": 7,
+  "execution_authorized": false,
+  "final_status": {
+    "CFD_TRANSIENT_EXECUTED": "NO",
+    "COMPLETE_EXECUTION_CONFIGURATION_FROZEN": "NO",
+    "COMPUTE_REVIEW_AUTHORITY_VERIFIED": "YES",
+    "CURRENT_DIAGNOSTIC_COMPUTE_RISK": "HIGH",
+    "CURRENT_IO_RISK": "UNKNOWN",
+    "CURRENT_LAUNCHER_V15_RUNTIME_COMPATIBILITY": "REQUIRES_FIX",
+    "CURRENT_MEMORY_RISK": "UNKNOWN",
+    "CURRENT_SERIAL_ONLY_RISK": "HIGH",
+    "CURRENT_U03_COMPUTE_RISK": "HIGH",
+    "DIAGNOSTIC_CONTRACT_HASH_VERIFIED": "YES",
+    "DIAGNOSTIC_CONTRACT_SHA256": "06c71945289ffe419b784843f7aab2fea66c44d28c9dba46d828bbd24837e27d",
+    "DIAGNOSTIC_CONTRACT_VERSION": "1.5",
+    "DIAGNOSTIC_TRANSIENT_RESOURCE_READY": "NO",
+    "DOWNSTREAM_TRANSIENT_READY": "NO",
+    "EXECUTION_AUTHORIZED": "NO",
+    "FORMAL_CRITERIA_CHANGED": "NO",
+    "FORMAL_GATE_J_CURRENTLY_ALLOWED": "NO",
+    "FORMAL_GATE_J_EXECUTED": "NO",
+    "FORMAL_GATE_J_PASS": "NOT_EVALUATED",
+    "HISTORICAL_STATUS_CHANGED": "NO",
+    "IO_MEASUREMENT_PLAN_DEFINED": "YES",
+    "IPC_MEASUREMENT_PLAN_DEFINED": "YES",
+    "MEMORY_MEASUREMENT_PLAN_DEFINED": "YES",
+    "NEXT_SINGLE_TASK": "FIX_ROUTE_A_DIAGNOSTIC_TRANSIENT_RUNTIME_AUTHORITY_COMPATIBILITY",
+    "N_OUTER_CORRECTORS_CHANGED": "NO",
+    "PARTICLE_COUPLING_READY": "NO",
+    "PERSISTENCE_POLICY_CHANGED": "NO",
+    "PILOT_CFD_EXECUTED": "NO",
+    "PRODUCTION_SOLVER_EXECUTED": "NO",
+    "Q0_AUTHORITY_PREFLIGHT_DEFINED": "YES",
+    "Q1_CAN_RUN_WITHOUT_CFD": "YES",
+    "Q1_STOP_RULES_DEFINED": "YES",
+    "Q1_TARGET_SIZE_DIAGNOSTIC_ONLY_DEFINED": "YES",
+    "Q2_CAN_RUN_WITHOUT_CFD": "YES",
+    "Q2_STOP_RULES_DEFINED": "YES",
+    "Q2_U03_DIAGNOSTIC_PRIMITIVE_DEFINED": "YES",
+    "Q3_BOUNDED_WHOLE_STEP_CFD_DEFINED": "YES",
+    "Q3_EXECUTED": "NO",
+    "Q3_REQUIRES_SEPARATE_USER_AUTHORIZATION": "YES",
+    "Q3_STOP_RULES_DEFINED": "YES",
+    "QUALIFICATION_DISK_GUARDS_DEFINED": "YES",
+    "QUALIFICATION_MEMORY_GUARDS_DEFINED": "YES",
+    "QUALIFICATION_STAGES_DEFINED": "YES",
+    "QUALIFICATION_WALL_BUDGETS_DEFINED": "YES",
+    "RECOMMENDED_REASONING_MODEL_FOR_NEXT_TASK": "gpt-6.1-sol / medium",
+    "REPEATABILITY_POLICY_DEFINED": "YES",
+    "ROUTE_A_DIAGNOSTIC_TRANSIENT_BOUNDED_TIMING_QUALIFICATION_PREPARATION": "COMPLETE",
+    "SEAL_PURGE_POLICY_CHANGED": "NO",
+    "TARGET_SIZE_DIAGNOSTIC_HARNESS_PREPARED": "NO",
+    "U01_CHANGED": "NO",
+    "U02_CHANGED": "NO",
+    "U03_CHANGED": "NO",
+    "U03_SCALING_HARNESS_PREPARED": "YES",
+    "U04_EQUATION_SEMANTICS_CHANGED": "NO",
+    "USER_DECISION_REQUIRED": "YES"
+  },
+  "frozen_switches": {
+    "consistent": false,
+    "correctPhi": false,
+    "hydrostaticInitialisation": false,
+    "momentumPredictor": true,
+    "nCorrectors": 2,
+    "nNonOrthogonalCorrectors": 0,
+    "nOuterCorrectors": 24,
+    "runTimeModifiable": false,
+    "simpleRho": false,
+    "transonic": false,
+    "transportCorrectionFinal": true,
+    "transportPredictionFirst": true
+  },
+  "harness_limitations": [
+    "target-size native adapter not implemented",
+    "process-group/RSS/disk watchdog not implemented; required future readiness",
+    "U03 harness prepared but execution blocked by current Q0; guard tracing/fitting/result qualification integration still required before measurement",
+    "current plan and scripts pinned to REQUIRES_FIX; reviewed compatibility fix must produce new protocol revision and gate validation update, never edit frozen contract or spoof receipt",
+    "tiny source-derived bundle classes require target history/matrix-type binding and full manifest in adapter before Q1 acceptance"
+  ],
+  "linear_solver_dictionary": {
+    "U": {
+      "maxIter": 2000,
+      "preconditioner": "DILU",
+      "relTol": 0,
+      "solver": "PBiCGStab",
+      "tolerance": 1e-12
+    },
+    "UFinal": {
+      "maxIter": 2000,
+      "preconditioner": "DILU",
+      "relTol": 0,
+      "solver": "PBiCGStab",
+      "tolerance": 1e-12
+    },
+    "e": {
+      "maxIter": 2000,
+      "preconditioner": "DILU",
+      "relTol": 0,
+      "solver": "PBiCGStab",
+      "tolerance": 1e-12
+    },
+    "eFinal": {
+      "maxIter": 2000,
+      "preconditioner": "DILU",
+      "relTol": 0,
+      "solver": "PBiCGStab",
+      "tolerance": 1e-12
+    },
+    "p_rgh": {
+      "maxIter": 4000,
+      "preconditioner": "DIC",
+      "relTol": 0,
+      "solver": "PCG",
+      "tolerance": 1e-12
+    },
+    "p_rghFinal": {
+      "maxIter": 4000,
+      "preconditioner": "DIC",
+      "relTol": 0,
+      "solver": "PCG",
+      "tolerance": 1e-12
+    },
+    "rho": {
+      "maxIter": 1,
+      "relTol": 0,
+      "solver": "diagonal",
+      "tolerance": 1e-14
+    },
+    "rhoFinal": {
+      "maxIter": 1,
+      "relTol": 0,
+      "solver": "diagonal",
+      "tolerance": 1e-14
+    }
+  },
+  "measurement": {
+    "affinity": "review only; no affinity/governor change or parallel execution",
+    "combined_peak_formula": "max_t(native_RSS(t) + backend_RSS(t))",
+    "host_snapshot": [
+      "loadavg",
+      "CPU utilization from proc stat",
+      "MemAvailable",
+      "disk free and inode free",
+      "CPU governor/min/max/current frequency",
+      "pidstat and iostat if available"
+    ],
+    "metrics": [
+      {
+        "current_value": "NOT_MEASURED_THIS_TASK",
+        "method": "CLOCK_MONOTONIC and external timeout",
+        "metric": "wall",
+        "scope": "startup/callback/stage/step/selected audit",
+        "unit": "s"
+      },
+      {
+        "current_value": "NOT_MEASURED_THIS_TASK",
+        "method": "getrusage or time-v native/backend separately",
+        "metric": "CPU_user_system",
+        "scope": "process and per-equivalent delta",
+        "unit": "s"
+      },
+      {
+        "current_value": "NOT_MEASURED_THIS_TASK",
+        "method": "native monotonic spans around existing serializer; separate instrumented adapter",
+        "metric": "native_JSON_construction",
+        "scope": "per callback class",
+        "unit": "s"
+      },
+      {
+        "current_value": "NOT_MEASURED_THIS_TASK",
+        "method": "send start through ACK receive; payload and ACK bytes counted independently",
+        "metric": "IPC_ACK_wait",
+        "scope": "per callback; includes backend processing, not additive to decode",
+        "unit": "s"
+      },
+      {
+        "current_value": "NOT_MEASURED_THIS_TASK",
+        "method": "monotonic span around unchanged JSON decoder",
+        "metric": "backend_decode",
+        "scope": "per callback",
+        "unit": "s"
+      },
+      {
+        "current_value": "NOT_MEASURED_THIS_TASK",
+        "method": "unchanged canonical functions with spans",
+        "metric": "canonicalization",
+        "scope": "per callback class",
+        "unit": "s"
+      },
+      {
+        "current_value": "NOT_MEASURED_THIS_TASK",
+        "method": "unchanged replay; at least1475 calls/equivalent verified",
+        "metric": "matrix_replay",
+        "scope": "scalar/vector/explicit term separately",
+        "unit": "s"
+      },
+      {
+        "current_value": "NOT_MEASURED_THIS_TASK",
+        "method": "unchanged packed codec",
+        "metric": "packing",
+        "scope": "stage / selected audit",
+        "unit": "s"
+      },
+      {
+        "current_value": "NOT_MEASURED_THIS_TASK",
+        "method": "existing hash calls incl canonical and readback",
+        "metric": "SHA",
+        "scope": "in-memory/file separately",
+        "unit": "s"
+      },
+      {
+        "current_value": "NOT_MEASURED_THIS_TASK",
+        "method": "unchanged primary evaluator",
+        "metric": "primary_QoI",
+        "scope": "per registered event",
+        "unit": "s"
+      },
+      {
+        "current_value": "NOT_MEASURED_THIS_TASK",
+        "method": "unchanged certificate and last5 states",
+        "metric": "U01_certificate",
+        "scope": "per outer/end/event",
+        "unit": "s"
+      },
+      {
+        "current_value": "NOT_MEASURED_THIS_TASK",
+        "method": "unchanged publish/manifest/rotate spans",
+        "metric": "persistence_log_fsync",
+        "scope": "normal/selected/full event",
+        "unit": "s"
+      },
+      {
+        "current_value": "NOT_MEASURED_THIS_TASK",
+        "method": "proc status every20ms native/backend + time-v each",
+        "metric": "RSS",
+        "scope": "max_t sum; sum individual maxima only conservative upper bound",
+        "unit": "bytes"
+      },
+      {
+        "current_value": "NOT_MEASURED_THIS_TASK",
+        "method": "proc status20ms plus enforced RLIMIT_AS",
+        "metric": "VmSize_AS",
+        "scope": "per process; missing samples unresolved",
+        "unit": "bytes"
+      },
+      {
+        "current_value": "NOT_MEASURED_THIS_TASK",
+        "method": "native sent/ACK; serialized/packed; logical file sizes; proc io write_bytes/read_bytes",
+        "metric": "byte_counters",
+        "scope": "per callback class / step / event",
+        "unit": "bytes"
+      },
+      {
+        "current_value": "NOT_MEASURED_THIS_TASK",
+        "method": "ledger callbacks/solve records/replay/fields/history",
+        "metric": "counts",
+        "scope": "1144/145/169; constructor separate",
+        "unit": "count"
+      },
+      {
+        "current_value": "NOT_MEASURED_THIS_TASK",
+        "method": "loadavg/proc stat/MemAvailable/statvfs/pidstat/iostat",
+        "metric": "host_load",
+        "scope": "before/during/after each trial",
+        "unit": "mixed"
+      },
+      {
+        "current_value": "NOT_MEASURED_THIS_TASK",
+        "method": "file and directory fsync monotonic deltas",
+        "metric": "fsync_latency",
+        "scope": "report each plus min/median/max",
+        "unit": "s"
+      },
+      {
+        "current_value": "NOT_MEASURED_THIS_TASK",
+        "method": "1MiB streaming SHA read",
+        "metric": "hash_read_latency",
+        "scope": "cold-uncontrolled / warm separately",
+        "unit": "s"
+      },
+      {
+        "current_value": "NOT_MEASURED_THIS_TASK",
+        "method": "native runtime logs exact equations and 145fv mapping",
+        "metric": "linear_iterations",
+        "scope": "Q3 only",
+        "unit": "iterations/solve"
+      },
+      {
+        "current_value": "NOT_MEASURED_THIS_TASK",
+        "method": "aN^p OLS log fit to medians with adjacent slopes and residuals",
+        "metric": "U03_scaling",
+        "scope": "completed sizes only; censored points never fit as equal time",
+        "unit": "s,N,p"
+      }
+    ],
+    "sampling_uncertainty": "20ms can miss peaks; per-process time-v high-water marks support upper bound sum(maxRSS_native,maxRSS_backend), not simultaneous peak; missing samples/high gaps unresolved",
+    "simultaneous_RSS_sample_interval_seconds": 0.02,
+    "tools_available": {
+      "iostat": "/usr/bin/iostat",
+      "pidstat": "/usr/bin/pidstat",
+      "python3": "/usr/bin/python3",
+      "taskset": "/usr/bin/taskset",
+      "timeout": "/usr/bin/timeout"
+    },
+    "tools_not_invoked_here": [
+      "time-v native/backend timing",
+      "pidstat",
+      "iostat",
+      "taskset"
+    ]
+  },
+  "measurement_stages_executed": [],
+  "memory_design": {
+    "full_audit": "observe bounded repeated32MiB stage chunks through existing streaming writer; no9GiB RAM allocation; if full cap cannot be reached under short budget mark coverage partial",
+    "per_process_time_v": true,
+    "qualification": "all named events, sampling and individual peaks required; sparse coverage or >5percent unexplained peak difference is UNRESOLVED",
+    "retain_sample_trace": true,
+    "rolling": "default1GiB ring and max16*32MiB staged bytes, account object overhead and transient copies; measure not infer from cap",
+    "simultaneous": true
+  },
+  "memory_events": [
+    "normal compact event",
+    "rolling buffer full including join/transient copy",
+    "selected512MiB bundle",
+    "field16MiB snapshot",
+    "full raw audit preparation as streaming path",
+    "U01 last5 states",
+    "U03 history evaluation"
+  ],
+  "next_task": "FIX_ROUTE_A_DIAGNOSTIC_TRANSIENT_RUNTIME_AUTHORITY_COMPATIBILITY",
+  "output_decision_categories": {
+    "NOT_MEASURED": "no target stage performed",
+    "QUALIFIED_FEASIBLE": "all required event evidence complete, stable and>=20percent cap/headroom or user deadline margin",
+    "QUALIFIED_INFEASIBLE": "observed hard capacity/budget contradiction; finite timing-cap STOP alone is censored, not production infeasibility proof",
+    "QUALIFIED_MARGINAL": "complete but<20percent margin or operational evidence limited; no automatic progression",
+    "UNRESOLVED": "contradictory/censored/partial/unstable evidence"
+  },
+  "planning_classification": {
+    "CLEARLY_IMPRACTICAL": "direct observed hard guard incompatibility or registered user budget contradiction from completed measurements; no arbitrary7day rule",
+    "CLEARLY_PRACTICAL": "complete stable target data, all guards qualified with>=20percent operational headroom and conservative projection within explicit user budget plus accepted continuous-run risk",
+    "HIGH_RISK": "months/years planning projection or dominant quadratic U03 growth or unresolved near-guard/retention risk; not scientific FAIL; no Q3",
+    "POTENTIALLY_PRACTICAL": "completed stable path and no order-of-magnitude contradiction; user budget or Q3/core uncertainty remains; Q3 still requires budget/risk and separate authorization",
+    "UNRESOLVED": "missing fixture/partial graph/unstable/censored/no fit/insufficient IO coverage; no Q3",
+    "continuous_run_risk_accepted": false,
+    "cost_model": "total step projections include measured full diagnostic path + separately measured core; avoid double counting ACK and backend spans; arrival cost at each registered evaluation endpoint added as sum T(N_j), not single final history cost",
+    "step_scenarios_planning_only": [
+      200061,
+      400122,
+      800244
+    ],
+    "user_runtime_budget_seconds": null
+  },
+  "production_execution_authorized": false,
+  "relaxationFactors": {
+    "equations": {},
+    "fields": {}
+  },
+  "repeatability": {
+    "automatic_extra_repeats": false,
+    "high_variance": "TIMING_STABILITY LOW; UNRESOLVED, request separate bounded repeat task",
+    "minimum_repeats": 3,
+    "stability_low_rule": "CV>0.20 or max/min>1.5 or >10percent other CPU busy or incomplete host traces; planning threshold, not scientific criterion",
+    "summary": [
+      "min",
+      "median",
+      "max",
+      "CV_population",
+      "pairedONminusOFF"
+    ],
+    "warmup": "no unbudgeted warmup; startup separately measured, record order/cache"
+  },
+  "resource_supervision": {
+    "aggregate": "870s active-stage budget acrossQ0-Q3; no parallel stages; retained scratch global32GiB+16MiB /832 files maximum; no auto cleanup; require reserve before stage",
+    "disk": "check before every bounded write and independently poll every100ms; count logical and allocated scratch and files; reserve max32GiB or10percent free plus planned remaining bytes; preserve partial artifacts",
+    "implemented_in_this_task": false,
+    "measurements_here": "NONE; only pure gate/schema tests and4node estimator input sanity",
+    "memory": "hard RLIMIT_AS per child plus20ms proc/host observer; unknown/missing guard data stop, no silent fallback",
+    "required_before_execution": true,
+    "wall": "external monotonic supervisor kills entire native/backend process group on first cap; graceful termination<=1s then SIGKILL; deadline includes launch/startup/output flush; no restarts"
+  },
+  "revision": "compute_revision_v4",
+  "schema": "routeA_exact_evidence_scout_plan/4.0",
+  "scout_preregistration": {
+    "automatic_extra_repeats": false,
+    "basis": "unchanged v3 bound derived from historical constructor/control/matrix sizes and uncertainty envelope",
+    "existing_stability_rules_unchanged": true,
+    "files_model": "48 active workspace +24control+32archive+8STOP+8sidechannel <=192",
+    "one_shot": true,
+    "repeats": 3,
+    "scratch_model": "21 two-packet source-shaped artifacts + bounded96MiB ledger (actual <=3records each) + complete compressed traces + 16MiB STOP +4MiB sidechannel;192file cap failclosed"
+  },
+  "scout_requests": [
+    {
+      "context_kind": "RECURRING_STEP_EQUIVALENT",
+      "kind": "pipeline",
+      "mode": "ON",
+      "phase": "scout_controller",
+      "purpose": "primitive",
+      "repeat": 0,
+      "sample_class": "controller"
+    },
+    {
+      "context_kind": "RECURRING_STEP_EQUIVALENT",
+      "kind": "pipeline",
+      "mode": "ON",
+      "phase": "scout_controller",
+      "purpose": "primitive",
+      "repeat": 1,
+      "sample_class": "controller"
+    },
+    {
+      "context_kind": "RECURRING_STEP_EQUIVALENT",
+      "kind": "pipeline",
+      "mode": "ON",
+      "phase": "scout_controller",
+      "purpose": "primitive",
+      "repeat": 2,
+      "sample_class": "controller"
+    },
+    {
+      "context_kind": "RECURRING_STEP_EQUIVALENT",
+      "kind": "pipeline",
+      "mode": "ON",
+      "phase": "scout_field",
+      "purpose": "primitive",
+      "repeat": 0,
+      "sample_class": "field"
+    },
+    {
+      "context_kind": "RECURRING_STEP_EQUIVALENT",
+      "kind": "pipeline",
+      "mode": "ON",
+      "phase": "scout_field",
+      "purpose": "primitive",
+      "repeat": 1,
+      "sample_class": "field"
+    },
+    {
+      "context_kind": "RECURRING_STEP_EQUIVALENT",
+      "kind": "pipeline",
+      "mode": "ON",
+      "phase": "scout_field",
+      "purpose": "primitive",
+      "repeat": 2,
+      "sample_class": "field"
+    },
+    {
+      "context_kind": "RECURRING_STEP_EQUIVALENT",
+      "kind": "pipeline",
+      "mode": "ON",
+      "phase": "scout_matrix",
+      "purpose": "primitive",
+      "repeat": 0,
+      "sample_class": "matrix"
+    },
+    {
+      "context_kind": "RECURRING_STEP_EQUIVALENT",
+      "kind": "pipeline",
+      "mode": "ON",
+      "phase": "scout_matrix",
+      "purpose": "primitive",
+      "repeat": 1,
+      "sample_class": "matrix"
+    },
+    {
+      "context_kind": "RECURRING_STEP_EQUIVALENT",
+      "kind": "pipeline",
+      "mode": "ON",
+      "phase": "scout_matrix",
+      "purpose": "primitive",
+      "repeat": 2,
+      "sample_class": "matrix"
+    },
+    {
+      "context_kind": "RECURRING_STEP_EQUIVALENT",
+      "kind": "pipeline",
+      "mode": "ON",
+      "phase": "scout_term",
+      "purpose": "primitive",
+      "repeat": 0,
+      "sample_class": "term"
+    },
+    {
+      "context_kind": "RECURRING_STEP_EQUIVALENT",
+      "kind": "pipeline",
+      "mode": "ON",
+      "phase": "scout_term",
+      "purpose": "primitive",
+      "repeat": 1,
+      "sample_class": "term"
+    },
+    {
+      "context_kind": "RECURRING_STEP_EQUIVALENT",
+      "kind": "pipeline",
+      "mode": "ON",
+      "phase": "scout_term",
+      "purpose": "primitive",
+      "repeat": 2,
+      "sample_class": "term"
+    },
+    {
+      "context_kind": "RECURRING_STEP_EQUIVALENT",
+      "kind": "pipeline",
+      "mode": "ON",
+      "phase": "scout_energy_matrix",
+      "purpose": "primitive",
+      "repeat": 0,
+      "sample_class": "energy_matrix"
+    },
+    {
+      "context_kind": "RECURRING_STEP_EQUIVALENT",
+      "kind": "pipeline",
+      "mode": "ON",
+      "phase": "scout_energy_matrix",
+      "purpose": "primitive",
+      "repeat": 1,
+      "sample_class": "energy_matrix"
+    },
+    {
+      "context_kind": "RECURRING_STEP_EQUIVALENT",
+      "kind": "pipeline",
+      "mode": "ON",
+      "phase": "scout_energy_matrix",
+      "purpose": "primitive",
+      "repeat": 2,
+      "sample_class": "energy_matrix"
+    },
+    {
+      "context_kind": "RECURRING_STEP_EQUIVALENT",
+      "kind": "pipeline",
+      "mode": "ON",
+      "phase": "scout_pressure_matrix",
+      "purpose": "primitive",
+      "repeat": 0,
+      "sample_class": "pressure_matrix"
+    },
+    {
+      "context_kind": "RECURRING_STEP_EQUIVALENT",
+      "kind": "pipeline",
+      "mode": "ON",
+      "phase": "scout_pressure_matrix",
+      "purpose": "primitive",
+      "repeat": 1,
+      "sample_class": "pressure_matrix"
+    },
+    {
+      "context_kind": "RECURRING_STEP_EQUIVALENT",
+      "kind": "pipeline",
+      "mode": "ON",
+      "phase": "scout_pressure_matrix",
+      "purpose": "primitive",
+      "repeat": 2,
+      "sample_class": "pressure_matrix"
+    },
+    {
+      "context_kind": "RECURRING_STEP_EQUIVALENT",
+      "kind": "pipeline",
+      "mode": "OFF",
+      "phase": "scout_OFF",
+      "purpose": "primitive",
+      "repeat": 0,
+      "sample_class": "pressure_matrix"
+    },
+    {
+      "context_kind": "RECURRING_STEP_EQUIVALENT",
+      "kind": "pipeline",
+      "mode": "OFF",
+      "phase": "scout_OFF",
+      "purpose": "primitive",
+      "repeat": 1,
+      "sample_class": "pressure_matrix"
+    },
+    {
+      "context_kind": "RECURRING_STEP_EQUIVALENT",
+      "kind": "pipeline",
+      "mode": "OFF",
+      "phase": "scout_OFF",
+      "purpose": "primitive",
+      "repeat": 2,
+      "sample_class": "pressure_matrix"
+    }
+  ],
+  "solve_counts_per_step": {
+    "U_fv": 24,
+    "e": 24,
+    "p_rgh": 48,
+    "rho": 49,
+    "scalar_records": 169,
+    "total_fv": 145
+  },
+  "stage_order": [
+    "Q0",
+    "Q1",
+    "Q2",
+    "Q3"
+  ],
+  "stages": {
+    "Q0": {
+      "budgets": {
+        "backend_AS_max_bytes": 8589934592,
+        "backend_RSS_max_bytes": 8589934592,
+        "combined_RSS_max_bytes": 17179869184,
+        "files_max": 64,
+        "host_MemAvailable_min_bytes": 25769803776,
+        "native_AS_max_bytes": 8589934592,
+        "native_RSS_max_bytes": 8589934592,
+        "scratch_bytes": 16777216,
+        "single_trial_wall_seconds": 30,
+        "stage_wall_seconds": 30
+      },
+      "current_status": "REQUIRES_FIX",
+      "execute_in_this_task": false,
+      "no_auto_retry": true
+    },
+    "Q1": {
+      "budgets": {
+        "backend_AS_max_bytes": 8589934592,
+        "backend_RSS_max_bytes": 8589934592,
+        "combined_RSS_max_bytes": 17179869184,
+        "files_max": 256,
+        "host_MemAvailable_min_bytes": 25769803776,
+        "native_AS_max_bytes": 8589934592,
+        "native_RSS_max_bytes": 8589934592,
+        "scratch_bytes": 12884901888,
+        "single_trial_wall_seconds": 30,
+        "stage_wall_seconds": 300
+      },
+      "current_status": "NOT_MEASURED_BLOCKED_BY_Q0",
+      "execute_in_this_task": false,
+      "no_auto_retry": true
+    },
+    "Q2": {
+      "budgets": {
+        "backend_AS_max_bytes": 8589934592,
+        "backend_RSS_max_bytes": 8589934592,
+        "combined_RSS_max_bytes": 17179869184,
+        "files_max": 256,
+        "host_MemAvailable_min_bytes": 25769803776,
+        "native_AS_max_bytes": 8589934592,
+        "native_RSS_max_bytes": 8589934592,
+        "scratch_bytes": 4294967296,
+        "single_trial_wall_seconds": 30,
+        "stage_wall_seconds": 420
+      },
+      "current_status": "NOT_MEASURED_BLOCKED_BY_Q0",
+      "execute_in_this_task": false,
+      "no_auto_retry": true
+    },
+    "Q3": {
+      "budgets": {
+        "backend_AS_max_bytes": 8589934592,
+        "backend_RSS_max_bytes": 8589934592,
+        "combined_RSS_max_bytes": 17179869184,
+        "files_max": 256,
+        "host_MemAvailable_min_bytes": 25769803776,
+        "native_AS_max_bytes": 8589934592,
+        "native_RSS_max_bytes": 8589934592,
+        "scratch_bytes": 17179869184,
+        "single_trial_wall_seconds": 30,
+        "stage_wall_seconds": 120
+      },
+      "current_status": "NOT_MEASURED_BLOCKED_BY_Q0",
+      "execute_in_this_task": false,
+      "no_auto_retry": true
+    },
+    "SCOUT": {
+      "budgets": {
+        "backend_AS_max_bytes": 8589934592,
+        "backend_RSS_max_bytes": 8589934592,
+        "combined_RSS_max_bytes": 17179869184,
+        "files_max": 192,
+        "host_MemAvailable_min_bytes": 25769803776,
+        "native_AS_max_bytes": 8589934592,
+        "native_RSS_max_bytes": 8589934592,
+        "scratch_bytes": 2147483648,
+        "single_trial_wall_seconds": 76,
+        "stage_wall_seconds": 1627
+      }
+    }
+  },
+  "stop_rules": [
+    {
+      "action": "preserve evidence; fix authority; no later stage",
+      "code": "STOP_DIAGNOSTIC_AUTHORITY_MISMATCH",
+      "stage": "ALL",
+      "trigger": "any canonical diagnostic/formal/review/source hash differs"
+    },
+    {
+      "action": "runtime authority compatibility fix; no fallback to v1.4 authority",
+      "code": "STOP_CURRENT_RUNTIME_REQUIRES_FIX",
+      "stage": "ALL",
+      "trigger": "launcher version 1.4 pin rejects v1.5 or qualification namespace unsupported"
+    },
+    {
+      "action": "remain NOT_MEASURED; no execution",
+      "code": "STOP_AUTHORIZATION_SCOPE",
+      "stage": "ALL",
+      "trigger": "no explicit task authorization for requested measurement stage"
+    },
+    {
+      "action": "terminate process group; memory unresolved/infeasible if directly observed",
+      "code": "STOP_RESOURCE_GUARD",
+      "stage": "ALL",
+      "trigger": "AS/RSS/combined RSS cap reached or MemAvailable <24GiB"
+    },
+    {
+      "action": "prevent write; preserve partial; no auto purge",
+      "code": "STOP_STORAGE_GUARD",
+      "stage": "ALL",
+      "trigger": "next write would exceed bytes/file quota or free-space/inode reserve"
+    },
+    {
+      "action": "kill group including backend; record censored lower bound; no auto retry",
+      "code": "STOP_STAGE_OR_TRIAL_WALL",
+      "stage": "ALL",
+      "trigger": "first wall deadline reached"
+    },
+    {
+      "action": "no cost qualification from invalid target fixture",
+      "code": "STOP_FIXTURE_INVALID",
+      "stage": "Q1",
+      "trigger": "shape, epoch, boundary, history, matrix/source/graph mismatch; adapter absent"
+    },
+    {
+      "action": "lower bound/risk only; no step estimate from elapsed/count ratio; no Q3",
+      "code": "STOP_INCOMPLETE_STEP_MIX",
+      "stage": "Q1",
+      "trigger": "cannot complete 1144 callback equivalent within 30s"
+    },
+    {
+      "action": "UNRESOLVED; fix qualification tooling",
+      "code": "STOP_NONFINITE_OR_ACCOUNTING",
+      "stage": "Q1/Q2",
+      "trigger": "NaN timing/data; mismatched IPC bytes, hashes, replay, receipts"
+    },
+    {
+      "action": "stop larger N; save lower-N fit and censored observation; no Q3",
+      "code": "STOP_U03_BENCHMARK_LIMIT",
+      "stage": "Q2",
+      "trigger": "15s trial or 120s suite reached"
+    },
+    {
+      "action": "prepare U03 compute revision; no algorithm change here",
+      "code": "STOP_U03_COMPUTE_REVISION",
+      "stage": "Q2",
+      "trigger": "measured scaling plus source reasoning imply dominant prohibitive history cost"
+    },
+    {
+      "action": "UNRESOLVED; no Q3",
+      "code": "STOP_IO_EVIDENCE_INSUFFICIENT",
+      "stage": "Q2",
+      "trigger": "publication/hash/manifest fails or cached test cannot bound required storage event"
+    },
+    {
+      "action": "no CFD launch",
+      "code": "STOP_Q0_Q2_NOT_PASS",
+      "stage": "Q3",
+      "trigger": "any earlier stage, memory or IO not PASS; HIGH_RISK/U03 revision/budget unknown"
+    },
+    {
+      "action": "preserve difference; no physical conclusion or production",
+      "code": "STOP_NONINVASIVENESS",
+      "stage": "Q3",
+      "trigger": "paired physical-state comparisons differ under frozen expectations"
+    },
+    {
+      "action": "normal bounded completion; independent wall cap still applies",
+      "code": "STOP_STEP_CAP",
+      "stage": "Q3",
+      "trigger": "2 complete steps per trial or 8 across 4 trials"
+    }
+  ],
+  "task": "A-D only; E/F design only; no CFD"
+}

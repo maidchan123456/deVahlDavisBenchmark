@@ -1,0 +1,15 @@
+{
+  "allowed_stages": [
+    "SCOUT"
+  ],
+  "authorized_task": "AUTONOMOUSLY_REVISE_EXACT_EVIDENCE_COMPUTE_ARCHITECTURE_AND_ADVANCE_TO_Q3_READY",
+  "canonical_SHA256": "06c71945289ffe419b784843f7aab2fea66c44d28c9dba46d828bbd24837e27d",
+  "execution_authorized": true,
+  "harness_manifest_SHA256": "3ab19c5cb6bbc24571575fb0aea8f4fa49e239ee63efceb459692e269bf7d52c",
+  "master_prompt_SHA256": "c9a5586079981944cbab752b7a26ef96fe48f8db136f1642d221fa3a0ce15471",
+  "plan_SHA256": "8b140dce75a40e69fa72a3eb3a9f87beb1ba456507a30c09099ef6fd78006708",
+  "qualification_id": "scout_20261006T132306+0900_exact_c1_a2",
+  "schema": "nonCFD_revision_authorization/2",
+  "scope": "NONCFD_DIAGNOSTIC_COMPUTE_REVISION",
+  "task_reference": "/home/mirai/.codex/attachments/05c7a1a8-4666-4893-9c5d-48195030faee/\u8cbc\u308a\u4ed8\u3051\u305f\u30c6\u30ad\u30b9\u30c8.txt"
+}

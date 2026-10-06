@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "basis": "unchanged frozen scientific sources, original46 PASS reused; new revision tests separately required",
+  "report": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/autonomous_q3_readiness/autonomous_20261006T092439+0900/original_46_regression.json",
+  "report_SHA256": "93c296e5a8aea89c0925f2995685f7ef7c9705e3dd37e6b541d260e8e7d5eaa1",
+  "verified_frozen_files": 36
+}

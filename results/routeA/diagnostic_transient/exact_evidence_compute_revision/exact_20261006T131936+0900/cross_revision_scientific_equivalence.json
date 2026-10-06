@@ -1,0 +1,44 @@
+{
+  "status": "PASS",
+  "baseline": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/autonomous_q3_readiness/autonomous_20261006T092439+0900/tiny_equivalence_cycle2/new_on",
+  "new": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/exact_evidence_compute_revision/exact_20261006T131936+0900/tiny_equivalence_cycle2/new_on",
+  "science_fields": {
+    "status": true,
+    "callbacks_including_constructor": true,
+    "matrix_packets": true,
+    "evaluator_summary": true,
+    "writer_bytes": true,
+    "writer_fsyncs": true,
+    "U01_primary_steps": true,
+    "schedule": true
+  },
+  "Writer_file_SHA256_equal": true,
+  "Writer_files": 17,
+  "callbacks": 1145,
+  "matrices": 701,
+  "reuse": {
+    "hit_rate": 0.3004650279965835,
+    "identity": "actual typed content pickle4 + SHA256 + byte equality + sequence/scientific counters",
+    "lifetime": "callback",
+    "limit_bytes": 134217728,
+    "peak_cache_bytes": 52163,
+    "recompute_reasons": {
+      "callback_boundary_clear": 1145,
+      "content_or_kind_miss": 7371
+    },
+    "seconds": {
+      "compute_seconds_avoided": 0.13547993265092373,
+      "identity_check": 0.07496172247920185,
+      "reuse_lookup": 0.022220591665245593
+    },
+    "stats": {
+      "bytes_avoided": 1300113,
+      "hits": 3166,
+      "matrix_replay_hits": 895,
+      "matrix_replay_misses": 580,
+      "misses": 7371,
+      "packed_evidence_hits": 2271,
+      "packed_evidence_misses": 6791
+    }
+  }
+}

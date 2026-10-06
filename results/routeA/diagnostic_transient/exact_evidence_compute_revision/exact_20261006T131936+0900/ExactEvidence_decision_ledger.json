@@ -1,0 +1,34 @@
+[
+  {
+    "candidate": "A",
+    "decision": "accepted",
+    "scope": "bounded nonCFD validated prototype",
+    "reason": "actual typed content plus epoch; no pointer-only key; callback cache128MiB; native array cache128MiB. Cycle1~1.77x central proxy; final combination2.05x. Every lookup verifies content; mutation/epoch/eviction tests and fullgraph Writer equality PASS."
+  },
+  {
+    "candidate": "B",
+    "decision": "rejected_for_default_target_path",
+    "reason": "Implemented64MiB static registration/reference protocol, exact reconstruction and corruption/mismatch tests PASS. Combined B+C increases central proxy versus A; separate B-only end-to-end gain UNKNOWN. Prototype retained for later variable-field study."
+  },
+  {
+    "candidate": "C",
+    "decision": "rejected_for_default_target_path",
+    "reason": "RAEB4 lossless dtype/endian/shape/count/fieldID/epoch/byteLength/contentSHA implemented and tested;fullgraph Writer SHA exact. Binary expansion on constant-valued fixture plus decode cost; joint A+B+C central1315.41 versus A1186.55. Does not establish that binary is slower on real variable fields."
+  },
+  {
+    "candidate": "D",
+    "decision": "accepted",
+    "scope": "bounded nonCFD prototype,4worker policy",
+    "reason": "independent numeric canonical tasks; deterministic ordered collection; scientific callback and commit sequence unchanged. All1/2/4/8/12 fulltinygraph outputs identical. Random array isolated4workers2.8x,12workers4.58x;4 selected to reserve physical cores. Final pipeline change also includes compiled formatting and numeric-copy optimization; end-to-end gain cannot be attributed to parallelism alone."
+  },
+  {
+    "candidate": "E",
+    "decision": "deferred",
+    "reason": "design only; no implementation authorization; necessity UNKNOWN. Requires review of callback timing/durability/backpressure, preserving all1144/701 logical events."
+  },
+  {
+    "candidate": "F",
+    "decision": "deferred",
+    "reason": "design only; no implementation authorization; necessity UNKNOWN. Would overlap work but cannot erase CPU requirement; bounded queues, ownership, durable ACK/STOP and scientific ordering need review."
+  }
+]

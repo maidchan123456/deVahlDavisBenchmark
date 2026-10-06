@@ -1,0 +1,48 @@
+{
+  "decoder_SHA256": "b1ebf93cf6808ec70905ca6802bd562b1b01e39ea48300b78461b71eaaca62eb",
+  "native_source_SHA256": "b3c58fcdc34c4c3dc5e993d0e696c9681049e1c6d72cc9a14ce5a79492e42e00",
+  "negative_fail_closed": {
+    "epoch_content": "STOP_BULK_EPOCH",
+    "extra_bytes": "STOP_BULK_LENGTH",
+    "missing_bytes": "STOP_BULK_LENGTH",
+    "static_changed_native": "EVALUATOR_FAILURE: BULK_STATIC_CHANGED",
+    "truncation": "STOP_BULK_LENGTH",
+    "unregistered_reference": "STOP_BULK_REFERENCE",
+    "wrong_dtype": "STOP_BULK_DTYPE_SHAPE",
+    "wrong_epoch": "STOP_BULK_EPOCH",
+    "wrong_field_id": "STOP_BULK_FIELD_ID",
+    "wrong_hash": "STOP_BULK_CONTENT_HASH",
+    "wrong_length": "STOP_BULK_SHAPE_LENGTH",
+    "wrong_schema": "STOP_BULK_SCHEMA_ENDIAN",
+    "wrong_shape": "STOP_BULK_SHAPE_LENGTH"
+  },
+  "results": {
+    "BULK": {
+      "bytes": 8408,
+      "frames": 2,
+      "old_JSON_bytes": 10813,
+      "registry": {
+        "bound": 67108864,
+        "reference_hits": 0,
+        "registrations": 0,
+        "schema": "routeA_exact_bulk/1",
+        "static_registry_peak_bytes": 0
+      }
+    },
+    "STATIC": {
+      "bytes": 8548,
+      "frames": 2,
+      "old_JSON_bytes": 10813,
+      "registry": {
+        "bound": 67108864,
+        "reference_hits": 2,
+        "registrations": 2,
+        "schema": "routeA_exact_bulk/1",
+        "static_registry_peak_bytes": 104
+      }
+    }
+  },
+  "roundtrip": "bit/type-exact original native JSON; signedzero, IEEE64 extreme, matrix addressing, vectors, empty arrays",
+  "scientific_content_changed": false,
+  "status": "PASS"
+}

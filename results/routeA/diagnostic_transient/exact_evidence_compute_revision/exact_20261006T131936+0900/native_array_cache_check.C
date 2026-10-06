@@ -1,0 +1,3 @@
+#include "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/compute_revision_v4/measurement/DiagnosticJson.H"
+#include <iostream>
+int main(){for(int kind=0;kind<4;kind++){routeAU04::Json a=routeAU04::Json::arr();for(int i=0;i<257;i++)a.push(routeAU04::Json(kind==0?-0.:kind==1?i:kind==2?i*.013:-1e-200*i));routeAU04::memo().enabled=false;std::string old=a.dump();routeAU04::memo().clear();routeAU04::memo().enabled=true;if(old!=a.dump()||old!=a.dump())return 2;a.array[0]=routeAU04::Json(123.);std::string neo=a.dump();routeAU04::memo().enabled=false;if(neo!=a.dump())return 3;if(routeAU04::memo().hits<1)return 4;}std::cout<<"PASS exact signed zero/float/int, content mutation, array cache hit\n";}

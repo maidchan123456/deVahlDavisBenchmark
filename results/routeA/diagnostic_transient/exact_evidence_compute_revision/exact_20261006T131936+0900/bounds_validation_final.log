@@ -1,0 +1,12 @@
+test_late_discovery_does_not_credit_preboundary_ticks (__main__.Bounds.test_late_discovery_does_not_credit_preboundary_ticks) ... ok
+test_snapshot_race_uses_host_upper (__main__.Bounds.test_snapshot_race_uses_host_upper) ... ok
+test_unknown_own_upper_can_certify_only_below10percent (__main__.Bounds.test_unknown_own_upper_can_certify_only_below10percent) ... ok
+test_framing_exact_equivalence (test_revision.Revision.test_framing_exact_equivalence) ... ok
+test_CPU_late_child_and_reaped_short_lived (test_revision.Revision.test_CPU_late_child_and_reaped_short_lived) ... ok
+test_CPU_controlled_tree (test_revision.Revision.test_CPU_controlled_tree) ... ok
+test_new_watchdog_timeout_trace (test_revision.Revision.test_new_watchdog_timeout_trace) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 2.145s
+
+OK

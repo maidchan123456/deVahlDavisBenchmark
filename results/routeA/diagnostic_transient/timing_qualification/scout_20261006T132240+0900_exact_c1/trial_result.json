@@ -1,0 +1,34 @@
+{
+  "STOP_reason": "STOP_WATCHDOG_FAILURE",
+  "completed_repeats": 0,
+  "disk": {
+    "watchdog_error": "ValueError('STOP_SHARED_OR_WRONG_CPU_SCOPE')"
+  },
+  "end_monotonic": 679483.316817337,
+  "exit_code": -15,
+  "partial_output_retained": true,
+  "peak_RSS_bytes": {
+    "all_processes_simultaneous": 0,
+    "backend": 0,
+    "combined_simultaneous": 0,
+    "native": 0
+  },
+  "remaining_live_pids": [],
+  "sample_valid": false,
+  "samples": 0,
+  "signal": 15,
+  "start_monotonic": 679483.298616799,
+  "status": "STOPPED",
+  "sum_individual_native_backend_peaks_upper_bound": 0,
+  "trace_accounting": {
+    "lossless": true,
+    "raw_SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "representation": "concatenated complete gzip members; one raw JSON line per member",
+    "sample_fields_unchanged": true,
+    "samples": 0,
+    "stored_bytes": 0,
+    "uncompressed_bytes": 0
+  },
+  "tracked_pids": [],
+  "wall_seconds": 0.018200744059868157
+}

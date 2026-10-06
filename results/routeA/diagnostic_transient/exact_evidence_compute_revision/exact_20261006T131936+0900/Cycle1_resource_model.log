@@ -1,0 +1,64 @@
+{
+  "proxy_step_seconds": {
+    "lower": 1113.6727334150346,
+    "central": 1186.5484311676007,
+    "conservative": 2497.703677110723
+  },
+  "exact_subset_seconds": {
+    "lower": 179.59394698007964,
+    "central": 194.44391128637358,
+    "conservative": 433.4241676267702
+  },
+  "scenarios": [
+    {
+      "endpoint_tstar": 0.5,
+      "steps": 12800,
+      "step_count_label": "earliest candidate maximum-dt step-count floor; ignores startup ramp and Co",
+      "time_scope": "conditional nonCFD primitive proxy; excludes solver/full scientific checks/audits/finalization/U03",
+      "lower_days": 164.98855309852365,
+      "central_days": 175.78495276557047,
+      "conservative_days": 370.0301743867738,
+      "measured_classes_only_subtotal_lower_days": 26.6065106637155
+    },
+    {
+      "endpoint_tstar": 2,
+      "steps": 51200,
+      "step_count_label": "nominal t*=2 maximum-dt planning count; exact endTime rule may stop just short",
+      "time_scope": "conditional nonCFD primitive proxy; excludes solver/full scientific checks/audits/finalization/U03",
+      "lower_days": 659.9542123940946,
+      "central_days": 703.1398110622819,
+      "conservative_days": 1480.1206975470952,
+      "measured_classes_only_subtotal_lower_days": 106.426042654862
+    },
+    {
+      "endpoint_tstar": 2,
+      "steps": 200061,
+      "step_count_label": "previous Co0.5 prospective-speed planning count",
+      "time_scope": "conditional nonCFD primitive proxy; excludes solver/full scientific checks/audits/finalization/U03",
+      "lower_days": 2578.732415737792,
+      "central_days": 2747.477612127562,
+      "conservative_days": 5783.4848998431535,
+      "measured_classes_only_subtotal_lower_days": 415.85352577293645
+    },
+    {
+      "endpoint_tstar": 2,
+      "steps": 400122,
+      "step_count_label": "previous Co0.25 prospective-speed planning count",
+      "time_scope": "conditional nonCFD primitive proxy; excludes solver/full scientific checks/audits/finalization/U03",
+      "lower_days": 5157.464831475584,
+      "central_days": 5494.955224255124,
+      "conservative_days": 11566.969799686307,
+      "measured_classes_only_subtotal_lower_days": 831.7070515458729
+    }
+  ],
+  "trace": {
+    "raw_bytes": 13066896,
+    "stored_bytes": 3922582,
+    "lossless_compression_ratio": 3.3311976652113326,
+    "raw_rate_bytes_s": 145019.68735260286,
+    "stored_rate_bytes_s": 43533.79832937736,
+    "peak_stored_trial_rate_bytes_s": 44671.258056887375,
+    "peak_raw_trial_rate_bytes_s": 148848.92336560474,
+    "all_samples_preserved": true
+  }
+}

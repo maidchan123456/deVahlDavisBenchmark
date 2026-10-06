@@ -1,0 +1,17 @@
+?? Scripts/routeA/diagnostic_transient/compute_revision_v4/
+?? cases/routeA/A-H-Ra1e6-fine-beta1e-4/
+?? cases/routeA/A-Ra1e3-coarse/
+?? cases/routeA/A-Ra1e3-fine/
+?? cases/routeA/A-Ra1e3-medium/
+?? cases/routeA/A-Ra1e4-coarse/
+?? cases/routeA/A-Ra1e4-fine/
+?? cases/routeA/A-Ra1e4-medium/
+?? cases/routeA/A-Ra1e5-coarse/
+?? cases/routeA/A-Ra1e5-fine/
+?? cases/routeA/A-Ra1e5-medium/
+?? cases/routeA/A-Ra1e6-coarse/
+?? cases/routeA/A-Ra1e6-fine/
+?? cases/routeA/A-Ra1e6-medium/
+?? cases/routeA/Ra0_medium/
+?? cases/routeA/Ra1e4_coarse/
+?? results/routeA/diagnostic_transient/exact_evidence_compute_revision/

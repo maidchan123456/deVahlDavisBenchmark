@@ -1,0 +1,113 @@
+{
+  "authority_SHA256": "06c71945289ffe419b784843f7aab2fea66c44d28c9dba46d828bbd24837e27d",
+  "authorization_SHA256": "667ef577753fb7be10764b9dfeeef4987bb811bfbbcc6bf193064d55a3a62700",
+  "budgets": {
+    "backend_AS_max_bytes": 8589934592,
+    "backend_RSS_max_bytes": 8589934592,
+    "combined_RSS_max_bytes": 17179869184,
+    "files_max": 192,
+    "host_MemAvailable_min_bytes": 25769803776,
+    "native_AS_max_bytes": 8589934592,
+    "native_RSS_max_bytes": 8589934592,
+    "scratch_bytes": 2147483648,
+    "single_trial_wall_seconds": 76,
+    "stage_wall_seconds": 1627
+  },
+  "callbacks_recurring": 1144,
+  "harness_manifest_SHA256": "3ab19c5cb6bbc24571575fb0aea8f4fa49e239ee63efceb459692e269bf7d52c",
+  "host_snapshot": {
+    "CPU_count": 24,
+    "CPU_frequency": {
+      "scaling_cur_freq": "800000",
+      "scaling_max_freq": "4500000",
+      "scaling_min_freq": "800000"
+    },
+    "CPU_governor": "powersave",
+    "CPU_scope_endpoint": {
+      "CLK_TCK": 100,
+      "cgroup": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/route-a-exact-scout-exact_20261006T131936-0900-c1-a2.scope",
+      "host_after": "cpu  3020516 29336 680768 1626141435 317029 0 3672 0 0 0",
+      "host_before": "cpu  3020516 29336 680768 1626141435 317029 0 3672 0 0 0",
+      "membership": "all measurement processes and observers; shared session rejected",
+      "query_seconds": 0.00011020002420991659,
+      "sample_monotonic": 679511.525968867,
+      "scope": "route-a-exact-scout-exact_20261006T131936-0900-c1-a2.scope",
+      "system_usec": 529923,
+      "usage_usec": 2932107,
+      "user_usec": 2402184
+    },
+    "CPU_stat": "cpu  3020516 29336 680768 1626141435 317029 0 3672 0 0 0",
+    "MemAvailable": 63083823104,
+    "loadavg": [
+      0.37451171875,
+      0.189453125,
+      0.0634765625
+    ],
+    "time_monotonic": 679511.52603711
+  },
+  "matrix_packets": 701,
+  "mesh_SHA256": {
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/A-Ra1e6-fine/constant/polyMesh/boundary": "07cc9b62820911e4536eab8b7b3d74e4cba8301ae886017defd2598f495f6c82",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/A-Ra1e6-fine/constant/polyMesh/faces": "ac195415a58b99183d674e0884e34b1c39303e9a6e2077d2064c78837a106c53",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/A-Ra1e6-fine/constant/polyMesh/neighbour": "04263cff8323ef8660b4bee13cf40bf9808c5390ca61b2c15272ce58d1abfead",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/A-Ra1e6-fine/constant/polyMesh/owner": "afe5e635bc106f92b4d403e25a5736ea43747404104ac5ea640c319ba516a81b",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/A-Ra1e6-fine/constant/polyMesh/points": "61ffe73184d836dba64e3f0ae36308862e37ce32464959b0fbbd59cb12be8e8b"
+  },
+  "mode": "SCOUT",
+  "patches": [
+    {
+      "nFaces": 160,
+      "name": "hotWall",
+      "startFace": 50880,
+      "type": "wall"
+    },
+    {
+      "nFaces": 160,
+      "name": "coldWall",
+      "startFace": 51040,
+      "type": "wall"
+    },
+    {
+      "nFaces": 160,
+      "name": "bottomWall",
+      "startFace": 51200,
+      "type": "wall"
+    },
+    {
+      "nFaces": 160,
+      "name": "topWall",
+      "startFace": 51360,
+      "type": "wall"
+    },
+    {
+      "nFaces": 25600,
+      "name": "front",
+      "startFace": 51520,
+      "type": "empty"
+    },
+    {
+      "nFaces": 25600,
+      "name": "back",
+      "startFace": 77120,
+      "type": "empty"
+    }
+  ],
+  "permission_scope": "NONCFD_DIAGNOSTIC_COMPUTE_REVISION",
+  "plan_SHA256": "8b140dce75a40e69fa72a3eb3a9f87beb1ba456507a30c09099ef6fd78006708",
+  "prior_stage_status": {
+    "Q0_status": "PASS"
+  },
+  "production_run_authorized": false,
+  "qualification_id": "scout_20261006T132306+0900_exact_c1_a2",
+  "quota_context_SHA256": "4e495a41c101df9f3c99f5e27a73fbdb652e03c0a3f0ca4f619638dba30b4791",
+  "runtime_adapter_SHA256": "703a4e11a1d15af5aecdf7a0e1059cc2f0d3cd92605a2e06f1601ee6c8870d11",
+  "schema": "timing_stage_receipt/2",
+  "topology": {
+    "active": 640,
+    "empty": 51200,
+    "nCells": 25600,
+    "nFaces": 102720,
+    "nInternalFaces": 50880
+  },
+  "watchdog_SHA256": "440bff4a2300fe411f20654b8b29550c2ae73af53ccd1eaa15e06400d27e53d7"
+}

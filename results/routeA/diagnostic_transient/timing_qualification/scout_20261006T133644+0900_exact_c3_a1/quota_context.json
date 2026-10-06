@@ -1,0 +1,19 @@
+{
+  "budget": {
+    "backend_AS_max_bytes": 8589934592,
+    "backend_RSS_max_bytes": 8589934592,
+    "combined_RSS_max_bytes": 17179869184,
+    "files_max": 192,
+    "host_MemAvailable_min_bytes": 25769803776,
+    "native_AS_max_bytes": 8589934592,
+    "native_RSS_max_bytes": 8589934592,
+    "scratch_bytes": 2147483648,
+    "single_trial_wall_seconds": 76,
+    "stage_wall_seconds": 1627
+  },
+  "root": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/timing_qualification/scout_20261006T133644+0900_exact_c3_a1",
+  "sidechannel_reserve_bytes": 4194304,
+  "sidechannel_reserve_files": 8,
+  "stop_reserve_bytes": 16777216,
+  "stop_reserve_files": 8
+}

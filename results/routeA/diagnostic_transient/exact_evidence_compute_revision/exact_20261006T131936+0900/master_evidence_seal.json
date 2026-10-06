@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "manifest_SHA256": "26c884fb350be8023296f6f657f219f1bdb0d0bd5f5ef335e80fe05eff8a83c6",
+  "sealed_files": 752,
+  "sealed_bytes": 460190254,
+  "readback_SHA256_verified": true,
+  "Q3_authorized": false,
+  "CFD_executed": false
+}

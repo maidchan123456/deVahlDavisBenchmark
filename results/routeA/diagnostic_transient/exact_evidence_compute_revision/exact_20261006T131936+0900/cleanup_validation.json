@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "owned_scopes": {
+    "route-a-exact-scout-exact_20261006T131936-0900-c3-a1.scope": "inactive",
+    "route-a-exact-scout-exact_20261006T131936-0900-c1-a2.scope": "inactive",
+    "route-a-exact-scout-exact_20261006T131936+0900-c1.scope": "inactive",
+    "route-a-exact-scout-exact_20261006T131936-0900-c2-a1.scope": "inactive",
+    "route-a-exact-parallel-scaling-c3.scope": "inactive"
+  },
+  "live_measurement_scopes": 0,
+  "source_manifest_readback": "PASS",
+  "no_CFD": true
+}

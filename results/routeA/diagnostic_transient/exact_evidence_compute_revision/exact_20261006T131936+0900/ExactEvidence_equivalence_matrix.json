@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "scope": "implemented prototypes A/B/C/D; no Q1/Q2 or CFD inference",
+  "A": [
+    "reuse_unit_validation.json",
+    "native_array_cache_validation.json",
+    "cross_revision_scientific_equivalence.json"
+  ],
+  "B_C": [
+    "bulk_unit_validation.json",
+    "cross_revision_scientific_equivalence_bulk.json"
+  ],
+  "D": [
+    "parallel_numeric_equivalence.json",
+    "parallel_revision_equivalence.json",
+    "cross_revision_scientific_equivalence_parallel.json"
+  ],
+  "shared_regressions": [
+    "revision_validation_cycle2.json",
+    "revision_validation_bulk.json",
+    "revision_validation_parallel.json",
+    "additional_validation_cycle2.json",
+    "bounds_validation_cycle2.json"
+  ],
+  "full_tiny_graph": {
+    "callbacks": 1145,
+    "matrix_packets": 701,
+    "Writer_files_equal_SHA256": 17,
+    "all_worker_counts": [
+      1,
+      2,
+      4,
+      8,
+      12
+    ]
+  },
+  "original46_regression": "historical PASS reused only with frozen-source hash proof; no new46-suite run",
+  "classification": "MEASURED + DERIVED",
+  "new_binary_errors": "fail-closed protocol-specific errors; original line framing negatives retained for JSON path"
+}

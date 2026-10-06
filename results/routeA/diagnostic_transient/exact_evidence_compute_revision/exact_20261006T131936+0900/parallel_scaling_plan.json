@@ -1,0 +1,25 @@
+{
+  "schema": "independent_exact_array_scaling/1",
+  "cases": [
+    "constant",
+    "random"
+  ],
+  "workers": [
+    1,
+    2,
+    4,
+    8,
+    12
+  ],
+  "repeats": 3,
+  "iterations": 16,
+  "arrays_per_iteration": 32,
+  "values_per_array": 25600,
+  "max_worker_seconds": 30,
+  "stage_seconds": 180,
+  "scratch_bytes": 268435456,
+  "files_max": 128,
+  "source": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/exact_evidence_compute_revision/exact_20261006T131936+0900/parallel_scaling_worker.py",
+  "no_CFD": true,
+  "no_Q1_Q2_verdict": true
+}

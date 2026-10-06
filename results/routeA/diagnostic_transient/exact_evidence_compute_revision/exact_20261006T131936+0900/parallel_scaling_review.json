@@ -1,0 +1,207 @@
+{
+  "status": "PASS",
+  "exact_ordered_output_equal_all_worker_counts": true,
+  "host_stability": {
+    "status": "STABLE",
+    "reasons": [],
+    "other_CPU_fraction_max": 0.053763440860215055,
+    "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+    "uncertain_intervals": 0,
+    "samples": 376,
+    "no_additional_repeats": true
+  },
+  "statistics": [
+    {
+      "case": "constant",
+      "workers": 1,
+      "wall_median": 0.06767711392603815,
+      "CPU_median": 0.067658327,
+      "speedup": 1.0,
+      "parallel_efficiency": 1.0,
+      "RSS_max": 37683200,
+      "stability": {
+        "min": 0.06756334309466183,
+        "median": 0.06767711392603815,
+        "max": 0.06901425204705447,
+        "CV_population": 0.009675982957385648,
+        "CV": 0.009675982957385648,
+        "TIMING_STABILITY": "STABLE",
+        "status": "STABLE",
+        "automatic_extra_repeats": false
+      }
+    },
+    {
+      "case": "constant",
+      "workers": 2,
+      "wall_median": 0.054110190947540104,
+      "CPU_median": 0.09089673399999998,
+      "speedup": 1.250727686244005,
+      "parallel_efficiency": 0.6253638431220025,
+      "RSS_max": 38572032,
+      "stability": {
+        "min": 0.053303277934901416,
+        "median": 0.054110190947540104,
+        "max": 0.05693927500396967,
+        "CV_population": 0.02845771651168448,
+        "CV": 0.02845771651168448,
+        "TIMING_STABILITY": "STABLE",
+        "status": "STABLE",
+        "automatic_extra_repeats": false
+      }
+    },
+    {
+      "case": "constant",
+      "workers": 4,
+      "wall_median": 0.04480195790529251,
+      "CPU_median": 0.10009979300000002,
+      "speedup": 1.5105838470073507,
+      "parallel_efficiency": 0.3776459617518377,
+      "RSS_max": 38674432,
+      "stability": {
+        "min": 0.044611749006435275,
+        "median": 0.04480195790529251,
+        "max": 0.04746438795700669,
+        "CV_population": 0.028541415180345062,
+        "CV": 0.028541415180345062,
+        "TIMING_STABILITY": "STABLE",
+        "status": "STABLE",
+        "automatic_extra_repeats": false
+      }
+    },
+    {
+      "case": "constant",
+      "workers": 8,
+      "wall_median": 0.043535458971746266,
+      "CPU_median": 0.10236238699999999,
+      "speedup": 1.5545285503928965,
+      "parallel_efficiency": 0.19431606879911206,
+      "RSS_max": 38526976,
+      "stability": {
+        "min": 0.04294394503813237,
+        "median": 0.043535458971746266,
+        "max": 0.044154720031656325,
+        "CV_population": 0.011352472155471935,
+        "CV": 0.011352472155471935,
+        "TIMING_STABILITY": "STABLE",
+        "status": "STABLE",
+        "automatic_extra_repeats": false
+      }
+    },
+    {
+      "case": "constant",
+      "workers": 12,
+      "wall_median": 0.042066347086802125,
+      "CPU_median": 0.10810246500000001,
+      "speedup": 1.6088184169257504,
+      "parallel_efficiency": 0.1340682014104792,
+      "RSS_max": 39501824,
+      "stability": {
+        "min": 0.04163516405969858,
+        "median": 0.042066347086802125,
+        "max": 0.04221621493343264,
+        "CV_population": 0.005868257568852804,
+        "CV": 0.005868257568852804,
+        "TIMING_STABILITY": "STABLE",
+        "status": "STABLE",
+        "automatic_extra_repeats": false
+      }
+    },
+    {
+      "case": "random",
+      "workers": 1,
+      "wall_median": 1.430218506953679,
+      "CPU_median": 1.43016452,
+      "speedup": 1.0,
+      "parallel_efficiency": 1.0,
+      "RSS_max": 93224960,
+      "stability": {
+        "min": 1.41874941799324,
+        "median": 1.430218506953679,
+        "max": 1.4313569760415703,
+        "CV_population": 0.003990763219293663,
+        "CV": 0.003990763219293663,
+        "TIMING_STABILITY": "STABLE",
+        "status": "STABLE",
+        "automatic_extra_repeats": false
+      }
+    },
+    {
+      "case": "random",
+      "workers": 2,
+      "wall_median": 0.8320093260845169,
+      "CPU_median": 1.507669581,
+      "speedup": 1.7189933599475,
+      "parallel_efficiency": 0.85949667997375,
+      "RSS_max": 98258944,
+      "stability": {
+        "min": 0.8245721579296514,
+        "median": 0.8320093260845169,
+        "max": 0.8366204890189692,
+        "CV_population": 0.005972569421120246,
+        "CV": 0.005972569421120246,
+        "TIMING_STABILITY": "STABLE",
+        "status": "STABLE",
+        "automatic_extra_repeats": false
+      }
+    },
+    {
+      "case": "random",
+      "workers": 4,
+      "wall_median": 0.5114668519236147,
+      "CPU_median": 1.553135775,
+      "speedup": 2.7963073297412353,
+      "parallel_efficiency": 0.6990768324353088,
+      "RSS_max": 102408192,
+      "stability": {
+        "min": 0.5074952370487154,
+        "median": 0.5114668519236147,
+        "max": 0.5279438850702718,
+        "CV_population": 0.017169513229780917,
+        "CV": 0.017169513229780917,
+        "TIMING_STABILITY": "STABLE",
+        "status": "STABLE",
+        "automatic_extra_repeats": false
+      }
+    },
+    {
+      "case": "random",
+      "workers": 8,
+      "wall_median": 0.3586729660164565,
+      "CPU_median": 1.6327155439999999,
+      "speedup": 3.987528033791257,
+      "parallel_efficiency": 0.49844100422390714,
+      "RSS_max": 109219840,
+      "stability": {
+        "min": 0.35589688608888537,
+        "median": 0.3586729660164565,
+        "max": 0.3615638370392844,
+        "CV_population": 0.006449982751611193,
+        "CV": 0.006449982751611193,
+        "TIMING_STABILITY": "STABLE",
+        "status": "STABLE",
+        "automatic_extra_repeats": false
+      }
+    },
+    {
+      "case": "random",
+      "workers": 12,
+      "wall_median": 0.3123853290453553,
+      "CPU_median": 1.7508135669999998,
+      "speedup": 4.578379245031783,
+      "parallel_efficiency": 0.3815316037526486,
+      "RSS_max": 113913856,
+      "stability": {
+        "min": 0.3109935800312087,
+        "median": 0.3123853290453553,
+        "max": 0.3129612850025296,
+        "CV_population": 0.002646488985897562,
+        "CV": 0.002646488985897562,
+        "TIMING_STABILITY": "STABLE",
+        "status": "STABLE",
+        "automatic_extra_repeats": false
+      }
+    }
+  ],
+  "selected_target_workers": 4,
+  "selection_basis": "bounded4 of12 physical cores; independent random-array throughput improvement;12workers excluded as deployment policy due future solver contention; exact pipeline benefit still must be measured"
+}

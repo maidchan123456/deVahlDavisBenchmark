@@ -1,0 +1,600 @@
+{
+  "IO": {
+    "formal_feasibility": "UNRESOLVED",
+    "full_Q2_IO_qualification": "NOT_EXECUTED",
+    "scout_writer_small_commits": "MEASURED_ONLY"
+  },
+  "Q1_Q2": {
+    "full_Q2_gate_unchanged": true,
+    "historical_Q1": "STOP_WALL_TIME_30s",
+    "new_full_Q1": "NOT_EXECUTED",
+    "new_full_Q2": "NOT_EXECUTED"
+  },
+  "callback_graph": {
+    "callbacks": 1144,
+    "matrices": 701
+  },
+  "class_statistics": {
+    "OFF": {
+      "ACK_wait_median_seconds": 0,
+      "JSON_packet_bytes_median": 0,
+      "max_seconds": 0.1238404200412333,
+      "median_seconds": 0.12298234598711133,
+      "min_seconds": 0.1225747469579801,
+      "native_hash_median_seconds": 0,
+      "native_serialization_median_seconds": 0,
+      "repeatability": {
+        "CV": 0.00428404575265041,
+        "CV_population": 0.00428404575265041,
+        "TIMING_STABILITY": "STABLE",
+        "automatic_extra_repeats": false,
+        "max": 0.1238404200412333,
+        "median": 0.12298234598711133,
+        "min": 0.1225747469579801,
+        "status": "STABLE"
+      },
+      "socket_send_median_seconds": 0
+    },
+    "controller": {
+      "ACK_wait_median_seconds": 0.6206155749969184,
+      "JSON_packet_bytes_median": 4898296,
+      "max_seconds": 0.928181417984888,
+      "median_seconds": 0.9207751279463992,
+      "min_seconds": 0.9110256490530446,
+      "native_hash_median_seconds": 0.17072825401555747,
+      "native_serialization_median_seconds": 0.02535179501865059,
+      "repeatability": {
+        "CV": 0.007636522699808132,
+        "CV_population": 0.007636522699808132,
+        "TIMING_STABILITY": "STABLE",
+        "automatic_extra_repeats": false,
+        "max": 0.928181417984888,
+        "median": 0.9207751279463992,
+        "min": 0.9110256490530446,
+        "status": "STABLE"
+      },
+      "socket_send_median_seconds": 0.0035098911030218005
+    },
+    "energy_matrix": {
+      "ACK_wait_median_seconds": 1.047854108037427,
+      "JSON_packet_bytes_median": 10919324,
+      "max_seconds": 1.525167017010972,
+      "median_seconds": 1.5248839759733528,
+      "min_seconds": 1.5108741780277342,
+      "native_hash_median_seconds": 0.23142061091493815,
+      "native_serialization_median_seconds": 0.046555699896998703,
+      "repeatability": {
+        "CV": 0.004388580777219737,
+        "CV_population": 0.004388580777219737,
+        "TIMING_STABILITY": "STABLE",
+        "automatic_extra_repeats": false,
+        "max": 1.525167017010972,
+        "median": 1.5248839759733528,
+        "min": 1.5108741780277342,
+        "status": "STABLE"
+      },
+      "socket_send_median_seconds": 0.007430491968989372
+    },
+    "field": {
+      "ACK_wait_median_seconds": 0.6159885450033471,
+      "JSON_packet_bytes_median": 4898288,
+      "max_seconds": 0.9166961540468037,
+      "median_seconds": 0.9165402440121397,
+      "min_seconds": 0.9131463249213994,
+      "native_hash_median_seconds": 0.1715319079812616,
+      "native_serialization_median_seconds": 0.024458974949084222,
+      "repeatability": {
+        "CV": 0.0017891472493487214,
+        "CV_population": 0.0017891472493487214,
+        "TIMING_STABILITY": "STABLE",
+        "automatic_extra_repeats": false,
+        "max": 0.9166961540468037,
+        "median": 0.9165402440121397,
+        "min": 0.9131463249213994,
+        "status": "STABLE"
+      },
+      "socket_send_median_seconds": 0.0033546319464221597
+    },
+    "matrix": {
+      "ACK_wait_median_seconds": 0.5130448680138215,
+      "JSON_packet_bytes_median": 5027701,
+      "max_seconds": 0.7431164650479332,
+      "median_seconds": 0.7388173610670492,
+      "min_seconds": 0.7380160790635273,
+      "native_hash_median_seconds": 0.13475322804879397,
+      "native_serialization_median_seconds": 0.018237847019918263,
+      "repeatability": {
+        "CV": 0.0030264210789674013,
+        "CV_population": 0.0030264210789674013,
+        "TIMING_STABILITY": "STABLE",
+        "automatic_extra_repeats": false,
+        "max": 0.7431164650479332,
+        "median": 0.7388173610670492,
+        "min": 0.7380160790635273,
+        "status": "STABLE"
+      },
+      "socket_send_median_seconds": 0.0021407470339909196
+    },
+    "pressure_matrix": {
+      "ACK_wait_median_seconds": 0.7465872670290992,
+      "JSON_packet_bytes_median": 7195848,
+      "max_seconds": 1.113670691032894,
+      "median_seconds": 1.1036812330130488,
+      "min_seconds": 1.1006802869960666,
+      "native_hash_median_seconds": 0.19324683595914394,
+      "native_serialization_median_seconds": 0.03159469005186111,
+      "repeatability": {
+        "CV": 0.005020957357839271,
+        "CV_population": 0.005020957357839271,
+        "TIMING_STABILITY": "STABLE",
+        "automatic_extra_repeats": false,
+        "max": 1.113670691032894,
+        "median": 1.1036812330130488,
+        "min": 1.1006802869960666,
+        "status": "STABLE"
+      },
+      "socket_send_median_seconds": 0.004330098978243768
+    },
+    "term": {
+      "ACK_wait_median_seconds": 0.36322870198637247,
+      "JSON_packet_bytes_median": 2528089,
+      "max_seconds": 0.5602228760253638,
+      "median_seconds": 0.5348562790313736,
+      "min_seconds": 0.5327922879951075,
+      "native_hash_median_seconds": 0.11110163701232523,
+      "native_serialization_median_seconds": 0.012757205055095255,
+      "repeatability": {
+        "CV": 0.022986293904527496,
+        "CV_population": 0.022986293904527496,
+        "TIMING_STABILITY": "STABLE",
+        "automatic_extra_repeats": false,
+        "max": 0.5602228760253638,
+        "median": 0.5348562790313736,
+        "min": 0.5327922879951075,
+        "status": "STABLE"
+      },
+      "socket_send_median_seconds": 0.0023515410721302032
+    }
+  },
+  "feasibility": {
+    "COMPUTE_FEASIBILITY": "UNRESOLVED",
+    "DIAGNOSTIC_TRANSIENT_RESOURCE_READY": false,
+    "IO_FEASIBILITY": "UNRESOLVED",
+    "MEMORY_FEASIBILITY": "UNRESOLVED",
+    "planning_compute_risk": "INFEASIBLE_OR_HIGH_RISK_AT_MONTHS_TO_YEARS_SCALE"
+  },
+  "measured_exact_stage_subset_seconds": {
+    "central": 167.21568422773845,
+    "conservative": 375.7542100076098,
+    "lower": 155.00946730643045
+  },
+  "memory": {
+    "MemAvailable_min_bytes": 62256635904,
+    "formal_feasibility": "UNRESOLVED",
+    "full_Q2_memory_event_qualification": "NOT_EXECUTED",
+    "scout_backend_peak_bytes": 203767808,
+    "scout_combined_simultaneous_peak_bytes": 636186624,
+    "scout_native_peak_bytes": 432418816
+  },
+  "not_CFD_runtime_prediction": true,
+  "not_Q1_timing": true,
+  "omitted_full_scientific_processing": [
+    "complete field/oldTime/BC identity canonicalization",
+    "equation/term reconstruction and multiple replays",
+    "U01 terminal state reductions",
+    "full startup raw audit9GiB worst case",
+    "selected bundle and field/primary publication",
+    "native framework fixture generation/OFF fullgraph",
+    "finalization and reload/archive costs"
+  ],
+  "per_step_primitive_proxy_seconds": {
+    "central": 1025.6245977308945,
+    "conservative": 2181.718339874642,
+    "lower": 961.0104338506935
+  },
+  "scenarios": [
+    {
+      "central_days": 151.9443848490214,
+      "conservative_days": 323.2175318332803,
+      "endpoint_tstar": 0.5,
+      "lower_days": 142.37191612602868,
+      "measured_classes_only_subtotal_lower_days": 22.964365526878584,
+      "step_count_label": "earliest candidate maximum-dt step-count floor; ignores startup ramp and Co",
+      "steps": 12800,
+      "time_scope": "conditional nonCFD primitive proxy; excludes solver/full scientific checks/audits/finalization/U03"
+    },
+    {
+      "central_days": 607.7775393960856,
+      "conservative_days": 1292.8701273331212,
+      "endpoint_tstar": 2,
+      "lower_days": 569.4876645041147,
+      "measured_classes_only_subtotal_lower_days": 91.85746210751434,
+      "step_count_label": "nominal t*=2 maximum-dt planning count; exact endTime rule may stop just short",
+      "steps": 51200,
+      "time_scope": "conditional nonCFD primitive proxy; excludes solver/full scientific checks/audits/finalization/U03"
+    },
+    {
+      "central_days": 2374.8551232250056,
+      "conservative_days": 5051.814268445148,
+      "endpoint_tstar": 2,
+      "lower_days": 2225.239680631986,
+      "measured_classes_only_subtotal_lower_days": 358.92765091194195,
+      "step_count_label": "previous Co0.5 prospective-speed planning count",
+      "steps": 200061,
+      "time_scope": "conditional nonCFD primitive proxy; excludes solver/full scientific checks/audits/finalization/U03"
+    },
+    {
+      "central_days": 4749.710246450011,
+      "conservative_days": 10103.628536890295,
+      "endpoint_tstar": 2,
+      "lower_days": 4450.479361263972,
+      "measured_classes_only_subtotal_lower_days": 717.8553018238839,
+      "step_count_label": "previous Co0.25 prospective-speed planning count",
+      "steps": 400122,
+      "time_scope": "conditional nonCFD primitive proxy; excludes solver/full scientific checks/audits/finalization/U03"
+    }
+  ],
+  "schema": "diagnostic_resource_feasibility_scout_review/2",
+  "scientific_or_numerical_contract_changed": false,
+  "scientific_source_freeze": {
+    "U03_sha256": "e452f6fb5d225f0ecac7ef94bbdb661ffa601f3f813ae5ab56a97b1007a529b2",
+    "canonical_sha256": "06c71945289ffe419b784843f7aab2fea66c44d28c9dba46d828bbd24837e27d"
+  },
+  "source_frequency_mix": [
+    {
+      "frequency": 1,
+      "matrix_slots": 0,
+      "scout_class": "controller",
+      "stage": "preSolve_before",
+      "state_copies": 2,
+      "term": ""
+    },
+    {
+      "frequency": 1,
+      "matrix_slots": 0,
+      "scout_class": "controller",
+      "stage": "preSolve_after",
+      "state_copies": 2,
+      "term": ""
+    },
+    {
+      "frequency": 1,
+      "matrix_slots": 0,
+      "scout_class": "controller",
+      "stage": "controller_complete",
+      "state_copies": 2,
+      "term": ""
+    },
+    {
+      "frequency": 1,
+      "matrix_slots": 0,
+      "scout_class": "field",
+      "stage": "time_start",
+      "state_copies": 2,
+      "term": ""
+    },
+    {
+      "frequency": 24,
+      "matrix_slots": 0,
+      "scout_class": "field",
+      "stage": "outer_start",
+      "state_copies": 2,
+      "term": ""
+    },
+    {
+      "frequency": 49,
+      "matrix_slots": 0,
+      "scout_class": "field",
+      "stage": "before_correctDensity",
+      "state_copies": 2,
+      "term": ""
+    },
+    {
+      "frequency": 49,
+      "matrix_slots": 1,
+      "scout_class": "matrix",
+      "stage": "term_capture",
+      "state_copies": 1,
+      "term": "D_B_rho"
+    },
+    {
+      "frequency": 49,
+      "matrix_slots": 0,
+      "scout_class": "term",
+      "stage": "term_capture",
+      "state_copies": 1,
+      "term": "div_phi"
+    },
+    {
+      "frequency": 49,
+      "matrix_slots": 1,
+      "scout_class": "matrix",
+      "stage": "term_capture",
+      "state_copies": 1,
+      "term": "mass_models"
+    },
+    {
+      "frequency": 49,
+      "matrix_slots": 1,
+      "scout_class": "matrix",
+      "stage": "mass_unrelaxed_assembly",
+      "state_copies": 2,
+      "term": ""
+    },
+    {
+      "frequency": 49,
+      "matrix_slots": 2,
+      "scout_class": "energy_matrix",
+      "stage": "mass_after_solve",
+      "state_copies": 2,
+      "term": ""
+    },
+    {
+      "frequency": 49,
+      "matrix_slots": 0,
+      "scout_class": "field",
+      "stage": "after_correctDensity",
+      "state_copies": 2,
+      "term": ""
+    },
+    {
+      "frequency": 24,
+      "matrix_slots": 0,
+      "scout_class": "field",
+      "stage": "density_predictor_complete",
+      "state_copies": 2,
+      "term": ""
+    },
+    {
+      "frequency": 24,
+      "matrix_slots": 0,
+      "scout_class": "field",
+      "stage": "energy_begin",
+      "state_copies": 2,
+      "term": ""
+    },
+    {
+      "frequency": 24,
+      "matrix_slots": 1,
+      "scout_class": "matrix",
+      "stage": "term_capture",
+      "state_copies": 1,
+      "term": "S_e"
+    },
+    {
+      "frequency": 24,
+      "matrix_slots": 1,
+      "scout_class": "matrix",
+      "stage": "term_capture",
+      "state_copies": 1,
+      "term": "F_e"
+    },
+    {
+      "frequency": 24,
+      "matrix_slots": 0,
+      "scout_class": "term",
+      "stage": "term_capture",
+      "state_copies": 1,
+      "term": "S_K"
+    },
+    {
+      "frequency": 24,
+      "matrix_slots": 0,
+      "scout_class": "term",
+      "stage": "term_capture",
+      "state_copies": 1,
+      "term": "F_K"
+    },
+    {
+      "frequency": 24,
+      "matrix_slots": 0,
+      "scout_class": "term",
+      "stage": "term_capture",
+      "state_copies": 1,
+      "term": "W_p"
+    },
+    {
+      "frequency": 24,
+      "matrix_slots": 0,
+      "scout_class": "term",
+      "stage": "term_capture",
+      "state_copies": 1,
+      "term": "Fourier_laplacian"
+    },
+    {
+      "frequency": 24,
+      "matrix_slots": 1,
+      "scout_class": "matrix",
+      "stage": "term_capture",
+      "state_copies": 1,
+      "term": "Fourier_correction"
+    },
+    {
+      "frequency": 24,
+      "matrix_slots": 1,
+      "scout_class": "matrix",
+      "stage": "term_capture",
+      "state_copies": 1,
+      "term": "H_out"
+    },
+    {
+      "frequency": 24,
+      "matrix_slots": 0,
+      "scout_class": "term",
+      "stage": "term_capture",
+      "state_copies": 1,
+      "term": "W_g"
+    },
+    {
+      "frequency": 24,
+      "matrix_slots": 1,
+      "scout_class": "matrix",
+      "stage": "term_capture",
+      "state_copies": 1,
+      "term": "S_models"
+    },
+    {
+      "frequency": 24,
+      "matrix_slots": 1,
+      "scout_class": "matrix",
+      "stage": "energy_unrelaxed_assembly",
+      "state_copies": 2,
+      "term": ""
+    },
+    {
+      "frequency": 24,
+      "matrix_slots": 1,
+      "scout_class": "matrix",
+      "stage": "energy_after_relax",
+      "state_copies": 2,
+      "term": ""
+    },
+    {
+      "frequency": 24,
+      "matrix_slots": 2,
+      "scout_class": "energy_matrix",
+      "stage": "energy_after_solve",
+      "state_copies": 2,
+      "term": ""
+    },
+    {
+      "frequency": 24,
+      "matrix_slots": 0,
+      "scout_class": "field",
+      "stage": "before_thermo_correct",
+      "state_copies": 2,
+      "term": ""
+    },
+    {
+      "frequency": 24,
+      "matrix_slots": 0,
+      "scout_class": "field",
+      "stage": "after_thermo_correct",
+      "state_copies": 2,
+      "term": ""
+    },
+    {
+      "frequency": 48,
+      "matrix_slots": 0,
+      "scout_class": "field",
+      "stage": "pressure_start",
+      "state_copies": 2,
+      "term": ""
+    },
+    {
+      "frequency": 48,
+      "matrix_slots": 0,
+      "scout_class": "field",
+      "stage": "before_pressure_EOS_copy",
+      "state_copies": 2,
+      "term": ""
+    },
+    {
+      "frequency": 48,
+      "matrix_slots": 0,
+      "scout_class": "field",
+      "stage": "after_pressure_EOS_copy",
+      "state_copies": 2,
+      "term": ""
+    },
+    {
+      "frequency": 48,
+      "matrix_slots": 1,
+      "scout_class": "matrix",
+      "stage": "pressure_pre_reference",
+      "state_copies": 1,
+      "term": ""
+    },
+    {
+      "frequency": 48,
+      "matrix_slots": 1,
+      "scout_class": "matrix",
+      "stage": "pressure_post_reference",
+      "state_copies": 1,
+      "term": ""
+    },
+    {
+      "frequency": 48,
+      "matrix_slots": 3,
+      "scout_class": "pressure_matrix",
+      "stage": "pressure_solved",
+      "state_copies": 1,
+      "term": ""
+    },
+    {
+      "frequency": 48,
+      "matrix_slots": 0,
+      "scout_class": "field",
+      "stage": "native_continuity_report",
+      "state_copies": 2,
+      "term": ""
+    },
+    {
+      "frequency": 24,
+      "matrix_slots": 0,
+      "scout_class": "field",
+      "stage": "outer_end",
+      "state_copies": 2,
+      "term": ""
+    },
+    {
+      "frequency": 1,
+      "matrix_slots": 0,
+      "scout_class": "field",
+      "stage": "before_postSolve",
+      "state_copies": 2,
+      "term": ""
+    },
+    {
+      "frequency": 1,
+      "matrix_slots": 0,
+      "scout_class": "field",
+      "stage": "before_postSolve_EOS_copy",
+      "state_copies": 2,
+      "term": ""
+    },
+    {
+      "frequency": 1,
+      "matrix_slots": 0,
+      "scout_class": "field",
+      "stage": "after_postSolve_EOS_copy",
+      "state_copies": 2,
+      "term": ""
+    },
+    {
+      "frequency": 1,
+      "matrix_slots": 0,
+      "scout_class": "field",
+      "stage": "after_postSolve",
+      "state_copies": 2,
+      "term": ""
+    },
+    {
+      "frequency": 1,
+      "matrix_slots": 0,
+      "scout_class": "field",
+      "stage": "time_end",
+      "state_copies": 2,
+      "term": ""
+    }
+  ],
+  "static_reference_review": {
+    "implemented": false,
+    "needed_for_receive": false,
+    "reason": "C0 fixed the millisecond socket-send path. Static transport references reconstruct the same full packet; full canonical identity/field evidence/replay remain. It is not defensible to claim static-byte removal fraction as compute-time removal. Source-static formatting/packing cache may help, but cannot certify practical feasibility without a larger compute/evidence reuse design.",
+    "socket_send_median_range_seconds": [
+      0.0021407470339909196,
+      0.007430491968989372
+    ]
+  },
+  "trace": {
+    "all_samples_preserved": true,
+    "lossless_compression_ratio": 3.3122132566272877,
+    "peak_raw_trial_rate_bytes_s": 148839.08386479103,
+    "peak_stored_trial_rate_bytes_s": 44660.65098283142,
+    "raw_bytes": 12270200,
+    "raw_rate_bytes_s": 145105.65742893412,
+    "stored_bytes": 3704532,
+    "stored_rate_bytes_s": 43809.27379557987
+  }
+}

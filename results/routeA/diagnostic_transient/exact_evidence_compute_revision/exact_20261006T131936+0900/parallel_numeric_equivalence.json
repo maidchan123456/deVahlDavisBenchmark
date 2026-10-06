@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "random_IEEE64_values": 19997,
+  "canonical_17digit_exact": true,
+  "signedzero_exact": true,
+  "vectors_exact": true,
+  "invalid_shape_length_nonfinite_fail_closed": true
+}

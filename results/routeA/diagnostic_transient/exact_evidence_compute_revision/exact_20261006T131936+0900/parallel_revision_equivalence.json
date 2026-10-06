@@ -1,0 +1,90 @@
+{
+  "callbacks": 1145,
+  "fullgraph_results": [
+    {
+      "Writer_SHA256_equal": true,
+      "parallel": {
+        "async_backend": false,
+        "batching": false,
+        "commit_order": "first logical traversal occurrence; results collected in registered order",
+        "independent_array_tasks": 26106,
+        "prewarm_CPU_seconds": 0.4498719670000013,
+        "prewarm_wall_seconds": 0.45183826913125813,
+        "workers": 1
+      },
+      "record_order_equal": true,
+      "scientific_result_equal": true,
+      "wall_seconds": 17.5158590170322,
+      "workers": 1
+    },
+    {
+      "Writer_SHA256_equal": true,
+      "parallel": {
+        "async_backend": false,
+        "batching": false,
+        "commit_order": "first logical traversal occurrence; results collected in registered order",
+        "independent_array_tasks": 26106,
+        "prewarm_CPU_seconds": 1.2187782539999987,
+        "prewarm_wall_seconds": 1.1210958019364625,
+        "workers": 2
+      },
+      "record_order_equal": true,
+      "scientific_result_equal": true,
+      "wall_seconds": 18.253137649036944,
+      "workers": 2
+    },
+    {
+      "Writer_SHA256_equal": true,
+      "parallel": {
+        "async_backend": false,
+        "batching": false,
+        "commit_order": "first logical traversal occurrence; results collected in registered order",
+        "independent_array_tasks": 26106,
+        "prewarm_CPU_seconds": 1.6487218539999966,
+        "prewarm_wall_seconds": 1.4597284040646628,
+        "workers": 8
+      },
+      "record_order_equal": true,
+      "scientific_result_equal": true,
+      "wall_seconds": 18.778061909019016,
+      "workers": 8
+    },
+    {
+      "Writer_SHA256_equal": true,
+      "parallel": {
+        "async_backend": false,
+        "batching": false,
+        "commit_order": "first logical traversal occurrence; results collected in registered order",
+        "independent_array_tasks": 26106,
+        "prewarm_CPU_seconds": 1.711685178,
+        "prewarm_wall_seconds": 1.4977359810145572,
+        "workers": 12
+      },
+      "record_order_equal": true,
+      "scientific_result_equal": true,
+      "wall_seconds": 19.117066606064327,
+      "workers": 12
+    }
+  ],
+  "matrices": 701,
+  "no_CFD": true,
+  "share_Writer_exact": true,
+  "share_mutation_error_exact": [
+    [
+      "EvidenceFailure",
+      "EVIDENCE_FAILURE: STATIC_BLOB_CHANGED: volumes"
+    ],
+    [
+      "EvidenceFailure",
+      "EVIDENCE_FAILURE: STATIC_BLOB_CHANGED: volumes"
+    ]
+  ],
+  "status": "PASS",
+  "workers": [
+    1,
+    2,
+    4,
+    8,
+    12
+  ]
+}

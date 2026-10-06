@@ -1,0 +1,16 @@
+{
+  "command": [
+    "g++",
+    "-shared",
+    "-fPIC",
+    "-O3",
+    "-std=c++17",
+    "-I/usr/include/python3.12",
+    "Scripts/routeA/diagnostic_transient/compute_revision_v4/prototypes/numeric_parallel.C",
+    "-o",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/exact_evidence_compute_revision/exact_20261006T131936+0900/parallel_build/numeric_parallel.cpython-312-x86_64-linux-gnu.so"
+  ],
+  "source_SHA256": "085cd44a1913204e2e474702d2f992cdbb59894b62279508326d337ccc78fcfe",
+  "binary_SHA256": "2f6229a8bad20835d38b3b651b5827b5ffe71d2ae9663cb769345a894ebb2091",
+  "CFD": false
+}

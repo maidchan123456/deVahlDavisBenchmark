@@ -1,0 +1,92 @@
+[
+  {
+    "sequence": 1,
+    "input_HEAD": "03e3035cd4d43ba287ec532c6531a119ac5c0830",
+    "action": "Authorities verified; v4 isolated copy; historical guard",
+    "tests": "authority SHA PASS",
+    "measurement": {
+      "guarded_files": 49055
+    },
+    "decision": "A first; cache limited to callback with content+epoch key",
+    "next": "Prototype A and exact validation",
+    "authority_SHA256": {
+      "docs/routeA_diagnostic_transient_contract_v1.5.json": "06c71945289ffe419b784843f7aab2fea66c44d28c9dba46d828bbd24837e27d",
+      "docs/routeA_execution_contract_v1.7.json": "fbc744e012f66b37b5d9409be961cb5a9410c3d75ac7e2f026b2acf118d3bb60"
+    },
+    "master_prompt_SHA256": "c9a5586079981944cbab752b7a26ef96fe48f8db136f1642d221fa3a0ce15471"
+  },
+  {
+    "sequence": 2,
+    "input_HEAD": "03e3035cd4d43ba287ec532c6531a119ac5c0830",
+    "action": "Cycle1 A exact memoization implemented and tested; minor systemd scope-name bug fixed in new ID; failed first preregistration retained",
+    "tests": "3 unit + native array mutation/exactness +9 tiny regression tests PASS;1145/701 science/17 Writer files exact v3",
+    "measurement": {
+      "central": 1186.5484311676007,
+      "conservative": 2497.703677110723,
+      "lower": 1113.6727334150346
+    },
+    "decision": "A accepted as exact prototype, not practical/resource-ready; all21 target repeats STABLE; continue B/C",
+    "next": "Cycle2 verified static-reference and binary bulk transport",
+    "authority_SHA256": {
+      "docs/routeA_diagnostic_transient_contract_v1.5.json": "06c71945289ffe419b784843f7aab2fea66c44d28c9dba46d828bbd24837e27d",
+      "docs/routeA_execution_contract_v1.7.json": "fbc744e012f66b37b5d9409be961cb5a9410c3d75ac7e2f026b2acf118d3bb60"
+    },
+    "master_prompt_SHA256": "c9a5586079981944cbab752b7a26ef96fe48f8db136f1642d221fa3a0ce15471"
+  },
+  {
+    "sequence": 3,
+    "input_HEAD": "03e3035cd4d43ba287ec532c6531a119ac5c0830",
+    "action": "Cycle2 B/C exact binary+verified static refs implemented; source/binary/plan pinned;21 target trials completed",
+    "tests": "RAEB4 bit/type exact signedzero/extremes,13 negative cases PASS;9 tiny regressions PASS;1145/701 science/17 Writer fileSHA exact v3",
+    "measurement": {
+      "central": 1315.4132991299732,
+      "conservative": 2781.132218039478,
+      "lower": 1232.5055221974617
+    },
+    "decision": "Exact B/C prototype retained, improvement insufficient; D independent numeric canonical tasks next; no batching/async",
+    "next": "Measure deterministic1/2/4/8/12 scaling, then cycle3 target scout",
+    "authority_SHA256": {
+      "docs/routeA_diagnostic_transient_contract_v1.5.json": "06c71945289ffe419b784843f7aab2fea66c44d28c9dba46d828bbd24837e27d",
+      "docs/routeA_execution_contract_v1.7.json": "fbc744e012f66b37b5d9409be961cb5a9410c3d75ac7e2f026b2acf118d3bb60"
+    },
+    "master_prompt_SHA256": "c9a5586079981944cbab752b7a26ef96fe48f8db136f1642d221fa3a0ce15471"
+  },
+  {
+    "sequence": 4,
+    "input_HEAD": "03e3035cd4d43ba287ec532c6531a119ac5c0830",
+    "action": "Cycle3 A+D final target21trials STABLE, all worker-count fullgraph exact; actualbackend postACK kill andbounds regressions PASS",
+    "tests": "equivalence matrix PASS",
+    "measurement": {
+      "central": 1025.6245977308945,
+      "conservative": 2181.718339874642,
+      "lower": 961.0104338506935
+    },
+    "decision": "HARD_STOP AUTONOMOUS_CYCLE_LIMIT;2.05x insufficient; nominal608days conditional primitive proxy; Q1/Q2 andQ3 gates unmet",
+    "next": "REVIEW_ROUTE_A_DIAGNOSTIC_TRANSIENT_MAJOR_ARCHITECTURE_DECISION",
+    "authority_SHA256": {
+      "docs/routeA_diagnostic_transient_contract_v1.5.json": "06c71945289ffe419b784843f7aab2fea66c44d28c9dba46d828bbd24837e27d",
+      "docs/routeA_execution_contract_v1.7.json": "fbc744e012f66b37b5d9409be961cb5a9410c3d75ac7e2f026b2acf118d3bb60"
+    },
+    "master_prompt_SHA256": "c9a5586079981944cbab752b7a26ef96fe48f8db136f1642d221fa3a0ce15471"
+  },
+  {
+    "reporting_correction": "overall cache denominator includes prewarm compute misses; original apply-only metric preserved in raw scout and draft_report001",
+    "sequence": 5,
+    "input_HEAD": "03e3035cd4d43ba287ec532c6531a119ac5c0830",
+    "action": "Final reporting correction: cache hit denominator includes deterministic prewarm misses; draft/raw apply-only metrics retained. History and source/cleanup checks PASS.",
+    "tests": "49,055 historical files byte/mtime/SHA unchanged; final source/build/validation pins readback PASS; all owned scopes ended",
+    "measurement": {
+      "central": 1025.6245977308945,
+      "conservative": 2181.718339874642,
+      "lower": 961.0104338506935
+    },
+    "decision": "HARD_STOP AUTONOMOUS_CYCLE_LIMIT;2.05x insufficient; nominal608days conditional primitive proxy; Q1/Q2 andQ3 gates unmet",
+    "next": "REVIEW_ROUTE_A_DIAGNOSTIC_TRANSIENT_MAJOR_ARCHITECTURE_DECISION",
+    "authority_SHA256": {
+      "docs/routeA_diagnostic_transient_contract_v1.5.json": "06c71945289ffe419b784843f7aab2fea66c44d28c9dba46d828bbd24837e27d",
+      "docs/routeA_execution_contract_v1.7.json": "fbc744e012f66b37b5d9409be961cb5a9410c3d75ac7e2f026b2acf118d3bb60"
+    },
+    "master_prompt_SHA256": "c9a5586079981944cbab752b7a26ef96fe48f8db136f1642d221fa3a0ce15471",
+    "input_source_manifest_SHA256": "6489b33a4cfd18fa5711c52041349bd63d5c203f3837f13de60001f59b690d50"
+  }
+]
