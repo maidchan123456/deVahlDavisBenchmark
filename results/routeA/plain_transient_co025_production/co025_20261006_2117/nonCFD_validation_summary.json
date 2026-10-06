@@ -1,0 +1,11 @@
+{
+  "result": "PASS",
+  "checkMesh_serial": "PASS",
+  "checkMesh_parallel": "PASS",
+  "MPI_binding": "PASS",
+  "pRefPoint": "PASS",
+  "decomposition": "PASS",
+  "input_diff": "PASS",
+  "cold_only": true,
+  "CFD_EXECUTED": "NO"
+}

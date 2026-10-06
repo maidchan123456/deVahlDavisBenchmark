@@ -1,0 +1,1612 @@
+deVahlDavisBenchmark の Route A transient study について、
+
+# PREPARE_ROUTE_A_PLAIN_TRANSIENT_CO025_PRODUCTION_RUN
+
+を実施してください。
+
+今回の目的は、
+
+**既に正常完走したCo=0.5 productionを基準として、時間刻み依存性を評価するためのCo=0.25 production caseを、物理条件・格子・数値手法・solver policy・MPI条件を変更せずに完全準備すること**
+
+です。
+
+今回のtaskでは**production CFDそのものは実行しません。**
+
+---
+
+# 0. EXECUTION BOUNDARY
+
+今回許可：
+
+```text
+Co0.25 production preparation = YES
+non-CFD validation = YES
+decomposePar/checkMesh = YES
+launcher preparation = YES
+postprocessing preparation = YES
+```
+
+今回禁止：
+
+```text
+actual foamRun production execution
+physical timestep advancement
+Co0.25 pilot
+Co0.5 rerun
+Q3
+formal Gate J
+320x320
+particle coupling
+```
+
+最終的にproduction-readyなら停止してください。
+
+---
+
+# 1. RECOMMENDED MODEL
+
+```text
+gpt-6.1-sol / high
+```
+
+---
+
+# 2. CURRENT KNOWN HEAD
+
+最新既知HEAD：
+
+```text
+a1a016f48291bb1678d052e957162c5756b5dd72
+```
+
+開始時：
+
+```bash
+git rev-parse HEAD
+git status --short
+```
+
+を確認。
+
+ただし過去に学んだとおり、
+
+```text
+HEAD identity
+```
+
+と
+
+```text
+production-sensitive state identity
+```
+
+を混同しないこと。
+
+HEADが進んでいても、results-only差分なら即BLOCKしない。
+
+---
+
+# 3. PRIMARY SCIENTIFIC REFERENCE
+
+正常完走済みCo=0.5 production：
+
+```text
+results/routeA/plain_transient_co05_production/
+co05_20261006_0602/
+```
+
+特に：
+
+```text
+head_review_v2/RouteA_plain_transient_Co05_production_report_v2.md
+head_review_v2/final_integrity_verification_v2.json
+production_execution_plan.json
+production_input_manifest.json
+production_postprocessing_plan.md
+```
+
+を直接input evidenceとする。
+
+---
+
+# 4. CONFIRMED Co0.5 RESULT
+
+Co=0.5 production：
+
+```text
+COMPLETE
+normal exit
+143203 physical steps
+t_final = 1420.0043825715495 s
+t*_final = 2.000006172635985
+
+wall time =
+2.333554839975 h
+```
+
+。
+
+late：
+
+```text
+median deltaT =
+0.009929812304467326 s
+
+median Co ≈
+0.5
+
+late median seconds/step =
+0.05461593548534438
+```
+
+。
+
+---
+
+# 5. Co0.5 FINAL QoI
+
+```text
+Nu_hot =
+8.863412719910798
+
+Nu_cold =
+8.863412713264665
+
+Umax =
+64.91563253034387
+
+Wmax =
+219.9015344727529
+```
+
+。
+
+これらをCo=0.25 comparison authorityとして保存。
+
+---
+
+# 6. SCIENTIFIC PURPOSE OF Co0.25
+
+今回の目的は、
+
+```text
+time-step sensitivity
+```
+
+です。
+
+主比較：
+
+```text
+Co0.5 vs Co0.25
+```
+
+。
+
+確認したいこと：
+
+```text
+Does halving the Courant-number limit materially change
+
+Nu(t*)
+Umax(t*)
+Wmax(t*)
+final profiles
+late-time state
+final QoI
+```
+
+。
+
+---
+
+# 7. IMPORTANT INTERPRETATION
+
+Co=0.25がCo=0.5に近い結果を与えても、
+
+```text
+full temporal convergence proven
+```
+
+とは言わない。
+
+現段階では：
+
+```text
+fixed-grid timestep sensitivity between Co0.5 and Co0.25
+```
+
+の評価。
+
+---
+
+# 8. CO0.25 CASE — ONLY INTENDED NUMERICAL CHANGE
+
+原則としてCo=0.5 productionから変更してよい主要numerical parameterは：
+
+```text
+maxCo:
+0.5 → 0.25
+```
+
+のみ。
+
+---
+
+# 9. DO NOT BLINDLY COPY
+
+Co=0.5 caseとCo=0.25 candidateのdiffを作成し、
+
+すべての差分を分類：
+
+```text
+INTENDED_CO_CHANGE
+NAMESPACE_ONLY
+OUTPUT_PROVENANCE_ONLY
+UNINTENDED
+```
+
+。
+
+UNINTENDED差分があれば修正。
+
+---
+
+# 10. PHYSICAL CASE FREEZE
+
+変更禁止：
+
+```text
+Ra = 1e6
+Pr = 0.71
+
+domain =
+0.1 × 0.1 × 0.001 m
+
+grid =
+160 × 160 × 1
+
+T0 = 300 K
+Th = 300.5 K
+Tc = 299.5 K
+
+rho0 = 1
+beta = 1e-3
+mu = 1e-5
+Cv = 1000
+
+nu = 1e-5
+alpha = 1.4084507042253522e-5
+k = 0.014084507042253521
+
+g =
+(0 -140.8450704225352 0)
+```
+
+。
+
+---
+
+# 11. THERMOPHYSICAL MODEL FREEZE
+
+```text
+Boussinesq
+eConst
+Stokes
+Fourier
+laminar
+```
+
+変更禁止。
+
+---
+
+# 12. GRID FREEZE
+
+```text
+160 × 160 × 1
+```
+
+。
+
+mesh byte/hash identityをCo=0.5 caseと比較。
+
+---
+
+# 13. TIME SCHEME FREEZE
+
+```text
+backward
+```
+
+variable-step BDF2。
+
+変更禁止。
+
+---
+
+# 14. PIMPLE FREEZE
+
+```text
+momentumPredictor = yes
+simpleRho = no
+transonic = no
+consistent = no
+
+nOuterCorrectors = 24
+nCorrectors = 2
+nNonOrthogonalCorrectors = 0
+```
+
+変更禁止。
+
+---
+
+# 15. LINEAR SOLVER FREEZE
+
+Co=0.5と同一。
+
+概念的には：
+
+```text
+U/e:
+PBiCGStab + DILU
+tolerance = 1e-12
+relTol = 0
+
+p_rgh:
+PCG + DIC
+tolerance = 1e-12
+relTol = 0
+```
+
+。
+
+actual dictionary hash identityを確認。
+
+---
+
+# 16. TIME-STEP CONTROL
+
+Co=0.25：
+
+```text
+adjustTimeStep = true
+
+maxCo = 0.25
+
+growth factor = 1.2
+
+initial deltaT =
+2.3111979166666666e-5
+
+maxDeltaT =
+0.027734375
+```
+
+。
+
+---
+
+# 17. INITIAL DELTAT
+
+Co=0.5と同じinitial deltaTを維持。
+
+Co=0.25だからinitial dtを機械的に半分にしない。
+
+native controllerに任せる。
+
+---
+
+# 18. MAXDELTAT
+
+```text
+0.027734375
+```
+
+維持。
+
+実際にはCo controllerがより強く支配すると予想されるが、
+予想を理由に変更しない。
+
+---
+
+# 19. TARGET TIME
+
+Co=0.5と同じ：
+
+```text
+target t* = 2
+endTime = 1420 s
+```
+
+。
+
+これによりCo=0.5/0.25を同じphysical time horizonで比較する。
+
+---
+
+# 20. DO NOT STOP EARLIER
+
+Co=0.25で結果が早くsteady-lookingになっても：
+
+```text
+t*=2
+```
+
+まで計算するproduction designとする。
+
+---
+
+# 21. PRESSURE REFERENCE
+
+```text
+pRefPoint =
+(0.0496875 0.0496875 0.0005)
+```
+
+。
+
+Co=0.5と完全同一。
+
+parallel `pRefCell`は禁止。
+
+---
+
+# 22. MPI
+
+```text
+12 MPI ranks
+```
+
+。
+
+---
+
+# 23. DECOMPOSITION
+
+```text
+scotch
+```
+
+。
+
+---
+
+# 24. MPI BINDING
+
+```text
+--nooversubscribe
+--map-by core
+--bind-to core
+--report-bindings
+```
+
+。
+
+---
+
+# 25. THREADS
+
+```text
+OMP_NUM_THREADS=1
+OPENBLAS_NUM_THREADS=1
+MKL_NUM_THREADS=1
+```
+
+。
+
+---
+
+# 26. DO NOT REDO MPI SCALING
+
+不要。
+
+---
+
+# 27. START MODE
+
+```text
+CONTINUOUS_COLD_START
+```
+
+。
+
+Co=0.5 final stateから開始してはいけない。
+
+---
+
+# 28. WHY COLD START
+
+Co=0.5とCo=0.25のtransient trajectoryを
+同一initial conditionから比較するため。
+
+---
+
+# 29. STRICT RESTART
+
+```text
+STRICT_BDF_RESTART_RELIED_UPON = NO
+```
+
+維持。
+
+---
+
+# 30. INTERRUPTION POLICY
+
+```text
+STOP_AND_REVIEW
+```
+
+。
+
+自動restart禁止。
+
+自動cold rerun禁止。
+
+---
+
+# 31. HEAVY DIAGNOSTICS
+
+絶対OFF：
+
+```text
+exact evidence backend
+matrix replay
+1144 callback system
+701 matrix diagnostic
+U01/U03 online heavy audit
+```
+
+。
+
+---
+
+# 32. FUNCTION OBJECTS
+
+production中：
+
+```text
+-noFunctionObjects
+```
+
+。
+
+---
+
+# 33. OUTPUT POLICY
+
+Co=0.5と同一：
+
+```text
+writeControl = runTime
+writeInterval = 5 s
+
+timePrecision = 12
+writePrecision = 17
+purgeWrite = 0
+```
+
+。
+
+---
+
+# 34. STARTUP WRITE POLICY
+
+Co=0.5と同じstep-number requestsを
+そのまま機械的に使う前に意味を確認。
+
+Co=0.25ではCourant transition timingが変化する可能性がある。
+
+---
+
+# 35. PREFERRED STARTUP SAMPLING
+
+early transient comparisonのため、
+
+Co=0.5と比較可能なphysical-time based coverageを重視。
+
+ただし：
+
+```text
+runTime output
+```
+
+の5s binsは通常維持。
+
+追加startup writeについては、
+deltaTを変えないnative write requestで：
+
+```text
+very early state
+growth regime
+first maxDeltaT vicinity if any
+first Co-control vicinity
+```
+
+を残せるよう設計。
+
+---
+
+# 36. DO NOT OVERENGINEER STARTUP WRITES
+
+5s regular outputだけでもmain comparisonは可能。
+
+startup writesはdiagnostic補助。
+
+---
+
+# 37. OUTPUT MUST NOT ALTER DELTAT
+
+絶対条件。
+
+---
+
+# 38. ESTIMATE STEP COUNT
+
+Co0.5実測：
+
+```text
+143203 steps
+```
+
+。
+
+late dt approximately：
+
+```text
+0.00993 s
+```
+
+。
+
+Co=0.25ではlate dtが概ね半分程度になる可能性があるため、
+
+first planning estimate：
+
+```text
+~280k–300k steps
+```
+
+程度。
+
+ただしactual controller behaviorから再推定。
+
+---
+
+# 39. DO NOT USE STEP COUNT AS STOP
+
+endTimeのみscientific stop。
+
+---
+
+# 40. RUNTIME ESTIMATE
+
+単純上限的な初期planning：
+
+Co=0.5：
+
+```text
+2.33 h
+```
+
+。
+
+Co=0.25ではstepsが概ね倍になる可能性がある。
+
+first planning：
+
+```text
+~4–6 h
+```
+
+程度を想定。
+
+---
+
+# 41. BUT ACCOUNT FOR SOLVER COST
+
+Co=0.5ではlate pressure iterationsが大幅低下した。
+
+Co=0.25も同様なら、
+単純2倍より短い/近い可能性がある。
+
+保証しない。
+
+---
+
+# 42. WALL GUARD
+
+```text
+24 h
+```
+
+維持。
+
+---
+
+# 43. STORAGE ESTIMATE
+
+Co=0.5 actual：
+
+```text
+294 native snapshots
+~2.94 GB allocated native fields
+~3.87 GB solver log
+~6.81 GB fields + log allocated
+```
+
+。
+
+Co=0.25ではsnapshot数はphysical-time-basedなので
+field storageは概ね同等。
+
+ただしstep数増加によりlogが増える。
+
+---
+
+# 44. ESTIMATE CO0.25 LOG STORAGE FROM ACTUAL CO0.5
+
+Co=0.5 actual log bytes / stepを算出し、
+
+```text
+280k
+300k
+320k
+```
+
+程度のscenarioでlog容量を推定。
+
+---
+
+# 45. DISK POLICY
+
+安全reserveを再計算。
+
+最低でもprepared hostで：
+
+```text
+32 GiB free
+```
+
+をproduction precondition候補とする。
+
+実測に基づいてより合理的なthresholdがあれば記録。
+
+---
+
+# 46. PRODUCTION CASE NAMESPACE
+
+新規：
+
+```text
+cases/routeA/plain_transient_co025_production/
+<co025_id>/
+```
+
+。
+
+Co=0.5 caseをin-place編集しない。
+
+---
+
+# 47. RESULTS NAMESPACE
+
+```text
+results/routeA/plain_transient_co025_production/
+<co025_id>/
+```
+
+。
+
+---
+
+# 48. COPY SOURCE
+
+Co=0.5 production cold inputをreferenceとして使用してよい。
+
+ただしruntime trajectory/outputをcopyしない。
+
+---
+
+# 49. COLD CASE ONLY
+
+production case内に：
+
+```text
+0/
+constant/
+system/
+processor*/0/
+```
+
+等の必要initial/decomposed stateのみ。
+
+Co=0.5 time directoriesを持ち込まない。
+
+---
+
+# 50. PRODUCTION-SENSITIVE MANIFEST
+
+作成：
+
+```text
+production_sensitive_manifest.json
+```
+
+。
+
+最低限：
+
+```text
+physical input
+mesh
+fvSchemes
+fvSolution
+controlDict
+thermophysicalProperties
+g
+initial fields
+OpenFOAM binary/library
+installed source hashes
+MPI version
+```
+
+。
+
+---
+
+# 51. CO0.5 → CO0.25 DIFF AUDIT
+
+必ずreport：
+
+```text
+physical model differences = NONE
+mesh differences = NONE
+solver differences = NONE
+time scheme differences = NONE
+PIMPLE differences = NONE
+linear solver differences = NONE
+output-policy differences = NONE
+maxCo difference = 0.5 → 0.25
+namespace/provenance differences = expected
+```
+
+。
+
+---
+
+# 52. IF OTHER DIFFERENCE EXISTS
+
+scientifically justifiedでなければBLOCK。
+
+---
+
+# 53. AUTHORITIES
+
+canonical/formal authority hashesを再確認。
+
+ただしformal statusesは変更しない。
+
+---
+
+# 54. HEAD POLICY
+
+前回のlessonを継続。
+
+HEADがresults-only commitで進んでいても、
+production-sensitive hash identityがPASSなら準備を続行。
+
+---
+
+# 55. PRE-RUN NON-CFD VALIDATION
+
+今回実行してよい：
+
+```text
+checkMesh
+decomposePar
+dictionary parsing
+12-rank affinity probe
+pRefPoint mapping
+input hash checks
+storage estimate
+launcher dry check
+postprocessor dry validation
+```
+
+。
+
+---
+
+# 56. NO PHYSICAL TIMESTEP
+
+絶対条件。
+
+---
+
+# 57. PRODUCTION LAUNCHER
+
+Co=0.25専用：
+
+```text
+run_production.sh
+```
+
+またはv2-style launcherを準備。
+
+---
+
+# 58. LAUNCHER GUARD DESIGN
+
+単純なHEAD exact matchだけではなく：
+
+```text
+reviewed HEAD provenance
++
+production-sensitive hashes
+```
+
+を用いる。
+
+---
+
+# 59. LAUNCHER FAIL-CLOSED CONDITIONS
+
+最低限：
+
+```text
+sensitive hash mismatch
+wrong maxCo
+wrong endTime
+wrong MPI ranks
+wrong pRefPoint
+wrong physical inputs
+wrong mesh
+heavy diagnostics detected
+function objects active
+disk insufficient
+non-cold start
+execution namespace already contains trajectory
+same-case solver already active
+```
+
+。
+
+---
+
+# 60. PLANNED MPI COMMAND
+
+概念：
+
+```bash
+mpirun \
+  --nooversubscribe \
+  --map-by core \
+  --bind-to core \
+  --report-bindings \
+  -np 12 \
+  foamRun \
+  -case <Co025 production case> \
+  -solver fluid \
+  -noFunctionObjects \
+  -parallel
+```
+
+。
+
+今回は実行しない。
+
+---
+
+# 61. AUTHORIZATION DRAFT
+
+作成：
+
+```text
+production_authorization_draft.json
+```
+
+。
+
+必ず：
+
+```text
+AUTHORIZED = NO
+```
+
+。
+
+---
+
+# 62. USER AUTHORIZATION REQUIRED LATER
+
+Co=0.25 production executionは別task。
+
+---
+
+# 63. POSTPROCESSING PLAN
+
+Co=0.5との直接比較を第一目的とする。
+
+---
+
+# 64. QoI COMPARISON
+
+各saved physical time / t*で：
+
+```text
+Nu_hot
+Nu_cold
+Umax
+Wmax
+```
+
+。
+
+---
+
+# 65. FINAL QoI COMPARISON
+
+Co=0.25 final vs Co=0.5 final：
+
+```text
+signed difference
+absolute difference
+relative difference
+```
+
+。
+
+---
+
+# 66. TIME HISTORY COMPARISON
+
+異なるadaptive time stepsなので、
+
+```text
+step index
+```
+
+で直接比較しない。
+
+---
+
+# 67. USE PHYSICAL TIME OR t*
+
+比較軸：
+
+```text
+t
+or
+t*
+```
+
+。
+
+---
+
+# 68. INTERPOLATION FOR HISTORY COMPARISON
+
+Co=0.5とCo=0.25のsaved timesが完全一致しない場合、
+
+postprocessingでtime interpolationして比較可。
+
+方法を明示。
+
+---
+
+# 69. NO UNDOCUMENTED INTERPOLATION
+
+必ず：
+
+```text
+interpolation method
+time range
+extrapolation = NO
+```
+
+を記録。
+
+---
+
+# 70. TIME-STEP SENSITIVITY METRICS
+
+最低限：
+
+```text
+final QoI differences
+maximum history difference
+RMS history difference
+late-window difference
+profile RMS/Linf difference
+```
+
+。
+
+---
+
+# 71. EXPECTED INTERPRETATION
+
+もしCo0.25とCo0.5の差が非常に小さい場合：
+
+```text
+TIME_STEP_SENSITIVITY_SMALL_BETWEEN_CO05_AND_CO025
+```
+
+と表現可能。
+
+---
+
+# 72. DO NOT CLAIM FULL TIME CONVERGENCE
+
+2-level comparisonだけで：
+
+```text
+temporally converged
+time-step independent
+```
+
+とは断定しない。
+
+必要ならCo=0.125が追加候補。
+
+---
+
+# 73. DECIDE WHETHER CO0.125 IS NEEDED AFTER DATA
+
+今回の準備では決め打ちしない。
+
+---
+
+# 74. FINAL STEADY BASELINE COMPARISON ALSO RETAIN
+
+Co=0.25 finalについてもsame-grid steady baselineと比較。
+
+---
+
+# 75. TIME-HORIZON ASSESSMENT
+
+Co=0.25でもt*=2で：
+
+```text
+STATIONARY_CANDIDATE
+STILL_EVOLVING
+UNRESOLVED
+```
+
+を評価するpostprocessing plan。
+
+---
+
+# 76. MASS/ENERGY DESCRIPTORS
+
+Co=0.5と同じcoverage-limited methodology。
+
+exact BDF conservation certificateとは呼ばない。
+
+---
+
+# 77. OUTPUT ARTIFACTS
+
+最低限：
+
+```text
+RouteA_plain_transient_Co025_production_preparation.md
+RouteA_plain_transient_Co025_production_preparation.json
+
+production_execution_plan.json
+production_sensitive_manifest.json
+production_authorization_draft.json
+
+co05_vs_co025_input_diff.json
+co05_vs_co025_input_diff.md
+
+production_postprocessing_plan.md
+production_postprocessing_plan.json
+
+run_production.sh
+```
+
+。
+
+---
+
+# 78. OPTIONAL STORAGE REPORT
+
+```text
+storage_projection.json
+```
+
+。
+
+---
+
+# 79. PREPARATION ACCEPTANCE CRITERIA
+
+最低限：
+
+```text
+Co0.5 reference integrity PASS
+authority hashes PASS
+physical model identical
+mesh identical
+fvSchemes identical
+fvSolution identical
+thermophysical model identical
+cold initial state equivalent
+maxCo exactly 0.25
+other timestep controls identical
+endTime1420
+12-rank decomposition PASS
+pRefPoint mapping PASS
+checkMesh PASS
+output policy scientifically equivalent
+output does not alter dt
+heavy diagnostics OFF
+function objects OFF
+storage capacity PASS
+launcher dry validation PASS
+postprocessing comparison plan READY
+```
+
+。
+
+---
+
+# 80. IF ALL PASS
+
+```text
+CO025_PRODUCTION_PREPARATION_READY = YES
+```
+
+。
+
+---
+
+# 81. IF MATERIAL DIFFERENCE FOUND
+
+```text
+CO025_PRODUCTION_PREPARATION_READY = NO
+```
+
+。
+
+productionを開始しない。
+
+---
+
+# 82. FORMAL STATUSES REMAIN FROZEN
+
+```text
+FORMAL_GATE_J_CURRENTLY_ALLOWED = NO
+FORMAL_GATE_J_EXECUTED = NO
+FORMAL_GATE_J_PASS = NOT_EVALUATED
+
+BENCHMARK_CORE_PASS = NO
+ROUTE_A_CHARACTERIZED = NO
+
+ALL_ROUTE_A_GATE_F = FAIL
+ALL_RA_NEEDS_320 = YES
+
+GRID_INDEPENDENT_TRANSIENT_CLAIM_ALLOWED = NO
+DOWNSTREAM_TRANSIENT_READY = NO
+PARTICLE_COUPLING_READY = NO
+```
+
+。
+
+---
+
+# 83. GIT
+
+禁止：
+
+```text
+git add
+git commit
+git push
+git reset
+git checkout
+```
+
+。
+
+---
+
+# 84. FINAL REPORT MUST ANSWER
+
+```text
+Is Co0.25 production preparation ready?
+
+Is maxCo the only intended numerical difference from Co0.5?
+
+Were all physical-model inputs identical?
+
+Were mesh/fvSchemes/fvSolution identical?
+
+What exact MPI command will be used?
+
+What exact output policy will be used?
+
+What is the expected adaptive timestep regime?
+
+What is the estimated production step count?
+
+What is the estimated runtime?
+
+What is the estimated storage?
+
+How will Co0.25 be compared with Co0.5?
+
+Will histories be compared by t* rather than step index?
+
+How will interpolation be handled?
+
+Can this two-level study prove temporal convergence?
+
+What result would justify a Co0.125 run?
+
+What is the next exact task?
+```
+
+---
+
+# 85. REQUIRED FINAL STATUS
+
+```text
+ROUTE_A_PLAIN_TRANSIENT_CO025_PRODUCTION_PREPARATION =
+COMPLETE / BLOCKED / INCOMPLETE
+
+PRODUCTION_PREPARATION_ID =
+<id>
+
+SOURCE_CO05_PRODUCTION =
+co05_20261006_0602
+
+SOURCE_CO05_STATUS =
+COMPLETE
+
+SOURCE_CO05_FINAL_TSTAR =
+2.000006172635985
+
+CURRENT_REVIEWED_HEAD =
+<value>
+
+PRODUCTION_SENSITIVE_HEAD_CHANGE =
+NO / YES
+
+PHYSICAL_MODEL_CHANGED_FROM_CO05 =
+NO
+
+GRID_CHANGED_FROM_CO05 =
+NO
+
+FVSCHEMES_CHANGED_FROM_CO05 =
+NO
+
+FVSOLUTION_CHANGED_FROM_CO05 =
+NO
+
+TIME_SCHEME_CHANGED_FROM_CO05 =
+NO
+
+PIMPLE_POLICY_CHANGED_FROM_CO05 =
+NO
+
+LINEAR_SOLVER_POLICY_CHANGED_FROM_CO05 =
+NO
+
+OUTPUT_POLICY_CHANGED_FROM_CO05 =
+NO / <justified output-only difference>
+
+MAX_CO_CO05 =
+0.5
+
+MAX_CO_CO025 =
+0.25
+
+INTENDED_NUMERICAL_DIFFERENCE =
+MAX_CO_ONLY
+
+RA =
+1e6
+
+PR =
+0.71
+
+GRID =
+160x160x1
+
+MPI_RANKS =
+12
+
+MPI_DECOMPOSITION =
+scotch
+
+PREF_REFERENCE_METHOD =
+pRefPoint
+
+PREF_POINT =
+(0.0496875 0.0496875 0.0005)
+
+TIME_SCHEME =
+backward_variable_step_BDF2
+
+INITIAL_DELTA_T =
+2.3111979166666666e-5
+
+MAX_DELTA_T =
+0.027734375
+
+END_TIME_SECONDS =
+1420
+
+TARGET_TSTAR =
+2
+
+PRODUCTION_START_MODE =
+CONTINUOUS_COLD_START
+
+STRICT_BDF_RESTART_RELIED_UPON =
+NO
+
+HEAVY_DIAGNOSTICS_ENABLED =
+NO
+
+FUNCTION_OBJECTS_DURING_PRODUCTION =
+NO
+
+OUTPUT_WRITE_CONTROL =
+runTime
+
+FULL_FIELD_OUTPUT_INTERVAL_SECONDS =
+5
+
+OUTPUT_POLICY_CHANGES_DELTAT =
+NO
+
+EXPECTED_PRODUCTION_STEPS =
+<estimate>
+
+EXPECTED_PRODUCTION_RUNTIME_HOURS =
+<estimate>
+
+EXPECTED_OUTPUT_BYTES =
+<estimate>
+
+DISK_CAPACITY_PASS =
+YES / NO
+
+CHECKMESH =
+PASS / FAIL
+
+DECOMPOSITION_PREPARATION =
+PASS / FAIL
+
+PREF_POINT_MAPPING_VERIFIED =
+YES / NO
+
+CO05_TO_CO025_INPUT_DIFF_AUDIT =
+PASS / FAIL
+
+POSTPROCESSING_PLAN_PREPARED =
+YES / NO
+
+CO05_VS_CO025_TSTAR_COMPARISON_PREPARED =
+YES / NO
+
+PRODUCTION_LAUNCHER_PREPARED =
+YES / NO
+
+PRODUCTION_LAUNCHER_DRY_VALIDATED =
+YES / NO
+
+PRODUCTION_CFD_EXECUTED =
+NO
+
+PRODUCTION_EXECUTION_AUTHORIZED =
+NO
+
+Q3_EXECUTED =
+NO
+
+FORMAL_GATE_J_EXECUTED =
+NO
+
+CO025_PRODUCTION_PREPARATION_READY =
+YES / NO
+
+BLOCKER =
+NONE / <explicit blocker>
+
+NEXT_SINGLE_TASK =
+RUN_ROUTE_A_PLAIN_TRANSIENT_CO025_PRODUCTION
+
+RECOMMENDED_REASONING_MODEL_FOR_NEXT_TASK =
+gpt-6.1-sol / high
+
+USER_DECISION_REQUIRED =
+YES
+```
+
+---
+
+# 86. MOST IMPORTANT RULE
+
+今回のCo=0.25 runの科学目的は：
+
+```text
+fixed-grid time-step sensitivity
+```
+
+です。
+
+---
+
+# 87. SECOND MOST IMPORTANT RULE
+
+Co=0.5から意図的に変えるnumerical conditionは原則：
+
+```text
+maxCo = 0.5 → 0.25
+```
+
+だけ。
+
+---
+
+# 88. THIRD MOST IMPORTANT RULE
+
+今回：
+
+```text
+prepare
+```
+
+のみ。
+
+```text
+run
+```
+
+しない。
+
+---
+
+# 89. FOURTH MOST IMPORTANT RULE
+
+比較はstep indexではなく：
+
+```text
+physical time / t*
+```
+
+で行う。
+
+---
+
+# 90. FIFTH MOST IMPORTANT RULE
+
+Co0.5 vs Co0.25が一致しても、
+2-level comparisonだけで完全な時間刻み独立性を断定しない。
+
+---
+
+# 91. IDEAL END STATE
+
+```text
+Co0.25 case prepared
+only maxCo changed
+all sensitive inputs verified
+12-rank case ready
+storage/runtime estimated
+offline Co0.5-vs-Co0.25 comparison ready
+no CFD executed
+
+CO025_PRODUCTION_PREPARATION_READY = YES
+PRODUCTION_EXECUTION_AUTHORIZED = NO
+```
+
+となった時点で停止してください。

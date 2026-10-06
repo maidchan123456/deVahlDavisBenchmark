@@ -1,0 +1,15 @@
+{
+  "protected_functions_identical": [
+    "descendants",
+    "kill_tree",
+    "verified_master",
+    "fatal_line",
+    "final_state"
+  ],
+  "execution_loop_changes": "Only auxiliary SIGUSR1 startup requests: source-Co05 physical target times plus first maxdt/Co-control events; native MPI call, 24h/disk/fatal guards, cleanup, no-retry, normal end and final-state handling retained.",
+  "maxCo_change": ".5 to .25 only in semantic checks",
+  "authorization": "New separate explicit run-task receipt required; sealed NO draft cannot launch",
+  "HEAD": "reviewed provenance plus sensitive byte hashes, results-only descendant drift reviewed",
+  "additional_non_CFD_guard": "MPI --version equality after stripping presentation whitespace; binary hash remains primary authority",
+  "all_python_sources_syntax": "PASS"
+}

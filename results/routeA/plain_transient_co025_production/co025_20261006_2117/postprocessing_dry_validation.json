@@ -1,0 +1,32 @@
+{
+  "result": "PASS",
+  "source_self_comparison_zero": true,
+  "staggered_linear_history_exact": true,
+  "common_range_no_extrapolation": true,
+  "cold_native_field_read_and_analytic_QoI": "PASS",
+  "cold_QoI": {
+    "time_s": 0.0,
+    "tstar": 0.0,
+    "time_index": 0,
+    "Nu_hot": 160.0,
+    "Nu_cold": 160.0,
+    "Umax": 0.0,
+    "Umax_Y": 0.0,
+    "Wmax": 0.0,
+    "Wmax_X": 0.0,
+    "speed_max_m_s": 0.0,
+    "Uz_absmax_m_s": 0.0,
+    "Tmin_K": 300.0,
+    "Tmax_K": 300.0,
+    "symmetry_T_RMS_K": 0.0,
+    "symmetry_U_RMS_m_s": 0.0,
+    "mass_kg": 1.000000000000011e-05,
+    "sensible_internal_energy_proxy_J": 0.01850000000000043,
+    "kinetic_energy_J": 0.0,
+    "Q_hot_W": 0.0022535211267605635,
+    "Q_cold_W": 0.0022535211267605635,
+    "native_rho_read": false
+  },
+  "production_steps_advanced": 0,
+  "CFD_EXECUTED": "NO"
+}

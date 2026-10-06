@@ -1,0 +1,35 @@
+{
+  "result": "PASS",
+  "checks": {
+    "NO_draft_cannot_authorize": {
+      "result": "PASS",
+      "rejected": "draft cannot authorize execution"
+    },
+    "physical_input_hash_mismatch": {
+      "result": "PASS",
+      "rejected": "production-sensitive mismatch: /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/plain_transient_co025_production/co025_20261006_2117/0/U"
+    },
+    "wrong_maxCo_semantics": {
+      "result": "PASS",
+      "rejected": "wrong maxCo"
+    },
+    "wrong_MPI_ranks": {
+      "result": "PASS",
+      "rejected": "plan policy mismatch"
+    },
+    "results_only_future_HEAD": {
+      "result": "PASS",
+      "synthetic_test_only": true
+    },
+    "sensitive_future_HEAD": {
+      "result": "PASS",
+      "rejected": "HEAD change requires sensitive review: docs/routeA_execution_contract_v1.7.json"
+    }
+  },
+  "case_byte_identity_before_after": true,
+  "cold_only": true,
+  "execution_namespace_created": false,
+  "CFD_EXECUTED": "NO",
+  "physical_steps_advanced": 0,
+  "mocked_checks_do_not_write_fictitious_HEAD_receipts": true
+}

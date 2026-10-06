@@ -1,0 +1,9 @@
+{
+  "result": "PASS",
+  "source_sensitive_files": 263,
+  "source_artifact_seals_verified": true,
+  "cold_files_verified": 164,
+  "normal_exit": true,
+  "final_tstar": 2.000006172635985,
+  "all_reference_artifacts_preserved": true
+}

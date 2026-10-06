@@ -1,0 +1,12 @@
+{"rank": 0, "cpus": [0, 12], "physical_cores": [[0, 0]], "threads": {"OMP_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "MKL_NUM_THREADS": "1"}}
+{"rank": 1, "cpus": [1, 13], "physical_cores": [[0, 1]], "threads": {"OMP_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "MKL_NUM_THREADS": "1"}}
+{"rank": 2, "cpus": [2, 14], "physical_cores": [[0, 2]], "threads": {"OMP_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "MKL_NUM_THREADS": "1"}}
+{"rank": 3, "cpus": [3, 15], "physical_cores": [[0, 3]], "threads": {"OMP_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "MKL_NUM_THREADS": "1"}}
+{"rank": 4, "cpus": [4, 16], "physical_cores": [[0, 4]], "threads": {"OMP_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "MKL_NUM_THREADS": "1"}}
+{"rank": 5, "cpus": [5, 17], "physical_cores": [[0, 5]], "threads": {"OMP_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "MKL_NUM_THREADS": "1"}}
+{"rank": 6, "cpus": [6, 18], "physical_cores": [[0, 6]], "threads": {"OMP_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "MKL_NUM_THREADS": "1"}}
+{"rank": 7, "cpus": [7, 19], "physical_cores": [[0, 7]], "threads": {"OMP_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "MKL_NUM_THREADS": "1"}}
+{"rank": 8, "cpus": [8, 20], "physical_cores": [[0, 8]], "threads": {"OMP_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "MKL_NUM_THREADS": "1"}}
+{"rank": 9, "cpus": [9, 21], "physical_cores": [[0, 9]], "threads": {"OMP_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "MKL_NUM_THREADS": "1"}}
+{"rank": 10, "cpus": [10, 22], "physical_cores": [[0, 10]], "threads": {"OMP_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "MKL_NUM_THREADS": "1"}}
+{"rank": 11, "cpus": [11, 23], "physical_cores": [[0, 11]], "threads": {"OMP_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "MKL_NUM_THREADS": "1"}}

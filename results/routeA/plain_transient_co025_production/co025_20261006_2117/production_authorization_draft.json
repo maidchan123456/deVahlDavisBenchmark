@@ -1,0 +1,20 @@
+{
+  "AUTHORIZED": "NO",
+  "TASK": "PREPARE_ROUTE_A_PLAIN_TRANSIENT_CO025_PRODUCTION_RUN",
+  "authorization_class": "ROUTE_A_PLAIN_TRANSIENT_CO025_PRODUCTION",
+  "preparation_id": "co025_20261006_2117",
+  "reviewed_execution_HEAD": "a1a016f48291bb1678d052e957162c5756b5dd72",
+  "execution_plan_sha256": "d7da4c4fc7b586fed49685a6926c1b0a733b34e5882bc0d7e903b5a08d3f1d30",
+  "input_manifest_sha256": "43fea7f647354a4bce5aa7f57ca6eb24dc5e277c86deacd9882147ce714c522c",
+  "production_sensitive_manifest_sha256": "bf700122e190f432e49fc4acc111e144dfe3e4911ad14c2d36ad5bd6fa4a92e2",
+  "MPI_RANKS": 12,
+  "maxCo": 0.25,
+  "endTime_s": 1420,
+  "CO025_ALLOWED": "NO",
+  "CO05_ALLOWED": "NO",
+  "AUTOMATIC_RESTART": "NO",
+  "AUTOMATIC_RERUN": "NO",
+  "Q3_ALLOWED": "NO",
+  "FORMAL_GATE_J_ALLOWED": "NO",
+  "later_execution_requires": "A separate YES receipt from explicit RUN_ROUTE_A_PLAIN_TRANSIENT_CO025_PRODUCTION user instruction; do not edit this sealed NO draft."
+}

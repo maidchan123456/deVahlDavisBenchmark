@@ -1,0 +1,95 @@
+{
+  "preparation_id": "co05_20261006_0602",
+  "report_sha256": "47367192a600ab66b1cfb8c3c5682a990fdf540750816c4770c7f8900a5a0447",
+  "report": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/plain_transient_co05_production/co05_20261006_0602/head_review_v2/RouteA_plain_transient_Co05_production_report_v2.json",
+  "final_QoI": {
+    "time_s": 1420.0043825715495,
+    "tstar": 2.000006172635985,
+    "time_index": 143203.0,
+    "Nu_hot": 8.863412719910798,
+    "Nu_cold": 8.863412713264665,
+    "Umax": 64.91563253034387,
+    "Wmax": 219.9015344727529,
+    "speed_max_m_s": 0.0311322809413494,
+    "Uz_absmax_m_s": 3.2256692217359392e-24,
+    "Tmin_K": 299.50305241018526,
+    "Tmax_K": 300.49694700765383,
+    "mass_kg": 1.0000000284767312e-05,
+    "sensible_internal_energy_proxy_J": 0.018499138166098786,
+    "kinetic_energy_J": 4.936543676954308e-10,
+    "Q_hot_W": 0.00012483679887198307,
+    "Q_cold_W": 0.00012483679877837558,
+    "symmetry_T_RMS_K": 6.125367480071459e-05,
+    "symmetry_U_RMS_m_s": 2.3011557734149107e-06
+  },
+  "runtime": {
+    "completed_physical_steps": 143203,
+    "total_wall_seconds": 8400.79742391,
+    "total_wall_hours": 2.333554839975,
+    "projected_hours": 6.112102039491276,
+    "actual_to_projected": 0.3817925199706298,
+    "final_time_seconds": 1420.0043825715495,
+    "final_tstar": 2.000006172635985,
+    "max_logged_Co": 0.5172179551948343,
+    "late_logged_Co": {
+      "min": 0.4999999999989064,
+      "median": 0.4999999999999639,
+      "max": 0.50000000000111
+    },
+    "late_deltaT_seconds": {
+      "min": 0.009929812301771384,
+      "median": 0.009929812304467326,
+      "max": 0.009929812306989977
+    },
+    "late_external_seconds_per_step_excluding_native_writes": {
+      "min": 0.04534474108368158,
+      "median": 0.05461593548534438,
+      "max": 0.06680952105671167
+    },
+    "last200_nonwrite_seconds_per_step": {
+      "min": 0.04717701696790755,
+      "median": 0.05453049798961729,
+      "max": 0.062472896999679506
+    },
+    "pressure_iterations_early1000": {
+      "min": 1323.0,
+      "median": 2383.0,
+      "max": 4216.0
+    },
+    "pressure_iterations_last10percent": {
+      "min": 2.0,
+      "median": 35.0,
+      "max": 291.0
+    },
+    "energy_iterations_last10percent": {
+      "min": 0.0,
+      "median": 0.0,
+      "max": 1.0
+    },
+    "all_steps_pressure48_energy24": true,
+    "standard_log_Co_is_pre_advance_state": true,
+    "returncode": 0,
+    "normal_exit": true,
+    "fatal_nan_fpe": false,
+    "log_bytes": 3870570559
+  },
+  "actual_storage": {
+    "native_output_files": 42336,
+    "native_output_logical_bytes": 2853699892,
+    "native_output_allocated_bytes": 2941976576,
+    "full_stdout_stderr_log_bytes": 3870570559,
+    "fields_plus_log_allocated_bytes": 6812553216
+  },
+  "scientific_status_unchanged": {
+    "FORMAL_GATE_J_CURRENTLY_ALLOWED": "NO",
+    "FORMAL_GATE_J_EXECUTED": "NO",
+    "BENCHMARK_CORE_PASS": "NO",
+    "ROUTE_A_CHARACTERIZED": "NO",
+    "ALL_ROUTE_A_GATE_F": "FAIL",
+    "ALL_RA_NEEDS_320": "YES",
+    "GRID_INDEPENDENT_TRANSIENT_CLAIM_ALLOWED": "NO",
+    "DOWNSTREAM_TRANSIENT_READY": "NO",
+    "PARTICLE_COUPLING_READY": "NO",
+    "FORMAL_GATE_J_PASS": "NOT_EVALUATED"
+  }
+}

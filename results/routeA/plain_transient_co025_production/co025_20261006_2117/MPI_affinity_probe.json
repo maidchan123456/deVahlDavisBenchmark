@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "mpirun",
+    "--nooversubscribe",
+    "--map-by",
+    "core",
+    "--bind-to",
+    "core",
+    "--report-bindings",
+    "-np",
+    "12",
+    "/usr/bin/python3",
+    "-B",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/plain_transient_co025_production/co025_20261006_2117/affinity_probe.py"
+  ],
+  "returncode": 0,
+  "CFD_EXECUTED": "NO",
+  "environment_overrides": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  }
+}

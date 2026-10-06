@@ -1,0 +1,63 @@
+{
+  "classification": "PLANNING_ESTIMATE_NOT_STOP_CONDITION",
+  "Co05_measured_log_bytes_per_step": 27028.557774627625,
+  "Co05_actual_storage": {
+    "native_output_files": 42336,
+    "native_output_logical_bytes": 2853699892,
+    "native_output_allocated_bytes": 2941976576,
+    "full_stdout_stderr_log_bytes": 3870570559,
+    "fields_plus_log_allocated_bytes": 6812553216
+  },
+  "Co025_expected_late_dt_s": 0.004964906152233663,
+  "Co05_fixed_state_inverse_flux_step_proxy": 286353.3549568715,
+  "proxy_limitation": "Uses Co05 flux/rho states and local allowable dt; not a Co025 trajectory/controller simulation. Growth and changed transient fields make actual counts uncertain.",
+  "planning_steps": [
+    280000,
+    300000
+  ],
+  "central_steps": 286406,
+  "planning_runtime_hours": [
+    4,
+    6
+  ],
+  "central_hours_at_Co05_average_cost": 4.66710967995,
+  "solver_cost_uncertainty": "Co05 pressure iterations fell from early1000 median2383 to late median35, energy late median0; Co025 cost is unmeasured.",
+  "snapshot_upper_bound": 296,
+  "scenarios": [
+    {
+      "steps": 280000,
+      "projected_log_bytes": 7567996177,
+      "projected_native_fields_allocated_bytes": 2961990023,
+      "projected_marker_bytes": 87806218,
+      "postprocessing_budget_bytes": 389881856,
+      "projected_total_bytes": 11007674274,
+      "hours_at_Co05_mean_seconds_per_step": 4.562721138474753,
+      "hours_at_Co05_late_seconds_per_step": 4.247906093304563
+    },
+    {
+      "steps": 300000,
+      "projected_log_bytes": 8108567333,
+      "projected_native_fields_allocated_bytes": 2961990023,
+      "projected_marker_bytes": 94078090,
+      "postprocessing_budget_bytes": 389881856,
+      "projected_total_bytes": 11554517302,
+      "hours_at_Co05_mean_seconds_per_step": 4.888629791222949,
+      "hours_at_Co05_late_seconds_per_step": 4.551327957112032
+    },
+    {
+      "steps": 320000,
+      "projected_log_bytes": 8649138488,
+      "projected_native_fields_allocated_bytes": 2961990023,
+      "projected_marker_bytes": 100349963,
+      "postprocessing_budget_bytes": 389881856,
+      "projected_total_bytes": 12101360330,
+      "hours_at_Co05_mean_seconds_per_step": 5.214538443971146,
+      "hours_at_Co05_late_seconds_per_step": 4.8547498209195
+    }
+  ],
+  "production_prelaunch_free_bytes": 34359738368,
+  "runtime_low_watermark_bytes": 8589934592,
+  "conservative_projection_with_25percent_margin_plus_low_watermark_bytes": 23716635005,
+  "current_free_bytes": 782786359296,
+  "disk_capacity_pass": true
+}

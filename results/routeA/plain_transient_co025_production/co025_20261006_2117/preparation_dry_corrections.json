@@ -1,0 +1,13 @@
+{
+  "CFD_EXECUTED": "NO",
+  "corrections": [
+    {
+      "initial_check": "MPI version string compared raw and rejected solely trailing newline",
+      "resolution": "Trim surrounding whitespace; actual binary hash and MPI4.1.6 string identical."
+    },
+    {
+      "initial_check": "Synthetic sparse history had only one union node in last10%",
+      "resolution": "Explicitly include last10% window boundary as an interpolated node inside common range; no extrapolation."
+    }
+  ]
+}

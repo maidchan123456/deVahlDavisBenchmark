@@ -1,0 +1,15 @@
+{
+  "result": "PASS",
+  "preparation_artifact_count_before_receipt": 53,
+  "cold_case_file_hashes_verified": 164,
+  "source_and_sensitive_manifest_count": 578,
+  "execution_namespace_absent": true,
+  "future_postprocessing_namespace_absent": true,
+  "same_case_solver_remaining": [],
+  "production_physical_steps_advanced": 0,
+  "PRODUCTION_CFD_EXECUTED": "NO",
+  "PRODUCTION_EXECUTION_AUTHORIZED": "NO",
+  "CURRENT_REVIEWED_HEAD": "a1a016f48291bb1678d052e957162c5756b5dd72",
+  "tracked_git_diff_empty": true,
+  "all_required_artifacts_exist": true
+}
