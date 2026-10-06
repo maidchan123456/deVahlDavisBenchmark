@@ -1,0 +1,42 @@
+FoamFile
+{
+    format ascii;
+    class dictionary;
+    location "system";
+    object fvSchemes;
+}
+ddtSchemes
+{
+    default backward;
+}
+gradSchemes
+{
+    default Gauss linear;
+}
+divSchemes
+{
+    default none;
+    div(phi,U) Gauss linear;
+    div(phi,e) Gauss linear;
+    div(phi,K) Gauss linear;
+    div(phi,(p|rho)) Gauss linear;
+    div(((rho*nuEff)*dev2(T(grad(U))))) Gauss linear;
+    // Post-processing diagnostic; not used by the fluid solver equations.
+    div(U) Gauss linear;
+}
+laplacianSchemes
+{
+    default Gauss linear orthogonal;
+}
+interpolationSchemes
+{
+    default linear;
+}
+snGradSchemes
+{
+    default orthogonal;
+}
+wallDist
+{
+    method meshWave;
+}

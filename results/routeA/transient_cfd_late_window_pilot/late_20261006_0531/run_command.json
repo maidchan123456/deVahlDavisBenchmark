@@ -1,0 +1,27 @@
+{
+  "argv": [
+    "mpirun",
+    "--nooversubscribe",
+    "--map-by",
+    "core",
+    "--bind-to",
+    "core",
+    "--report-bindings",
+    "-np",
+    "12",
+    "foamRun",
+    "-case",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/transient_cfd_late_window_pilot/late_20261006_0531/case",
+    "-solver",
+    "fluid",
+    "-noFunctionObjects",
+    "-parallel"
+  ],
+  "shell": "mpirun --nooversubscribe --map-by core --bind-to core --report-bindings -np 12 foamRun -case /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/transient_cfd_late_window_pilot/late_20261006_0531/case -solver fluid -noFunctionObjects -parallel",
+  "cwd": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/transient_cfd_late_window_pilot/late_20261006_0531/case",
+  "environment_overrides": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  }
+}

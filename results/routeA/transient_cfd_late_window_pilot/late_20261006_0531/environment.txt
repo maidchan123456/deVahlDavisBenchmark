@@ -1,0 +1,143 @@
+Architecture:                            x86_64
+CPU op-mode(s):                          32-bit, 64-bit
+Address sizes:                           52 bits physical, 57 bits virtual
+Byte Order:                              Little Endian
+CPU(s):                                  24
+On-line CPU(s) list:                     0-23
+Vendor ID:                               GenuineIntel
+Model name:                              Intel(R) Xeon(R) w5-2545
+CPU family:                              6
+Model:                                   143
+Thread(s) per core:                      2
+Core(s) per socket:                      12
+Socket(s):                               1
+Stepping:                                8
+CPU(s) scaling MHz:                      24%
+CPU max MHz:                             4700.0000
+CPU min MHz:                             800.0000
+BogoMIPS:                                7008.00
+Flags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cat_l2 cdp_l3 intel_ppin cdp_l2 ssbd mba ibrs ibpb stibp ibrs_enhanced tpr_shadow flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid cqm rdt_a avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb intel_pt avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local split_lock_detect user_shstk avx_vnni avx512_bf16 wbnoinvd dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req vnmi avx512vbmi umip pku ospke waitpkg avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq la57 rdpid bus_lock_detect cldemote movdiri movdir64b enqcmd fsrm md_clear serialize tsxldtrk pconfig arch_lbr ibt amx_bf16 avx512_fp16 amx_tile amx_int8 flush_l1d arch_capabilities
+Virtualization:                          VT-x
+L1d cache:                               576 KiB (12 instances)
+L1i cache:                               384 KiB (12 instances)
+L2 cache:                                24 MiB (12 instances)
+L3 cache:                                30 MiB (1 instance)
+NUMA node(s):                            1
+NUMA node0 CPU(s):                       0-23
+Vulnerability Gather data sampling:      Not affected
+Vulnerability Ghostwrite:                Not affected
+Vulnerability Indirect target selection: Not affected
+Vulnerability Itlb multihit:             Not affected
+Vulnerability L1tf:                      Not affected
+Vulnerability Mds:                       Not affected
+Vulnerability Meltdown:                  Not affected
+Vulnerability Mmio stale data:           Not affected
+Vulnerability Old microcode:             Vulnerable
+Vulnerability Reg file data sampling:    Not affected
+Vulnerability Retbleed:                  Not affected
+Vulnerability Spec rstack overflow:      Not affected
+Vulnerability Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl
+Vulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:                Mitigation; Enhanced / Automatic IBRS; IBPB conditional; PBRSB-eIBRS SW sequence; BHI BHI_DIS_S
+Vulnerability Srbds:                     Not affected
+Vulnerability Tsa:                       Not affected
+Vulnerability Tsx async abort:           Not affected
+Vulnerability Vmscape:                   Mitigation; IBPB before exit to userspace
+
+mpirun (Open MPI) 4.1.6
+
+Report bugs to http://www.open-mpi.org/community/help/
+
+
+Usage: foamRun [OPTIONS]
+options:
+  -case <dir>       specify alternate case directory, default is the cwd
+  -fileHandler <handler>
+                    override the fileHandler
+  -hostRoots <((host1 dir1) .. (hostN dirN))>
+                    slave root directories (per host) for distributed running
+  -libs '("lib1.so" ... "libN.so")'
+                    pre-load libraries
+  -noFunctionObjects
+                    do not execute functionObjects
+  -parallel         run in parallel
+  -roots <(dir1 .. dirN)>
+                    slave root directories for distributed running
+  -solver <name>    Solver name
+  -srcDoc           display source code in browser
+  -doc              display application documentation in browser
+  -help             print the usage
+
+Using: OpenFOAM-13 (see https://openfoam.org)
+Build: 13-441953dfbb42
+
+
+MemTotal:       65058016 kB
+MemFree:          898808 kB
+MemAvailable:   61680400 kB
+Buffers:         3936268 kB
+Cached:         51704992 kB
+SwapCached:           16 kB
+Active:          1221664 kB
+Inactive:       55651784 kB
+Active(anon):     592012 kB
+Inactive(anon):   714216 kB
+Active(file):     629652 kB
+Inactive(file): 54937568 kB
+Unevictable:       20456 kB
+Mlocked:           11852 kB
+SwapTotal:       8388604 kB
+SwapFree:        8388588 kB
+Zswap:                 0 kB
+Zswapped:              0 kB
+Dirty:             10596 kB
+Writeback:             0 kB
+AnonPages:       1253048 kB
+Mapped:           917236 kB
+Shmem:             62112 kB
+KReclaimable:    5922540 kB
+Slab:            6825836 kB
+SReclaimable:    5922540 kB
+SUnreclaim:       903296 kB
+KernelStack:       17200 kB
+PageTables:        26536 kB
+SecPageTables:     10680 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    40917612 kB
+Committed_AS:    7819080 kB
+VmallocTotal:   13743895347199 kB
+VmallocUsed:       56580 kB
+VmallocChunk:          0 kB
+Percpu:            67584 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+FileHugePages:   1951744 kB
+FilePmdMapped:    331776 kB
+CmaTotal:              0 kB
+CmaFree:          135856 kB
+Unaccepted:            0 kB
+Balloon:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+Hugetlb:               0 kB
+DirectMap4k:      262728 kB
+DirectMap2M:     5242880 kB
+DirectMap1G:    61865984 kB
+
+{
+  "WM_OPTIONS": "linux64GccDPInt32Opt",
+  "WM_PROJECT_VERSION": "13",
+  "LD_LIBRARY_PATH": "/opt/openfoam13/thirdparty/platforms/linux64Gcc/gperftools-svn/lib:/usr/lib/x86_64-linux-gnu:/opt/openfoam13/platforms/linux64GccDPInt32Opt/lib/paraview-5.11:/opt/openfoam13/platforms/linux64GccDPInt32Opt/lib/openmpi-system:/opt/openfoam13/thirdparty/platforms/linux64GccDPInt32/lib/openmpi-system:/usr/lib/x86_64-linux-gnu/openmpi/lib:/home/mirai/OpenFOAM/mirai-13/platforms/linux64GccDPInt32Opt/lib:/opt/site/13/platforms/linux64GccDPInt32Opt/lib:/opt/openfoam13/platforms/linux64GccDPInt32Opt/lib:/opt/openfoam13/thirdparty/platforms/linux64GccDPInt32/lib:/opt/openfoam13/platforms/linux64GccDPInt32Opt/lib/dummy:/usr/local/cuda/lib64",
+  "LD_PRELOAD": null,
+  "OMP_NUM_THREADS": "1",
+  "OPENBLAS_NUM_THREADS": "1",
+  "MKL_NUM_THREADS": "1",
+  "FOAM_CONTROLDICT": null
+}

@@ -1,0 +1,86 @@
+[
+  {
+    "signal": 10,
+    "target_write_or_stop_step": 98,
+    "during_step": 97,
+    "wall_seconds": 12.155695787048899,
+    "master_pid": 459175
+  },
+  {
+    "signal": 10,
+    "target_write_or_stop_step": 99,
+    "during_step": 98,
+    "wall_seconds": 12.27960092399735,
+    "master_pid": 459175
+  },
+  {
+    "signal": 10,
+    "target_write_or_stop_step": 100,
+    "during_step": 99,
+    "wall_seconds": 12.422638372983783,
+    "master_pid": 459175
+  },
+  {
+    "signal": 10,
+    "target_write_or_stop_step": 248,
+    "during_step": 247,
+    "wall_seconds": 30.12370847805869,
+    "master_pid": 459175
+  },
+  {
+    "signal": 10,
+    "target_write_or_stop_step": 249,
+    "during_step": 248,
+    "wall_seconds": 30.241756519069895,
+    "master_pid": 459175
+  },
+  {
+    "signal": 10,
+    "target_write_or_stop_step": 250,
+    "during_step": 249,
+    "wall_seconds": 30.375868153059855,
+    "master_pid": 459175
+  },
+  {
+    "signal": 10,
+    "target_write_or_stop_step": 498,
+    "during_step": 497,
+    "wall_seconds": 59.21358907199465,
+    "master_pid": 459175
+  },
+  {
+    "signal": 10,
+    "target_write_or_stop_step": 499,
+    "during_step": 498,
+    "wall_seconds": 59.33565779705532,
+    "master_pid": 459175
+  },
+  {
+    "signal": 10,
+    "target_write_or_stop_step": 500,
+    "during_step": 499,
+    "wall_seconds": 59.465320019982755,
+    "master_pid": 459175
+  },
+  {
+    "signal": 10,
+    "target_write_or_stop_step": 596,
+    "during_step": 595,
+    "wall_seconds": 70.6188957929844,
+    "master_pid": 459175
+  },
+  {
+    "signal": 10,
+    "target_write_or_stop_step": 597,
+    "during_step": 596,
+    "wall_seconds": 70.73533884307835,
+    "master_pid": 459175
+  },
+  {
+    "signal": 12,
+    "target_write_or_stop_step": 598,
+    "during_step": 597,
+    "wall_seconds": 70.87565129599534,
+    "master_pid": 459175
+  }
+]

@@ -1,0 +1,41 @@
+{
+  "steps_cap": 1000,
+  "wall_cap_seconds": 600,
+  "ranks": 12,
+  "starting_state": "validated cold rest, continuous native oldTime in memory",
+  "start_time_s": 0,
+  "write_steps": [
+    98,
+    99,
+    100,
+    248,
+    249,
+    250,
+    498,
+    499,
+    500,
+    748,
+    749,
+    750,
+    998,
+    999,
+    1000
+  ],
+  "primary_timing": "external monotonic end-log increments; exclude actual native write steps; native ClockTime integer seconds retained",
+  "checkpoint_policy": "real adjacent triplets, no purge; retain all native fields and _0 histories plus uniform/time; strict restart remains uncertified because native e/K histories are not output. No thinning of the intrinsic native restart state.",
+  "native_signals": {
+    "writeNowSignal": 10,
+    "stopAtWriteNowSignal": 12,
+    "activation": "case-local OptimisationSwitches, MPI cwd at case so native debug merges local controlDict",
+    "write_signal_rule": "send SIGUSR1 to master during step preceding target write; native Time::operator++ reduces flag to all ranks at next increment",
+    "stop_signal_rule": "send SIGUSR2 to master during step999; native Time::operator++ sets endTime and writes at1000",
+    "step_watchdog": "if step1001 start detected, kill all worker processes before completing an extra timestep",
+    "wall_watchdog": "terminate every solver/launcher PID at600s, no extension or retry"
+  },
+  "function_objects": false,
+  "heavy_diagnostics": false,
+  "decomposition": "scotch",
+  "binding": "--nooversubscribe --bind-to core --map-by core --report-bindings",
+  "threads": 1,
+  "old_scaling_pilot_immutable": true
+}

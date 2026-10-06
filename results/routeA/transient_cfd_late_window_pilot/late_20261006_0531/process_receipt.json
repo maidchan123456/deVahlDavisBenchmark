@@ -1,0 +1,29 @@
+{
+  "start_UTC": "2026-10-06T05:38:00.403320+00:00",
+  "exit_UTC": "2026-10-06T05:39:11.591485+00:00",
+  "returncode": 0,
+  "wall_seconds_total": 71.18380663904827,
+  "completed_steps": 598,
+  "started_steps": 598,
+  "stop_reason": "COMPLETED_STEP_CAP_NATIVE_STOP",
+  "native_stop_handler_confirmed": true,
+  "master_pid": 459175,
+  "startup_to_first_time_seconds": 0.4537328580627218,
+  "peak_sampled_summed_solver_RSS_bytes": 1756397568,
+  "max_observed_solver_processes": 12,
+  "solver_PIDs": [
+    459175,
+    459176,
+    459177,
+    459178,
+    459179,
+    459180,
+    459181,
+    459182,
+    459183,
+    459187,
+    459191,
+    459193
+  ],
+  "sampling_interval_s": 0.5
+}

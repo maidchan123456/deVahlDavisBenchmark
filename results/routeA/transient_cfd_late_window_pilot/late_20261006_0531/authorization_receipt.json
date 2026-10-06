@@ -1,0 +1,18 @@
+{
+  "authorization_class": "PLAIN_TRANSIENT_LATE_WINDOW_BOUNDED_PERFORMANCE_PILOT",
+  "source_request": "/home/mirai/.codex/attachments/046e6d55-ec66-4f8c-82d7-103d2a2d8e3e/\u8cbc\u308a\u4ed8\u3051\u305f\u30c6\u30ad\u30b9\u30c8.txt",
+  "source_request_sha256": "3ace544b4f41cc25b7637277de6a7a85607368c835f3588d64eb5ddf213e8a8f",
+  "CFD_ALLOWED": "YES",
+  "SHORT_TRANSIENT_ONLY": "YES",
+  "MPI_RANKS": 12,
+  "MAX_ADDITIONAL_STEPS": 1000,
+  "MAX_WALL_SECONDS": 600,
+  "PRODUCTION_ALLOWED": "NO",
+  "Q3_ALLOWED": "NO",
+  "HEAVY_DIAGNOSTICS_ALLOWED": "NO",
+  "authority_hashes": {
+    "docs/routeA_diagnostic_transient_contract_v1.5.json": "06c71945289ffe419b784843f7aab2fea66c44d28c9dba46d828bbd24837e27d",
+    "docs/routeA_execution_contract_v1.7.json": "fbc744e012f66b37b5d9409be961cb5a9410c3d75ac7e2f026b2acf118d3bb60"
+  },
+  "head": "fd62fb9f5458532a7ebd684b73baf1ea9b415d7e"
+}

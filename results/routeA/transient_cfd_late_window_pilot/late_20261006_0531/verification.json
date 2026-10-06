@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "source_pilot_and_authorities_unchanged": true,
+  "accepted598_plus_initial402_steps_equals1000": true,
+  "cumulative_CFD_wall_under600_seconds": true,
+  "native_stop_at_accepted_step_cap": true,
+  "actual_native_controller_law_every_completed_step": true,
+  "all_outer_and_pressure_energy_solve_counts_correct": true,
+  "pressure_energy_final_linear_residuals_within_registered_tolerance": true,
+  "accepted_attempt_no_fatal_nan_fpe_and_saved_field_sanity_pass": true,
+  "initial_operational_time_precision_failure_preserved": true,
+  "same_physics_numerics_after_logging_repair": true,
+  "12distinct_physical_cores": true,
+  "no_remaining_worker_processes": true,
+  "no_production_Q3_GateJ": true,
+  "no_git_mutations": true,
+  "history_policy": "continuous cold native history; checkpoint restart not certified",
+  "verified_UTC": "2026-10-06T05:43:43.211795+00:00"
+}

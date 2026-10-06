@@ -1,0 +1,54 @@
+[
+  {
+    "argv": [
+      "lscpu"
+    ],
+    "cwd": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/transient_cfd_late_window_pilot/late_20261006_0531/case",
+    "shell": "lscpu",
+    "returncode": 0,
+    "wall_seconds": 0.007062676013447344
+  },
+  {
+    "argv": [
+      "mpirun",
+      "--version"
+    ],
+    "cwd": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/transient_cfd_late_window_pilot/late_20261006_0531/case",
+    "shell": "mpirun --version",
+    "returncode": 0,
+    "wall_seconds": 0.003524883999489248
+  },
+  {
+    "argv": [
+      "foamRun",
+      "-help"
+    ],
+    "cwd": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/transient_cfd_late_window_pilot/late_20261006_0531/case",
+    "shell": "foamRun -help",
+    "returncode": 0,
+    "wall_seconds": 0.023011503042653203
+  },
+  {
+    "argv": [
+      "checkMesh",
+      "-case",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/transient_cfd_late_window_pilot/late_20261006_0531/case"
+    ],
+    "cwd": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/transient_cfd_late_window_pilot/late_20261006_0531/case",
+    "shell": "checkMesh -case /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/transient_cfd_late_window_pilot/late_20261006_0531/case",
+    "returncode": 0,
+    "wall_seconds": 0.28168599191121757
+  },
+  {
+    "argv": [
+      "decomposePar",
+      "-case",
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/transient_cfd_late_window_pilot/late_20261006_0531/case",
+      "-force"
+    ],
+    "cwd": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/transient_cfd_late_window_pilot/late_20261006_0531/case",
+    "shell": "decomposePar -case /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/transient_cfd_late_window_pilot/late_20261006_0531/case -force",
+    "returncode": 0,
+    "wall_seconds": 0.2764813239919022
+  }
+]

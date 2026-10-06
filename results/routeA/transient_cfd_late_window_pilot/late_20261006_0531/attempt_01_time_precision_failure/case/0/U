@@ -1,0 +1,17 @@
+FoamFile
+{
+    format ascii;
+    class volVectorField;
+    object U;
+}
+dimensions [0 1 -1 0 0 0 0];
+internalField uniform (0 0 0);
+boundaryField
+{
+    hotWall    { type noSlip; }
+    coldWall   { type noSlip; }
+    bottomWall { type noSlip; }
+    topWall    { type noSlip; }
+    front      { type empty; }
+    back       { type empty; }
+}

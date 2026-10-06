@@ -1,0 +1,20 @@
+[
+  {
+    "physical_step": 100,
+    "U_component_Linf_difference_m_s": 1.8793994138732728e-14,
+    "T_Linf_difference_K": 1.6484591469634324e-12,
+    "old_time_name": "1.4855724052851444",
+    "new_time_name": "1.485572405285",
+    "gross_same_state_after_output_name_repair": true,
+    "comparison_method": "assemble each separate scotch decomposition into global cell order using its own cellProcAddressing"
+  },
+  {
+    "physical_step": 250,
+    "U_component_Linf_difference_m_s": 1.986501241280081e-13,
+    "T_Linf_difference_K": 1.659827830735594e-11,
+    "old_time_name": "2.9280963393185626",
+    "new_time_name": "2.928096339318",
+    "gross_same_state_after_output_name_repair": true,
+    "comparison_method": "assemble each separate scotch decomposition into global cell order using its own cellProcAddressing"
+  }
+]

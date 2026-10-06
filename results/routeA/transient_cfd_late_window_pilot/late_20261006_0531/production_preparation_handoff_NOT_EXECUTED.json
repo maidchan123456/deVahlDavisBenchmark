@@ -1,0 +1,18 @@
+{
+  "next_task": "PREPARE_ROUTE_A_PLAIN_TRANSIENT_CO05_PRODUCTION_RUN",
+  "status": "RECOMMENDATION_ONLY_NOT_STARTED",
+  "production_execution_authorized": false,
+  "another_performance_pilot_required": false,
+  "basis": "accepted solver sanity, Courant-limited539steps, last200 non-write cost0.115924s with flat later windows; practical conditional runtime",
+  "frozen_conditions": "same source physics/numerics,12physical cores,scotch,pRefPoint,backward,24outer,tight linear solvers,maxCo0.5,initialdt and maxdt unchanged",
+  "preparation_items": [
+    "preregister fluid-only production scope and target physical/dimensionless times without changing historical formal labels",
+    "include output-name timePrecision12 with writePrecision17 and documented native automatic precision increase",
+    "resolve operational restart/checkpoint strategy: native e/K backward histories are not certified by present output; do not fabricate histories or continue an unsafe checkpoint",
+    "plan step/wall/disk limits, native shutdown and checkpoint cadence with write costs separated",
+    "retain per-step native log, low-cost wall timing, dt/Co/linear iterations and failure stop rules",
+    "document estimates as PROJECTED_FROM_LATE_WINDOW and future adaptive-count/per-step-cost uncertainty",
+    "require separate user execution authorization before starting production"
+  ],
+  "source_report": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/transient_cfd_late_window_pilot/late_20261006_0531/RouteA_plain_transient_late_window_performance_pilot.json"
+}

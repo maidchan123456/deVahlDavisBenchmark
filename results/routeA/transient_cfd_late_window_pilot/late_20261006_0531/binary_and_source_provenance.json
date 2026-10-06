@@ -1,0 +1,23 @@
+{
+  "binaries": {
+    "/opt/openfoam13/platforms/linux64GccDPInt32Opt/bin/foamRun": "96aeb56a4fb12fae411076235ca7469f988fc09c0a2eeb288f18cfce3522aead",
+    "/opt/openfoam13/platforms/linux64GccDPInt32Opt/bin/decomposePar": "a8442ff8c272d63d7e7b26afb0f5ca377e1f62a6bc411f3ac29394e69ec3c9ec",
+    "/usr/bin/orterun": "e3a009cd4ab8b41ef23019df3a1388944294b330b7c51ad17be18a0120b36daa",
+    "/opt/openfoam13/platforms/linux64GccDPInt32Opt/lib/libfluid.so": "132832d25c7d28b054a8ee2abdf997709321517c2deb68c8131f5666d7b6c133"
+  },
+  "native_sources": {
+    "/opt/openfoam13/src/OpenFOAM/global/debug/debug.C": "ab47020805f987ab329294b2fdcac080bd469bd6ffbf6ec2a712a428856c6960",
+    "/opt/openfoam13/src/OSspecific/POSIX/signals/sigStopAtWriteNow.C": "2b6221083b0c11227ec6f407450f98e5a1a673347cf31e95a8981378866dea2f",
+    "/opt/openfoam13/src/OSspecific/POSIX/signals/sigWriteNow.C": "06ee262bbc4090413d4cca868ec4edf0363bfcc7578ba13cc23c4d8f0f5efafa",
+    "/opt/openfoam13/src/OpenFOAM/db/Time/Time.C": "c25af623b370d07b877fa127398b499e1e0358931ddf46413f533d9305e685da",
+    "/opt/openfoam13/applications/solvers/foamRun/setDeltaT.C": "656a3a8782614b0f14aff03d0925d339eb6e568356c792f61fa4095d1ade5f11",
+    "/opt/openfoam13/applications/modules/isothermalFluid/isothermalFluid.C": "b1f6631e889b2c83d6468c2d631a106d35d75f5e2bd75e85518d8569e250cf59",
+    "/opt/openfoam13/src/thermophysicalModels/basic/basicThermo/BasicThermo.C": "7785a7015754959b6a4e9a8b7deb094e322cee5284fcda8467b4132e9b7d50e3"
+  },
+  "reference_point": [
+    0.0496875,
+    0.0496875,
+    0.0005
+  ],
+  "ranks": 12
+}

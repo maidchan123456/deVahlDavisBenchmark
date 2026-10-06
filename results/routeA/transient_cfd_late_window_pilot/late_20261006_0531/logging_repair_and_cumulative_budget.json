@@ -1,0 +1,15 @@
+{
+  "failed_attempt_directory": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/transient_cfd_late_window_pilot/late_20261006_0531/attempt_01_time_precision_failure",
+  "failed_completed_steps": 402,
+  "failed_wall_seconds": 49.43460194498766,
+  "new_step_cap": 598,
+  "new_wall_cap_seconds": 550.5653980550123,
+  "timePrecision_before": 17,
+  "timePrecision_after": 12,
+  "writePrecision_unchanged": 17,
+  "cause": "native Time::operator++ time-name roundoff tolerance pow(10,-timePrecision) falls below floating-point subtraction roundoff at t~4s; maxPrecision fatal raised while native physical deltaT remains finite, positive and~0.007s",
+  "native_source": "/opt/openfoam13/src/OpenFOAM/db/Time/Time.C:1272",
+  "authorization_basis": "User section26 permits new attempt for simple path/logging bug; output time-name precision only, no solver/timestep/physical policy changes",
+  "cold_restart": "needed because complete native energy/K histories unavailable; no unsafe continuation",
+  "budget_policy": "all attempts sum<=1000 completed steps and<=600s CFD wall; final continuous trajectory may be shorter than1000"
+}

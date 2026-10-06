@@ -1,0 +1,217 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  13
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 13-441953dfbb42
+Exec   : decomposePar -case /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/transient_cfd_late_window_pilot/late_20261006_0531/case -force
+Date   : Oct 06 2026
+Time   : 14:38:00
+Host   : "mirai-Precision-5860-Tower"
+PID    : 459169
+I/O    : uncollated
+Case   : /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/transient_cfd_late_window_pilot/late_20261006_0531/case
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+sigWriteNow : Enabling writing upon signal 10
+sigStopAtWriteNow : Enabling writing and stopping upon signal 12
+--> FOAM Warning : 
+    From function Foam::Time::Time(const Foam::word&, const Foam::argList&, bool)
+    in file db/Time/Time.C at line 414
+    Reading "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/transient_cfd_late_window_pilot/late_20261006_0531/case/system/controlDict" at line 31
+    OptimisationSwitches in system/controlDict are only processed if decomposePar is run in the "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/transient_cfd_late_window_pilot/late_20261006_0531/case" directory
+sigWriteNow : Enabling writing upon signal 10
+sigStopAtWriteNow : Enabling writing and stopping upon signal 12
+sigWriteNow : Enabling writing upon signal 10
+sigStopAtWriteNow : Enabling writing and stopping upon signal 12
+sigWriteNow : Enabling writing upon signal 10
+sigStopAtWriteNow : Enabling writing and stopping upon signal 12
+sigWriteNow : Enabling writing upon signal 10
+sigStopAtWriteNow : Enabling writing and stopping upon signal 12
+sigWriteNow : Enabling writing upon signal 10
+sigStopAtWriteNow : Enabling writing and stopping upon signal 12
+sigWriteNow : Enabling writing upon signal 10
+sigStopAtWriteNow : Enabling writing and stopping upon signal 12
+sigWriteNow : Enabling writing upon signal 10
+sigStopAtWriteNow : Enabling writing and stopping upon signal 12
+sigWriteNow : Enabling writing upon signal 10
+sigStopAtWriteNow : Enabling writing and stopping upon signal 12
+sigWriteNow : Enabling writing upon signal 10
+sigStopAtWriteNow : Enabling writing and stopping upon signal 12
+sigWriteNow : Enabling writing upon signal 10
+sigStopAtWriteNow : Enabling writing and stopping upon signal 12
+sigWriteNow : Enabling writing upon signal 10
+sigStopAtWriteNow : Enabling writing and stopping upon signal 12
+sigWriteNow : Enabling writing upon signal 10
+sigStopAtWriteNow : Enabling writing and stopping upon signal 12
+Removing 0 existing processor directories
+
+Calculating distribution of cells
+
+Selecting decomposer scotch
+
+Finished decomposition in 0.043784999999999998 s
+
+Calculating original mesh data
+
+Distributing cells to processors
+
+Distributing faces to processors
+
+Distributing points to processors
+
+Constructing processor meshes
+
+Processor 0
+    Number of cells = 2142
+    Number of faces shared with processor 2 = 42
+    Number of faces shared with processor 10 = 14
+    Number of faces shared with processor 11 = 37
+    Number of processor patches = 3
+    Number of processor faces = 93
+    Number of boundary faces = 4377
+
+Processor 1
+    Number of cells = 2142
+    Number of faces shared with processor 2 = 52
+    Number of faces shared with processor 4 = 15
+    Number of faces shared with processor 5 = 53
+    Number of processor patches = 3
+    Number of processor faces = 120
+    Number of boundary faces = 4376
+
+Processor 2
+    Number of cells = 2139
+    Number of faces shared with processor 0 = 42
+    Number of faces shared with processor 1 = 52
+    Number of faces shared with processor 4 = 4
+    Number of faces shared with processor 9 = 35
+    Number of faces shared with processor 10 = 25
+    Number of processor patches = 5
+    Number of processor faces = 158
+    Number of boundary faces = 4324
+
+Processor 3
+    Number of cells = 2154
+    Number of faces shared with processor 4 = 30
+    Number of faces shared with processor 5 = 23
+    Number of faces shared with processor 7 = 43
+    Number of processor patches = 3
+    Number of processor faces = 96
+    Number of boundary faces = 4402
+
+Processor 4
+    Number of cells = 2134
+    Number of faces shared with processor 1 = 15
+    Number of faces shared with processor 2 = 4
+    Number of faces shared with processor 3 = 30
+    Number of faces shared with processor 5 = 84
+    Number of faces shared with processor 7 = 29
+    Number of faces shared with processor 9 = 68
+    Number of processor patches = 6
+    Number of processor faces = 230
+    Number of boundary faces = 4268
+
+Processor 5
+    Number of cells = 2130
+    Number of faces shared with processor 1 = 53
+    Number of faces shared with processor 3 = 23
+    Number of faces shared with processor 4 = 84
+    Number of processor patches = 3
+    Number of processor faces = 160
+    Number of boundary faces = 4342
+
+Processor 6
+    Number of cells = 2119
+    Number of faces shared with processor 8 = 58
+    Number of faces shared with processor 10 = 3
+    Number of faces shared with processor 11 = 34
+    Number of processor patches = 3
+    Number of processor faces = 95
+    Number of boundary faces = 4333
+
+Processor 7
+    Number of cells = 2140
+    Number of faces shared with processor 3 = 43
+    Number of faces shared with processor 4 = 29
+    Number of faces shared with processor 8 = 57
+    Number of faces shared with processor 9 = 26
+    Number of processor patches = 4
+    Number of processor faces = 155
+    Number of boundary faces = 4321
+
+Processor 8
+    Number of cells = 2133
+    Number of faces shared with processor 6 = 58
+    Number of faces shared with processor 7 = 57
+    Number of faces shared with processor 9 = 4
+    Number of faces shared with processor 10 = 34
+    Number of processor patches = 4
+    Number of processor faces = 153
+    Number of boundary faces = 4303
+
+Processor 9
+    Number of cells = 2143
+    Number of faces shared with processor 2 = 35
+    Number of faces shared with processor 4 = 68
+    Number of faces shared with processor 7 = 26
+    Number of faces shared with processor 8 = 4
+    Number of faces shared with processor 10 = 57
+    Number of processor patches = 5
+    Number of processor faces = 190
+    Number of boundary faces = 4286
+
+Processor 10
+    Number of cells = 2112
+    Number of faces shared with processor 0 = 14
+    Number of faces shared with processor 2 = 25
+    Number of faces shared with processor 6 = 3
+    Number of faces shared with processor 8 = 34
+    Number of faces shared with processor 9 = 57
+    Number of faces shared with processor 11 = 63
+    Number of processor patches = 6
+    Number of processor faces = 196
+    Number of boundary faces = 4224
+
+Processor 11
+    Number of cells = 2112
+    Number of faces shared with processor 0 = 37
+    Number of faces shared with processor 6 = 34
+    Number of faces shared with processor 10 = 63
+    Number of processor patches = 3
+    Number of processor faces = 134
+    Number of boundary faces = 4284
+
+Number of processor faces = 890
+Max number of cells = 2154 (0.96874999999999278% above average 2133.3333333333335)
+Max number of processor patches = 6 (50% above average 4)
+Max number of faces between processors = 230 (55.056179775280889% above average 148.33333333333334)
+
+Time = 0s
+
+Decomposing FV fields
+
+    Decomposing volScalarFields
+
+        T
+        p_rgh
+        p
+
+    Decomposing volVectorFields
+
+        U
+
+Decomposing point fields
+
+    (no point fields)
+
+End
+
