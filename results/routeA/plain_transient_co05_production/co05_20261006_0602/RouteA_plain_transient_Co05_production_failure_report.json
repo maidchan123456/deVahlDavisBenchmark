@@ -1,0 +1,73 @@
+{
+  "status": "BLOCKED_HEAD_CHANGED",
+  "failure_stage": "PRELAUNCH_HEAD_GUARD",
+  "preparation_id": "co05_20261006_0602",
+  "user_execution_authorized": "YES",
+  "production_CFD_executed": "NO",
+  "production_normal_exit": "NOT_STARTED",
+  "completed_physical_steps_this_task": 0,
+  "last_completed_time_this_task": null,
+  "cold_initial_time_seconds": 0,
+  "last_completed_tstar_this_task": null,
+  "solver_returncode": null,
+  "preflight": {
+    "task": "RUN_ROUTE_A_PLAIN_TRANSIENT_CO05_PRODUCTION",
+    "status": "BLOCKED_HEAD_CHANGED",
+    "command_argv": [
+      "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/plain_transient_co05_production/co05_20261006_0602/run_production.sh",
+      "--check"
+    ],
+    "cwd": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark",
+    "start_UTC": "2026-10-06T06:32:57.219162+00:00",
+    "end_UTC": "2026-10-06T06:32:57.269527+00:00",
+    "wall_seconds": 0.033364993054419756,
+    "returncode": 2,
+    "stderr": "STOP_AND_REVIEW: HEAD changed; reviewed preparation refresh required\n",
+    "current_HEAD": "f6d59815779a205ce489684dcba452a6f09d10ce",
+    "prepared_expected_HEAD": "f57d60d85e36ea9928e4bc481d3cbde586496f58",
+    "PRODUCTION_CFD_EXECUTED": "NO",
+    "PRODUCTION_EXECUTE_COMMAND_ISSUED": "NO",
+    "HEAD_REPINNED": "NO",
+    "execution_namespace_created": false,
+    "postprocessing_executed": false,
+    "remaining_launcher_guards": "NOT_REACHED: first HEAD guard rejected",
+    "prepared_case_files_reverified": 164,
+    "prepared_case_hashes_match": true,
+    "prepared_artifact_seal_reverified": 53,
+    "prepared_artifact_hashes_match": true
+  },
+  "user_authorization_receipt": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/plain_transient_co05_production/co05_20261006_0602/production_user_authorization_receipt.json",
+  "case_files_unchanged": true,
+  "prepared_artifacts_unchanged": true,
+  "HEAD_repin_executed": false,
+  "automatic_restart_executed": false,
+  "automatic_rerun_executed": false,
+  "postprocessing_completed": false,
+  "disk": {
+    "free_bytes": 792037847040,
+    "total_bytes": 1005867986944
+  },
+  "memory_state": [
+    "MemTotal:       65058016 kB",
+    "MemAvailable:   61734848 kB"
+  ],
+  "physical_model_changed": "NO",
+  "numerical_policy_changed": "NO",
+  "Q3_EXECUTED": "NO",
+  "FORMAL_GATE_J_EXECUTED": "NO",
+  "scientific_status_unchanged": {
+    "FORMAL_GATE_J_CURRENTLY_ALLOWED": "NO",
+    "FORMAL_GATE_J_EXECUTED": "NO",
+    "BENCHMARK_CORE_PASS": "NO",
+    "ROUTE_A_CHARACTERIZED": "NO",
+    "ALL_ROUTE_A_GATE_F": "FAIL",
+    "ALL_RA_NEEDS_320": "YES",
+    "GRID_INDEPENDENT_TRANSIENT_CLAIM_ALLOWED": "NO",
+    "DOWNSTREAM_TRANSIENT_READY": "NO",
+    "PARTICLE_COUPLING_READY": "NO",
+    "FORMAL_GATE_J_PASS": "NOT_EVALUATED"
+  },
+  "NEXT_SINGLE_TASK": "REVIEW_ROUTE_A_CO05_PRODUCTION_HEAD_CHANGE",
+  "USER_DECISION_REQUIRED": "YES",
+  "no_result_claim": "No production transient result exists; no runtime/QoI/steady or time-horizon assessment was performed."
+}

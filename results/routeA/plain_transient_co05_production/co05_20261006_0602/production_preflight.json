@@ -1,0 +1,26 @@
+{
+  "task": "RUN_ROUTE_A_PLAIN_TRANSIENT_CO05_PRODUCTION",
+  "status": "BLOCKED_HEAD_CHANGED",
+  "command_argv": [
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/plain_transient_co05_production/co05_20261006_0602/run_production.sh",
+    "--check"
+  ],
+  "cwd": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark",
+  "start_UTC": "2026-10-06T06:32:57.219162+00:00",
+  "end_UTC": "2026-10-06T06:32:57.269527+00:00",
+  "wall_seconds": 0.033364993054419756,
+  "returncode": 2,
+  "stderr": "STOP_AND_REVIEW: HEAD changed; reviewed preparation refresh required\n",
+  "current_HEAD": "f6d59815779a205ce489684dcba452a6f09d10ce",
+  "prepared_expected_HEAD": "f57d60d85e36ea9928e4bc481d3cbde586496f58",
+  "PRODUCTION_CFD_EXECUTED": "NO",
+  "PRODUCTION_EXECUTE_COMMAND_ISSUED": "NO",
+  "HEAD_REPINNED": "NO",
+  "execution_namespace_created": false,
+  "postprocessing_executed": false,
+  "remaining_launcher_guards": "NOT_REACHED: first HEAD guard rejected",
+  "prepared_case_files_reverified": 164,
+  "prepared_case_hashes_match": true,
+  "prepared_artifact_seal_reverified": 53,
+  "prepared_artifact_hashes_match": true
+}
