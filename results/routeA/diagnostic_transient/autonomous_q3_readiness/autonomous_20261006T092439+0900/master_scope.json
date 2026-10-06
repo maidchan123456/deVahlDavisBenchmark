@@ -1,0 +1,17 @@
+{
+  "master_run_id": "autonomous_20261006T092439+0900",
+  "master_prompt": "/home/mirai/.codex/attachments/0e302109-96e9-40eb-a779-94ecf1d7f359/\u8cbc\u308a\u4ed8\u3051\u305f\u30c6\u30ad\u30b9\u30c8.txt",
+  "master_prompt_sha256": "9e21c121aee78322a4ed0823c4d182e83b5d74602cc531c3681ee6ca2d0188b9",
+  "maximum_major_cycles": 3,
+  "authorized_scope": [
+    "tiny validation",
+    "receiver microbenchmark",
+    "bounded nonCFD scouts",
+    "Q1",
+    "Q2",
+    "Q3 preparation"
+  ],
+  "CFD_authorized": false,
+  "production_authorized": false,
+  "revision_namespace": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/compute_revision_v2/measurement"
+}

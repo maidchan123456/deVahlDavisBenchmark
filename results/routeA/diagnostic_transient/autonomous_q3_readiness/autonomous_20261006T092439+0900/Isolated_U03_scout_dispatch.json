@@ -1,0 +1,6 @@
+{
+  "authorization": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/autonomous_q3_readiness/autonomous_20261006T092439+0900/Isolated_U03_scout_authorization.json",
+  "manifest": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/autonomous_q3_readiness/autonomous_20261006T092439+0900/Isolated_U03_scout_harness_manifest.json",
+  "output": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/timing_qualification/isolated_U03_20261006T094954+0900_v3",
+  "plan": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/autonomous_q3_readiness/autonomous_20261006T092439+0900/Isolated_U03_scout_plan.json"
+}

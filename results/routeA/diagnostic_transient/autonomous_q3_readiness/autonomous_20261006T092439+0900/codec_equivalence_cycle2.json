@@ -1,0 +1,97 @@
+{
+  "CPP_output": "PASS 2000 JSON values + omit-key identity\n",
+  "JSON_cases": 2000,
+  "JSON_omit_key_identity_exact": true,
+  "RAP13_fixtures": 310,
+  "algorithm_U03_changed": false,
+  "negative_errors_exact": true,
+  "packed_microbench": [
+    {
+      "codec": "old",
+      "n": 4,
+      "packed_sha256": "e21478c2f709bb6dacbb502cbe8a5672b919bbadd21889cb245983028caf21a1",
+      "repeat": 0,
+      "seconds": 0.00035927200224250555
+    },
+    {
+      "codec": "new",
+      "n": 4,
+      "packed_sha256": "e21478c2f709bb6dacbb502cbe8a5672b919bbadd21889cb245983028caf21a1",
+      "repeat": 0,
+      "seconds": 0.00017580401618033648
+    },
+    {
+      "codec": "old",
+      "n": 4,
+      "packed_sha256": "e21478c2f709bb6dacbb502cbe8a5672b919bbadd21889cb245983028caf21a1",
+      "repeat": 1,
+      "seconds": 0.0001905589597299695
+    },
+    {
+      "codec": "new",
+      "n": 4,
+      "packed_sha256": "e21478c2f709bb6dacbb502cbe8a5672b919bbadd21889cb245983028caf21a1",
+      "repeat": 1,
+      "seconds": 0.00012822006829082966
+    },
+    {
+      "codec": "old",
+      "n": 4,
+      "packed_sha256": "e21478c2f709bb6dacbb502cbe8a5672b919bbadd21889cb245983028caf21a1",
+      "repeat": 2,
+      "seconds": 0.00014965294394642115
+    },
+    {
+      "codec": "new",
+      "n": 4,
+      "packed_sha256": "e21478c2f709bb6dacbb502cbe8a5672b919bbadd21889cb245983028caf21a1",
+      "repeat": 2,
+      "seconds": 0.0001213290961459279
+    },
+    {
+      "codec": "old",
+      "n": 2048,
+      "packed_sha256": "11d6973661dc14681ecff4f21177f3391323de2405e46229d47474b5736c0ca0",
+      "repeat": 0,
+      "seconds": 0.004475516965612769
+    },
+    {
+      "codec": "new",
+      "n": 2048,
+      "packed_sha256": "11d6973661dc14681ecff4f21177f3391323de2405e46229d47474b5736c0ca0",
+      "repeat": 0,
+      "seconds": 0.0017184339230880141
+    },
+    {
+      "codec": "old",
+      "n": 2048,
+      "packed_sha256": "11d6973661dc14681ecff4f21177f3391323de2405e46229d47474b5736c0ca0",
+      "repeat": 1,
+      "seconds": 0.004844213020987809
+    },
+    {
+      "codec": "new",
+      "n": 2048,
+      "packed_sha256": "11d6973661dc14681ecff4f21177f3391323de2405e46229d47474b5736c0ca0",
+      "repeat": 1,
+      "seconds": 0.0016985760303214192
+    },
+    {
+      "codec": "old",
+      "n": 2048,
+      "packed_sha256": "11d6973661dc14681ecff4f21177f3391323de2405e46229d47474b5736c0ca0",
+      "repeat": 2,
+      "seconds": 0.003733734949491918
+    },
+    {
+      "codec": "new",
+      "n": 2048,
+      "packed_sha256": "11d6973661dc14681ecff4f21177f3391323de2405e46229d47474b5736c0ca0",
+      "repeat": 2,
+      "seconds": 0.001690443023107946
+    }
+  ],
+  "scientific_content_changed": false,
+  "status": "PASS",
+  "transport_JSON_unchanged": true
+}

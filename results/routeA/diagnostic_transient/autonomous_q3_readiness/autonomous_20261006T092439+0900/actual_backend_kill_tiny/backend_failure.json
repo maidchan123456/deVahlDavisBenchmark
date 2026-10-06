@@ -1,0 +1,16 @@
+{
+  "callbacks_completed": 1,
+  "error": "EVIDENCE_FAILURE: MISSING_DUPLICATE_STAGE",
+  "matrix_packets_completed": 0,
+  "spans_seconds_inclusive": {
+    "JSON_decode": 0.0002689789980649948,
+    "backend_receive": 5.690800026059151e-05,
+    "canonical": 0.001196236931718886,
+    "canonicalization": 0.0012052629608660936,
+    "isolated_callback": 0.0018130639800801873,
+    "replay": 3.0490336939692497e-06,
+    "sha": 1.6218051314353943e-05,
+    "writer_accept": 7.93894287198782e-06
+  },
+  "status": "STOPPED"
+}

@@ -1,0 +1,99 @@
+[
+  {
+    "sequence": 1,
+    "task": "START_GUARD",
+    "input_HEAD": "53e81a3ccd2a621d31ff5c7cefdd4864a4db62f3",
+    "action": "Verified both frozen authorities; copied measurement harness to a new namespace; recorded historical byte/mtime guard.",
+    "tests": "canonical/formal SHA PASS",
+    "measurement": null,
+    "decision": "Proceed C0 + durable observability + CPU attribution + lossless trace before target scouts.",
+    "next": "revision then tiny validation"
+  },
+  {
+    "sequence": 2,
+    "task": "C0_TINY_VALIDATION",
+    "input_HEAD": "53e81a3ccd2a621d31ff5c7cefdd4864a4db62f3",
+    "action": "New C0, durable ledger, cumulative subtree CPU, gzip trace implementations.",
+    "tests": "9 revision tests PASS; full 1145/701 old/new and observer ON/OFF exact scientific result/evidence hashes PASS. Additional tests initially FAIL: replay fixture sequence=5 rather than1; missing-file error expected ValueError. Both are test fixture defects, not hidden.",
+    "measurement": {
+      "tiny_suite_seconds": 53.401
+    },
+    "decision": "Correct additional test fixture in new attempt; retain failed attempt; complete original46 suite.",
+    "next": "additional validation then receiver microbench"
+  },
+  {
+    "sequence": 3,
+    "task": "SCOUT_CYCLE_1_PREREGISTERED",
+    "input_HEAD": "53e81a3ccd2a621d31ff5c7cefdd4864a4db62f3",
+    "action": "C0 revision frozen/pinned; one-shot actual target 25600-cell scout: controller/field/term and 1/2/3 matrix packets plus OFF framework. New ID and immutable master-based authorization.",
+    "tests": "original46 PASS; fullgraph scientific/Writer equivalence PASS; 9 revision +2 additional +7 CPU bounds +6 tiny campaign trials PASS; new permission negatives PASS. Earlier fixture/declaration/verifier mistakes retained, corrected before target execution.",
+    "measurement": [
+      {
+        "bytes": 4096,
+        "isolated_receiver_ratio": 12.171835591131746,
+        "new_median_seconds": 0.00028483394999057055,
+        "old_median_seconds": 0.0034669520100578666
+      },
+      {
+        "bytes": 524288,
+        "isolated_receiver_ratio": 378.60674087764244,
+        "new_median_seconds": 0.000833287020213902,
+        "old_median_seconds": 0.3154880829388276
+      }
+    ],
+    "decision": "Trial76s/stage563s derived from historical callback wall, source copy/matrix counts, microbench upper proxies and explicit margin; no doubling/retry.",
+    "next": "Run exactly preregistered scout once, then evaluate C0 and resource budget model."
+  },
+  {
+    "sequence": 4,
+    "task": "CYCLE_1_EVALUATION_AND_CYCLE_2_REVISION",
+    "input_HEAD": "53e81a3ccd2a621d31ff5c7cefdd4864a4db62f3",
+    "action": "All seven scout trials complete. C0 removed send backpressure; new ledger spans recovered. Conservative asynchronous proc CPU bounds inflate residual when reading a large process snapshot. Dedicated transient user-scope CPU accounting available.",
+    "tests": "All original and new pre-scout validations PASS",
+    "measurement": "Controller3.369s, field3.381s, matrix2.254s, term1.610s, energy2matrix5.781s, pressure3matrix3.865s callback; no stable host samples yet.",
+    "decision": "Cycle1 complete. Preserve it immutable; cycle2 modifies measurement attribution only to include complete lifetime CPU with inexpensive bookends. Static transport cache not indicated by millisecond socket send path.",
+    "next": "New namespace v3; tiny/cgroup/equivalence validation; new plan/ID scout."
+  },
+  {
+    "sequence": 5,
+    "task": "SCOUT_CYCLE_2_PREREGISTERED",
+    "input_HEAD": "53e81a3ccd2a621d31ff5c7cefdd4864a4db62f3",
+    "action": "New v3 C0+exact codec optimization, dedicated cgroup CPU counter, lossless trace, durable ledger frozen. New one-shot scout with 3 repeats of six classes and OFF.",
+    "tests": "original46 PASS reused unchanged historical sources; cycle2 9 fullgraph/receiver/observer +2 kill/permission +7 bounds tests PASS; 6 nested tiny scoped trials all host STABLE; controlled short child/external scope test PASS; native JSON2000 +RAP13 310 fixtures exact; crossrevision1145/701 Writer hashes and backend results exact.",
+    "measurement": 0.000500819063745439,
+    "decision": "Freeze new sources/plan; keep76s cap derived from source/micro/historical model, stage1627s for21 trials. No retry of cycle1.",
+    "next": "Execute21 registered trials, then evaluate feasibility and Q1 full protocol."
+  },
+  {
+    "sequence": 6,
+    "task": "CYCLE_2_EVALUATION_AND_RESOURCE_HARD_STOP",
+    "input_HEAD": "53e81a3ccd2a621d31ff5c7cefdd4864a4db62f3",
+    "action": "Completed21 target class/OFF trials and21 isolated U03 trials. All STABLE. Source-frequency callback cost and earliest-arrival/endpoint planning scenarios evaluated.",
+    "tests": "Exact science/Writer/RAP13/JSON equivalence and scoped CPU attribution PASS. U03 unchanged.",
+    "measurement": {
+      "scouted_callbacks_seconds": [
+        0.958,
+        3.374
+      ],
+      "step_primitive_proxy_seconds": {
+        "central": 2101.614222754155,
+        "conservative": 4526.756682729232,
+        "lower": 1973.9188626020914
+      },
+      "U03_empirical_exponent": 1.942846140870192,
+      "U03_6400_median_seconds": 32.800608171964996
+    },
+    "decision": "HARD_STOP RESOURCE_REDESIGN (master106/108): conditional compute demand is months/years even before omitted full evaluator/solver/audit work. Small static transport references do not qualify compute. Further callback/state reuse, binary/bulk or parallel/asynchronous designs require a separate major architecture decision. No new fullQ1/Q2 authorization, no Q3 preparation/readiness claim.",
+    "next": "Freeze evidence, verify history/source/authority/cleanup, write final report and decision options."
+  },
+  {
+    "sequence": 7,
+    "task": "FINAL_VERIFICATION_AND_REPORT",
+    "input_HEAD": "53e81a3ccd2a621d31ff5c7cefdd4864a4db62f3",
+    "action": "Verified48580 historical files and all immutable new scout pins; recorded gitstatus/diff and process/scope cleanup; finalized both reports and required status.",
+    "tests": "All stated final guards PASS",
+    "measurement": null,
+    "decision": "BLOCKED_RESOURCE_REDESIGN, Q3readyNO, noCFD/production/no newfullQ1Q2.",
+    "next": "User major architecture decision; no further automatic execution."
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "required_final_fields_present": 60,
+  "provided_status_fields": 67,
+  "scientific_and_authorization_invariants": "PASS",
+  "old_failed_campaign_files_unchanged": 49,
+  "owned_measurement_processes_remaining": [],
+  "dedicated_scopes_remaining": [],
+  "CFD_executed": false,
+  "git_mutation_executed": false
+}

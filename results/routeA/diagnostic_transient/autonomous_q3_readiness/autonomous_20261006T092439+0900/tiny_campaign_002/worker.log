@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/compute_revision_v2/measurement/campaign.py", line 157, in <module>
+    stage_body(reqfile.parent,r['stage'],Path(r['auth']) if r['auth'] else None,r['prior'],r['tiny'],r['test_requests'])
+  File "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/compute_revision_v2/measurement/campaign.py", line 81, in stage_body
+    receipt=test_receipt(root,stage,budget,prior) if tiny else __import__('runner').stage_receipt(root,stage,auth,prior)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/compute_revision_v2/measurement/campaign.py", line 30, in test_receipt
+    declaration=qualification.validate_permission(spec)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/v1_5_runtime/qualification.py", line 45, in validate_permission
+    need(isinstance(auth['allowed_stages'], list) and mode in auth['allowed_stages']
+  File "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/v1_5_runtime/authority.py", line 17, in need
+    raise ValueError(code)
+ValueError: STOP_STAGE_PERMISSION

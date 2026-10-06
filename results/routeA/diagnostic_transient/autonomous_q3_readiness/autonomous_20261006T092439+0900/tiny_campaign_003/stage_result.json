@@ -1,0 +1,666 @@
+{
+  "Q1_accounting": null,
+  "Q3_authorized": false,
+  "STOP_reason": null,
+  "actual_authorization_created": false,
+  "classification": "TINY_CORRECTNESS_ONLY_NOT_TARGET_MEASUREMENT",
+  "completed_repeats": 6,
+  "cost_classes": {
+    "campaign_startup": [],
+    "finalization": "native FINISH span and backend finalization parent tree overlap",
+    "full_startup_audit": "startup Writer.accept inclusive spans + stream_hash_commit_fsync; no additive ACK",
+    "per_trial_setup": "worker_summary.setup_completed_monotonic minus watchdog start; includes authority/process setup",
+    "recurring_step_equivalent": "native callback spans excluding constructor; full external wall retained separately",
+    "selected_audit": "backend class persistence_write_fsync_manifest spans at bundle publication",
+    "startup_audit_projection_multiplicity": 3
+  },
+  "execution_authorized": false,
+  "file_layout": {
+    "kind": "bounded_resource_only_scout"
+  },
+  "pairedONminusOFF": [],
+  "resource_feasibility": "UNRESOLVED",
+  "stability": {
+    "tiny_controller|controller": {
+      "TIMING_STABILITY": "LOW",
+      "automatic_extra_repeats": false,
+      "reason": "insufficient completed repeats",
+      "status": "UNRESOLVED"
+    },
+    "tiny_energy_matrix|energy_matrix": {
+      "TIMING_STABILITY": "LOW",
+      "automatic_extra_repeats": false,
+      "reason": "insufficient completed repeats",
+      "status": "UNRESOLVED"
+    },
+    "tiny_field|field": {
+      "TIMING_STABILITY": "LOW",
+      "automatic_extra_repeats": false,
+      "reason": "insufficient completed repeats",
+      "status": "UNRESOLVED"
+    },
+    "tiny_matrix|matrix": {
+      "TIMING_STABILITY": "LOW",
+      "automatic_extra_repeats": false,
+      "reason": "insufficient completed repeats",
+      "status": "UNRESOLVED"
+    },
+    "tiny_pressure_matrix|pressure_matrix": {
+      "TIMING_STABILITY": "LOW",
+      "automatic_extra_repeats": false,
+      "reason": "insufficient completed repeats",
+      "status": "UNRESOLVED"
+    },
+    "tiny_term|term": {
+      "TIMING_STABILITY": "LOW",
+      "automatic_extra_repeats": false,
+      "reason": "insufficient completed repeats",
+      "status": "UNRESOLVED"
+    }
+  },
+  "stage": "SCOUT",
+  "status": "COMPLETE_REQUIRES_RESOURCE_REVIEW",
+  "trials": [
+    {
+      "STOP_reason": null,
+      "archive_index": {
+        "artifacts": 23,
+        "index_length": 7392,
+        "index_offset": 0,
+        "record_hash": "d904b010438822eb87d38ce55974d0c649fe232b656c44d9e569884791180ed8",
+        "sha256": "b845f84f180f53d53169f932e5fe2f3d596e2f06bcacfb6b5ff0bad9f69c1362",
+        "status": "COMPLETE",
+        "trial_id": "000_tiny_controller"
+      },
+      "completed_repeats": 1,
+      "disk": {
+        "disk_free": 793346650112,
+        "file_count": 32,
+        "free_inodes": 59453656,
+        "scratch_bytes": 233472
+      },
+      "end_monotonic": 665606.126074024,
+      "exit_code": 0,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.07954545454545454,
+        "other_CPU_method": "cumulative live subtree + reaped descendants + measurement observer own CPU; uncertainty uses host busy upper bound",
+        "reasons": [
+          "missing or changed measurement root identity",
+          "subtree sampling/reap race or counter discontinuity"
+        ],
+        "samples": 39,
+        "status": "UNRESOLVED",
+        "uncertain_intervals": 1
+      },
+      "memory_event_coverage": [],
+      "partial_output_retained": true,
+      "peak_RSS_bytes": {
+        "all_processes_simultaneous": 159977472,
+        "backend": 64614400,
+        "combined_simultaneous": 71495680,
+        "native": 10166272
+      },
+      "remaining_live_pids": [],
+      "request": {
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "kind": "pipeline",
+        "mode": "ON",
+        "phase": "tiny_controller",
+        "purpose": "primitive",
+        "sample_class": "controller"
+      },
+      "resource_trace_SHA256": "f8d74f27d9b4812a986f0269bb907ed1dc0e9965fbf4ad62fa7e95dc0c2fa6be",
+      "sample_valid": true,
+      "samples": 39,
+      "signal": null,
+      "stage": "SCOUT",
+      "start_monotonic": 665604.675906812,
+      "status": "COMPLETE",
+      "sum_individual_native_backend_peaks_upper_bound": 74780672,
+      "trace_accounting": {
+        "lossless": true,
+        "raw_SHA256": "0af43bd712737e5b15b6f947a2dd3c223b289a01f92333960e46d645ca1037cf",
+        "representation": "concatenated complete gzip members; one raw JSON line per member",
+        "sample_fields_unchanged": true,
+        "samples": 39,
+        "stored_bytes": 42189,
+        "uncompressed_bytes": 128668
+      },
+      "trace_samples": 39,
+      "tracked_pids": [
+        450281,
+        450285,
+        450286,
+        450287,
+        450288
+      ],
+      "trial_id": "000_tiny_controller",
+      "wall_seconds": 1.450167495990172,
+      "worker": {
+        "backend_exit": 0,
+        "backend_time_v": {
+          "CPU_system_seconds": 0.06,
+          "CPU_user_seconds": 0.25,
+          "peak_RSS_bytes": 66482176.0
+        },
+        "callbacks_recurring": 1,
+        "constructor_native_seconds": 0.09444724000059068,
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "matrix_packets": 0,
+        "mode": "ON",
+        "native_exit": 0,
+        "native_time_v": {
+          "CPU_system_seconds": 0.0,
+          "CPU_user_seconds": 0.0,
+          "peak_RSS_bytes": 8302592.0
+        },
+        "purpose": "primitive",
+        "recurring_native_seconds": 0.012127998052164912,
+        "setup_completed_monotonic": 665605.930956554,
+        "status": "COMPLETE"
+      }
+    },
+    {
+      "STOP_reason": null,
+      "archive_index": {
+        "artifacts": 23,
+        "index_length": 7363,
+        "index_offset": 7392,
+        "record_hash": "8e793c0bba6df78f5a395766311d86b7e75ac0b802de21be2fd533ac74b342f6",
+        "sha256": "cce661d45df7455cd65dde9be7d8d61e9b85dc89ea81c20ca8b7269da2a912a5",
+        "status": "COMPLETE",
+        "trial_id": "001_tiny_field"
+      },
+      "completed_repeats": 1,
+      "disk": {
+        "disk_free": 793346457600,
+        "file_count": 34,
+        "free_inodes": 59453662,
+        "scratch_bytes": 385024
+      },
+      "end_monotonic": 665607.911869505,
+      "exit_code": 0,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.1,
+        "other_CPU_method": "cumulative live subtree + reaped descendants + measurement observer own CPU; uncertainty uses host busy upper bound",
+        "reasons": [
+          "missing or changed measurement root identity",
+          "subtree sampling/reap race or counter discontinuity"
+        ],
+        "samples": 39,
+        "status": "UNRESOLVED",
+        "uncertain_intervals": 1
+      },
+      "memory_event_coverage": [],
+      "partial_output_retained": true,
+      "peak_RSS_bytes": {
+        "all_processes_simultaneous": 159100928,
+        "backend": 67121152,
+        "combined_simultaneous": 74002432,
+        "native": 10162176
+      },
+      "remaining_live_pids": [],
+      "request": {
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "kind": "pipeline",
+        "mode": "ON",
+        "phase": "tiny_field",
+        "purpose": "primitive",
+        "sample_class": "field"
+      },
+      "resource_trace_SHA256": "276825c876db32f6a94773a0fb95326acd89725c420dc2e92e47c686667f0bb5",
+      "sample_valid": true,
+      "samples": 39,
+      "signal": null,
+      "stage": "SCOUT",
+      "start_monotonic": 665606.442946762,
+      "status": "COMPLETE",
+      "sum_individual_native_backend_peaks_upper_bound": 77283328,
+      "trace_accounting": {
+        "lossless": true,
+        "raw_SHA256": "acea5ca2c0c728e094bf645a36e5513e4ba46c0ed74b61508ae42b98a321847f",
+        "representation": "concatenated complete gzip members; one raw JSON line per member",
+        "sample_fields_unchanged": true,
+        "samples": 39,
+        "stored_bytes": 42613,
+        "uncompressed_bytes": 129019
+      },
+      "trace_samples": 39,
+      "tracked_pids": [
+        450290,
+        450291,
+        450292,
+        450293,
+        450294
+      ],
+      "trial_id": "001_tiny_field",
+      "wall_seconds": 1.4689230610383675,
+      "worker": {
+        "backend_exit": 0,
+        "backend_time_v": {
+          "CPU_system_seconds": 0.07,
+          "CPU_user_seconds": 0.24,
+          "peak_RSS_bytes": 66465792.0
+        },
+        "callbacks_recurring": 1,
+        "constructor_native_seconds": 0.08960430894512683,
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "matrix_packets": 0,
+        "mode": "ON",
+        "native_exit": 0,
+        "native_time_v": {
+          "CPU_system_seconds": 0.0,
+          "CPU_user_seconds": 0.0,
+          "peak_RSS_bytes": 8499200.0
+        },
+        "purpose": "primitive",
+        "recurring_native_seconds": 0.012902645044960082,
+        "setup_completed_monotonic": 665607.725389503,
+        "status": "COMPLETE"
+      }
+    },
+    {
+      "STOP_reason": null,
+      "archive_index": {
+        "artifacts": 26,
+        "index_length": 8216,
+        "index_offset": 14755,
+        "record_hash": "6393f75ac59353b82e5d52cfff30383210e20a3154fe39c052e0b21065f79e81",
+        "sha256": "d379073dc5ac5001dd5cc948581f943818340860c4acb0566d187f54173f694d",
+        "status": "COMPLETE",
+        "trial_id": "002_tiny_matrix"
+      },
+      "completed_repeats": 1,
+      "disk": {
+        "disk_free": 793346228224,
+        "file_count": 38,
+        "free_inodes": 59453658,
+        "scratch_bytes": 581632
+      },
+      "end_monotonic": 665609.619297362,
+      "exit_code": 0,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.046511627906976744,
+        "other_CPU_method": "cumulative live subtree + reaped descendants + measurement observer own CPU; uncertainty uses host busy upper bound",
+        "reasons": [
+          "missing or changed measurement root identity",
+          "subtree sampling/reap race or counter discontinuity"
+        ],
+        "samples": 40,
+        "status": "UNRESOLVED",
+        "uncertain_intervals": 1
+      },
+      "memory_event_coverage": [],
+      "partial_output_retained": true,
+      "peak_RSS_bytes": {
+        "all_processes_simultaneous": 163373056,
+        "backend": 53354496,
+        "combined_simultaneous": 63324160,
+        "native": 9969664
+      },
+      "remaining_live_pids": [],
+      "request": {
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "kind": "pipeline",
+        "mode": "ON",
+        "phase": "tiny_matrix",
+        "purpose": "primitive",
+        "sample_class": "matrix"
+      },
+      "resource_trace_SHA256": "91cd965fbe07b90f7323b1f266020fa22e8bf2e7519534f1493b0e4e54c6a891",
+      "sample_valid": true,
+      "samples": 40,
+      "signal": null,
+      "stage": "SCOUT",
+      "start_monotonic": 665608.126081882,
+      "status": "COMPLETE",
+      "sum_individual_native_backend_peaks_upper_bound": 63324160,
+      "trace_accounting": {
+        "lossless": true,
+        "raw_SHA256": "575a1313cb81ea0f4430f2f661a6c28e2fe9d4533cc01e25f1512d01f57c99fc",
+        "representation": "concatenated complete gzip members; one raw JSON line per member",
+        "sample_fields_unchanged": true,
+        "samples": 40,
+        "stored_bytes": 43537,
+        "uncompressed_bytes": 132869
+      },
+      "trace_samples": 40,
+      "tracked_pids": [
+        450296,
+        450297,
+        450298,
+        450299,
+        450300
+      ],
+      "trial_id": "002_tiny_matrix",
+      "wall_seconds": 1.4932157299481332,
+      "worker": {
+        "backend_exit": 0,
+        "backend_time_v": {
+          "CPU_system_seconds": 0.07,
+          "CPU_user_seconds": 0.24,
+          "peak_RSS_bytes": 66453504.0
+        },
+        "callbacks_recurring": 1,
+        "constructor_native_seconds": 0.09202618198469281,
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "matrix_packets": 1,
+        "mode": "ON",
+        "native_exit": 0,
+        "native_time_v": {
+          "CPU_system_seconds": 0.0,
+          "CPU_user_seconds": 0.0,
+          "peak_RSS_bytes": 8101888.0
+        },
+        "purpose": "primitive",
+        "recurring_native_seconds": 0.04136276396457106,
+        "setup_completed_monotonic": 665609.391700757,
+        "status": "COMPLETE"
+      }
+    },
+    {
+      "STOP_reason": null,
+      "archive_index": {
+        "artifacts": 24,
+        "index_length": 7653,
+        "index_offset": 22971,
+        "record_hash": "896f43ca0d38dd06e1e40c357fc23c7464522d7930b6000d95e3eeab09cf98a2",
+        "sha256": "fcc6161026b07252cb2e0dd9a343e23337e3e32a4a5bc279e76cf46ccea629a6",
+        "status": "COMPLETE",
+        "trial_id": "003_tiny_term"
+      },
+      "completed_repeats": 1,
+      "disk": {
+        "disk_free": 793346031616,
+        "file_count": 36,
+        "free_inodes": 59453660,
+        "scratch_bytes": 716800
+      },
+      "end_monotonic": 665611.323062324,
+      "exit_code": 0,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.056179775280898875,
+        "other_CPU_method": "cumulative live subtree + reaped descendants + measurement observer own CPU; uncertainty uses host busy upper bound",
+        "reasons": [
+          "missing or changed measurement root identity",
+          "subtree sampling/reap race or counter discontinuity"
+        ],
+        "samples": 39,
+        "status": "UNRESOLVED",
+        "uncertain_intervals": 1
+      },
+      "memory_event_coverage": [],
+      "partial_output_retained": true,
+      "peak_RSS_bytes": {
+        "all_processes_simultaneous": 163233792,
+        "backend": 66949120,
+        "combined_simultaneous": 73797632,
+        "native": 9940992
+      },
+      "remaining_live_pids": [],
+      "request": {
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "kind": "pipeline",
+        "mode": "ON",
+        "phase": "tiny_term",
+        "purpose": "primitive",
+        "sample_class": "term"
+      },
+      "resource_trace_SHA256": "74724230755cf6f89cdb4687847e8c7835257765229bf35b5df750e2573c5992",
+      "sample_valid": true,
+      "samples": 39,
+      "signal": null,
+      "stage": "SCOUT",
+      "start_monotonic": 665609.868321816,
+      "status": "COMPLETE",
+      "sum_individual_native_backend_peaks_upper_bound": 76890112,
+      "trace_accounting": {
+        "lossless": true,
+        "raw_SHA256": "335f400546a449c496ece887cf0caf692cdcd400469d11d3291ab90d32745f4c",
+        "representation": "concatenated complete gzip members; one raw JSON line per member",
+        "sample_fields_unchanged": true,
+        "samples": 39,
+        "stored_bytes": 42457,
+        "uncompressed_bytes": 129237
+      },
+      "trace_samples": 39,
+      "tracked_pids": [
+        450302,
+        450303,
+        450304,
+        450305,
+        450306
+      ],
+      "trial_id": "003_tiny_term",
+      "wall_seconds": 1.4547408650396392,
+      "worker": {
+        "backend_exit": 0,
+        "backend_time_v": {
+          "CPU_system_seconds": 0.07,
+          "CPU_user_seconds": 0.24,
+          "peak_RSS_bytes": 66215936.0
+        },
+        "callbacks_recurring": 1,
+        "constructor_native_seconds": 0.09418528794776648,
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "matrix_packets": 0,
+        "mode": "ON",
+        "native_exit": 0,
+        "native_time_v": {
+          "CPU_system_seconds": 0.0,
+          "CPU_user_seconds": 0.0,
+          "peak_RSS_bytes": 7938048.0
+        },
+        "purpose": "primitive",
+        "recurring_native_seconds": 0.010681724990718067,
+        "setup_completed_monotonic": 665611.131399152,
+        "status": "COMPLETE"
+      }
+    },
+    {
+      "STOP_reason": null,
+      "archive_index": {
+        "artifacts": 26,
+        "index_length": 8240,
+        "index_offset": 30624,
+        "record_hash": "9129c646856226462db543ca5f6c50a9224e330634a44afda92dc41fed62c134",
+        "sha256": "6328d92dc04fb889246e4efa138f13b27938272dd0c046d6ebae43b07aaca3ca",
+        "status": "COMPLETE",
+        "trial_id": "004_tiny_energy_matrix"
+      },
+      "completed_repeats": 1,
+      "disk": {
+        "disk_free": 793345835008,
+        "file_count": 40,
+        "free_inodes": 59453656,
+        "scratch_bytes": 913408
+      },
+      "end_monotonic": 665612.988501042,
+      "exit_code": 0,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.06741573033707865,
+        "other_CPU_method": "cumulative live subtree + reaped descendants + measurement observer own CPU; uncertainty uses host busy upper bound",
+        "reasons": [
+          "missing or changed measurement root identity",
+          "subtree sampling/reap race or counter discontinuity"
+        ],
+        "samples": 40,
+        "status": "UNRESOLVED",
+        "uncertain_intervals": 1
+      },
+      "memory_event_coverage": [],
+      "partial_output_retained": true,
+      "peak_RSS_bytes": {
+        "all_processes_simultaneous": 161234944,
+        "backend": 53248000,
+        "combined_simultaneous": 63332352,
+        "native": 10084352
+      },
+      "remaining_live_pids": [],
+      "request": {
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "kind": "pipeline",
+        "mode": "ON",
+        "phase": "tiny_energy_matrix",
+        "purpose": "primitive",
+        "sample_class": "energy_matrix"
+      },
+      "resource_trace_SHA256": "c577a6a59eaf8e1a86331a16e4bd06a88c39f37a33bb6a1a4857f7816ffb4356",
+      "sample_valid": true,
+      "samples": 40,
+      "signal": null,
+      "stage": "SCOUT",
+      "start_monotonic": 665611.525559844,
+      "status": "COMPLETE",
+      "sum_individual_native_backend_peaks_upper_bound": 63332352,
+      "trace_accounting": {
+        "lossless": true,
+        "raw_SHA256": "cb6e8b5f2fee57d436dcf913c614784485cdd8c39f0c146731285cc147738a4c",
+        "representation": "concatenated complete gzip members; one raw JSON line per member",
+        "sample_fields_unchanged": true,
+        "samples": 40,
+        "stored_bytes": 43960,
+        "uncompressed_bytes": 133790
+      },
+      "trace_samples": 40,
+      "tracked_pids": [
+        450308,
+        450309,
+        450310,
+        450311,
+        450312
+      ],
+      "trial_id": "004_tiny_energy_matrix",
+      "wall_seconds": 1.462941516074352,
+      "worker": {
+        "backend_exit": 0,
+        "backend_time_v": {
+          "CPU_system_seconds": 0.06,
+          "CPU_user_seconds": 0.25,
+          "peak_RSS_bytes": 66433024.0
+        },
+        "callbacks_recurring": 1,
+        "constructor_native_seconds": 0.09382189810276031,
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "matrix_packets": 2,
+        "mode": "ON",
+        "native_exit": 0,
+        "native_time_v": {
+          "CPU_system_seconds": 0.0,
+          "CPU_user_seconds": 0.0,
+          "peak_RSS_bytes": 7938048.0
+        },
+        "purpose": "primitive",
+        "recurring_native_seconds": 0.04538450203835964,
+        "setup_completed_monotonic": 665612.780608757,
+        "status": "COMPLETE"
+      }
+    },
+    {
+      "STOP_reason": null,
+      "archive_index": {
+        "artifacts": 26,
+        "index_length": 8248,
+        "index_offset": 38864,
+        "record_hash": "43674b425d93accd8927e33460816d03698d2644730ba101dbb44e3841f0fb34",
+        "sha256": "36b5e7f53d74df22412683221d6d520e5afd8712ee987b403c8ee08bcb68b93f",
+        "status": "COMPLETE",
+        "trial_id": "005_tiny_pressure_matrix"
+      },
+      "completed_repeats": 1,
+      "disk": {
+        "disk_free": 793345576960,
+        "file_count": 41,
+        "free_inodes": 59453655,
+        "scratch_bytes": 1077248
+      },
+      "end_monotonic": 665614.689434918,
+      "exit_code": 0,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.06818181818181818,
+        "other_CPU_method": "cumulative live subtree + reaped descendants + measurement observer own CPU; uncertainty uses host busy upper bound",
+        "reasons": [
+          "missing or changed measurement root identity",
+          "subtree sampling/reap race or counter discontinuity"
+        ],
+        "samples": 40,
+        "status": "UNRESOLVED",
+        "uncertain_intervals": 1
+      },
+      "memory_event_coverage": [],
+      "partial_output_retained": true,
+      "peak_RSS_bytes": {
+        "all_processes_simultaneous": 163155968,
+        "backend": 54091776,
+        "combined_simultaneous": 63168512,
+        "native": 9949184
+      },
+      "remaining_live_pids": [],
+      "request": {
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "kind": "pipeline",
+        "mode": "ON",
+        "phase": "tiny_pressure_matrix",
+        "purpose": "primitive",
+        "sample_class": "pressure_matrix"
+      },
+      "resource_trace_SHA256": "14347e8af3ca00944844e4e03accbb9381eda7924515dd43a1b760efa2da3daf",
+      "sample_valid": true,
+      "samples": 40,
+      "signal": null,
+      "stage": "SCOUT",
+      "start_monotonic": 665613.220328866,
+      "status": "COMPLETE",
+      "sum_individual_native_backend_peaks_upper_bound": 64040960,
+      "trace_accounting": {
+        "lossless": true,
+        "raw_SHA256": "640b1a10417bc847bd005dfc6e5b4d59badc6f8fd2255a1550efdfcd7bf40d3b",
+        "representation": "concatenated complete gzip members; one raw JSON line per member",
+        "sample_fields_unchanged": true,
+        "samples": 40,
+        "stored_bytes": 43748,
+        "uncompressed_bytes": 133514
+      },
+      "trace_samples": 40,
+      "tracked_pids": [
+        450329,
+        450330,
+        450331,
+        450332,
+        450333
+      ],
+      "trial_id": "005_tiny_pressure_matrix",
+      "wall_seconds": 1.469106326927431,
+      "worker": {
+        "backend_exit": 0,
+        "backend_time_v": {
+          "CPU_system_seconds": 0.06,
+          "CPU_user_seconds": 0.25,
+          "peak_RSS_bytes": 66224128.0
+        },
+        "callbacks_recurring": 1,
+        "constructor_native_seconds": 0.09414878801908344,
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "matrix_packets": 3,
+        "mode": "ON",
+        "native_exit": 0,
+        "native_time_v": {
+          "CPU_system_seconds": 0.0,
+          "CPU_user_seconds": 0.0,
+          "peak_RSS_bytes": 8138752.0
+        },
+        "purpose": "primitive",
+        "recurring_native_seconds": 0.04523625108413398,
+        "setup_completed_monotonic": 665614.480033455,
+        "status": "COMPLETE"
+      }
+    }
+  ],
+  "wall_seconds": 11.057962691993453
+}

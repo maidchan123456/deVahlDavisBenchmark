@@ -1,0 +1,23 @@
+	Command being timed: "/usr/bin/python3 -B /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/compute_revision_v3/measurement/backend.py 4 /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/autonomous_q3_readiness/autonomous_20261006T092439+0900/tiny_equivalence_cycle2/new_on /home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/autonomous_q3_readiness/autonomous_20261006T092439+0900/tiny_equivalence_cycle2/new_on/worker_budget.json full NONE TINY"
+	User time (seconds): 6.35
+	System time (seconds): 0.25
+	Percent of CPU this job got: 41%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:15.90
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 65052
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 27053
+	Voluntary context switches: 4698
+	Involuntary context switches: 73
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 64352
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

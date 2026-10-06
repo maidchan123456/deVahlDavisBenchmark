@@ -1,0 +1,9 @@
+{
+  "Q3_authorized": false,
+  "manifest_SHA256": "0e6d45253f34bac54cec500579af0c2a0e985fd15013fb770fa2bdcd65842224",
+  "master_based_authorization": true,
+  "plan_SHA256": "a91d5c0b6c907507449e8386677c52977e831dad52f01a50c6826b604f1b8186",
+  "scope": "route-a-isolated-u03-scout-v3.scope",
+  "scope_cgroup": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/route-a-isolated-u03-scout-v3.scope",
+  "status": "PASS"
+}

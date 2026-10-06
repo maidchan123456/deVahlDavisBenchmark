@@ -1,0 +1,22 @@
+{
+  "ACK": "OK\n",
+  "durable_callbacks": 1,
+  "exit": -9,
+  "span_names": [
+    "ACK_preparation",
+    "JSON_decode",
+    "backend_receive",
+    "canonical",
+    "canonicalization",
+    "isolated_callback",
+    "packed_SHA",
+    "packing",
+    "persistence_write_fsync_manifest",
+    "replay",
+    "sha",
+    "telemetry_logical_byte_count",
+    "writer_accept"
+  ],
+  "status": "PASS",
+  "target_size": false
+}

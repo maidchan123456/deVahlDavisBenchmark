@@ -1,0 +1,9 @@
+{
+  "CFD_executed": false,
+  "nested_supervisor_and_archive": "PASS",
+  "resource_trace_representation": "lossless gzip members",
+  "stage_wall_seconds": 11.643858171999454,
+  "status": "PASS",
+  "target_size_executed": false,
+  "trials": 6
+}

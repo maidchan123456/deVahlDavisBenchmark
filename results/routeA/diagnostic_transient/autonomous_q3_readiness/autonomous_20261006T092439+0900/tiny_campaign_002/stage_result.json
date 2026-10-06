@@ -1,0 +1,29 @@
+{
+  "Q1_accounting": null,
+  "Q3_authorized": false,
+  "STOP_reason": "STOP_WORKER_EXIT",
+  "actual_authorization_created": false,
+  "classification": "TINY_CORRECTNESS_ONLY_NOT_TARGET_MEASUREMENT",
+  "completed_repeats": 0,
+  "cost_classes": {
+    "campaign_startup": [],
+    "finalization": "native FINISH span and backend finalization parent tree overlap",
+    "full_startup_audit": "startup Writer.accept inclusive spans + stream_hash_commit_fsync; no additive ACK",
+    "per_trial_setup": "worker_summary.setup_completed_monotonic minus watchdog start; includes authority/process setup",
+    "recurring_step_equivalent": "native callback spans excluding constructor; full external wall retained separately",
+    "selected_audit": "backend class persistence_write_fsync_manifest spans at bundle publication",
+    "startup_audit_projection_multiplicity": 3
+  },
+  "execution_authorized": false,
+  "file_layout": {
+    "kind": "bounded_resource_only_scout"
+  },
+  "pairedONminusOFF": [],
+  "partial_archive_tail": false,
+  "resource_feasibility": "UNRESOLVED",
+  "stability": {},
+  "stage": "SCOUT",
+  "status": "STOPPED",
+  "trials": [],
+  "wall_seconds": 0.7786856209859252
+}

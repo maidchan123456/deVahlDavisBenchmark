@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/compute_revision_v2/measurement/validate_campaign.py", line 11, in <module>
+    records,tail=recover(REVISION_ROOT/'tiny_campaign_001/archive');assert len(records)==6 and not tail
+                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

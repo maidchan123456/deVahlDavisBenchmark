@@ -1,0 +1,20 @@
+{
+  "CFD_authorized": false,
+  "claim": "synthetic isolated operations only",
+  "finite_total_wall_seconds": 45,
+  "master_prompt_SHA256": "9e21c121aee78322a4ed0823c4d182e83b5d74602cc531c3681ee6ca2d0188b9",
+  "max_files": 32,
+  "observer_cases": [
+    32,
+    524288
+  ],
+  "payloads_bytes": [
+    4096,
+    524288
+  ],
+  "receiver_limit_bytes": 33554432,
+  "repeats": 3,
+  "schema": "bounded_nonCFD_microbenchmark/1",
+  "scratch_bytes": 16777216,
+  "task": "NONCFD_DIAGNOSTIC_COMPUTE_REVISION_TEST"
+}

@@ -1,0 +1,767 @@
+{
+  "CFD_executed": false,
+  "Q2_PASS_claim": false,
+  "algorithm_changed": false,
+  "automatic_retry": false,
+  "campaign": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/timing_qualification/isolated_U03_20261006T094954+0900_v3",
+  "fit": {
+    "a": 1.2590967127166016e-06,
+    "algorithmic_complexity_proof": false,
+    "censored": [],
+    "completed_sizes": [
+      [
+        100,
+        0.010547220008447766
+      ],
+      [
+        200,
+        0.03625296498648822
+      ],
+      [
+        400,
+        0.13554205605760217
+      ],
+      [
+        800,
+        0.5235049129696563
+      ],
+      [
+        1600,
+        2.07607353804633
+      ],
+      [
+        3200,
+        8.234038215014152
+      ],
+      [
+        6400,
+        32.800608171964996
+      ]
+    ],
+    "local_slopes": [
+      1.781236202676661,
+      1.9025696638047709,
+      1.9494625153846155,
+      1.987582565622837,
+      1.9877425970636144,
+      1.9940505153162484
+    ],
+    "log_residuals": [
+      0.08608590477246736,
+      -0.02593356823684445,
+      -0.053851094757627394,
+      -0.04926497341742675,
+      -0.01825604673179937,
+      0.012863805295803665,
+      0.04835597307542416
+    ],
+    "p": 1.942846140870192,
+    "projection_label": "LOW_CONFIDENCE_PROJECTION",
+    "status": "FIT_FOR_RESOURCE_PLANNING_ONLY"
+  },
+  "full_Q2_Q1_PASS_gate_unchanged": true,
+  "larger_sizes_after_timeout": false,
+  "projections": [
+    {
+      "N": 30012,
+      "label": "LOW_CONFIDENCE_EXTRAPOLATION_NOT_MEASURED_TARGET; arrival candidate only, not every timestep",
+      "seconds": 629.1501166546526
+    },
+    {
+      "N": 60021,
+      "label": "LOW_CONFIDENCE_EXTRAPOLATION_NOT_MEASURED_TARGET; arrival candidate only, not every timestep",
+      "seconds": 2418.616850485179
+    },
+    {
+      "N": 120039,
+      "label": "LOW_CONFIDENCE_EXTRAPOLATION_NOT_MEASURED_TARGET; arrival candidate only, not every timestep",
+      "seconds": 9298.244300320726
+    }
+  ],
+  "repeatability": {
+    "100": {
+      "CV": 0.01215389594936898,
+      "CV_population": 0.01215389594936898,
+      "TIMING_STABILITY": "STABLE",
+      "automatic_extra_repeats": false,
+      "max": 0.010687864967621863,
+      "median": 0.010547220008447766,
+      "min": 0.010374721023254097,
+      "status": "STABLE"
+    },
+    "1600": {
+      "CV": 0.0026185132192335127,
+      "CV_population": 0.0026185132192335127,
+      "TIMING_STABILITY": "STABLE",
+      "automatic_extra_repeats": false,
+      "max": 2.085079733049497,
+      "median": 2.07607353804633,
+      "min": 2.07206978299655,
+      "status": "STABLE"
+    },
+    "200": {
+      "CV": 0.0007568309514635398,
+      "CV_population": 0.0007568309514635398,
+      "TIMING_STABILITY": "STABLE",
+      "automatic_extra_repeats": false,
+      "max": 0.03627648006659001,
+      "median": 0.03625296498648822,
+      "min": 0.03621020901482552,
+      "status": "STABLE"
+    },
+    "3200": {
+      "CV": 0.0023215413243134367,
+      "CV_population": 0.0023215413243134367,
+      "TIMING_STABILITY": "STABLE",
+      "automatic_extra_repeats": false,
+      "max": 8.255753405042924,
+      "median": 8.234038215014152,
+      "min": 8.208976033027284,
+      "status": "STABLE"
+    },
+    "400": {
+      "CV": 0.001988686447708061,
+      "CV_population": 0.001988686447708061,
+      "TIMING_STABILITY": "STABLE",
+      "automatic_extra_repeats": false,
+      "max": 0.1360530920792371,
+      "median": 0.13554205605760217,
+      "min": 0.13543461402878165,
+      "status": "STABLE"
+    },
+    "6400": {
+      "CV": 0.019687521015994677,
+      "CV_population": 0.019687521015994677,
+      "TIMING_STABILITY": "STABLE",
+      "automatic_extra_repeats": false,
+      "max": 34.17712531401776,
+      "median": 32.800608171964996,
+      "min": 32.7765599359991,
+      "status": "STABLE"
+    },
+    "800": {
+      "CV": 0.004143796631332853,
+      "CV_population": 0.004143796631332853,
+      "TIMING_STABILITY": "STABLE",
+      "automatic_extra_repeats": false,
+      "max": 0.5278425689321011,
+      "median": 0.5235049129696563,
+      "min": 0.522996376035735,
+      "status": "STABLE"
+    }
+  },
+  "rows": [
+    {
+      "CPU_system_seconds": 0.088964,
+      "CPU_user_seconds": 0.399841,
+      "N": 100,
+      "RSS": {
+        "all_processes_simultaneous": 40890368,
+        "backend": 0,
+        "combined_simultaneous": 0,
+        "native": 0
+      },
+      "classification": "RESOURCE_QUALIFICATION_FIXTURE_ONLY",
+      "fixture_stationarity_result": true,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.021739130434782608,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 14,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "kernel_wall_seconds": 0.010547220008447766,
+      "peak_RSS_KiB": 55788,
+      "scientific_arrival_claim": false,
+      "status": "COMPLETE",
+      "trial_id": "000_U03_isolated",
+      "trial_wall_seconds": 0.5155773960286751,
+      "windows": 3
+    },
+    {
+      "CPU_system_seconds": 0.085022,
+      "CPU_user_seconds": 0.40310799999999997,
+      "N": 100,
+      "RSS": {
+        "all_processes_simultaneous": 45776896,
+        "backend": 0,
+        "combined_simultaneous": 0,
+        "native": 0
+      },
+      "classification": "RESOURCE_QUALIFICATION_FIXTURE_ONLY",
+      "fixture_stationarity_result": true,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.011235955056179775,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 14,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "kernel_wall_seconds": 0.010374721023254097,
+      "peak_RSS_KiB": 55956,
+      "scientific_arrival_claim": false,
+      "status": "COMPLETE",
+      "trial_id": "001_U03_isolated",
+      "trial_wall_seconds": 0.5245940430322662,
+      "windows": 3
+    },
+    {
+      "CPU_system_seconds": 0.08594199999999999,
+      "CPU_user_seconds": 0.414722,
+      "N": 100,
+      "RSS": {
+        "all_processes_simultaneous": 39854080,
+        "backend": 0,
+        "combined_simultaneous": 0,
+        "native": 0
+      },
+      "classification": "RESOURCE_QUALIFICATION_FIXTURE_ONLY",
+      "fixture_stationarity_result": true,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.011764705882352941,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 14,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "kernel_wall_seconds": 0.010687864967621863,
+      "peak_RSS_KiB": 55964,
+      "scientific_arrival_claim": false,
+      "status": "COMPLETE",
+      "trial_id": "002_U03_isolated",
+      "trial_wall_seconds": 0.5365635940106586,
+      "windows": 3
+    },
+    {
+      "CPU_system_seconds": 0.079926,
+      "CPU_user_seconds": 0.4346,
+      "N": 200,
+      "RSS": {
+        "all_processes_simultaneous": 48386048,
+        "backend": 37810176,
+        "combined_simultaneous": 37810176,
+        "native": 0
+      },
+      "classification": "RESOURCE_QUALIFICATION_FIXTURE_ONLY",
+      "fixture_stationarity_result": true,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.021505376344086023,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 15,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "kernel_wall_seconds": 0.03627648006659001,
+      "peak_RSS_KiB": 56136,
+      "scientific_arrival_claim": false,
+      "status": "COMPLETE",
+      "trial_id": "003_U03_isolated",
+      "trial_wall_seconds": 0.5690362110035494,
+      "windows": 3
+    },
+    {
+      "CPU_system_seconds": 0.086827,
+      "CPU_user_seconds": 0.432141,
+      "N": 200,
+      "RSS": {
+        "all_processes_simultaneous": 40906752,
+        "backend": 39858176,
+        "combined_simultaneous": 39858176,
+        "native": 0
+      },
+      "classification": "RESOURCE_QUALIFICATION_FIXTURE_ONLY",
+      "fixture_stationarity_result": true,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.011235955056179775,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 15,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "kernel_wall_seconds": 0.03625296498648822,
+      "peak_RSS_KiB": 55888,
+      "scientific_arrival_claim": false,
+      "status": "COMPLETE",
+      "trial_id": "004_U03_isolated",
+      "trial_wall_seconds": 0.5567559819901362,
+      "windows": 3
+    },
+    {
+      "CPU_system_seconds": 0.08494199999999999,
+      "CPU_user_seconds": 0.429709,
+      "N": 200,
+      "RSS": {
+        "all_processes_simultaneous": 44089344,
+        "backend": 38645760,
+        "combined_simultaneous": 38645760,
+        "native": 0
+      },
+      "classification": "RESOURCE_QUALIFICATION_FIXTURE_ONLY",
+      "fixture_stationarity_result": true,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.02247191011235955,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 15,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "kernel_wall_seconds": 0.03621020901482552,
+      "peak_RSS_KiB": 55736,
+      "scientific_arrival_claim": false,
+      "status": "COMPLETE",
+      "trial_id": "005_U03_isolated",
+      "trial_wall_seconds": 0.555795288993977,
+      "windows": 3
+    },
+    {
+      "CPU_system_seconds": 0.08503999999999999,
+      "CPU_user_seconds": 0.528253,
+      "N": 400,
+      "RSS": {
+        "all_processes_simultaneous": 46891008,
+        "backend": 39923712,
+        "combined_simultaneous": 39923712,
+        "native": 0
+      },
+      "classification": "RESOURCE_QUALIFICATION_FIXTURE_ONLY",
+      "fixture_stationarity_result": true,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.02197802197802198,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 18,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "kernel_wall_seconds": 0.13543461402878165,
+      "peak_RSS_KiB": 56148,
+      "scientific_arrival_claim": false,
+      "status": "COMPLETE",
+      "trial_id": "006_U03_isolated",
+      "trial_wall_seconds": 0.670021613012068,
+      "windows": 3
+    },
+    {
+      "CPU_system_seconds": 0.096957,
+      "CPU_user_seconds": 0.517774,
+      "N": 400,
+      "RSS": {
+        "all_processes_simultaneous": 48824320,
+        "backend": 39866368,
+        "combined_simultaneous": 39866368,
+        "native": 0
+      },
+      "classification": "RESOURCE_QUALIFICATION_FIXTURE_ONLY",
+      "fixture_stationarity_result": true,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.02197802197802198,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 18,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "kernel_wall_seconds": 0.1360530920792371,
+      "peak_RSS_KiB": 55968,
+      "scientific_arrival_claim": false,
+      "status": "COMPLETE",
+      "trial_id": "007_U03_isolated",
+      "trial_wall_seconds": 0.6689687550533563,
+      "windows": 3
+    },
+    {
+      "CPU_system_seconds": 0.102978,
+      "CPU_user_seconds": 0.508895,
+      "N": 400,
+      "RSS": {
+        "all_processes_simultaneous": 46190592,
+        "backend": 39800832,
+        "combined_simultaneous": 39800832,
+        "native": 0
+      },
+      "classification": "RESOURCE_QUALIFICATION_FIXTURE_ONLY",
+      "fixture_stationarity_result": true,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.02247191011235955,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 18,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "kernel_wall_seconds": 0.13554205605760217,
+      "peak_RSS_KiB": 56188,
+      "scientific_arrival_claim": false,
+      "status": "COMPLETE",
+      "trial_id": "008_U03_isolated",
+      "trial_wall_seconds": 0.653201777022332,
+      "windows": 3
+    },
+    {
+      "CPU_system_seconds": 0.097018,
+      "CPU_user_seconds": 0.909173,
+      "N": 800,
+      "RSS": {
+        "all_processes_simultaneous": 44941312,
+        "backend": 39825408,
+        "combined_simultaneous": 39825408,
+        "native": 0
+      },
+      "classification": "RESOURCE_QUALIFICATION_FIXTURE_ONLY",
+      "fixture_stationarity_result": true,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.02247191011235955,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 28,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "kernel_wall_seconds": 0.5278425689321011,
+      "peak_RSS_KiB": 55872,
+      "scientific_arrival_claim": false,
+      "status": "COMPLETE",
+      "trial_id": "009_U03_isolated",
+      "trial_wall_seconds": 1.046497663948685,
+      "windows": 3
+    },
+    {
+      "CPU_system_seconds": 0.08896899999999999,
+      "CPU_user_seconds": 0.914685,
+      "N": 800,
+      "RSS": {
+        "all_processes_simultaneous": 46899200,
+        "backend": 39923712,
+        "combined_simultaneous": 39923712,
+        "native": 0
+      },
+      "classification": "RESOURCE_QUALIFICATION_FIXTURE_ONLY",
+      "fixture_stationarity_result": true,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.011627906976744186,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 28,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "kernel_wall_seconds": 0.522996376035735,
+      "peak_RSS_KiB": 55956,
+      "scientific_arrival_claim": false,
+      "status": "COMPLETE",
+      "trial_id": "010_U03_isolated",
+      "trial_wall_seconds": 1.0379699409240857,
+      "windows": 3
+    },
+    {
+      "CPU_system_seconds": 0.08101,
+      "CPU_user_seconds": 0.924114,
+      "N": 800,
+      "RSS": {
+        "all_processes_simultaneous": 42090496,
+        "backend": 39874560,
+        "combined_simultaneous": 39874560,
+        "native": 0
+      },
+      "classification": "RESOURCE_QUALIFICATION_FIXTURE_ONLY",
+      "fixture_stationarity_result": true,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.022222222222222223,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 29,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "kernel_wall_seconds": 0.5235049129696563,
+      "peak_RSS_KiB": 56112,
+      "scientific_arrival_claim": false,
+      "status": "COMPLETE",
+      "trial_id": "011_U03_isolated",
+      "trial_wall_seconds": 1.0615615870337933,
+      "windows": 3
+    },
+    {
+      "CPU_system_seconds": 0.090982,
+      "CPU_user_seconds": 2.479532,
+      "N": 1600,
+      "RSS": {
+        "all_processes_simultaneous": 57856000,
+        "backend": 39804928,
+        "combined_simultaneous": 39804928,
+        "native": 0
+      },
+      "classification": "RESOURCE_QUALIFICATION_FIXTURE_ONLY",
+      "fixture_stationarity_result": true,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.022988505747126436,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 71,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "kernel_wall_seconds": 2.085079733049497,
+      "peak_RSS_KiB": 56212,
+      "scientific_arrival_claim": false,
+      "status": "COMPLETE",
+      "trial_id": "012_U03_isolated",
+      "trial_wall_seconds": 2.6109124070499092,
+      "windows": 3
+    },
+    {
+      "CPU_system_seconds": 0.09697599999999999,
+      "CPU_user_seconds": 2.457397,
+      "N": 1600,
+      "RSS": {
+        "all_processes_simultaneous": 46088192,
+        "backend": 39829504,
+        "combined_simultaneous": 39829504,
+        "native": 0
+      },
+      "classification": "RESOURCE_QUALIFICATION_FIXTURE_ONLY",
+      "fixture_stationarity_result": true,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.022222222222222223,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 71,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "kernel_wall_seconds": 2.07607353804633,
+      "peak_RSS_KiB": 56204,
+      "scientific_arrival_claim": false,
+      "status": "COMPLETE",
+      "trial_id": "013_U03_isolated",
+      "trial_wall_seconds": 2.6064453510334715,
+      "windows": 3
+    },
+    {
+      "CPU_system_seconds": 0.099982,
+      "CPU_user_seconds": 2.454571,
+      "N": 1600,
+      "RSS": {
+        "all_processes_simultaneous": 45010944,
+        "backend": 39841792,
+        "combined_simultaneous": 39841792,
+        "native": 0
+      },
+      "classification": "RESOURCE_QUALIFICATION_FIXTURE_ONLY",
+      "fixture_stationarity_result": true,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.022222222222222223,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 70,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "kernel_wall_seconds": 2.07206978299655,
+      "peak_RSS_KiB": 55844,
+      "scientific_arrival_claim": false,
+      "status": "COMPLETE",
+      "trial_id": "014_U03_isolated",
+      "trial_wall_seconds": 2.599509833031334,
+      "windows": 3
+    },
+    {
+      "CPU_system_seconds": 0.095,
+      "CPU_user_seconds": 8.619964,
+      "N": 3200,
+      "RSS": {
+        "all_processes_simultaneous": 48406528,
+        "backend": 39813120,
+        "combined_simultaneous": 39813120,
+        "native": 0
+      },
+      "classification": "RESOURCE_QUALIFICATION_FIXTURE_ONLY",
+      "fixture_stationarity_result": true,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.022988505747126436,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 237,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "kernel_wall_seconds": 8.234038215014152,
+      "peak_RSS_KiB": 55740,
+      "scientific_arrival_claim": false,
+      "status": "COMPLETE",
+      "trial_id": "015_U03_isolated",
+      "trial_wall_seconds": 8.742406013887376,
+      "windows": 3
+    },
+    {
+      "CPU_system_seconds": 0.079998,
+      "CPU_user_seconds": 8.605864,
+      "N": 3200,
+      "RSS": {
+        "all_processes_simultaneous": 47140864,
+        "backend": 39845888,
+        "combined_simultaneous": 39845888,
+        "native": 0
+      },
+      "classification": "RESOURCE_QUALIFICATION_FIXTURE_ONLY",
+      "fixture_stationarity_result": true,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.02247191011235955,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 236,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "kernel_wall_seconds": 8.208976033027284,
+      "peak_RSS_KiB": 56228,
+      "scientific_arrival_claim": false,
+      "status": "COMPLETE",
+      "trial_id": "016_U03_isolated",
+      "trial_wall_seconds": 8.741328611038625,
+      "windows": 3
+    },
+    {
+      "CPU_system_seconds": 0.091999,
+      "CPU_user_seconds": 8.641961,
+      "N": 3200,
+      "RSS": {
+        "all_processes_simultaneous": 42438656,
+        "backend": 39862272,
+        "combined_simultaneous": 39862272,
+        "native": 0
+      },
+      "classification": "RESOURCE_QUALIFICATION_FIXTURE_ONLY",
+      "fixture_stationarity_result": true,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.023255813953488372,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 237,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "kernel_wall_seconds": 8.255753405042924,
+      "peak_RSS_KiB": 56028,
+      "scientific_arrival_claim": false,
+      "status": "COMPLETE",
+      "trial_id": "017_U03_isolated",
+      "trial_wall_seconds": 8.75923186505679,
+      "windows": 3
+    },
+    {
+      "CPU_system_seconds": 0.095996,
+      "CPU_user_seconds": 34.558865,
+      "N": 6400,
+      "RSS": {
+        "all_processes_simultaneous": 47788032,
+        "backend": 39849984,
+        "combined_simultaneous": 39849984,
+        "native": 0
+      },
+      "classification": "RESOURCE_QUALIFICATION_FIXTURE_ONLY",
+      "fixture_stationarity_result": true,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.023529411764705882,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 945,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "kernel_wall_seconds": 34.17712531401776,
+      "peak_RSS_KiB": 55904,
+      "scientific_arrival_claim": false,
+      "status": "COMPLETE",
+      "trial_id": "018_U03_isolated",
+      "trial_wall_seconds": 34.67929546406958,
+      "windows": 3
+    },
+    {
+      "CPU_system_seconds": 0.083994,
+      "CPU_user_seconds": 33.168775,
+      "N": 6400,
+      "RSS": {
+        "all_processes_simultaneous": 48750592,
+        "backend": 39747584,
+        "combined_simultaneous": 39747584,
+        "native": 0
+      },
+      "classification": "RESOURCE_QUALIFICATION_FIXTURE_ONLY",
+      "fixture_stationarity_result": true,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.023529411764705882,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 906,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "kernel_wall_seconds": 32.7765599359991,
+      "peak_RSS_KiB": 56096,
+      "scientific_arrival_claim": false,
+      "status": "COMPLETE",
+      "trial_id": "019_U03_isolated",
+      "trial_wall_seconds": 33.295822115964256,
+      "windows": 3
+    },
+    {
+      "CPU_system_seconds": 0.084994,
+      "CPU_user_seconds": 33.192843,
+      "N": 6400,
+      "RSS": {
+        "all_processes_simultaneous": 44826624,
+        "backend": 39845888,
+        "combined_simultaneous": 39845888,
+        "native": 0
+      },
+      "classification": "RESOURCE_QUALIFICATION_FIXTURE_ONLY",
+      "fixture_stationarity_result": true,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.023529411764705882,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 901,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "kernel_wall_seconds": 32.800608171964996,
+      "peak_RSS_KiB": 56096,
+      "scientific_arrival_claim": false,
+      "status": "COMPLETE",
+      "trial_id": "020_U03_isolated",
+      "trial_wall_seconds": 33.323495048098266,
+      "windows": 3
+    }
+  ],
+  "schema": "isolated_U03_resource_review/2",
+  "source_algorithm_sha256": "e452f6fb5d225f0ecac7ef94bbdb661ffa601f3f813ae5ab56a97b1007a529b2",
+  "status": "COMPLETE_RESOURCE_SCOUT_NOT_Q2_PASS"
+}

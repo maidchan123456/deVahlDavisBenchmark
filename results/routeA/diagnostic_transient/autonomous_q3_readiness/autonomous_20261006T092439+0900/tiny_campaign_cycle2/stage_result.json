@@ -1,0 +1,648 @@
+{
+  "Q1_accounting": null,
+  "Q3_authorized": false,
+  "STOP_reason": null,
+  "actual_authorization_created": false,
+  "classification": "TINY_CORRECTNESS_ONLY_NOT_TARGET_MEASUREMENT",
+  "completed_repeats": 6,
+  "cost_classes": {
+    "campaign_startup": [],
+    "finalization": "native FINISH span and backend finalization parent tree overlap",
+    "full_startup_audit": "startup Writer.accept inclusive spans + stream_hash_commit_fsync; no additive ACK",
+    "per_trial_setup": "worker_summary.setup_completed_monotonic minus watchdog start; includes authority/process setup",
+    "recurring_step_equivalent": "native callback spans excluding constructor; full external wall retained separately",
+    "selected_audit": "backend class persistence_write_fsync_manifest spans at bundle publication",
+    "startup_audit_projection_multiplicity": 3
+  },
+  "execution_authorized": false,
+  "file_layout": {
+    "kind": "bounded_resource_only_scout"
+  },
+  "pairedONminusOFF": [],
+  "resource_feasibility": "UNRESOLVED",
+  "stability": {
+    "tiny_controller|controller": {
+      "TIMING_STABILITY": "LOW",
+      "automatic_extra_repeats": false,
+      "reason": "insufficient completed repeats",
+      "status": "UNRESOLVED"
+    },
+    "tiny_energy_matrix|energy_matrix": {
+      "TIMING_STABILITY": "LOW",
+      "automatic_extra_repeats": false,
+      "reason": "insufficient completed repeats",
+      "status": "UNRESOLVED"
+    },
+    "tiny_field|field": {
+      "TIMING_STABILITY": "LOW",
+      "automatic_extra_repeats": false,
+      "reason": "insufficient completed repeats",
+      "status": "UNRESOLVED"
+    },
+    "tiny_matrix|matrix": {
+      "TIMING_STABILITY": "LOW",
+      "automatic_extra_repeats": false,
+      "reason": "insufficient completed repeats",
+      "status": "UNRESOLVED"
+    },
+    "tiny_pressure_matrix|pressure_matrix": {
+      "TIMING_STABILITY": "LOW",
+      "automatic_extra_repeats": false,
+      "reason": "insufficient completed repeats",
+      "status": "UNRESOLVED"
+    },
+    "tiny_term|term": {
+      "TIMING_STABILITY": "LOW",
+      "automatic_extra_repeats": false,
+      "reason": "insufficient completed repeats",
+      "status": "UNRESOLVED"
+    }
+  },
+  "stage": "SCOUT",
+  "status": "COMPLETE_REQUIRES_RESOURCE_REVIEW",
+  "trials": [
+    {
+      "STOP_reason": null,
+      "archive_index": {
+        "artifacts": 23,
+        "index_length": 7327,
+        "index_offset": 0,
+        "record_hash": "27eab4e68680783218c1458ea3e3eeb9157a76cbcb740da9312c8a7522ced362",
+        "sha256": "282dcafaa6a5fae7bafd02b1a4cc53e782a692640e4531057e1ceefdc75993ca",
+        "status": "COMPLETE",
+        "trial_id": "000_tiny_controller"
+      },
+      "completed_repeats": 1,
+      "disk": {
+        "disk_free": 793243484160,
+        "file_count": 31,
+        "free_inodes": 59453419,
+        "scratch_bytes": 270336
+      },
+      "end_monotonic": 666334.398147374,
+      "exit_code": 0,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.021505376344086023,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 39,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "memory_event_coverage": [],
+      "partial_output_retained": true,
+      "peak_RSS_bytes": {
+        "all_processes_simultaneous": 160157696,
+        "backend": 53440512,
+        "combined_simultaneous": 63352832,
+        "native": 9912320
+      },
+      "remaining_live_pids": [],
+      "request": {
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "kind": "pipeline",
+        "mode": "ON",
+        "phase": "tiny_controller",
+        "purpose": "primitive",
+        "sample_class": "controller"
+      },
+      "resource_trace_SHA256": "452d75a575de291b04d944ccdad20768a959be98f7287c4d19f828cf961c2d7a",
+      "sample_valid": true,
+      "samples": 39,
+      "signal": null,
+      "stage": "SCOUT",
+      "start_monotonic": 666332.897965514,
+      "status": "COMPLETE",
+      "sum_individual_native_backend_peaks_upper_bound": 63352832,
+      "trace_accounting": {
+        "lossless": true,
+        "raw_SHA256": "9a03d839277f6d22aa670805324501a7af73163affcf87a51eb0e9673d398e55",
+        "representation": "concatenated complete gzip members; one raw JSON line per member",
+        "sample_fields_unchanged": true,
+        "samples": 39,
+        "stored_bytes": 61141,
+        "uncompressed_bytes": 207772
+      },
+      "trace_samples": 39,
+      "tracked_pids": [
+        451062,
+        451063,
+        451064,
+        451065,
+        451066
+      ],
+      "trial_id": "000_tiny_controller",
+      "wall_seconds": 1.5001822100020945,
+      "worker": {
+        "backend_exit": 0,
+        "backend_time_v": {
+          "CPU_system_seconds": 0.08,
+          "CPU_user_seconds": 0.27,
+          "peak_RSS_bytes": 66535424.0
+        },
+        "callbacks_recurring": 1,
+        "constructor_native_seconds": 0.09025724697858095,
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "matrix_packets": 0,
+        "mode": "ON",
+        "native_exit": 0,
+        "native_time_v": {
+          "CPU_system_seconds": 0.0,
+          "CPU_user_seconds": 0.0,
+          "peak_RSS_bytes": 8404992.0
+        },
+        "purpose": "primitive",
+        "recurring_native_seconds": 0.012661213986575603,
+        "setup_completed_monotonic": 666334.22226053,
+        "status": "COMPLETE"
+      }
+    },
+    {
+      "STOP_reason": null,
+      "archive_index": {
+        "artifacts": 23,
+        "index_length": 7313,
+        "index_offset": 7327,
+        "record_hash": "60298e5fdd18a82617d7787c9fd66460706b9b1036e9090b2ed7d8c19c7049a5",
+        "sha256": "ab03fe793661f39900aa7912ea334fc32a156f4d316bc11ddf04040d2aa2b798",
+        "status": "COMPLETE",
+        "trial_id": "001_tiny_field"
+      },
+      "completed_repeats": 1,
+      "disk": {
+        "disk_free": 793243254784,
+        "file_count": 34,
+        "free_inodes": 59453416,
+        "scratch_bytes": 495616
+      },
+      "end_monotonic": 666336.116782708,
+      "exit_code": 0,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.021739130434782608,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 38,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "memory_event_coverage": [],
+      "partial_output_retained": true,
+      "peak_RSS_bytes": {
+        "all_processes_simultaneous": 158113792,
+        "backend": 68419584,
+        "combined_simultaneous": 75288576,
+        "native": 9928704
+      },
+      "remaining_live_pids": [],
+      "request": {
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "kind": "pipeline",
+        "mode": "ON",
+        "phase": "tiny_field",
+        "purpose": "primitive",
+        "sample_class": "field"
+      },
+      "resource_trace_SHA256": "cf3719b442e222d80daf52bb6993342bd8d23f48db36fd7ee9906d118d9b8a00",
+      "sample_valid": true,
+      "samples": 38,
+      "signal": null,
+      "stage": "SCOUT",
+      "start_monotonic": 666334.679648364,
+      "status": "COMPLETE",
+      "sum_individual_native_backend_peaks_upper_bound": 78348288,
+      "trace_accounting": {
+        "lossless": true,
+        "raw_SHA256": "c960e320c0b67c9e83f5145f7f5418a85274ca38b7c33192aed001abd071bd10",
+        "representation": "concatenated complete gzip members; one raw JSON line per member",
+        "sample_fields_unchanged": true,
+        "samples": 38,
+        "stored_bytes": 60314,
+        "uncompressed_bytes": 203196
+      },
+      "trace_samples": 38,
+      "tracked_pids": [
+        451068,
+        451069,
+        451070,
+        451071,
+        451072
+      ],
+      "trial_id": "001_tiny_field",
+      "wall_seconds": 1.4371347050182521,
+      "worker": {
+        "backend_exit": 0,
+        "backend_time_v": {
+          "CPU_system_seconds": 0.06,
+          "CPU_user_seconds": 0.25,
+          "peak_RSS_bytes": 66207744.0
+        },
+        "callbacks_recurring": 1,
+        "constructor_native_seconds": 0.09238902805373073,
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "matrix_packets": 0,
+        "mode": "ON",
+        "native_exit": 0,
+        "native_time_v": {
+          "CPU_system_seconds": 0.0,
+          "CPU_user_seconds": 0.0,
+          "peak_RSS_bytes": 8093696.0
+        },
+        "purpose": "primitive",
+        "recurring_native_seconds": 0.012322506052441895,
+        "setup_completed_monotonic": 666335.938958966,
+        "status": "COMPLETE"
+      }
+    },
+    {
+      "STOP_reason": null,
+      "archive_index": {
+        "artifacts": 26,
+        "index_length": 8146,
+        "index_offset": 14640,
+        "record_hash": "ffeb47c28ea5a4468a95ea95d7862a72a007126e42669fdf938f4472ac36fadc",
+        "sha256": "8473f0edfa1d155cad705404957247af2216c2de60d7cb775e4fa512d464cbf2",
+        "status": "COMPLETE",
+        "trial_id": "002_tiny_matrix"
+      },
+      "completed_repeats": 1,
+      "disk": {
+        "disk_free": 793243078656,
+        "file_count": 36,
+        "free_inodes": 59453414,
+        "scratch_bytes": 675840
+      },
+      "end_monotonic": 666337.800642863,
+      "exit_code": 0,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.02197802197802198,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 39,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "memory_event_coverage": [],
+      "partial_output_retained": true,
+      "peak_RSS_bytes": {
+        "all_processes_simultaneous": 163008512,
+        "backend": 67043328,
+        "combined_simultaneous": 73891840,
+        "native": 9801728
+      },
+      "remaining_live_pids": [],
+      "request": {
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "kind": "pipeline",
+        "mode": "ON",
+        "phase": "tiny_matrix",
+        "purpose": "primitive",
+        "sample_class": "matrix"
+      },
+      "resource_trace_SHA256": "1394304ce46fcedff71a846da8f7b392760dc5e981c52dfed38ae1a24a4e6c11",
+      "sample_valid": true,
+      "samples": 39,
+      "signal": null,
+      "stage": "SCOUT",
+      "start_monotonic": 666336.320429145,
+      "status": "COMPLETE",
+      "sum_individual_native_backend_peaks_upper_bound": 76845056,
+      "trace_accounting": {
+        "lossless": true,
+        "raw_SHA256": "0226d9184d2108cea72f8f1fda12bff8bb7d2b4710d3a5a1f7cd06582c6d206e",
+        "representation": "concatenated complete gzip members; one raw JSON line per member",
+        "sample_fields_unchanged": true,
+        "samples": 39,
+        "stored_bytes": 62218,
+        "uncompressed_bytes": 209634
+      },
+      "trace_samples": 39,
+      "tracked_pids": [
+        451074,
+        451075,
+        451076,
+        451077,
+        451078
+      ],
+      "trial_id": "002_tiny_matrix",
+      "wall_seconds": 1.4802140420069918,
+      "worker": {
+        "backend_exit": 0,
+        "backend_time_v": {
+          "CPU_system_seconds": 0.06,
+          "CPU_user_seconds": 0.25,
+          "peak_RSS_bytes": 66322432.0
+        },
+        "callbacks_recurring": 1,
+        "constructor_native_seconds": 0.09095857804641128,
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "matrix_packets": 1,
+        "mode": "ON",
+        "native_exit": 0,
+        "native_time_v": {
+          "CPU_system_seconds": 0.0,
+          "CPU_user_seconds": 0.0,
+          "peak_RSS_bytes": 8142848.0
+        },
+        "purpose": "primitive",
+        "recurring_native_seconds": 0.04226354695856571,
+        "setup_completed_monotonic": 666337.59466762,
+        "status": "COMPLETE"
+      }
+    },
+    {
+      "STOP_reason": null,
+      "archive_index": {
+        "artifacts": 24,
+        "index_length": 7582,
+        "index_offset": 22786,
+        "record_hash": "a8c6e02f03e73bcc545082b0ca2de1018c939a5d29e041dc5cb696f528077d45",
+        "sha256": "5d21958a7966f3fda622ccb3db9e93854e913a68659c3490d0ed6bb8aab98f8b",
+        "status": "COMPLETE",
+        "trial_id": "003_tiny_term"
+      },
+      "completed_repeats": 1,
+      "disk": {
+        "disk_free": 793242861568,
+        "file_count": 36,
+        "free_inodes": 59453414,
+        "scratch_bytes": 888832
+      },
+      "end_monotonic": 666339.511762079,
+      "exit_code": 0,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.02197802197802198,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 39,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "memory_event_coverage": [],
+      "partial_output_retained": true,
+      "peak_RSS_bytes": {
+        "all_processes_simultaneous": 163008512,
+        "backend": 53157888,
+        "combined_simultaneous": 63000576,
+        "native": 9842688
+      },
+      "remaining_live_pids": [],
+      "request": {
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "kind": "pipeline",
+        "mode": "ON",
+        "phase": "tiny_term",
+        "purpose": "primitive",
+        "sample_class": "term"
+      },
+      "resource_trace_SHA256": "50b2098ea71cce879d813b3bd53d21a159bdcf757876965a0a7aed257b4a9724",
+      "sample_valid": true,
+      "samples": 39,
+      "signal": null,
+      "stage": "SCOUT",
+      "start_monotonic": 666338.038486016,
+      "status": "COMPLETE",
+      "sum_individual_native_backend_peaks_upper_bound": 63000576,
+      "trace_accounting": {
+        "lossless": true,
+        "raw_SHA256": "20b7d8e7b82728585cc7ee2cf577b82935ccb363b21beca9c15b90546e6bab23",
+        "representation": "concatenated complete gzip members; one raw JSON line per member",
+        "sample_fields_unchanged": true,
+        "samples": 39,
+        "stored_bytes": 61556,
+        "uncompressed_bytes": 208877
+      },
+      "trace_samples": 39,
+      "tracked_pids": [
+        451080,
+        451081,
+        451082,
+        451083,
+        451084
+      ],
+      "trial_id": "003_tiny_term",
+      "wall_seconds": 1.47327638103161,
+      "worker": {
+        "backend_exit": 0,
+        "backend_time_v": {
+          "CPU_system_seconds": 0.06,
+          "CPU_user_seconds": 0.26,
+          "peak_RSS_bytes": 66506752.0
+        },
+        "callbacks_recurring": 1,
+        "constructor_native_seconds": 0.09730112599208951,
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "matrix_packets": 0,
+        "mode": "ON",
+        "native_exit": 0,
+        "native_time_v": {
+          "CPU_system_seconds": 0.0,
+          "CPU_user_seconds": 0.0,
+          "peak_RSS_bytes": 8306688.0
+        },
+        "purpose": "primitive",
+        "recurring_native_seconds": 0.010385203990153968,
+        "setup_completed_monotonic": 666339.312575343,
+        "status": "COMPLETE"
+      }
+    },
+    {
+      "STOP_reason": null,
+      "archive_index": {
+        "artifacts": 26,
+        "index_length": 8174,
+        "index_offset": 30368,
+        "record_hash": "fe78477c4ab9dad7b9c7003ef8331f0508b7be739d24746d9d8e5d98c9cf9dee",
+        "sha256": "205b1964382b82fc27fe30a4524a78448a1bf259aaecb902a3b7d8c0af0525c1",
+        "status": "COMPLETE",
+        "trial_id": "004_tiny_energy_matrix"
+      },
+      "completed_repeats": 1,
+      "disk": {
+        "disk_free": 793242648576,
+        "file_count": 39,
+        "free_inodes": 59453411,
+        "scratch_bytes": 1105920
+      },
+      "end_monotonic": 666341.233032548,
+      "exit_code": 0,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.02197802197802198,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 39,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "memory_event_coverage": [],
+      "partial_output_retained": true,
+      "peak_RSS_bytes": {
+        "all_processes_simultaneous": 160268288,
+        "backend": 53276672,
+        "combined_simultaneous": 63291392,
+        "native": 10014720
+      },
+      "remaining_live_pids": [],
+      "request": {
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "kind": "pipeline",
+        "mode": "ON",
+        "phase": "tiny_energy_matrix",
+        "purpose": "primitive",
+        "sample_class": "energy_matrix"
+      },
+      "resource_trace_SHA256": "88f75c5ee502c19aa29a0557921cee5cbca0825114ba8de431fe51d5c9959aa2",
+      "sample_valid": true,
+      "samples": 39,
+      "signal": null,
+      "stage": "SCOUT",
+      "start_monotonic": 666339.735829856,
+      "status": "COMPLETE",
+      "sum_individual_native_backend_peaks_upper_bound": 63291392,
+      "trace_accounting": {
+        "lossless": true,
+        "raw_SHA256": "e3dbcfc2de8d7ef3ec276268993b5d2a48bd9a6c7bc247b22a706ad3c3cca0bc",
+        "representation": "concatenated complete gzip members; one raw JSON line per member",
+        "sample_fields_unchanged": true,
+        "samples": 39,
+        "stored_bytes": 61745,
+        "uncompressed_bytes": 209458
+      },
+      "trace_samples": 39,
+      "tracked_pids": [
+        451086,
+        451087,
+        451088,
+        451089,
+        451090
+      ],
+      "trial_id": "004_tiny_energy_matrix",
+      "wall_seconds": 1.4972030069911852,
+      "worker": {
+        "backend_exit": 0,
+        "backend_time_v": {
+          "CPU_system_seconds": 0.06,
+          "CPU_user_seconds": 0.25,
+          "peak_RSS_bytes": 66482176.0
+        },
+        "callbacks_recurring": 1,
+        "constructor_native_seconds": 0.09145461104344577,
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "matrix_packets": 2,
+        "mode": "ON",
+        "native_exit": 0,
+        "native_time_v": {
+          "CPU_system_seconds": 0.0,
+          "CPU_user_seconds": 0.0,
+          "peak_RSS_bytes": 7942144.0
+        },
+        "purpose": "primitive",
+        "recurring_native_seconds": 0.04486135102342814,
+        "setup_completed_monotonic": 666341.007363991,
+        "status": "COMPLETE"
+      }
+    },
+    {
+      "STOP_reason": null,
+      "archive_index": {
+        "artifacts": 26,
+        "index_length": 8180,
+        "index_offset": 38542,
+        "record_hash": "34276b979070e7a0e6fc97d5ff37ea095658ff30cb855eb52d33d2c191fb6d14",
+        "sha256": "39c85deda3412be2f3d5e3c4b122219cc0335a501593e230b927488f8180f1d0",
+        "status": "COMPLETE",
+        "trial_id": "005_tiny_pressure_matrix"
+      },
+      "completed_repeats": 1,
+      "disk": {
+        "disk_free": 793242411008,
+        "file_count": 41,
+        "free_inodes": 59453409,
+        "scratch_bytes": 1339392
+      },
+      "end_monotonic": 666342.942504613,
+      "exit_code": 0,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.02127659574468085,
+        "other_CPU_method": "registered dedicated user cgroup lifetime CPU including reaped/short-lived processes and all observers; proc fallback uses conservative subtree bounds",
+        "reasons": [],
+        "samples": 40,
+        "status": "STABLE",
+        "uncertain_intervals": 0
+      },
+      "memory_event_coverage": [],
+      "partial_output_retained": true,
+      "peak_RSS_bytes": {
+        "all_processes_simultaneous": 163094528,
+        "backend": 54943744,
+        "combined_simultaneous": 63021056,
+        "native": 9850880
+      },
+      "remaining_live_pids": [],
+      "request": {
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "kind": "pipeline",
+        "mode": "ON",
+        "phase": "tiny_pressure_matrix",
+        "purpose": "primitive",
+        "sample_class": "pressure_matrix"
+      },
+      "resource_trace_SHA256": "c160f8e2f8ccb05b8c3942c94e7e5e7eef7eef028528d4b701734465d8f41f19",
+      "sample_valid": true,
+      "samples": 40,
+      "signal": null,
+      "stage": "SCOUT",
+      "start_monotonic": 666341.446766545,
+      "status": "COMPLETE",
+      "sum_individual_native_backend_peaks_upper_bound": 64794624,
+      "trace_accounting": {
+        "lossless": true,
+        "raw_SHA256": "05136c049ae39cfe235c31ec58cf304f6dc6e2616419f6cd8741dd3ff96f6c2d",
+        "representation": "concatenated complete gzip members; one raw JSON line per member",
+        "sample_fields_unchanged": true,
+        "samples": 40,
+        "stored_bytes": 63594,
+        "uncompressed_bytes": 215406
+      },
+      "trace_samples": 40,
+      "tracked_pids": [
+        451092,
+        451093,
+        451094,
+        451095,
+        451096
+      ],
+      "trial_id": "005_tiny_pressure_matrix",
+      "wall_seconds": 1.4957386630121619,
+      "worker": {
+        "backend_exit": 0,
+        "backend_time_v": {
+          "CPU_system_seconds": 0.06,
+          "CPU_user_seconds": 0.25,
+          "peak_RSS_bytes": 66220032.0
+        },
+        "callbacks_recurring": 1,
+        "constructor_native_seconds": 0.09142184199299663,
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "matrix_packets": 3,
+        "mode": "ON",
+        "native_exit": 0,
+        "native_time_v": {
+          "CPU_system_seconds": 0.0,
+          "CPU_user_seconds": 0.0,
+          "peak_RSS_bytes": 8343552.0
+        },
+        "purpose": "primitive",
+        "recurring_native_seconds": 0.04207104106899351,
+        "setup_completed_monotonic": 666342.72032962,
+        "status": "COMPLETE"
+      }
+    }
+  ],
+  "wall_seconds": 11.201240038033575
+}

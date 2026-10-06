@@ -1,0 +1,405 @@
+{
+  "Q1_Q2_actual_target_measurements_executed": false,
+  "actual_authorization_created": false,
+  "classification": "TINY_CORRECTNESS_PROCESS_LAYOUT_ONLY",
+  "schema": "timing_preparation_closure_tests/2",
+  "source_SHA256": {
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/timing_qualification/measurement/README.md": "8d1a88c85f0bdeffd520b08273622b02ecd5ea30a75f552ef864197a82042692",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/timing_qualification/measurement/analysis.py": "bb05fa32cd3bf73f954ba02b37e09f7c5abe5c043a730101c84d9f604ddc58b2",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/timing_qualification/measurement/archive.py": "230c02b88163cb023e4fb9f7272d78624f8ba8c200858d54449d545fb9e0328e",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/timing_qualification/measurement/backend.py": "ef88cb95c2f8cb840bea4d5dea702cafda63e10eae6d96cb4451042f3ced54e4",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/timing_qualification/measurement/build_native.py": "ec9755a3e15137bf38ea15f40a8c97d31edbdf47a83d32ff3c614116626b219c",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/timing_qualification/measurement/campaign.py": "ba5ca1ea587d342bdd4fdc1a88c27bce20029642a7abafac4a8667f6e080a748",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/timing_qualification/measurement/common.py": "2eaf8f4a38c87681428fe5b57917d23f58d486d378d9721fc295c8299f9e0125",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/timing_qualification/measurement/fixture.py": "d0de4a65ed957b8337c003c9e28a4cbb61156375b6880a6194f48a4d192fa387",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/timing_qualification/measurement/io_memory.py": "45efe0eb84870bced4f9b82162fd3055899eacb539a4c8e9db4f7ef5133d53ba",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/timing_qualification/measurement/native_adapter.C": "5d4f960f76fc5c0ce9cbc8ba48ab160d6545c55779aa5b2d41321d50068ff62a",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/timing_qualification/measurement/native_permission.py": "85cb179e8348da4cff5c632545431c12c93fb5e40948b7dfa8f76ccd34e3857f",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/timing_qualification/measurement/pipeline.py": "0ca0585b93bf2d2ccc1eb9b6ceece3483351d101094f9895da708878697af680",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/timing_qualification/measurement/readiness.py": "6d96ed45eae2ea2c393106e340bde8099eb58049b73025b2a5db6819d110b87f",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/timing_qualification/measurement/report_closure.py": "bc5a77a2d85b041da2d5e7837f5fc54b6e328ab36268909dca2fe357a9255a47",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/timing_qualification/measurement/report_preparation.py": "2adc1cb335e53f87fe16daa1079731334501035fe11d563d51a112e2f7d2958a",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/timing_qualification/measurement/run_closure_suite.py": "11bc54cf55aa8ceb1ee517f61faa7853d0caf2f6d7871fdc581456c8d7e58a4f",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/timing_qualification/measurement/runner.py": "5e4c9dc9d1d1c56ef846069f296955124850277cac350b99a8d3f1320c94316a",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/timing_qualification/measurement/schedule.py": "72e13f78e827888c316009bdbcd8abc9a4c8d6fe2f46ea7389ccdff379b3a392",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/timing_qualification/measurement/spans.py": "6b7e7102f0ac62e8f828e156561797c16fd1f10feb341bc8439648625edfde08",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/timing_qualification/measurement/test_closure.py": "8b001d4e395dcc1e3cf8cddabfc7bb60bd8b08de2f864feeeeeb8399be0787ec",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/timing_qualification/measurement/test_preparation.py": "9b817658068cb43d14ccd21e8b738a89ac5b203f45975801790d2366a7ad7cb9",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/timing_qualification/measurement/tiny_child.py": "0beca3c4e9d42d34c6f3c318da9c19a3ba01f8141aa52e3314004fb7d24bb9a0",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/timing_qualification/measurement/watchdog.py": "a25851ef1279e55d8a39a0277aebcde0122fe64ae4b79caa4020ebe9eef41332",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/timing_qualification/measurement/worker.py": "6bfe926b4e37870c13d3d1d826a093968f21886bab2e04daf78a0aaa168e919e"
+  },
+  "source_unchanged_during_tests": true,
+  "status": "PASS",
+  "tests": [
+    {
+      "status": "PASS",
+      "test": "test_closure.ClosureTests.test_B1_schedule_unchanged_checkpoint"
+    },
+    {
+      "status": "PASS",
+      "test": "test_closure.ClosureTests.test_B1_startup_bundle_exact_view_of_full_audit"
+    },
+    {
+      "status": "PASS",
+      "test": "test_closure.ClosureTests.test_B1_tiny_whole_Q1_campaign"
+    },
+    {
+      "status": "PASS",
+      "test": "test_closure.ClosureTests.test_B2_hundreds_logical_trials_bounded_chunks"
+    },
+    {
+      "status": "PASS",
+      "test": "test_closure.ClosureTests.test_B2_static_layout_and_full_Q2_runtime"
+    },
+    {
+      "status": "PASS",
+      "test": "test_closure.ClosureTests.test_B2_tail_crash_and_truncated_uncommitted_chunk"
+    },
+    {
+      "status": "PASS",
+      "test": "test_closure.ClosureTests.test_B3_Writer_static_aliasing_and_changed_blob_rejection"
+    },
+    {
+      "status": "PASS",
+      "test": "test_closure.ClosureTests.test_B3_compact_receipt_exact_production_row"
+    },
+    {
+      "status": "PASS",
+      "test": "test_closure.ClosureTests.test_B3_registered_repeatability_and_missing_host"
+    },
+    {
+      "status": "PASS",
+      "test": "test_closure.ClosureTests.test_B3_span_children_exclusive_and_ACK_overlap_rule"
+    },
+    {
+      "status": "PASS",
+      "test": "test_closure.ClosureTests.test_B4_STOP_publish_race_retains_committed_and_partial"
+    },
+    {
+      "status": "PASS",
+      "test": "test_closure.ClosureTests.test_B4_malformed_and_tampered_receipt"
+    },
+    {
+      "status": "PASS",
+      "test": "test_closure.ClosureTests.test_B4_nested_SIGTERM_ignore_no_orphans"
+    },
+    {
+      "status": "PASS",
+      "test": "test_closure.ClosureTests.test_B4_no_overwrite_double_finalization"
+    },
+    {
+      "status": "PASS",
+      "test": "test_closure.ClosureTests.test_B4_positive_stage_and_immutable_readback"
+    },
+    {
+      "status": "PASS",
+      "test": "test_closure.ClosureTests.test_B4_quota_and_file_reserve"
+    },
+    {
+      "status": "PASS",
+      "test": "test_closure.ClosureTests.test_B4_trial_and_stage_watchdog_crash"
+    },
+    {
+      "status": "PASS",
+      "test": "test_closure.ClosureTests.test_B4_trial_timeout_retains_completed_and_partial"
+    },
+    {
+      "status": "PASS",
+      "test": "test_closure.ClosureTests.test_B4_worker_and_backend_crashes"
+    },
+    {
+      "status": "PASS",
+      "test": "test_closure.ClosureTests.test_readiness_is_all_or_nothing_and_never_authorizes"
+    },
+    {
+      "status": "PASS",
+      "test": "test_preparation.Tests.test_authority_and_frozen_plan"
+    },
+    {
+      "status": "PASS",
+      "test": "test_preparation.Tests.test_callback_matrix_graph_valid"
+    },
+    {
+      "status": "PASS",
+      "test": "test_preparation.Tests.test_child_group_escape_fail_closed"
+    },
+    {
+      "status": "PASS",
+      "test": "test_preparation.Tests.test_disk_guard_safe_override"
+    },
+    {
+      "status": "PASS",
+      "test": "test_preparation.Tests.test_file_count_guard"
+    },
+    {
+      "status": "PASS",
+      "test": "test_preparation.Tests.test_fit_excludes_censored"
+    },
+    {
+      "status": "PASS",
+      "test": "test_preparation.Tests.test_memory_guard_safe_override"
+    },
+    {
+      "status": "PASS",
+      "test": "test_preparation.Tests.test_missing_authorization_and_no_actual_receipt"
+    },
+    {
+      "status": "PASS",
+      "test": "test_preparation.Tests.test_native_adapter_has_no_solver_or_time_api"
+    },
+    {
+      "status": "PASS",
+      "test": "test_preparation.Tests.test_native_direct_missing_permission_fails_closed"
+    },
+    {
+      "status": "PASS",
+      "test": "test_preparation.Tests.test_normal_child_and_trace"
+    },
+    {
+      "status": "PASS",
+      "test": "test_preparation.Tests.test_off_retains_fixture_framework"
+    },
+    {
+      "status": "PASS",
+      "test": "test_preparation.Tests.test_path_traversal_symlink_and_production_namespace"
+    },
+    {
+      "status": "PASS",
+      "test": "test_preparation.Tests.test_q1_cfd_and_q3_escalation"
+    },
+    {
+      "status": "PASS",
+      "test": "test_preparation.Tests.test_receipt_immutable_and_hash"
+    },
+    {
+      "status": "PASS",
+      "test": "test_preparation.Tests.test_stage_receipt_tampering_fails_closed"
+    },
+    {
+      "status": "PASS",
+      "test": "test_preparation.Tests.test_supervisor_crash_fail_closed"
+    },
+    {
+      "status": "PASS",
+      "test": "test_preparation.Tests.test_target_pipeline_without_permission_fails_before_launch"
+    },
+    {
+      "status": "PASS",
+      "test": "test_preparation.Tests.test_target_shape_only_no_timing"
+    },
+    {
+      "status": "PASS",
+      "test": "test_preparation.Tests.test_tiny_U03_and_IO"
+    },
+    {
+      "status": "PASS",
+      "test": "test_preparation.Tests.test_tiny_full_native_backend_end_to_end"
+    },
+    {
+      "status": "PASS",
+      "test": "test_preparation.Tests.test_tiny_primitive_and_memory_events"
+    },
+    {
+      "status": "PASS",
+      "test": "test_preparation.Tests.test_wall_timeout_and_group_kill"
+    },
+    {
+      "status": "PASS",
+      "test": "test_preparation.Tests.test_wrong_authority_hash_fails"
+    },
+    {
+      "status": "PASS",
+      "test": "test_preparation.Tests.test_wrong_callback_and_matrix_graph_fail"
+    },
+    {
+      "status": "PASS",
+      "test": "test_preparation.Tests.test_wrong_topology_fails"
+    }
+  ],
+  "tests_run": 46,
+  "tiny_stage_evidence": [
+    {
+      "STOP_reason": null,
+      "actual_authorization_created": false,
+      "all_artifact_SHA_readback_verified": true,
+      "logical_trials": 7,
+      "no_orphans": true,
+      "physical_files_final": 18,
+      "physical_files_peak_sampled": 49,
+      "scratch_peak_sampled_bytes": 53268480,
+      "stage": "Q1",
+      "status": "COMPLETE_REQUIRES_RESOURCE_REVIEW",
+      "traces_parseable": true
+    },
+    {
+      "STOP_reason": null,
+      "actual_authorization_created": false,
+      "all_artifact_SHA_readback_verified": true,
+      "logical_trials": 66,
+      "no_orphans": true,
+      "physical_files_final": 23,
+      "physical_files_peak_sampled": 47,
+      "scratch_peak_sampled_bytes": 17297408,
+      "stage": "Q2",
+      "status": "COMPLETE_REQUIRES_RESOURCE_REVIEW",
+      "traces_parseable": true
+    },
+    {
+      "STOP_reason": "STOP_WALL_TIME",
+      "actual_authorization_created": false,
+      "all_artifact_SHA_readback_verified": true,
+      "logical_trials": 2,
+      "no_orphans": true,
+      "physical_files_final": 16,
+      "physical_files_peak_sampled": 33,
+      "scratch_peak_sampled_bytes": 1015808,
+      "stage": "Q2",
+      "status": "STOPPED",
+      "traces_parseable": true
+    },
+    {
+      "STOP_reason": "STOP_TEST_RECEIPT_TAMPERED",
+      "actual_authorization_created": false,
+      "all_artifact_SHA_readback_verified": true,
+      "logical_trials": 0,
+      "no_orphans": true,
+      "physical_files_final": 14,
+      "physical_files_peak_sampled": 12,
+      "scratch_peak_sampled_bytes": 65536,
+      "stage": "Q2",
+      "status": "STOPPED",
+      "traces_parseable": true
+    },
+    {
+      "STOP_reason": "STOP_TEST_RECEIPT_TAMPERED",
+      "actual_authorization_created": false,
+      "all_artifact_SHA_readback_verified": true,
+      "logical_trials": 0,
+      "no_orphans": true,
+      "physical_files_final": 14,
+      "physical_files_peak_sampled": 12,
+      "scratch_peak_sampled_bytes": 69632,
+      "stage": "Q2",
+      "status": "STOPPED",
+      "traces_parseable": true
+    },
+    {
+      "STOP_reason": "STOP_WALL_TIME",
+      "actual_authorization_created": false,
+      "all_artifact_SHA_readback_verified": true,
+      "logical_trials": 1,
+      "no_orphans": true,
+      "physical_files_final": 16,
+      "physical_files_peak_sampled": 28,
+      "scratch_peak_sampled_bytes": 835584,
+      "stage": "Q2",
+      "status": "STOPPED",
+      "traces_parseable": true
+    },
+    {
+      "STOP_reason": null,
+      "actual_authorization_created": false,
+      "all_artifact_SHA_readback_verified": true,
+      "logical_trials": 3,
+      "no_orphans": true,
+      "physical_files_final": 16,
+      "physical_files_peak_sampled": 31,
+      "scratch_peak_sampled_bytes": 1163264,
+      "stage": "Q2",
+      "status": "COMPLETE_REQUIRES_RESOURCE_REVIEW",
+      "traces_parseable": true
+    },
+    {
+      "STOP_reason": "STOP_STORAGE_GUARD",
+      "actual_authorization_created": false,
+      "all_artifact_SHA_readback_verified": true,
+      "logical_trials": 0,
+      "no_orphans": true,
+      "physical_files_final": 14,
+      "physical_files_peak_sampled": 12,
+      "scratch_peak_sampled_bytes": 69632,
+      "stage": "Q2",
+      "status": "STOPPED",
+      "traces_parseable": true
+    },
+    {
+      "STOP_reason": "STOP_STORAGE_GUARD",
+      "actual_authorization_created": false,
+      "all_artifact_SHA_readback_verified": true,
+      "logical_trials": 0,
+      "no_orphans": true,
+      "physical_files_final": 14,
+      "physical_files_peak_sampled": 12,
+      "scratch_peak_sampled_bytes": 69632,
+      "stage": "Q2",
+      "status": "STOPPED",
+      "traces_parseable": true
+    },
+    {
+      "STOP_reason": "STOP_WATCHDOG_FAILURE",
+      "actual_authorization_created": false,
+      "all_artifact_SHA_readback_verified": true,
+      "logical_trials": 1,
+      "no_orphans": true,
+      "physical_files_final": 16,
+      "physical_files_peak_sampled": 20,
+      "scratch_peak_sampled_bytes": 102400,
+      "stage": "Q2",
+      "status": "STOPPED",
+      "traces_parseable": true
+    },
+    {
+      "STOP_reason": "STOP_WATCHDOG_FAILURE",
+      "actual_authorization_created": false,
+      "all_artifact_SHA_readback_verified": true,
+      "logical_trials": 0,
+      "no_orphans": true,
+      "physical_files_final": 11,
+      "physical_files_peak_sampled": 7,
+      "scratch_peak_sampled_bytes": 20480,
+      "stage": "Q2",
+      "status": "STOPPED",
+      "traces_parseable": true
+    },
+    {
+      "STOP_reason": "STOP_WALL_TIME",
+      "actual_authorization_created": false,
+      "all_artifact_SHA_readback_verified": true,
+      "logical_trials": 2,
+      "no_orphans": true,
+      "physical_files_final": 16,
+      "physical_files_peak_sampled": 30,
+      "scratch_peak_sampled_bytes": 540672,
+      "stage": "Q2",
+      "status": "STOPPED",
+      "traces_parseable": true
+    },
+    {
+      "STOP_reason": "STOP_WORKER_EXIT",
+      "actual_authorization_created": false,
+      "all_artifact_SHA_readback_verified": true,
+      "logical_trials": 1,
+      "no_orphans": true,
+      "physical_files_final": 16,
+      "physical_files_peak_sampled": 20,
+      "scratch_peak_sampled_bytes": 118784,
+      "stage": "Q2",
+      "status": "STOPPED",
+      "traces_parseable": true
+    },
+    {
+      "STOP_reason": "STOP_WORKER_EXIT",
+      "actual_authorization_created": false,
+      "all_artifact_SHA_readback_verified": true,
+      "logical_trials": 1,
+      "no_orphans": true,
+      "physical_files_final": 16,
+      "physical_files_peak_sampled": 26,
+      "scratch_peak_sampled_bytes": 425984,
+      "stage": "Q2",
+      "status": "STOPPED",
+      "traces_parseable": true
+    }
+  ]
+}

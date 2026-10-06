@@ -1,0 +1,23 @@
+{
+  "harness_manifest_SHA256": "c2b1030cea9b81b56b2ca4a04529fcf401f46c41b92e3091a02a66b07e7e917e",
+  "negative_tests": [
+    {
+      "refusal": "STOP_CFD_STAGE_FORBIDDEN",
+      "status": "PASS",
+      "test": "CFD_forbidden"
+    },
+    {
+      "refusal": "STOP_Q0_NOT_PASS",
+      "status": "PASS",
+      "test": "Q0_required"
+    },
+    {
+      "refusal": "STOP_Q1_NOT_PASS",
+      "status": "PASS",
+      "test": "Q2_Q1_PASS_gate"
+    }
+  ],
+  "plan_SHA256": "6075ef9a8fe3e233c98feda65204bc01741dd12d10df3caefd1d6142ab2dea7d",
+  "scope": "NONCFD_RESOURCE_ONLY; never Q1 or Q2 PASS",
+  "status": "PASS"
+}

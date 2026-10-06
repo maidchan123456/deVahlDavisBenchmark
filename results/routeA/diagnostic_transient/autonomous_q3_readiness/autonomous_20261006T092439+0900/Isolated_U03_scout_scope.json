@@ -1,0 +1,18 @@
+{
+  "Q2_PASS_claim": false,
+  "budgets": {
+    "backend_AS_max_bytes": 8589934592,
+    "backend_RSS_max_bytes": 8589934592,
+    "combined_RSS_max_bytes": 17179869184,
+    "files_max": 128,
+    "host_MemAvailable_min_bytes": 25769803776,
+    "native_AS_max_bytes": 8589934592,
+    "native_RSS_max_bytes": 8589934592,
+    "scratch_bytes": 268435456,
+    "single_trial_wall_seconds": 63,
+    "stage_wall_seconds": 305
+  },
+  "full_Q2_requires_Q1_PASS": true,
+  "one_shot": true,
+  "resource_only": true
+}

@@ -1,0 +1,100 @@
+{
+  "authority_SHA256": "06c71945289ffe419b784843f7aab2fea66c44d28c9dba46d828bbd24837e27d",
+  "authorization_SHA256": "04ea5dab0036b59fbd6852682bdbd8cb2fa91705b7c50dc48755dfe468209427",
+  "budgets": {
+    "backend_AS_max_bytes": 8589934592,
+    "backend_RSS_max_bytes": 8589934592,
+    "combined_RSS_max_bytes": 17179869184,
+    "files_max": 192,
+    "host_MemAvailable_min_bytes": 25769803776,
+    "native_AS_max_bytes": 8589934592,
+    "native_RSS_max_bytes": 8589934592,
+    "scratch_bytes": 2147483648,
+    "single_trial_wall_seconds": 76,
+    "stage_wall_seconds": 563
+  },
+  "callbacks_recurring": 1144,
+  "harness_manifest_SHA256": "c2b1030cea9b81b56b2ca4a04529fcf401f46c41b92e3091a02a66b07e7e917e",
+  "host_snapshot": {
+    "CPU_count": 24,
+    "CPU_frequency": {
+      "scaling_cur_freq": "800000",
+      "scaling_max_freq": "4500000",
+      "scaling_min_freq": "800000"
+    },
+    "CPU_governor": "powersave",
+    "CPU_stat": "cpu  2937997 29335 662493 1593606798 308201 0 3593 0 0 0",
+    "MemAvailable": 63099392000,
+    "loadavg": [
+      0.26953125,
+      0.638671875,
+      0.642578125
+    ],
+    "time_monotonic": 665904.417877878
+  },
+  "matrix_packets": 701,
+  "mesh_SHA256": {
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/A-Ra1e6-fine/constant/polyMesh/boundary": "07cc9b62820911e4536eab8b7b3d74e4cba8301ae886017defd2598f495f6c82",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/A-Ra1e6-fine/constant/polyMesh/faces": "ac195415a58b99183d674e0884e34b1c39303e9a6e2077d2064c78837a106c53",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/A-Ra1e6-fine/constant/polyMesh/neighbour": "04263cff8323ef8660b4bee13cf40bf9808c5390ca61b2c15272ce58d1abfead",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/A-Ra1e6-fine/constant/polyMesh/owner": "afe5e635bc106f92b4d403e25a5736ea43747404104ac5ea640c319ba516a81b",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/cases/routeA/A-Ra1e6-fine/constant/polyMesh/points": "61ffe73184d836dba64e3f0ae36308862e37ce32464959b0fbbd59cb12be8e8b"
+  },
+  "mode": "SCOUT",
+  "patches": [
+    {
+      "nFaces": 160,
+      "name": "hotWall",
+      "startFace": 50880,
+      "type": "wall"
+    },
+    {
+      "nFaces": 160,
+      "name": "coldWall",
+      "startFace": 51040,
+      "type": "wall"
+    },
+    {
+      "nFaces": 160,
+      "name": "bottomWall",
+      "startFace": 51200,
+      "type": "wall"
+    },
+    {
+      "nFaces": 160,
+      "name": "topWall",
+      "startFace": 51360,
+      "type": "wall"
+    },
+    {
+      "nFaces": 25600,
+      "name": "front",
+      "startFace": 51520,
+      "type": "empty"
+    },
+    {
+      "nFaces": 25600,
+      "name": "back",
+      "startFace": 77120,
+      "type": "empty"
+    }
+  ],
+  "permission_scope": "NONCFD_DIAGNOSTIC_COMPUTE_REVISION",
+  "plan_SHA256": "6075ef9a8fe3e233c98feda65204bc01741dd12d10df3caefd1d6142ab2dea7d",
+  "prior_stage_status": {
+    "Q0_status": "PASS"
+  },
+  "production_run_authorized": false,
+  "qualification_id": "scout_20261006T093547+0900_cycle1",
+  "quota_context_SHA256": "07152940d2fd1c764e8a86d1a8a8e4f73cf849a0733b331eeaa50cf6832e265a",
+  "runtime_adapter_SHA256": "703a4e11a1d15af5aecdf7a0e1059cc2f0d3cd92605a2e06f1601ee6c8870d11",
+  "schema": "timing_stage_receipt/2",
+  "topology": {
+    "active": 640,
+    "empty": 51200,
+    "nCells": 25600,
+    "nFaces": 102720,
+    "nInternalFaces": 50880
+  },
+  "watchdog_SHA256": "440bff4a2300fe411f20654b8b29550c2ae73af53ccd1eaa15e06400d27e53d7"
+}

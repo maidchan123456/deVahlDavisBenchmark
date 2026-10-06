@@ -1,0 +1,62 @@
+{
+  "CFD_ready": false,
+  "artifact_SHA256": {
+    "results/routeA/diagnostic_transient/autonomous_q3_readiness/autonomous_20261006T092439+0900/build/build.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/routeA/diagnostic_transient/autonomous_q3_readiness/autonomous_20261006T092439+0900/build/build_receipt.json": "823ad2374a09817b0c9412c66f838ae45a0b9f459af941d9bbaef35941c3b673",
+    "results/routeA/diagnostic_transient/autonomous_q3_readiness/autonomous_20261006T092439+0900/build/native_adapter": "495af470b396e8be04c238b4f17d92086ee644ba0062d3197ac4f3a0e50b46c5"
+  },
+  "canonical_SHA256": "06c71945289ffe419b784843f7aab2fea66c44d28c9dba46d828bbd24837e27d",
+  "measurement_ready": {
+    "Q1": false,
+    "Q2": false,
+    "SCOUT": true
+  },
+  "original_46_tests": "PASS",
+  "plan_SHA256": "6075ef9a8fe3e233c98feda65204bc01741dd12d10df3caefd1d6142ab2dea7d",
+  "production_authorized": false,
+  "revision_validation": "PASS",
+  "schema": "diagnostic_compute_revision/2",
+  "source_SHA256": {
+    "Scripts/routeA/diagnostic_transient/compute_revision_v2/measurement/analysis.py": "bfa1fcc88aa2cd74f84c60082c55886df9e42754977f4b798f91a6da5661f5d1",
+    "Scripts/routeA/diagnostic_transient/compute_revision_v2/measurement/archive.py": "230c02b88163cb023e4fb9f7272d78624f8ba8c200858d54449d545fb9e0328e",
+    "Scripts/routeA/diagnostic_transient/compute_revision_v2/measurement/backend.py": "e44f4ee6bf7db1408aa56cd6a9d52205b2b4b6ddbae39ffaf3facbf1757e0dcf",
+    "Scripts/routeA/diagnostic_transient/compute_revision_v2/measurement/build_native.py": "ec9755a3e15137bf38ea15f40a8c97d31edbdf47a83d32ff3c614116626b219c",
+    "Scripts/routeA/diagnostic_transient/compute_revision_v2/measurement/campaign.py": "dc6e41d82a57fbd729d1f5b5f9c5b3d4ae19c970f22f6f422554e955a7a825f0",
+    "Scripts/routeA/diagnostic_transient/compute_revision_v2/measurement/common.py": "6ad4e0a4be3b635e3fbd1c695765ced5f2e77f9f6baaecbe0905366410f1d9f0",
+    "Scripts/routeA/diagnostic_transient/compute_revision_v2/measurement/cpu_attribution.py": "282e897d196e8dcfcf8b4d3aaa81bde1ce50bd3d9cedc3cdc3897b83b0d3e2a4",
+    "Scripts/routeA/diagnostic_transient/compute_revision_v2/measurement/durable.py": "e0e0d088e74ab5fb01ab7769f87f16716564048384c22f9656e99622922547a3",
+    "Scripts/routeA/diagnostic_transient/compute_revision_v2/measurement/fixture.py": "d0de4a65ed957b8337c003c9e28a4cbb61156375b6880a6194f48a4d192fa387",
+    "Scripts/routeA/diagnostic_transient/compute_revision_v2/measurement/io_memory.py": "45efe0eb84870bced4f9b82162fd3055899eacb539a4c8e9db4f7ef5133d53ba",
+    "Scripts/routeA/diagnostic_transient/compute_revision_v2/measurement/microbench.py": "5f2c81dfcd16e2f2afef8360c3fa17e431fe88d3c875e60af6ffd7e1f111aa18",
+    "Scripts/routeA/diagnostic_transient/compute_revision_v2/measurement/native_adapter.C": "5d4f960f76fc5c0ce9cbc8ba48ab160d6545c55779aa5b2d41321d50068ff62a",
+    "Scripts/routeA/diagnostic_transient/compute_revision_v2/measurement/native_permission.py": "85cb179e8348da4cff5c632545431c12c93fb5e40948b7dfa8f76ccd34e3857f",
+    "Scripts/routeA/diagnostic_transient/compute_revision_v2/measurement/pipeline.py": "26cbbafd773ffc54b34fc65fbb4fecab04a19201349f5cbbf36f9ee35fdbc77b",
+    "Scripts/routeA/diagnostic_transient/compute_revision_v2/measurement/prepare_scout.py": "393785d0ddd71009de46f002c3fc1039e185646383b9ead6f5f8e22b1a251425",
+    "Scripts/routeA/diagnostic_transient/compute_revision_v2/measurement/readiness.py": "6d96ed45eae2ea2c393106e340bde8099eb58049b73025b2a5db6819d110b87f",
+    "Scripts/routeA/diagnostic_transient/compute_revision_v2/measurement/report_closure.py": "bc5a77a2d85b041da2d5e7837f5fc54b6e328ab36268909dca2fe357a9255a47",
+    "Scripts/routeA/diagnostic_transient/compute_revision_v2/measurement/report_preparation.py": "2adc1cb335e53f87fe16daa1079731334501035fe11d563d51a112e2f7d2958a",
+    "Scripts/routeA/diagnostic_transient/compute_revision_v2/measurement/run_closure_suite.py": "11bc54cf55aa8ceb1ee517f61faa7853d0caf2f6d7871fdc581456c8d7e58a4f",
+    "Scripts/routeA/diagnostic_transient/compute_revision_v2/measurement/runner.py": "85df4ea685398f52723de6f95fa16a95449fa594bca26e79463b6e8606ca813a",
+    "Scripts/routeA/diagnostic_transient/compute_revision_v2/measurement/schedule.py": "72e13f78e827888c316009bdbcd8abc9a4c8d6fe2f46ea7389ccdff379b3a392",
+    "Scripts/routeA/diagnostic_transient/compute_revision_v2/measurement/spans.py": "6b7e7102f0ac62e8f828e156561797c16fd1f10feb341bc8439648625edfde08",
+    "Scripts/routeA/diagnostic_transient/compute_revision_v2/measurement/test_additional.py": "403693ce3ce00a2e2af81661b03cca84e9273a4591f9f9c42c1c0da7de8a8e80",
+    "Scripts/routeA/diagnostic_transient/compute_revision_v2/measurement/test_bounds.py": "dc94a48f2833852aa7deaeba5bd34118a1cc6bb6fda6c1fecc03dc7d1de3e540",
+    "Scripts/routeA/diagnostic_transient/compute_revision_v2/measurement/test_closure.py": "8b001d4e395dcc1e3cf8cddabfc7bb60bd8b08de2f864feeeeeb8399be0787ec",
+    "Scripts/routeA/diagnostic_transient/compute_revision_v2/measurement/test_preparation.py": "9b817658068cb43d14ccd21e8b738a89ac5b203f45975801790d2366a7ad7cb9",
+    "Scripts/routeA/diagnostic_transient/compute_revision_v2/measurement/test_revision.py": "566c0a270fce2f23b095b5a03268568f6ee341d3eef4c8f06abba0a69fba57c0",
+    "Scripts/routeA/diagnostic_transient/compute_revision_v2/measurement/tiny_child.py": "0beca3c4e9d42d34c6f3c318da9c19a3ba01f8141aa52e3314004fb7d24bb9a0",
+    "Scripts/routeA/diagnostic_transient/compute_revision_v2/measurement/trace_codec.py": "827b354e57827372f50295b9a639de741b72bf861b54d70aa4d60d10c1639a9c",
+    "Scripts/routeA/diagnostic_transient/compute_revision_v2/measurement/transport.py": "a07c1813428e2e4a66e2af8e4aea2d4a8b51613a01ea660eb1c1dd4ae5cdc6ab",
+    "Scripts/routeA/diagnostic_transient/compute_revision_v2/measurement/validate_campaign.py": "95696b3ecef1cabff3a5bdf9d22d4391dce8d5c274888692996ea1f3cef8a6f7",
+    "Scripts/routeA/diagnostic_transient/compute_revision_v2/measurement/watchdog.py": "440bff4a2300fe411f20654b8b29550c2ae73af53ccd1eaa15e06400d27e53d7",
+    "Scripts/routeA/diagnostic_transient/compute_revision_v2/measurement/worker.py": "6bfe926b4e37870c13d3d1d826a093968f21886bab2e04daf78a0aaa168e919e"
+  },
+  "validation_SHA256": {
+    "results/routeA/diagnostic_transient/autonomous_q3_readiness/autonomous_20261006T092439+0900/additional_validation_002.json": "13aa688afc4d15ae293fbef6f13e600a3504cb3b5bd7151d35f9e07405298590",
+    "results/routeA/diagnostic_transient/autonomous_q3_readiness/autonomous_20261006T092439+0900/bounds_validation_002.json": "5aebe8de2f89e129cf29b126d2c5f96daaacb77249af1841161a81888c166fa7",
+    "results/routeA/diagnostic_transient/autonomous_q3_readiness/autonomous_20261006T092439+0900/microbench_001/result.json": "9bc3c16860c756e1496c0007595a5b54012a766029ff4a9f7295c9842690d522",
+    "results/routeA/diagnostic_transient/autonomous_q3_readiness/autonomous_20261006T092439+0900/original_46_regression.json": "93c296e5a8aea89c0925f2995685f7ef7c9705e3dd37e6b541d260e8e7d5eaa1",
+    "results/routeA/diagnostic_transient/autonomous_q3_readiness/autonomous_20261006T092439+0900/revision_validation.json": "498dcb01a46ffc0a62175d8361bf59ee0bbebb082086e66170ed6266cb901852",
+    "results/routeA/diagnostic_transient/autonomous_q3_readiness/autonomous_20261006T092439+0900/tiny_campaign_validation_003.json": "302a817a6b662cf44a4645f368603321e338b11613f8adfc7e48ab1ba428bba0"
+  }
+}

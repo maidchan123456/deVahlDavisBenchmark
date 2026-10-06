@@ -1,0 +1,60 @@
+{
+  "auth": null,
+  "prior": {
+    "Q0_status": "PASS",
+    "Q1_status": "PASS"
+  },
+  "stage": "SCOUT",
+  "test_fault": null,
+  "test_requests": [
+    {
+      "context_kind": "RECURRING_STEP_EQUIVALENT",
+      "kind": "pipeline",
+      "mode": "ON",
+      "phase": "tiny_controller",
+      "purpose": "primitive",
+      "sample_class": "controller"
+    },
+    {
+      "context_kind": "RECURRING_STEP_EQUIVALENT",
+      "kind": "pipeline",
+      "mode": "ON",
+      "phase": "tiny_field",
+      "purpose": "primitive",
+      "sample_class": "field"
+    },
+    {
+      "context_kind": "RECURRING_STEP_EQUIVALENT",
+      "kind": "pipeline",
+      "mode": "ON",
+      "phase": "tiny_matrix",
+      "purpose": "primitive",
+      "sample_class": "matrix"
+    },
+    {
+      "context_kind": "RECURRING_STEP_EQUIVALENT",
+      "kind": "pipeline",
+      "mode": "ON",
+      "phase": "tiny_term",
+      "purpose": "primitive",
+      "sample_class": "term"
+    },
+    {
+      "context_kind": "RECURRING_STEP_EQUIVALENT",
+      "kind": "pipeline",
+      "mode": "ON",
+      "phase": "tiny_energy_matrix",
+      "purpose": "primitive",
+      "sample_class": "energy_matrix"
+    },
+    {
+      "context_kind": "RECURRING_STEP_EQUIVALENT",
+      "kind": "pipeline",
+      "mode": "ON",
+      "phase": "tiny_pressure_matrix",
+      "purpose": "primitive",
+      "sample_class": "pressure_matrix"
+    }
+  ],
+  "tiny": true
+}

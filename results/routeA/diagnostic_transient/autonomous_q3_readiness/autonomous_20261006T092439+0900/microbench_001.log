@@ -1,0 +1,14 @@
+[
+  {
+    "bytes": 4096,
+    "old_median_seconds": 0.0034669520100578666,
+    "new_median_seconds": 0.00028483394999057055,
+    "isolated_receiver_ratio": 12.171835591131746
+  },
+  {
+    "bytes": 524288,
+    "old_median_seconds": 0.3154880829388276,
+    "new_median_seconds": 0.000833287020213902,
+    "isolated_receiver_ratio": 378.60674087764244
+  }
+]

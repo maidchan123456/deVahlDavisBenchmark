@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/compute_revision_v2/measurement/validate_campaign.py", line 8, in <module>
+    start=time.monotonic();r=launch_campaign(REVISION_ROOT/'tiny_campaign_001','SCOUT',tiny=True,test_requests=reqs,test_budget={'stage_wall_seconds':90,'single_trial_wall_seconds':12})
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/compute_revision_v2/measurement/campaign.py", line 132, in launch_campaign
+    budget=copy.deepcopy(cfg['stages'][stage]['budgets'])
+                         ~~~~~~~~~~~~~^^^^^^^
+KeyError: 'SCOUT'

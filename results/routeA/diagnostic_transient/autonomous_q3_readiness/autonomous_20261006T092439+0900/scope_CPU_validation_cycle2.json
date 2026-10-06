@@ -1,0 +1,44 @@
+{
+  "external_PID": 450941,
+  "external_cgroup_different": true,
+  "first": {
+    "CLK_TCK": 100,
+    "cgroup": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/route-a-cpu-validation-cycle2.scope",
+    "host_after": "cpu  2953880 29335 665019 1594493790 309184 0 3609 0 0 0",
+    "host_before": "cpu  2953880 29335 665019 1594493790 309184 0 3609 0 0 0",
+    "membership": "all measurement processes and observers; shared session rejected",
+    "query_seconds": 0.0001537540229037404,
+    "sample_monotonic": 666282.310946757,
+    "scope": "route-a-cpu-validation-cycle2.scope",
+    "system_usec": 7759,
+    "usage_usec": 27159,
+    "user_usec": 19399
+  },
+  "host_rule_changed": false,
+  "interval": {
+    "host_busy_ticks_upper": 42,
+    "host_total_ticks_lower": 466,
+    "other_fraction_upper": 0.04935622317596566,
+    "own_ticks_lower": 19,
+    "own_usage_delta_usec": 194962,
+    "uncertainty": []
+  },
+  "negative_refusal": "STOP_SHARED_OR_WRONG_CPU_SCOPE",
+  "own_short_lived_child_accounted": true,
+  "query_wall_max_seconds": 0.000500819063745439,
+  "scope": "route-a-cpu-validation-cycle2.scope",
+  "second": {
+    "CLK_TCK": 100,
+    "cgroup": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/route-a-cpu-validation-cycle2.scope",
+    "host_after": "cpu  2953898 29335 665043 1594494214 309184 0 3609 0 0 0",
+    "host_before": "cpu  2953898 29335 665043 1594494214 309184 0 3609 0 0 0",
+    "membership": "all measurement processes and observers; shared session rejected",
+    "query_seconds": 0.000500819063745439,
+    "sample_monotonic": 666282.505410755,
+    "scope": "route-a-cpu-validation-cycle2.scope",
+    "system_usec": 116539,
+    "usage_usec": 222121,
+    "user_usec": 105582
+  },
+  "status": "PASS"
+}

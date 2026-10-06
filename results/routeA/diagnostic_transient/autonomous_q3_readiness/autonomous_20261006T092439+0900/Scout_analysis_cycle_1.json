@@ -1,0 +1,1097 @@
+{
+  "CFD_executed": false,
+  "campaign": "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/timing_qualification/scout_20261006T093547+0900_cycle1",
+  "source_manifest_SHA256": "c2b1030cea9b81b56b2ca4a04529fcf401f46c41b92e3091a02a66b07e7e917e",
+  "status": "COMPLETE_RESOURCE_SCOUT_NOT_QUALIFIED_Q1_Q2",
+  "trials": [
+    {
+      "MemAvailable_min": 62548054016,
+      "backend_span_per_class": {
+        "controller_payload": {
+          "ACK_preparation": {
+            "count": 2,
+            "exclusive_seconds": 2.1830201148986816e-06,
+            "inclusive_seconds": 2.1830201148986816e-06
+          },
+          "ACK_send": {
+            "count": 2,
+            "exclusive_seconds": 7.433898281306028e-05,
+            "inclusive_seconds": 7.433898281306028e-05
+          },
+          "JSON_decode": {
+            "count": 2,
+            "exclusive_seconds": 0.12468739203177392,
+            "inclusive_seconds": 0.12468739203177392
+          },
+          "backend_receive": {
+            "count": 3,
+            "exclusive_seconds": 3.8169149020686746,
+            "inclusive_seconds": 3.8169149020686746
+          },
+          "canonical": {
+            "count": 4,
+            "exclusive_seconds": 0.7451165448874235,
+            "inclusive_seconds": 0.7451165448874235
+          },
+          "canonicalization": {
+            "count": 2,
+            "exclusive_seconds": 3.407907206565142e-05,
+            "inclusive_seconds": 0.7449036950711161
+          },
+          "isolated_callback": {
+            "count": 2,
+            "exclusive_seconds": 0.2017381392652169,
+            "inclusive_seconds": 3.6212671630783007
+          },
+          "packed_SHA": {
+            "count": 562,
+            "exclusive_seconds": 0.03590064588934183,
+            "inclusive_seconds": 0.03590064588934183
+          },
+          "packing": {
+            "count": 17,
+            "exclusive_seconds": 2.1507987232180312,
+            "inclusive_seconds": 2.1780606382526457
+          },
+          "persistence_write_fsync_manifest": {
+            "count": 5,
+            "exclusive_seconds": 0.07560342794749886,
+            "inclusive_seconds": 0.08067129296250641
+          },
+          "replay": {
+            "count": 2,
+            "exclusive_seconds": 8.686911314725876e-06,
+            "inclusive_seconds": 8.686911314725876e-06
+          },
+          "sha": {
+            "count": 2,
+            "exclusive_seconds": 0.0043234898475930095,
+            "inclusive_seconds": 0.0043234898475930095
+          },
+          "telemetry_logical_byte_count": {
+            "count": 2,
+            "exclusive_seconds": 0.18143024493474513,
+            "inclusive_seconds": 0.18143024493474513
+          },
+          "writer_accept": {
+            "count": 2,
+            "exclusive_seconds": 0.22631318110506982,
+            "inclusive_seconds": 2.488862907048315
+          }
+        }
+      },
+      "backend_span_values": {
+        "ACK_preparation": 2.1830201148986816e-06,
+        "ACK_send": 7.433898281306028e-05,
+        "JSON_decode": 0.12468739203177392,
+        "backend_receive": 3.8169149020686746,
+        "canonical": 0.7451165448874235,
+        "canonicalization": 0.7449036950711161,
+        "isolated_callback": 3.6212671630783007,
+        "packed_SHA": 0.03590064588934183,
+        "packing": 2.1780606382526457,
+        "persistence_write_fsync_manifest": 0.08067129296250641,
+        "replay": 8.686911314725876e-06,
+        "sha": 0.0043234898475930095,
+        "telemetry_logical_byte_count": 0.18143024493474513,
+        "writer_accept": 2.488862907048315
+      },
+      "backend_time_v": {
+        "CPU_system_seconds": 0.15,
+        "CPU_user_seconds": 4.09,
+        "peak_RSS_bytes": 142065664.0
+      },
+      "callback_JSON_bytes": [
+        6343297,
+        11241593
+      ],
+      "constructor_seconds": 3.4065046050818637,
+      "durable_receipts": 3,
+      "files_peak": 33,
+      "host_busy_upper_max": 0.1827956989247312,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.2909090909090909,
+        "other_CPU_method": "cumulative live subtree + reaped descendants + measurement observer own CPU; uncertainty uses host busy upper bound",
+        "reasons": [
+          "missing or changed measurement root identity",
+          "other CPU busy exceeds registered10percent",
+          "subtree sampling/reap race or counter discontinuity"
+        ],
+        "samples": 235,
+        "status": "UNRESOLVED",
+        "uncertain_intervals": 1
+      },
+      "ledger_bytes": 8909,
+      "native_time_v": {
+        "CPU_system_seconds": 0.26,
+        "CPU_user_seconds": 3.4,
+        "peak_RSS_bytes": 425373696.0
+      },
+      "peak_RSS_bytes": {
+        "all_processes_simultaneous": 645234688,
+        "backend": 144240640,
+        "combined_simultaneous": 558579712,
+        "native": 425500672
+      },
+      "representative_native_spans": {
+        "ACK_exclusive_seconds": 1.7004629109287634,
+        "ACK_wait_inclusive_seconds": 3.768003700999543,
+        "callback_inclusive_seconds": 3.36902944103349,
+        "construct_exclusive_seconds": 0.09196951310150325,
+        "hash_exclusive_seconds": 1.2599603249691427,
+        "native_hash_seconds": 2.1342381968861446,
+        "native_parse_construct_seconds": 0.24758317216765136,
+        "native_serialization_seconds": 0.6256615919992328,
+        "send_ACK_inclusive_seconds": 1.7030887010041624,
+        "serialization_exclusive_seconds": 0.31399038899689913,
+        "socket_send_exclusive_seconds": 0.0026254969416186213
+      },
+      "representative_seconds": 3.36902944103349,
+      "request": {
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "kind": "pipeline",
+        "mode": "ON",
+        "phase": "scout_controller",
+        "purpose": "primitive",
+        "repeat": 0,
+        "sample_class": "controller"
+      },
+      "scratch_peak": 4366336,
+      "trace_accounting": {
+        "lossless": true,
+        "raw_SHA256": "34eb56473f390256d5467709528c0e9e60421a4c7e33dc25b3936717c4140fa0",
+        "representation": "concatenated complete gzip members; one raw JSON line per member",
+        "sample_fields_unchanged": true,
+        "samples": 235,
+        "stored_bytes": 317697,
+        "uncompressed_bytes": 1055908
+      },
+      "trial": "000_scout_controller",
+      "wall_seconds": 8.93421313399449
+    },
+    {
+      "MemAvailable_min": 62502068224,
+      "backend_span_per_class": {
+        "field_state_payload": {
+          "ACK_preparation": {
+            "count": 2,
+            "exclusive_seconds": 2.2079329937696457e-06,
+            "inclusive_seconds": 2.2079329937696457e-06
+          },
+          "ACK_send": {
+            "count": 2,
+            "exclusive_seconds": 0.00010236306115984917,
+            "inclusive_seconds": 0.00010236306115984917
+          },
+          "JSON_decode": {
+            "count": 2,
+            "exclusive_seconds": 0.12646736798342317,
+            "inclusive_seconds": 0.12646736798342317
+          },
+          "backend_receive": {
+            "count": 3,
+            "exclusive_seconds": 3.736507146852091,
+            "inclusive_seconds": 3.736507146852091
+          },
+          "canonical": {
+            "count": 4,
+            "exclusive_seconds": 0.7407831479795277,
+            "inclusive_seconds": 0.7407831479795277
+          },
+          "canonicalization": {
+            "count": 2,
+            "exclusive_seconds": 3.14878998324275e-05,
+            "inclusive_seconds": 0.7405684810364619
+          },
+          "isolated_callback": {
+            "count": 2,
+            "exclusive_seconds": 0.20153218787163496,
+            "inclusive_seconds": 3.6213560489704832
+          },
+          "packed_SHA": {
+            "count": 562,
+            "exclusive_seconds": 0.03498888830654323,
+            "inclusive_seconds": 0.03498888830654323
+          },
+          "packing": {
+            "count": 17,
+            "exclusive_seconds": 2.156030954560265,
+            "inclusive_seconds": 2.183265352854505
+          },
+          "persistence_write_fsync_manifest": {
+            "count": 5,
+            "exclusive_seconds": 0.07624429988209158,
+            "inclusive_seconds": 0.08042494696564972
+          },
+          "replay": {
+            "count": 2,
+            "exclusive_seconds": 9.845942258834839e-06,
+            "inclusive_seconds": 9.845942258834839e-06
+          },
+          "sha": {
+            "count": 2,
+            "exclusive_seconds": 0.004334731958806515,
+            "inclusive_seconds": 0.004334731958806515
+          },
+          "telemetry_logical_byte_count": {
+            "count": 2,
+            "exclusive_seconds": 0.18181172711774707,
+            "inclusive_seconds": 0.18181172711774707
+          },
+          "writer_accept": {
+            "count": 2,
+            "exclusive_seconds": 0.22558877745177597,
+            "inclusive_seconds": 2.493099075043574
+          }
+        }
+      },
+      "backend_span_values": {
+        "ACK_preparation": 2.2079329937696457e-06,
+        "ACK_send": 0.00010236306115984917,
+        "JSON_decode": 0.12646736798342317,
+        "backend_receive": 3.736507146852091,
+        "canonical": 0.7407831479795277,
+        "canonicalization": 0.7405684810364619,
+        "isolated_callback": 3.6213560489704832,
+        "packed_SHA": 0.03498888830654323,
+        "packing": 2.183265352854505,
+        "persistence_write_fsync_manifest": 0.08042494696564972,
+        "replay": 9.845942258834839e-06,
+        "sha": 0.004334731958806515,
+        "telemetry_logical_byte_count": 0.18181172711774707,
+        "writer_accept": 2.493099075043574
+      },
+      "backend_time_v": {
+        "CPU_system_seconds": 0.15,
+        "CPU_user_seconds": 4.09,
+        "peak_RSS_bytes": 141930496.0
+      },
+      "callback_JSON_bytes": [
+        6343298,
+        11241586
+      ],
+      "constructor_seconds": 3.3641359750181437,
+      "durable_receipts": 3,
+      "files_peak": 34,
+      "host_busy_upper_max": 0.18085106382978725,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.3333333333333333,
+        "other_CPU_method": "cumulative live subtree + reaped descendants + measurement observer own CPU; uncertainty uses host busy upper bound",
+        "reasons": [
+          "exit/reap during CPU snapshot",
+          "missing or changed measurement root identity",
+          "other CPU busy exceeds registered10percent",
+          "subtree sampling/reap race or counter discontinuity"
+        ],
+        "samples": 233,
+        "status": "UNRESOLVED",
+        "uncertain_intervals": 2
+      },
+      "ledger_bytes": 8943,
+      "native_time_v": {
+        "CPU_system_seconds": 0.23,
+        "CPU_user_seconds": 3.39,
+        "peak_RSS_bytes": 425467904.0
+      },
+      "peak_RSS_bytes": {
+        "all_processes_simultaneous": 647614464,
+        "backend": 144379904,
+        "combined_simultaneous": 558682112,
+        "native": 427139072
+      },
+      "representative_native_spans": {
+        "ACK_exclusive_seconds": 1.7197533659636974,
+        "ACK_wait_inclusive_seconds": 3.7712591289309785,
+        "callback_inclusive_seconds": 3.381088519934565,
+        "construct_exclusive_seconds": 0.0913805280579254,
+        "hash_exclusive_seconds": 1.2543881869642064,
+        "native_hash_seconds": 2.1189301729900762,
+        "native_parse_construct_seconds": 0.23292619897983968,
+        "native_serialization_seconds": 0.6220723200822249,
+        "send_ACK_inclusive_seconds": 1.7227619249606505,
+        "serialization_exclusive_seconds": 0.3125380870187655,
+        "socket_send_exclusive_seconds": 0.0030082579469308257
+      },
+      "representative_seconds": 3.381088519934565,
+      "request": {
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "kind": "pipeline",
+        "mode": "ON",
+        "phase": "scout_field",
+        "purpose": "primitive",
+        "repeat": 0,
+        "sample_class": "field"
+      },
+      "scratch_peak": 8613888,
+      "trace_accounting": {
+        "lossless": true,
+        "raw_SHA256": "ee8191a8ba1354b2278106a22cb3674c14aa93e4cd1b47e560a801686e3acf27",
+        "representation": "concatenated complete gzip members; one raw JSON line per member",
+        "sample_fields_unchanged": true,
+        "samples": 233,
+        "stored_bytes": 319711,
+        "uncompressed_bytes": 1048300
+      },
+      "trial": "001_scout_field",
+      "wall_seconds": 8.88347427197732
+    },
+    {
+      "MemAvailable_min": 62521544704,
+      "backend_span_per_class": {
+        "scalar_ldu_matrix_payload": {
+          "ACK_preparation": {
+            "count": 2,
+            "exclusive_seconds": 2.4569453671574593e-06,
+            "inclusive_seconds": 2.4569453671574593e-06
+          },
+          "ACK_send": {
+            "count": 2,
+            "exclusive_seconds": 7.70101323723793e-05,
+            "inclusive_seconds": 7.70101323723793e-05
+          },
+          "JSON_decode": {
+            "count": 2,
+            "exclusive_seconds": 0.1158855149988085,
+            "inclusive_seconds": 0.1158855149988085
+          },
+          "backend_receive": {
+            "count": 3,
+            "exclusive_seconds": 3.1306968530407175,
+            "inclusive_seconds": 3.1306968530407175
+          },
+          "canonical": {
+            "count": 5,
+            "exclusive_seconds": 0.694604548974894,
+            "inclusive_seconds": 0.694604548974894
+          },
+          "canonicalization": {
+            "count": 2,
+            "exclusive_seconds": 3.04138520732522e-05,
+            "inclusive_seconds": 0.6374701788881794
+          },
+          "isolated_callback": {
+            "count": 2,
+            "exclusive_seconds": 0.17073204996995628,
+            "inclusive_seconds": 3.172011057031341
+          },
+          "packed_SHA": {
+            "count": 501,
+            "exclusive_seconds": 0.03552363335620612,
+            "inclusive_seconds": 0.03552363335620612
+          },
+          "packing": {
+            "count": 18,
+            "exclusive_seconds": 1.7912575308000669,
+            "inclusive_seconds": 1.8166676954133436
+          },
+          "persistence_write_fsync_manifest": {
+            "count": 7,
+            "exclusive_seconds": 0.11380869103595614,
+            "inclusive_seconds": 0.12053736881352961
+          },
+          "replay": {
+            "count": 2,
+            "exclusive_seconds": 9.70310065895319e-05,
+            "inclusive_seconds": 0.06970973801799119
+          },
+          "replay_matrix": {
+            "count": 1,
+            "exclusive_seconds": 0.011874236050061882,
+            "inclusive_seconds": 0.06961270701140165
+          },
+          "sha": {
+            "count": 3,
+            "exclusive_seconds": 0.005215374054387212,
+            "inclusive_seconds": 0.005215374054387212
+          },
+          "telemetry_logical_byte_count": {
+            "count": 2,
+            "exclusive_seconds": 0.1521378660108894,
+            "inclusive_seconds": 0.1521378660108894
+          },
+          "writer_accept": {
+            "count": 2,
+            "exclusive_seconds": 0.1967296819202602,
+            "inclusive_seconds": 2.137576264096424
+          }
+        }
+      },
+      "backend_span_values": {
+        "ACK_preparation": 2.4569453671574593e-06,
+        "ACK_send": 7.70101323723793e-05,
+        "JSON_decode": 0.1158855149988085,
+        "backend_receive": 3.1306968530407175,
+        "canonical": 0.694604548974894,
+        "canonicalization": 0.6374701788881794,
+        "isolated_callback": 3.172011057031341,
+        "packed_SHA": 0.03552363335620612,
+        "packing": 1.8166676954133436,
+        "persistence_write_fsync_manifest": 0.12053736881352961,
+        "replay": 0.06970973801799119,
+        "replay_matrix": 0.06961270701140165,
+        "sha": 0.005215374054387212,
+        "telemetry_logical_byte_count": 0.1521378660108894,
+        "writer_accept": 2.137576264096424
+      },
+      "backend_time_v": {
+        "CPU_system_seconds": 0.14,
+        "CPU_user_seconds": 3.6,
+        "peak_RSS_bytes": 137093120.0
+      },
+      "callback_JSON_bytes": [
+        6343304,
+        11371005
+      ],
+      "constructor_seconds": 3.374860748066567,
+      "durable_receipts": 3,
+      "files_peak": 38,
+      "host_busy_upper_max": 0.18095238095238095,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.28846153846153844,
+        "other_CPU_method": "cumulative live subtree + reaped descendants + measurement observer own CPU; uncertainty uses host busy upper bound",
+        "reasons": [
+          "missing or changed measurement root identity",
+          "other CPU busy exceeds registered10percent",
+          "subtree sampling/reap race or counter discontinuity"
+        ],
+        "samples": 206,
+        "status": "UNRESOLVED",
+        "uncertain_intervals": 1
+      },
+      "ledger_bytes": 10406,
+      "native_time_v": {
+        "CPU_system_seconds": 0.21,
+        "CPU_user_seconds": 2.74,
+        "peak_RSS_bytes": 355770368.0
+      },
+      "peak_RSS_bytes": {
+        "all_processes_simultaneous": 607666176,
+        "backend": 139427840,
+        "combined_simultaneous": 486219776,
+        "native": 353787904
+      },
+      "representative_native_spans": {
+        "ACK_exclusive_seconds": 1.2610140059841797,
+        "ACK_wait_inclusive_seconds": 3.3095049230614677,
+        "callback_inclusive_seconds": 2.2540537420427427,
+        "construct_exclusive_seconds": 0.06801445898599923,
+        "hash_exclusive_seconds": 0.6881361160194501,
+        "native_hash_seconds": 1.561477518058382,
+        "native_parse_construct_seconds": 0.20914173999335617,
+        "native_serialization_seconds": 0.5487422930309549,
+        "send_ACK_inclusive_seconds": 1.2633795880246907,
+        "serialization_exclusive_seconds": 0.23451229196507484,
+        "socket_send_exclusive_seconds": 0.0023653749376535416
+      },
+      "representative_seconds": 2.2540537420427427,
+      "request": {
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "kind": "pipeline",
+        "mode": "ON",
+        "phase": "scout_matrix",
+        "purpose": "primitive",
+        "repeat": 0,
+        "sample_class": "matrix"
+      },
+      "scratch_peak": 12177408,
+      "trace_accounting": {
+        "lossless": true,
+        "raw_SHA256": "72af26322cf58863110790c63cae43aa71b76a553303abb6cdd52cf9a7ead1bb",
+        "representation": "concatenated complete gzip members; one raw JSON line per member",
+        "sample_fields_unchanged": true,
+        "samples": 206,
+        "stored_bytes": 279995,
+        "uncompressed_bytes": 921804
+      },
+      "trial": "002_scout_matrix",
+      "wall_seconds": 7.830503672012128
+    },
+    {
+      "MemAvailable_min": 62550843392,
+      "backend_span_per_class": {
+        "explicit_term_payload": {
+          "ACK_preparation": {
+            "count": 2,
+            "exclusive_seconds": 2.566142939031124e-06,
+            "inclusive_seconds": 2.566142939031124e-06
+          },
+          "ACK_send": {
+            "count": 2,
+            "exclusive_seconds": 4.0672835893929005e-05,
+            "inclusive_seconds": 4.0672835893929005e-05
+          },
+          "JSON_decode": {
+            "count": 2,
+            "exclusive_seconds": 0.09714548802003264,
+            "inclusive_seconds": 0.09714548802003264
+          },
+          "backend_receive": {
+            "count": 3,
+            "exclusive_seconds": 2.8780232929857448,
+            "inclusive_seconds": 2.8780232929857448
+          },
+          "canonical": {
+            "count": 4,
+            "exclusive_seconds": 0.5446940679103136,
+            "inclusive_seconds": 0.5446940679103136
+          },
+          "canonicalization": {
+            "count": 2,
+            "exclusive_seconds": 3.2056006602942944e-05,
+            "inclusive_seconds": 0.5444770039757714
+          },
+          "isolated_callback": {
+            "count": 2,
+            "exclusive_seconds": 0.15392609976697713,
+            "inclusive_seconds": 2.845572722959332
+          },
+          "packed_SHA": {
+            "count": 454,
+            "exclusive_seconds": 0.03170152101665735,
+            "inclusive_seconds": 0.03170152101665735
+          },
+          "packing": {
+            "count": 15,
+            "exclusive_seconds": 1.7057205637684092,
+            "inclusive_seconds": 1.729446809971705
+          },
+          "persistence_write_fsync_manifest": {
+            "count": 5,
+            "exclusive_seconds": 0.07596842909697443,
+            "inclusive_seconds": 0.08102303592022508
+          },
+          "replay": {
+            "count": 2,
+            "exclusive_seconds": 9.64116770774126e-06,
+            "inclusive_seconds": 9.64116770774126e-06
+          },
+          "sha": {
+            "count": 2,
+            "exclusive_seconds": 0.003213654039427638,
+            "inclusive_seconds": 0.003213654039427638
+          },
+          "telemetry_logical_byte_count": {
+            "count": 2,
+            "exclusive_seconds": 0.135685647954233,
+            "inclusive_seconds": 0.135685647954233
+          },
+          "writer_accept": {
+            "count": 2,
+            "exclusive_seconds": 0.19462104223202914,
+            "inclusive_seconds": 2.0082606760552153
+          }
+        }
+      },
+      "backend_span_values": {
+        "ACK_preparation": 2.566142939031124e-06,
+        "ACK_send": 4.0672835893929005e-05,
+        "JSON_decode": 0.09714548802003264,
+        "backend_receive": 2.8780232929857448,
+        "canonical": 0.5446940679103136,
+        "canonicalization": 0.5444770039757714,
+        "isolated_callback": 2.845572722959332,
+        "packed_SHA": 0.03170152101665735,
+        "packing": 1.729446809971705,
+        "persistence_write_fsync_manifest": 0.08102303592022508,
+        "replay": 9.64116770774126e-06,
+        "sha": 0.003213654039427638,
+        "telemetry_logical_byte_count": 0.135685647954233,
+        "writer_accept": 2.0082606760552153
+      },
+      "backend_time_v": {
+        "CPU_system_seconds": 0.12,
+        "CPU_user_seconds": 3.31,
+        "peak_RSS_bytes": 133763072.0
+      },
+      "callback_JSON_bytes": [
+        6343300,
+        8871389
+      ],
+      "constructor_seconds": 3.4534943300532177,
+      "durable_receipts": 3,
+      "files_peak": 37,
+      "host_busy_upper_max": 0.1827956989247312,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.25925925925925924,
+        "other_CPU_method": "cumulative live subtree + reaped descendants + measurement observer own CPU; uncertainty uses host busy upper bound",
+        "reasons": [
+          "missing or changed measurement root identity",
+          "other CPU busy exceeds registered10percent",
+          "subtree sampling/reap race or counter discontinuity"
+        ],
+        "samples": 187,
+        "status": "UNRESOLVED",
+        "uncertain_intervals": 1
+      },
+      "ledger_bytes": 9008,
+      "native_time_v": {
+        "CPU_system_seconds": 0.19,
+        "CPU_user_seconds": 2.51,
+        "peak_RSS_bytes": 356081664.0
+      },
+      "peak_RSS_bytes": {
+        "all_processes_simultaneous": 602726400,
+        "backend": 132407296,
+        "combined_simultaneous": 486158336,
+        "native": 353751040
+      },
+      "representative_native_spans": {
+        "ACK_exclusive_seconds": 0.8232666979311034,
+        "ACK_wait_inclusive_seconds": 2.963034352986142,
+        "callback_inclusive_seconds": 1.6098872700240463,
+        "construct_exclusive_seconds": 0.055651388014666736,
+        "hash_exclusive_seconds": 0.5634228540584445,
+        "native_hash_seconds": 1.428845801972784,
+        "native_parse_construct_seconds": 0.1964999829651788,
+        "native_serialization_seconds": 0.4749581429641694,
+        "send_ACK_inclusive_seconds": 0.8255059720249847,
+        "serialization_exclusive_seconds": 0.1652893900172785,
+        "socket_send_exclusive_seconds": 0.0022389920195564628
+      },
+      "representative_seconds": 1.6098872700240463,
+      "request": {
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "kind": "pipeline",
+        "mode": "ON",
+        "phase": "scout_term",
+        "purpose": "primitive",
+        "repeat": 0,
+        "sample_class": "term"
+      },
+      "scratch_peak": 14663680,
+      "trace_accounting": {
+        "lossless": true,
+        "raw_SHA256": "0da0b710085accd0b82d84a270cde6af7b01d6b3834e550ee7cbf95a7aa34eba",
+        "representation": "concatenated complete gzip members; one raw JSON line per member",
+        "sample_fields_unchanged": true,
+        "samples": 187,
+        "stored_bytes": 253205,
+        "uncompressed_bytes": 835036
+      },
+      "trial": "003_scout_term",
+      "wall_seconds": 7.195645080995746
+    },
+    {
+      "MemAvailable_min": 62365655040,
+      "backend_span_per_class": {
+        "energy_two_matrix_payload": {
+          "ACK_preparation": {
+            "count": 2,
+            "exclusive_seconds": 2.3279571905732155e-06,
+            "inclusive_seconds": 2.3279571905732155e-06
+          },
+          "ACK_send": {
+            "count": 2,
+            "exclusive_seconds": 7.641292177140713e-05,
+            "inclusive_seconds": 7.641292177140713e-05
+          },
+          "JSON_decode": {
+            "count": 2,
+            "exclusive_seconds": 0.17927611689083278,
+            "inclusive_seconds": 0.17927611689083278
+          },
+          "backend_receive": {
+            "count": 3,
+            "exclusive_seconds": 4.43315290811006,
+            "inclusive_seconds": 4.43315290811006
+          },
+          "canonical": {
+            "count": 6,
+            "exclusive_seconds": 1.232925211894326,
+            "inclusive_seconds": 1.232925211894326
+          },
+          "canonicalization": {
+            "count": 2,
+            "exclusive_seconds": 3.546301741153002e-05,
+            "inclusive_seconds": 1.0631588409887627
+          },
+          "isolated_callback": {
+            "count": 2,
+            "exclusive_seconds": 0.2724954361328855,
+            "inclusive_seconds": 5.347717872005887
+          },
+          "packed_SHA": {
+            "count": 675,
+            "exclusive_seconds": 0.045110896113328636,
+            "inclusive_seconds": 0.045110896113328636
+          },
+          "packing": {
+            "count": 23,
+            "exclusive_seconds": 3.1279005178948864,
+            "inclusive_seconds": 3.1615650329040363
+          },
+          "persistence_write_fsync_manifest": {
+            "count": 7,
+            "exclusive_seconds": 0.10589940485078841,
+            "inclusive_seconds": 0.11280012177303433
+          },
+          "replay": {
+            "count": 2,
+            "exclusive_seconds": 0.00020867015700787306,
+            "inclusive_seconds": 0.20612487802281976
+          },
+          "replay_matrix": {
+            "count": 2,
+            "exclusive_seconds": 0.034513266873545945,
+            "inclusive_seconds": 0.20591620786581188
+          },
+          "sha": {
+            "count": 4,
+            "exclusive_seconds": 0.009003906045109034,
+            "inclusive_seconds": 0.009003906045109034
+          },
+          "telemetry_logical_byte_count": {
+            "count": 2,
+            "exclusive_seconds": 0.24796225398313254,
+            "inclusive_seconds": 0.24796225398313254
+          },
+          "writer_accept": {
+            "count": 2,
+            "exclusive_seconds": 0.2716628450434655,
+            "inclusive_seconds": 3.550821117940359
+          }
+        }
+      },
+      "backend_span_values": {
+        "ACK_preparation": 2.3279571905732155e-06,
+        "ACK_send": 7.641292177140713e-05,
+        "JSON_decode": 0.17927611689083278,
+        "backend_receive": 4.43315290811006,
+        "canonical": 1.232925211894326,
+        "canonicalization": 1.0631588409887627,
+        "isolated_callback": 5.347717872005887,
+        "packed_SHA": 0.045110896113328636,
+        "packing": 3.1615650329040363,
+        "persistence_write_fsync_manifest": 0.11280012177303433,
+        "replay": 0.20612487802281976,
+        "replay_matrix": 0.20591620786581188,
+        "sha": 0.009003906045109034,
+        "telemetry_logical_byte_count": 0.24796225398313254,
+        "writer_accept": 3.550821117940359
+      },
+      "backend_time_v": {
+        "CPU_system_seconds": 0.16,
+        "CPU_user_seconds": 5.87,
+        "peak_RSS_bytes": 187179008.0
+      },
+      "callback_JSON_bytes": [
+        6343304,
+        17262628
+      ],
+      "constructor_seconds": 3.369659053045325,
+      "durable_receipts": 3,
+      "files_peak": 40,
+      "host_busy_upper_max": 0.1827956989247312,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.3018867924528302,
+        "other_CPU_method": "cumulative live subtree + reaped descendants + measurement observer own CPU; uncertainty uses host busy upper bound",
+        "reasons": [
+          "missing or changed measurement root identity",
+          "other CPU busy exceeds registered10percent",
+          "subtree sampling/reap race or counter discontinuity"
+        ],
+        "samples": 301,
+        "status": "UNRESOLVED",
+        "uncertain_intervals": 1
+      },
+      "ledger_bytes": 10400,
+      "native_time_v": {
+        "CPU_system_seconds": 0.26,
+        "CPU_user_seconds": 4.06,
+        "peak_RSS_bytes": 479043584.0
+      },
+      "peak_RSS_bytes": {
+        "all_processes_simultaneous": 791138304,
+        "backend": 189296640,
+        "combined_simultaneous": 670081024,
+        "native": 480784384
+      },
+      "representative_native_spans": {
+        "ACK_exclusive_seconds": 3.500643237028271,
+        "ACK_wait_inclusive_seconds": 5.5549910919507965,
+        "callback_inclusive_seconds": 5.780554853961803,
+        "construct_exclusive_seconds": 0.18269882001914084,
+        "hash_exclusive_seconds": 1.535677875042893,
+        "native_hash_seconds": 2.4031161291059107,
+        "native_parse_construct_seconds": 0.3240832360461354,
+        "native_serialization_seconds": 0.8679778999648988,
+        "send_ACK_inclusive_seconds": 3.5064803769346327,
+        "serialization_exclusive_seconds": 0.5556778030004352,
+        "socket_send_exclusive_seconds": 0.0058367690071463585
+      },
+      "representative_seconds": 5.780554853961803,
+      "request": {
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "kind": "pipeline",
+        "mode": "ON",
+        "phase": "scout_energy_matrix",
+        "purpose": "primitive",
+        "repeat": 0,
+        "sample_class": "energy_matrix"
+      },
+      "scratch_peak": 18743296,
+      "trace_accounting": {
+        "lossless": true,
+        "raw_SHA256": "036484687256580f1be48a16b4894d1ca32e1ae9a100f9555af36ab42633711c",
+        "representation": "concatenated complete gzip members; one raw JSON line per member",
+        "sample_fields_unchanged": true,
+        "samples": 301,
+        "stored_bytes": 416295,
+        "uncompressed_bytes": 1370149
+      },
+      "trial": "004_scout_energy_matrix",
+      "wall_seconds": 11.37226977199316
+    },
+    {
+      "MemAvailable_min": 62505918464,
+      "backend_span_per_class": {
+        "pressure_three_matrix_payload": {
+          "ACK_preparation": {
+            "count": 2,
+            "exclusive_seconds": 2.3270258679986e-06,
+            "inclusive_seconds": 2.3270258679986e-06
+          },
+          "ACK_send": {
+            "count": 2,
+            "exclusive_seconds": 3.842206206172705e-05,
+            "inclusive_seconds": 3.842206206172705e-05
+          },
+          "JSON_decode": {
+            "count": 2,
+            "exclusive_seconds": 0.13903651689179242,
+            "inclusive_seconds": 0.13903651689179242
+          },
+          "backend_receive": {
+            "count": 3,
+            "exclusive_seconds": 3.6235322968568653,
+            "inclusive_seconds": 3.6235322968568653
+          },
+          "canonical": {
+            "count": 7,
+            "exclusive_seconds": 1.0559922970132902,
+            "inclusive_seconds": 1.0559922970132902
+          },
+          "canonicalization": {
+            "count": 2,
+            "exclusive_seconds": 3.185402601957321e-05,
+            "inclusive_seconds": 0.8353920140070841
+          },
+          "isolated_callback": {
+            "count": 2,
+            "exclusive_seconds": 0.22350934403948486,
+            "inclusive_seconds": 4.2608447020174935
+          },
+          "packed_SHA": {
+            "count": 563,
+            "exclusive_seconds": 0.0394740222254768,
+            "inclusive_seconds": 0.0394740222254768
+          },
+          "packing": {
+            "count": 24,
+            "exclusive_seconds": 2.366826751618646,
+            "inclusive_seconds": 2.3970572320977226
+          },
+          "persistence_write_fsync_manifest": {
+            "count": 7,
+            "exclusive_seconds": 0.1066503970650956,
+            "inclusive_seconds": 0.1115402647992596
+          },
+          "replay": {
+            "count": 2,
+            "exclusive_seconds": 0.00028084113728255033,
+            "inclusive_seconds": 0.26154288405086845
+          },
+          "replay_matrix": {
+            "count": 3,
+            "exclusive_seconds": 0.0396304790629074,
+            "inclusive_seconds": 0.2612620429135859
+          },
+          "sha": {
+            "count": 5,
+            "exclusive_seconds": 0.006650572759099305,
+            "inclusive_seconds": 0.006650572759099305
+          },
+          "telemetry_logical_byte_count": {
+            "count": 2,
+            "exclusive_seconds": 0.1962503510294482,
+            "inclusive_seconds": 0.1962503510294482
+          },
+          "writer_accept": {
+            "count": 2,
+            "exclusive_seconds": 0.22554779204074293,
+            "inclusive_seconds": 2.738759469939396
+          }
+        }
+      },
+      "backend_span_values": {
+        "ACK_preparation": 2.3270258679986e-06,
+        "ACK_send": 3.842206206172705e-05,
+        "JSON_decode": 0.13903651689179242,
+        "backend_receive": 3.6235322968568653,
+        "canonical": 1.0559922970132902,
+        "canonicalization": 0.8353920140070841,
+        "isolated_callback": 4.2608447020174935,
+        "packed_SHA": 0.0394740222254768,
+        "packing": 2.3970572320977226,
+        "persistence_write_fsync_manifest": 0.1115402647992596,
+        "replay": 0.26154288405086845,
+        "replay_matrix": 0.2612620429135859,
+        "sha": 0.006650572759099305,
+        "telemetry_logical_byte_count": 0.1962503510294482,
+        "writer_accept": 2.738759469939396
+      },
+      "backend_time_v": {
+        "CPU_system_seconds": 0.14,
+        "CPU_user_seconds": 4.73,
+        "peak_RSS_bytes": 151285760.0
+      },
+      "callback_JSON_bytes": [
+        6343308,
+        13539156
+      ],
+      "constructor_seconds": 3.362522564944811,
+      "durable_receipts": 3,
+      "files_peak": 41,
+      "host_busy_upper_max": 0.1827956989247312,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.2545454545454545,
+        "other_CPU_method": "cumulative live subtree + reaped descendants + measurement observer own CPU; uncertainty uses host busy upper bound",
+        "reasons": [
+          "missing or changed measurement root identity",
+          "other CPU busy exceeds registered10percent",
+          "subtree sampling/reap race or counter discontinuity"
+        ],
+        "samples": 247,
+        "status": "UNRESOLVED",
+        "uncertain_intervals": 1
+      },
+      "ledger_bytes": 10535,
+      "native_time_v": {
+        "CPU_system_seconds": 0.23,
+        "CPU_user_seconds": 3.24,
+        "peak_RSS_bytes": 380039168.0
+      },
+      "peak_RSS_bytes": {
+        "all_processes_simultaneous": 665321472,
+        "backend": 153526272,
+        "combined_simultaneous": 535629824,
+        "native": 382103552
+      },
+      "representative_native_spans": {
+        "ACK_exclusive_seconds": 2.3729507349198684,
+        "ACK_wait_inclusive_seconds": 4.423307218938135,
+        "callback_inclusive_seconds": 3.865144562907517,
+        "construct_exclusive_seconds": 0.10870176996104419,
+        "hash_exclusive_seconds": 0.9930687299929559,
+        "native_hash_seconds": 1.858229500008747,
+        "native_parse_construct_seconds": 0.24936664989218116,
+        "native_serialization_seconds": 0.6967229428701103,
+        "send_ACK_inclusive_seconds": 2.3762499029980972,
+        "serialization_exclusive_seconds": 0.3871104889549315,
+        "socket_send_exclusive_seconds": 0.00329882197547704
+      },
+      "representative_seconds": 3.865144562907517,
+      "request": {
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "kind": "pipeline",
+        "mode": "ON",
+        "phase": "scout_pressure_matrix",
+        "purpose": "primitive",
+        "repeat": 0,
+        "sample_class": "pressure_matrix"
+      },
+      "scratch_peak": 21630976,
+      "trace_accounting": {
+        "lossless": true,
+        "raw_SHA256": "b819395e1ce2c0d438f973af90d597b501ed503e37db6e560f4e53ae28c8533d",
+        "representation": "concatenated complete gzip members; one raw JSON line per member",
+        "sample_fields_unchanged": true,
+        "samples": 247,
+        "stored_bytes": 342271,
+        "uncompressed_bytes": 1116410
+      },
+      "trial": "005_scout_pressure_matrix",
+      "wall_seconds": 9.429642247967422
+    },
+    {
+      "MemAvailable_min": 62790275072,
+      "backend_span_per_class": null,
+      "backend_span_values": null,
+      "backend_time_v": null,
+      "callback_JSON_bytes": [
+        0,
+        0
+      ],
+      "constructor_seconds": 0.14187484793365002,
+      "durable_receipts": 0,
+      "files_peak": 29,
+      "host_busy_upper_max": 0.13978494623655913,
+      "host_stability": {
+        "no_additional_repeats": true,
+        "other_CPU_fraction_max": 0.23636363636363636,
+        "other_CPU_method": "cumulative live subtree + reaped descendants + measurement observer own CPU; uncertainty uses host busy upper bound",
+        "reasons": [
+          "missing or changed measurement root identity",
+          "other CPU busy exceeds registered10percent",
+          "subtree sampling/reap race or counter discontinuity"
+        ],
+        "samples": 63,
+        "status": "UNRESOLVED",
+        "uncertain_intervals": 2
+      },
+      "ledger_bytes": 0,
+      "native_time_v": {
+        "CPU_system_seconds": 0.2,
+        "CPU_user_seconds": 0.72,
+        "peak_RSS_bytes": 262909952.0
+      },
+      "peak_RSS_bytes": {
+        "all_processes_simultaneous": 370229248,
+        "backend": 0,
+        "combined_simultaneous": 240521216,
+        "native": 240521216
+      },
+      "representative_native_spans": {
+        "ACK_exclusive_seconds": 0,
+        "ACK_wait_inclusive_seconds": 0,
+        "callback_inclusive_seconds": 0.13399199408013374,
+        "construct_exclusive_seconds": 0.13398854003753513,
+        "hash_exclusive_seconds": 0,
+        "native_hash_seconds": 0,
+        "native_parse_construct_seconds": 0.2758551810402423,
+        "native_serialization_seconds": 0,
+        "send_ACK_inclusive_seconds": 0,
+        "serialization_exclusive_seconds": 0,
+        "socket_send_exclusive_seconds": 0
+      },
+      "representative_seconds": 0.13399199408013374,
+      "request": {
+        "context_kind": "RECURRING_STEP_EQUIVALENT",
+        "kind": "pipeline",
+        "mode": "OFF",
+        "phase": "scout_OFF",
+        "purpose": "primitive",
+        "repeat": 0,
+        "sample_class": "pressure_matrix"
+      },
+      "scratch_peak": 17465344,
+      "trace_accounting": {
+        "lossless": true,
+        "raw_SHA256": "f089172f2aafe2ad51ccc10119bdf4fa6be19fb8753a28c8dfac9162b224a866",
+        "representation": "concatenated complete gzip members; one raw JSON line per member",
+        "sample_fields_unchanged": true,
+        "samples": 63,
+        "stored_bytes": 74867,
+        "uncompressed_bytes": 218295
+      },
+      "trial": "006_scout_OFF",
+      "wall_seconds": 2.3952384350122884
+    }
+  ]
+}

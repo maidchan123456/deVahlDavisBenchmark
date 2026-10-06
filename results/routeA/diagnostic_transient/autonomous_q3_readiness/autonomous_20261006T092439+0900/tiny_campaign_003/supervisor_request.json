@@ -1,0 +1,23 @@
+{
+  "allow_nested": true,
+  "budget": {
+    "backend_AS_max_bytes": 8589934592,
+    "backend_RSS_max_bytes": 8589934592,
+    "combined_RSS_max_bytes": 17179869184,
+    "files_max": 256,
+    "host_MemAvailable_min_bytes": 25769803776,
+    "native_AS_max_bytes": 8589934592,
+    "native_RSS_max_bytes": 8589934592,
+    "scratch_bytes": 12884901888,
+    "single_trial_wall_seconds": 12,
+    "stage_wall_seconds": 90
+  },
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/Scripts/routeA/diagnostic_transient/compute_revision_v2/measurement/campaign.py",
+    "/home/mirai/OpenFOAM/mirai-13/run/deVahlDavisBenchmark/results/routeA/diagnostic_transient/autonomous_q3_readiness/autonomous_20261006T092439+0900/tiny_campaign_003/stage_request.json"
+  ],
+  "test_injection": null,
+  "trial_wall": 90
+}

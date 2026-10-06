@@ -1,0 +1,43 @@
+[
+  {
+    "sequence": 1,
+    "chosen": "BufferedReader over unchanged unbuffered bidirectional SocketIO, with reads capped at packet_limit+1",
+    "why": "C buffered readline amortizes recv while preserving RawIOBase readline size and delimiter/EOF semantics. SocketIO still sends immediate ACK bytes.",
+    "alternatives": [
+      "custom line accumulator: more framing verification burden",
+      "static references: second-line only",
+      "batching/binary/async: hard stop scope"
+    ],
+    "evidence": "prior bytewise structure probe and failure review",
+    "scope_impact": "transport receive implementation only; identical scientific input bytes/evaluator/Writer"
+  },
+  {
+    "sequence": 2,
+    "chosen": "Transient dedicated systemd user scope cgroup CPU lifetime counter",
+    "why": "Complete CPU includes short-lived children and observers with microsecond query, avoiding all-proc snapshot subtraction bias. No change to threshold. User-scope capability successfully probed.",
+    "alternatives": [
+      "asynchronous proc endpoint upper: measured reading window too wide",
+      "relax threshold or average across longer intervals: disallowed",
+      "kill external applications: not authorized or needed"
+    ],
+    "evidence": "Scout_analysis_cycle_1.json and systemd user scope capability probe",
+    "scope_impact": "qualification measurement wrapper only; no numerics/scientific packet changes"
+  },
+  {
+    "sequence": 3,
+    "chosen": "Stop at major resource architecture decision, rather than authorize a full qualification of this compute design",
+    "why": "Stable actual target class measurements and frozen1144/701 source mix imply32.9\u201375.4min per step primitive proxy. Even measured matching-stage subset implies47.3days to earliest candidate for one series. The whole-mix conditional proxy is292\u2013671days for earliest candidate,1169\u20132683days near t*=2; additional full science/solver work omitted. This is an order-of-magnitude risk, not an arbitrary7day deadline.",
+    "alternatives": [
+      "source-static transport cache: socket sends2\u20136ms; cannot claim byte fraction as time reduction or remove full reconstructed identity/evidence work",
+      "continue fullQ1/Q2: scientifically permitted by master, but hard-stop108 applies because passing those measurements cannot by itself make this resource design practical",
+      "reduce24/2 numerics or1144/701/evidence: forbidden",
+      "dynamic epoch/state work reuse, binary/bulk, parallel/async compute: major verification and scheduling choices require user decision before implementation"
+    ],
+    "evidence": [
+      "Scout_analysis_cycle_2.json",
+      "Cycle2_resource_feasibility_review.json",
+      "Isolated_U03_resource_review.json"
+    ],
+    "scope_impact": "No further execution; Q1/Q2 new qualification and Q3 readiness remain incomplete; preserves science/numerics/old artifacts."
+  }
+]

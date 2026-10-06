@@ -1,0 +1,238 @@
+{
+  "production_speedup_claim": false,
+  "receiver_summary": [
+    {
+      "bytes": 4096,
+      "isolated_receiver_ratio": 12.171835591131746,
+      "new_median_seconds": 0.00028483394999057055,
+      "old_median_seconds": 0.0034669520100578666
+    },
+    {
+      "bytes": 524288,
+      "isolated_receiver_ratio": 378.60674087764244,
+      "new_median_seconds": 0.000833287020213902,
+      "old_median_seconds": 0.3154880829388276
+    }
+  ],
+  "repeats": 3,
+  "rows": [
+    {
+      "bytes": 4096,
+      "content_sha256": "eb2f11903e7906c35d52693096a281acfbe422c12eae63b51a1c2ef629bfb398",
+      "kind": "receiver",
+      "legacy": true,
+      "repeat": 0,
+      "wall_seconds": 0.0034669520100578666
+    },
+    {
+      "bytes": 4096,
+      "content_sha256": "eb2f11903e7906c35d52693096a281acfbe422c12eae63b51a1c2ef629bfb398",
+      "kind": "receiver",
+      "legacy": false,
+      "repeat": 0,
+      "wall_seconds": 0.00025258108507841825
+    },
+    {
+      "bytes": 4096,
+      "content_sha256": "eb2f11903e7906c35d52693096a281acfbe422c12eae63b51a1c2ef629bfb398",
+      "kind": "receiver",
+      "legacy": true,
+      "repeat": 1,
+      "wall_seconds": 0.002935610944405198
+    },
+    {
+      "bytes": 4096,
+      "content_sha256": "eb2f11903e7906c35d52693096a281acfbe422c12eae63b51a1c2ef629bfb398",
+      "kind": "receiver",
+      "legacy": false,
+      "repeat": 1,
+      "wall_seconds": 0.00028483394999057055
+    },
+    {
+      "bytes": 4096,
+      "content_sha256": "eb2f11903e7906c35d52693096a281acfbe422c12eae63b51a1c2ef629bfb398",
+      "kind": "receiver",
+      "legacy": true,
+      "repeat": 2,
+      "wall_seconds": 0.0037484910571947694
+    },
+    {
+      "bytes": 4096,
+      "content_sha256": "eb2f11903e7906c35d52693096a281acfbe422c12eae63b51a1c2ef629bfb398",
+      "kind": "receiver",
+      "legacy": false,
+      "repeat": 2,
+      "wall_seconds": 0.0003009979845955968
+    },
+    {
+      "bytes": 524288,
+      "content_sha256": "2bd7a90c6ff111c5d7d23c57e4da99da1b3a64fa47efc35bccf240d843365f22",
+      "kind": "receiver",
+      "legacy": true,
+      "repeat": 0,
+      "wall_seconds": 0.31847346504218876
+    },
+    {
+      "bytes": 524288,
+      "content_sha256": "2bd7a90c6ff111c5d7d23c57e4da99da1b3a64fa47efc35bccf240d843365f22",
+      "kind": "receiver",
+      "legacy": false,
+      "repeat": 0,
+      "wall_seconds": 0.0007206310983747244
+    },
+    {
+      "bytes": 524288,
+      "content_sha256": "2bd7a90c6ff111c5d7d23c57e4da99da1b3a64fa47efc35bccf240d843365f22",
+      "kind": "receiver",
+      "legacy": true,
+      "repeat": 1,
+      "wall_seconds": 0.3087746730307117
+    },
+    {
+      "bytes": 524288,
+      "content_sha256": "2bd7a90c6ff111c5d7d23c57e4da99da1b3a64fa47efc35bccf240d843365f22",
+      "kind": "receiver",
+      "legacy": false,
+      "repeat": 1,
+      "wall_seconds": 0.0011970120249316096
+    },
+    {
+      "bytes": 524288,
+      "content_sha256": "2bd7a90c6ff111c5d7d23c57e4da99da1b3a64fa47efc35bccf240d843365f22",
+      "kind": "receiver",
+      "legacy": true,
+      "repeat": 2,
+      "wall_seconds": 0.3154880829388276
+    },
+    {
+      "bytes": 524288,
+      "content_sha256": "2bd7a90c6ff111c5d7d23c57e4da99da1b3a64fa47efc35bccf240d843365f22",
+      "kind": "receiver",
+      "legacy": false,
+      "repeat": 2,
+      "wall_seconds": 0.000833287020213902
+    },
+    {
+      "bytes": 32,
+      "enabled": false,
+      "kind": "observer",
+      "note": "isolated ledger incremental cost; not full evaluator wall",
+      "observer_commit_seconds": null,
+      "payload_sha256": "6279cb8760c1543116b03fb29d9d4a035f59d644cd7d7fc601c29d321eebbc7d",
+      "repeat": 0,
+      "wall_seconds": 5.6644901633262634e-05
+    },
+    {
+      "bytes": 32,
+      "enabled": true,
+      "kind": "observer",
+      "note": "isolated ledger incremental cost; not full evaluator wall",
+      "observer_commit_seconds": 0.006347083020955324,
+      "payload_sha256": "6279cb8760c1543116b03fb29d9d4a035f59d644cd7d7fc601c29d321eebbc7d",
+      "repeat": 0,
+      "wall_seconds": 0.006514984997920692
+    },
+    {
+      "bytes": 32,
+      "enabled": false,
+      "kind": "observer",
+      "note": "isolated ledger incremental cost; not full evaluator wall",
+      "observer_commit_seconds": null,
+      "payload_sha256": "6279cb8760c1543116b03fb29d9d4a035f59d644cd7d7fc601c29d321eebbc7d",
+      "repeat": 1,
+      "wall_seconds": 6.220396608114243e-05
+    },
+    {
+      "bytes": 32,
+      "enabled": true,
+      "kind": "observer",
+      "note": "isolated ledger incremental cost; not full evaluator wall",
+      "observer_commit_seconds": 0.005135357961989939,
+      "payload_sha256": "6279cb8760c1543116b03fb29d9d4a035f59d644cd7d7fc601c29d321eebbc7d",
+      "repeat": 1,
+      "wall_seconds": 0.005166873917914927
+    },
+    {
+      "bytes": 32,
+      "enabled": false,
+      "kind": "observer",
+      "note": "isolated ledger incremental cost; not full evaluator wall",
+      "observer_commit_seconds": null,
+      "payload_sha256": "6279cb8760c1543116b03fb29d9d4a035f59d644cd7d7fc601c29d321eebbc7d",
+      "repeat": 2,
+      "wall_seconds": 3.3003976568579674e-05
+    },
+    {
+      "bytes": 32,
+      "enabled": true,
+      "kind": "observer",
+      "note": "isolated ledger incremental cost; not full evaluator wall",
+      "observer_commit_seconds": 0.005374992964789271,
+      "payload_sha256": "6279cb8760c1543116b03fb29d9d4a035f59d644cd7d7fc601c29d321eebbc7d",
+      "repeat": 2,
+      "wall_seconds": 0.005407945951446891
+    },
+    {
+      "bytes": 524288,
+      "enabled": false,
+      "kind": "observer",
+      "note": "isolated ledger incremental cost; not full evaluator wall",
+      "observer_commit_seconds": null,
+      "payload_sha256": "cd8faa61236d304095a169fd0fa22bcf5dd24c58647b2af0b9dc4ae8c87b3329",
+      "repeat": 0,
+      "wall_seconds": 0.0014422739623114467
+    },
+    {
+      "bytes": 524288,
+      "enabled": true,
+      "kind": "observer",
+      "note": "isolated ledger incremental cost; not full evaluator wall",
+      "observer_commit_seconds": 0.005271822912618518,
+      "payload_sha256": "cd8faa61236d304095a169fd0fa22bcf5dd24c58647b2af0b9dc4ae8c87b3329",
+      "repeat": 0,
+      "wall_seconds": 0.007002505008131266
+    },
+    {
+      "bytes": 524288,
+      "enabled": false,
+      "kind": "observer",
+      "note": "isolated ledger incremental cost; not full evaluator wall",
+      "observer_commit_seconds": null,
+      "payload_sha256": "cd8faa61236d304095a169fd0fa22bcf5dd24c58647b2af0b9dc4ae8c87b3329",
+      "repeat": 1,
+      "wall_seconds": 0.0012488310458138585
+    },
+    {
+      "bytes": 524288,
+      "enabled": true,
+      "kind": "observer",
+      "note": "isolated ledger incremental cost; not full evaluator wall",
+      "observer_commit_seconds": 0.005248809931799769,
+      "payload_sha256": "cd8faa61236d304095a169fd0fa22bcf5dd24c58647b2af0b9dc4ae8c87b3329",
+      "repeat": 1,
+      "wall_seconds": 0.006967396941035986
+    },
+    {
+      "bytes": 524288,
+      "enabled": false,
+      "kind": "observer",
+      "note": "isolated ledger incremental cost; not full evaluator wall",
+      "observer_commit_seconds": null,
+      "payload_sha256": "cd8faa61236d304095a169fd0fa22bcf5dd24c58647b2af0b9dc4ae8c87b3329",
+      "repeat": 2,
+      "wall_seconds": 0.0015719819348305464
+    },
+    {
+      "bytes": 524288,
+      "enabled": true,
+      "kind": "observer",
+      "note": "isolated ledger incremental cost; not full evaluator wall",
+      "observer_commit_seconds": 0.0052120579639449716,
+      "payload_sha256": "cd8faa61236d304095a169fd0fa22bcf5dd24c58647b2af0b9dc4ae8c87b3329",
+      "repeat": 2,
+      "wall_seconds": 0.006602554931305349
+    }
+  ],
+  "status": "PASS",
+  "total_wall_seconds": 1.271893788012676
+}
